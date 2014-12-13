@@ -94,7 +94,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Header Background
      */
     $wp_customize->add_setting( 'archetype_header_background_color', array(
-      'default'           => apply_filters( 'archetype_default_header_background_color', '#2c2d33' ),
+      'default'           => apply_filters( 'archetype_default_header_background_color', '#ee543f' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'      => 'postMessage',
     ) );
@@ -110,7 +110,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Header text color
      */
     $wp_customize->add_setting( 'archetype_header_text_color', array(
-      'default'           => apply_filters( 'archetype_default_header_text_color', '#5a6567' ),
+      'default'           => apply_filters( 'archetype_default_header_text_color', '#8a3125' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'      => 'postMessage',
     ) );
@@ -137,14 +137,38 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings' => 'archetype_header_link_color',
       'priority' => 30,
     ) ) );
+    
+    /**
+     * Content section
+     */
+    $wp_customize->add_section( 'archetype_content' , array(
+      'title'        => __( 'Content', 'archetype' ),
+      'priority'     => 35,
+      'description'   => __( 'Customise the look & feel of your web site content area.', 'archetype' ),
+    ) );
 
+    /**
+     * Content Background
+     */
+    $wp_customize->add_setting( 'archetype_content_background_color', array(
+      'default'           => apply_filters( 'archetype_default_content_background_color', '#f1f1f1' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+    
+    $wp_customize->add_control( new Archetype_Customize_Color_Control( $wp_customize, 'archetype_content_background_color', array(
+      'label'     => 'Background color',
+      'section'   => 'archetype_content',
+      'settings'  => 'archetype_content_background_color',
+    ) ) );
+    
     /**
      * Footer section
      */
     $wp_customize->add_section( 'archetype_footer' , array(
-      'title'        => __( 'Footer', 'archetype' ),
-      'priority'     => 40,
-      'description'   => __( 'Customise the look & feel of your web site footer.', 'archetype' ),
+      'title'       => __( 'Footer', 'archetype' ),
+      'priority'    => 40,
+      'description' => __( 'Customise the look & feel of your web site footer.', 'archetype' ),
     ) );
 
     /**
@@ -196,7 +220,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Footer Background
      */
     $wp_customize->add_setting( 'archetype_footer_background_color', array(
-      'default'           => apply_filters( 'archetype_default_footer_background_color', '#f3f3f3' ),
+      'default'           => apply_filters( 'archetype_default_footer_background_color', '#353b3f' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'      => 'postMessage',
     ) );
@@ -302,4 +326,46 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'priority' => 2,
     ) ) );
   }
+}
+
+/**
+ * Extends Customize Color Control Class
+ *
+ * @since 1.0.0
+ */
+if ( class_exists( 'WP_Customize_Color_Control' ) ) {
+
+  class Archetype_Customize_Color_Control extends WP_Customize_Color_Control {
+
+    /**
+  	 * Check user capabilities and theme supports, and then save
+  	 * the value of the setting.
+  	 *
+  	 * @since 3.4.0
+  	 *
+  	 * @return bool False if cap check fails or value isn't set.
+  	 */
+  	public final function save() {
+  		$value = $this->post_value();
+  
+  		if ( ! $this->check_capabilities() )
+  			return false;
+  
+  		/**
+  		 * Fires when the WP_Customize_Setting::save() method is called.
+  		 *
+  		 * The dynamic portion of the hook name, $this->id_data['base'] refers to
+  		 * the base slug of the setting name.
+  		 *
+  		 * @since 3.4.0
+  		 *
+  		 * @param WP_Customize_Setting $this WP_Customize_Setting instance.
+  		 */
+  		do_action( 'customize_save_' . $this->id_data[ 'base' ], $this );
+  
+  		$this->update( $value );
+  	}
+  	
+  }
+  
 }

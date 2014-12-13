@@ -3,15 +3,15 @@
 // yourself. This means that changes that should be small, such as tweaking the
 // coloring or the sizing, can be done in one place, not all over the stylesheet.
 
-$base-font:     "Helvetica Neue", sans-serif;
+$base-font:       "Helvetica Neue", sans-serif;
 $header-font:     $base-font;
 
 // base color scheme
-$body-background:   #FCFCFC;
-$color_body:     #787E87;
+$body-background: #f1f1f1;
+$color_body:      #787e87;
 $color_links:     #a46497;
 $color_border:    rgba(0,0,0,0.1);
-$error:       #e2401c;
-$success:       #17ba6f;
-$info:         #3D9CD2;
-$vspacing:       1.618em;
+$error:           #e2401c;
+$success:         #17ba6f;
+$info:            #3D9CD2;
+$vspacing:        1.618em;

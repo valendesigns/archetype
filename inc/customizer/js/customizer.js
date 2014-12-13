@@ -67,4 +67,12 @@
       $( '.site-footer' ).css( 'background-color', to );
     } );
   } );
+  wp.customize( 'archetype_content_background_color', function( value ) {
+    value.bind( function( to ) {
+      if ( to )
+        $( '.site' ).css( 'background-color', to );
+      else
+        $( '.site' ).css( 'background-color', 'transparent' );
+    } );
+  } );
 } )( jQuery );

@@ -97,8 +97,8 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
 
     if ( is_archetype_customizer_enabled() ) {
       $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#a46497' ) ) );
-      $header_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#5a6567' ) ) );
-      $header_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#2c2d33' ) ) );
+      $header_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#8a3125' ) ) );
+      $header_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#ee543f' ) ) );
       $text_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_text_color', apply_filters( 'archetype_default_text_color', '#787E87' ) ) );
       $button_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_background_color', apply_filters( 'archetype_default_button_background_color', '#787E87' ) ) );
       $button_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_text_color', apply_filters( 'archetype_default_button_text_color', '#ffffff' ) ) );

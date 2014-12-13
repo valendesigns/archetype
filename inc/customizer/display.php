@@ -13,11 +13,16 @@
 if ( ! function_exists( 'archetype_add_customizer_css' ) ) {
   function archetype_add_customizer_css() {
     $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#a46497' ) ) );
-    $header_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#2c2d33' ) ) );
+    
+    $background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_background_color', apply_filters( 'archetype_default_background_color', '#25292c' ) ) );
+    
+    $header_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#ee543f' ) ) );
     $header_link_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color', apply_filters( 'archetype_default_header_link_color', '#ffffff' ) ) );
-    $header_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#5a6567' ) ) );
-
-    $footer_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_background_color', apply_filters( 'archetype_default_footer_background_color', '#f3f3f3' ) ) );
+    $header_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#5a6567' ) ) );
+    
+    $content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_content_background_color' ) );
+    
+    $footer_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_background_color', apply_filters( 'archetype_default_footer_background_color', '#353b3f' ) ) );
     $footer_link_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_color', apply_filters( 'archetype_default_footer_link_color', '#a46497' ) ) );
     $footer_heading_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_heading_color', apply_filters( 'archetype_default_footer_heading_color', '#646c6e' ) ) );
     $footer_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_text_color', apply_filters( 'archetype_default_footer_text_color', '#abb1ba' ) ) );
@@ -33,6 +38,13 @@ if ( ! function_exists( 'archetype_add_customizer_css' ) ) {
     $darken_factor           = apply_filters( 'archetype_darken_factor', -25 );
 
     $style               = '
+    body {
+      background-color: ' . $background_color . ';
+    }
+    .site {
+      background-color: ' . ( $content_background_color ? $content_background_color : 'transparent' ) . ';
+    }
+    
     .main-navigation ul li a,
     .site-title a,
     ul.menu li a,
