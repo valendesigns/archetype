@@ -1,0 +1,63 @@
+/**
+ * WooCommerce Smart Coupons
+ */
+
+/**
+ * Imports
+ */
+@import '../../../sass/vendor/gridset';
+
+.woocommerce,
+.woocommerce-page {
+  .coupon-container {
+    margin: 0;
+    box-shadow: none;
+
+    &.medium {
+      line-height: inherit;
+      padding: .618em;
+    }
+  }
+
+  .generated_coupon_summary {
+    margin: 0;
+  }
+
+  .coupon-content {
+    &.small {
+      padding: .618em 1.387em;
+    }
+
+    .coupon-expire,
+    .discount-info {
+      font-family: inherit;
+    }
+  }
+}
+
+.sd-buttons-transparent {
+  &.woocommerce,
+  &.woocommerce-page {
+    .coupon-container {
+      background: transparent !important;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sc_info_box {
+      @include gs-span(c, 6, 9, (1, 9));
+    @include gs-float(c, left);
+    margin-right: 0;
+    @include gs-pad(c, padin);
+  }
+
+  .page-template-template-fullwidth-php {
+    .sc_info_box {
+        @include gs-span(c, 7, 12);
+      @include gs-float(c, right);
+      margin-left: 0;
+    }
+  }
+}
