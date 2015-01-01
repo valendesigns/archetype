@@ -6,9 +6,10 @@
  * @group theme
  */
 class Archetype_Tests_Theme extends WP_UnitTestCase {
-
+  
   /**
-   * Ensure the theme has been installed and activated and the theme version is correct.
+   * Ensures the Archetype theme has been installed and activated by testing 
+   * if the `$archetype_version` global equals the current theme version.
    */
   function test_theme_version() {
     global $archetype_version;
