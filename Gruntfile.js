@@ -174,7 +174,11 @@ module.exports = function( grunt ) {
           '.htaccess',
           '!Gruntfile.js',
           '!package.json',
-          '!node_modules/**'
+          '!node_modules/**',
+          '!sass/**',
+          '!inc/woocommerce/css/*.scss',
+          '!tests/**',
+          '!phpunit.xml.dist'
         ],
         dest: 'archetype',
         expand: true,
