@@ -143,7 +143,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_content' , array(
       'title'        => __( 'Content', 'archetype' ),
-      'priority'     => 35,
+      'priority'     => 36,
       'description'   => __( 'Customise the look & feel of your web site content area.', 'archetype' ),
     ) );
 

@@ -11,6 +11,8 @@ if ( ! function_exists( 'archetype_page_header' ) ) {
    * @since 1.0.0
    */
   function archetype_page_header() {
+    if ( is_page_template( 'template-homepage.php' ) )
+      return;
     ?>
     <header class="entry-header">
       <?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
