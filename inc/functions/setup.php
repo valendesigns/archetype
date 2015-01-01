@@ -15,8 +15,8 @@ if ( ! isset( $content_width ) ) {
 /**
  * Assign the Archetype version to a var
  */
-$theme           = wp_get_theme();
-$archetype_version   = $theme['Version'];
+$theme             = wp_get_theme();
+$archetype_version = $theme['Version'];
 
 if ( ! function_exists( 'archetype_setup' ) ) :
   /**
