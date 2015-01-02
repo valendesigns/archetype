@@ -1,14 +1,8 @@
+@import 'config';
+
 /**
  * WooCommerce Variation Swatches
  */
-
-/**
- * Imports
- */
-@import 'bourbon';
-@import '../../../sass/modules/variables';
-@import '../../../sass/modules/mixins';
-@import '../../../sass/vendor/gridset';
 
 .variations-table {
   .swatch-wrapper {

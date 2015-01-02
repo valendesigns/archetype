@@ -1,14 +1,8 @@
+@import 'config';
+
 /**
  * WooCommerce Product Reviews Pro
  */
-
-/**
- * Imports
- */
-@import 'bourbon';
-@import '../../../sass/modules/variables';
-@import '../../../sass/modules/mixins';
-@import '../../../sass/vendor/gridset';
 
 .woocommerce,
 .woocommerce-page {

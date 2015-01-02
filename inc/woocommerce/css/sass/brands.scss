@@ -1,14 +1,8 @@
+@import 'config';
+
 /**
  * WooCommerce Brands
  */
-
-/**
- * Imports
- */
-@import 'bourbon';
-@import '../../../sass/modules/variables';
-@import '../../../sass/modules/mixins';
-@import '../../../sass/vendor/gridset';
 
 .header-widget-region {
   .widget_brand_thumbnails {

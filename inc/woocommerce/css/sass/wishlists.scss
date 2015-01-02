@@ -1,14 +1,8 @@
+@import 'config';
+
 /**
  * WooCommerce Wishlists
  */
-
-/**
- * Imports
- */
-@import 'bourbon';
-@import '../../../sass/modules/variables';
-@import '../../../sass/modules/mixins';
-@import '../../../sass/vendor/gridset';
 
 #wl-wrapper.wl-button-wrap {
   padding: 1.618em 0 0 0;
