@@ -3,7 +3,7 @@
 
 # Grunt
 /node_modules/
-/archetype/
+/build/
 npm-debug.log
 
 # Codekit

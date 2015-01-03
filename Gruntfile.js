@@ -218,12 +218,15 @@ module.exports = function( grunt ) {
         options: {
           archive: function () {
             var pkg = grunt.file.readJSON( 'package.json' );
-            return 'archetype-' + pkg.version + '.zip'
+            return 'build/archetype-' + pkg.version + '.zip'
           }
         },
-        files: [
-          {expand: true, src: ['build/archetype/**'], dest: 'build/'},
-        ]
+        files: [{
+          expand: true,
+          cwd: 'build/archetype/',
+          src: ['**'],
+          dest: 'archetype/'
+        }]
       }
     },
     
