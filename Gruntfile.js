@@ -117,7 +117,7 @@ module.exports = function( grunt ) {
 					swapLtrRtlInUrl: false
 				},
 				files: [{
-          'rtl.css': 'style.css'
+          'style-rtl.css': 'style.css'
         }]
 			}
 		},
