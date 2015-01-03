@@ -86,9 +86,29 @@ module.exports = function( grunt ) {
         }]
       }
     },
-
+    
+    // Create RTL .css files
+    cssjanus: {
+			core: {
+				options: {
+				  expand: true,
+					swapLtrRtlInUrl: false
+				},
+				files: [{
+          'style-rtl.css': 'style.css'
+        }]
+			}
+		},
+		
     // Minify all .css files.
     cssmin: {
+      core: {
+        expand: true,
+				files: [{
+          'style.min.css': 'style.css',
+          'style-rtl.min.css': 'style-rtl.css'
+        }]
+      },
       customizer: {
         files: [{
           expand: true,
@@ -108,19 +128,6 @@ module.exports = function( grunt ) {
         }]
       }
     },
-    
-    // Create RTL .css files
-    cssjanus: {
-			core: {
-				options: {
-				  expand: true,
-					swapLtrRtlInUrl: false
-				},
-				files: [{
-          'style-rtl.css': 'style.css'
-        }]
-			}
-		},
 		
     // Watch changes for assets.
     watch: {
@@ -244,6 +251,9 @@ module.exports = function( grunt ) {
     },
     
     clean: {
+      core: {
+				src: ['style-rtl.css']
+      },
       deploy: {
         src: ['build/archetype']
       }
@@ -272,8 +282,9 @@ module.exports = function( grunt ) {
 
   grunt.registerTask( 'css', [
     'sass',
+    'cssjanus',
     'cssmin',
-    'cssjanus'
+    'clean:core'
   ]);
 
   grunt.registerTask( 'dev', [
