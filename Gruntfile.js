@@ -78,16 +78,11 @@ module.exports = function( grunt ) {
           loadPath: require( 'node-bourbon' ).includePaths
         },
         files: [{
-          'inc/woocommerce/css/bookings.css': 'inc/woocommerce/css/sass/bookings.scss',
-          'inc/woocommerce/css/brands.css': 'inc/woocommerce/css/sass/brands.scss',
-          'inc/woocommerce/css/wishlists.css': 'inc/woocommerce/css/sass/wishlists.scss',
-          'inc/woocommerce/css/ajax-layered-nav.css': 'inc/woocommerce/css/sass/ajax-layered-nav.scss',
-          'inc/woocommerce/css/variation-swatches.css': 'inc/woocommerce/css/sass/variation-swatches.scss',
-          'inc/woocommerce/css/composite-products.css': 'inc/woocommerce/css/sass/composite-products.scss',
-          'inc/woocommerce/css/photography.css': 'inc/woocommerce/css/sass/photography.scss',
-          'inc/woocommerce/css/product-reviews-pro.css': 'inc/woocommerce/css/sass/product-reviews-pro.scss',
-          'inc/woocommerce/css/smart-coupons.css': 'inc/woocommerce/css/sass/smart-coupons.scss',
-          'inc/woocommerce/css/woocommerce.css': 'inc/woocommerce/css/sass/woocommerce.scss'
+          expand: true,
+          cwd: 'inc/woocommerce/css/sass/',
+          src: ['*.scss'],
+          dest: 'inc/woocommerce/css/',
+          ext: '.css'
         }]
       }
     },
@@ -119,11 +114,9 @@ module.exports = function( grunt ) {
       css: {
         files: [
           'style.scss',
+          'sass/**/*.scss',
           'inc/customizer/css/sass/*.scss',
-          'inc/woocommerce/css/sass/*.scss',
-          'sass/modules/*.scss',
-          'sass/partials/*.scss',
-          'sass/vendor/*.scss'
+          'inc/woocommerce/css/sass/*.scss'
         ],
         tasks: [
           'sass',
@@ -150,7 +143,7 @@ module.exports = function( grunt ) {
         type: 'wp-theme',
         domainPath: 'languages',
         potHeaders: {
-          'report-msgid-bugs-to': 'https://github.com/valendesigns/archetype/issues',
+          'report-msgid-bugs-to': 'Valen Designs <support@valendesigns.com>',
           'last-translator': 'Valen Designs <support@valendesigns.com>',
           'language-team': 'Valen Designs <support@valendesigns.com>'
         }
@@ -214,9 +207,29 @@ module.exports = function( grunt ) {
           '!tests/**',
           '!phpunit.xml.dist'
         ],
-        dest: 'archetype',
+        dest: 'build/archetype',
         expand: true,
         dot: true
+      }
+    },
+    
+    compress: {
+      main: {
+        options: {
+          archive: function () {
+            var pkg = grunt.file.readJSON( 'package.json' );
+            return 'archetype-' + pkg.version + '.zip'
+          }
+        },
+        files: [
+          {expand: true, src: ['build/archetype/**'], dest: 'build/'},
+        ]
+      }
+    },
+    
+    clean: {
+      build: {
+        src: ['build/archetype']
       }
     }
 
@@ -231,6 +244,8 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-wp-i18n' );
   grunt.loadNpmTasks( 'grunt-checktextdomain' );
   grunt.loadNpmTasks( 'grunt-contrib-copy' );
+  grunt.loadNpmTasks( 'grunt-contrib-compress' );
+  grunt.loadNpmTasks( 'grunt-contrib-clean' );
 
   // Register tasks
   grunt.registerTask( 'default', [
@@ -249,6 +264,8 @@ module.exports = function( grunt ) {
   ]);
 
   grunt.registerTask( 'deploy', [
-    'copy'
+    'copy',
+    'compress',
+    'clean'
   ]);
 };

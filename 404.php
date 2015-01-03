@@ -44,8 +44,6 @@ get_header(); ?>
             the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
           ?>
 
-          <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
         </div><!-- .page-content -->
       </section><!-- .error-404 -->
 

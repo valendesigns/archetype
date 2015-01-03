@@ -18,7 +18,9 @@
     "grunt-wp-i18n": "^0.4.8",
     "grunt-contrib-sass": "^0.8.1",
     "node-bourbon": "~1.0.0",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-compress": "~0.13.0",
+    "grunt-contrib-clean": "~0.6.0"
   },
   "engines": {
     "node": ">=0.8.0",
