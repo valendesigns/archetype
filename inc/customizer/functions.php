@@ -12,7 +12,7 @@
  */
 if ( ! function_exists( 'archetype_customizer_init' ) ) {
   function archetype_customizer_init() {
-  	if ( current_user_can( 'edit_theme_options' ) ) {
+    if ( current_user_can( 'edit_theme_options' ) ) {
 
       if ( isset( $_REQUEST['customizer-export'] ) ) {
         archetype_customizer_export();
@@ -21,7 +21,7 @@ if ( ! function_exists( 'archetype_customizer_init' ) ) {
       if ( isset( $_REQUEST['customizer-import'] ) && isset( $_FILES['customizer-import-file'] ) ) {
         archetype_customizer_import();
       }
-  	}
+    }
   }
 }
 
@@ -94,24 +94,24 @@ if ( ! function_exists( 'archetype_customizer_css' ) ) {
  */
 if ( ! function_exists( 'archetype_customizer_export' ) ) {
   function archetype_customizer_export() {
-  	if ( ! wp_verify_nonce( $_REQUEST['customizer-export'], 'customizer-exporting' ) ) {
-    	return;
-  	}
-  	
-  	$theme    = get_option( 'stylesheet' );
-  	$template = get_option( 'template' );
-  	$charset  = get_option( 'blog_charset' );
-  	$mods     = get_theme_mods();
-  	
+    if ( ! wp_verify_nonce( $_REQUEST['customizer-export'], 'customizer-exporting' ) ) {
+      return;
+    }
+    
+    $theme    = get_option( 'stylesheet' );
+    $template = get_option( 'template' );
+    $charset  = get_option( 'blog_charset' );
+    $mods     = get_theme_mods();
+    
     header( 'Content-disposition: attachment; filename=' . $theme . '-export.json' );
     header( 'Content-Type: application/octet-stream; charset=' . $charset );
-  	
-  	echo serialize( array(
-    	'template' => $template,
-    	'mods'   => $mods ? $mods : array()
-  	));
-  	
-  	die();
+    
+    echo serialize( array(
+      'template' => $template,
+      'mods'   => $mods ? $mods : array()
+    ));
+    
+    die();
   }
 }
 
@@ -123,52 +123,52 @@ if ( ! function_exists( 'archetype_customizer_export' ) ) {
  */
 if ( ! function_exists( 'archetype_customizer_import' ) ) {
   function archetype_customizer_import() {
-  	if ( ! wp_verify_nonce( $_REQUEST['customizer-import'], 'customizer-importing' ) ) {
-    	return;
-  	}
-  	
-  	global $wp_customize;
-  	global $customizer_error;
-  	
-  	$customizer_error = false;
-  	$template         = get_option( 'template' );
-  	$raw              = file_get_contents( $_FILES['customizer-import-file']['tmp_name'] );
-  	$data             = @unserialize( $raw );
-  	
-  	// Data checks.
-  	if ( 'array' != gettype( $data ) ) {
-    	$customizer_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
-    	return;
-  	}
-  	if ( ! isset( $data['template'] ) || ! isset( $data['mods'] ) ) {
-    	$customizer_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
-    	return;
-  	}
-  	if ( $data['template'] != $template ) {
-    	$customizer_error = __( 'Error importing settings! The settings you uploaded are not for the current theme.', 'archetype' );
-    	return;
-  	}
-  	
-  	// Import images.
-  	if ( isset( $_REQUEST['customizer-import-images'] ) ) {
-  	  $data['mods'] = archetype_customizer_import_images( $data['mods'] );
-  	}
-  	
-  	// Call the customize_save action.
-  	do_action( 'customize_save', $wp_customize );
-  	
-  	// Loop through the mods.
-  	foreach ( $data['mods'] as $key => $val ) {
-    	
-    	// Call the customize_save_ dynamic action.
-    	do_action( 'customize_save_' . $key, $wp_customize );
-    	
-    	// Save the mod.
-    	set_theme_mod( $key, $val );
-  	}
-  	
-  	// Call the customize_save_after action.
-  	do_action( 'customize_save_after', $wp_customize );
+    if ( ! wp_verify_nonce( $_REQUEST['customizer-import'], 'customizer-importing' ) ) {
+      return;
+    }
+    
+    global $wp_customize;
+    global $customizer_error;
+    
+    $customizer_error = false;
+    $template         = get_option( 'template' );
+    $raw              = file_get_contents( $_FILES['customizer-import-file']['tmp_name'] );
+    $data             = @unserialize( $raw );
+    
+    // Data checks.
+    if ( 'array' != gettype( $data ) ) {
+      $customizer_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
+      return;
+    }
+    if ( ! isset( $data['template'] ) || ! isset( $data['mods'] ) ) {
+      $customizer_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
+      return;
+    }
+    if ( $data['template'] != $template ) {
+      $customizer_error = __( 'Error importing settings! The settings you uploaded are not for the current theme.', 'archetype' );
+      return;
+    }
+    
+    // Import images.
+    if ( isset( $_REQUEST['customizer-import-images'] ) ) {
+      $data['mods'] = archetype_customizer_import_images( $data['mods'] );
+    }
+    
+    // Call the customize_save action.
+    do_action( 'customize_save', $wp_customize );
+    
+    // Loop through the mods.
+    foreach ( $data['mods'] as $key => $val ) {
+      
+      // Call the customize_save_ dynamic action.
+      do_action( 'customize_save_' . $key, $wp_customize );
+      
+      // Save the mod.
+      set_theme_mod( $key, $val );
+    }
+    
+    // Call the customize_save_after action.
+    do_action( 'customize_save_after', $wp_customize );
   }
 }
 
@@ -179,26 +179,26 @@ if ( ! function_exists( 'archetype_customizer_import' ) ) {
  */
 if ( ! function_exists( 'archetype_customizer_import_images' ) ) {
   function archetype_customizer_import_images( $mods ) {
-  	foreach ( $mods as $key => $val ) {
-    	
-    	if ( archetype_customizer_is_image_url( $val ) ) {
-      	
-      	$data = archetype_customizer_sideload_image( $val );
-      	
-      	if ( ! is_wp_error( $data ) ) {
-        	
-        	$mods[ $key ] = $data->url;
-        	
-        	// Handle header image controls.
-        	if ( isset( $mods[ $key . '_data' ] ) ) {
-        	  $mods[ $key . '_data' ] = $data;
-        	  update_post_meta( $data->attachment_id, '_wp_attachment_is_custom_header', get_stylesheet() );
-        	}
-      	}
-    	}
-  	}
-  	
-  	return $mods;
+    foreach ( $mods as $key => $val ) {
+      
+      if ( archetype_customizer_is_image_url( $val ) ) {
+        
+        $data = archetype_customizer_sideload_image( $val );
+        
+        if ( ! is_wp_error( $data ) ) {
+          
+          $mods[ $key ] = $data->url;
+          
+          // Handle header image controls.
+          if ( isset( $mods[ $key . '_data' ] ) ) {
+            $mods[ $key . '_data' ] = $data;
+            update_post_meta( $data->attachment_id, '_wp_attachment_is_custom_header', get_stylesheet() );
+          }
+        }
+      }
+    }
+    
+    return $mods;
   }
 }
 
@@ -210,47 +210,47 @@ if ( ! function_exists( 'archetype_customizer_import_images' ) ) {
  */
 if ( ! function_exists( 'archetype_customizer_sideload_image' ) ) {
   function archetype_customizer_sideload_image( $file ) {
-  	$data = new stdClass();
-  	
-  	if ( ! function_exists( 'media_handle_sideload' ) ) {
+    $data = new stdClass();
+    
+    if ( ! function_exists( 'media_handle_sideload' ) ) {
       require_once( ABSPATH . 'wp-admin/includes/media.php' );
       require_once( ABSPATH . 'wp-admin/includes/file.php' );
       require_once( ABSPATH . 'wp-admin/includes/image.php' );
     }
-  	if ( ! empty( $file ) ) {
-  		
-  		// Set variables for storage, fix file filename for query strings.
-  		preg_match( '/[^\?]+\.(jpe?g|jpe|gif|png)\b/i', $file, $matches );
-  		$file_array = array();
-  		$file_array['name'] = basename( $matches[0] );
+    if ( ! empty( $file ) ) {
+      
+      // Set variables for storage, fix file filename for query strings.
+      preg_match( '/[^\?]+\.(jpe?g|jpe|gif|png)\b/i', $file, $matches );
+      $file_array = array();
+      $file_array['name'] = basename( $matches[0] );
   
-  		// Download file to temp location.
-  		$file_array['tmp_name'] = download_url( $file );
+      // Download file to temp location.
+      $file_array['tmp_name'] = download_url( $file );
   
-  		// If error storing temporarily, return the error.
-  		if ( is_wp_error( $file_array['tmp_name'] ) ) {
-  			return $file_array['tmp_name'];
-  		}
+      // If error storing temporarily, return the error.
+      if ( is_wp_error( $file_array['tmp_name'] ) ) {
+        return $file_array['tmp_name'];
+      }
   
-  		// Do the validation and storage stuff.
-  		$id = media_handle_sideload( $file_array, 0 );
+      // Do the validation and storage stuff.
+      $id = media_handle_sideload( $file_array, 0 );
   
-  		// If error storing permanently, unlink.
-  		if ( is_wp_error( $id ) ) {
-  			@unlink( $file_array['tmp_name'] );
-  			return $id;
-  		}
-  		
-  		// Build the object to return.
-  		$meta                = wp_get_attachment_metadata( $id );
-  		$data->attachment_id = $id;
-  		$data->url           = wp_get_attachment_url( $id );
-  		$data->thumbnail_url = wp_get_attachment_thumb_url( $id );
-  		$data->height        = $meta['height'];
-  		$data->width         = $meta['width'];
-  	}
+      // If error storing permanently, unlink.
+      if ( is_wp_error( $id ) ) {
+        @unlink( $file_array['tmp_name'] );
+        return $id;
+      }
+      
+      // Build the object to return.
+      $meta                = wp_get_attachment_metadata( $id );
+      $data->attachment_id = $id;
+      $data->url           = wp_get_attachment_url( $id );
+      $data->thumbnail_url = wp_get_attachment_thumb_url( $id );
+      $data->height        = $meta['height'];
+      $data->width         = $meta['width'];
+    }
   
-  	return $data;
+    return $data;
   }
 }
 
@@ -261,14 +261,14 @@ if ( ! function_exists( 'archetype_customizer_sideload_image' ) ) {
  */
 if ( ! function_exists( 'archetype_customizer_is_image_url' ) ) {
   function archetype_customizer_is_image_url( $string = '' ) {
-  	if ( is_string( $string ) ) {
-    	
-    	if ( preg_match( '/\.(jpg|jpeg|jpe|gif|png|bmp|tif|tiff|ico|svg)/i', $string ) ) {
-      	return true;
-    	}
-  	}
-  	
-  	return false;
+    if ( is_string( $string ) ) {
+      
+      if ( preg_match( '/\.(jpg|jpeg|jpe|gif|png|bmp|tif|tiff|ico|svg)/i', $string ) ) {
+        return true;
+      }
+    }
+    
+    return false;
   }
 }
 
@@ -279,7 +279,7 @@ if ( ! function_exists( 'archetype_customizer_is_image_url' ) ) {
  */
 if ( ! function_exists( 'archetype_customizer_upload_mimes' ) ) {
   function archetype_customizer_upload_mimes( $mimes ) {
-  	$mimes['svg'] = 'image/svg+xml';
+    $mimes['svg'] = 'image/svg+xml';
     return $mimes;
   }
 }
