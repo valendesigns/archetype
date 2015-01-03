@@ -10,16 +10,16 @@
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_init' ) ) {
-  function archetype_customizer_init() {
+if ( ! function_exists( 'archetype_customize_init' ) ) {
+  function archetype_customize_init() {
     if ( current_user_can( 'edit_theme_options' ) ) {
 
-      if ( isset( $_REQUEST['customizer-export'] ) ) {
-        archetype_customizer_export();
+      if ( isset( $_REQUEST['customize-export'] ) ) {
+        archetype_customize_export();
       }
       
-      if ( isset( $_REQUEST['customizer-import'] ) && isset( $_FILES['customizer-import-file'] ) ) {
-        archetype_customizer_import();
+      if ( isset( $_REQUEST['customize-import'] ) && isset( $_FILES['customize-import-file'] ) ) {
+        archetype_customize_import();
       }
     }
   }
@@ -30,20 +30,20 @@ if ( ! function_exists( 'archetype_customizer_init' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_js' ) ) {
-  function archetype_customizer_js() {
+if ( ! function_exists( 'archetype_customize_js' ) ) {
+  function archetype_customize_js() {
     global $archetype_version;
-    wp_enqueue_script( 'archetype_customizer', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
+    wp_enqueue_script( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
     
     // Localize
-    wp_localize_script( 'archetype_customizer', 'Archetype_Customizerl10n', array(
+    wp_localize_script( 'archetype_customize', 'Archetype_Customizerl10n', array(
       'emptyImport' => __( 'Please choose a file to import.', 'archetype' )
     ));
     
     // Config
-    wp_localize_script( 'archetype_customizer', 'Archetype_CustomizerConfig', array(
+    wp_localize_script( 'archetype_customize', 'Archetype_CustomizerConfig', array(
       'customizerURL' => admin_url( 'customize.php' ),
-      'exportNonce'   => wp_create_nonce( 'customizer-exporting' )
+      'exportNonce'   => wp_create_nonce( 'customize-exporting' )
     ));
   }
 }
@@ -53,10 +53,10 @@ if ( ! function_exists( 'archetype_customizer_js' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_preview_js' ) ) {
-  function archetype_customizer_preview_js() {
+if ( ! function_exists( 'archetype_customize_preview_js' ) ) {
+  function archetype_customize_preview_js() {
     global $archetype_version;
-    wp_enqueue_script( 'archetype_customizer_preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
+    wp_enqueue_script( 'archetype_customize_preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
   }
 }
 
@@ -65,12 +65,12 @@ if ( ! function_exists( 'archetype_customizer_preview_js' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_print_js' ) ) {
-  function archetype_customizer_print_js() {
-    global $customizer_error;
+if ( ! function_exists( 'archetype_customize_print_js' ) ) {
+  function archetype_customize_print_js() {
+    global $customize_error;
     
-    if ( $customizer_error ) {
-      echo '<script> alert("' . $customizer_error . '"); </script>';
+    if ( $customize_error ) {
+      echo '<script> alert("' . $customize_error . '"); </script>';
     }
   }
 }
@@ -80,10 +80,10 @@ if ( ! function_exists( 'archetype_customizer_print_js' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_css' ) ) {
-  function archetype_customizer_css() {
+if ( ! function_exists( 'archetype_customize_css' ) ) {
+  function archetype_customize_css() {
     global $archetype_version;
-    wp_enqueue_style( 'archetype_customizer', get_template_directory_uri() . '/inc/customizer/css/customizer.css', array(), $archetype_version );
+    wp_enqueue_style( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/css/customizer.css', array(), $archetype_version );
   }
 }
 
@@ -92,9 +92,9 @@ if ( ! function_exists( 'archetype_customizer_css' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_export' ) ) {
-  function archetype_customizer_export() {
-    if ( ! wp_verify_nonce( $_REQUEST['customizer-export'], 'customizer-exporting' ) ) {
+if ( ! function_exists( 'archetype_customize_export' ) ) {
+  function archetype_customize_export() {
+    if ( ! wp_verify_nonce( $_REQUEST['customize-export'], 'customize-exporting' ) ) {
       return;
     }
     
@@ -121,37 +121,37 @@ if ( ! function_exists( 'archetype_customizer_export' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_import' ) ) {
-  function archetype_customizer_import() {
-    if ( ! wp_verify_nonce( $_REQUEST['customizer-import'], 'customizer-importing' ) ) {
+if ( ! function_exists( 'archetype_customize_import' ) ) {
+  function archetype_customize_import() {
+    if ( ! wp_verify_nonce( $_REQUEST['customize-import'], 'customize-importing' ) ) {
       return;
     }
     
     global $wp_customize;
-    global $customizer_error;
+    global $customize_error;
     
-    $customizer_error = false;
-    $template         = get_option( 'template' );
-    $raw              = file_get_contents( $_FILES['customizer-import-file']['tmp_name'] );
-    $data             = @unserialize( $raw );
+    $customize_error = false;
+    $template        = get_option( 'template' );
+    $raw             = file_get_contents( $_FILES['customize-import-file']['tmp_name'] );
+    $data            = @unserialize( $raw );
     
     // Data checks.
     if ( 'array' != gettype( $data ) ) {
-      $customizer_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
+      $customize_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
       return;
     }
     if ( ! isset( $data['template'] ) || ! isset( $data['mods'] ) ) {
-      $customizer_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
+      $customize_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
       return;
     }
     if ( $data['template'] != $template ) {
-      $customizer_error = __( 'Error importing settings! The settings you uploaded are not for the current theme.', 'archetype' );
+      $customize_error = __( 'Error importing settings! The settings you uploaded are not for the current theme.', 'archetype' );
       return;
     }
     
     // Import images.
-    if ( isset( $_REQUEST['customizer-import-images'] ) ) {
-      $data['mods'] = archetype_customizer_import_images( $data['mods'] );
+    if ( isset( $_REQUEST['customize-import-images'] ) ) {
+      $data['mods'] = archetype_customize_import_images( $data['mods'] );
     }
     
     // Call the customize_save action.
@@ -177,13 +177,13 @@ if ( ! function_exists( 'archetype_customizer_import' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_import_images' ) ) {
-  function archetype_customizer_import_images( $mods ) {
+if ( ! function_exists( 'archetype_customize_import_images' ) ) {
+  function archetype_customize_import_images( $mods ) {
     foreach ( $mods as $key => $val ) {
       
-      if ( archetype_customizer_is_image_url( $val ) ) {
+      if ( archetype_customize_is_image_url( $val ) ) {
         
-        $data = archetype_customizer_sideload_image( $val );
+        $data = archetype_customize_sideload_image( $val );
         
         if ( ! is_wp_error( $data ) ) {
           
@@ -208,8 +208,8 @@ if ( ! function_exists( 'archetype_customizer_import_images' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_sideload_image' ) ) {
-  function archetype_customizer_sideload_image( $file ) {
+if ( ! function_exists( 'archetype_customize_sideload_image' ) ) {
+  function archetype_customize_sideload_image( $file ) {
     $data = new stdClass();
     
     if ( ! function_exists( 'media_handle_sideload' ) ) {
@@ -259,8 +259,8 @@ if ( ! function_exists( 'archetype_customizer_sideload_image' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_is_image_url' ) ) {
-  function archetype_customizer_is_image_url( $string = '' ) {
+if ( ! function_exists( 'archetype_customize_is_image_url' ) ) {
+  function archetype_customize_is_image_url( $string = '' ) {
     if ( is_string( $string ) ) {
       
       if ( preg_match( '/\.(jpg|jpeg|jpe|gif|png|bmp|tif|tiff|ico|svg)/i', $string ) ) {
@@ -277,8 +277,8 @@ if ( ! function_exists( 'archetype_customizer_is_image_url' ) ) {
  *
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_upload_mimes' ) ) {
-  function archetype_customizer_upload_mimes( $mimes ) {
+if ( ! function_exists( 'archetype_customize_upload_mimes' ) ) {
+  function archetype_customize_upload_mimes( $mimes ) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
   }

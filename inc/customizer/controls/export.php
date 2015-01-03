@@ -15,7 +15,7 @@ class Archetype_Export_Control extends WP_Customize_Control {
     <span class="description customize-control-description">
       <?php echo esc_attr( $this->description ); ?>
     </span>
-    <input type="button" class="button" name="customizer-export-button" value="<?php esc_attr_e( 'Export', 'archetype' ); ?>" />
+    <input type="button" class="button" name="customize-export-button" value="<?php esc_attr_e( 'Export', 'archetype' ); ?>" />
     <?php
   }
 }

@@ -11,8 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customizer_register' ) ) {
-  function archetype_customizer_register( $wp_customize ) {
+if ( ! function_exists( 'archetype_customize_register' ) ) {
+  function archetype_customize_register( $wp_customize ) {
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
     $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';

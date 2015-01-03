@@ -6,16 +6,16 @@
 ( function( $ ) {
   var Archetype_Customizer = {
     init: function() {
-      $( 'input[name=customizer-import-button]' ).on( 'click', Archetype_Customizer._import );
-      $( 'input[name=customizer-export-button]' ).on( 'click', Archetype_Customizer._export );
+      $( 'input[name=customize-import-button]' ).on( 'click', Archetype_Customizer._import );
+      $( 'input[name=customize-export-button]' ).on( 'click', Archetype_Customizer._export );
     },
     _import: function() {
     var win     = $( window )
       , body    = $( 'body' )
-      , form    = $( '<form class="customizer-import-form" method="POST" enctype="multipart/form-data"></form>' )
-      , controls  = $( '.customizer-import-controls' )
-      , file    = $( 'input[name=customizer-import-file]' )
-      , message   = $( '.customizer-import-uploading' );
+      , form    = $( '<form class="customize-import-form" method="POST" enctype="multipart/form-data"></form>' )
+      , controls  = $( '.customize-import-controls' )
+      , file    = $( 'input[name=customize-import-file]' )
+      , message   = $( '.customize-import-uploading' );
       
       if ( '' == file.val() ) {
         alert( Archetype_Customizerl10n.emptyImport );
@@ -28,7 +28,7 @@
       }
     },
     _export: function() {
-      window.location.href = Archetype_CustomizerConfig.customizerURL + '?customizer-export=' + Archetype_CustomizerConfig.exportNonce;
+      window.location.href = Archetype_CustomizerConfig.customizerURL + '?customize-export=' + Archetype_CustomizerConfig.exportNonce;
     }
   };
   $( Archetype_Customizer.init );

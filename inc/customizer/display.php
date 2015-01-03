@@ -10,8 +10,8 @@
  *
  * @since 1.0.0
  */
-if ( ! function_exists( 'archetype_add_customizer_css' ) ) {
-  function archetype_add_customizer_css() {
+if ( ! function_exists( 'archetype_add_customize_css' ) ) {
+  function archetype_add_customize_css() {
     $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#a46497' ) ) );
     
     $background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_background_color', apply_filters( 'archetype_default_background_color', '#25292c' ) ) );
