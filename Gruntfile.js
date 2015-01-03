@@ -23,7 +23,7 @@ module.exports = function( grunt ) {
       options: {
         preserveComments: 'some'
       },
-      main: {
+      core: {
         files: [{
           expand: true,
           cwd: 'js/',
@@ -51,7 +51,7 @@ module.exports = function( grunt ) {
 
     // Compile all .scss files.
     sass: {
-      main: {
+      core: {
         options: {
           sourcemap: 'none',
           style: 'nested',
@@ -214,7 +214,7 @@ module.exports = function( grunt ) {
     },
     
     compress: {
-      main: {
+      deploy: {
         options: {
           archive: function () {
             var pkg = grunt.file.readJSON( 'package.json' );
@@ -231,7 +231,7 @@ module.exports = function( grunt ) {
     },
     
     clean: {
-      build: {
+      deploy: {
         src: ['build/archetype']
       }
     }
