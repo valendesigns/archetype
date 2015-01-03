@@ -57,8 +57,8 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
-      'primary'    => __( 'Primary Menu', 'archetype' ),
-      'secondary'    => __( 'Secondary Menu', 'archetype' ),
+      'primary'   => __( 'Primary Menu', 'archetype' ),
+      'secondary' => __( 'Secondary Menu', 'archetype' ),
     ) );
 
     /*
@@ -137,9 +137,7 @@ function archetype_widgets_init() {
 function archetype_scripts() {
   global $archetype_version;
   
-  $rtl = is_rtl() ? '-rtl' : '';
-
-  wp_enqueue_style( 'archetype-style', get_template_directory_uri() . "/style$rtl.min.css", '', $archetype_version );
+  wp_enqueue_style( 'archetype-style', get_template_directory_uri() . ( is_rtl() ? '/style-rtl.min.css' : '/style.min.css' ), '', $archetype_version );
 
   wp_enqueue_script( 'archetype-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
