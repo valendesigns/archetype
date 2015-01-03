@@ -51,27 +51,66 @@ module.exports = function( grunt ) {
 
     // Compile all .scss files.
     sass: {
-      compile: {
+      main: {
         options: {
           sourcemap: 'none',
           style: 'nested',
           loadPath: require( 'node-bourbon' ).includePaths
         },
         files: [{
-          'style.css': 'style.scss',
-          'inc/woocommerce/css/*.css': 'inc/woocommerce/css/sass/*.scss'
+          'style.css': 'style.scss'
+        }]
+      },
+      customizer: {
+        options: {
+          sourcemap: 'none',
+          style: 'nested',
+          loadPath: require( 'node-bourbon' ).includePaths
+        },
+        files: [{
+          'inc/customizer/css/customizer.css': 'inc/customizer/css/sass/customizer.scss'
+        }]
+      },
+      woocommerce: {
+        options: {
+          sourcemap: 'none',
+          style: 'nested',
+          loadPath: require( 'node-bourbon' ).includePaths
+        },
+        files: [{
+          'inc/woocommerce/css/bookings.css': 'inc/woocommerce/css/sass/bookings.scss',
+          'inc/woocommerce/css/brands.css': 'inc/woocommerce/css/sass/brands.scss',
+          'inc/woocommerce/css/wishlists.css': 'inc/woocommerce/css/sass/wishlists.scss',
+          'inc/woocommerce/css/ajax-layered-nav.css': 'inc/woocommerce/css/sass/ajax-layered-nav.scss',
+          'inc/woocommerce/css/variation-swatches.css': 'inc/woocommerce/css/sass/variation-swatches.scss',
+          'inc/woocommerce/css/composite-products.css': 'inc/woocommerce/css/sass/composite-products.scss',
+          'inc/woocommerce/css/photography.css': 'inc/woocommerce/css/sass/photography.scss',
+          'inc/woocommerce/css/product-reviews-pro.css': 'inc/woocommerce/css/sass/product-reviews-pro.scss',
+          'inc/woocommerce/css/smart-coupons.css': 'inc/woocommerce/css/sass/smart-coupons.scss',
+          'inc/woocommerce/css/woocommerce.css': 'inc/woocommerce/css/sass/woocommerce.scss'
         }]
       }
     },
 
     // Minify all .css files.
     cssmin: {
-      minify: {
-        expand: true,
-        cwd: 'inc/woocommerce/css/',
-        src: ['*.css'],
-        dest: 'inc/woocommerce/css/',
-        ext: '.css'
+      customizer: {
+        files: [{
+          expand: true,
+          cwd: 'inc/customizer/css/',
+          src: ['*.css'],
+          dest: 'inc/customizer/css/',
+          ext: '.css'
+        }]
+      },
+      woocommerce: {
+        files: [{
+          expand: true,
+          cwd: 'inc/woocommerce/css/',
+          src: ['*.css'],
+          dest: 'inc/woocommerce/css/',
+          ext: '.css'
+        }]
       }
     },
 
@@ -80,7 +119,8 @@ module.exports = function( grunt ) {
       css: {
         files: [
           'style.scss',
-          'inc/woocommerce/css/*.scss',
+          'inc/customizer/css/sass/*.scss',
+          'inc/woocommerce/css/sass/*.scss',
           'sass/modules/*.scss',
           'sass/partials/*.scss',
           'sass/vendor/*.scss'
@@ -169,6 +209,7 @@ module.exports = function( grunt ) {
           '!node_modules/**',
           '!style.scss',
           '!sass/**',
+          '!inc/customizer/css/sass/*.scss',
           '!inc/woocommerce/css/sass/*.scss',
           '!tests/**',
           '!phpunit.xml.dist'

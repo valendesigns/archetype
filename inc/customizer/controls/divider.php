@@ -2,7 +2,7 @@
 /**
  * Class to create a custom divider control
  */
-class Divider_Archetype_Control extends WP_Customize_Control {
+class Archetype_Divider_Control extends WP_Customize_Control {
 
   /**
   * Render the content on the theme customizer page

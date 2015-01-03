@@ -145,10 +145,8 @@ class Archetype_Welcome {
    */
   public function archetype_welcome_getting_started() {
     // get theme customizer url
-    $url   = admin_url() . 'customize.php?';
-    $url   .= 'url=' . urlencode( site_url() . '?archetype-customizer=true' );
-    $url   .= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcome' );
-    $url   .= '&archetype-customizer=true';
+    $url = admin_url() . 'customize.php?';
+    $url.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcome' );
     ?>
     <div class="feature-section col two-col" style="margin-bottom: 1.618em; overflow: hidden;">
 

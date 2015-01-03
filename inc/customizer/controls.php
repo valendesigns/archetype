@@ -11,29 +11,32 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  * @since  1.0.0
  */
-if ( ! function_exists( 'archetype_customize_register' ) ) {
-  function archetype_customize_register( $wp_customize ) {
+if ( ! function_exists( 'archetype_customizer_register' ) ) {
+  function archetype_customizer_register( $wp_customize ) {
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
     $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
     // Move background color setting alongside background image
     $wp_customize->get_control( 'background_color' )->section   = 'background_image';
-    $wp_customize->get_control( 'background_color' )->priority   = 20;
+    $wp_customize->get_control( 'background_color' )->priority  = 20;
 
     // Change background image section title & priority
-    $wp_customize->get_section( 'background_image' )->title   = __( 'Background', 'archetype' );
-    $wp_customize->get_section( 'background_image' )->priority   = 30;
+    $wp_customize->get_section( 'background_image' )->title     = __( 'Background', 'archetype' );
+    $wp_customize->get_section( 'background_image' )->priority  = 30;
 
     // Change header image section title & priority
-    $wp_customize->get_section( 'header_image' )->title     = __( 'Header', 'archetype' );
-    $wp_customize->get_section( 'header_image' )->priority     = 35;
+    $wp_customize->get_section( 'header_image' )->title         = __( 'Header', 'archetype' );
+    $wp_customize->get_section( 'header_image' )->priority      = 35;
 
     /**
      * Custom controls
      */
-    require_once dirname( __FILE__ ) . '/controls/layout.php';
+    require_once dirname( __FILE__ ) . '/controls/color.php';
     require_once dirname( __FILE__ ) . '/controls/divider.php';
+    require_once dirname( __FILE__ ) . '/controls/export.php';
+    require_once dirname( __FILE__ ) . '/controls/layout.php';
+    require_once dirname( __FILE__ ) . '/controls/import.php';
 
     /**
      * Add the typography section
@@ -156,7 +159,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'transport'         => 'postMessage',
     ) );
     
-    $wp_customize->add_control( new Archetype_Customize_Color_Control( $wp_customize, 'archetype_content_background_color', array(
+    $wp_customize->add_control( new Archetype_Color_Control( $wp_customize, 'archetype_content_background_color', array(
       'label'     => 'Background color',
       'section'   => 'archetype_content',
       'settings'  => 'archetype_content_background_color',
@@ -309,63 +312,65 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_setting( 'archetype_layout', array(
-      'default'        => 'right',
+      'default'           => 'right',
       'sanitize_callback' => 'archetype_sanitize_layout',
     ) );
 
-    $wp_customize->add_control( new Layout_Picker_Archetype_Control( $wp_customize, 'archetype_layout', array(
+    $wp_customize->add_control( new Archetype_Layout_Control( $wp_customize, 'archetype_layout', array(
       'label'    => __( 'General layout', 'archetype' ),
       'section'  => 'archetype_layout',
       'settings' => 'archetype_layout',
       'priority' => 1,
     ) ) );
 
-    $wp_customize->add_control( new Divider_Archetype_Control( $wp_customize, 'archetype_layout_divider', array(
+    $wp_customize->add_control( new Archetype_Divider_Control( $wp_customize, 'archetype_layout_divider', array(
       'section'  => 'archetype_layout',
       'settings' => 'archetype_layout',
       'priority' => 2,
     ) ) );
-  }
-}
-
-/**
- * Extends Customize Color Control Class
- *
- * @since 1.0.0
- */
-if ( class_exists( 'WP_Customize_Color_Control' ) ) {
-
-  class Archetype_Customize_Color_Control extends WP_Customize_Color_Control {
 
     /**
-  	 * Check user capabilities and theme supports, and then save
-  	 * the value of the setting.
-  	 *
-  	 * @since 3.4.0
-  	 *
-  	 * @return bool False if cap check fails or value isn't set.
-  	 */
-  	public final function save() {
-  		$value = $this->post_value();
-  
-  		if ( ! $this->check_capabilities() )
-  			return false;
-  
-  		/**
-  		 * Fires when the WP_Customize_Setting::save() method is called.
-  		 *
-  		 * The dynamic portion of the hook name, $this->id_data['base'] refers to
-  		 * the base slug of the setting name.
-  		 *
-  		 * @since 3.4.0
-  		 *
-  		 * @param WP_Customize_Setting $this WP_Customize_Setting instance.
-  		 */
-  		do_action( 'customize_save_' . $this->id_data[ 'base' ], $this );
-  
-  		$this->update( $value );
-  	}
-  	
+     * Import & Export Section
+     */
+    $wp_customize->add_section( 'archetype_import_export', array(
+      'title'    => __( 'Import & Export', 'archetype' ),
+      'priority' => 10000000
+    ));
+
+    /**
+     * Add an empty import & export setting.
+     */ 
+    $wp_customize->add_setting( 'archetype_import_export', array(
+      'default' => '',
+      'type'    => 'none'
+    ));
+
+    /**
+     * Add the import control.
+     */
+    $wp_customize->add_control( new Archetype_Import_Control( $wp_customize, 'archetype_import', array(
+      'label'       => __( 'Import', 'archetype' ),
+      'section'     => 'archetype_import_export',
+      'settings'    => 'archetype_import_export',
+      'description' => __( 'Upload a file to import customization settings for this theme.', 'archetype' ),
+      'priority'    => 1
+    ) ) );
+    
+    $wp_customize->add_control( new Archetype_Divider_Control( $wp_customize, 'archetype_import_export_divider', array(
+      'section'     => 'archetype_import_export',
+      'settings'    => 'archetype_import_export',
+      'priority'    => 2,
+    ) ) );
+
+    /**
+     * Add the export control.
+     */
+    $wp_customize->add_control( new Archetype_Export_Control( $wp_customize, 'archetype_export', array(
+      'label'       => __( 'Export', 'archetype' ),
+      'section'     => 'archetype_import_export',
+      'settings'    => 'archetype_import_export',
+      'description' => __( 'Click the button below to export the customization settings for this theme.', 'archetype' ),
+      'priority'    => 3
+    ) ) );
   }
-  
 }

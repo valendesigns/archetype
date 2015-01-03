@@ -10,7 +10,7 @@
 /**
  * Check whether the Archetype Customizer settings ar enabled
  * @return boolean
- * @since  1.1.2
+ * @since  1.0.0
  */
 function is_archetype_customizer_enabled() {
   return apply_filters( 'archetype_customizer_enabled', true );
