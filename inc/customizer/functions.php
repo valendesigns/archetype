@@ -18,6 +18,10 @@ if ( ! function_exists( 'archetype_customize_init' ) ) {
         archetype_customize_export();
       }
       
+      if ( isset( $_REQUEST['widgets-export'] ) ) {
+        archetype_widgets_export();
+      }
+      
       if ( isset( $_REQUEST['customize-import'] ) && isset( $_FILES['customize-import-file'] ) ) {
         archetype_customize_import();
       }
@@ -42,8 +46,9 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
     
     // Config
     wp_localize_script( 'archetype_customize', 'Archetype_CustomizerConfig', array(
-      'customizerURL' => admin_url( 'customize.php' ),
-      'exportNonce'   => wp_create_nonce( 'customize-exporting' )
+      'customizerURL'        => admin_url( 'customize.php' ),
+      'exportCustomizeNonce' => wp_create_nonce( 'customize-exporting' ),
+      'exportWidgetsNonce'   => wp_create_nonce( 'widgets-exporting' )
     ));
   }
 }
@@ -88,7 +93,7 @@ if ( ! function_exists( 'archetype_customize_css' ) ) {
 }
 
 /**
- * Exports customizer theme mods.
+ * Exports customizer theme mods, active widgets & menus.
  *
  * @since  1.0.0
  */
@@ -102,16 +107,133 @@ if ( ! function_exists( 'archetype_customize_export' ) ) {
     $template = get_option( 'template' );
     $charset  = get_option( 'blog_charset' );
     $mods     = get_theme_mods();
+  
+    header( 'Content-disposition: attachment; filename=' . $theme . '-customize.json' );
+    header( 'Content-Type: application/octet-stream; charset=' . $charset );
     
-    header( 'Content-disposition: attachment; filename=' . $theme . '-export.json' );
+    echo serialize( array( 
+      'template' => $template,
+      'mods'     => $mods ? $mods : array()
+    ) );
+    
+    die();
+  }
+}
+
+/**
+ * Exports customizer theme mods, active widgets & menus.
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_widgets_export' ) ) {
+  function archetype_widgets_export() {
+    if ( ! wp_verify_nonce( $_REQUEST['widgets-export'], 'widgets-exporting' ) ) {
+      return;
+    }
+    
+    $theme             = get_option( 'stylesheet' );
+    $template          = get_option( 'template' );
+    $charset           = get_option( 'blog_charset' );
+    $sidebars_widgets  = get_option( 'sidebars_widgets' );
+    $available_widgets = archetype_active_widgets();
+    $widget_instances  = array();
+    $active_widgets    = array();
+  
+    // Get all widget instances
+    foreach ( $available_widgets as $widget_data ) {
+  
+      // Get all instances for this ID base
+      $instances = get_option( 'widget_' . $widget_data['id_base'] );
+  
+      // Have instances
+      if ( ! empty( $instances ) ) {
+  
+        // Loop instances
+        foreach ( $instances as $instance_id => $instance_data ) {
+  
+          // Key is ID (not _multiwidget)
+          if ( is_numeric( $instance_id ) ) {
+            $unique_instance_id = $widget_data['id_base'] . '-' . $instance_id;
+            $widget_instances[$unique_instance_id] = $instance_data;
+          }
+  
+        }
+  
+      }
+  
+    }
+  
+    // Set active widgets instances
+    foreach ( $sidebars_widgets as $sidebar_id => $widget_ids ) {
+  
+      // Skip inactive widgets
+      if ( 'wp_inactive_widgets' == $sidebar_id ) {
+        continue;
+      }
+  
+      // Skip if no data or not an array (array_version)
+      if ( ! is_array( $widget_ids ) || empty( $widget_ids ) ) {
+        continue;
+      }
+  
+      // Loop widget IDs for this sidebar
+      foreach ( $widget_ids as $widget_id ) {
+  
+        // Is there an instance for this widget ID?
+        if ( isset( $widget_instances[$widget_id] ) ) {
+  
+          // Add to array
+          $active_widgets[$sidebar_id][$widget_id] = $widget_instances[$widget_id];
+  
+        }
+  
+      }
+  
+    }
+  
+    header( 'Content-disposition: attachment; filename=' . $theme . '-widgets.json' );
     header( 'Content-Type: application/octet-stream; charset=' . $charset );
     
     echo serialize( array(
-      'template' => $template,
-      'mods'   => $mods ? $mods : array()
-    ));
+      'template'         => $template,
+      'sidebars_widgets' => $active_widgets
+    ) );
     
     die();
+  }
+}
+
+/**
+ * Active widgets
+ *
+ * Gathers active widgets into an array with ID base, name, etc.
+ * Used by export and import functions.
+ *
+ * @global array $wp_registered_widget_updates
+ * @return array Widget information
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'archetype_active_widgets' ) ) {
+  function archetype_active_widgets() {
+    global $wp_registered_widget_controls;
+    
+    $available_widgets = array();
+    $widget_controls   = $wp_registered_widget_controls;
+    
+    // Get all available widgets the site supports
+    foreach ( $widget_controls as $widget ) {
+  
+      if ( ! empty( $widget['id_base'] ) && ! isset( $available_widgets[$widget['id_base']] ) ) { // no dupes
+  
+        $available_widgets[$widget['id_base']]['id_base'] = $widget['id_base'];
+        $available_widgets[$widget['id_base']]['name'] = $widget['name'];
+  
+      }
+  
+    }
+    
+    // Filter and return active widgets array
+    return apply_filters( 'archetype_active_widgets', $available_widgets );
   }
 }
 

@@ -346,31 +346,65 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ));
 
     /**
-     * Add the import control.
+     * Add the import Customizer control.
      */
-    $wp_customize->add_control( new Archetype_Import_Control( $wp_customize, 'archetype_import', array(
-      'label'       => __( 'Import', 'archetype' ),
+    $wp_customize->add_control( new Archetype_Import_Customizer_Control( $wp_customize, 'archetype_import_customizer', array(
+      'label'       => __( 'Import Customizer', 'archetype' ),
       'section'     => 'archetype_import_export',
       'settings'    => 'archetype_import_export',
       'description' => __( 'Upload a file to import customization settings for this theme.', 'archetype' ),
       'priority'    => 1
     ) ) );
     
-    $wp_customize->add_control( new Archetype_Divider_Control( $wp_customize, 'archetype_import_export_divider', array(
+    $wp_customize->add_control( new Archetype_Divider_Control( $wp_customize, 'archetype_import_customizer_divider', array(
       'section'     => 'archetype_import_export',
       'settings'    => 'archetype_import_export',
       'priority'    => 2,
     ) ) );
-
+    
     /**
-     * Add the export control.
+     * Add the export Customizer control.
      */
-    $wp_customize->add_control( new Archetype_Export_Control( $wp_customize, 'archetype_export', array(
-      'label'       => __( 'Export', 'archetype' ),
+    $wp_customize->add_control( new Archetype_Export_Customizer_Control( $wp_customize, 'archetype_export_customizer', array(
+      'label'       => __( 'Export Customizer', 'archetype' ),
       'section'     => 'archetype_import_export',
       'settings'    => 'archetype_import_export',
       'description' => __( 'Click the button below to export the customization settings for this theme.', 'archetype' ),
       'priority'    => 3
+    ) ) );
+    
+    $wp_customize->add_control( new Archetype_Divider_Control( $wp_customize, 'archetype_export_customizer_divider', array(
+      'section'     => 'archetype_import_export',
+      'settings'    => 'archetype_import_export',
+      'priority'    => 4,
+    ) ) );
+    
+    /**
+     * Add the import Widgets control.
+     */
+    $wp_customize->add_control( new Archetype_Import_Widgets_Control( $wp_customize, 'archetype_import_widgets', array(
+      'label'       => __( 'Import Widgets', 'archetype' ),
+      'section'     => 'archetype_import_export',
+      'settings'    => 'archetype_import_export',
+      'description' => __( 'Upload a file to import widget settings for this theme.', 'archetype' ),
+      'priority'    => 5
+    ) ) );
+    
+    $wp_customize->add_control( new Archetype_Divider_Control( $wp_customize, 'archetype_import_widgets_divider', array(
+      'section'     => 'archetype_import_export',
+      'settings'    => 'archetype_import_export',
+      'priority'    => 6,
+    ) ) );
+    
+    /**
+     * Add the export Widgets control.
+     */
+    $wp_customize->add_control( new Archetype_Export_Widgets_Control( $wp_customize, 'archetype_export_widgets', array(
+      'label'       => __( 'Export Widgets', 'archetype' ),
+      'section'     => 'archetype_import_export',
+      'settings'    => 'archetype_import_export',
+      'description' => __( 'Click the button below to export the widgets for this theme.', 'archetype' ),
+      'priority'    => 7
     ) ) );
   }
 }

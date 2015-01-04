@@ -1,29 +1,39 @@
-@import 'config';
+/**
+ * Imports
+ */
+@import 'bourbon';
+@import '../../../../sass/modules/variables';
+@import '../../../../sass/modules/mixins';
+@import '../../../../sass/vendor/gridset';
 
 /**
- * Customizer
+ * Customizer & Widgets Import
  */
 
-.customize-import-form {
+.customize-import-form,
+.widgets-import-form {
   position: absolute;
   left: -99999px;
 }
 
-.customize-import-file {
-  background: #eeeeee;
+.customize-import-file,
+.widgets-import-file {
+  background: #eee;
   width: 100%;
   margin: 10px 0;
   padding: 10px;
   font-size: 12px;
 }
 
-.customize-import-images {
+.customize-import-images,
+.widgets-import-images {
   display: block;
   margin-bottom: 10px;
 }
 
-.customize-import-uploading {
-  background: #eeeeee;
+.customize-import-uploading,
+.widgets-import-uploading {
+  background: #eee;
   display: none;
   margin: 10px 0;
   padding: 10px;
