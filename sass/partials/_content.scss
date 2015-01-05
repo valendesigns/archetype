@@ -14,20 +14,23 @@
 }
 
 .hentry {
-  margin: 0 0 4.236em;
-  padding-bottom: 3.631em;
-  border-bottom: 6px solid rgba(0,0,0,0.05);
+  background: $post-background;
+  margin-bottom: 1.875em;
+  padding: 1.875em;
+  position: relative;
+  box-shadow: $post-shadow 0px 1px 0px;
+  border-radius: $radius;
 
   .wp-post-image {
     margin-bottom: 1.618em;
   }
 
   .entry-header {
-    border-bottom: 3px solid $color_body;
+    border-bottom: 3px solid $color-body;
     margin-bottom: 3.631em;
 
     h1 {
-      border-bottom: 1px solid $color_border;
+      border-bottom: 1px solid $color-border;
       padding-bottom: .618em;
       margin-bottom: 3px;
     }
@@ -40,7 +43,7 @@
 
   .entry-meta {
     a {
-      border-bottom: 1px solid $color_border;
+      border-bottom: 1px solid $color-border;
 
       &:hover {
         border-bottom-color: rgba(0,0,0,0.2);
@@ -101,14 +104,14 @@
     @include clearfix;
 
     .entry-meta {
-      @include gs-span(c, 1, 2, (1, 9));
+      @include gs-span(c, 1, 2, (1, $grid-content));
       @include gs-float(c, left);
-      margin-right: gs-adjust(c, gs-gutter(c), (1, 9), true);
+      margin-right: gs-adjust(c, gs-gutter(c), (1, $grid-content), true);
       font-size: .857em;
     }
 
     .entry-content {
-      @include gs-span(c, 3, 9, (1, 9));
+      @include gs-span(c, 3, $grid-content, (1, $grid-content));
       @include gs-float(c, left);
       margin-right: 0;
     }

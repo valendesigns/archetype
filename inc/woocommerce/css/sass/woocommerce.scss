@@ -55,7 +55,7 @@
 
   .widget_shopping_cart {
     display: none;
-    background-color: #ee543f;
+    background-color: $header-background;
   }
 }
 
@@ -107,7 +107,7 @@ ul.products {
 
     .price {
       display: block;
-      color: $color_body;
+      color: $color-body;
       font-weight: 400;
 
       ins {
@@ -221,14 +221,14 @@ ul.products {
     .variations_button {
       @include clearfix;
       padding-top: 1em;
-      border-top: 1px solid $color_border;
+      border-top: 1px solid $color-border;
     }
 
     .woocommerce-product-rating {
       margin-bottom: 2.618em;
       @include clearfix;
       line-height: 1;
-      border-bottom: 1px solid $color_border;
+      border-bottom: 1px solid $color-border;
       padding: 0 0 1.618em;
       margin-top: -.618em;
 
@@ -260,7 +260,7 @@ ul.products {
     margin-left: 0;
 
     li {
-      border-bottom: 1px solid $color_border;
+      border-bottom: 1px solid $color-border;
       margin-bottom: 3.631em;
       list-style: none;
 
@@ -284,7 +284,7 @@ ul.products {
 
       ul.children {
         margin-left: 0;
-        border-top: 1px solid $color_border;
+        border-top: 1px solid $color-border;
         @include gs-span(c, 5, 9, (4, 9)); // This specifies the columns
         float: none;
         padding-top: 1.618em;
@@ -311,7 +311,7 @@ ul.products {
  */
 .woocommerce-pagination {
   padding: 1em 0;
-  border: 1px solid $color_border;
+  border: 1px solid $color-border;
   border-width: 1px 0;
   text-align: center;
 
@@ -346,7 +346,7 @@ ul.products {
 
       a.page-numbers {
         &:hover {
-          border-color: $color_border;
+          border-color: $color-border;
         }
       }
     }
@@ -382,7 +382,7 @@ ul.products {
 
   li {
     padding: 1em 0;
-    border-bottom: 1px dotted $color_border;
+    border-bottom: 1px dotted $color-border;
     @include clearfix;
     
     &:last-child {
@@ -396,15 +396,15 @@ ul.products {
 
     .quantity {
       display: block;
-      color: lighten( $color_body, 20% );
+      color: lighten( $color-body, 20% );
     }
   }
 
   a {
-    color: darken( $color_body, 10% );
+    color: darken( $color-body, 10% );
 
     &:hover {
-      color: $color_links;
+      color: $color-link;
     }
   }
 }
@@ -434,7 +434,7 @@ ul.products {
   }
 
   p.total {
-    border-bottom: 1px solid $color_border;
+    border-bottom: 1px solid $color-border;
   }
 }
 
@@ -525,7 +525,7 @@ ul.products {
     @include border-bottom-radius(1em);
     cursor: ew-resize;
     outline: none;
-    background: $color_links;
+    background: $color-link;
     @include box-sizing(border-box);
     margin-top: -.25em;
     opacity: 1;
@@ -546,7 +546,7 @@ ul.products {
     font-size: .7em;
     display: block;
     border: 0;
-    background: $color_links;
+    background: $color-link;
     @include border-top-radius(1em);
     @include border-bottom-radius(1em);
   }
@@ -613,7 +613,7 @@ table.cart {
     .coupon {
       padding-bottom: 1em;
       margin-bottom: 1em;
-      border-bottom: 1px dotted $color_border;
+      border-bottom: 1px dotted $color-border;
     }
 
     input {
@@ -682,7 +682,7 @@ form.checkout {
 
 #payment {
   @include clearfix;
-  border-top: 3px solid $color_border;
+  border-top: 3px solid $color-border;
 
   .create-account {
     clear: both;
@@ -690,13 +690,13 @@ form.checkout {
 
   .payment_methods {
     margin: 0 !important;
-    border-bottom: 1px dotted $color_border;
+    border-bottom: 1px dotted $color-border;
     padding: 0 !important;
 
     li {
       list-style: none !important;
       padding: 1.387em !important;
-      border-bottom: 1px dotted $color_border;
+      border-bottom: 1px dotted $color-border;
       margin-left: 0;
 
       img {
@@ -726,7 +726,7 @@ form.checkout {
         padding: 1.387em;
         margin: 1.387em -1.387em -1.387em -1.387em;
         background: rgba(0,0,0,0.035);
-        border-top: 1px dotted $color_border;
+        border-top: 1px dotted $color-border;
 
         fieldset {
           border: 0;
@@ -805,21 +805,21 @@ form.checkout {
   .col-1 {
     padding-bottom: 1.618em;
     margin-bottom: 1.618em;
-    border-bottom: 1px dotted $color_border;
+    border-bottom: 1px dotted $color-border;
   }
 }
 
 ul.order_details {
   @include clearfix;
   list-style: none;
-  border: 1px solid $color_border;
+  border: 1px solid $color-border;
   position: relative;
   margin-left: 0;
 
   li {
     float: left;
     padding: 1em 1.618em;
-    border-right: 1px solid $color_border;
+    border-right: 1px solid $color-border;
     font-size: .8em;
     text-transform: uppercase;
 
@@ -842,7 +842,7 @@ ul.digital-downloads {
   li {
     padding-bottom: 1em;
     margin-bottom: 1em;
-    border-bottom: 1px dotted $color_border;
+    border-bottom: 1px dotted $color-border;
 
     &:before {
       font-family: "FontAwesome";
@@ -964,7 +964,7 @@ ul.digital-downloads {
     top: 0;
     position: absolute;
     left: 0;
-    color: $color_links;
+    color: $color-link;
   }
 }
 
@@ -978,10 +978,10 @@ p.stars {
     margin-right: 1em;
     text-indent: -9999px;
     position: relative;
-    color: $color_body;
+    color: $color-body;
 
     &:hover {
-      color: $color_links;
+      color: $color-link;
     }
 
     &:last-child {
@@ -1074,8 +1074,8 @@ p.stars {
 
 .onsale {
   border: 2px solid;
-  border-color: $color_body;
-  color: $color_body;
+  border-color: $color-body;
+  color: $color-body;
   padding: .202em .618em;
   font-size: .857em;
   text-transform: uppercase;
@@ -1099,7 +1099,7 @@ p.stars {
   .plus,
   .minus {
     font-weight: 700;
-    color: $color_links;
+    color: $color-link;
     background-color: transparent;
     box-shadow: none;
 
@@ -1117,7 +1117,7 @@ p.stars {
 }
 
 .woocommerce-tabs {
-  border: 1px solid $color_border;
+  border: 1px solid $color-border;
   border-width: 1px 0;
   padding: 1em 0;
 
@@ -1133,7 +1133,7 @@ p.stars {
 
       &.active {
         a {
-          color: $color_body;
+          color: $color-body;
         }
 
         &:after {
@@ -1258,7 +1258,7 @@ dl.variation {
       &.star-2,
       &.star-3,
       &.star-4 {
-        border-right:1px solid $color_border;
+        border-right:1px solid $color-border;
       }
     }
   }
@@ -1739,7 +1739,7 @@ dl.variation {
     @include gs-span(c, 6, 9, (1, 9));
     @include gs-float(c, left);
     margin-right: 0;
-    border: 3px solid $color_links;
+    border: 3px solid $color-link;
   }
 
   #order_review_heading {
@@ -1860,7 +1860,7 @@ dl.variation {
         li {
           display: block;
           margin: 0;
-          border-bottom: 1px dotted $color_border;
+          border-bottom: 1px dotted $color-border;
 
           a {
             padding: 1em 0;

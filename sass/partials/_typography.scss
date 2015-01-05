@@ -17,7 +17,7 @@
 body {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-  font-size: .938em;
+  font-size: 1.000em;
 }
 
 body,
@@ -25,9 +25,9 @@ button,
 input,
 select,
 textarea {
-  color: $color_body;
+  color: $color-body;
   font-family: $base-font;
-  line-height: 1.618;
+  line-height: 1.500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,7 +41,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: 1.387em;
+    font-size: 1.125em;
   }
 }
 
@@ -53,16 +53,15 @@ h5,
 h6 {
   font-family: $header-font;
   clear: both;
-  font-weight: 700;
-  margin: 0 0 .618em;
-  color: darken( $color_body, 20% );
+  font-weight: 300;
+  margin: 0 0 .500em;
+  color: $color-heading;
 }
 
 h1,
 .alpha {
-  font-size: 2.244em;
-  letter-spacing: -1px;
-  line-height: 1.214;
+  font-size: 2.125em;
+  line-height: 1.176;
   font-weight: 300;
 
   a {
@@ -72,18 +71,17 @@ h1,
 
 h2,
 .beta {
-  font-size: 1.618em;
-  letter-spacing: -1px;
+  font-size: 1.500em;
 }
 
 h3,
 .gamma {
-  font-size: 1.387em;
+  font-size: 1.250em;
 }
 
 h4,
 .delta {
-  font-size: 1em;
+  font-size: 1.125em;
 }
 
 hr {
@@ -122,7 +120,7 @@ dt {
 }
 
 dd {
-  margin: 0 0 1.618em;
+  margin: 0 0 1.500em;
 }
 
 b,
@@ -149,9 +147,10 @@ address {
 
 pre {
   background: #fff9c0;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  margin-bottom: 1.618em;
-  padding: 1.618em;
+  font-family: $mono-font;
+  font-size: .875em;
+  margin-bottom: 1.500em;
+  padding: 1.500em;
   overflow: auto;
   max-width: 100%;
 }
@@ -160,9 +159,10 @@ code,
 kbd,
 tt,
 var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: $mono-font;
+  font-size: .875em;
   background-color: rgba(0,0,0,0.05);
-  padding: .202em .53em;
+  padding: .125em .250em;
 }
 
 abbr,
@@ -175,7 +175,7 @@ mark,
 ins {
   background: #fff9c0;
   text-decoration: none;
-  padding: .202em .53em;
+  padding: .125em .250em;
 }
 
 sup,
@@ -223,7 +223,10 @@ img {
 }
 
 a {
-  color: $color_links;
+  color: $color-link;
   text-decoration: none;
-  font-weight: 700;
+  
+  &:hover {
+    color: $color-link-hover;
+  }
 }

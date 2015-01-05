@@ -24,7 +24,7 @@ remove_action( 'woocommerce_after_main_content',   'woocommerce_output_content_w
 remove_action( 'woocommerce_sidebar',         'woocommerce_get_sidebar',           10 );
 add_action( 'woocommerce_before_main_content',     'archetype_before_content',         10 );
 add_action( 'woocommerce_after_main_content',     'archetype_after_content',         10 );
-add_action( 'archetype_content_top',         'woocommerce_breadcrumb',           10 );
+//add_action( 'archetype_content_top',         'woocommerce_breadcrumb',           10 );
 
 /**
  * Products
@@ -74,4 +74,4 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
  */
 add_action( 'wp_enqueue_scripts',             'archetype_woocommerce_integrations_scripts' );
 add_action( 'wp',                    'archetype_woocommerce_integrations_layout' );
-add_action( 'wp_enqueue_scripts',             'archetype_add_integrations_customizer_css' );
+//add_action( 'wp_enqueue_scripts',             'archetype_add_integrations_customizer_css' );

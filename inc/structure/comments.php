@@ -36,34 +36,36 @@ if ( ! function_exists( 'archetype_comment' ) ) {
     ?>
     <<?php echo esc_attr( $tag ); ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
     <div class="comment-body">
-    <div class="comment-meta commentmetadata">
-      <div class="comment-author vcard">
-      <?php echo get_avatar( $comment, 128 ); ?>
-      <?php printf( __( '<cite class="fn">%s</cite>', 'archetype' ), get_comment_author_link() ); ?>
+      
+      <div id="div-comment-<?php comment_ID() ?>" class="comment-content">
+        
+        <div class="comment-meta commentmetadata">
+          <div class="comment-author vcard">
+            <?php echo get_avatar( $comment, 120 ); ?>
+            <?php printf( __( '<cite class="fn">%s</cite>', 'archetype' ), get_comment_author_link() ); ?>
+          </div>
+          
+           <div class="reply">
+            <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+          </div>
+          
+          <a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>" class="comment-date">
+            <?php echo '<time>' . human_time_diff( get_comment_time('U'), current_time('timestamp') ) . ' ago' . '</time>'; ?>
+          </a>
+          
+          <?php if ( $comment->comment_approved == '0' ) : ?>
+          <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'archetype' ); ?></em>
+          <?php endif; ?>
+
+        </div>
+      
+        <?php comment_text(); ?>
+        
+        <?php edit_comment_link( __( 'Edit', 'archetype' ), '  ', '' ); ?>
+
       </div>
-      <?php if ( $comment->comment_approved == '0' ) : ?>
-        <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'archetype' ); ?></em>
-        <br />
-      <?php endif; ?>
-
-      <a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>" class="comment-date">
-        <?php echo '<time>' . get_comment_date() . '</time>'; ?>
-      </a>
+    
     </div>
-    <?php if ( 'div' != $args['style'] ) : ?>
-    <div id="div-comment-<?php comment_ID() ?>" class="comment-content">
-    <?php endif; ?>
-
-    <?php comment_text(); ?>
-
-    <div class="reply">
-    <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-    <?php edit_comment_link( __( 'Edit', 'archetype' ), '  ', '' ); ?>
-    </div>
-    </div>
-    <?php if ( 'div' != $args['style'] ) : ?>
-    </div>
-    <?php endif; ?>
   <?php
   }
 }

@@ -16,10 +16,9 @@
   h1 {
     font-size: 1em;
     letter-spacing: 0;
-    border-bottom: 3px solid $color_body;
+    border-bottom: 3px solid $color-body;
     padding: 0 0 1em;
     margin-bottom: 1em;
-    font-weight: 700;
   }
 
   ul {
@@ -195,12 +194,12 @@
     }
 
     a {
-      color: $color_body;
+      color: $color-body;
       font-weight: 400;
       opacity: 0.5;
 
       &:hover {
-        color: $color_links;
+        color: $color-link;
         opacity: 1;
       }
 

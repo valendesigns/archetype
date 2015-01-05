@@ -27,7 +27,7 @@
   .wc-bookings-date-picker {
     .ui-datepicker-header {
       border: 0;
-      background-color: $color_body;
+      background-color: $color-body;
       background-image: none;
     }
 
@@ -47,7 +47,7 @@
       th {
         background: rgba(0,0,0,0.1);
         border: 0;
-        color: $color_body;
+        color: $color-body;
       }
 
       td {
@@ -58,17 +58,17 @@
 
           .ui-state-default {
             background-color: rgba(0,0,0,0.1);
-            color: $color_body;
+            color: $color-body;
           }
         }
 
         &.bookable {
           a {
             text-shadow: none;
-            background-color: $color_links !important;
+            background-color: $color-link !important;
 
             &:hover {
-              background-color: $color_links !important;
+              background-color: $color-link !important;
             }
 
             &.ui-state-active {
@@ -91,7 +91,7 @@
   }
 
   .wc-bookings-date-picker-choose-date {
-    color: $color_links;
+    color: $color-link;
   }
 
   .block-picker {
@@ -104,17 +104,17 @@
         display: inline-block;
         text-align: center;
         color: #fff;
-        background-color: $color_body;
+        background-color: $color-body;
 
         &:hover {
           color: #fff;
-          background-color: $color_links;
+          background-color: $color-link;
           text-decoration: none;
           border: 0;
         }
 
         &.selected {
-          background-color: $color_links;
+          background-color: $color-link;
           color: #fff;
         }
       }

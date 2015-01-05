@@ -23,7 +23,7 @@
   .woocommerce-active {
     .site-header {
       .secondary-navigation {
-        @include gs-span(c, 4, 9);
+        @include gs-span(c, 4, $grid-content);
         @include gs-float(c, left);
         margin-right: 0;
       }
@@ -35,7 +35,7 @@
       }
 
       .main-navigation {
-        @include gs-span(c, 1, 9);
+        @include gs-span(c, 1, $grid-content);
         @include gs-float(c, left);
         clear: both;
       }
@@ -86,7 +86,7 @@
 
   .col-full {
     @include clearfix;
-    max-width: 76.000em;
+    max-width: 71.25em;
     margin: 0 auto;
   }
 
@@ -95,7 +95,7 @@
   }
 
   .content-area {
-    @include gs-span(c, 1, 9);
+    @include gs-span(c, 1, $grid-content);
     @include gs-float(c, left);
   }
 
@@ -107,7 +107,7 @@
 
   .right-sidebar {
     .content-area {
-      @include gs-span(c, 1, 9);
+      @include gs-span(c, 1, $grid-content);
       @include gs-float(c, left);
     }
 
@@ -200,7 +200,7 @@
   }
 }
 
-@media screen and (max-width: 76.000em) {
+@media screen and (max-width: 71.25em) {
   .col-full {
     margin-left: 2.618em;
     margin-right: 2.618em;
