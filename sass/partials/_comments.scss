@@ -37,8 +37,8 @@
         position: absolute;
         @include clearfix;
         pointer-events: none;
-        border-color: rgba(255, 255, 255, 0);
-        border-right-color: #ffffff;
+        border-color: rgba(red($post-background), green($post-background), blue($post-background), 0);
+        border-right-color: $post-background;
         border-width: .625em;
         margin-top: -.625em;
       }
@@ -73,8 +73,6 @@
         font-size: .857em;
         line-height: 1.86;
         margin-left: .500em;
-        
-
       }
     
       a.comment-date {

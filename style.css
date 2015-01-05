@@ -1657,7 +1657,7 @@ object {
         position: absolute;
         pointer-events: none;
         border-color: rgba(255, 255, 255, 0);
-        border-right-color: #ffffff;
+        border-right-color: #fff;
         border-width: .625em;
         margin-top: -.625em; }
         #comments .comment-list .comment-content:after:after {
