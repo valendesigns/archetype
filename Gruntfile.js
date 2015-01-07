@@ -3,7 +3,9 @@ module.exports = function( grunt ) {
   'use strict';
 
   grunt.initConfig({
-
+    
+    pkg: grunt.file.readJSON( 'package.json' ),
+    
     // JavaScript linting with JSHint.
     jshint: {
       options: {
@@ -170,7 +172,7 @@ module.exports = function( grunt ) {
       },
       frontend: {
         options: {
-          potFilename: 'archetype.pot',
+          potFilename: '<%= pkg.name %>.pot',
           processPot: function ( pot ) {
             pot.headers['project-id-version'];
             return pot;
@@ -182,7 +184,7 @@ module.exports = function( grunt ) {
     // Check textdomain errors.
     checktextdomain: {
       options:{
-        text_domain: 'archetype',
+        text_domain: '<%= pkg.name %>',
         keywords: [
           '__:1,2d',
           '_e:1,2d',
@@ -227,7 +229,7 @@ module.exports = function( grunt ) {
           '!tests/**',
           '!phpunit.xml.dist'
         ],
-        dest: 'build/archetype',
+        dest: 'dist/<%= pkg.name %>',
         expand: true,
         dot: true
       }
@@ -236,16 +238,14 @@ module.exports = function( grunt ) {
     compress: {
       deploy: {
         options: {
-          archive: function () {
-            var pkg = grunt.file.readJSON( 'package.json' );
-            return 'build/archetype-' + pkg.version + '.zip'
-          }
+          archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip',
+          mode: 'zip'
         },
         files: [{
           expand: true,
-          cwd: 'build/archetype/',
-          src: ['**'],
-          dest: 'archetype/'
+          cwd: 'dist/<%= pkg.name %>/',
+          src: ['**/*'],
+          dest: '<%= pkg.name %>'
         }]
       }
     },
@@ -255,7 +255,7 @@ module.exports = function( grunt ) {
 				src: ['style-rtl.css']
       },
       deploy: {
-        src: ['build/archetype']
+        src: ['dist/<%= pkg.name %>']
       }
     }
 
