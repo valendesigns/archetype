@@ -1388,12 +1388,6 @@ fieldset {
 /**
  * Content
  */
-.sticky .entry-title:before {
-  font-family: "FontAwesome";
-  font-weight: 400;
-  margin-right: .53em;
-  content: "\f08d"; }
-
 .hentry {
   background: #fff;
   margin-bottom: 1.875em;
@@ -1404,46 +1398,66 @@ fieldset {
   .hentry .wp-post-image {
     margin-bottom: 1.618em; }
   .hentry .entry-header {
-    border-bottom: 3px solid #555;
-    margin-bottom: 3.631em; }
+    padding-top: .313em;
+    margin-bottom: 1.875em; }
     .hentry .entry-header h1 {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      padding-bottom: .618em;
-      margin-bottom: 3px; }
-    .hentry .entry-header .posted-on,
-    .hentry .entry-header .byline {
-      font-size: .857em; }
-  .hentry .entry-meta a {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-    .hentry .entry-meta a:hover {
-      border-bottom-color: rgba(0, 0, 0, 0.2); }
+      margin: 0; }
+      .hentry .entry-header h1 a {
+        color: #333; }
+        .hentry .entry-header h1 a:hover {
+          text-decoration: underline; }
+  .hentry .entry-meta {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.875em; }
+    .hentry .entry-meta + .entry-content {
+      padding-top: 1.875em; }
 
-.byline,
 .updated:not(.published) {
   display: none; }
-
-.single .byline, .group-blog .byline {
-  display: inline; }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
+.sticky-post {
+  background-color: #555;
+  color: #fff;
+  font-size: .875em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.375;
+  padding: .250em .750em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  border-radius: 0 0 3px 3px; }
+
+.posted-on,
+.byline,
 .cat-links,
 .tags-links,
 .comments-link,
 .edit-link {
-  display: block;
-  margin-bottom: 1em; }
+  margin-right: 1em; }
+  .posted-on:before,
+  .byline:before,
   .cat-links:before,
   .tags-links:before,
   .comments-link:before,
   .edit-link:before {
     content: "\f114";
     font-family: "FontAwesome";
-    margin-right: .53em;
+    margin-right: .375em;
     display: inline-block;
     width: 1em; }
+
+.posted-on:before {
+  content: "\f017"; }
+.sticky-post + .posted-on {
+  display: none; }
+
+.byline:before {
+  content: "\f007"; }
 
 .tags-links:before {
   content: "\f02b"; }
@@ -1460,28 +1474,7 @@ fieldset {
     display: table;
     clear: both; }
   .hentry.type-post .entry-meta {
-    display: block;
-    float: left;
-    margin-left: 0;
-    margin-right: -100%;
-    width: 18.01802%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%;
-    margin-right: 5.40541%;
-    font-size: .857em; }
-  .hentry.type-post .entry-content {
-    display: block;
-    float: left;
-    margin-left: 23.42342%;
-    margin-right: -100%;
-    width: 76.57658%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%;
-    margin-right: 0; } }
+    font-size: .875em; } }
 /**
  * Post Formats
  */

@@ -56,7 +56,7 @@ if ( ! function_exists( 'archetype_post_meta' ) ) {
    */
   function archetype_post_meta() {
     ?>
-    <footer class="entry-footer">
+    <aside class="entry-meta">
       <?php
       if ( is_sticky() && is_home() && ! is_paged() ) {
         printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'archetype' ) );
@@ -135,8 +135,10 @@ if ( ! function_exists( 'archetype_post_meta' ) ) {
         comments_popup_link( __( 'Leave a comment', 'archetype' ), __( '1 Comment', 'archetype' ), __( '% Comments', 'archetype' ) );
         echo '</span>';
       }
+      
+      edit_post_link( __( 'Edit', 'archetype' ), '<span class="edit-link">', '</span>' );
       ?>
-    </footer>
+    </aside>
     <?php
   }
 }

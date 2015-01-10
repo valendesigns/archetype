@@ -2,17 +2,6 @@
  * Content
  */
 
-.sticky {
-  .entry-title {
-    &:before {
-      font-family: "FontAwesome";
-      font-weight: 400;
-      margin-right: .53em;
-      content: "\f08d";
-    }
-  }
-}
-
 .hentry {
   background: $post-background;
   margin-bottom: 1.875em;
@@ -26,58 +15,85 @@
   }
 
   .entry-header {
-    border-bottom: 3px solid $color-body;
-    margin-bottom: 3.631em;
+    padding-top: .313em;
+    margin-bottom: 1.875em;
 
     h1 {
-      border-bottom: 1px solid $color-border;
-      padding-bottom: .618em;
-      margin-bottom: 3px;
-    }
-
-    .posted-on,
-    .byline {
-      font-size: .857em;
-    }
-  }
-
-  .entry-meta {
-    a {
-      border-bottom: 1px solid $color-border;
-
-      &:hover {
-        border-bottom-color: rgba(0,0,0,0.2);
+      margin: 0;
+      
+      a {
+        color: $color-heading;
+        
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
+  
+  .entry-meta {
+    border-top: 1px solid $color-border;
+    padding-top: 1.875em;
+  
+    + .entry-content {
+      padding-top: 1.875em;
+    }
+  }
 }
-.byline,
+
 .updated:not(.published) {
   display: none;
 }
-.single, .group-blog {
-  .byline {
-    display: inline;
-  }
-}
+
 .page-links {
   clear: both;
   margin: 0 0 $vspacing;
 }
 
+.sticky-post {
+  background-color: $color-body;
+  color: $post-background;
+  font-size: .875em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.375;
+  padding: .250em .750em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  border-radius: 0 0 $radius $radius;
+}
+
+.posted-on,
+.byline,
 .cat-links,
 .tags-links,
 .comments-link,
 .edit-link {
-  display: block;
-  margin-bottom: 1em;
+  margin-right: 1em;
 
   &:before {
     content: "\f114";
     font-family: "FontAwesome";
-    margin-right: .53em;
+    margin-right: .375em;
     display: inline-block;
     width: 1em;
+  }
+}
+
+.posted-on {
+  &:before {
+    content: "\f017";
+  }
+  
+  .sticky-post + & {
+    display: none;
+  }
+}
+
+.byline {
+  &:before {
+    content: "\f007";
   }
 }
 
@@ -104,16 +120,7 @@
     @include clearfix;
 
     .entry-meta {
-      @include gs-span(c, 1, 2, (1, $grid-content));
-      @include gs-float(c, left);
-      margin-right: gs-adjust(c, gs-gutter(c), (1, $grid-content), true);
-      font-size: .857em;
-    }
-
-    .entry-content {
-      @include gs-span(c, 3, $grid-content, (1, $grid-content));
-      @include gs-float(c, left);
-      margin-right: 0;
+      font-size: .875em;
     }
   }
 }

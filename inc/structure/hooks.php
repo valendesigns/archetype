@@ -68,8 +68,8 @@ add_action( 'archetype_loop_post',         'archetype_post_content',     20 );
 add_action( 'archetype_loop_post',         'archetype_post_meta',        30 );
 add_action( 'archetype_loop_after',        'archetype_paging_nav',       10 );
 add_action( 'archetype_single_post',       'archetype_post_header',      10 );
-add_action( 'archetype_single_post',       'archetype_post_meta',        20 );
-add_action( 'archetype_single_post',       'archetype_post_content',     30 );
+add_action( 'archetype_single_post',       'archetype_post_content',     20 );
+add_action( 'archetype_single_post',       'archetype_post_meta',        30 );
 add_action( 'archetype_single_post_after', 'archetype_post_nav',         10 );
 add_action( 'archetype_single_post_after', 'archetype_display_comments', 10 );
 
