@@ -1671,6 +1671,24 @@ object {
   box-shadow: none !important; }
 
 /**
+ * Fluid Media
+ */
+.fluid-media {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; }
+  .fluid-media iframe,
+  .fluid-media object,
+  .fluid-media embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+/**
  * Pagination
  */
 .site-main [class*="navigation"] {

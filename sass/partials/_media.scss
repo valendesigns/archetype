@@ -100,3 +100,24 @@ object {
 .mejs-controls .mejs-button {
   box-shadow: none !important;
 }
+
+/**
+ * Fluid Media
+ */
+.fluid-media {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  
+  iframe, 
+  object, 
+  embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
