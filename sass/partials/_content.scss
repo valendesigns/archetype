@@ -64,6 +64,7 @@
   border-radius: 0 0 $radius $radius;
 }
 
+.entry-format,
 .posted-on,
 .byline,
 .cat-links,
@@ -74,10 +75,68 @@
 
   &:before {
     content: "\f114";
+    display: inline-block;
     font-family: "FontAwesome";
     margin-right: .375em;
-    display: inline-block;
+    position: relative;
     width: 1em;
+  }
+}
+
+.entry-format {
+  
+  .format-aside & {
+    &:before {
+      content: "\f192";
+    }
+  }
+  
+  .format-gallery & {
+    &:before {
+      content: "\f00a";
+    }
+  }
+  
+  .format-link & {
+    &:before {
+      content: "\f0c1";
+    }
+  }
+  
+  .format-image & {
+    &:before {
+      content: "\f03e";
+    }
+  }
+  
+  .format-quote & {
+    &:before {
+      content: "\f10d";
+    }
+  }
+  
+  .format-status & {
+    &:before {
+      content: "\f0b0";
+    }
+  }
+  
+  .format-video & {
+    &:before {
+      content: "\f008";
+    }
+  }
+  
+  .format-audio & {
+    &:before {
+      content: "\f001";
+    }
+  }
+  
+  .format-chat & {
+    &:before {
+      content: "\f1d7";
+    }
   }
 }
 

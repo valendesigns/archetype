@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-  $content_width = 980; /* pixels */
+  $content_width = 784; /* pixels */
 }
 
 /**
@@ -43,7 +43,7 @@ if ( ! function_exists( 'archetype_setup' ) ) :
     // wp-content/themes/theme-name/languages/it_IT.mo
     load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );
 
-    /**
+    /*
      * Add default posts and comments RSS feed links to head.
      */
     add_theme_support( 'automatic-feed-links' );
@@ -54,6 +54,13 @@ if ( ! function_exists( 'archetype_setup' ) ) :
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
      */
     add_theme_support( 'post-thumbnails' );
+    
+    /*
+     * Enable support for Post Formats.
+     *
+     * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Formats
+     */
+    add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
@@ -75,9 +82,12 @@ if ( ! function_exists( 'archetype_setup' ) ) :
       'default-image' => '',
     ) ) );
 
-    // Add support for the Site Logo plugin and the site logo functionality in JetPack
-    // https://github.com/automattic/site-logo
-    // http://jetpack.me/
+    /*
+     * Add support for the Site Logo plugin and the site logo functionality in JetPack
+     *
+     * @link https://github.com/automattic/site-logo
+     * @link http://jetpack.me/
+     */
     add_theme_support( 'site-logo', array( 'size' => 'full' ) );
 
     // Declare WooCommerce support

@@ -1432,6 +1432,7 @@ fieldset {
   top: 0;
   border-radius: 0 0 3px 3px; }
 
+.entry-format,
 .posted-on,
 .byline,
 .cat-links,
@@ -1439,6 +1440,7 @@ fieldset {
 .comments-link,
 .edit-link {
   margin-right: 1em; }
+  .entry-format:before,
   .posted-on:before,
   .byline:before,
   .cat-links:before,
@@ -1446,10 +1448,30 @@ fieldset {
   .comments-link:before,
   .edit-link:before {
     content: "\f114";
+    display: inline-block;
     font-family: "FontAwesome";
     margin-right: .375em;
-    display: inline-block;
+    position: relative;
     width: 1em; }
+
+.format-aside .entry-format:before {
+  content: "\f192"; }
+.format-gallery .entry-format:before {
+  content: "\f00a"; }
+.format-link .entry-format:before {
+  content: "\f0c1"; }
+.format-image .entry-format:before {
+  content: "\f03e"; }
+.format-quote .entry-format:before {
+  content: "\f10d"; }
+.format-status .entry-format:before {
+  content: "\f0b0"; }
+.format-video .entry-format:before {
+  content: "\f008"; }
+.format-audio .entry-format:before {
+  content: "\f001"; }
+.format-chat .entry-format:before {
+  content: "\f1d7"; }
 
 .posted-on:before {
   content: "\f017"; }
