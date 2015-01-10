@@ -8,9 +8,10 @@
 
   <?php
   /**
-   * @hooked archetype_post_header - 10
-   * @hooked archetype_post_content - 20
-   * @hooked archetype_post_meta - 30
+   * @hooked archetype_post_format_media() - 10
+   * @hooked archetype_post_header() - 20
+   * @hooked archetype_post_content() - 30
+   * @hooked archetype_post_meta() - 40
    */
   do_action( 'archetype_single_post' );
   ?>

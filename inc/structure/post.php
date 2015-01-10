@@ -5,6 +5,18 @@
  * @package archetype
  */
 
+if ( ! function_exists( 'archetype_post_format_media' ) ) {
+  /**
+   * Display the post format media 
+   * @since 1.0.0
+   */
+  function archetype_post_format_media() {
+    if ( has_post_thumbnail() ) {
+      the_post_thumbnail( 'full', array( 'itemprop' => 'image' ) );
+    }
+  }
+}
+
 if ( ! function_exists( 'archetype_post_header' ) ) {
   /**
    * Display the post header with a link to the single post
@@ -32,11 +44,6 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
   function archetype_post_content() {
     ?>
     <div class="entry-content" itemprop="articleBody">
-    <?php
-    if ( has_post_thumbnail() ) {
-      the_post_thumbnail( 'full', array( 'itemprop' => 'image' ) );
-    }
-    ?>
     <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'archetype' ) ); ?>
     <?php
       wp_link_pages( array(

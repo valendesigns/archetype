@@ -1189,7 +1189,7 @@ fieldset {
       margin-right: 4%; }
       .footer-widgets.col-4 .block.footer-widget-4 {
         margin-right: 0; } }
-@media screen and (max-width: 71.25em) {
+@media screen and (max-width: 74em) {
   .col-full {
     margin-left: 2.618em;
     margin-right: 2.618em; } }
@@ -1390,20 +1390,17 @@ fieldset {
  */
 .hentry {
   background: #fff;
-  margin-bottom: 1.875em;
-  padding: 1.875em;
+  margin-bottom: 2.618em;
   position: relative;
   box-shadow: #8b949b 0px 1px 0px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  overflow: hidden; }
   .hentry.type-post:after {
     content: "";
     display: table;
     clear: both; }
-  .hentry .wp-post-image {
-    margin-bottom: 1.618em; }
   .hentry .entry-header {
-    padding-top: .313em;
-    margin-bottom: 1.875em; }
+    padding: 2.618em; }
     .hentry .entry-header h1 {
       margin: 0; }
       .hentry .entry-header h1 a {
@@ -1414,9 +1411,12 @@ fieldset {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: .875em;
     font-weight: 300;
-    padding-top: 1.875em; }
-    .hentry .entry-meta + .entry-content {
-      padding-top: 1.875em; }
+    padding: 2.618em; }
+  .hentry .entry-content {
+    padding: 2.618em;
+    padding-top: 0; }
+    .entry-meta + .hentry .entry-content {
+      padding-top: 2.618em; }
 
 .updated:not(.published) {
   display: none; }
@@ -1496,6 +1496,30 @@ fieldset {
 .edit-link:before {
   content: "\f040"; }
 
+@media screen and (max-width: 568px) {
+  .hentry {
+    margin-bottom: 1.387em; }
+    .hentry .entry-header {
+      padding: 1.387em; }
+    .hentry .entry-meta {
+      padding: 1.387em; }
+    .hentry .entry-content {
+      padding: 1.387em;
+      padding-top: 0; }
+      .entry-meta + .hentry .entry-content {
+        padding-top: 1.387em; } }
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .hentry {
+    margin-bottom: 2.125em; }
+    .hentry .entry-header {
+      padding: 2.125em; }
+    .hentry .entry-meta {
+      padding: 2.125em; }
+    .hentry .entry-content {
+      padding: 2.125em;
+      padding-top: 0; }
+      .entry-meta + .hentry .entry-content {
+        padding-top: 2.125em; } }
 /**
  * Post Formats
  */

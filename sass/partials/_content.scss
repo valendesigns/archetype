@@ -4,23 +4,20 @@
 
 .hentry {
   background: $post-background;
-  margin-bottom: 1.875em;
-  padding: 1.875em;
+  margin-bottom: 2.618em;
   position: relative;
   box-shadow: $post-shadow 0px 1px 0px;
   border-radius: $radius;
+  overflow: hidden;
   
   &.type-post {
     @include clearfix;
   }
   
-  .wp-post-image {
-    margin-bottom: 1.618em;
-  }
+  .wp-post-image {}
 
   .entry-header {
-    padding-top: .313em;
-    margin-bottom: 1.875em;
+    padding: 2.618em;
 
     h1 {
       margin: 0;
@@ -39,10 +36,15 @@
     border-top: 1px solid $color-border;
     font-size: .875em;
     font-weight: 300;
-    padding-top: 1.875em;
+    padding: 2.618em;
+  }
   
-    + .entry-content {
-      padding-top: 1.875em;
+  .entry-content {
+    padding: 2.618em;
+    padding-top: 0;
+    
+    .entry-meta + & {
+      padding-top: 2.618em;
     }
   }
 }
@@ -180,4 +182,48 @@
   }
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (max-width: 568px) {
+  .hentry {
+    margin-bottom: 1.387em;
+    
+    .entry-header {
+      padding: 1.387em;
+    }
+    
+    .entry-meta {
+      padding: 1.387em;
+    }
+    
+    .entry-content {
+      padding: 1.387em;
+      padding-top: 0;
+      
+      .entry-meta + & {
+        padding-top: 1.387em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .hentry {
+    margin-bottom: 2.125em;
+    
+    .entry-header {
+      padding: 2.125em;
+    }
+    
+    .entry-meta {
+      padding: 2.125em;
+    }
+    
+    .entry-content {
+      padding: 2.125em;
+      padding-top: 0;
+      
+      .entry-meta + & {
+        padding-top: 2.125em;
+      }
+    }
+  }
+}
