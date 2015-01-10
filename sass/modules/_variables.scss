@@ -19,11 +19,19 @@ $color-header:                  #888;
 $color-heading:                 #333;
 $color-link:                    #ee543f;
 $color-link-hover:              #111;
-$color-button:                  #ed543f;
-$color-button-highlight:        #d94834;
+
+$color-button:                  #fff;
+$color-button-background:       #ed543f;
+$color-button-border:           #d94834;
+$color-button-shadow:           $color-button-border;
+
 $color-button-hover:            $color-body;
-$color-button-highlight-hover:  rgba($color-body, .3);
+$color-button-hover-background: #fff;
+$color-button-hover-border:     #8b949b;
+$color-button-hover-shadow:     $color-button-hover-border;
+
 $color-border:                  rgba(0,0,0,0.1);
+
 $error:                         #e2401c;
 $success:                       #17ba6f;
 $info:                          #3D9CD2;

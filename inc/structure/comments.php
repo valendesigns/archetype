@@ -33,15 +33,33 @@ if ( ! function_exists( 'archetype_comment' ) ) {
       $tag = 'li';
       $add_below = 'div-comment';
     }
+    
+    $comment_class = array();
+    
+    // Add parent class
+    if ( ! empty( $args['has_children'] ) ) {
+      $comment_class[] = 'parent';
+    }
+    
+    // Add avatar classes
+    if ( get_option( 'show_avatars' ) ) {
+      $comment_class[] = 'show-avatars';
+    }
+    if ( $avatar = get_avatar( $comment, 120 ) ) {
+      $comment_class[] = 'with-avatar';
+    } else {
+      $comment_class[] = 'without-avatar';
+    }
+
     ?>
-    <<?php echo esc_attr( $tag ); ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <<?php echo esc_attr( $tag ); ?> <?php comment_class( $comment_class ) ?> id="comment-<?php comment_ID() ?>">
     <div class="comment-body">
       
       <div id="div-comment-<?php comment_ID() ?>" class="comment-content">
         
         <div class="comment-meta commentmetadata">
           <div class="comment-author vcard">
-            <?php echo get_avatar( $comment, 120 ); ?>
+            <?php echo $avatar; ?>
             <?php printf( __( '<cite class="fn">%s</cite>', 'archetype' ), get_comment_author_link() ); ?>
           </div>
           

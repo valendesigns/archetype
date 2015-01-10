@@ -14,7 +14,6 @@
     margin: 0;
 
     .comment-body {
-      margin-left: 40px;
       position: relative;
       @include clearfix;
     }
@@ -26,22 +25,6 @@
       position: relative;
       box-shadow: $post-shadow 0px 1px 0px;
       border-radius: $radius;
-      
-      &:after {
-        right: 100%;
-        top: 1.125em;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        @include clearfix;
-        pointer-events: none;
-        border-color: rgba(red($post-background), green($post-background), blue($post-background), 0);
-        border-right-color: $post-background;
-        border-width: .625em;
-        margin-top: -.625em;
-      }
     }
     
     .comment-meta {
@@ -83,7 +66,7 @@
       }
     }
     
-    .bypostauthor {
+    .bypostauthor > .comment-body {
       cite {
         &:after {
           color: lighten($color-body, 20%);
@@ -113,6 +96,30 @@
       list-style: none;
       margin: 0;
     }
+  }
+  
+  .with-avatar > .comment-body {
+    margin-left: 40px;
+    
+    .comment-content:after {
+      right: 100%;
+      top: 1.125em;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      @include clearfix;
+      pointer-events: none;
+      border-color: rgba(red($post-background), green($post-background), blue($post-background), 0);
+      border-right-color: $post-background;
+      border-width: .625em;
+      margin-top: -.625em;
+    }
+  }
+  
+  .without-avatar > .comment-body {
+    margin-left: 0px;
   }
 }
 
@@ -173,14 +180,6 @@
           margin-top: -.625em;
         }
       }
-    
-      .comment-body {
-        margin-left: 90px;
-        
-        .children & {
-          margin-left: 60px;
-        }
-      }
 
       .comment-meta {
 
@@ -207,6 +206,27 @@
           max-width: 40px;
         }
       }
+    }
+    
+    .with-avatar > .comment-body,
+    .children .with-avatar > .comment-body {
+      margin-left: 90px;
+    }
+      
+    .children .children .with-avatar > .comment-body {
+      margin-left: 60px;
+    }
+    
+    .children .parent.show-avatars.without-avatar > .comment-body {
+      margin-left: 30px;
+    }
+    
+    .children .show-avatars.without-avatar > .comment-body #respond {
+      margin-left: 60px;
+    }
+    
+    .children .parent.show-avatars.without-avatar > .children {
+      margin-left: 90px;
     }
   }
 }
