@@ -205,13 +205,11 @@
     }
     
     .with-avatar > .comment-body,
-    .children .parent.show-avatars.without-avatar > .comment-body,
-    .children .parent.show-avatars.without-avatar > .children,
+    .children .show-avatars.without-avatar > .comment-body,
     .show-avatars.without-avatar > .comment-body #respond, {
       margin-left: 90px;
     }
-      
-    .children .children .with-avatar > .comment-body,
+
     .children .show-avatars.without-avatar > .comment-body #respond,
     .without-avatar > .comment-body #respond {
       margin-left: 60px;
