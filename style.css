@@ -1655,7 +1655,8 @@ object {
         display: table;
         clear: both; }
       #comments .comment-list .comment-meta .comment-author {
-        float: left; }
+        float: left;
+        margin-right: .500em; }
       #comments .comment-list .comment-meta .avatar {
         height: auto;
         max-width: 24px;
@@ -1668,8 +1669,7 @@ object {
       #comments .comment-list .comment-meta .reply {
         float: left;
         font-size: .857em;
-        line-height: 1.86;
-        margin-left: .500em; }
+        line-height: 1.86; }
       #comments .comment-list .comment-meta a.comment-date {
         display: none;
         font-size: .857em;
