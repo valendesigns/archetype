@@ -93,3 +93,10 @@ iframe,
 object {
   max-width: 100%;
 }
+
+.mejs-controls .mejs-time-rail .mejs-time-current {
+	background: $color-button-background !important;
+}
+.mejs-controls .mejs-button {
+  box-shadow: none !important;
+}

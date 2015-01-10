@@ -2,6 +2,26 @@
  * Content
  */
 
+.page-header {
+  background: $post-background;
+  margin-bottom: 2.618em;
+  padding: 2.618em;
+  box-shadow: inset $color-body 5px 0px 0px;
+  border-radius: 0 $radius $radius 0;
+  
+  .page-title {
+    margin-bottom: 0;
+  }
+  
+  .taxonomy-description {
+    font-weight: 300;
+    
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .hentry {
   background: $post-background;
   margin-bottom: 2.618em;
@@ -183,6 +203,11 @@
 }
 
 @media screen and (max-width: 568px) {
+  .page-header {
+    margin-bottom: 1.387em;
+    padding: 1.387em;
+  }
+  
   .hentry {
     margin-bottom: 1.387em;
     
@@ -206,6 +231,11 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
+  .page-header {
+    margin-bottom: 2.125em;
+    padding: 2.125em;
+  }
+  
   .hentry {
     margin-bottom: 2.125em;
     

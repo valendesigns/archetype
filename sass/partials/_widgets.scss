@@ -45,7 +45,7 @@
 }
 
 .header-widget-region {
-  margin-bottom: 4.236em;
+  margin-bottom: 2.618em;
 
   .widget {
     margin: 0;
@@ -207,5 +207,11 @@
         opacity: 1;
       }
     }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .header-widget-region  {
+    margin-bottom: 1.387em;
   }
 }
