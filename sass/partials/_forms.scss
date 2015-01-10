@@ -81,10 +81,6 @@ input[type="submit"],
   &.disabled {
     opacity: 0.5;
   }
-  
-  .mejs-button & {
-    box-shadow: none;
-  }
 }
 
 input[type="checkbox"],

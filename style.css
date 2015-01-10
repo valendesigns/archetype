@@ -870,13 +870,6 @@ input[type="submit"],
   .button.disabled,
   .added_to_cart.disabled {
     opacity: 0.5; }
-  .mejs-button button, .mejs-button
-  input[type="button"], .mejs-button
-  input[type="reset"], .mejs-button
-  input[type="submit"], .mejs-button
-  .button, .mejs-button
-  .added_to_cart {
-    box-shadow: none; }
 
 input[type="checkbox"],
 input[type="radio"] {
