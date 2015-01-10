@@ -1713,8 +1713,6 @@ object {
         content: "";
         display: table;
         clear: both; }
-  #comments .without-avatar > .comment-body {
-    margin-left: 0px; }
 
 .comment-content a {
   word-wrap: break-word; }
@@ -1763,16 +1761,14 @@ object {
       left: -60px;
       max-width: 40px; }
   #comments .with-avatar > .comment-body,
-  #comments .children .with-avatar > .comment-body {
+  #comments .children .parent.show-avatars.without-avatar > .comment-body,
+  #comments .children .parent.show-avatars.without-avatar > .children,
+  #comments .show-avatars.without-avatar > .comment-body #respond {
     margin-left: 90px; }
-  #comments .children .children .with-avatar > .comment-body {
-    margin-left: 60px; }
-  #comments .children .parent.show-avatars.without-avatar > .comment-body {
-    margin-left: 30px; }
-  #comments .children .show-avatars.without-avatar > .comment-body #respond {
-    margin-left: 60px; }
-  #comments .children .parent.show-avatars.without-avatar > .children {
-    margin-left: 90px; } }
+  #comments .children .children .with-avatar > .comment-body,
+  #comments .children .show-avatars.without-avatar > .comment-body #respond,
+  #comments .without-avatar > .comment-body #respond {
+    margin-left: 60px; } }
 /**
  * Widgets
  */

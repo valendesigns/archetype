@@ -117,10 +117,6 @@
       margin-top: -.625em;
     }
   }
-  
-  .without-avatar > .comment-body {
-    margin-left: 0px;
-  }
 }
 
 .comment-content a {
@@ -209,24 +205,16 @@
     }
     
     .with-avatar > .comment-body,
-    .children .with-avatar > .comment-body {
+    .children .parent.show-avatars.without-avatar > .comment-body,
+    .children .parent.show-avatars.without-avatar > .children,
+    .show-avatars.without-avatar > .comment-body #respond, {
       margin-left: 90px;
     }
       
-    .children .children .with-avatar > .comment-body {
+    .children .children .with-avatar > .comment-body,
+    .children .show-avatars.without-avatar > .comment-body #respond,
+    .without-avatar > .comment-body #respond {
       margin-left: 60px;
-    }
-    
-    .children .parent.show-avatars.without-avatar > .comment-body {
-      margin-left: 30px;
-    }
-    
-    .children .show-avatars.without-avatar > .comment-body #respond {
-      margin-left: 60px;
-    }
-    
-    .children .parent.show-avatars.without-avatar > .children {
-      margin-left: 90px;
     }
   }
 }
