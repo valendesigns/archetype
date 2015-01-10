@@ -56,16 +56,16 @@ add_action( 'homepage', 'archetype_on_sale_products',   60 );
 /**
  * Posts
  * @see  archetype_post_header()
- * @see  archetype_post_meta()
  * @see  archetype_post_content()
+ * @see  archetype_post_meta()
  * @see  archetype_paging_nav()
  * @see  archetype_single_post_header()
  * @see  archetype_post_nav()
  * @see  archetype_display_comments()
  */
 add_action( 'archetype_loop_post',         'archetype_post_header',      10 );
-add_action( 'archetype_loop_post',         'archetype_post_meta',        20 );
-add_action( 'archetype_loop_post',         'archetype_post_content',     30 );
+add_action( 'archetype_loop_post',         'archetype_post_content',     20 );
+add_action( 'archetype_loop_post',         'archetype_post_meta',        30 );
 add_action( 'archetype_loop_after',        'archetype_paging_nav',       10 );
 add_action( 'archetype_single_post',       'archetype_post_header',      10 );
 add_action( 'archetype_single_post',       'archetype_post_meta',        20 );

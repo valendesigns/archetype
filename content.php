@@ -9,8 +9,8 @@
   <?php
   /**
     * @hooked  archetype_post_header() - 10
-    * @hooked  archetype_post_meta() - 20
-    * @hooked  archetype_post_content() - 30
+    * @hooked  archetype_post_content() - 20
+    * @hooked  archetype_post_meta() - 30
    */
   do_action( 'archetype_loop_post' );
   ?>

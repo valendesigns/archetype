@@ -14,13 +14,8 @@ if ( ! function_exists( 'archetype_post_header' ) ) {
     <header class="entry-header">
     <?php
     if ( is_single() ) {
-      archetype_posted_on();
       the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
     } else {
-      if ( 'post' == get_post_type() ) {
-        archetype_posted_on();
-      }
-
       the_title( sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
     }
     ?>
@@ -56,36 +51,92 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
 
 if ( ! function_exists( 'archetype_post_meta' ) ) {
   /**
-   * Display the post meta
+   * Displays meta information for the author, categories, tags etc.
    * @since 1.0.0
    */
   function archetype_post_meta() {
     ?>
-    <aside class="entry-meta">
-      <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-
+    <footer class="entry-footer">
       <?php
-      /* translators: used between list items, there is a space after the comma */
-      $categories_list = get_the_category_list( __( ', ', 'archetype' ) );
-
-      if ( $categories_list && archetype_categorized_blog() ) : ?>
-        <span class="cat-links"><?php echo wp_kses_post( $categories_list ); ?></span>
-      <?php endif; // End if categories ?>
-
-      <?php
-      /* translators: used between list items, there is a space after the comma */
-      $tags_list = get_the_tag_list( '', __( ', ', 'archetype' ) );
-
-      if ( $tags_list ) : ?>
-        <span class="tags-links"><?php echo wp_kses_post( $tags_list ); ?></span>
-      <?php endif; // End if $tags_list ?>
-
-      <?php endif; // End if 'post' == get_post_type() ?>
-
-      <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-        <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'archetype' ), __( '1 Comment', 'archetype' ), __( '% Comments', 'archetype' ) ); ?></span>
-      <?php endif; ?>
-    </aside>
+      if ( is_sticky() && is_home() && ! is_paged() ) {
+        printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'archetype' ) );
+      }
+    
+      $format = get_post_format();
+      if ( current_theme_supports( 'post-formats', $format ) ) {
+        printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
+          sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'archetype' ) ),
+          esc_url( get_post_format_link( $format ) ),
+          get_post_format_string( $format )
+        );
+      }
+    
+      if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
+        $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    
+        if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+          $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+        }
+    
+        $time_string = sprintf( $time_string,
+          esc_attr( get_the_date( 'c' ) ),
+          get_the_date(),
+          esc_attr( get_the_modified_date( 'c' ) ),
+          get_the_modified_date()
+        );
+    
+        printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+          _x( 'Posted on', 'Used before publish date.', 'archetype' ),
+          esc_url( get_permalink() ),
+          $time_string
+        );
+      }
+    
+      if ( 'post' == get_post_type() ) {
+        if ( is_singular() || is_multi_author() ) {
+          printf( '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
+            _x( 'Author', 'Used before post author name.', 'archetype' ),
+            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+            get_the_author()
+          );
+        }
+    
+        $categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'archetype' ) );
+        if ( $categories_list && archetype_categorized_blog() ) {
+          printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+            _x( 'Categories', 'Used before category names.', 'archetype' ),
+            $categories_list
+          );
+        }
+    
+        $tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'archetype' ) );
+        if ( $tags_list ) {
+          printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+            _x( 'Tags', 'Used before tag names.', 'archetype' ),
+            $tags_list
+          );
+        }
+      }
+    
+      if ( is_attachment() && wp_attachment_is_image() ) {
+        // Retrieve attachment metadata.
+        $metadata = wp_get_attachment_metadata();
+    
+        printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
+          _x( 'Full size', 'Used before full size attachment link.', 'archetype' ),
+          esc_url( wp_get_attachment_url() ),
+          $metadata['width'],
+          $metadata['height']
+        );
+      }
+    
+      if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+        echo '<span class="comments-link">';
+        comments_popup_link( __( 'Leave a comment', 'archetype' ), __( '1 Comment', 'archetype' ), __( '% Comments', 'archetype' ) );
+        echo '</span>';
+      }
+      ?>
+    </footer>
     <?php
   }
 }
@@ -141,37 +192,5 @@ if ( ! function_exists( 'archetype_post_nav' ) ) {
       </div><!-- .nav-links -->
     </nav><!-- .navigation -->
     <?php
-  }
-}
-
-if ( ! function_exists( 'archetype_posted_on' ) ) {
-  /**
-   * Prints HTML with meta information for the current post-date/time and author.
-   */
-  function archetype_posted_on() {
-    $time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="datePublished">%2$s</time>';
-    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-      $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s" itemprop="datePublished">%4$s</time>';
-    }
-
-    $time_string = sprintf( $time_string,
-      esc_attr( get_the_date( 'c' ) ),
-      esc_html( get_the_date() ),
-      esc_attr( get_the_modified_date( 'c' ) ),
-      esc_html( get_the_modified_date() )
-    );
-
-    $posted_on = sprintf(
-      _x( 'Posted on %s', 'post date', 'archetype' ),
-      '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-    );
-
-    $byline = sprintf(
-      _x( 'by %s', 'post author', 'archetype' ),
-      '<span class="vcard author"><span class="fn" itemprop="author"><a class="url fn n" rel="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span></span>'
-    );
-
-    echo apply_filters( 'archetype_single_post_posted_on_html', '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>', $posted_on, $byline );
-
   }
 }
