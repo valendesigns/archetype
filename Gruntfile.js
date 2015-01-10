@@ -142,7 +142,9 @@ module.exports = function( grunt ) {
         ],
         tasks: [
           'sass',
-          'cssmin'
+          'cssjanus',
+          'cssmin',
+          'clean:core'
         ]
       },
       js: {
