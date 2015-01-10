@@ -1395,6 +1395,10 @@ fieldset {
   position: relative;
   box-shadow: #8b949b 0px 1px 0px;
   border-radius: 3px; }
+  .hentry.type-post:after {
+    content: "";
+    display: table;
+    clear: both; }
   .hentry .wp-post-image {
     margin-bottom: 1.618em; }
   .hentry .entry-header {
@@ -1408,6 +1412,8 @@ fieldset {
           text-decoration: underline; }
   .hentry .entry-meta {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: .875em;
+    font-weight: 300;
     padding-top: 1.875em; }
     .hentry .entry-meta + .entry-content {
       padding-top: 1.875em; }
@@ -1490,13 +1496,6 @@ fieldset {
 .edit-link:before {
   content: "\f040"; }
 
-@media screen and (min-width: 768px) {
-  .hentry.type-post:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .hentry.type-post .entry-meta {
-    font-size: .875em; } }
 /**
  * Post Formats
  */
