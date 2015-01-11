@@ -1459,6 +1459,7 @@ fieldset {
 .byline,
 .cat-links,
 .tags-links,
+.full-size-link,
 .comments-link,
 .edit-link {
   margin-right: 1em; }
@@ -1467,6 +1468,7 @@ fieldset {
   .byline:before,
   .cat-links:before,
   .tags-links:before,
+  .full-size-link:before,
   .comments-link:before,
   .edit-link:before {
     content: "\f114";
@@ -1505,6 +1507,9 @@ fieldset {
 
 .tags-links:before {
   content: "\f02b"; }
+
+.full-size-link:before {
+  content: "\f00e"; }
 
 .comments-link:before {
   content: "\f0e5"; }
