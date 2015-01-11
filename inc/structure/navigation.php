@@ -72,6 +72,13 @@ if ( ! function_exists( 'archetype_image_navigation' ) ) {
    * @since 1.0.0
    */
   function archetype_image_navigation() {
+    $attachments = array_values( get_children( array( 
+      'post_parent'     => get_post()->post_parent, 
+      'post_status'     => 'inherit', 
+      'post_type'       => 'attachment', 
+      'post_mime_type'  => 'image' 
+    ) ) );
+    if ( count( $attachments ) > 1 ) {
     ?>
     <nav class="navigation image-navigation" role="navigation">
       <h2 class="screen-reader-text"><?php __( 'Image navigation', 'archetype' ); ?></h2>
@@ -81,6 +88,7 @@ if ( ! function_exists( 'archetype_image_navigation' ) ) {
       </div><!-- .nav-links -->
     </nav><!-- .image-navigation -->
     <?php
+    }
   }
 }
 
