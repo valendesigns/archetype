@@ -78,6 +78,7 @@ if ( ! function_exists( 'archetype_image_navigation' ) ) {
       'post_type'       => 'attachment', 
       'post_mime_type'  => 'image' 
     ) ) );
+    // Are there images to navigate through?
     if ( count( $attachments ) > 1 ) {
     ?>
     <nav class="navigation image-navigation" role="navigation">
@@ -99,7 +100,6 @@ if ( ! function_exists( 'archetype_comment_navigation' ) ) {
    * @since 1.0.0
    */
   function archetype_comment_navigation() {
-    
     // Are there comments to navigate through?
     if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
     ?>
