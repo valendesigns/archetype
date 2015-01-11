@@ -1694,52 +1694,8 @@ object {
     width: 100%; }
 
 /**
- * Pagination
+ * Pagination (posts|images|comments)
  */
-.post-navigation {
-  background-color: #fff;
-  box-shadow: inset #8b949b 0px -1px 0px;
-  border-radius: 3px;
-  margin-bottom: 2.618em;
-  overflow: hidden; }
-  .post-navigation a {
-    display: block;
-    padding: 2.618em; }
-  .post-navigation span {
-    display: block; }
-  .post-navigation .meta-nav {
-    color: #555;
-    letter-spacing: 0.04em;
-    position: relative;
-    text-transform: uppercase;
-    z-index: 2; }
-  .post-navigation .post-title {
-    font-size: 1.500em;
-    font-weight: 300;
-    position: relative;
-    z-index: 2; }
-  .post-navigation .nav-next,
-  .post-navigation .nav-previous {
-    background-position: center;
-    background-size: cover;
-    position: relative; }
-  .post-navigation a:before {
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1; }
-  .post-navigation a:hover:before,
-  .post-navigation .post-navigation a:focus:before {
-    opacity: 0.5; }
-  .post-navigation .meta-nav {
-    opacity: 0.8; }
-  .post-navigation div + div {
-    border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
 .pagination,
 .image-navigation,
 .comment-navigation {
@@ -1890,6 +1846,56 @@ object {
     content: "\f054";
     right: -1px; }
 
+/**
+ * Post Navigation
+ */
+.post-navigation {
+  background-color: #fff;
+  box-shadow: inset #8b949b 0px -1px 0px;
+  border-radius: 3px;
+  margin-bottom: 2.618em;
+  overflow: hidden; }
+  .post-navigation a {
+    display: block;
+    padding: 2.618em; }
+  .post-navigation span {
+    display: block; }
+  .post-navigation .meta-nav {
+    color: #555;
+    letter-spacing: 0.04em;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2; }
+  .post-navigation .post-title {
+    font-size: 1.500em;
+    font-weight: 300;
+    position: relative;
+    z-index: 2; }
+  .post-navigation .nav-next,
+  .post-navigation .nav-previous {
+    background-position: center;
+    background-size: cover;
+    position: relative; }
+  .post-navigation a:before {
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; }
+  .post-navigation a:hover:before,
+  .post-navigation .post-navigation a:focus:before {
+    opacity: 0.5; }
+  .post-navigation .meta-nav {
+    opacity: 0.8; }
+  .post-navigation div + div {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+/**
+ * Page Navigation
+ */
 .page-links {
   clear: both;
   margin-bottom: 1.5em; }
@@ -1920,6 +1926,9 @@ object {
     padding-right: .500em;
     width: auto; }
 
+/**
+ * Phone
+ */
 @media screen and (max-width: 568px) {
   .post-navigation,
   .pagination,
@@ -1935,12 +1944,18 @@ object {
   .image-navigation .page-numbers,
   .comment-navigation .page-numbers {
     line-height: 2.667em; } }
+/**
+ * Tablet
+ */
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .post-navigation,
   .pagination,
   .image-navigation,
   .comment-navigation {
     margin-bottom: 2.125em; } }
+/**
+ * Tablet & Desktop
+ */
 @media screen and (min-width: 768px) {
   .pagination,
   .comment-navigation {

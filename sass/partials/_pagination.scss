@@ -1,71 +1,6 @@
 /**
- * Pagination
+ * Pagination (posts|images|comments)
  */
-
-
-.post-navigation {
-  background-color: $post-background;
-  box-shadow: inset $post-shadow 0px -1px 0px;
-  border-radius: $radius;
-  margin-bottom: 2.618em;
-  overflow: hidden;
-
-  a {
-    display: block;
-    padding: 2.618em;
-  }
-
-  span {
-    display: block;
-  }
-
-  .meta-nav {
-    color: $color-body;
-    letter-spacing: 0.04em;
-    position: relative;
-    text-transform: uppercase;
-    z-index: 2;
-  }
-
-  .post-title {
-    font-size: 1.500em;
-    font-weight: 300;
-    position: relative;
-    z-index: 2;
-  }
-
-  .nav-next,
-  .nav-previous {
-    background-position: center;
-    background-size: cover;
-    position: relative;
-  }
-
-  a:before {
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  a:hover:before,
-  .post-navigation a:focus:before {
-    opacity: 0.5;
-  }
-  
-  .meta-nav {
-    opacity: 0.8;
-  }
-  
-  div + div {
-    border-top: 1px solid $color-border;
-  }
-
-}
 
 .pagination,
 .image-navigation,
@@ -182,6 +117,80 @@
   }
 }
 
+
+/**
+ * Post Navigation
+ */
+
+.post-navigation {
+  background-color: $post-background;
+  box-shadow: inset $post-shadow 0px -1px 0px;
+  border-radius: $radius;
+  margin-bottom: 2.618em;
+  overflow: hidden;
+
+  a {
+    display: block;
+    padding: 2.618em;
+  }
+
+  span {
+    display: block;
+  }
+
+  .meta-nav {
+    color: $color-body;
+    letter-spacing: 0.04em;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .post-title {
+    font-size: 1.500em;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav-next,
+  .nav-previous {
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
+  a:before {
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  a:hover:before,
+  .post-navigation a:focus:before {
+    opacity: 0.5;
+  }
+  
+  .meta-nav {
+    opacity: 0.8;
+  }
+  
+  div + div {
+    border-top: 1px solid $color-border;
+  }
+
+}
+
+
+/**
+ * Page Navigation
+ */
+ 
 .page-links {
   clear: both;
   margin-bottom: $vspacing;
@@ -222,6 +231,10 @@
 }
 
 
+/**
+ * Phone
+ */
+ 
 @media screen and (max-width: 568px) {
   .post-navigation,
   .pagination,
@@ -244,6 +257,10 @@
   }
 }
 
+/**
+ * Tablet
+ */
+
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .post-navigation,
   .pagination,
@@ -252,6 +269,10 @@
     margin-bottom: 2.125em;
   }
 }
+
+/**
+ * Tablet & Desktop
+ */
 
 @media screen and (min-width: 768px) {
   .pagination,
