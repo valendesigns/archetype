@@ -5,6 +5,31 @@
  * @package archetype
  */
 
+if ( ! function_exists( 'archetype_image_attachment' ) ) {
+  /**
+   * Display the image attachment.
+   *
+   * @since 1.0.0
+   */
+  function archetype_image_attachment() { ?>
+    <div class="post-thumbnail">
+      <?php
+        /**
+         * Filter the default Archetype image attachment size.
+         *
+         * @since 1.0.0
+         *
+         * @param string $image_size Image size. Default 'large'.
+         */
+        $image_size = apply_filters( 'archetype_attachment_size', 'large' );
+
+        echo wp_get_attachment_image( get_the_ID(), $image_size, '', array( 'itemprop' => 'contentUrl' ) );
+      ?>
+    </div><!-- .post-thumbnail -->
+    <?php
+  }
+}
+
 if ( ! function_exists( 'archetype_image_header' ) ) {
   /**
    * Display the image header
@@ -30,18 +55,6 @@ if ( ! function_exists( 'archetype_image_content' ) ) {
     <div class="entry-content">
 
       <div class="entry-attachment">
-        <?php
-          /**
-           * Filter the default Archetype image attachment size.
-           *
-           * @since 1.0.0
-           *
-           * @param string $image_size Image size. Default 'large'.
-           */
-          $image_size = apply_filters( 'archetype_attachment_size', 'large' );
-
-          echo wp_get_attachment_image( get_the_ID(), $image_size, '', array( 'itemprop' => 'contentUrl' ) );
-        ?>
 
         <?php if ( has_excerpt() ) : ?>
           <div class="entry-caption" itemprop="caption">

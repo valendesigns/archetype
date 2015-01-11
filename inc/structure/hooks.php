@@ -97,9 +97,10 @@ add_action( 'archetype_page_after', 'archetype_display_comments', 10 );
  * @see archetype_display_comments()
  */
 add_action( 'archetype_single_image_before', 'archetype_image_navigation', 10 );
-add_action( 'archetype_single_image',        'archetype_image_header',     10 );
-add_action( 'archetype_single_image',        'archetype_image_content',    20 );
-add_action( 'archetype_single_image',        'archetype_image_meta',       30 );
+add_action( 'archetype_single_image',        'archetype_image_attachment', 10 );
+add_action( 'archetype_single_image',        'archetype_image_header',     20 );
+add_action( 'archetype_single_image',        'archetype_image_content',    30 );
+add_action( 'archetype_single_image',        'archetype_image_meta',       40 );
 add_action( 'archetype_single_image_after',  'archetype_post_navigation',  10 );
 add_action( 'archetype_single_image_after',  'archetype_display_comments', 20 );
 
