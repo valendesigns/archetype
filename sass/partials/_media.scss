@@ -14,29 +14,33 @@
   }
 }
 
+
 /**
  * Captions
  */
+
 .wp-caption {
-  margin-bottom: $vspacing;
-  max-width: 100%;
+	margin-bottom: $vspacing;
+	max-width: 100%;
 
   img[class*="wp-image-"] {
-    display: block;
-    margin: 1.2% auto 0;
-    max-width: 98%;
+  	display: block;
+  	margin: 0;
   }
+  
   .wp-caption-text {
-    text-align: left;
-    font-style: italic;
-    border-bottom: 2px solid $color-border;
-    padding: 1em 0;
+    font-size: .938em;
+    line-height: 1.5;
+    padding: 0.5em 0;
+    text-align: center;
   }
 }
+
 
 /**
  * Galleries
  */
+
 .gallery {
 
   @extend %clearfix;
@@ -65,33 +69,10 @@
 
 }
 
-/**
- * 14.1 Captions
- */
-
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 0;
-}
-
-.wp-caption-text {
-  font-size: .938em;
-  line-height: 1.5;
-  padding: 0.5em 0;
-}
 
 /**
  * Fluid Gallery Columns
  */
-
-.gallery {
-  margin-bottom: 1.6em;
-}
 
 .gallery-item {
   display: inline-block;
@@ -163,28 +144,29 @@
       clear: left;
     }
   }
+
+  .gallery-icon img {
+    margin: 0 auto;
+  }
+  
+  .gallery-caption {
+    display: block;
+    font-size: .938em;
+    line-height: 1.5;
+    padding: 0.5em 0;
+  
+    .gallery-columns-6 &,
+    .gallery-columns-7 &,
+    .gallery-columns-8 &,
+    .gallery-columns-9 & {
+      display: none;
+    }
+  }
 }
 
-.gallery-icon img {
-  margin: 0 auto;
-}
-
-.gallery-caption {
-  display: block;
-  font-size: .938em;
-  line-height: 1.5;
-  padding: 0.5em 0;
-}
-
-.gallery-columns-6 .gallery-caption,
-.gallery-columns-7 .gallery-caption,
-.gallery-columns-8 .gallery-caption,
-.gallery-columns-9 .gallery-caption {
-  display: none;
-}
 
 /**
- * Media Elements
+ * Media Elements Player
  */
  
 .mejs-controls {
@@ -196,6 +178,7 @@
     box-shadow: none !important;
   }
 }
+
 
 /**
  * Fluid Media
@@ -219,7 +202,11 @@
   }
 }
 
-/* Make sure embeds and iframes fit their containers */
+
+/**
+ * Make sure embeds and iframes fit their containers 
+ */
+
 embed,
 iframe,
 object {
