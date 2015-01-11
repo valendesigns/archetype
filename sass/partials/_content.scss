@@ -26,7 +26,7 @@
   background: $post-background;
   margin-bottom: 2.618em;
   position: relative;
-  box-shadow: $post-shadow 0px 1px 0px;
+  box-shadow: inset $post-shadow 0px -1px 0px;
   border-radius: $radius;
   overflow: hidden;
   
@@ -34,7 +34,14 @@
     @include clearfix;
   }
   
-  .wp-post-image {}
+  .post-thumbnail {
+  	border: 0;
+  	display: block;
+  }
+  .post-thumbnail img {
+  	display: block;
+  	margin: 0 auto;
+  }
 
   .entry-header {
     padding: 2.618em;

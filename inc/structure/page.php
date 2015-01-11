@@ -30,12 +30,7 @@ if ( ! function_exists( 'archetype_page_content' ) ) {
     ?>
     <div class="entry-content" itemprop="mainContentOfPage">
       <?php the_content(); ?>
-      <?php
-        wp_link_pages( array(
-          'before' => '<div class="page-links">' . __( 'Pages:', 'archetype' ),
-          'after'  => '</div>',
-        ) );
-      ?>
+      <?php archetype_page_navigation(); ?>
     </div><!-- .entry-content -->
     <?php
   }

@@ -65,7 +65,7 @@
 
 }
 
-@mixin gallery_column ( $margin: 2, $num: 4 ){
+@mixin gallery_column( $margin: 2, $num: 4 ){
   .gallery-columns-#{$num} .gallery-item {
      width: ( 100% - $margin * ( $num - 1 ) ) / $num;
      margin-right: $margin;
@@ -77,11 +77,9 @@
 
 }
 
-/* Fluid Gallery Columns
-   works well if you remove the default gallery styling
-   by adding the following to your functions.php
-   add_filter( 'use_default_gallery_style', '__return_false' );
-*/
+/**
+ * Fluid Gallery Columns
+ */
 
 @for $i from 2 through 9 {
   @include gallery_column( 2, $i );
@@ -94,10 +92,11 @@ object {
   max-width: 100%;
 }
 
+/* Fix Media Elements player */
 .mejs-controls .mejs-time-rail .mejs-time-current {
 	background: $color-button-background !important;
 }
-.mejs-controls .mejs-button {
+.mejs-controls .mejs-button button {
   box-shadow: none !important;
 }
 

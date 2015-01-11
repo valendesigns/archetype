@@ -21,6 +21,6 @@ while ( have_posts() ) : the_post();
 endwhile;
 
 /**
- * @hooked archetype_paging_nav - 10
+ * @hooked archetype_posts_navigation - 10
  */
 do_action( 'archetype_loop_after' );

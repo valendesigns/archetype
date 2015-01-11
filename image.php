@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying images.
  *
  * @package archetype
  */
@@ -13,14 +13,18 @@ get_header(); ?>
     <?php while ( have_posts() ) : the_post(); ?>
 
       <?php
-      do_action( 'archetype_single_post_before' );
+      /**
+       * @hooked archetype_image_navigation - 10
+       */
+      do_action( 'archetype_single_image_before' );
 
-      get_template_part( 'content', 'single' );
-
+      get_template_part( 'content', 'image' );
+      
       /**
        * @hooked archetype_post_navigation - 10
+       * @hooked archetype_display_comments - 20
        */
-      do_action( 'archetype_single_post_after' );
+      do_action( 'archetype_single_image_after' );
       ?>
 
     <?php endwhile; // end of the loop. ?>

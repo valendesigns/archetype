@@ -16,7 +16,7 @@ if ( ! isset( $content_width ) ) {
  * Archetype only works in WordPress 4.1 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) {
-	require get_template_directory() . '/inc/functions/back-compat.php';
+  require get_template_directory() . '/inc/functions/back-compat.php';
 }
 
 /**
@@ -102,6 +102,8 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 
     // Declare support for title theme feature
     add_theme_support( 'title-tag' );
+    
+    add_filter( 'use_default_gallery_style', '__return_false' );
   }
 endif; // archetype_setup
 
@@ -149,6 +151,7 @@ function archetype_widgets_init() {
 
 /**
  * Enqueue scripts and styles.
+ *
  * @since  1.0.0
  */
 function archetype_scripts() {
@@ -165,4 +168,45 @@ function archetype_scripts() {
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
+}
+
+/**
+ * Add featured image as background image to post navigation elements.
+ *
+ * @since 1.0.0
+ *
+ * @see wp_add_inline_style()
+ */
+function archetype_post_nav_background() {
+  if ( ! is_single() ) {
+    return;
+  }
+
+  $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+  $next     = get_adjacent_post( false, '', false );
+  $css      = '';
+
+  if ( is_attachment() && 'attachment' == $previous->post_type ) {
+    return;
+  }
+
+  if ( $previous &&  has_post_thumbnail( $previous->ID ) ) {
+    $prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'post-thumbnail' );
+    $css .= '
+      .post-navigation .nav-previous { background-image: url(' . esc_url( $prevthumb[0] ) . '); }
+      .post-navigation .nav-previous .post-title, .post-navigation .nav-previous a:hover .post-title, .post-navigation .nav-previous .meta-nav { color: #fff; }
+      .post-navigation .nav-previous a:before { background-color: rgba(0, 0, 0, 0.4); }
+    ';
+  }
+
+  if ( $next && has_post_thumbnail( $next->ID ) ) {
+    $nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'post-thumbnail' );
+    $css .= '
+      .post-navigation .nav-next { background-image: url(' . esc_url( $nextthumb[0] ) . '); }
+      .post-navigation .nav-next .post-title, .post-navigation .nav-next a:hover .post-title, .post-navigation .nav-next .meta-nav { color: #fff; }
+      .post-navigation .nav-next a:before { background-color: rgba(0, 0, 0, 0.4); }
+    ';
+  }
+
+  wp_add_inline_style( 'archetype-style', $css );
 }

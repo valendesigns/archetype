@@ -3,7 +3,6 @@
  */
 
 #comments {
-  padding-top: 1.875em;
       
   .comments-title {
     margin-bottom: 1.500em;
@@ -23,7 +22,7 @@
       margin-bottom: 1.875em;
       padding: 1.875em;
       position: relative;
-      box-shadow: $post-shadow 0px 1px 0px;
+      box-shadow: inset $post-shadow 0px -1px 0px;
       border-radius: $radius;
     }
     
@@ -130,7 +129,7 @@
   clear: both;
   margin-bottom: 1.875em;
   padding: 1.875em;
-  box-shadow: $post-shadow 0px 1px 0px;
+  box-shadow: inset $post-shadow 0px -1px 0px;
   border-radius: $radius;
 
   .comment-form-author,

@@ -7,19 +7,41 @@
 
 if ( ! function_exists( 'archetype_post_format_media' ) ) {
   /**
-   * Display the post format media 
+   * Display an optional post thumbnail.
+   *
+   * Wraps the post thumbnail in an anchor element on index views, or a div
+   * element when on single views.
+   *
    * @since 1.0.0
    */
   function archetype_post_format_media() {
-    if ( has_post_thumbnail() ) {
-      the_post_thumbnail( 'full', array( 'itemprop' => 'image' ) );
+    if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+      return;
     }
+  
+    if ( is_singular() ) {
+    ?>
+  
+    <div class="post-thumbnail">
+      <?php the_post_thumbnail(); ?>
+    </div><!-- .post-thumbnail -->
+  
+    <?php } else { ?>
+  
+    <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+      <?php
+        the_post_thumbnail( 'post-thumbnail', array( 'itemprop' => 'image', 'alt' => get_the_title() ) );
+      ?>
+    </a>
+  
+    <?php } // End is_singular()
   }
 }
 
 if ( ! function_exists( 'archetype_post_header' ) ) {
   /**
    * Display the post header with a link to the single post
+   *
    * @since 1.0.0
    */
   function archetype_post_header() { ?>
@@ -39,18 +61,14 @@ if ( ! function_exists( 'archetype_post_header' ) ) {
 if ( ! function_exists( 'archetype_post_content' ) ) {
   /**
    * Display the post content with a link to the single post
+   *
    * @since 1.0.0
    */
   function archetype_post_content() {
     ?>
     <div class="entry-content" itemprop="articleBody">
     <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'archetype' ) ); ?>
-    <?php
-      wp_link_pages( array(
-        'before' => '<div class="page-links">' . __( 'Pages:', 'archetype' ),
-        'after'  => '</div>',
-      ) );
-    ?>
+    <?php archetype_page_navigation(); ?>
     </div><!-- .entry-content -->
     <?php
   }
@@ -59,6 +77,7 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
 if ( ! function_exists( 'archetype_post_meta' ) ) {
   /**
    * Displays meta information for the author, categories, tags etc.
+   *
    * @since 1.0.0
    */
   function archetype_post_meta() {
@@ -146,60 +165,6 @@ if ( ! function_exists( 'archetype_post_meta' ) ) {
       edit_post_link( __( 'Edit', 'archetype' ), '<span class="edit-link">', '</span>' );
       ?>
     </aside>
-    <?php
-  }
-}
-
-if ( ! function_exists( 'archetype_paging_nav' ) ) {
-  /**
-   * Display navigation to next/previous set of posts when applicable.
-   */
-  function archetype_paging_nav() {
-    // Don't print empty markup if there's only one page.
-    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-      return;
-    }
-    ?>
-    <nav class="navigation paging-navigation" role="navigation">
-      <h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'archetype' ); ?></h1>
-      <div class="nav-links">
-
-        <?php if ( get_next_posts_link() ) : ?>
-        <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'archetype' ) ); ?></div>
-        <?php endif; ?>
-
-        <?php if ( get_previous_posts_link() ) : ?>
-        <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'archetype' ) ); ?></div>
-        <?php endif; ?>
-
-      </div><!-- .nav-links -->
-    </nav><!-- .navigation -->
-    <?php
-  }
-}
-
-if ( ! function_exists( 'archetype_post_nav' ) ) {
-  /**
-   * Display navigation to next/previous post when applicable.
-   */
-  function archetype_post_nav() {
-    // Don't print empty markup if there's nowhere to navigate.
-    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-    $next     = get_adjacent_post( false, '', false );
-
-    if ( ! $next && ! $previous ) {
-      return;
-    }
-    ?>
-    <nav class="navigation post-navigation" role="navigation">
-      <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'archetype' ); ?></h1>
-      <div class="nav-links">
-        <?php
-          previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'archetype' ) );
-          next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'archetype' ) );
-        ?>
-      </div><!-- .nav-links -->
-    </nav><!-- .navigation -->
     <?php
   }
 }
