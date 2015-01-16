@@ -483,7 +483,7 @@ ul.products {
       font-family: "FontAwesome";
       content: "\f00d";
       margin-right: .53em;
-      color: $error;
+      color: $color-error;
     }
   }
 }
@@ -661,7 +661,7 @@ a.remove {
     left: 0;
     right: 0;
     bottom: 0;
-    color: $error;
+    color: $color-error;
     line-height: 1.618;
     text-indent: 0;
     text-align: center;
@@ -889,13 +889,13 @@ ul.digital-downloads {
 
   &.woocommerce-validated {
     input.input-text {
-      box-shadow: inset 2px 0 0 $success;
+      box-shadow: inset 2px 0 0 $color-success;
     }
   }
 
   &.woocommerce-invalid {
     input.input-text {
-      box-shadow: inset 2px 0 0 $error;
+      box-shadow: inset 2px 0 0 $color-error;
     }
   }
 }
@@ -921,7 +921,7 @@ ul.digital-downloads {
   right: 0;
   margin: 0;
   padding: 1em 1.387em;
-  background-color: $info;
+  background-color: $color-info;
   color: #fff;
 
   &:before {
@@ -1160,7 +1160,7 @@ p.no-comments {
   padding: 1em 1.618em;
   @include clearfix;
   margin-bottom: 2.618em;
-  background-color: $success;
+  background-color: $color-success;
   margin-left: 0;
   color: #fff;
   clear: both;
@@ -1216,11 +1216,11 @@ p.no-comments {
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-  background-color: $info;
+  background-color: $color-info;
 }
 
 .woocommerce-error {
-  background-color: $error;
+  background-color: $color-error;
 }
 
 dl.variation {
