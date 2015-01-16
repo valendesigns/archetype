@@ -26,7 +26,7 @@ input,
 select,
 textarea {
   color: $color-body;
-  font-family: $base-font;
+  font-family: $font-base;
   line-height: 1.500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $header-font;
+  font-family: $font-heading;
   clear: both;
   font-weight: 300;
   margin: 0 0 .500em;
@@ -88,16 +88,16 @@ hr {
   background-color: #ccc;
   border: 0;
   height: 1px;
-  margin: 0 0 $vspacing;
+  margin: 0 0 $spacing-v;
 }
 
 p {
-  margin: 0 0 $vspacing;
+  margin: 0 0 $spacing-v;
 }
 
 ul,
 ol {
-  margin: 0 0 $vspacing 3em;
+  margin: 0 0 $spacing-v 3em;
   padding: 0;
 }
 
@@ -112,7 +112,7 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: $vspacing;
+  margin-left: $spacing-v;
 }
 
 dt {
@@ -136,18 +136,18 @@ i {
 }
 
 blockquote {
-  padding: 0 $vspacing;
+  padding: 0 $spacing-v;
   border-left: 3px solid rgba(0,0,0,0.05);
   font-style: italic;
 }
 
 address {
-  margin: 0 0 $vspacing;
+  margin: 0 0 $spacing-v;
 }
 
 pre {
   background: #fff9c0;
-  font-family: $mono-font;
+  font-family: $font-mono;
   font-size: .875em;
   margin-bottom: 1.500em;
   padding: 1.500em;
@@ -159,7 +159,7 @@ code,
 kbd,
 tt,
 var {
-  font-family: $mono-font;
+  font-family: $font-mono;
   font-size: .875em;
   background-color: rgba(0,0,0,0.05);
   padding: .125em .250em;
@@ -208,7 +208,7 @@ figure {
 }
 
 table {
-  margin: 0 0 $vspacing;
+  margin: 0 0 $spacing-v;
   width: 100%;
 }
 

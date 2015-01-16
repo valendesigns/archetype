@@ -1,40 +1,54 @@
-// Some common variables and mixins to get you started.
-// Variables allow you to re-use colors, sizes, and other values without repeating
-// yourself. This means that changes that should be small, such as tweaking the
-// coloring or the sizing, can be done in one place, not all over the stylesheet.
+// Font Stacks
 
-$base-font:        "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$mono-font:        Monaco, Menlo, Consolas, "Courier New", monospace;
-$header-font:      $base-font;
-$grid-content:     8;
-$grid-sidebar:     4;
+$font-base:                     "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-mono:                     Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$font-heading:                  $font-base !default;
+
+
+// Grid Layout
+
+$grid-content:                  8 !default;
+$grid-sidebar:                  4 !default;
+
 
 // Color Scheme
-$body-background:               #f1f1f1;
-$header-background:             #353b3f;
-$post-background:               #fff;
-$post-shadow:                   #8b949b;
-$color-body:                    #555;
-$color-header:                  #888;
-$color-heading:                 #333;
-$color-link:                    #ee543f;
-$color-link-hover:              #111;
 
-$color-button:                  #fff;
-$color-button-background:       #ed543f;
-$color-button-border:           #d94834;
-$color-button-shadow:           $color-button-border;
+$color-body-bg:                 #f1f1f1 !default;
+$color-header-bg:               #353b3f !default;
 
-$color-button-hover:            $color-body;
-$color-button-hover-background: #fff;
-$color-button-hover-border:     #8b949b;
-$color-button-hover-shadow:     $color-button-hover-border;
+$color-post-bg:                 #fff !default;
+$color-post-border:             #e5e5e5 !default;
+$color-post-shadow:             #8b949b !default;
 
-$color-border:                  rgba(0,0,0,0.1);
+$color-body:                    #555 !default;
+$color-header:                  #888 !default;
+$color-heading:                 #333 !default;
 
-$error:                         #e2401c;
-$success:                       #17ba6f;
-$info:                          #3D9CD2;
-$vspacing:                      1.500em;
+$color-link:                    #ee543f !default;
+$color-link-hover:              #111 !default;
 
-$radius:                        3px;
+$color-button:                  #fff !default;
+$color-button-bg:               #ed543f !default;
+$color-button-border:           #d94834 !default;
+$color-button-shadow:           $color-button-border !default;
+
+$color-button-hover:            $color-body !default;
+$color-button-hover-bg:         #fff !default;
+$color-button-hover-border:     #8b949b !default;
+$color-button-hover-shadow:     $color-button-hover-border !default;
+
+$error:                         #e2401c !default;
+$success:                       #17ba6f !default;
+$info:                          #3D9CD2 !default;
+
+
+// Spacing
+
+$spacing-v:                     1.500em !default;
+
+
+// Border Radius
+
+$radius-post:                   0px !default;
+$radius-button:                 3px !default;
+$radius-avatar:                 3px !default;

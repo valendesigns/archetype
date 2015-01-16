@@ -109,7 +109,7 @@
         top: 100%;
         left: 0;
         z-index: 99999;
-        background-color: $header-background;
+        background-color: $color-header-bg;
 
         &:hover {
           > a {};
@@ -183,7 +183,7 @@
 
       ul {
         // Dropdowns
-        background-color: $header-background;
+        background-color: $color-header-bg;
         margin-left: 0;
 
         li {
@@ -211,7 +211,7 @@
 
         ul {
           margin-left: 0;
-          border-top-color: $color-border;
+          border-top-color: $color-post-border;
           box-shadow: none;
         }
 
@@ -264,7 +264,7 @@
       }
 
       ul {
-        background-color: $header-background;
+        background-color: $color-header-bg;
 
         a {
           padding: .326em .857em;

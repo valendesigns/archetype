@@ -544,7 +544,7 @@ table {
     table th p:last-child {
       margin-bottom: 0; }
   table thead th {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #e5e5e5;
     text-transform: uppercase;
     padding: 1.387em;
     vertical-align: middle; }
@@ -566,7 +566,7 @@ table {
     border-bottom: 0; }
   table tfoot th,
   table tfoot td {
-    border-top: 1px dotted rgba(0, 0, 0, 0.1); }
+    border-top: 1px dotted #e5e5e5; }
 
 /**
  * Typography
@@ -1330,7 +1330,7 @@ fieldset {
       .main-navigation ul.menu ul ul,
       .main-navigation ul.nav-menu ul ul {
         margin-left: 0;
-        border-top-color: rgba(0, 0, 0, 0.1);
+        border-top-color: #e5e5e5;
         box-shadow: none; }
       .main-navigation ul.menu ul a:hover,
       .main-navigation ul.menu ul li:hover > a,
@@ -1390,7 +1390,7 @@ fieldset {
   margin-bottom: 2.618em;
   padding: 2.618em;
   box-shadow: inset #555 5px 0px 0px;
-  border-radius: 0 3px 3px 0; }
+  border-radius: 0 0px 0px 0; }
   .page-header .page-title {
     margin-bottom: 0; }
   .page-header .taxonomy-description {
@@ -1403,7 +1403,7 @@ fieldset {
   margin-bottom: 2.618em;
   position: relative;
   box-shadow: inset #8b949b 0px -1px 0px;
-  border-radius: 3px;
+  border-radius: 0px;
   overflow: hidden; }
   .hentry.type-post:after {
     content: "";
@@ -1424,7 +1424,7 @@ fieldset {
         .hentry .entry-header h1 a:hover {
           text-decoration: underline; }
   .hentry .entry-meta {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #e5e5e5;
     font-size: .875em;
     font-weight: 300;
     padding: 2.618em; }
@@ -1452,7 +1452,7 @@ fieldset {
   position: absolute;
   text-transform: uppercase;
   top: 0;
-  border-radius: 0 0 3px 3px; }
+  border-radius: 0 0 0px 0px; }
 
 .entry-format,
 .posted-on,
@@ -1843,12 +1843,14 @@ object {
 .post-navigation {
   background-color: #fff;
   box-shadow: inset #8b949b 0px -1px 0px;
-  border-radius: 3px;
+  border-radius: 0px;
   margin-bottom: 2.618em;
   overflow: hidden; }
   .post-navigation a {
     display: block;
     padding: 2.618em; }
+    .post-navigation a:hover {
+      box-shadow: inset #555 5px 0px 0px; }
   .post-navigation span {
     display: block; }
   .post-navigation .meta-nav {
@@ -1882,7 +1884,7 @@ object {
   .post-navigation .meta-nav {
     opacity: 0.8; }
   .post-navigation div + div {
-    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+    box-shadow: inset #e5e5e5 0px 1px 0px; }
 
 /**
  * Page Navigation
@@ -1892,7 +1894,7 @@ object {
   margin-bottom: 1.5em; }
   .page-links a,
   .page-links > span {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e5e5;
     display: inline-block;
     font-size: .938em;
     height: 2em;
@@ -1977,9 +1979,9 @@ object {
     padding: 1.875em;
     position: relative;
     box-shadow: inset #8b949b 0px -1px 0px;
-    border-radius: 3px; }
+    border-radius: 0px; }
   #comments .comment-list .comment-meta {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e5e5e5;
     font-weight: 300;
     margin-bottom: 1em;
     padding-bottom: .500em; }
@@ -2056,7 +2058,7 @@ object {
   margin-bottom: 1.875em;
   padding: 1.875em;
   box-shadow: inset #8b949b 0px -1px 0px;
-  border-radius: 3px; }
+  border-radius: 0px; }
   #respond .comment-form-author input,
   #respond .comment-form-email input,
   #respond .comment-form-url input {

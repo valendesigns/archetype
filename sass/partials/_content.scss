@@ -3,11 +3,11 @@
  */
 
 .page-header {
-  background: $post-background;
+  background: $color-post-bg;
   margin-bottom: 2.618em;
   padding: 2.618em;
   box-shadow: inset $color-body 5px 0px 0px;
-  border-radius: 0 $radius $radius 0;
+  border-radius: 0 $radius-post $radius-post 0;
   
   .page-title {
     margin-bottom: 0;
@@ -23,11 +23,11 @@
 }
 
 .hentry {
-  background: $post-background;
+  background: $color-post-bg;
   margin-bottom: 2.618em;
   position: relative;
-  box-shadow: inset $post-shadow 0px -1px 0px;
-  border-radius: $radius;
+  box-shadow: inset $color-post-shadow 0px -1px 0px;
+  border-radius: $radius-post;
   overflow: hidden;
   
   &.type-post {
@@ -60,7 +60,7 @@
   }
   
   .entry-meta {
-    border-top: 1px solid $color-border;
+    border-top: 1px solid $color-post-border;
     font-size: .875em;
     font-weight: 300;
     padding: 2.618em;
@@ -82,12 +82,12 @@
 
 .page-links {
   clear: both;
-  margin: 0 0 $vspacing;
+  margin: 0 0 $spacing-v;
 }
 
 .sticky-post {
   background-color: $color-body;
-  color: $post-background;
+  color: $color-post-bg;
   font-size: .875em;
   font-weight: 300;
   letter-spacing: 0.04em;
@@ -96,7 +96,7 @@
   position: absolute;
   text-transform: uppercase;
   top: 0;
-  border-radius: 0 0 $radius $radius;
+  border-radius: 0 0 $radius-post $radius-post;
 }
 
 .entry-format,

@@ -5,7 +5,7 @@
 .pagination,
 .image-navigation,
 .comment-navigation {
-  background-color: $post-background;
+  background-color: $color-post-bg;
   margin-bottom: 2.618em;
 
   .nav-links {
@@ -58,7 +58,7 @@
   .next,
   .nav-previous a,
   .nav-next a {
-    -webkit-tap-highlight-color: $color-button-background;
+    -webkit-tap-highlight-color: $color-button-bg;
     background-color: $color-body;
     color: #fff;
     display: inline-block;
@@ -91,7 +91,7 @@
   .nav-previous a:focus,
   .nav-next a:hover,
   .nav-next a:focus {
-    background-color: $color-button-background;
+    background-color: $color-button-bg;
   }
   
   .prev,
@@ -123,15 +123,19 @@
  */
 
 .post-navigation {
-  background-color: $post-background;
-  box-shadow: inset $post-shadow 0px -1px 0px;
-  border-radius: $radius;
+  background-color: $color-post-bg;
+  box-shadow: inset $color-post-shadow 0px -1px 0px;
+  border-radius: $radius-post;
   margin-bottom: 2.618em;
   overflow: hidden;
 
   a {
     display: block;
     padding: 2.618em;
+    
+    &:hover {
+      box-shadow: inset $color-body 5px 0px 0px;
+    }
   }
 
   span {
@@ -181,7 +185,7 @@
   }
   
   div + div {
-    border-top: 1px solid $color-border;
+    box-shadow: inset $color-post-border 0px 1px 0px;
   }
 
 }
@@ -193,11 +197,11 @@
  
 .page-links {
   clear: both;
-  margin-bottom: $vspacing;
+  margin-bottom: $spacing-v;
   
   a,
   > span {
-    border: 1px solid $color-border;
+    border: 1px solid $color-post-border;
     display: inline-block;
     font-size: .938em;
     height: 2em;
@@ -208,17 +212,17 @@
   }
   
   a {
-    -webkit-tap-highlight-color: $color-button-background;
+    -webkit-tap-highlight-color: $color-button-bg;
     background-color: $color-body;
     border-color: $color-body;
-    color: $post-background;
+    color: $color-post-bg;
   }
   
   a:hover,
   a:focus {
-    background-color: $color-button-background;
-    border-color: $color-button-background;
-    color: $post-background;
+    background-color: $color-button-bg;
+    border-color: $color-button-bg;
+    color: $color-post-bg;
   }
   
   > .page-links-title {

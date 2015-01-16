@@ -22,7 +22,7 @@
 
 #wl-wrapper {
   .wl-tabs {
-    border-bottom: 1px solid $color-border !important;
+    border-bottom: 1px solid $color-post-border !important;
 
     > li {
       border-bottom: 0;
@@ -54,7 +54,7 @@
 
   .wl-meta-share,
   .wl-share-url {
-    border-bottom-color: $color-border;
+    border-bottom-color: $color-post-border;
   }
 }
 

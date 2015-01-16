@@ -55,7 +55,7 @@
 
   .widget_shopping_cart {
     display: none;
-    background-color: $header-background;
+    background-color: $color-header-bg;
   }
 }
 
@@ -221,14 +221,14 @@ ul.products {
     .variations_button {
       @include clearfix;
       padding-top: 1em;
-      border-top: 1px solid $color-border;
+      border-top: 1px solid $color-post-border;
     }
 
     .woocommerce-product-rating {
       margin-bottom: 2.618em;
       @include clearfix;
       line-height: 1;
-      border-bottom: 1px solid $color-border;
+      border-bottom: 1px solid $color-post-border;
       padding: 0 0 1.618em;
       margin-top: -.618em;
 
@@ -260,7 +260,7 @@ ul.products {
     margin-left: 0;
 
     li {
-      border-bottom: 1px solid $color-border;
+      border-bottom: 1px solid $color-post-border;
       margin-bottom: 3.631em;
       list-style: none;
 
@@ -284,7 +284,7 @@ ul.products {
 
       ul.children {
         margin-left: 0;
-        border-top: 1px solid $color-border;
+        border-top: 1px solid $color-post-border;
         @include gs-span(c, 5, 9, (4, 9)); // This specifies the columns
         float: none;
         padding-top: 1.618em;
@@ -311,7 +311,7 @@ ul.products {
  */
 .woocommerce-pagination {
   padding: 1em 0;
-  border: 1px solid $color-border;
+  border: 1px solid $color-post-border;
   border-width: 1px 0;
   text-align: center;
 
@@ -346,7 +346,7 @@ ul.products {
 
       a.page-numbers {
         &:hover {
-          border-color: $color-border;
+          border-color: $color-post-border;
         }
       }
     }
@@ -382,7 +382,7 @@ ul.products {
 
   li {
     padding: 1em 0;
-    border-bottom: 1px dotted $color-border;
+    border-bottom: 1px dotted $color-post-border;
     @include clearfix;
     
     &:last-child {
@@ -434,7 +434,7 @@ ul.products {
   }
 
   p.total {
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $color-post-border;
   }
 }
 
@@ -613,7 +613,7 @@ table.cart {
     .coupon {
       padding-bottom: 1em;
       margin-bottom: 1em;
-      border-bottom: 1px dotted $color-border;
+      border-bottom: 1px dotted $color-post-border;
     }
 
     input {
@@ -682,7 +682,7 @@ form.checkout {
 
 #payment {
   @include clearfix;
-  border-top: 3px solid $color-border;
+  border-top: 3px solid $color-post-border;
 
   .create-account {
     clear: both;
@@ -690,13 +690,13 @@ form.checkout {
 
   .payment_methods {
     margin: 0 !important;
-    border-bottom: 1px dotted $color-border;
+    border-bottom: 1px dotted $color-post-border;
     padding: 0 !important;
 
     li {
       list-style: none !important;
       padding: 1.387em !important;
-      border-bottom: 1px dotted $color-border;
+      border-bottom: 1px dotted $color-post-border;
       margin-left: 0;
 
       img {
@@ -726,7 +726,7 @@ form.checkout {
         padding: 1.387em;
         margin: 1.387em -1.387em -1.387em -1.387em;
         background: rgba(0,0,0,0.035);
-        border-top: 1px dotted $color-border;
+        border-top: 1px dotted $color-post-border;
 
         fieldset {
           border: 0;
@@ -805,21 +805,21 @@ form.checkout {
   .col-1 {
     padding-bottom: 1.618em;
     margin-bottom: 1.618em;
-    border-bottom: 1px dotted $color-border;
+    border-bottom: 1px dotted $color-post-border;
   }
 }
 
 ul.order_details {
   @include clearfix;
   list-style: none;
-  border: 1px solid $color-border;
+  border: 1px solid $color-post-border;
   position: relative;
   margin-left: 0;
 
   li {
     float: left;
     padding: 1em 1.618em;
-    border-right: 1px solid $color-border;
+    border-right: 1px solid $color-post-border;
     font-size: .8em;
     text-transform: uppercase;
 
@@ -842,7 +842,7 @@ ul.digital-downloads {
   li {
     padding-bottom: 1em;
     margin-bottom: 1em;
-    border-bottom: 1px dotted $color-border;
+    border-bottom: 1px dotted $color-post-border;
 
     &:before {
       font-family: "FontAwesome";
@@ -1117,7 +1117,7 @@ p.stars {
 }
 
 .woocommerce-tabs {
-  border: 1px solid $color-border;
+  border: 1px solid $color-post-border;
   border-width: 1px 0;
   padding: 1em 0;
 
@@ -1258,7 +1258,7 @@ dl.variation {
       &.star-2,
       &.star-3,
       &.star-4 {
-        border-right:1px solid $color-border;
+        border-right:1px solid $color-post-border;
       }
     }
   }
@@ -1860,7 +1860,7 @@ dl.variation {
         li {
           display: block;
           margin: 0;
-          border-bottom: 1px dotted $color-border;
+          border-bottom: 1px dotted $color-post-border;
 
           a {
             padding: 1em 0;

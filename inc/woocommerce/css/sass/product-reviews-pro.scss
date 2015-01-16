@@ -40,7 +40,7 @@
     }
 
     .form-contribution {
-      border-color: $color-border;
+      border-color: $color-post-border;
       padding: 1em;
 
       #review_rating_field {
@@ -121,7 +121,7 @@
         float: none;
         margin-bottom: 3.631em;
         padding-top: 1.618em;
-        border-top: 1px solid $color-border;
+        border-top: 1px solid $color-post-border;
       }
 
       ul.children + .form-contribution_comment {
@@ -154,7 +154,7 @@
       border-bottom: .202em solid rgba(0,0,0,0.05);
 
       &.active {
-        border-bottom-color: $color-border;
+        border-bottom-color: $color-post-border;
       }
     }
   }

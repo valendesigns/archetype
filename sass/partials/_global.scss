@@ -7,14 +7,14 @@
 }
 
 .site {
-  background-color: $body-background;
+  background-color: $color-body-bg;
 }
 
 /**
  * Header
  */
 .site-header {
-  background-color: $header-background;
+  background-color: $color-header-bg;
   padding-top: 2.618em;
   color: $color-header;
   background-position: center center;
@@ -99,12 +99,12 @@
 .alignleft {
   display: inline;
   float: left;
-  margin-right: $vspacing;
+  margin-right: $spacing-v;
 }
 .alignright {
   display: inline;
   float: right;
-  margin-left: $vspacing;
+  margin-left: $spacing-v;
 }
 .aligncenter {
   clear: both;
@@ -180,7 +180,7 @@ table {
 
   thead {
     th {
-      border-bottom: 2px solid $color-border;
+      border-bottom: 2px solid $color-post-border;
       text-transform: uppercase;
       padding: 1.387em;
       vertical-align: middle;
@@ -226,7 +226,7 @@ table {
   tfoot {
     th,
     td {
-      border-top:1px dotted $color-border;
+      border-top:1px dotted $color-post-border;
     }
   }
 }

@@ -18,16 +18,16 @@
     }
 
     .comment-content {
-      background: $post-background;
+      background: $color-post-bg;
       margin-bottom: 1.875em;
       padding: 1.875em;
       position: relative;
-      box-shadow: inset $post-shadow 0px -1px 0px;
-      border-radius: $radius;
+      box-shadow: inset $color-post-shadow 0px -1px 0px;
+      border-radius: $radius-post;
     }
     
     .comment-meta {
-      border-bottom: 1px solid $color-border;
+      border-bottom: 1px solid $color-post-border;
       font-weight: 300;
       margin-bottom: 1em;
       padding-bottom: .500em;
@@ -44,7 +44,7 @@
         position: absolute;
         top: 8px;
         left: -40px;
-        border-radius: $radius;
+        border-radius: $radius-avatar;
       }
       
       cite {
@@ -110,8 +110,8 @@
       position: absolute;
       @include clearfix;
       pointer-events: none;
-      border-color: rgba(red($post-background), green($post-background), blue($post-background), 0);
-      border-right-color: $post-background;
+      border-color: rgba(red($color-post-bg), green($color-post-bg), blue($color-post-bg), 0);
+      border-right-color: $color-post-bg;
       border-width: .625em;
       margin-top: -.625em;
     }
@@ -125,12 +125,12 @@
 .bypostauthor {}
 
 #respond {
-  background: $post-background;
+  background: $color-post-bg;
   clear: both;
   margin-bottom: 1.875em;
   padding: 1.875em;
-  box-shadow: inset $post-shadow 0px -1px 0px;
-  border-radius: $radius;
+  box-shadow: inset $color-post-shadow 0px -1px 0px;
+  border-radius: $radius-post;
 
   .comment-form-author,
   .comment-form-email,

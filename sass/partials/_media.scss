@@ -20,7 +20,7 @@
  */
 
 .wp-caption {
-	margin-bottom: $vspacing;
+	margin-bottom: $spacing-v;
 	max-width: 100%;
 
   img[class*="wp-image-"] {
@@ -45,7 +45,7 @@
 
   @extend %clearfix;
 
-  margin-bottom: $vspacing;
+  margin-bottom: $spacing-v;
 
   .gallery-item {
     float: left;
@@ -171,7 +171,7 @@
  
 .mejs-controls {
   .mejs-time-rail .mejs-time-current {
-    background: $color-button-background !important;
+    background: $color-button-bg !important;
   }
 
   .mejs-button button {
