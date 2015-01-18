@@ -77,7 +77,7 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
 
 if ( ! function_exists( 'archetype_post_author_bio' ) ) {
   /**
-   * Display the post author bios
+   * Display the post author bio
    *
    * @since 1.0.0
    */
