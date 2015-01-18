@@ -500,6 +500,8 @@ th {
   /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important; }
+  .screen-reader-text:focus {
+    outline: 0; }
 
 .screen-reader-text:hover,
 .screen-reader-text:active,
@@ -525,6 +527,12 @@ th {
 /**
  * Clearing
  */
+/**
+ * Fix ugly outlines
+ */
+[tabindex="-1"]:focus {
+  outline: 0; }
+
 /**
  * Tables
  */

@@ -159,10 +159,8 @@ function archetype_scripts() {
   global $archetype_version;
   
   wp_enqueue_style( 'archetype-style', get_template_directory_uri() . ( is_rtl() ? '/style-rtl.min.css' : '/style.min.css' ), '', $archetype_version );
-
-  wp_enqueue_script( 'archetype-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
-
-  wp_enqueue_script( 'archetype-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+  
+  wp_enqueue_script( 'archetype', get_template_directory_uri() . '/js/archetype.min.js', array( 'jquery' ), '20150118', true );
   
   wp_enqueue_script( 'archetype-fluid-media', get_template_directory_uri() . '/js/fluid-media.min.js', array( 'jquery' ), '20120206', true );
 

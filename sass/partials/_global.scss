@@ -119,6 +119,10 @@
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
+  
+  &:focus {
+    outline: 0;
+  }
 }
 
 .screen-reader-text:hover,
@@ -152,6 +156,13 @@
 .site-content,
 .site-footer {
   @extend %clearfix;
+}
+
+/**
+ * Fix ugly outlines
+ */
+[tabindex="-1"]:focus {
+  outline: 0;
 }
 
 /**
