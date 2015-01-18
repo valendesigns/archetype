@@ -144,6 +144,7 @@
 
   .meta-nav {
     color: $color-body;
+    font-weight: 300;
     letter-spacing: 0.04em;
     position: relative;
     text-transform: uppercase;
@@ -178,10 +179,6 @@
   a:hover:before,
   .post-navigation a:focus:before {
     opacity: 0.5;
-  }
-  
-  .meta-nav {
-    opacity: 0.8;
   }
   
   div + div {

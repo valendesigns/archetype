@@ -64,8 +64,9 @@ if ( ! function_exists( 'archetype_image_content' ) ) {
 
       </div><!-- .entry-attachment -->
 
-    <?php the_content(); ?>
-    <?php archetype_page_navigation(); ?>
+      <?php the_content(); ?>
+    
+      <?php archetype_page_navigation(); ?>
     </div><!-- .entry-content -->
     <?php
   }

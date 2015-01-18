@@ -67,10 +67,24 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
   function archetype_post_content() {
     ?>
     <div class="entry-content" itemprop="articleBody">
-    <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'archetype' ) ); ?>
-    <?php archetype_page_navigation(); ?>
+      <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'archetype' ) ); ?>
+      
+      <?php archetype_page_navigation(); ?>
     </div><!-- .entry-content -->
     <?php
+  }
+}
+
+if ( ! function_exists( 'archetype_post_author_bio' ) ) {
+  /**
+   * Display the post author bios
+   *
+   * @since 1.0.0
+   */
+  function archetype_post_author_bio() {
+    if ( is_single() && get_the_author_meta( 'description' ) ) {
+      get_template_part( 'author-bio' );
+    }
   }
 }
 
