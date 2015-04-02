@@ -88,24 +88,27 @@ module.exports = function( grunt ) {
         }]
       }
     },
-    
+
     // Create RTL .css files
     rtlcss: {
-      core: {
-        options: {
+      options: {
+        config: {
           swapLeftRightInUrl: false,
           swapLtrRtlInUrl: false,
           autoRename: false,
           preserveDirectives: true
         },
-        saveUnmodified: false,
+        saveUnmodified: false
+      },
+      core: {
         expand: true,
+        ext: '-rtl.css',
         src: [
-          'style-rtl.css'
+          'style.css'
         ]
       }
     },
-    
+
     // Minify all .css files.
     cssmin: {
       core: {
@@ -134,7 +137,7 @@ module.exports = function( grunt ) {
         }]
       }
     },
-    
+
     // Watch changes for assets.
     watch: {
       css: {
