@@ -55,9 +55,10 @@ module.exports = function( grunt ) {
     sass: {
       core: {
         options: {
+          require: 'susy',
           sourcemap: 'none',
           style: 'nested',
-          loadPath: require( 'node-bourbon' ).includePaths
+          includePaths: require( 'node-bourbon' ).includePaths
         },
         files: [{
           'style.css': 'style.scss'
@@ -65,9 +66,10 @@ module.exports = function( grunt ) {
       },
       customizer: {
         options: {
+          require: 'susy',
           sourcemap: 'none',
           style: 'nested',
-          loadPath: require( 'node-bourbon' ).includePaths
+          includePaths: require( 'node-bourbon' ).includePaths
         },
         files: [{
           'inc/customizer/css/customizer.css': 'inc/customizer/css/sass/customizer.scss'
@@ -75,9 +77,10 @@ module.exports = function( grunt ) {
       },
       woocommerce: {
         options: {
+          require: 'susy',
           sourcemap: 'none',
           style: 'nested',
-          loadPath: require( 'node-bourbon' ).includePaths
+          includePaths: require( 'node-bourbon' ).includePaths
         },
         files: [{
           expand: true,
@@ -270,12 +273,12 @@ module.exports = function( grunt ) {
 
   });
 
-  // Load NPM tasks to be used here
+  // Load tasks
   grunt.loadNpmTasks( 'grunt-contrib-jshint' );
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-  grunt.loadNpmTasks( 'grunt-contrib-sass' );
-  grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+  grunt.loadNpmTasks( 'grunt-sass' );
   grunt.loadNpmTasks( 'grunt-rtlcss' );
+  grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
   grunt.loadNpmTasks( 'grunt-wp-i18n' );
   grunt.loadNpmTasks( 'grunt-checktextdomain' );
