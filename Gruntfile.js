@@ -88,17 +88,20 @@ module.exports = function( grunt ) {
         }]
       }
     },
-    
-    // Create RTL .css files
-    cssjanus: {
+		
+		// Create RTL .css files
+    rtlcss: {
 			core: {
 				options: {
-				  expand: true,
-					swapLtrRtlInUrl: false
+				  swapLeftRightInUrl: false,
+					swapLtrRtlInUrl: false,
+					autoRename: false,
+					preserveDirectives: true,
 				},
-				files: [{
-          'style-rtl.css': 'style.css'
-        }]
+				expand: true,
+				src: [
+          'style-rtl.css'
+        ]
 			}
 		},
 		
@@ -142,7 +145,7 @@ module.exports = function( grunt ) {
         ],
         tasks: [
           'sass',
-          'cssjanus',
+          'rtlcss',
           'cssmin',
           'clean:core'
         ]
@@ -268,7 +271,7 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
   grunt.loadNpmTasks( 'grunt-contrib-sass' );
   grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-  grunt.loadNpmTasks( 'grunt-cssjanus' );
+  grunt.loadNpmTasks( 'grunt-rtlcss' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
   grunt.loadNpmTasks( 'grunt-wp-i18n' );
   grunt.loadNpmTasks( 'grunt-checktextdomain' );
@@ -284,7 +287,7 @@ module.exports = function( grunt ) {
 
   grunt.registerTask( 'css', [
     'sass',
-    'cssjanus',
+    'rtlcss',
     'cssmin',
     'clean:core'
   ]);
