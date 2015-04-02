@@ -174,7 +174,7 @@ module.exports = function( grunt ) {
       },
       frontend: {
         options: {
-          potFilename: '<%= pkg.name %>.pot',
+          potFilename: '<%= pkg.slug %>.pot',
           processPot: function ( pot ) {
             pot.headers['project-id-version'];
             return pot;
@@ -186,7 +186,7 @@ module.exports = function( grunt ) {
     // Check textdomain errors.
     checktextdomain: {
       options:{
-        text_domain: '<%= pkg.name %>',
+        text_domain: '<%= pkg.slug %>',
         keywords: [
           '__:1,2d',
           '_e:1,2d',
@@ -231,7 +231,7 @@ module.exports = function( grunt ) {
           '!tests/**',
           '!phpunit.xml.dist'
         ],
-        dest: 'dist/<%= pkg.name %>',
+        dest: 'dist/<%= pkg.slug %>',
         expand: true,
         dot: true
       }
@@ -240,14 +240,14 @@ module.exports = function( grunt ) {
     compress: {
       deploy: {
         options: {
-          archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip',
+          archive: 'dist/<%= pkg.slug %>-<%= pkg.version %>.zip',
           mode: 'zip'
         },
         files: [{
           expand: true,
-          cwd: 'dist/<%= pkg.name %>/',
+          cwd: 'dist/<%= pkg.slug %>/',
           src: ['**/*'],
-          dest: '<%= pkg.name %>'
+          dest: '<%= pkg.slug %>'
         }]
       }
     },
@@ -257,7 +257,7 @@ module.exports = function( grunt ) {
 				src: ['style-rtl.css']
       },
       deploy: {
-        src: ['dist/<%= pkg.name %>']
+        src: ['dist/<%= pkg.slug %>']
       }
     }
 
