@@ -889,13 +889,13 @@ ul.digital-downloads {
 
   &.woocommerce-validated {
     input.input-text {
-      box-shadow: inset 2px 0 0 $color-success;
+      box-shadow: 2px 0 0 $color-success inset;
     }
   }
 
   &.woocommerce-invalid {
     input.input-text {
-      box-shadow: inset 2px 0 0 $color-error;
+      box-shadow: 2px 0 0 $color-error inset;
     }
   }
 }

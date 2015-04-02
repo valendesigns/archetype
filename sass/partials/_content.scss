@@ -6,7 +6,7 @@
   background: $color-post-bg;
   margin-bottom: 2.618em;
   padding: 2.618em;
-  box-shadow: inset $color-body 5px 0px 0px;
+  box-shadow: 5px 0px 0px $color-body inset;
   border-radius: 0 $radius-post $radius-post 0;
   
   .page-title {
@@ -26,7 +26,7 @@
   background: $color-post-bg;
   margin-bottom: 2.618em;
   position: relative;
-  box-shadow: inset $color-post-shadow 0px -1px 0px;
+  box-shadow: 0px -1px 0px $color-post-shadow inset;
   border-radius: $radius-post;
   overflow: hidden;
   

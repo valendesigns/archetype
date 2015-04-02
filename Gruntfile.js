@@ -88,28 +88,29 @@ module.exports = function( grunt ) {
         }]
       }
     },
-		
-		// Create RTL .css files
+    
+    // Create RTL .css files
     rtlcss: {
-			core: {
-				options: {
-				  swapLeftRightInUrl: false,
-					swapLtrRtlInUrl: false,
-					autoRename: false,
-					preserveDirectives: true,
-				},
-				expand: true,
-				src: [
+      core: {
+        options: {
+          swapLeftRightInUrl: false,
+          swapLtrRtlInUrl: false,
+          autoRename: false,
+          preserveDirectives: true
+        },
+        saveUnmodified: false,
+        expand: true,
+        src: [
           'style-rtl.css'
         ]
-			}
-		},
-		
+      }
+    },
+    
     // Minify all .css files.
     cssmin: {
       core: {
         expand: true,
-				files: [{
+        files: [{
           'style.min.css': 'style.css',
           'style-rtl.min.css': 'style-rtl.css'
         }]
@@ -133,7 +134,7 @@ module.exports = function( grunt ) {
         }]
       }
     },
-		
+    
     // Watch changes for assets.
     watch: {
       css: {
@@ -257,7 +258,7 @@ module.exports = function( grunt ) {
     
     clean: {
       core: {
-				src: ['style-rtl.css']
+        src: ['style-rtl.css']
       },
       deploy: {
         src: ['dist/<%= pkg.slug %>']
