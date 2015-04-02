@@ -53,35 +53,23 @@ module.exports = function( grunt ) {
 
     // Compile all .scss files.
     sass: {
+      options: {
+        require: 'susy',
+        sourcemap: 'none',
+        style: 'nested',
+        includePaths: require( 'node-bourbon' ).includePaths
+      },
       core: {
-        options: {
-          require: 'susy',
-          sourcemap: 'none',
-          style: 'nested',
-          includePaths: require( 'node-bourbon' ).includePaths
-        },
         files: [{
           'style.css': 'style.scss'
         }]
       },
       customizer: {
-        options: {
-          require: 'susy',
-          sourcemap: 'none',
-          style: 'nested',
-          includePaths: require( 'node-bourbon' ).includePaths
-        },
         files: [{
           'inc/customizer/css/customizer.css': 'inc/customizer/css/sass/customizer.scss'
         }]
       },
       woocommerce: {
-        options: {
-          require: 'susy',
-          sourcemap: 'none',
-          style: 'nested',
-          includePaths: require( 'node-bourbon' ).includePaths
-        },
         files: [{
           expand: true,
           cwd: 'inc/woocommerce/css/sass/',
