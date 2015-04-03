@@ -11,7 +11,6 @@
   "license": "GPLv2 or later",
   "devDependencies": {
     "grunt": "~0.4.5",
-    "node-bourbon": "~1.0.0",
     "grunt-contrib-jshint": "~0.11.0",
     "grunt-contrib-uglify": "~0.8.0",
     "grunt-sass": "~0.18.0",
@@ -22,6 +21,8 @@
     "grunt-checktextdomain": "~1.0.0",
     "grunt-contrib-copy": "~0.8.0",
     "grunt-contrib-compress": "~0.13.0",
-    "grunt-contrib-clean": "~0.6.0"
+    "grunt-contrib-clean": "~0.6.0",
+    "susy": "^2.2.2",
+    "node-bourbon": "~1.0.0"
   }
 }
