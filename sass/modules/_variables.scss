@@ -1,3 +1,12 @@
+// Grid
+$susy: (
+  columns: 12,
+  gutters: 1,
+  math: fluid,
+  output: float,
+  gutter-position: after
+) !default;
+
 // Font Stacks
 
 $font-base:                     "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
