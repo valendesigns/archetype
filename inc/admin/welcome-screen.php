@@ -88,7 +88,7 @@ class Archetype_Welcome {
     $archetype = wp_get_theme( 'archetype' );
 
     ?>
-    <div class="feature-section col two-col" style="margin-bottom: 1.618em; overflow: hidden;">
+    <div class="feature-section col two-col" style="margin-bottom: 1.618em; padding-top: 1.618em; overflow: hidden;">
       <div class="col-1">
         <h1 style="margin-right: 0;"><?php echo '<strong>Archetype</strong> <sup style="font-weight: bold; font-size: 50%; padding: 5px 10px; color: #666; background: #fff;">' . esc_attr( $archetype['Version'] ) . '</sup>'; ?></h1>
 
@@ -111,7 +111,7 @@ class Archetype_Welcome {
    */
   public function archetype_welcome_who() {
     ?>
-    <div class="feature-section col three-col" style="margin-bottom: 1.618em; overflow: hidden;">
+    <div class="feature-section col three-col" style="margin-bottom: 1.618em; padding-top: 1.618em; overflow: hidden;">
       <div class="col-1">
         <img src="<?php echo esc_url( get_template_directory_uri() ) . '/images/welcome/woothemes.png'; ?>" class="image-50" width="440" />
         <h4><?php _e( 'Who are WooThemes?', 'archetype' ); ?></h4>
@@ -148,7 +148,7 @@ class Archetype_Welcome {
     $url = admin_url() . 'customize.php?';
     $url.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcome' );
     ?>
-    <div class="feature-section col two-col" style="margin-bottom: 1.618em; overflow: hidden;">
+    <div class="feature-section col two-col" style="margin-bottom: 1.618em; padding-top: 1.618em; overflow: hidden;">
 
       <h2><?php _e( 'Using Archetype', 'archetype' ); ?> <div class="dashicons dashicons-lightbulb"></div></h2>
       <p><?php _e( 'We\'ve purposely kept Archetype lean & mean so configuration is a breeze. Here are some common theme-setup tasks:', 'archetype' ); ?></p>
@@ -196,7 +196,7 @@ class Archetype_Welcome {
    */
   public function archetype_welcome_addons() {
     ?>
-    <div class="feature-section col three-col" style="clear: both;">
+    <div class="feature-section col three-col" style="padding-top: 1.618em; clear: both;">
       <h2><?php _e( 'Enhance your site', 'archetype' ); ?> <div class="dashicons dashicons-admin-plugins"></div></h2>
 
       <p>
