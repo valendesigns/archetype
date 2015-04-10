@@ -1,11 +1,11 @@
 // Grid
 $susy: (
   columns: 12,
-  gutters: 1,
+  gutters: .5,
   math: fluid,
   output: float,
   gutter-position: after
-) !default;
+);
 
 // Font Stacks
 
