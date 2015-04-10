@@ -800,30 +800,30 @@ fieldset {
 @media screen and (min-width: 768px) {
   .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: block;
-    width: 22.8571428571%;
+    width: 22.1153846154%;
     float: left;
-    margin-right: 2.8571428571%;
+    margin-right: 3.8461538462%;
     clear: both; }
     .site-header .site-branding img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
       height: auto;
       max-width: 100%;
       max-height: none; }
   .woocommerce-active .site-header .secondary-navigation {
-    width: 48.5714285714%;
+    width: 48.0769230769%;
     float: left;
-    margin-right: 2.8571428571%; }
+    margin-right: 3.8461538462%; }
   .woocommerce-active .site-header .site-search {
-    width: 22.8571428571%;
+    width: 22.1153846154%;
     float: right;
     margin-right: 0;
     clear: none; }
   .woocommerce-active .site-header .main-navigation {
-    width: 74.2857142857%;
+    width: 74.0384615385%;
     float: left;
-    margin-right: 2.8571428571%;
+    margin-right: 3.8461538462%;
     clear: both; }
   .woocommerce-active .site-header .site-header-cart {
-    width: 22.8571428571%;
+    width: 22.1153846154%;
     float: right;
     margin-right: 0;
     margin-bottom: 0; }
@@ -860,29 +860,29 @@ fieldset {
     content: "";
     display: table; }
   .content-area {
-    width: 65.7142857143%;
+    width: 65.3846153846%;
     float: left;
-    margin-right: 2.8571428571%; }
+    margin-right: 3.8461538462%; }
   .widget-area {
-    width: 31.4285714286%;
+    width: 30.7692307692%;
     float: right;
     margin-right: 0; }
   .right-sidebar .content-area {
-    width: 65.7142857143%;
+    width: 65.3846153846%;
     float: left;
-    margin-right: 2.8571428571%; }
+    margin-right: 3.8461538462%; }
   .right-sidebar .widget-area {
-    width: 31.4285714286%;
+    width: 30.7692307692%;
     float: right;
     margin-right: 0; }
   .left-sidebar .content-area {
-    width: 65.7142857143%;
+    width: 65.3846153846%;
     float: right;
     margin-right: 0; }
   .left-sidebar .widget-area {
-    width: 31.4285714286%;
+    width: 30.7692307692%;
     float: left;
-    margin-right: 2.8571428571%; }
+    margin-right: 3.8461538462%; }
   .archetype-full-width-content .content-area {
     width: 100%;
     float: left;
@@ -909,23 +909,23 @@ fieldset {
       content: "";
       display: table; }
     .footer-widgets.col-2 .block {
-      width: 48.5714285714%;
+      width: 48.0769230769%;
       float: left;
-      margin-right: 2.8571428571%; }
+      margin-right: 3.8461538462%; }
       .footer-widgets.col-2 .block.footer-widget-2 {
         float: right;
         margin-right: 0; }
     .footer-widgets.col-3 .block {
-      width: 31.4285714286%;
+      width: 30.7692307692%;
       float: left;
-      margin-right: 2.8571428571%; }
+      margin-right: 3.8461538462%; }
       .footer-widgets.col-3 .block.footer-widget-3 {
         float: right;
         margin-right: 0; }
     .footer-widgets.col-4 .block {
-      width: 22.8571428571%;
+      width: 22.1153846154%;
       float: left;
-      margin-right: 2.8571428571%; }
+      margin-right: 3.8461538462%; }
       .footer-widgets.col-4 .block.footer-widget-4 {
         float: right;
         margin-right: 0; } }
