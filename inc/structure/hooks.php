@@ -113,11 +113,9 @@ add_action( 'archetype_single_image_after',  'archetype_display_comments', 20 );
 /**
  * Extras
  * @see archetype_setup_author()
- * @see archetype_wp_title()
  * @see archetype_body_classes()
  * @see archetype_page_menu_args()
  */
 add_action( 'wp',                'archetype_setup_author'         );
-add_filter( 'wp_title',          'archetype_wp_title',      10, 2 );
 add_filter( 'body_class',        'archetype_body_classes'         );
 add_filter( 'wp_page_menu_args', 'archetype_page_menu_args'       );
