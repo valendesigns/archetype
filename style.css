@@ -806,64 +806,32 @@ fieldset {
 @media screen and (min-width: 768px) {
   .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: block;
-    display: block;
+    width: 23.7288135593%;
     float: left;
-    margin-left: 0;
-    margin-right: -100%;
-    width: 22%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%;
+    margin-right: 1.6949152542%;
     clear: both; }
     .site-header .site-branding img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
       height: auto;
       max-width: 100%;
       max-height: none; }
   .woocommerce-active .site-header .secondary-navigation {
-    display: block;
+    width: 49.1525423729%;
     float: left;
-    margin-left: 34.66667%;
-    margin-right: -100%;
-    width: 30.66667%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%;
-    margin-right: 0; }
+    margin-right: 1.6949152542%; }
   .woocommerce-active .site-header .site-search {
-    display: block;
-    float: left;
-    margin-left: 69.33333%;
-    margin-right: -100%;
-    width: 30.66667%;
-    clear: none;
+    width: 23.7288135593%;
     float: right;
     margin-right: 0;
-    margin-left: 4%;
-    margin-left: 0; }
+    clear: none; }
   .woocommerce-active .site-header .main-navigation {
-    display: block;
+    width: 74.5762711864%;
     float: left;
-    margin-left: 0;
-    margin-right: -100%;
-    width: 65.33333%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%;
+    margin-right: 1.6949152542%;
     clear: both; }
   .woocommerce-active .site-header .site-header-cart {
-    display: block;
-    float: left;
-    margin-left: 69.33333%;
-    margin-right: -100%;
-    width: 30.66667%;
-    clear: none;
+    width: 23.7288135593%;
     float: right;
     margin-right: 0;
-    margin-left: 4%;
-    margin-left: 0;
     margin-bottom: 0; }
   .site-branding .site-description {
     margin-bottom: 0;
@@ -883,137 +851,89 @@ fieldset {
         display: inline-block; }
   .col-full {
     max-width: 71.25em;
-    margin: 0 auto; }
-    .col-full:after {
+    margin-left: auto;
+    margin-right: auto; }
+    .col-full::after {
+      clear: both;
       content: "";
-      display: table;
+      display: table; }
+    .col-full:after {
+      content: " ";
+      display: block;
       clear: both; }
-  .site-content:after {
+  .site-content::after {
+    clear: both;
     content: "";
-    display: table;
-    clear: both; }
+    display: table; }
   .content-area {
-    display: block;
+    width: 66.1016949153%;
     float: left;
-    margin-left: 0;
-    margin-right: -100%;
-    width: 65.33333%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%; }
+    margin-right: 1.6949152542%; }
   .widget-area {
-    display: block;
-    float: left;
-    margin-left: 69.33333%;
-    margin-right: -100%;
-    width: 30.66667%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%;
+    width: 32.2033898305%;
+    float: right;
     margin-right: 0; }
   .right-sidebar .content-area {
-    display: block;
+    width: 66.1016949153%;
     float: left;
-    margin-left: 0;
-    margin-right: -100%;
-    width: 65.33333%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%; }
+    margin-right: 1.6949152542%; }
   .right-sidebar .widget-area {
-    display: block;
-    float: left;
-    margin-left: 69.33333%;
-    margin-right: -100%;
-    width: 30.66667%;
-    clear: none;
-    float: left;
-    margin-left: 0;
-    margin-right: 4%;
+    width: 32.2033898305%;
+    float: right;
     margin-right: 0; }
   .left-sidebar .content-area {
-    display: block;
-    float: left;
-    margin-left: 34.66667%;
-    margin-right: -100%;
-    width: 65.33333%;
-    clear: none;
+    width: 66.1016949153%;
     float: right;
-    margin-right: 0;
-    margin-left: 4%; }
+    margin-right: 0; }
   .left-sidebar .widget-area {
-    display: block;
+    width: 32.2033898305%;
+    float: left;
+    margin-right: 1.6949152542%; }
+  .archetype-full-width-content .content-area {
+    width: 100%;
     float: left;
     margin-left: 0;
-    margin-right: -100%;
-    width: 30.66667%;
-    clear: none;
-    float: right;
-    margin-right: 0;
-    margin-left: 4%;
-    margin-left: 0; }
-  .archetype-full-width-content .content-area {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%; }
+    margin-right: 0; }
   .content-area, .widget-area {
     margin-bottom: 2.618em; }
   /**
    * Full width & homepage template
    */
   .page-template-template-fullwidth-php .content-area, .page-template-template-homepage-php .content-area {
-    float: none;
     width: 100%;
-    margin-right: 0;
-    margin-left: 0; }
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
   /**
    * Footer widgets
    */
   .footer-widgets {
     padding-top: 4.236em;
     border-bottom: 3px solid rgba(0, 0, 0, 0.05); }
-    .footer-widgets:after {
+    .footer-widgets::after {
+      clear: both;
       content: "";
-      display: table;
-      clear: both; }
+      display: table; }
     .footer-widgets.col-2 .block {
-      display: block;
+      width: 49.1525423729%;
       float: left;
-      margin-left: 0;
-      margin-right: -100%;
-      width: 48%;
-      clear: none;
-      float: left;
-      margin-left: 0;
-      margin-right: 4%; }
+      margin-right: 1.6949152542%; }
       .footer-widgets.col-2 .block.footer-widget-2 {
+        float: right;
         margin-right: 0; }
     .footer-widgets.col-3 .block {
-      display: block;
+      width: 32.2033898305%;
       float: left;
-      margin-left: 0;
-      margin-right: -100%;
-      width: 30.66667%;
-      clear: none;
-      float: left;
-      margin-left: 0;
-      margin-right: 4%; }
+      margin-right: 1.6949152542%; }
       .footer-widgets.col-3 .block.footer-widget-3 {
+        float: right;
         margin-right: 0; }
     .footer-widgets.col-4 .block {
-      display: block;
+      width: 23.7288135593%;
       float: left;
-      margin-left: 0;
-      margin-right: -100%;
-      width: 22%;
-      clear: none;
-      float: left;
-      margin-left: 0;
-      margin-right: 4%; }
+      margin-right: 1.6949152542%; }
       .footer-widgets.col-4 .block.footer-widget-4 {
+        float: right;
         margin-right: 0; } }
 
 @media screen and (max-width: 74em) {
@@ -1209,10 +1129,10 @@ fieldset {
   box-shadow: 0px -1px 0px #8b949b inset;
   border-radius: 0px;
   overflow: hidden; }
-  .hentry.type-post:after {
+  .hentry.type-post::after {
+    clear: both;
     content: "";
-    display: table;
-    clear: both; }
+    display: table; }
   .hentry .post-thumbnail {
     border: 0;
     display: block; }
@@ -1709,10 +1629,10 @@ embed, iframe, object {
   margin: 0; }
   #comments .comment-list .comment-body {
     position: relative; }
-    #comments .comment-list .comment-body:after {
+    #comments .comment-list .comment-body::after {
+      clear: both;
       content: "";
-      display: table;
-      clear: both; }
+      display: table; }
   #comments .comment-list .comment-content {
     background: #fff;
     margin-bottom: 1.875em;
@@ -1725,10 +1645,10 @@ embed, iframe, object {
     font-weight: 300;
     margin-bottom: 1em;
     padding-bottom: .5em; }
-    #comments .comment-list .comment-meta:after {
+    #comments .comment-list .comment-meta::after {
+      clear: both;
       content: "";
-      display: table;
-      clear: both; }
+      display: table; }
     #comments .comment-list .comment-meta .comment-author {
       float: left;
       margin-right: .5em; }
@@ -1784,10 +1704,10 @@ embed, iframe, object {
     border-right-color: #fff;
     border-width: .625em;
     margin-top: -.625em; }
-    #comments .with-avatar > .comment-body .comment-content:after:after {
+    #comments .with-avatar > .comment-body .comment-content:after::after {
+      clear: both;
       content: "";
-      display: table;
-      clear: both; }
+      display: table; }
 
 .comment-content a {
   word-wrap: break-word; }
@@ -1805,10 +1725,10 @@ embed, iframe, object {
     margin-bottom: 0; }
 
 @media screen and (min-width: 768px) {
-  #comments .comment-list:after {
+  #comments .comment-list::after {
+    clear: both;
     content: "";
-    display: table;
-    clear: both; }
+    display: table; }
   #comments .comment-list .comment-content:after {
     top: 1.5em;
     border-width: .75em;
