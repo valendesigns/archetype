@@ -41,7 +41,8 @@
 }
 
 .home.blog,
-.home.page:not(.page-template-template-homepage) {
+.home.page:not(.page-template-template-homepage),
+.no-wc-breadcrumb {
   .site-header {
     margin-bottom: 2.618em;
   }

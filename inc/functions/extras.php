@@ -39,6 +39,11 @@ function archetype_body_classes( $classes ) {
     $classes[] = 'group-blog';
   }
 
+  // Adds a class of no-wc-breadcrumb when WooCommerce isn't activated.
+  if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
+    $classes[]	= 'no-wc-breadcrumb';
+  }
+
   /**
    * What is this?!
    * Take the blue pill, close this file and forget you saw the following code.
