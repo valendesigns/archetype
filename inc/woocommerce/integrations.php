@@ -75,19 +75,6 @@ function archetype_woocommerce_integrations_scripts() {
 }
 
 /**
- * Integrations layout tweaks
- * @return void
- */
-function archetype_woocommerce_integrations_layout() {
-  /**
-   * WooCommerce Photography
-   */
-  if ( is_woocommerce_extension_activated( 'WC_Photography' ) ) {
-    remove_action( 'wc_photography_before_main_content', 'woocommerce_breadcrumb', 20 );
-  }
-}
-
-/**
  * Add CSS in <head> for integration styles handled by the theme customizer
  *
  * @since 1.0
