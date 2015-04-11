@@ -428,6 +428,26 @@ if ( ! function_exists( 'archetype_sanitize_hex_color' ) ) {
 }
 
 /**
+ * Sanitizes choices (selects / radios)
+ * Checks that the input matches one of the available choices
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_sanitize_choices' ) ) {
+  function archetype_sanitize_choices( $input, $setting ) {
+    global $wp_customize;
+
+    $control = $wp_customize->get_control( $setting->id );
+
+    if ( array_key_exists( $input, $control->choices ) ) {
+      return $input;
+    } else {
+      return $setting->default;
+    }
+  }
+}
+
+/**
  * Sanitizes the layout setting
  *
  * Ensures only array keys matching the original settings specified in add_control() are valid
@@ -435,18 +455,18 @@ if ( ! function_exists( 'archetype_sanitize_hex_color' ) ) {
  * @since 1.0.0
  */
 if ( ! function_exists( 'archetype_sanitize_layout' ) ) {
-    function archetype_sanitize_layout( $input ) {
-        $valid = array(
-            'right' => 'Right',
-            'left'  => 'Left',
-            );
+  function archetype_sanitize_layout( $input ) {
+    $valid = array(
+      'right' => 'Right',
+      'left'  => 'Left',
+      );
 
-        if ( array_key_exists( $input, $valid ) ) {
-            return $input;
-        } else {
-            return '';
-        }
+    if ( array_key_exists( $input, $valid ) ) {
+      return $input;
+    } else {
+      return '';
     }
+  }
 }
 
 /**
