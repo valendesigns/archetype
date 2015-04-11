@@ -1433,19 +1433,19 @@ embed, iframe, object {
   max-width: 100%; }
 
 /**
- * Pagination (posts|images|comments)
+ * Pagination (posts|images|comments|woo)
  */
-.pagination, .image-navigation, .comment-navigation {
+.pagination, .image-navigation, .comment-navigation, .woocommerce-pagination {
   background-color: #fff;
   margin-bottom: 2.618em;
   /* reset screen-reader-text */ }
-  .pagination .nav-links, .image-navigation .nav-links, .comment-navigation .nav-links {
+  .pagination .nav-links, .image-navigation .nav-links, .comment-navigation .nav-links, .woocommerce-pagination .nav-links {
     min-height: 3em;
     position: relative;
     text-align: center; }
-  .pagination .current .screen-reader-text, .image-navigation .current .screen-reader-text, .comment-navigation .current .screen-reader-text {
+  .pagination .current .screen-reader-text, .image-navigation .current .screen-reader-text, .comment-navigation .current .screen-reader-text, .woocommerce-pagination .current .screen-reader-text {
     position: static !important; }
-    .pagination .current .screen-reader-text:hover, .pagination .current .screen-reader-text:active, .pagination .current .screen-reader-text:focus, .image-navigation .current .screen-reader-text:hover, .image-navigation .current .screen-reader-text:active, .image-navigation .current .screen-reader-text:focus, .comment-navigation .current .screen-reader-text:hover, .comment-navigation .current .screen-reader-text:active, .comment-navigation .current .screen-reader-text:focus {
+    .pagination .current .screen-reader-text:hover, .pagination .current .screen-reader-text:active, .pagination .current .screen-reader-text:focus, .image-navigation .current .screen-reader-text:hover, .image-navigation .current .screen-reader-text:active, .image-navigation .current .screen-reader-text:focus, .comment-navigation .current .screen-reader-text:hover, .comment-navigation .current .screen-reader-text:active, .comment-navigation .current .screen-reader-text:focus, .woocommerce-pagination .current .screen-reader-text:hover, .woocommerce-pagination .current .screen-reader-text:active, .woocommerce-pagination .current .screen-reader-text:focus {
       background-color: transparent;
       border-radius: 0;
       box-shadow: none;
@@ -1461,16 +1461,16 @@ embed, iframe, object {
       text-decoration: none;
       top: auto;
       width: auto; }
-  .pagination .page-numbers, .image-navigation .page-numbers, .comment-navigation .page-numbers {
+  .pagination .page-numbers, .image-navigation .page-numbers, .comment-navigation .page-numbers, .woocommerce-pagination .page-numbers {
     display: none;
     font-weight: 300;
     line-height: 3em;
     padding: 0 .625em; }
-  .pagination .page-numbers.current, .image-navigation .page-numbers.current, .comment-navigation .page-numbers.current {
+  .pagination .page-numbers.current, .image-navigation .page-numbers.current, .comment-navigation .page-numbers.current, .woocommerce-pagination .page-numbers.current {
     text-transform: uppercase; }
-  .pagination .current, .image-navigation .current, .comment-navigation .current {
+  .pagination .current, .image-navigation .current, .comment-navigation .current, .woocommerce-pagination .current {
     display: inline-block; }
-  .pagination .prev, .pagination .next, .pagination .nav-previous a, .pagination .nav-next a, .image-navigation .prev, .image-navigation .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .comment-navigation .nav-previous a, .comment-navigation .nav-next a {
+  .pagination .prev, .pagination .next, .pagination .nav-previous a, .pagination .nav-next a, .image-navigation .prev, .image-navigation .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .comment-navigation .nav-previous a, .comment-navigation .nav-next a, .woocommerce-pagination .prev, .woocommerce-pagination .next, .woocommerce-pagination .nav-previous a, .woocommerce-pagination .nav-next a {
     -webkit-tap-highlight-color: #ed543f;
     background-color: #555;
     color: #fff;
@@ -1480,7 +1480,7 @@ embed, iframe, object {
     padding: 0;
     position: absolute;
     width: 48px; }
-  .pagination .prev:before, .pagination .next:before, .pagination .nav-previous a:before, .pagination .nav-next a:before, .image-navigation .prev:before, .image-navigation .next:before, .image-navigation .nav-previous a:before, .image-navigation .nav-next a:before, .comment-navigation .prev:before, .comment-navigation .next:before, .comment-navigation .nav-previous a:before, .comment-navigation .nav-next a:before {
+  .pagination .prev:before, .pagination .next:before, .pagination .nav-previous a:before, .pagination .nav-next a:before, .image-navigation .prev:before, .image-navigation .next:before, .image-navigation .nav-previous a:before, .image-navigation .nav-next a:before, .comment-navigation .prev:before, .comment-navigation .next:before, .comment-navigation .nav-previous a:before, .comment-navigation .nav-next a:before, .woocommerce-pagination .prev:before, .woocommerce-pagination .next:before, .woocommerce-pagination .nav-previous a:before, .woocommerce-pagination .nav-next a:before {
     display: inline-block;
     font-family: "FontAwesome";
     font-size: 1.313em;
@@ -1489,16 +1489,16 @@ embed, iframe, object {
     position: relative;
     width: 48px;
     vertical-align: middle; }
-  .pagination .prev:hover, .pagination .prev:focus, .pagination .next:hover, .pagination .next:focus, .pagination .nav-previous a:hover, .pagination .nav-previous a:focus, .pagination .nav-next a:hover, .pagination .nav-next a:focus, .image-navigation .prev:hover, .image-navigation .prev:focus, .image-navigation .next:hover, .image-navigation .next:focus, .image-navigation .nav-previous a:hover, .image-navigation .nav-previous a:focus, .image-navigation .nav-next a:hover, .image-navigation .nav-next a:focus, .comment-navigation .prev:hover, .comment-navigation .prev:focus, .comment-navigation .next:hover, .comment-navigation .next:focus, .comment-navigation .nav-previous a:hover, .comment-navigation .nav-previous a:focus, .comment-navigation .nav-next a:hover, .comment-navigation .nav-next a:focus {
+  .pagination .prev:hover, .pagination .prev:focus, .pagination .next:hover, .pagination .next:focus, .pagination .nav-previous a:hover, .pagination .nav-previous a:focus, .pagination .nav-next a:hover, .pagination .nav-next a:focus, .image-navigation .prev:hover, .image-navigation .prev:focus, .image-navigation .next:hover, .image-navigation .next:focus, .image-navigation .nav-previous a:hover, .image-navigation .nav-previous a:focus, .image-navigation .nav-next a:hover, .image-navigation .nav-next a:focus, .comment-navigation .prev:hover, .comment-navigation .prev:focus, .comment-navigation .next:hover, .comment-navigation .next:focus, .comment-navigation .nav-previous a:hover, .comment-navigation .nav-previous a:focus, .comment-navigation .nav-next a:hover, .comment-navigation .nav-next a:focus, .woocommerce-pagination .prev:hover, .woocommerce-pagination .prev:focus, .woocommerce-pagination .next:hover, .woocommerce-pagination .next:focus, .woocommerce-pagination .nav-previous a:hover, .woocommerce-pagination .nav-previous a:focus, .woocommerce-pagination .nav-next a:hover, .woocommerce-pagination .nav-next a:focus {
     background-color: #ed543f; }
-  .pagination .prev, .pagination .nav-previous a, .image-navigation .prev, .image-navigation .nav-previous a, .comment-navigation .prev, .comment-navigation .nav-previous a {
+  .pagination .prev, .pagination .nav-previous a, .image-navigation .prev, .image-navigation .nav-previous a, .comment-navigation .prev, .comment-navigation .nav-previous a, .woocommerce-pagination .prev, .woocommerce-pagination .nav-previous a {
     left: 0; }
-  .pagination .prev:before, .pagination .nav-previous a:before, .image-navigation .prev:before, .image-navigation .nav-previous a:before, .comment-navigation .prev:before, .comment-navigation .nav-previous a:before {
+  .pagination .prev:before, .pagination .nav-previous a:before, .image-navigation .prev:before, .image-navigation .nav-previous a:before, .comment-navigation .prev:before, .comment-navigation .nav-previous a:before, .woocommerce-pagination .prev:before, .woocommerce-pagination .nav-previous a:before {
     content: "\f053";
     left: -1px; }
-  .pagination .next, .pagination .nav-next a, .image-navigation .next, .image-navigation .nav-next a, .comment-navigation .next, .comment-navigation .nav-next a {
+  .pagination .next, .pagination .nav-next a, .image-navigation .next, .image-navigation .nav-next a, .comment-navigation .next, .comment-navigation .nav-next a, .woocommerce-pagination .next, .woocommerce-pagination .nav-next a {
     right: 0; }
-  .pagination .next:before, .pagination .nav-next a:before, .image-navigation .next:before, .image-navigation .nav-next a:before, .comment-navigation .next:before, .comment-navigation .nav-next a:before {
+  .pagination .next:before, .pagination .nav-next a:before, .image-navigation .next:before, .image-navigation .nav-next a:before, .comment-navigation .next:before, .comment-navigation .nav-next a:before, .woocommerce-pagination .next:before, .woocommerce-pagination .nav-next a:before {
     content: "\f054";
     right: -1px; }
 
@@ -1842,7 +1842,7 @@ embed, iframe, object {
   .widget-area .widget a {
     color: #555;
     font-weight: 400;
-    opacity: 0.5; }
+    opacity: 0.75; }
     .widget-area .widget a:hover {
       color: #ee543f;
       opacity: 1; }

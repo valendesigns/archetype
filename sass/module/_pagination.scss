@@ -1,10 +1,11 @@
 /**
- * Pagination (posts|images|comments)
+ * Pagination (posts|images|comments|woo)
  */
 
 .pagination,
 .image-navigation,
-.comment-navigation {
+.comment-navigation,
+.woocommerce-pagination {
   background-color: $color-post-bg;
   margin-bottom: 2.618em;
 
