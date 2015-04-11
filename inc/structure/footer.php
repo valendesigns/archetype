@@ -57,7 +57,7 @@ if ( ! function_exists( 'archetype_credit' ) ) {
     <div class="site-info">
       <?php echo esc_html( apply_filters( 'archetype_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
       <?php if ( apply_filters( 'archetype_credit_link', true ) ) { ?>
-      <br /> <?php printf( __( '%1$s designed by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" rel="designer">Valen Designs</a>' ); ?>
+      <br /> <?php printf( __( '%1$s designed by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" alt="Premium WordPress Themes by Valen Designs" title="Premium WordPress Themes by Valen Designs" rel="designer">Valen Designs</a>' ); ?>
       <?php } ?>
     </div><!-- .site-info -->
     <?php
