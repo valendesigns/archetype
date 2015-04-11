@@ -13,7 +13,7 @@ class Archetype_Arbitrary_Control extends WP_Customize_Control {
     switch ( $this->type ) {
       default:
       case 'text' :
-        echo '<p class="description">' . $this->description . '</p>';
+        echo '<p class="description">' . esc_html( $this->description ) . '</p>';
       break;
       case 'heading':
         echo '<span class="customize-control-title">' . esc_html( $this->label ) . '</span>';
