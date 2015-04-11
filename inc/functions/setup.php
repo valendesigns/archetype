@@ -115,8 +115,8 @@ endif; // archetype_setup
  */
 function archetype_widgets_init() {
   register_sidebar( array(
-    'name'          => __( 'Header', 'archetype' ),
-    'id'            => 'header-1',
+    'name'          => __( 'Sidebar', 'archetype' ),
+    'id'            => 'sidebar-1',
     'description'   => '',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
@@ -125,8 +125,8 @@ function archetype_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name'          => __( 'Sidebar', 'archetype' ),
-    'id'            => 'sidebar-1',
+    'name'          => __( 'Header', 'archetype' ),
+    'id'            => 'header-1',
     'description'   => '',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
