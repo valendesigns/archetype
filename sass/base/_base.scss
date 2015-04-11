@@ -40,6 +40,13 @@
   }
 }
 
+.home.blog,
+.home.page:not(.page-template-template-homepage) {
+  .site-header {
+    margin-bottom: 2.618em;
+  }
+}
+
 .header-widget-region {
   position: relative;
   z-index: 99;
