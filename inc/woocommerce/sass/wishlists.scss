@@ -22,14 +22,15 @@
 
 #wl-wrapper {
   .wl-tabs {
-    border-bottom: 1px solid $color-post-border !important;
+    border-bottom: 0 !important;
 
     > li {
-      border-bottom: 0;
+      float: none !important;
 
       > a {
         padding: 1em 1.387em;
         border: 0 !important;
+        margin: 0 !important;
         @include border-top-radius(0);
         background-color: transparent !important;
       }
@@ -38,6 +39,12 @@
         a {
           box-shadow: 0 -3px 0 rgba(0,0,0,0.1) inset;
         }
+      }
+    }
+
+    &.manage {
+      td {
+        padding: .53em !important;
       }
     }
   }
@@ -80,5 +87,35 @@
     content: "\f067";
     margin-right: .53em;
     font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #wl-wrapper {
+    .wl-tabs {
+      > li {
+        a {
+          padding-left: 0;
+        }
+
+        &.active {
+          a {
+            box-shadow: none;
+          }
+
+          &:after {
+            content: "\f105";
+            font-family: "FontAwesome";
+            display: block !important;
+            position: absolute;
+            top: 50%;
+            height: 1em;
+            width: 1em;
+            line-height: 1;
+            margin-top: -.5em;
+          }
+        }
+      }
+    }
   }
 }
