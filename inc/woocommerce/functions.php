@@ -94,7 +94,7 @@ function archetype_woocommerce_scripts() {
  * @since 1.0.0
  * @return  array $args related products args
  */
-function archetype_related_products_args( $args = array() ) {
+function archetype_related_products_args( $args ) {
   $args = apply_filters( 'archetype_related_products_args', array(
     'posts_per_page' => 3,
     'columns'        => 3,
