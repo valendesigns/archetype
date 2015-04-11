@@ -221,6 +221,7 @@ module.exports = function( grunt ) {
           '!Gruntfile.js',
           '!package.json',
           '!node_modules/**',
+          '!.DS_Store',
           '!style.scss',
           '!sass/**',
           '!inc/customizer/sass/*.scss',
