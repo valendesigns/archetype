@@ -1106,9 +1106,9 @@ fieldset {
   border-radius: 0 0px 0px 0; }
   .page-header .page-title {
     margin-bottom: 0; }
-  .page-header .taxonomy-description {
+  .page-header .archive-description {
     font-weight: 300; }
-    .page-header .taxonomy-description p:last-child {
+    .page-header .archive-description p:last-child {
       margin-bottom: 0; }
 
 .hentry {
