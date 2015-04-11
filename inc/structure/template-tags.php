@@ -26,7 +26,7 @@ if ( ! function_exists( 'archetype_product_categories' ) ) {
         'title'        => __( 'Product Categories', 'archetype' ),
         ) );
 
-      echo '<section class="archetype-product-section">';
+      echo '<section class="archetype-product-section archetype-product-categories">';
 
       echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
       echo do_shortcode( '[product_categories number="' . $args['limit'] . '" columns="' . $args['columns'] . '" orderby="' . $args['orderby'] . '" parent="' . $args['child_categories'] . '"]' );
@@ -54,7 +54,7 @@ if ( ! function_exists( 'archetype_recent_products' ) ) {
         'title'        => __( 'Recent Products', 'archetype' ),
         ) );
 
-      echo '<section class="archetype-product-section">';
+      echo '<section class="archetype-product-section archetype-recent-products">';
 
       echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
       echo do_shortcode( '[recent_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
@@ -82,7 +82,7 @@ if ( ! function_exists( 'archetype_featured_products' ) ) {
         'title'        => __( 'Featured Products', 'archetype' ),
         ) );
 
-      echo '<section class="archetype-product-section">';
+      echo '<section class="archetype-product-section archetype-feautred-products">';
 
       echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
       echo do_shortcode( '[featured_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
@@ -110,7 +110,7 @@ if ( ! function_exists( 'archetype_popular_products' ) ) {
         'title'        => __( 'Top Rated Products', 'archetype' ),
         ) );
 
-      echo '<section class="archetype-product-section">';
+      echo '<section class="archetype-product-section archetype-popular-products">';
 
       echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
       echo do_shortcode( '[top_rated_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
@@ -138,7 +138,7 @@ if ( ! function_exists( 'archetype_on_sale_products' ) ) {
         'title'        => __( 'On Sale', 'archetype' ),
         ) );
 
-      echo '<section class="archetype-product-section">';
+      echo '<section class="archetype-product-section archetype-on-sale-products">';
 
       echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
       echo do_shortcode( '[sale_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
