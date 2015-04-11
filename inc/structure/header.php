@@ -50,7 +50,7 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) {
   function archetype_primary_navigation() {
     ?>
     <nav id="site-navigation" class="main-navigation" role="navigation">
-      <button class="menu-toggle"><?php _e( 'Primary Menu', 'archetype' ); ?></button>
+      <button class="menu-toggle"><?php apply_filters( 'archetype_menu_toggle_text', $content = _e( 'Primary Menu', 'archetype' ) ); ?></button>
       <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav><!-- #site-navigation -->
     <?php
