@@ -69,9 +69,7 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
 /**
  * Integrations
  * @see  archetype_woocommerce_integrations_scripts()
- * @see  archetype_woocommerce_integrations_layout()
  * @see  archetype_add_bookings_customizer_css()
  */
 add_action( 'wp_enqueue_scripts',  'archetype_woocommerce_integrations_scripts' );
-add_action( 'wp',                  'archetype_woocommerce_integrations_layout'  );
 //add_action( 'wp_enqueue_scripts', 'archetype_add_integrations_customizer_css'  );
