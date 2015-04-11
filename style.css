@@ -623,9 +623,9 @@ abbr, acronym {
   cursor: help; }
 
 mark, ins {
-  background: #fff9c0;
-  text-decoration: none;
-  padding: .125em .25em; }
+  background: transparent;
+  font-weight: 700;
+  text-decoration: none; }
 
 sup, sub {
   font-size: 75%;
