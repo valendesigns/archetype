@@ -9,7 +9,8 @@
   .summary_element_wrapper {
     box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
 
-    &.selected, &.selected:hover {
+    &.selected,
+    &.selected:hover {
       box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.06 );
     }
 
@@ -17,7 +18,8 @@
       box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.03 );
     }
 
-    &.disabled, &.disabled:hover {
+    &.disabled,
+    &.disabled:hover {
       box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
     }
   }
@@ -74,7 +76,8 @@
         margin-left: 5px; /* v2.5.5 compat */
         box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
 
-        &.selected, &.selected:hover {
+        &.selected,
+        &.selected:hover {
           box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.06 );
         }
 
@@ -82,7 +85,8 @@
           box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.03 );
         }
 
-        &.disabled, &.disabled:hover {
+        &.disabled,
+        &.disabled:hover {
           box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
         }
       }
