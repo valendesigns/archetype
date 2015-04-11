@@ -24,7 +24,7 @@ remove_action( 'woocommerce_after_main_content',  'woocommerce_output_content_wr
 remove_action( 'woocommerce_sidebar',             'woocommerce_get_sidebar',                10    );
 add_action( 'woocommerce_before_main_content',    'archetype_before_content',               10    );
 add_action( 'woocommerce_after_main_content',     'archetype_after_content',                10    );
-//add_action( 'archetype_content_top',             'woocommerce_breadcrumb',                 10    );
+add_action( 'archetype_content_top',              'woocommerce_breadcrumb',                 10    );
 
 /**
  * Products
