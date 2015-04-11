@@ -10,7 +10,7 @@
  * @see  archetype_woocommerce_scripts()
  */
 add_action( 'wp_enqueue_scripts',       'archetype_woocommerce_scripts',    20 );
-add_filter( 'woocommerce_enqueue_styles',   '__return_false' );
+add_filter( 'woocommerce_enqueue_styles',   '__return_empty_array' );
 
 /**
  * Layout
