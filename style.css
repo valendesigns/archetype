@@ -658,9 +658,7 @@ th {
 
 img {
   height: auto;
-  /* Make sure images are scaled correctly. */
   max-width: 100%;
-  /* Adhere to container width. */
   display: block; }
 
 a {
@@ -668,6 +666,9 @@ a {
   text-decoration: none; }
   a:hover {
     color: #111; }
+
+.archetype-cute * {
+  font-family: "Comic Sans MS", sans-serif; }
 
 /**
  * General Layout

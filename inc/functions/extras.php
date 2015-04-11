@@ -39,6 +39,18 @@ function archetype_body_classes( $classes ) {
     $classes[] = 'group-blog';
   }
 
+  /**
+   * What is this?!
+   * Take the blue pill, close this file and forget you saw the following code.
+   * Or take the red pill, filter `archetype_make_me_cute` and see how deep the rabbit hole goes...
+   *
+   * @since  1.0.0
+   */
+  $cute = apply_filters( 'archetype_make_me_cute', false );
+  if ( true == $cute ) {
+    $classes[] = 'archetype-cute';
+  }
+
   return $classes;
 }
 

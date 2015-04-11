@@ -205,8 +205,8 @@ th {
 }
 
 img {
-  height: auto; /* Make sure images are scaled correctly. */
-  max-width: 100%; /* Adhere to container width. */
+  height: auto; // Make sure images are scaled correctly.
+  max-width: 100%; // Adhere to container width.
   display: block;
 }
 
@@ -217,4 +217,8 @@ a {
   &:hover {
     color: $color-link-hover;
   }
+}
+
+.archetype-cute * {
+  font-family: "Comic Sans MS", sans-serif;
 }
