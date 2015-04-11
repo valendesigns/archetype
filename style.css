@@ -1820,6 +1820,8 @@ embed, iframe, object {
 
 .widget_categories ul li:before {
   content: "\f114"; }
+.widget_categories ul li.current-cat:before {
+  content: "\f115"; }
 
 .widget_archive ul li:before {
   content: "\f115"; }
