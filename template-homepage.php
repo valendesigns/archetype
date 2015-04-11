@@ -19,7 +19,7 @@ get_header(); ?>
 
       <?php
       /**
-       * @hooked archetype_page_content - 10
+       * @hooked archetype_homepage_content - 10
        * @hooked archetype_product_categories - 20
        * @hooked archetype_recent_products - 30
        * @hooked archetype_featured_products - 40
