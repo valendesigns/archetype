@@ -24,7 +24,6 @@ if ( ! function_exists( 'archetype_comment' ) ) {
    * @since 1.0.0
    */
   function archetype_comment( $comment, $args, $depth ) {
-    $GLOBALS['comment'] = $comment;
 
     if ( 'div' == $args['style'] ) {
       $tag = 'div';
@@ -71,7 +70,7 @@ if ( ! function_exists( 'archetype_comment' ) ) {
             <?php echo '<time>' . human_time_diff( get_comment_time('U'), current_time('timestamp') ) . ' ago' . '</time>'; ?>
           </a>
           
-          <?php if ( $comment->comment_approved == '0' ) : ?>
+          <?php if ( '0' == $comment->comment_approved ) : ?>
           <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'archetype' ); ?></em>
           <?php endif; ?>
 
