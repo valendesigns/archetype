@@ -44,22 +44,27 @@
       padding: 1em;
 
       #review_rating_field {
-        label:first-of-type {
-          display: block;
-        }
+        fieldset {
+          float: left;
 
-        label {
-          display: inline-block;
+          label {
+            display: inline-block;
+            float: right;
 
-          &.checkbox:before {
-            font-size: .857em;
+            &.checkbox:before {
+              font-size: .857em;
+            }
+          }
+
+          .star-label {
+            float: none;
+            margin-left: .618em;
           }
         }
+      }
 
-        .star-label {
-          float: none;
-          margin-left: .618em;
-        }
+      .form-row {
+        clear: both;
       }
     }
 
@@ -156,6 +161,17 @@
       }
     }
   }
+
+  .star-rating-selector {
+		fieldset {
+			float: none;
+			clear: both;
+		}
+
+		> label:first-child {
+			display: block !important;
+		}
+	}
 
   .star-rating-selector:not(:checked) {
     label.checkbox {
