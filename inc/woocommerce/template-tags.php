@@ -52,13 +52,15 @@ if ( ! function_exists( 'archetype_product_search' ) ) {
  * @uses  is_woocommerce_activated() check if WooCommerce is activated
  * @return void
  */
-function archetype_header_cart() {
-  if ( is_woocommerce_activated() ) { ?>
-    <ul class="site-header-cart menu">
-      <?php archetype_cart_link(); ?>
-      <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-    </ul>
-  <?php
+if ( ! function_exists( 'archetype_header_cart' ) ) {
+  function archetype_header_cart() {
+    if ( is_woocommerce_activated() ) { ?>
+      <ul class="site-header-cart menu">
+        <?php archetype_cart_link(); ?>
+        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+      </ul>
+    <?php
+    }
   }
 }
 
