@@ -508,7 +508,7 @@ if ( ! function_exists( 'archetype_adjust_color_brightness' ) ) {
     // Format the hex color string
     $hex    = str_replace( '#', '', $hex );
 
-    if ( strlen( $hex ) == 3 ) {
+    if ( 3 == strlen( $hex ) ) {
       $hex  = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
     }
 
