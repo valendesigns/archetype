@@ -400,6 +400,9 @@ td, th {
 /**
  * Main content area
  */
+.page-template-template-homepage .site-main {
+  padding-top: 4.236em; }
+
 /**
  * Footer
  */
@@ -1775,16 +1778,14 @@ embed, iframe, object {
   .widget-area .widget a.button:hover {
     color: #fff; }
 
-.header-widget-region {
-  margin-bottom: 2.618em; }
-  .header-widget-region::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .header-widget-region .widget {
-    margin: 0;
-    padding: 1em 0;
-    font-size: .857em; }
+.header-widget-region::after {
+  clear: both;
+  content: "";
+  display: table; }
+.header-widget-region .widget {
+  margin: 0;
+  padding: 1em 0;
+  font-size: .857em; }
 
 .widget_search form, .widget_product_search form {
   position: relative; }
