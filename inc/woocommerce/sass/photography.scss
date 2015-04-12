@@ -19,7 +19,6 @@
     .site-main ul.products {
       li.product-type-photography {
         @include clearfix;
-        @include span(3 of 9);
         text-align: left;
 
         .photography-image,
