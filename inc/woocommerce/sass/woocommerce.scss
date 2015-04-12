@@ -139,7 +139,7 @@ ul.products {
 
     .star-rating,
     .price {
-      margin:0 auto 1em;
+      margin: 0 auto 1em;
     }
 
     .price {
@@ -152,6 +152,14 @@ ul.products {
         margin-left: .618em;
         background-color: transparent;
       }
+    }
+
+    h3 {
+      font-size: 1.1em;
+    }
+
+    .star-rating {
+      font-size: .857em;
     }
 
     img {
