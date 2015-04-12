@@ -1592,10 +1592,14 @@ embed, iframe, object {
     background-color: #555;
     border-color: #555;
     color: #fff; }
-  .page-links a:hover, .page-links a:focus {
-    background-color: #ed543f;
-    border-color: #ed543f;
-    color: #fff; }
+    .page-links a > span {
+      color: #fff; }
+    .page-links a:hover, .page-links a:focus {
+      background-color: #ed543f;
+      border-color: #ed543f;
+      color: #fff; }
+      .page-links a:hover > span, .page-links a:focus > span {
+        color: #fff; }
   .page-links > .page-links-title {
     border: 0;
     height: auto;
@@ -1607,29 +1611,25 @@ embed, iframe, object {
  * Phone
  */
 @media screen and (max-width: 568px) {
-  .post-navigation, .pagination, .image-navigation, .comment-navigation {
-    margin-bottom: 1.387em; }
-  .pagination .nav-links, .image-navigation .nav-links, .comment-navigation .nav-links {
-    min-height: 2.667em; }
-  .pagination .page-numbers, .image-navigation .page-numbers, .comment-navigation .page-numbers {
-    line-height: 2.667em; } }
+  .post-navigation, .pagination, .image-navigation, .comment-navigation, .woocommerce-pagination {
+    margin-bottom: 1.387em; } }
 
 /**
  * Tablet
  */
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .post-navigation, .pagination, .image-navigation, .comment-navigation {
+  .post-navigation, .pagination, .image-navigation, .comment-navigation, .woocommerce-pagination {
     margin-bottom: 2.125em; } }
 
 /**
  * Tablet & Desktop
  */
 @media screen and (min-width: 768px) {
-  .pagination, .comment-navigation {
+  .pagination, .comment-navigation, .woocommerce-pagination {
     /* restore screen-reader-text */ }
-    .pagination .current .screen-reader-text, .comment-navigation .current .screen-reader-text {
+    .pagination .current .screen-reader-text, .comment-navigation .current .screen-reader-text, .woocommerce-pagination .current .screen-reader-text {
       position: absolute !important; }
-    .pagination .page-numbers, .comment-navigation .page-numbers {
+    .pagination .page-numbers, .comment-navigation .page-numbers, .woocommerce-pagination .page-numbers {
       display: inline-block; } }
 
 /**

@@ -215,13 +215,21 @@
     background-color: $color-body;
     border-color: $color-body;
     color: $color-post-bg;
-  }
+    
+    > span {
+      color: $color-post-bg;
+    }
   
-  a:hover,
-  a:focus {
-    background-color: $color-button-bg;
-    border-color: $color-button-bg;
-    color: $color-post-bg;
+    &:hover,
+    &:focus {
+      background-color: $color-button-bg;
+      border-color: $color-button-bg;
+      color: $color-post-bg;
+      
+      > span {
+        color: $color-post-bg;
+      }
+    }
   }
   
   > .page-links-title {
@@ -242,21 +250,9 @@
   .post-navigation,
   .pagination,
   .image-navigation,
-  .comment-navigation {
+  .comment-navigation,
+  .woocommerce-pagination {
     margin-bottom: 1.387em;
-  }
-  
-  .pagination,
-  .image-navigation,
-  .comment-navigation {
-  
-    .nav-links {
-      min-height: 2.667em;
-    }
-    
-    .page-numbers {
-      line-height: 2.667em;
-    }
   }
 }
 
@@ -268,7 +264,8 @@
   .post-navigation,
   .pagination,
   .image-navigation,
-  .comment-navigation {
+  .comment-navigation,
+  .woocommerce-pagination {
     margin-bottom: 2.125em;
   }
 }
@@ -279,7 +276,8 @@
 
 @media screen and (min-width: 768px) {
   .pagination,
-  .comment-navigation {
+  .comment-navigation,
+  .woocommerce-pagination {
     
     /* restore screen-reader-text */
     .current .screen-reader-text {
