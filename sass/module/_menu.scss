@@ -94,31 +94,45 @@
         }
 
         // link hover
-        &:hover {
-          > a { }
-          > ul { display: block; }
+        &:hover,
+        &.focus {
+          > ul {
+            left: 0;
+
+            li {
+              ul {
+                left: -999em;
+              }
+
+              &:hover,
+              &.focus {
+                ul {
+                  left: 100%;
+                }
+              }
+            }
+          }
         }
 
       }
 
       // second level
       ul {
-        display: none;
         float: left;
         position: absolute;
         top: 100%;
-        left: 0;
+        left: -999em;
         z-index: 99999;
         background-color: $color-header-bg;
 
         &:hover {
+          left: 0;
           > a {};
         }
 
         li {
           a {
             width: 200px;
-            &:hover {};
           }
         }
 

@@ -67,9 +67,16 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
   function archetype_post_content() {
     ?>
     <div class="entry-content" itemprop="articleBody">
-      <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'archetype' ) ); ?>
-      
-      <?php archetype_page_navigation(); ?>
+      <?php
+      the_content( 
+        sprintf( 
+          __( 'Continue reading %s', 'archetype' ),
+          '<span class="screen-reader-text">' . get_the_title() . '</span>'
+        )
+      ); 
+
+      archetype_page_navigation();
+      ?>
     </div><!-- .entry-content -->
     <?php
   }

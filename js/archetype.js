@@ -70,6 +70,11 @@
           container.className += ' toggled';
         }
       };
+
+      // Add focus class to li
+      $( '.main-navigation, .secondary-navigation' ).find( 'a' ).on( 'focus.archetype blur.archetype', function() {
+        $( this ).parents().toggleClass( 'focus' );
+      } );
     },
     
     /**

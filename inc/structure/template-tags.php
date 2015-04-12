@@ -19,11 +19,11 @@ if ( ! function_exists( 'archetype_product_categories' ) ) {
     if ( is_woocommerce_activated() ) {
 
       $args = apply_filters( 'archetype_product_categories_args', array(
-        'limit'       => 3,
-        'columns'       => 3,
-        'child_categories'   => 0,
-        'orderby'       => 'name',
-        'title'        => __( 'Product Categories', 'archetype' ),
+        'limit'            => 3,
+        'columns'          => 3,
+        'child_categories' => 0,
+        'orderby'          => 'name',
+        'title'            => __( 'Product Categories', 'archetype' ),
         ) );
 
       echo '<section class="archetype-product-section archetype-product-categories">';

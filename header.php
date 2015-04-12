@@ -47,7 +47,7 @@
    */
   do_action( 'archetype_before_content' ); ?>
 
-  <div id="content" class="site-content">
+  <div id="content" class="site-content" tabindex="-1">
     <div class="col-full">
 
     <?php

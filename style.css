@@ -406,6 +406,9 @@ td, th {
 .page-template-template-homepage .site-main {
   padding-top: 4.236em; }
 
+.site-content {
+  outline: none; }
+
 /**
  * Footer
  */
@@ -669,6 +672,8 @@ a {
   text-decoration: none; }
   a:hover {
     color: #111; }
+  a:focus {
+    outline: thin dotted; }
 
 .archetype-cute * {
   font-family: "Comic Sans MS", sans-serif; }
@@ -1008,16 +1013,21 @@ fieldset {
           display: block; }
           .main-navigation ul li a:before, .secondary-navigation ul li a:before {
             display: none; }
-        .main-navigation ul li:hover > ul, .secondary-navigation ul li:hover > ul {
-          display: block; }
+        .main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul, .secondary-navigation ul li:hover > ul, .secondary-navigation ul li.focus > ul {
+          left: 0; }
+          .main-navigation ul li:hover > ul li ul, .main-navigation ul li.focus > ul li ul, .secondary-navigation ul li:hover > ul li ul, .secondary-navigation ul li.focus > ul li ul {
+            left: -999em; }
+          .main-navigation ul li:hover > ul li:hover ul, .main-navigation ul li:hover > ul li.focus ul, .main-navigation ul li.focus > ul li:hover ul, .main-navigation ul li.focus > ul li.focus ul, .secondary-navigation ul li:hover > ul li:hover ul, .secondary-navigation ul li:hover > ul li.focus ul, .secondary-navigation ul li.focus > ul li:hover ul, .secondary-navigation ul li.focus > ul li.focus ul {
+            left: 100%; }
       .main-navigation ul ul, .secondary-navigation ul ul {
-        display: none;
         float: left;
         position: absolute;
         top: 100%;
-        left: 0;
+        left: -999em;
         z-index: 99999;
         background-color: #353b3f; }
+        .main-navigation ul ul:hover, .secondary-navigation ul ul:hover {
+          left: 0; }
         .main-navigation ul ul li a, .secondary-navigation ul ul li a {
           width: 200px; }
         .main-navigation ul ul ul, .secondary-navigation ul ul ul {
@@ -1853,13 +1863,9 @@ embed, iframe, object {
     font-size: 1.387em; }
   .widget-area .widget a {
     color: #555;
-    font-weight: 400;
-    opacity: 0.75; }
+    font-weight: 400; }
     .widget-area .widget a:hover {
-      color: #ee543f;
-      opacity: 1; }
-    .widget-area .widget a.button {
-      opacity: 1; }
+      color: #ee543f; }
 
 @media screen and (max-width: 568px) {
   .header-widget-region {

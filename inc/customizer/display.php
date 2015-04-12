@@ -12,26 +12,26 @@
  */
 if ( ! function_exists( 'archetype_add_customize_css' ) ) {
   function archetype_add_customize_css() {
-    $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#a46497' ) ) );
+    $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#96588a' ) ) );
     
     $background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_background_color', apply_filters( 'archetype_default_background_color', '#25292c' ) ) );
     
     $header_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#ee543f' ) ) );
     $header_link_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color', apply_filters( 'archetype_default_header_link_color', '#ffffff' ) ) );
-    $header_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#5a6567' ) ) );
+    $header_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#9aa0a7' ) ) );
     
     $content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_content_background_color' ) );
     
     $footer_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_background_color', apply_filters( 'archetype_default_footer_background_color', '#353b3f' ) ) );
-    $footer_link_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_color', apply_filters( 'archetype_default_footer_link_color', '#a46497' ) ) );
-    $footer_heading_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_heading_color', apply_filters( 'archetype_default_footer_heading_color', '#646c6e' ) ) );
-    $footer_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_text_color', apply_filters( 'archetype_default_footer_text_color', '#abb1ba' ) ) );
+    $footer_link_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_color', apply_filters( 'archetype_default_footer_link_color', '#96588a' ) ) );
+    $footer_heading_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_heading_color', apply_filters( 'archetype_default_footer_heading_color', '#494c50' ) ) );
+    $footer_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_text_color', apply_filters( 'archetype_default_footer_text_color', '#61656b' ) ) );
 
     $text_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_text_color', apply_filters( 'archetype_default_text_color', '#787E87' ) ) );
     $heading_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_heading_color', apply_filters( 'archetype_default_heading_color', '#484c51' ) ) );
     $button_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_background_color', apply_filters( 'archetype_default_button_background_color', '#787E87' ) ) );
     $button_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_text_color', apply_filters( 'archetype_default_button_text_color', '#ffffff' ) ) );
-    $button_alt_background_color   = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_alt_background_color', apply_filters( 'archetype_default_button_alt_background_color', '#a46497' ) ) );
+    $button_alt_background_color   = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_alt_background_color', apply_filters( 'archetype_default_button_alt_background_color', '#96588a' ) ) );
     $button_alt_text_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_alt_text_color', apply_filters( 'archetype_default_button_alt_text_color', '#ffffff' ) ) );
 
     $brighten_factor         = apply_filters( 'archetype_brighten_factor', 25 );
