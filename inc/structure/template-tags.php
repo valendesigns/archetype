@@ -82,7 +82,7 @@ if ( ! function_exists( 'archetype_featured_products' ) ) {
         'title'        => __( 'Featured Products', 'archetype' ),
         ) );
 
-      echo '<section class="archetype-product-section archetype-feautred-products">';
+      echo '<section class="archetype-product-section archetype-featured-products">';
 
       echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
       echo do_shortcode( '[featured_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
