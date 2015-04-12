@@ -1097,8 +1097,7 @@ p.stars {
   }
 }
 
-.woocommerce-result-count,
-.woocommerce-ordering {
+.archetype-sorting {
   font-size: .857em;
   margin-bottom: 2.618em;
 }
@@ -1564,15 +1563,38 @@ dl.variation {
     margin-bottom: 1.618em;
   }
 
+  .archetype-sorting {
+    @include clearfix;
+    margin-bottom: 2.618em;
+    border: 1px solid $color-post-border;
+    border-width: 1px 0;
+    padding: 1em 0;
+
+    select {
+      width: 9.505em;
+    }
+  }
+
   .woocommerce-result-count {
     float: left;
     position: relative;
-    padding-bottom: 1em;
-    clear: both;
+    margin-bottom: 0;
+    padding: .327em 0;
   }
 
   .woocommerce-ordering {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 0;
+    padding: .327em 0;
+  }
+
+  .woocommerce-pagination {
     float: right;
+    border: 0;
+    clear: none;
+    padding: 0;
+    margin-bottom: 0;
   }
 
   /**

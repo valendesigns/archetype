@@ -77,3 +77,21 @@ if ( ! function_exists( 'archetype_upsell_display' ) ) {
     woocommerce_upsell_display( -1, 3 );
   }
 }
+
+/**
+ * Sorting wrapper
+ * @since   1.0.0
+ * @return  void
+ */
+function archetype_sorting_wrapper() {
+  echo '<div class="archetype-sorting">';
+}
+
+/**
+ * Sorting wrapper close
+ * @since   1.0.0
+ * @return  void
+ */
+function archetype_sorting_wrapper_close() {
+  echo '</div>';
+}
