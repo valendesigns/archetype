@@ -1780,8 +1780,8 @@ embed, iframe, object {
     max-width: 100%; }
   .widget .widget-search .search-submit {
     display: none; }
-  .widget h1 {
-    font-size: 1em;
+  .widget h2.widget-title {
+    font-size: 1.387em;
     letter-spacing: 0;
     border-bottom: 3px solid #555;
     padding: 0 0 1em;

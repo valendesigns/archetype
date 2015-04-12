@@ -12,7 +12,7 @@ if ( ! function_exists( 'archetype_header_widget_region' ) ) {
    */
   function archetype_header_widget_region() {
     ?>
-    <div class="header-widget-region">
+    <div class="header-widget-region" role="complementary">
       <div class="col-full">
         <?php dynamic_sidebar( 'header-1' ); ?>
       </div>
@@ -79,7 +79,7 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
    */
   function archetype_secondary_navigation() {
     ?>
-    <nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'storefront' ); ?>">
+    <nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'archetype' ); ?>">
       <?php
       wp_nav_menu(
         array(
@@ -89,6 +89,20 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
       );
       ?>
     </nav><!-- #site-navigation -->
+    <?php
+  }
+}
+
+if ( ! function_exists( 'archetype_skip_links' ) ) {
+  /**
+   * Skip links
+   * @since  1.0.0
+   * @return void
+   */
+  function archetype_skip_links() {
+    ?>
+    <a class="skip-link screen-reader-text" href="#site-navigation"><?php _e( 'Skip to navigation', 'archetype' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'archetype' ); ?></a>
     <?php
   }
 }

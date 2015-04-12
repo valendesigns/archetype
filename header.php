@@ -19,7 +19,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-  <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'archetype' ); ?></a>
 
   <?php
   do_action( 'archetype_before_header' ); ?>
