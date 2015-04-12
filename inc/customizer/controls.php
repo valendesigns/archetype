@@ -55,7 +55,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_accent_color', array(
-      'label'       => 'Link / accent color',
+      'label'       => __( 'Link / accent color', 'archetype' ),
       'section'     => 'archetype_typography',
       'settings'    => 'archetype_accent_color',
       'priority'    => 20,
@@ -71,7 +71,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_text_color', array(
-      'label'       => 'Text color',
+      'label'       => __( 'Text color', 'archetype' ),
       'section'     => 'archetype_typography',
       'settings'    => 'archetype_text_color',
       'priority'    => 30,
@@ -87,7 +87,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_heading_color', array(
-      'label'       => 'Heading color',
+      'label'       => __( 'Heading color', 'archetype' ),
       'section'     => 'archetype_typography',
       'settings'    => 'archetype_heading_color',
       'priority'    => 40,
@@ -103,7 +103,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_background_color', array(
-      'label'       => 'Background color',
+      'label'       => __( 'Background color', 'archetype' ),
       'section'     => 'header_image',
       'settings'    => 'archetype_header_background_color',
       'priority'    => 15,
@@ -119,7 +119,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_text_color', array(
-      'label'       => 'Text color',
+      'label'       => __( 'Text color', 'archetype' ),
       'section'     => 'header_image',
       'settings'    => 'archetype_header_text_color',
       'priority'    => 20,
@@ -135,7 +135,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_link_color', array(
-      'label'       => 'Link color',
+      'label'       => __( 'Link color', 'archetype' ),
       'section'     => 'header_image',
       'settings'    => 'archetype_header_link_color',
       'priority'    => 30,
@@ -160,7 +160,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
     
     $wp_customize->add_control( new Archetype_Color_Control( $wp_customize, 'archetype_content_background_color', array(
-      'label'       => 'Background color',
+      'label'       => __( 'Background color', 'archetype' ),
       'section'     => 'archetype_content',
       'settings'    => 'archetype_content_background_color',
     ) ) );
@@ -184,7 +184,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_heading_color', array(
-      'label'       => 'Heading color',
+      'label'       => __( 'Heading color', 'archetype' ),
       'section'     => 'archetype_footer',
       'settings'    => 'archetype_footer_heading_color',
     ) ) );
@@ -199,7 +199,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_text_color', array(
-      'label'       => 'Text color',
+      'label'       => __( 'Text color', 'archetype' ),
       'section'     => 'archetype_footer',
       'settings'    => 'archetype_footer_text_color',
     ) ) );
@@ -214,7 +214,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_link_color', array(
-      'label'       => 'Link color',
+      'label'       => __( 'Link color', 'archetype' ),
       'section'     => 'archetype_footer',
       'settings'    => 'archetype_footer_link_color',
     ) ) );
@@ -229,7 +229,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_background_color', array(
-      'label'       => 'Background color',
+      'label'       => __( 'Background color', 'archetype' ),
       'section'     => 'archetype_footer',
       'settings'    => 'archetype_footer_background_color',
     ) ) );
@@ -252,7 +252,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_background_color', array(
-      'label'       => 'Background color',
+      'label'       => __( 'Background color', 'archetype' ),
       'section'     => 'archetype_buttons',
       'settings'    => 'archetype_button_background_color',
       'priority'    => 10,
@@ -267,7 +267,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_text_color', array(
-      'label'       => 'Text color',
+      'label'       => __( 'Text color', 'archetype' ),
       'section'     => 'archetype_buttons',
       'settings'    => 'archetype_button_text_color',
       'priority'    => 20,
@@ -282,7 +282,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_alt_background_color', array(
-      'label'       => 'Alternate button background color',
+      'label'       => __( 'Alternate button background color', 'archetype' ),
       'section'     => 'archetype_buttons',
       'settings'    => 'archetype_button_alt_background_color',
       'priority'    => 30,
@@ -297,7 +297,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_alt_text_color', array(
-      'label'       => 'Alternate button text color',
+      'label'       => __( 'Alternate button text color', 'archetype' ),
       'section'     => 'archetype_buttons',
       'settings'    => 'archetype_button_alt_text_color',
       'priority'    => 40,
