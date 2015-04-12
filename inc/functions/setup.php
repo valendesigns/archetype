@@ -41,13 +41,13 @@ if ( ! function_exists( 'archetype_setup' ) ) :
      * Note: the first-loaded translation file overrides any following ones if the same translation is present.
      */
 
-    // wp-content/languages/theme-name/it_IT.mo
+    // wp-content/languages/themes/archetype-it_IT.mo
     load_theme_textdomain( 'archetype', trailingslashit( WP_LANG_DIR ) . 'themes/' );
 
     // wp-content/themes/child-theme-name/languages/it_IT.mo
     load_theme_textdomain( 'archetype', get_stylesheet_directory() . '/languages' );
 
-    // wp-content/themes/theme-name/languages/it_IT.mo
+    // wp-content/themes/archetype/languages/it_IT.mo
     load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );
 
     // This theme uses wp_nav_menu() in two locations.
