@@ -54,6 +54,7 @@ if ( ! function_exists( 'archetype_setup' ) ) :
     register_nav_menus( array(
       'primary'   => __( 'Primary Menu', 'archetype' ),
       'secondary' => __( 'Secondary Menu', 'archetype' ),
+      'handheld'  => __( 'Handheld Menu', 'archetype' ),
     ) );
     
     /*

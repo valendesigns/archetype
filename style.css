@@ -972,11 +972,16 @@ fieldset {
     content: "\f0c9";
     margin-right: .53em; }
 
-.menu-toggle, .main-navigation.toggled .nav-menu {
+.primary-navigation {
+  display: none; }
+
+.handheld-navigation {
+  display: none; }
+
+.main-navigation.toggled .handheld-navigation {
   display: block; }
 
 .main-navigation ul {
-  display: none;
   margin-left: 0;
   list-style: none; }
   .main-navigation ul ul {
@@ -994,8 +999,10 @@ fieldset {
       color: #e6e6e6; }
 
 @media screen and (min-width: 768px) {
-  .menu-toggle {
+  .menu-toggle, .handheld-navigation, .main-navigation.toggled .handheld-navigation {
     display: none; }
+  .primary-navigation {
+    display: block; }
   .main-navigation, .secondary-navigation {
     clear: both;
     display: block;
@@ -1026,8 +1033,6 @@ fieldset {
         left: -999em;
         z-index: 99999;
         background-color: #353b3f; }
-        .main-navigation ul ul:hover, .secondary-navigation ul ul:hover {
-          left: 0; }
         .main-navigation ul ul li a, .secondary-navigation ul ul li a {
           width: 200px; }
         .main-navigation ul ul ul, .secondary-navigation ul ul ul {

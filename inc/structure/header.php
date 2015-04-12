@@ -51,7 +51,21 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) {
     ?>
     <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Navigation', 'archetype' ); ?>">
       <button class="menu-toggle"><?php echo esc_attr( apply_filters( 'archetype_menu_toggle_text', __( 'Navigation', 'archetype' ) ) ); ?></button>
-      <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location'  => 'primary',
+          'container_class' => 'primary-navigation',
+        )
+      );
+      wp_nav_menu(
+        array(
+          'theme_location'  => 'handheld',
+          'container_class' => 'handheld-navigation',
+          'fallback_cb'     => '',
+        )
+      );
+      ?>
     </nav><!-- #site-navigation -->
     <?php
   }
@@ -66,7 +80,14 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
   function archetype_secondary_navigation() {
     ?>
     <nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'storefront' ); ?>">
-      <?php wp_nav_menu( array( 'theme_location' => 'secondary', 'fallback_cb' => '' ) ); ?>
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location' => 'secondary',
+          'fallback_cb'    => '',
+        )
+      );
+      ?>
     </nav><!-- #site-navigation -->
     <?php
   }
