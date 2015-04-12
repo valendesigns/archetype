@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-04-02 12:21:40+00:00\n"
+"POT-Creation-Date: 2015-04-12 20:24:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,62 +29,6 @@ msgstr ""
 
 #: 404.php:43
 msgid "Try looking in the monthly archives."
-msgstr ""
-
-#: archive.php:29
-msgid "Author: %s"
-msgstr ""
-
-#: archive.php:32
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:35
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:38
-msgid "Year: %s"
-msgstr ""
-
-#: archive.php:41
-msgid "Asides"
-msgstr ""
-
-#: archive.php:44
-msgid "Galleries"
-msgstr ""
-
-#: archive.php:47
-msgid "Images"
-msgstr ""
-
-#: archive.php:50
-msgid "Videos"
-msgstr ""
-
-#: archive.php:53
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:56
-msgid "Links"
-msgstr ""
-
-#: archive.php:59
-msgid "Statuses"
-msgstr ""
-
-#: archive.php:62
-msgid "Audios"
-msgstr ""
-
-#: archive.php:65
-msgid "Chats"
-msgstr ""
-
-#: archive.php:68
-msgid "Archives"
 msgstr ""
 
 #: author-bio.php:10
@@ -117,10 +61,6 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
-
-#: header.php:30
-msgid "Skip to content"
 msgstr ""
 
 #: inc/admin/welcome-screen.php:44
@@ -162,70 +102,70 @@ msgstr ""
 msgid "Visit WooThemes"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:124
+#: inc/admin/welcome-screen.php:126
 msgid "What is WooCommerce?"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:125
+#: inc/admin/welcome-screen.php:127
 msgid ""
 "WooCommerce is the most popular WordPress eCommerce plugin. Packed full of "
 "intuitive features and surrounded by a thriving community - it's the "
 "perfect solution for building an online store with WordPress."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:126
+#: inc/admin/welcome-screen.php:128
 msgid "Download & Install WooCommerce"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:127
+#: inc/admin/welcome-screen.php:129
 msgid "View WooCommerce Documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:132
+#: inc/admin/welcome-screen.php:136
 msgid "Can I Contribute?"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:133
+#: inc/admin/welcome-screen.php:137
 msgid ""
 "Found a bug? Want to contribute a patch or create a new feature? GitHub is "
 "the place to go! Or would you like to translate Archetype in to your "
 "language? Get involved at Transifex."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:134
+#: inc/admin/welcome-screen.php:138
 msgid "Archetype at GitHub"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:134
+#: inc/admin/welcome-screen.php:138
 msgid "Archetype at Transifex"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:153
+#: inc/admin/welcome-screen.php:157
 msgid "Using Archetype"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:154
+#: inc/admin/welcome-screen.php:158
 msgid ""
 "We've purposely kept Archetype lean & mean so configuration is a breeze. "
 "Here are some common theme-setup tasks:"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:158 inc/admin/welcome-screen.php:161
+#: inc/admin/welcome-screen.php:162 inc/admin/welcome-screen.php:165
 msgid "Install WooCommerce"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:159
+#: inc/admin/welcome-screen.php:163
 msgid ""
 "Although Archetype works fine as a standard WordPress theme, it really "
 "shines when used for an online store. Install WooCommerce and start selling "
 "now."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:164
+#: inc/admin/welcome-screen.php:168
 msgid "Configure menu locations"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:165
+#: inc/admin/welcome-screen.php:169
 msgid ""
 "Archetype includes two menu locations for primary and secondary navigation. "
 "The primary navigation is perfect for your key pages like the shop and "
@@ -233,158 +173,158 @@ msgid ""
 "traffic pages such as terms and conditions."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:166
+#: inc/admin/welcome-screen.php:170
 msgid "Configure menus"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:168
+#: inc/admin/welcome-screen.php:172
 msgid "Create a color scheme"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:169
+#: inc/admin/welcome-screen.php:173
 msgid ""
 "Using the WordPress Customizer you can tweak Archetype's appearance to "
 "match your brand."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:170
+#: inc/admin/welcome-screen.php:174
 msgid "Open the Customizer"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:174
+#: inc/admin/welcome-screen.php:178
 msgid "Configure homepage template"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:175
+#: inc/admin/welcome-screen.php:179
 msgid ""
 "Archetype includes a homepage template that displays a selection of "
 "products from your store."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:176
+#: inc/admin/welcome-screen.php:180
 msgid ""
 "To set this up you will need to create a new page and assign the "
 "\"Homepage\" template to it. You can then set that as a static homepage in "
 "the %sReading%s settings."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:177
+#: inc/admin/welcome-screen.php:181
 msgid ""
 "Once set up you can toggle and re-order the homepage components using the "
 "%sHomepage Control%s plugin."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:179
+#: inc/admin/welcome-screen.php:183
 msgid "Add your logo"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:180
+#: inc/admin/welcome-screen.php:184
 msgid "Activate %sJetpack%s to enable a custom logo option in the Customizer."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:182 inc/admin/welcome-screen.php:184
+#: inc/admin/welcome-screen.php:186 inc/admin/welcome-screen.php:188
 msgid "View documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:183
+#: inc/admin/welcome-screen.php:187
 msgid ""
 "You can read detailed information on Archetypes features and how to develop "
 "on top of it in the documentation."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:200
+#: inc/admin/welcome-screen.php:204
 msgid "Enhance your site"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:203
+#: inc/admin/welcome-screen.php:207
 msgid ""
 "Below you will find a selection of hand-picked WooCommerce and Archetype "
 "extensions that could help improve your online store. Each WooCommerce "
 "extension integrates seamlessly with Archetype for enhanced performance."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:207
+#: inc/admin/welcome-screen.php:211
 msgid "WooCommerce Extensions"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:209
+#: inc/admin/welcome-screen.php:213
 msgid "WooCommerce Bookings"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:210 inc/admin/welcome-screen.php:220
+#: inc/admin/welcome-screen.php:214 inc/admin/welcome-screen.php:224
 msgid ""
 "Allows you to sell your time or date based bookings, adding a new product "
 "type to your WooCommerce site. Perfect for those wanting to offer "
 "appointments, services or rentals."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:211 inc/admin/welcome-screen.php:216
-#: inc/admin/welcome-screen.php:221 inc/admin/welcome-screen.php:230
-#: inc/admin/welcome-screen.php:235 inc/admin/welcome-screen.php:240
+#: inc/admin/welcome-screen.php:215 inc/admin/welcome-screen.php:220
+#: inc/admin/welcome-screen.php:225 inc/admin/welcome-screen.php:234
+#: inc/admin/welcome-screen.php:239 inc/admin/welcome-screen.php:244
 msgid "Buy now"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:214
+#: inc/admin/welcome-screen.php:218
 msgid "WooCommerce Product Gallery Slider"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:215
+#: inc/admin/welcome-screen.php:219
 msgid ""
 "The Product Gallery Slider is a nifty extension which transforms your "
 "product galleries into a fully responsive, jQuery powered slideshow."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:219
+#: inc/admin/welcome-screen.php:223
 msgid "WooCommerce Wishlists"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:226
+#: inc/admin/welcome-screen.php:230
 msgid "Archetype Extensions"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:228
+#: inc/admin/welcome-screen.php:232
 msgid "Archetype Designer"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:229
+#: inc/admin/welcome-screen.php:233
 msgid ""
 "Adds a bunch of additional appearance settings allowing you to further "
 "tweak and perfect your Archetype design by changing the header layout, "
 "button styles, typographical schemes/scales and more."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:233
+#: inc/admin/welcome-screen.php:237
 msgid "Archetype WooCommerce Customiser"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:234
+#: inc/admin/welcome-screen.php:238
 msgid ""
 "Gives you further control over the look and feel of your shop. Change the "
 "product archive and single layouts, toggle various shop components, enable "
 "a distraction free checkout design and more."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:238
+#: inc/admin/welcome-screen.php:242
 msgid "Archetype Parallax Hero"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:239
+#: inc/admin/welcome-screen.php:243
 msgid ""
 "Adds a parallax hero component to your homepage. Easily change the colors / "
 "copy and give your visitors a warm welcome!"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:245
+#: inc/admin/welcome-screen.php:249
 msgid "Can't find a feature?"
 msgstr ""
 
-#: inc/admin/welcome-screen.php:246
+#: inc/admin/welcome-screen.php:250
 msgid ""
 "Please suggest and vote on ideas / feature requests at the %sArchetype "
 "Ideasboard%s. The most popular ideas will see prioritised development."
 msgstr ""
 
-#: inc/admin/welcome-screen.php:254
+#: inc/admin/welcome-screen.php:258
 msgid ""
 "There are literally hundreds of awesome extensions available for you to "
 "use. Looking for Table Rate Shipping? Subscriptions? Product Add-ons? You "
@@ -411,7 +351,7 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/controls.php:29 inc/functions/setup.php:128
+#: inc/customizer/controls.php:29 inc/functions/setup.php:134
 msgid "Header"
 msgstr ""
 
@@ -419,12 +359,34 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
+#: inc/customizer/controls.php:58
+msgid "Link / accent color"
+msgstr ""
+
+#: inc/customizer/controls.php:74 inc/customizer/controls.php:122
+#: inc/customizer/controls.php:202 inc/customizer/controls.php:270
+msgid "Text color"
+msgstr ""
+
+#: inc/customizer/controls.php:90 inc/customizer/controls.php:187
+msgid "Heading color"
+msgstr ""
+
+#: inc/customizer/controls.php:106 inc/customizer/controls.php:163
+#: inc/customizer/controls.php:232 inc/customizer/controls.php:255
+msgid "Background color"
+msgstr ""
+
+#: inc/customizer/controls.php:138 inc/customizer/controls.php:217
+msgid "Link color"
+msgstr ""
+
 #: inc/customizer/controls.php:148
 msgid "Content"
 msgstr ""
 
 #: inc/customizer/controls.php:150
-msgid "Customise the look & feel of your web site content area."
+msgid "Customize the look & feel of your web site content area."
 msgstr ""
 
 #: inc/customizer/controls.php:172
@@ -443,6 +405,14 @@ msgstr ""
 msgid "Customise the look & feel of your web site buttons."
 msgstr ""
 
+#: inc/customizer/controls.php:285
+msgid "Alternate button background color"
+msgstr ""
+
+#: inc/customizer/controls.php:300
+msgid "Alternate button text color"
+msgstr ""
+
 #: inc/customizer/controls.php:310
 msgid "Layout"
 msgstr ""
@@ -451,39 +421,39 @@ msgstr ""
 msgid "General layout"
 msgstr ""
 
-#: inc/customizer/controls.php:336
+#: inc/customizer/controls.php:337
 msgid "Import & Export"
 msgstr ""
 
-#: inc/customizer/controls.php:352
+#: inc/customizer/controls.php:353
 msgid "Import Customizer"
 msgstr ""
 
-#: inc/customizer/controls.php:355
+#: inc/customizer/controls.php:356
 msgid "Upload a file to import customization settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:369
+#: inc/customizer/controls.php:371
 msgid "Export Customizer"
 msgstr ""
 
-#: inc/customizer/controls.php:372
+#: inc/customizer/controls.php:374
 msgid "Click the button below to export the customization settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:386
+#: inc/customizer/controls.php:389
 msgid "Import Widgets"
 msgstr ""
 
-#: inc/customizer/controls.php:389
+#: inc/customizer/controls.php:392
 msgid "Upload a file to import widget settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:403
+#: inc/customizer/controls.php:407
 msgid "Export Widgets"
 msgstr ""
 
-#: inc/customizer/controls.php:406
+#: inc/customizer/controls.php:410
 msgid "Click the button below to export the widgets for this theme."
 msgstr ""
 
@@ -509,7 +479,7 @@ msgid ""
 "%s. Please upgrade and try again."
 msgstr ""
 
-#: inc/functions/setup.php:55 inc/structure/header.php:84
+#: inc/functions/setup.php:55
 msgid "Primary Menu"
 msgstr ""
 
@@ -517,27 +487,31 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: inc/functions/setup.php:118
+#: inc/functions/setup.php:57
+msgid "Handheld Menu"
+msgstr ""
+
+#: inc/functions/setup.php:124
 msgid "Sidebar"
 msgstr ""
 
-#: inc/functions/setup.php:141
+#: inc/functions/setup.php:147
 msgid "Footer %d"
 msgstr ""
 
-#: inc/functions/setup.php:143
+#: inc/functions/setup.php:149
 msgid "Widgetized Footer Region %d."
 msgstr ""
 
-#: inc/structure/comments.php:63
+#: inc/structure/comments.php:62
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr ""
 
-#: inc/structure/comments.php:75
+#: inc/structure/comments.php:74
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/structure/comments.php:82 inc/structure/post.php:179
+#: inc/structure/comments.php:81 inc/structure/post.php:186
 msgid "Edit"
 msgstr ""
 
@@ -545,8 +519,24 @@ msgstr ""
 msgid "%1$s designed by %2$s."
 msgstr ""
 
-#: inc/structure/header.php:33
-msgid "Page %s"
+#: inc/structure/header.php:52
+msgid "Primary Navigation"
+msgstr ""
+
+#: inc/structure/header.php:53
+msgid "Navigation"
+msgstr ""
+
+#: inc/structure/header.php:81
+msgid "Secondary Navigation"
+msgstr ""
+
+#: inc/structure/header.php:103
+msgid "Skip to navigation"
+msgstr ""
+
+#: inc/structure/header.php:104
+msgid "Skip to content"
 msgstr ""
 
 #: inc/structure/navigation.php:17 inc/structure/navigation.php:111
@@ -598,23 +588,23 @@ msgstr ""
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/structure/post.php:70
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#: inc/structure/post.php:73
+msgid "Continue reading %s"
 msgstr ""
 
-#: inc/structure/post.php:102
+#: inc/structure/post.php:109
 msgid "Featured"
 msgstr ""
 
-#: inc/structure/post.php:175
+#: inc/structure/post.php:182
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/structure/post.php:175
+#: inc/structure/post.php:182
 msgid "1 Comment"
 msgstr ""
 
-#: inc/structure/post.php:175
+#: inc/structure/post.php:182
 msgid "% Comments"
 msgstr ""
 
@@ -638,11 +628,11 @@ msgstr ""
 msgid "On Sale"
 msgstr ""
 
-#: inc/woocommerce/template-tags.php:24
+#: inc/woocommerce/template-tags.php:18
 msgid "View your shopping cart"
 msgstr ""
 
-#: inc/woocommerce/template-tags.php:25
+#: inc/woocommerce/template-tags.php:19
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
@@ -686,16 +676,6 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: archive.php:35
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:38
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
 #: comments.php:26
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -710,37 +690,37 @@ msgid ""
 "class=\"post-title\">%title</span>"
 msgstr ""
 
-#: inc/structure/post.php:108
+#: inc/structure/post.php:115
 msgctxt "Used before post format."
 msgid "Format"
 msgstr ""
 
-#: inc/structure/post.php:129
+#: inc/structure/post.php:136
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr ""
 
-#: inc/structure/post.php:138
+#: inc/structure/post.php:145
 msgctxt "Used before post author name."
 msgid "Author"
 msgstr ""
 
-#: inc/structure/post.php:144 inc/structure/post.php:152
+#: inc/structure/post.php:151 inc/structure/post.php:159
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: inc/structure/post.php:147
+#: inc/structure/post.php:154
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr ""
 
-#: inc/structure/post.php:155
+#: inc/structure/post.php:162
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr ""
 
-#: inc/structure/post.php:166
+#: inc/structure/post.php:173
 msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr ""
