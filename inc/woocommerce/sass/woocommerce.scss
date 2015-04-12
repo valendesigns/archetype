@@ -408,12 +408,10 @@ ul.products {
 
     .quantity {
       display: block;
-      color: lighten( $color-body, 20% );
     }
   }
 
   a {
-    color: darken( $color-body, 10% );
 
     &:hover {
       color: $color-link;
