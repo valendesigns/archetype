@@ -76,7 +76,7 @@ if ( ! function_exists( 'archetype_image_navigation' ) ) {
       'post_parent'     => get_post()->post_parent, 
       'post_status'     => 'inherit', 
       'post_type'       => 'attachment', 
-      'post_mime_type'  => 'image' 
+      'post_mime_type'  => 'image',
     ) ) );
     // Are there images to navigate through?
     if ( count( $attachments ) > 1 ) {
