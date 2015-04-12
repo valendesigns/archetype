@@ -90,7 +90,7 @@
     }
 
     #searchsubmit {
-      display: none;
+      @include screen-reader-text();
     }
   }
 }

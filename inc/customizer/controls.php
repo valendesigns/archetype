@@ -65,7 +65,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Text Color
      */
     $wp_customize->add_setting( 'archetype_text_color', array(
-      'default'           => apply_filters( 'archetype_default_text_color', '#6c717a' ),
+      'default'           => apply_filters( 'archetype_default_text_color', '#60646c' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
@@ -247,7 +247,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Button background color
      */
     $wp_customize->add_setting( 'archetype_button_background_color', array(
-      'default'           => apply_filters( 'archetype_default_button_background_color', '#6c717a' ),
+      'default'           => apply_filters( 'archetype_default_button_background_color', '#60646c' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
     ) );
 
