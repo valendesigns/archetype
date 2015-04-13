@@ -219,7 +219,7 @@ a {
   }
 
   &:focus {
-    outline: 2px solid $color-link;
+    outline: 1px dotted $color-link;
   }
 }
 

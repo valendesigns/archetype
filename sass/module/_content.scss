@@ -53,7 +53,12 @@
         color: $color-heading;
         
         &:hover {
-          text-decoration: underline;
+          text-decoration: none;
+          border-bottom: 1px solid $color-heading;
+        }
+
+        &:focus {
+          border-bottom: 0;
         }
       }
     }
