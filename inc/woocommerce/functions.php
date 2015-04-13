@@ -104,6 +104,26 @@ function archetype_related_products_args( $args ) {
 }
 
 /**
+ * Breadcrumb Defaults
+ * @param array $args default breadcrumb args
+ * @since 1.0.0
+ * @return array $args default breadcrumb args
+ */
+function archetype_breadcrumbs_defaults( $args ) {
+  $args = apply_filters( 'archetype_breadcrumbs_defaults', array(
+    'delimiter'   => '<li class="breadcrumb-delimiter">/</li>',
+    'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><ul>',
+    'wrap_after'  => '</ul></nav>',
+    'before'      => '<li>',
+    'after'       => '</li>',
+    'home'        => _x( 'Home', 'breadcrumb', 'archetype' ),
+  ) );
+
+  return $args;
+}
+add_filter( 'woocommerce_breadcrumb_defaults', 'archetype_breadcrumbs_defaults', 10 );
+
+/**
  * Product gallery thumnail columns
  * @return integer number of columns
  * @since  1.0.0

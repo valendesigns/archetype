@@ -1874,10 +1874,13 @@ embed, iframe, object {
     .widget-area .widget a:hover {
       color: #ee543f; }
 
+/*
 @media screen and (max-width: 568px) {
-  .header-widget-region {
-    margin-bottom: 1.387em; } }
-
+  .header-widget-region  {
+    margin-bottom: 1.387em;
+  }
+}
+*/
 /**
  * Infinite Scroll
  */
