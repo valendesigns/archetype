@@ -121,7 +121,6 @@ function archetype_breadcrumbs_defaults( $args ) {
 
   return $args;
 }
-add_filter( 'woocommerce_breadcrumb_defaults', 'archetype_breadcrumbs_defaults', 10 );
 
 /**
  * Product gallery thumnail columns

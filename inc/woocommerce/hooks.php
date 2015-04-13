@@ -61,16 +61,17 @@ add_action( 'archetype_header', 'archetype_header_cart',    60 );
 /**
  * Filters
  * @see  archetype_woocommerce_body_class()
- * @see  archetype_cart_link_fragment()
  * @see  archetype_thumbnail_columns()
  * @see  archetype_related_products_args()
+ * @see  archetype_breadcrumbs_defaults()
  * @see  archetype_products_per_page()
  * @see  archetype_loop_columns()
- * @see  archetype_breadcrumb_delimeter()
+ * @see  archetype_cart_link_fragment()
  */
 add_filter( 'body_class',                               'archetype_woocommerce_body_class' );
 add_filter( 'woocommerce_product_thumbnails_columns',   'archetype_thumbnail_columns'      );
 add_filter( 'woocommerce_output_related_products_args', 'archetype_related_products_args'  );
+add_filter( 'woocommerce_breadcrumb_defaults',          'archetype_breadcrumbs_defaults'   );
 add_filter( 'loop_shop_per_page',                       'archetype_products_per_page'      );
 add_filter( 'loop_shop_columns',                        'archetype_loop_columns'           );
 
