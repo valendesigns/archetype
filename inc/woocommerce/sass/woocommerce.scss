@@ -380,20 +380,26 @@ ul.products {
 
     li {
       display: inline;
-
-      &:first-child {
-        &:before {
-          content: "\f015";
-          font-family: "FontAwesome";
-          font-weight: 400;
-          margin-right: .53em;
-        }
-      }
     }
   }
   
   .breadcrumb-delimiter {
     margin: 0 .53em;
+  }
+  
+  &.with-icon {
+    ul {
+      li {
+        &:first-child {
+          &:before {
+            content: "\f015";
+            font-family: "FontAwesome";
+            font-weight: 400;
+            margin-right: .53em;
+          }
+        }
+      }
+    }
   }
 }
 

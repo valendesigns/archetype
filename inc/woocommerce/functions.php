@@ -112,7 +112,7 @@ function archetype_related_products_args( $args ) {
 function archetype_breadcrumbs_defaults( $args ) {
   $args = apply_filters( 'archetype_breadcrumbs_defaults', array(
     'delimiter'   => '<li class="breadcrumb-delimiter">/</li>',
-    'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><ul>',
+    'wrap_before' => '<nav class="woocommerce-breadcrumb with-icon" itemprop="breadcrumb"><ul>',
     'wrap_after'  => '</ul></nav>',
     'before'      => '<li>',
     'after'       => '</li>',
