@@ -691,14 +691,9 @@ a {
       max-width: 100%;
       max-height: none; }
   .woocommerce-active .site-header .secondary-navigation {
-    width: 48.0769230769%;
-    float: left;
-    margin-right: 3.8461538462%; }
-  .woocommerce-active .site-header .site-search {
-    width: 22.1153846154%;
+    width: 74.0384615385%;
     float: right;
-    margin-right: 0;
-    clear: none; }
+    margin-right: 0; }
   .woocommerce-active .site-header .main-navigation {
     width: 74.0384615385%;
     float: left;
@@ -713,7 +708,7 @@ a {
   .site-branding .site-description {
     margin-bottom: 0;
     display: block; }
-  .site-branding, .site-search, .site-header-cart, .site-logo-anchor {
+  .site-branding, .site-header-cart, .site-logo-anchor {
     margin-bottom: 1em; }
   .site-header .subscribe-and-connect-connect {
     float: right;

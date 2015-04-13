@@ -22,12 +22,7 @@
   .woocommerce-active {
     .site-header {
       .secondary-navigation {
-        @include span(6 of 12);
-      }
-
-      .site-search {
-        @include span(last 3 of 12);
-        clear: none;
+        @include span(last 9 of 12);
       }
 
       .main-navigation {
@@ -51,7 +46,6 @@
   }
 
   .site-branding,
-  .site-search,
   .site-header-cart,
   .site-logo-anchor {
     margin-bottom: 1em;

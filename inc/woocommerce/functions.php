@@ -59,6 +59,36 @@ function archetype_woocommerce_body_class( $classes ) {
 }
 
 /**
+ * Replaces `get_search_form()` with Product Search.
+ *
+ * @uses is_admin() check if WordPress admin.
+ * @uses is_woocommerce_activated() check if WooCommerce is activated.
+ * @uses is_woocommerce() check if displaying a WooCommerce template.
+ * @uses is_cart() check if dislaying the WooCommerce cart.
+ * @uses is_checkout() check if dislaying the WooCommerce checkout.
+ *
+ * @since 1.0.0
+ *
+ * @param string $form Optional separator.
+ * @return string The form markup.
+ */
+if ( ! function_exists( 'archetype_product_search_form' ) ) {
+  function archetype_product_search_form( $form ) {
+    if ( ! is_admin() && is_woocommerce_activated() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
+      $form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
+        <label>
+          <span class="screen-reader-text">' . _x( 'Search for:', 'label', 'archetype' ) . '</span>
+          <input type="search" class="search-field" placeholder="' . esc_attr_x( 'Search Products &hellip;', 'placeholder' ) . '" value="' . get_search_query() . '" name="s" title="' . esc_attr_x( 'Search for:', 'label', 'archetype' ) . '" />
+        </label>
+        <input type="submit" class="search-submit" value="'. esc_attr_x( 'Search', 'submit button', 'archetype' ) .'" />
+        <input type="hidden" name="post_type" value="product" />
+      </form>';
+    }
+    return $form;
+  }
+}
+
+/**
  * Cart Fragments
  * Ensure cart contents update when products are added to the cart via AJAX
  * @param  array $fragments Fragments to refresh via AJAX

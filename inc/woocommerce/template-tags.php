@@ -23,23 +23,6 @@ if ( ! function_exists( 'archetype_cart_link' ) ) {
 }
 
 /**
- * Display Product Search
- * @since  1.0.0
- * @uses  is_woocommerce_activated() check if WooCommerce is activated
- * @return void
- */
-if ( ! function_exists( 'archetype_product_search' ) ) {
-  function archetype_product_search() {
-    if ( is_woocommerce_activated() ) { ?>
-      <div class="site-search">
-        <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
-      </div>
-    <?php
-    }
-  }
-}
-
-/**
  * Display Header Cart
  * @since  1.0.0
  * @uses  is_woocommerce_activated() check if WooCommerce is activated
