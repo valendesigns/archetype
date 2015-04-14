@@ -345,9 +345,11 @@ ul.products {
  * Breadcrumbs
  */
 .woocommerce-breadcrumb {
+  background-color: $color-post-bg;
   margin-bottom: 2.618em;
-  padding: 1em 0;
+  padding: 1em !important;
   border-bottom: 1px solid $color-post-border;
+  border-radius: 0 0 $radius-post $radius-post;
 
   ul {
     list-style: none;
