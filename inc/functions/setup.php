@@ -124,8 +124,8 @@ function archetype_widgets_init() {
     'name'          => __( 'Sidebar', 'archetype' ),
     'id'            => 'sidebar-1',
     'description'   => '',
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</aside>',
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
   ) );
@@ -134,8 +134,8 @@ function archetype_widgets_init() {
     'name'          => __( 'Header', 'archetype' ),
     'id'            => 'header-1',
     'description'   => '',
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</aside>',
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
   ) );

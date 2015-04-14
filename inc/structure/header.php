@@ -12,11 +12,9 @@ if ( ! function_exists( 'archetype_header_widget_region' ) ) {
    */
   function archetype_header_widget_region() {
     ?>
-    <div class="header-widget-region" role="complementary">
-      <div class="col-full">
-        <?php dynamic_sidebar( 'header-1' ); ?>
-      </div>
-    </div>
+    <aside class="header-widget-region col-full" role="complementary">
+      <?php dynamic_sidebar( 'header-1' ); ?>
+    </aside>
     <?php
   }
 }
