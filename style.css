@@ -393,9 +393,17 @@ td, th {
 .site-branding h1 {
   font-size: 1.618em;
   letter-spacing: -1px;
-  margin: 0; }
+  margin: 0;
+  width: 184px;
+  height: 41px;
+  background: url(images/logo.png);
+  margin-top: 6px;
+  text-indent: -999em; }
   .site-branding h1 a {
-    font-weight: 700; }
+    font-weight: 700;
+    display: block;
+    width: 184px;
+    height: 41px; }
 .site-branding .site-description {
   font-size: .857em;
   display: none; }
@@ -706,7 +714,7 @@ a {
     clear: both; }
   .site-branding .site-description {
     margin-bottom: 0;
-    display: block; }
+    display: none; }
   .site-branding, .site-header-cart, .site-logo-anchor {
     margin-bottom: 1em; }
   .site-header .subscribe-and-connect-connect {

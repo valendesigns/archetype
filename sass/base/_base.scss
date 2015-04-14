@@ -59,9 +59,17 @@
     font-size: 1.618em;
     letter-spacing: -1px;
     margin: 0;
+    width: 184px; // TODO - remove
+    height: 41px;
+    background: url(images/logo.png);
+    margin-top: 6px;
+    text-indent: -999em; // END TODO
 
     a {
       font-weight: 700;
+      display: block; // TODO - remove
+      width: 184px;
+      height: 41px; // END TODO
     }
   }
 
