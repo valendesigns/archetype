@@ -695,7 +695,7 @@ a {
 @media screen and (min-width: 768px) {
   .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: block;
-    width: 30.7692307692%;
+    width: 22.1153846154%;
     float: left;
     margin-right: 3.8461538462%;
     clear: both; }
@@ -704,7 +704,7 @@ a {
       max-width: 100%;
       max-height: none; }
   .woocommerce-active .site-header .secondary-navigation {
-    width: 65.3846153846%;
+    width: 74.0384615385%;
     float: right;
     margin-right: 0; }
   .woocommerce-active .site-header .main-navigation {
@@ -746,27 +746,27 @@ a {
     content: "";
     display: table; }
   .content-area {
-    width: 65.3846153846%;
+    width: 74.0384615385%;
     float: left;
     margin-right: 3.8461538462%; }
   .widget-area {
-    width: 30.7692307692%;
+    width: 22.1153846154%;
     float: right;
     margin-right: 0; }
   .right-sidebar .content-area {
-    width: 65.3846153846%;
+    width: 74.0384615385%;
     float: left;
     margin-right: 3.8461538462%; }
   .right-sidebar .widget-area {
-    width: 30.7692307692%;
+    width: 22.1153846154%;
     float: right;
     margin-right: 0; }
   .left-sidebar .content-area {
-    width: 65.3846153846%;
+    width: 74.0384615385%;
     float: right;
     margin-right: 0; }
   .left-sidebar .widget-area {
-    width: 30.7692307692%;
+    width: 22.1153846154%;
     float: left;
     margin-right: 3.8461538462%; }
   .archetype-full-width-content .content-area {
