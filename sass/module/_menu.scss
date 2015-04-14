@@ -267,10 +267,19 @@
    * Secondary Navigation
    */
   .secondary-navigation {
+    color: $color-nav-alt;
     margin: 0 0 1.618em;
     width: auto;
     clear: none;
     line-height: 1;
+
+    ul.menu li a {
+      color: $color-link-nav-alt !important;
+
+      &:hover {
+        color: $color-link-hover-nav-alt !important;
+      }
+    }
 
     .menu {
       font-size: .875em;
@@ -300,7 +309,7 @@
       }
 
       ul {
-        background-color: $color-header-bg;
+        background-color: $color-nav-alt-bg;
 
         a {
           padding: .326em .857em;

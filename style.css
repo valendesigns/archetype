@@ -1087,10 +1087,15 @@ fieldset {
    * Secondary Navigation
    */
   .secondary-navigation {
+    color: #888;
     margin: 0 0 1.618em;
     width: auto;
     clear: none;
     line-height: 1; }
+    .secondary-navigation ul.menu li a {
+      color: #ddd !important; }
+      .secondary-navigation ul.menu li a:hover {
+        color: #ee543f !important; }
     .secondary-navigation .menu {
       font-size: .875em;
       width: auto;

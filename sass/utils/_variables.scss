@@ -24,6 +24,7 @@ $grid-sidebar:                  4 !default;
 
 $color-body-bg:                 #f1f1f1 !default;
 $color-header-bg:               #353b3f !default;
+$color-nav-alt-bg:              $color-header-bg !default;
 
 $color-post-bg:                 #fff !default;
 $color-post-border:             #e5e5e5 !default;
@@ -32,9 +33,14 @@ $color-post-shadow:             #8b949b !default;
 $color-body:                    #555 !default;
 $color-header:                  #888 !default;
 $color-heading:                 #333 !default;
+$color-nav-alt:                 $color-header !default;
+$color-subtotal:                #eee !default;
 
 $color-link:                    #ee543f !default;
 $color-link-hover:              #111 !default;
+
+$color-link-nav-alt:            #ddd !default;
+$color-link-hover-nav-alt:      $color-link !default;
 
 $color-button:                  #fff !default;
 $color-button-bg:               #ed543f !default;
