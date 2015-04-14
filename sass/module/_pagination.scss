@@ -7,7 +7,7 @@
 .comment-navigation,
 .woocommerce-pagination {
   background-color: $color-post-bg;
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
   clear: both;
 
   .nav-links {
@@ -128,12 +128,12 @@
   background-color: $color-post-bg;
   box-shadow: 0px -1px 0px $color-post-shadow inset;
   border-radius: $radius-post;
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
   overflow: hidden;
 
   a {
     display: block;
-    padding: 2.618em;
+    padding: 2.625em;
     
     &:hover {
       box-shadow: 5px 0px 0px $color-body inset;

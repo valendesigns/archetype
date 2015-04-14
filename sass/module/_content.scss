@@ -4,8 +4,8 @@
 
 .page-header {
   background: $color-post-bg;
-  margin-bottom: 2.618em;
-  padding: 2.618em;
+  margin-bottom: 2.625em;
+  padding: 2.625em;
   box-shadow: 5px 0px 0px $color-body inset;
   border-radius: 0 $radius-post $radius-post 0;
   
@@ -24,12 +24,11 @@
 
 .hentry {
   background: $color-post-bg;
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
   position: relative;
   box-shadow: 0px -1px 0px $color-post-shadow inset;
   border-radius: $radius-post;
   overflow: hidden;
-  clear: both;
   
   &.type-post {
     @include clearfix;
@@ -45,7 +44,7 @@
   }
 
   .entry-header {
-    padding: 2.618em;
+    padding: 2.625em;
 
     h1 {
       margin: 0;
@@ -69,15 +68,15 @@
     border-top: 1px solid $color-post-border;
     font-size: .875em;
     font-weight: 300;
-    padding: 2.618em;
+    padding: 2.625em;
   }
   
   .entry-content {
-    padding: 2.618em;
+    padding: 2.625em;
     padding-top: 0;
     
     .entry-meta + & {
-      padding-top: 2.618em;
+      padding-top: 2.625em;
     }
   }
 }

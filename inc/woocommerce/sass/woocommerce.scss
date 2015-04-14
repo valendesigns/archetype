@@ -107,7 +107,7 @@ ul.products {
   li.product {
     list-style: none;
     margin-left: 0;
-    margin-bottom: 2.618em;
+    margin-bottom: 2.625em;
     text-align: center;
     position: relative;
 
@@ -164,7 +164,7 @@ ul.products {
 
     .images,
     .summary {
-      margin-bottom: 2.618em;
+      margin-bottom: 2.625em;
       margin-top: 0;
     }
 
@@ -243,7 +243,7 @@ ul.products {
     }
 
     .woocommerce-product-rating {
-      margin-bottom: 2.618em;
+      margin-bottom: 2.625em;
       @include clearfix;
       line-height: 1;
       border-bottom: 1px solid $color-post-border;
@@ -316,7 +316,7 @@ ul.products {
 
       .avatar {
         float: right;
-        width: 2.618em;
+        width: 2.625em;
         height: auto;
       }
 
@@ -346,7 +346,7 @@ ul.products {
  */
 .woocommerce-breadcrumb {
   background-color: $color-post-bg;
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
   padding: 1em !important;
   border-bottom: 1px solid $color-post-border;
   border-radius: 0 0 $radius-post $radius-post;
@@ -397,7 +397,7 @@ ul.products {
     }
     
     img {
-      max-width: 2.618em;
+      max-width: 2.625em;
       float: right;
     }
 
@@ -701,7 +701,7 @@ a.remove {
  * Checkout
  */
 .checkout_coupon {
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
 }
 
 form.checkout {
@@ -1122,7 +1122,7 @@ p.stars {
 
 .archetype-sorting {
   font-size: .857em;
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
 }
 
 .woocommerce-tabs {
@@ -1168,7 +1168,7 @@ p.stars {
 p.no-comments {
   padding: 1em 1.618em;
   @include clearfix;
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
   background-color: $color-success;
   margin-left: 0;
   color: #fff;
@@ -1246,7 +1246,7 @@ dl.variation {
  */
 .archetype-product-section {
   border-bottom: 3px solid rgba(0,0,0,0.025);
-  margin-bottom: 2.618em;
+  margin-bottom: 2.625em;
 
   .section-title {
     text-align: center;
@@ -1640,7 +1640,7 @@ dl.variation {
 
   .archetype-sorting {
     @include clearfix;
-    margin-bottom: 2.618em;
+    margin-bottom: 2.625em;
     border: 1px solid $color-post-border;
     border-width: 1px 0;
     padding: 1em 0;
@@ -1892,7 +1892,7 @@ dl.variation {
 
   #order_review {
     .shop_table {
-      margin-bottom: 2.618em;
+      margin-bottom: 2.625em;
     }
   }
 
@@ -1933,9 +1933,9 @@ dl.variation {
 
   .woocommerce-tabs {
     @include clearfix;
-    margin-bottom: 2.618em;
-    padding-top: 2.618em;
-    padding-bottom: 2.618em;
+    margin-bottom: 2.625em;
+    padding-top: 2.625em;
+    padding-bottom: 2.625em;
 
     ul.tabs {
       @include span(3 of 9);

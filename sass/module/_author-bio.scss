@@ -4,12 +4,12 @@
  
 .author-info {
   border-top: 1px solid $color-post-border;
-  padding: 2.618em;
+  padding: 2.625em;
 
   article + & {
     background: $color-post-bg;
     border-top: 0;
-    margin-bottom: 2.618em;
+    margin-bottom: 2.625em;
     position: relative;
     box-shadow: 0px -1px 0px $color-post-shadow inset;
     border-radius: $radius-post;
