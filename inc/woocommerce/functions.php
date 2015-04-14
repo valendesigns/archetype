@@ -6,6 +6,28 @@
  */
 
 /**
+ * Check if viewing a WooCommerce page.
+ *
+ * @uses is_admin() check if WordPress admin.
+ * @uses is_woocommerce_activated() check if WooCommerce is activated.
+ * @uses is_woocommerce() check if displaying a WooCommerce template.
+ * @uses is_cart() check if dislaying the WooCommerce cart.
+ * @uses is_checkout() check if dislaying the WooCommerce checkout.
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+if ( ! function_exists( 'archetype_is_woocommerce' ) ) {
+  function archetype_is_woocommerce() {
+    if ( ! is_admin() && is_woocommerce_activated() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+/**
  * Before Content
  * Wraps all WooCommerce content in wrappers which match the theme markup
  * @since   1.0.0
@@ -61,12 +83,6 @@ function archetype_woocommerce_body_class( $classes ) {
 /**
  * Replaces `get_search_form()` with Product Search.
  *
- * @uses is_admin() check if WordPress admin.
- * @uses is_woocommerce_activated() check if WooCommerce is activated.
- * @uses is_woocommerce() check if displaying a WooCommerce template.
- * @uses is_cart() check if dislaying the WooCommerce cart.
- * @uses is_checkout() check if dislaying the WooCommerce checkout.
- *
  * @since 1.0.0
  *
  * @param string $form Optional separator.
@@ -74,7 +90,7 @@ function archetype_woocommerce_body_class( $classes ) {
  */
 if ( ! function_exists( 'archetype_product_search_form' ) ) {
   function archetype_product_search_form( $form ) {
-    if ( ! is_admin() && is_woocommerce_activated() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
+    if ( archetype_is_woocommerce() ) {
       $form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
         <label>
           <span class="screen-reader-text">' . _x( 'Search for:', 'label', 'archetype' ) . '</span>
