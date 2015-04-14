@@ -168,8 +168,10 @@
 
   ul.menu {
     li {
-      &.current-menu-item {
+      &.current-menu-item,
+      &.current_page_parent {
         > a {
+          background-color: rgba(0,0,0,0.1);
           color: $color-body;
         }
       }
@@ -188,11 +190,7 @@
       > li {
         // The first level menu item
         > a {
-          padding: 1.267em 1em;
-        }
-
-        &:first-child {
-          margin-left: -1em;
+          padding: 1.267em;
         }
 
         &.menu-item-has-children,

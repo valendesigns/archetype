@@ -31,10 +31,20 @@
        * @hooked archetype_social_icons - 10
        * @hooked archetype_site_branding - 20
        * @hooked archetype_secondary_navigation - 30
-       * @hooked archetype_primary_navigation - 40
        */
       do_action( 'archetype_header' ); ?>
 
+    </div>
+    <div class="main-navigation-container">
+      <div class="col-full">
+
+      <?php
+      /**
+       * @hooked archetype_primary_navigation - 10
+       */
+      do_action( 'archetype_navigation' ); ?>
+
+      </div>
     </div>
   </header><!-- #masthead -->
 

@@ -31,7 +31,12 @@ add_action( 'archetype_sidebar',        'archetype_get_sidebar',          10 );
 add_action( 'archetype_header', 'archetype_skip_links',           0 );
 add_action( 'archetype_header', 'archetype_site_branding',        20 );
 add_action( 'archetype_header', 'archetype_secondary_navigation', 30 );
-add_action( 'archetype_header', 'archetype_primary_navigation',   40 );
+
+/**
+ * Navigation
+ * @see archetype_primary_navigation()
+ */
+add_action( 'archetype_navigation', 'archetype_primary_navigation', 10 );
 
 /**
  * Footer
