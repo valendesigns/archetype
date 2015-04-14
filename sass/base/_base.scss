@@ -59,10 +59,9 @@
     font-size: 1.618em;
     letter-spacing: -1px;
     margin: 0;
-    width: 184px; // TODO - remove
+    background: url(images/logo.png); // TODO - remove
+    width: 184px;
     height: 41px;
-    background: url(images/logo.png);
-    margin-top: 6px;
     text-indent: -999em; // END TODO
 
     a {
@@ -270,5 +269,9 @@ table {
 @media screen and (min-width: 768px) {
   .site-header {
     box-shadow: 0 -3.500em 0 rgba(0,0,0,0.1) inset;
+  }
+
+  .site-branding {
+    margin-top: 6px; // TODO remove
   }
 }
