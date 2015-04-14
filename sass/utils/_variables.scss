@@ -39,7 +39,12 @@ $color-subtotal:                #eee !default;
 $color-link:                    #ee543f !default;
 $color-link-hover:              #111 !default;
 
+$color-link-nav:                #bbb !default;
+$color-link-active-nav:         #fff !default;
+$color-link-hover-nav:          $color-link-active-nav !default;
+
 $color-link-nav-alt:            #ddd !default;
+$color-link-active-alt-nav:     #fff !default;
 $color-link-hover-nav-alt:      $color-link !default;
 
 $color-button:                  #fff !default;

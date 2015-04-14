@@ -990,6 +990,7 @@ fieldset {
     display: block;
     margin-left: 1.387em; }
   .main-navigation ul li a {
+    color: #bbb;
     padding: .857em 1.387em;
     display: block; }
     .main-navigation ul li a:before {
@@ -998,7 +999,10 @@ fieldset {
       margin-right: .53em;
       font-weight: 400; }
     .main-navigation ul li a:hover {
-      color: #e6e6e6; }
+      color: #fff; }
+  .main-navigation ul li.current-menu-item > a, .main-navigation ul li.current_page_parent > a, .main-navigation ul li.current-menu-ancestor > a {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff; }
 
 @media screen and (min-width: 768px) {
   .menu-toggle, .handheld-navigation, .main-navigation.toggled .handheld-navigation {
@@ -1042,9 +1046,6 @@ fieldset {
         .main-navigation ul ul ul, .secondary-navigation ul ul ul {
           left: 100%;
           top: 0; }
-  ul.menu li.current-menu-item > a, ul.menu li.current_page_parent > a {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #555; }
   /**
    * Primary Navigation
    */
@@ -1091,10 +1092,12 @@ fieldset {
     width: auto;
     clear: none;
     line-height: 1; }
-    .secondary-navigation ul.menu li a {
-      color: #ddd !important; }
-      .secondary-navigation ul.menu li a:hover {
-        color: #ee543f !important; }
+    .secondary-navigation ul.menu li a, .secondary-navigation ul.menu .product_list_widget a {
+      color: #ddd; }
+      .secondary-navigation ul.menu li a:hover, .secondary-navigation ul.menu .product_list_widget a:hover {
+        color: #ee543f; }
+    .secondary-navigation ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li.current_page_parent > a, .secondary-navigation ul.menu li.current-menu-ancestor > a, .secondary-navigation ul.menu .product_list_widget.current-menu-item > a, .secondary-navigation ul.menu .product_list_widget.current_page_parent > a, .secondary-navigation ul.menu .product_list_widget.current-menu-ancestor > a {
+      color: #fff; }
     .secondary-navigation .menu {
       font-size: .875em;
       width: auto;
