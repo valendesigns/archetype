@@ -52,6 +52,8 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) {
     <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Navigation', 'archetype' ); ?>">
       <button class="menu-toggle"><?php echo esc_attr( apply_filters( 'archetype_menu_toggle_text', __( 'Navigation', 'archetype' ) ) ); ?></button>
       <?php
+      do_action( 'archetype_primary_navigation' );
+      
       wp_nav_menu(
         array(
           'theme_location'  => 'primary',
@@ -80,6 +82,8 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
     ?>
     <nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'archetype' ); ?>">
       <?php
+      do_action( 'archetype_secondary_navigation' );
+
       wp_nav_menu(
         array(
           'theme_location' => 'secondary',

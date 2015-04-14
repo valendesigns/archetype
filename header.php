@@ -32,7 +32,6 @@
        * @hooked archetype_site_branding - 20
        * @hooked archetype_secondary_navigation - 30
        * @hooked archetype_primary_navigation - 40
-       * @hooked archetype_header_cart - 50
        */
       do_action( 'archetype_header' ); ?>
 

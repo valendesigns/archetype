@@ -8,7 +8,7 @@
     .site-logo-anchor,
     .site-logo-link {
       display: block;
-      @include span(3 of 12);
+      @include span($grid-sidebar of 12);
       clear: both;
 
       img {
@@ -22,18 +22,12 @@
   .woocommerce-active {
     .site-header {
       .secondary-navigation {
-        @include span(last 9 of 12);
+        @include span(last $grid-content of 12);
       }
 
       .main-navigation {
-        @include span(9 of 12);
+        @include span(full);
         clear: both;
-      }
-
-      .site-header-cart {
-        @include span(last 3 of 12);
-        margin-bottom: 0;
-        padding-top: 1.618em;
       }
     }
   }

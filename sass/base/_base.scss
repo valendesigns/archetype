@@ -15,7 +15,7 @@
  */
 .site-header {
   background-color: $color-header-bg;
-  padding-top: 2.618em;
+  padding-top: 1.618em;
   color: $color-header;
   background-position: center center;
   position: relative;
@@ -256,5 +256,11 @@ table {
     td {
       border-top:1px dotted $color-post-border;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .site-header {
+    box-shadow: 0 -3.500em 0 rgba(0,0,0,0.1) inset;
   }
 }

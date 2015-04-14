@@ -54,7 +54,7 @@ add_action( 'woocommerce_after_shop_loop_item_title',      'woocommerce_show_pro
  * Header
  * @see  archetype_header_cart()
  */
-add_action( 'archetype_header', 'archetype_header_cart',    50 );
+add_action( 'archetype_secondary_navigation', 'archetype_header_cart' );
 
 /**
  * Filters
