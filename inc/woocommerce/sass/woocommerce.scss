@@ -389,7 +389,7 @@ ul.products {
 
   li {
     padding: 1em 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     @include clearfix;
     
     &:last-child {
@@ -1375,7 +1375,6 @@ dl.variation {
           }
 
           a.remove {
-            color: $color-link;
             display: block;
             float: left;
             position: relative;
@@ -1385,6 +1384,16 @@ dl.variation {
             height: 1.618em;
             line-height: 1.618;
             padding: 0;
+
+            &:before {
+              color: $color-button-bg;
+            }
+
+            &:hover {
+              &:before {
+                color: $color-button-hover-bg;
+              }
+            }
           }
 
           .quantity {
