@@ -58,11 +58,20 @@
 .widget_product_search {
   form {
     position: relative;
+    margin-bottom: 0;
 
     input[type=text],
     input[type=search] {
+      background: $color-search-bg;
       width: 100%;
-      padding-left: 2.625em;
+      font-size: 1.067em;
+      padding: .75em 1em .75em 2.625em;
+      box-shadow: 0px -1px 0px $color-post-shadow inset;
+      border-radius: $radius-post;
+      
+      &:focus {
+        color: darken( $color-body, 10% );
+      }
     }
 
     input[type=submit] {
@@ -73,7 +82,7 @@
       content: "\f002";
       font-family: "FontAwesome";
       position: absolute;
-      top: .618em;
+      top: .813em;
       left: 1em;
       line-height: 1;
     }

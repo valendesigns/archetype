@@ -1832,17 +1832,24 @@ embed, iframe, object {
   font-size: .938em; }
 
 .widget_search form, .widget_product_search form {
-  position: relative; }
+  position: relative;
+  margin-bottom: 0; }
   .widget_search form input[type=text], .widget_search form input[type=search], .widget_product_search form input[type=text], .widget_product_search form input[type=search] {
+    background: #fff;
     width: 100%;
-    padding-left: 2.625em; }
+    font-size: 1.067em;
+    padding: .75em 1em .75em 2.625em;
+    box-shadow: 0px -1px 0px #8b949b inset;
+    border-radius: 0px; }
+    .widget_search form input[type=text]:focus, .widget_search form input[type=search]:focus, .widget_product_search form input[type=text]:focus, .widget_product_search form input[type=search]:focus {
+      color: #3b3b3b; }
   .widget_search form input[type=submit], .widget_product_search form input[type=submit] {
     display: none; }
   .widget_search form:before, .widget_product_search form:before {
     content: "\f002";
     font-family: "FontAwesome";
     position: absolute;
-    top: .618em;
+    top: .813em;
     left: 1em;
     line-height: 1; }
 
