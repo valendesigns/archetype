@@ -54,12 +54,10 @@ add_action( 'woocommerce_after_shop_loop_item_title',      'woocommerce_show_pro
 
 
 /**
- * Products Heading
- * @see  archetype_hide_shop_heading()
- * @see  archetype_heading_wrapper()
- * @see  archetype_heading_wrapper_close()
+ * Shop Heading
+ * @see  archetype_shop_heading()
  */
-add_action( 'woocommerce_before_main_content', 'archetype_shop_heading', 998 );
+add_action( 'woocommerce_before_main_content', 'archetype_shop_heading', 1000 );
 
 
 /**

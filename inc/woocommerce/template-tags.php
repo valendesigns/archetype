@@ -97,34 +97,44 @@ if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
 }
 
 /**
- * Hide shop heading
- * @since   1.0.0
- * @return  void
+ * Shop heading markup
+ *
+ * You can also remove the heading by filtering `archetype_shop_heading`.
+ *
+ * @see archetype_shop_heading_wrapper()
+ * @see archetype_shop_heading_wrapper_close()
+ *
+ * @since 1.0.0
+ * @return void
  */
 function archetype_shop_heading() {
-  if ( is_shop() && true == apply_filters( 'archetype_hide_shop_heading', false ) ) {
+  if ( ! is_product() ) {
+    add_action( 'woocommerce_before_main_content', 'archetype_shop_heading_wrapper',       1001 );
+    add_action( 'woocommerce_archive_description', 'archetype_shop_heading_wrapper_close', 1001 );
+  }
+
+  if ( true === apply_filters( 'archetype_shop_heading', false ) ) {
     add_filter( 'woocommerce_show_page_title', '__return_false' );
-  } else if ( ! is_product() ) {
-    add_action( 'woocommerce_before_main_content', 'archetype_heading_wrapper',       999 );
-    add_action( 'woocommerce_archive_description', 'archetype_heading_wrapper_close', 999 );
+    remove_action( 'woocommerce_before_main_content', 'archetype_shop_heading_wrapper',       1001 );
+    remove_action( 'woocommerce_archive_description', 'archetype_shop_heading_wrapper_close', 1001 );
   }
 }
 
 /**
- * Heading wrapper
+ * Shop heading wrapper
  * @since   1.0.0
  * @return  void
  */
-function archetype_heading_wrapper() {
+function archetype_shop_heading_wrapper() {
   echo '<header class="page-header">';
 }
 
 /**
- * Heading wrapper close
+ * Shop heading wrapper close
  * @since   1.0.0
  * @return  void
  */
-function archetype_heading_wrapper_close() {
+function archetype_shop_heading_wrapper_close() {
   echo '</header>';
 }
 
