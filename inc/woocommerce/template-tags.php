@@ -101,11 +101,12 @@ if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
  * @since   1.0.0
  * @return  void
  */
-function archetype_hide_shop_heading() {
+function archetype_shop_heading() {
   if ( is_shop() && true == apply_filters( 'archetype_hide_shop_heading', false ) ) {
     add_filter( 'woocommerce_show_page_title', '__return_false' );
-    remove_action( 'woocommerce_before_main_content', 'archetype_heading_wrapper',       999 );
-    remove_action( 'woocommerce_archive_description', 'archetype_heading_wrapper_close', 999 );
+  } else if ( ! is_product() ) {
+    add_action( 'woocommerce_before_main_content', 'archetype_heading_wrapper',       999 );
+    add_action( 'woocommerce_archive_description', 'archetype_heading_wrapper_close', 999 );
   }
 }
 
