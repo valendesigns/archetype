@@ -39,8 +39,8 @@ function archetype_body_classes( $classes ) {
     $classes[] = 'group-blog';
   }
 
-  // Adds a class of no-wc-breadcrumb when WooCommerce isn't activated.
-  if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
+  // Adds a class of no-wc-breadcrumb when WooCommerce isn't activated or has been filtered off.
+  if ( ! function_exists( 'woocommerce_breadcrumb' ) || true !== apply_filters( 'archetype_show_breadcrumb', true ) ) {
     $classes[]	= 'no-wc-breadcrumb';
   }
 

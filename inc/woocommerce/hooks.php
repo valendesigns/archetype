@@ -28,7 +28,9 @@ remove_action( 'woocommerce_before_shop_loop',    'woocommerce_result_count',   
 remove_action( 'woocommerce_before_shop_loop',    'woocommerce_catalog_ordering',           30    );
 add_action( 'woocommerce_before_main_content',    'archetype_before_content',               10    );
 add_action( 'woocommerce_after_main_content',     'archetype_after_content',                10    );
-add_action( 'archetype_content_top',              'woocommerce_breadcrumb',                 10    );
+if ( true === apply_filters( 'archetype_show_breadcrumb', true ) ) {
+  add_action( 'archetype_content_top',            'woocommerce_breadcrumb',                 10    );
+}
 
 
 /**
