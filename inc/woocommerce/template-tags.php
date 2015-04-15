@@ -61,6 +61,72 @@ if ( ! function_exists( 'archetype_upsell_display' ) ) {
   }
 }
 
+if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
+  /**
+   * Display navigation to next/previous set of posts when applicable.
+   *
+   * @since 1.0.0
+   */
+  function archetype_woocommerce_pagination() {
+    global $wp_query;
+
+    if ( $wp_query->max_num_pages <= 1 ) {
+      return;
+    }
+
+    echo '<nav class="woocommerce-pagination" role="navigation">';
+      echo '<h2 class="screen-reader-text">Shop navigation</h2>';
+      echo '<div class="nav-links">';
+    		echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
+    			'base'         => esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
+    			'format'       => '',
+    			'add_args'     => '',
+    			'current'      => max( 1, get_query_var( 'paged' ) ),
+    			'total'        => $wp_query->max_num_pages,
+    			'prev_text'    => '&larr;',
+    			'next_text'    => '&rarr;',
+    			'type'         => 'plain',
+    			'end_size'     => 3,
+    			'mid_size'     => 3,
+    			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
+          'after_page_number'  => ''
+    		) ) );
+		  echo '</div>';
+    echo '</nav>';
+  }
+}
+
+/**
+ * Hide shop heading
+ * @since   1.0.0
+ * @return  void
+ */
+function archetype_hide_shop_heading() {
+  if ( is_shop() && true == apply_filters( 'archetype_hide_shop_heading', false ) ) {
+    add_filter( 'woocommerce_show_page_title', '__return_false' );
+    remove_action( 'woocommerce_before_main_content', 'archetype_heading_wrapper',       999 );
+    remove_action( 'woocommerce_archive_description', 'archetype_heading_wrapper_close', 999 );
+  }
+}
+
+/**
+ * Heading wrapper
+ * @since   1.0.0
+ * @return  void
+ */
+function archetype_heading_wrapper() {
+  echo '<header class="page-header">';
+}
+
+/**
+ * Heading wrapper close
+ * @since   1.0.0
+ * @return  void
+ */
+function archetype_heading_wrapper_close() {
+  echo '</header>';
+}
+
 /**
  * Sorting wrapper
  * @since   1.0.0

@@ -1483,6 +1483,7 @@ embed, iframe, object {
   background-color: #fff;
   margin-bottom: 2.625em;
   clear: both;
+  width: 100%;
   /* reset screen-reader-text */ }
   .pagination .nav-links, .image-navigation .nav-links, .comment-navigation .nav-links, .woocommerce-pagination .nav-links {
     min-height: 3em;

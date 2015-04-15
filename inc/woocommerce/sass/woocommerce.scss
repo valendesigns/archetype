@@ -1125,8 +1125,26 @@ p.stars {
 }
 
 .archetype-sorting {
-  font-size: .857em;
-  margin-bottom: 2.625em;
+  @include clearfix;
+  font-size: .875em;
+  margin-bottom: 1.387em;
+
+  .page-header & {
+    margin-bottom: 0;
+    margin-top: 1.387em;
+  }
+
+  .woocommerce-ordering {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 0;
+  }
+
+  .woocommerce-result-count {
+    float: right;
+    position: relative;
+    margin-bottom: 0;
+  }
 }
 
 .woocommerce-tabs {
@@ -1642,40 +1660,6 @@ dl.variation {
     margin-bottom: 1.618em;
   }
 
-  .archetype-sorting {
-    @include clearfix;
-    margin-bottom: 2.625em;
-    border: 1px solid $color-post-border;
-    border-width: 1px 0;
-    padding: 1em 0;
-
-    select {
-      width: 9.505em;
-    }
-  }
-
-  .woocommerce-result-count {
-    float: left;
-    position: relative;
-    margin-bottom: 0;
-    padding: .327em 0;
-  }
-
-  .woocommerce-ordering {
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 0;
-    padding: .327em 0;
-  }
-
-  .woocommerce-pagination {
-    float: right;
-    border: 0;
-    clear: none;
-    padding: 0;
-    margin-bottom: 0;
-  }
-
   /**
    * Cart
    */
@@ -1978,6 +1962,16 @@ dl.variation {
 @media screen and (max-width: 568px) {
   .woocommerce-breadcrumb {
     margin-bottom: 1.387em;
+  }
+
+  .archetype-sorting {
+    .woocommerce-ordering {
+      margin-bottom: .357em;
+    }
+
+    .woocommerce-result-count {
+      float: left;
+    }
   }
 }
 
