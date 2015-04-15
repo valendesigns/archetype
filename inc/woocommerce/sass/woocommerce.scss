@@ -1134,15 +1134,15 @@ p.stars {
     margin-top: 1.387em;
   }
 
-  .woocommerce-ordering {
+  .woocommerce-result-count {
     float: left;
     margin-right: 1em;
+    position: relative;
     margin-bottom: 0;
   }
 
-  .woocommerce-result-count {
+  .woocommerce-ordering {
     float: right;
-    position: relative;
     margin-bottom: 0;
   }
 }
@@ -1969,7 +1969,7 @@ dl.variation {
       margin-bottom: .357em;
     }
 
-    .woocommerce-result-count {
+    .woocommerce-ordering {
       float: left;
     }
   }

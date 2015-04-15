@@ -31,15 +31,15 @@ add_action( 'woocommerce_after_main_content',     'archetype_after_content',    
 add_action( 'archetype_content_top',              'woocommerce_breadcrumb',                 10    );
 
 add_action( 'woocommerce_after_shop_loop',        'archetype_sorting_wrapper',              19    );
-add_action( 'woocommerce_after_shop_loop',        'woocommerce_catalog_ordering',           20    );
-add_action( 'woocommerce_after_shop_loop',        'woocommerce_result_count',               30    );
+add_action( 'woocommerce_after_shop_loop',        'woocommerce_result_count',               20    );
+add_action( 'woocommerce_after_shop_loop',        'woocommerce_catalog_ordering',           30    );
 add_action( 'woocommerce_after_shop_loop',        'archetype_sorting_wrapper_close',        31    );
 add_action( 'woocommerce_after_shop_loop',        'archetype_woocommerce_pagination',       40    );
 
 add_action( 'woocommerce_before_shop_loop',       'archetype_woocommerce_pagination',       10    );
 add_action( 'woocommerce_archive_description',    'archetype_sorting_wrapper',              19    );
-add_action( 'woocommerce_archive_description',    'woocommerce_catalog_ordering',           20    );
-add_action( 'woocommerce_archive_description',    'woocommerce_result_count',               30    );
+add_action( 'woocommerce_archive_description',    'woocommerce_result_count',               20    );
+add_action( 'woocommerce_archive_description',    'woocommerce_catalog_ordering',           30    );
 add_action( 'woocommerce_archive_description',    'archetype_sorting_wrapper_close',        31    );
 
 
