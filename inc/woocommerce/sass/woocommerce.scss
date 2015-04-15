@@ -970,7 +970,7 @@ ul.digital-downloads {
   height: 1em;
   line-height: 1;
   font-size: 1em;
-  width: 5.5em;
+  width: 5.25em;
   font-family: "star";
 
   &:before {
@@ -1007,18 +1007,13 @@ p.stars {
 
   a {
     display: block;
-    font-weight: 700;
-    margin-right: 1em;
     text-indent: -9999px;
     position: relative;
     color: $color-body;
 
-    &:hover {
+    &:hover,
+    &.toggled {
       color: $color-link;
-    }
-
-    &:last-child {
-      border-right:0;
     }
 
     &.star-1,
@@ -1026,80 +1021,23 @@ p.stars {
     &.star-3,
     &.star-4,
     &.star-5 {
+      border: 0 !important;
+      width: 1em;
+      overflow: hidden;
+
       &:after {
+        content: "\f006";
         font-family: "FontAwesome";
         text-indent: 0;
         position: absolute;
         top: 0;
         left: 0;
-        padding-right: 1em;
-      }
-
-    }
-
-    &.star-1 {
-      width: 2em;
-
-      &:after {
-        content: "\f006";
       }
 
       &:hover:after,
-      &.active:after {
+      &.active:after,
+      &.toggled:after {
         content: "\f005"
-      }
-    }
-
-    &.star-2 {
-      width: 3em;
-
-      &:after {
-        content: "\f006\f006";
-      }
-
-      &:hover:after,
-      &.active:after {
-        content: "\f005\f005"
-      }
-    }
-
-    &.star-3 {
-      width: 4em;
-
-      &:after {
-        content: "\f006\f006\f006";
-      }
-
-      &:hover:after,
-      &.active:after {
-        content: "\f005\f005\f005"
-      }
-    }
-
-    &.star-4 {
-      width: 5em;
-
-      &:after {
-        content: "\f006\f006\f006\f006";
-      }
-
-      &:hover:after,
-      &.active:after {
-        content: "\f005\f005\f005\f005"
-      }
-    }
-
-    &.star-5 {
-      width: 6em;
-      border: 0;
-
-      &:after {
-        content: "\f006\f006\f006\f006\f006";
-      }
-
-      &:hover:after,
-      &.active:after {
-        content: "\f005\f005\f005\f005\f005"
       }
     }
   }

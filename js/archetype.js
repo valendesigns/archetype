@@ -28,6 +28,7 @@
       this.cache.$document.on( 'ready', function() {
         self.navigationInit();
         self.skipLinkFocusFix();
+        self.wooCommerceStarRating();
       } );
     },
     
@@ -127,6 +128,30 @@
           }
         }, false );
       }
+    },
+
+    /**
+     * WooCommerce star rating
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    wooCommerceStarRating: function() {
+      var $stars = '#respond p.stars a';
+
+      $( 'body' ).on( 'mouseenter.archetype', $stars, function() {
+        $( this ).prevAll().toggleClass( 'toggled' );
+      });
+
+      $( 'body' ).on( 'mouseleave.archetype', $stars, function() {
+        $( this ).siblings( 'a' ).removeClass( 'toggled' );
+      });
+
+      $( 'body' ).on( 'click.archetype', $stars, function() {
+        $( this ).siblings( 'a' ).removeClass( 'active' );
+        $( this ).addClass( 'active' ).prevAll().addClass( 'active' );
+      });
     },
 
   };
