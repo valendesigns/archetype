@@ -113,7 +113,8 @@
 
       li {
         position: relative;
-        display: inline-block;
+        display: block;
+        float: left;
         text-align: left;
 
         a:not(.remove) {
@@ -160,6 +161,7 @@
         }
 
         li {
+          float: none;
           a {
             width: 200px;
           }
@@ -188,7 +190,7 @@
       > li {
         // The first level menu item
         > a {
-          padding: 1.267em;
+          padding: 1.267em 1.333em;
         }
 
         &.menu-item-has-children,

@@ -67,6 +67,10 @@
   .widget_shopping_cart {
     display: none;
     background-color: $color-header-bg;
+
+    &.is-empty {
+      display: none !important;
+    }
   }
 }
 
@@ -1390,6 +1394,10 @@ dl.variation {
               &:before {
                 color: $color-button-hover-bg;
               }
+            }
+
+            &:focus{
+              overflow: hidden;
             }
           }
 

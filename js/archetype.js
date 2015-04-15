@@ -88,6 +88,16 @@
           $( this ).parents().toggleClass( 'focus' );
         });
       });
+
+      // Hide empty cart dropdown
+      $( document ).on( 'mouseenter.archetype mouseleave.archetype', '.site-header-cart .cart-contents', function() {
+        var $cart = $( this ).parents().next( '.widget_shopping_cart' );
+        if ( $cart.find( 'li:first-child' ).hasClass( 'empty' ) ) {
+          $cart.addClass( 'is-empty' );
+        } else {
+          $cart.removeClass( 'is-empty' );
+        }
+      });
     },
     
     /**
