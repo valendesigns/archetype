@@ -85,8 +85,8 @@ function archetype_woocommerce_body_class( $classes ) {
  *
  * @since 1.0.0
  *
- * @param string $form Optional separator.
- * @return string The form markup.
+ * @param string $form The form markup.
+ * @return string
  */
 if ( ! function_exists( 'archetype_product_search_form' ) ) {
   function archetype_product_search_form( $form ) {
