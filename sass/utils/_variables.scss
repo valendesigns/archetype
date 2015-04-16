@@ -23,19 +23,22 @@ $grid-sidebar:                  3 !default;
 // Color Scheme
 
 $color-body-bg:                 #f1f1f1 !default;
+$color-body:                    #555 !default;
+
 $color-header-bg:               #353b3f !default;
-$color-nav-alt-bg:              $color-header-bg !default;
-$color-search-bg:               #fff !default;
+$color-header:                  #888 !default;
+
+$color-heading:                 #333 !default;
 
 $color-post-bg:                 #fff !default;
 $color-post-border:             #e5e5e5 !default;
 $color-post-shadow:             #8b949b !default;
 
-$color-body:                    #555 !default;
-$color-header:                  #888 !default;
-$color-heading:                 #333 !default;
+$color-search-bg:               #fff !default;
+$color-search-shadow:           $color-post-shadow !default;
+
+$color-nav-alt-bg:              $color-header-bg !default;
 $color-nav-alt:                 $color-header !default;
-$color-subtotal:                #eee !default;
 
 $color-link:                    #ee543f !default;
 $color-link-hover:              #111 !default;
@@ -57,6 +60,8 @@ $color-button-hover:            $color-body !default;
 $color-button-hover-bg:         #fff !default;
 $color-button-hover-border:     #8b949b !default;
 $color-button-hover-shadow:     $color-button-hover-border !default;
+
+$color-subtotal:                #eee !default;
 
 $color-error:                   #e2401c !default;
 $color-success:                 #0f834d !default;
