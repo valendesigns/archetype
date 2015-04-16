@@ -28,4 +28,4 @@ add_filter( 'ot_post_formats', '__return_true' );
 /**
  * Post Formats
  */
-add_filter( 'ot_meta_box_post_format_link', 'archetype_meta_box_post_format_link', 10, 2 );
+add_action( 'archetype_post_format_media',  'archetype_post_format_video'                );

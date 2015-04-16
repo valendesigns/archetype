@@ -15,6 +15,11 @@ if ( ! function_exists( 'archetype_post_format_media' ) ) {
    * @since 1.0.0
    */
   function archetype_post_format_media() {
+    /**
+     * Filter the format media.
+     */
+    do_action( 'archetype_post_format_media' );
+
     if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
       return;
     }
