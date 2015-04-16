@@ -28,4 +28,5 @@ add_filter( 'ot_post_formats', '__return_true' );
 /**
  * Post Formats
  */
+add_action( 'archetype_post_format_media', 'archetype_post_format_audio' );
 add_action( 'archetype_post_format_media', 'archetype_post_format_video' );

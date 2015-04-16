@@ -62,6 +62,31 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) {
 }
 
 /**
+ * Displays the audio
+ *
+ * Must be used inside the loop.
+ *
+ * @since 1.0.0
+ *
+ * @return  string
+ */
+if ( ! function_exists( 'archetype_post_format_audio' ) ) {
+  function archetype_post_format_audio() {
+    if ( has_post_format( 'audio' ) && $audio = get_post_meta( get_the_ID(), '_format_audio_embed', true ) ) {
+      ?>
+      <div class="post-audio">
+        <?php 
+        remove_filter( 'the_content', 'wpautop' );
+        echo apply_filters( 'the_content', $audio );
+        add_filter( 'the_content', 'wpautop' );
+        ?>
+      </div><!-- .post-audio -->
+      <?php
+    }
+  }
+}
+
+/**
  * Displays the video
  *
  * Must be used inside the loop.
