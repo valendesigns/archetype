@@ -56,8 +56,8 @@ if ( ! function_exists( 'archetype_post_header' ) ) {
     } else {
       $title = the_title( sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>', false );
     }
-    if ( has_post_format( 'link' ) ) {
-      $title = archetype_post_format_title();
+    if ( has_post_format( 'link' ) && $link_title = archetype_post_format_title() ) {
+      $title = $link_title;
     }
     ?>
     <header class="<?php echo archetype_entry_header_class(); ?>">
