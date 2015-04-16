@@ -2,8 +2,50 @@
  * Post Formats
  */
 
-.blog .format-aside, .archive .format-aside {
-  .entry-title {
-    display: none;
+.blog,
+.archive {
+  .format-aside,
+  .format-status {
+    .entry-title {
+      display: none;
+    }
+  }
+}
+
+.format-status {
+  .entry-body {
+    font-size: 1.500em;
+    font-weight: 300;
+
+    p {
+      margin: 0 0 $spacing-v-smaller;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 $spacing-v-smaller ( $spacing-v-smaller * 2 );
+    }
+
+    li > ul,
+    li > ol {
+      margin-left: $spacing-v-smaller;
+    }
+
+    dd {
+      margin: 0 0 $spacing-v-smaller;
+    }
+
+    blockquote {
+      padding: 0 $spacing-v-smaller;
+    }
+
+    address {
+      margin: 0 0 $spacing-v-smaller;
+    }
+
+    pre {
+      margin-bottom: $spacing-v-smaller;
+      padding: $spacing-v-smaller;
+    }
   }
 }

@@ -71,6 +71,7 @@ $color-info:                    #3D9CD2 !default;
 // Spacing
 
 $spacing-v:                     1.500em !default;
+$spacing-v-smaller:             ( $spacing-v / 3 ) * 2 !default;
 
 
 // Border Radius

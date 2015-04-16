@@ -45,11 +45,11 @@ if ( ! function_exists( 'archetype_post_header' ) ) {
    * @since 1.0.0
    */
   function archetype_post_header() { ?>
-    <header class="entry-header">
+    <header class="<?php echo archetype_entry_header_class(); ?>">
     <?php
     if ( is_single() ) {
       the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
-    } else {
+    } else if ( ! has_post_format( array( 'aside', 'status' ) ) ) {
       the_title( sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
     }
     ?>
@@ -67,16 +67,17 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
   function archetype_post_content() {
     ?>
     <div class="entry-content" itemprop="articleBody">
-      <?php
-      the_content( 
-        sprintf( 
-          __( 'Continue reading %s', 'archetype' ),
-          '<span class="screen-reader-text">' . get_the_title() . '</span>'
-        )
-      ); 
+      <div class="entry-body">
+        <?php
+        the_content( 
+          sprintf( 
+            __( 'Continue reading %s', 'archetype' ),
+            '<span class="screen-reader-text">' . get_the_title() . '</span>'
+          )
+        ); ?>
+      </div>
 
-      archetype_page_navigation();
-      ?>
+      <?php archetype_page_navigation(); ?>
     </div><!-- .entry-content -->
     <?php
   }

@@ -189,3 +189,56 @@ if ( ! function_exists( 'archetype_get_sidebar' ) ) {
     get_sidebar();
   }
 }
+
+if ( ! function_exists( 'archetype_has_title' ) ) {
+  /**
+   * Check for the existence of a post title.
+   *
+   * @uses get_post()
+   *
+   * @since 1.0.0
+   *
+   * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
+   * @return bool
+   */
+  function archetype_has_title( $post = 0 ) {
+    $post = get_post( $post );
+    return ( isset( $post->post_title ) && ! empty( $post->post_title ) );
+  }
+}
+
+if ( ! function_exists( 'archetype_entry_header_class' ) ) {
+  /**
+   * Setup the entry-header classes.
+   *
+   * @uses archetype_has_title()
+   *
+   * @since 1.0.0
+   *
+   * @return string
+   */
+  function archetype_entry_header_class() {
+    // Default class
+    $classes = array( 'entry-header' );
+
+    /*
+     * Add the `no-title` class when the title is missing or we're viewing an aside or status 
+     * that is not a single post.
+     */
+    if ( ! archetype_has_title() || ( ! is_single() && has_post_format( array( 'aside', 'status' ) ) ) ) {
+      $classes[] = 'no-title';
+    }
+
+    /**
+     * Filter the array of classes to return for the entry header.
+     *
+     * @since 1.0.0
+     *
+     * @param array $classes An array of classes to return for the entry header.
+     */
+    $classes = apply_filters( 'archetype_entry_header_class', $classes );
+
+    // Return a string of classes each separated by an empty space
+    return implode( $classes, ' ' );
+  }
+}

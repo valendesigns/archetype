@@ -85,7 +85,7 @@ p {
 
 ul,
 ol {
-  margin: 0 0 $spacing-v 3em;
+  margin: 0 0 $spacing-v ( $spacing-v * 2 );
   padding: 0;
 }
 
@@ -108,7 +108,7 @@ dt {
 }
 
 dd {
-  margin: 0 0 1.500em;
+  margin: 0 0 $spacing-v;
 }
 
 b,
@@ -137,8 +137,8 @@ pre {
   background: #fff9c0;
   font-family: $font-mono;
   font-size: .875em;
-  margin-bottom: 1.500em;
-  padding: 1.500em;
+  margin-bottom: $spacing-v;
+  padding: $spacing-v;
   overflow: auto;
   max-width: 100%;
 }

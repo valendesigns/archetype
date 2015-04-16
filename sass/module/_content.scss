@@ -8,14 +8,14 @@
   padding: 2.625em;
   box-shadow: 5px 0px 0px $color-body inset;
   border-radius: 0 $radius-post $radius-post 0;
-  
+
   .page-title {
     margin-bottom: 0;
   }
-  
+
   .archive-description {
     font-weight: 300;
-    
+
     p:last-child {
       margin-bottom: 0;
     }
@@ -29,29 +29,34 @@
   box-shadow: 0px -1px 0px $color-post-shadow inset;
   border-radius: $radius-post;
   overflow: hidden;
-  
+
   &.type-post {
     @include clearfix;
   }
-  
+
   .post-thumbnail {
   	border: 0;
   	display: block;
-  }
-  .post-thumbnail img {
-  	display: block;
-  	margin: 0 auto;
+
+    img {
+  	 display: block;
+  	 margin: 0 auto;
+    }
   }
 
   .entry-header {
     padding: 2.625em;
 
+    &.no-title {
+      padding-bottom: 1.3125em;
+    }
+
     h1 {
       margin: 0;
-      
+
       a {
         color: $color-heading;
-        
+
         &:hover {
           text-decoration: none;
           border-bottom: 1px solid $color-heading;
@@ -63,18 +68,18 @@
       }
     }
   }
-  
+
   .entry-meta {
     border-top: 1px solid $color-post-border;
     font-size: .875em;
     font-weight: 300;
     padding: 2.625em;
   }
-  
+
   .entry-content {
     padding: 2.625em;
     padding-top: 0;
-    
+
     .entry-meta + & {
       padding-top: 2.625em;
     }
@@ -125,55 +130,55 @@
 }
 
 .entry-format {
-  
+
   .format-aside & {
     &:before {
       content: "\f192";
     }
   }
-  
+
   .format-gallery & {
     &:before {
       content: "\f00a";
     }
   }
-  
+
   .format-link & {
     &:before {
       content: "\f0c1";
     }
   }
-  
+
   .format-image & {
     &:before {
       content: "\f03e";
     }
   }
-  
+
   .format-quote & {
     &:before {
       content: "\f10d";
     }
   }
-  
+
   .format-status & {
     &:before {
       content: "\f0b0";
     }
   }
-  
+
   .format-video & {
     &:before {
       content: "\f008";
     }
   }
-  
+
   .format-audio & {
     &:before {
       content: "\f001";
     }
   }
-  
+
   .format-chat & {
     &:before {
       content: "\f1d7";
@@ -226,18 +231,22 @@
     margin-bottom: 1.387em;
     padding: 1.387em;
   }
-  
+
   .hentry {
     margin-bottom: 1.387em;
-    
+
     .entry-header {
       padding: 1.387em;
+
+      &.no-title {
+        padding-bottom: .6935em;
+      }
     }
-    
+
     .entry-meta {
       padding: 1.387em;
     }
-    
+
     .entry-content {
       padding: 1.387em;
       padding-top: 0;
@@ -254,22 +263,26 @@
     margin-bottom: 2.125em;
     padding: 2.125em;
   }
-  
+
   .hentry {
     margin-bottom: 2.125em;
-    
+
     .entry-header {
       padding: 2.125em;
+
+      &.no-title {
+        padding-bottom: 1.0625em;
+      }
     }
-    
+
     .entry-meta {
       padding: 2.125em;
     }
-    
+
     .entry-content {
       padding: 2.125em;
       padding-top: 0;
-      
+
       .entry-meta + & {
         padding-top: 2.125em;
       }
