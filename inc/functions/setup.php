@@ -75,7 +75,15 @@ if ( ! function_exists( 'archetype_setup' ) ) :
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Formats
      */
     add_theme_support( 'post-formats', array( 
-      'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' 
+      'aside',
+      'gallery',
+      'link',
+      'image',
+      'quote',
+      'status',
+      'video',
+      'audio',
+      'chat',
     ) );
     
     /*
