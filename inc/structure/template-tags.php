@@ -190,6 +190,45 @@ if ( ! function_exists( 'archetype_get_sidebar' ) ) {
   }
 }
 
+if ( ! function_exists( 'archetype_no_title_post_formats' ) ) {
+  /**
+   * Returns an array of post formats that do not have a title.
+   *
+   * @since 1.0.0
+   *
+   * @return array An array of post formats.
+   */
+  function archetype_no_title_post_formats() {
+    /**
+     * Filter the array of post formats that do not have a title.
+     *
+     * @since 1.0.0
+     *
+     * @param array $post_formats An array of post formats.
+     */
+    $post_formats = apply_filters( 'archetype_no_title_post_formats', array( 'aside', 'link', 'status' ) );
+
+    return $post_formats;
+  }
+}
+
+if ( ! function_exists( 'archetype_has_content' ) ) {
+  /**
+   * Check for the existence of post content.
+   *
+   * @uses get_post()
+   *
+   * @since 1.0.0
+   *
+   * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
+   * @return bool
+   */
+  function archetype_has_content( $post = 0 ) {
+    $post = get_post( $post );
+    return ( isset( $post->post_content ) && ! empty( $post->post_content ) );
+  }
+}
+
 if ( ! function_exists( 'archetype_has_title' ) ) {
   /**
    * Check for the existence of a post title.
@@ -225,7 +264,7 @@ if ( ! function_exists( 'archetype_entry_header_class' ) ) {
      * Add the `no-title` class when the title is missing or we're viewing an aside or status 
      * that is not a single post.
      */
-    if ( ! archetype_has_title() || ( ! is_single() && has_post_format( array( 'aside', 'status' ) ) ) ) {
+    if ( ! archetype_has_title() || has_post_format( archetype_no_title_post_formats() ) ) {
       $classes[] = 'no-title';
     }
 

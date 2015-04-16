@@ -31,6 +31,12 @@ require get_template_directory() . '/inc/structure/template-tags.php';
 require get_template_directory() . '/inc/functions/extras.php';
 
 /**
+ * Load OptionTree compatibility files.
+ */
+require get_template_directory() . '/inc/option-tree/hooks.php';
+require get_template_directory() . '/inc/option-tree/functions.php';
+
+/**
  * Customizer additions.
  */
 if ( is_archetype_customizer_enabled() ) {

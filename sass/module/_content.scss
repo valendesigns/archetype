@@ -49,6 +49,10 @@
 
     &.no-title {
       padding-bottom: 1.3125em;
+
+      .entry-title {
+        display: none;
+      }
     }
 
     h1 {
@@ -79,6 +83,10 @@
   .entry-content {
     padding: 2.625em;
     padding-top: 0;
+
+    &.no-content {
+      padding: 0 !important;
+    }
 
     .entry-meta + & {
       padding-top: 2.625em;

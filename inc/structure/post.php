@@ -45,14 +45,18 @@ if ( ! function_exists( 'archetype_post_header' ) ) {
    * @since 1.0.0
    */
   function archetype_post_header() { ?>
-    <header class="<?php echo archetype_entry_header_class(); ?>">
     <?php
     if ( is_single() ) {
-      the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
-    } else if ( ! has_post_format( array( 'aside', 'status' ) ) ) {
-      the_title( sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
+      $title = the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>', false );
+    } else {
+      $title = the_title( sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>', false );
+    }
+    if ( has_post_format( 'link' ) ) {
+      $title = archetype_post_format_title();
     }
     ?>
+    <header class="<?php echo archetype_entry_header_class(); ?>">
+      <?php echo $title; ?>
     </header><!-- .entry-header -->
     <?php
   }
@@ -65,8 +69,10 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
    * @since 1.0.0
    */
   function archetype_post_content() {
+    $has_content = archetype_has_content();
     ?>
-    <div class="entry-content" itemprop="articleBody">
+    <div class="entry-content <?php echo ! $has_content ? 'no-content' : ''; ?>" itemprop="articleBody">
+      <?php if ( $has_content ) { ?>
       <div class="entry-body">
         <?php
         the_content( 
@@ -76,6 +82,7 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
           )
         ); ?>
       </div>
+      <?php } ?>
 
       <?php archetype_page_navigation(); ?>
     </div><!-- .entry-content -->

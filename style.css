@@ -1173,6 +1173,8 @@ fieldset {
     padding: 2.625em; }
     .hentry .entry-header.no-title {
       padding-bottom: 1.3125em; }
+      .hentry .entry-header.no-title .entry-title {
+        display: none; }
     .hentry .entry-header h1 {
       margin: 0; }
       .hentry .entry-header h1 a {
@@ -1190,6 +1192,8 @@ fieldset {
   .hentry .entry-content {
     padding: 2.625em;
     padding-top: 0; }
+    .hentry .entry-content.no-content {
+      padding: 0 !important; }
     .entry-meta + .hentry .entry-content {
       padding-top: 2.625em; }
 
@@ -1356,9 +1360,6 @@ fieldset {
 /**
  * Post Formats
  */
-.blog .format-aside .entry-title, .blog .format-status .entry-title, .archive .format-aside .entry-title, .archive .format-status .entry-title {
-  display: none; }
-
 .format-status .entry-body {
   font-size: 1.5em;
   font-weight: 300; }
