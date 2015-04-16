@@ -30,3 +30,4 @@ add_filter( 'ot_post_formats', '__return_true' );
  */
 add_action( 'archetype_post_format_media', 'archetype_post_format_audio' );
 add_action( 'archetype_post_format_media', 'archetype_post_format_video' );
+add_action( 'archetype_post_format_media', 'archetype_post_format_gallery' );

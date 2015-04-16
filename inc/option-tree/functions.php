@@ -110,3 +110,57 @@ if ( ! function_exists( 'archetype_post_format_video' ) ) {
     }
   }
 }
+
+/**
+ * Displays the gallery
+ *
+ * Must be used inside the loop.
+ *
+ * @since 1.0.0
+ *
+ * @return  string
+ */
+if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
+  function archetype_post_format_gallery() {
+    $post_id = get_the_ID();
+
+    if ( has_post_format( 'gallery' ) && $gallery = get_post_meta( $post_id, '_format_gallery', true ) ) {
+      // Search the string for the IDs
+      preg_match( '/ids=\'(.*?)\'/', $gallery, $matches );
+
+      // Turn the field value into an array of IDs
+      if ( isset( $matches[1] ) ) {
+
+        // Found the IDs in the shortcode
+        $ids = explode( ',', $matches[1] );
+      } else {
+
+        // The string is only IDs
+        $ids = ! empty( $gallery ) && $gallery != '' ? explode( ',', $gallery ) : array();
+      }
+
+      if ( ! empty( $ids ) ) {
+        $content = '<ul class="bxslider">';
+          foreach( $ids as $image_id ) {
+            $attachments = get_posts( array(
+             'post_type'      => 'attachment',
+             'posts_per_page' => 1,
+             'include'        => $image_id
+            ) );
+            if ( $attachments ) {
+              foreach( $attachments as $attachment ) {
+                $caption = ! empty( $attachment->post_excerpt ) ? '<div class="caption"><span class="caption-body">' . wpautop( $attachment->post_excerpt ) . '</span></div>' : '';
+                $content.= '<li><img src="' . $attachment->guid . '" alt="' . $attachment->post_title . '" />' . $caption . '</li>';
+              }
+            }
+          }
+        $content.= '</ul>';
+      }
+
+      // Display the gallery
+      if ( ! empty( $content ) ) {
+        echo '<div class="post-gallery">' . $content . '</div><!-- .post-gallery -->';
+      }
+    }
+  }
+}

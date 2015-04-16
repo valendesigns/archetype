@@ -1,0 +1,110 @@
+
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+ul.bxslider {
+  list-style: none;
+}
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+
+.bxslider {
+  > li {
+    display: none;
+  }
+
+  // Captions
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+
+    .caption-body {
+      color: #fff;
+      font-family: Arial;
+      display: block;
+      font-size: .875em;
+      padding: 1em;
+      
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.bx-controls-direction {
+
+  .bx-prev,
+  .bx-next {
+    -webkit-tap-highlight-color: $color-body;
+    background-color: $color-button-bg;
+    color: #fff;
+    display: inline-block;
+    height: 48px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    outline: 0;
+    width: 48px;
+    text-align: center;
+    z-index: 99;
+  }
+
+  .bx-prev:before,
+  .bx-next:before {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-size: 1.313em;
+    height: 48px;
+    line-height: 48px;
+    position: relative;
+    width: 48px;
+    vertical-align: middle;
+  }
+  
+  .bx-prev:hover,
+  .bx-next:hover {
+    background-color: $color-body;
+  }
+  
+  .bx-prev {
+    left: 0;
+  }
+  
+  .bx-prev:before {
+    content: "\f053";
+    left: -1px;
+  }
+  
+  .bx-next {
+    right: 0;
+  }
+  
+  .bx-next:before {
+    content: "\f054";
+    right: -1px;
+  }
+}

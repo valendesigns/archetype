@@ -29,6 +29,7 @@
         self.navigationInit();
         self.skipLinkFocusFix();
         self.wooCommerceStarRating();
+        self.sliderInit();
       } );
     },
     
@@ -151,6 +152,23 @@
       $( 'body' ).on( 'click.archetype', $stars, function() {
         $( this ).siblings( 'a' ).removeClass( 'active' );
         $( this ).addClass( 'active' ).prevAll().addClass( 'active' );
+      });
+    },
+
+    /**
+     * Initialize Slider
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    sliderInit: function() {
+      $('.bxslider').bxSlider({
+        adaptiveHeight: true,
+        mode: 'fade',
+        pager: false,
+        nextText: _archetype.next,
+        prevText: _archetype.prev
       });
     },
 
