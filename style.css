@@ -1207,15 +1207,27 @@ fieldset {
 .sticky-post {
   background-color: #555;
   color: #fff;
-  font-size: .875em;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  line-height: 1.375;
-  padding: .25em .75em;
+  display: inline-block;
+  height: 32px;
+  overflow: hidden;
+  padding: 0;
   position: absolute;
-  text-transform: uppercase;
+  outline: 0;
+  width: 32px;
+  text-align: center;
   top: 0;
+  left: 0;
   border-radius: 0 0 0px 0px; }
+  .sticky-post:before {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-size: 1.5em;
+    content: "\f08d";
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    width: 32px;
+    vertical-align: middle; }
 
 .entry-format, .posted-on, .byline, .cat-links, .tags-links, .full-size-link, .comments-link, .edit-link {
   margin-right: 1em; }
@@ -1555,12 +1567,12 @@ embed, iframe, object {
   .pagination .prev:before, .pagination .next:before, .pagination .nav-previous a:before, .pagination .nav-next a:before, .image-navigation .prev:before, .image-navigation .next:before, .image-navigation .nav-previous a:before, .image-navigation .nav-next a:before, .comment-navigation .prev:before, .comment-navigation .next:before, .comment-navigation .nav-previous a:before, .comment-navigation .nav-next a:before, .woocommerce-pagination .prev:before, .woocommerce-pagination .next:before, .woocommerce-pagination .nav-previous a:before, .woocommerce-pagination .nav-next a:before {
     display: inline-block;
     font-family: "FontAwesome";
-    font-size: 1.313em;
+    font-size: 1.25em;
     height: 48px;
     line-height: 48px;
     position: relative;
     width: 48px;
-    vertical-align: middle; }
+    vertical-align: top; }
   .pagination .prev:hover, .pagination .prev:focus, .pagination .next:hover, .pagination .next:focus, .pagination .nav-previous a:hover, .pagination .nav-previous a:focus, .pagination .nav-next a:hover, .pagination .nav-next a:focus, .image-navigation .prev:hover, .image-navigation .prev:focus, .image-navigation .next:hover, .image-navigation .next:focus, .image-navigation .nav-previous a:hover, .image-navigation .nav-previous a:focus, .image-navigation .nav-next a:hover, .image-navigation .nav-next a:focus, .comment-navigation .prev:hover, .comment-navigation .prev:focus, .comment-navigation .next:hover, .comment-navigation .next:focus, .comment-navigation .nav-previous a:hover, .comment-navigation .nav-previous a:focus, .comment-navigation .nav-next a:hover, .comment-navigation .nav-next a:focus, .woocommerce-pagination .prev:hover, .woocommerce-pagination .prev:focus, .woocommerce-pagination .next:hover, .woocommerce-pagination .next:focus, .woocommerce-pagination .nav-previous a:hover, .woocommerce-pagination .nav-previous a:focus, .woocommerce-pagination .nav-next a:hover, .woocommerce-pagination .nav-next a:focus {
     background-color: #ed543f; }
   .pagination .prev, .pagination .nav-previous a, .image-navigation .prev, .image-navigation .nav-previous a, .comment-navigation .prev, .comment-navigation .nav-previous a, .woocommerce-pagination .prev, .woocommerce-pagination .nav-previous a {
@@ -2011,7 +2023,7 @@ ul.bxslider {
 .bx-controls-direction .bx-prev:before, .bx-controls-direction .bx-next:before {
   display: inline-block;
   font-family: "FontAwesome";
-  font-size: 1.313em;
+  font-size: 1.25em;
   height: 48px;
   line-height: 48px;
   position: relative;
