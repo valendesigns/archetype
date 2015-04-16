@@ -18,7 +18,7 @@ get_header(); ?>
        */
       do_action( 'archetype_single_image_before' );
 
-      get_template_part( 'content', 'image' );
+      get_template_part( 'content', 'image-attachment' );
       
       /**
        * @hooked archetype_post_navigation - 10
