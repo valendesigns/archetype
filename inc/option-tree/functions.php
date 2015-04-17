@@ -150,7 +150,11 @@ if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
             if ( $attachments ) {
               foreach( $attachments as $attachment ) {
                 $caption = ! empty( $attachment->post_excerpt ) ? '<div class="caption"><span class="caption-body">' . wpautop( $attachment->post_excerpt ) . '</span></div>' : '';
-                $content.= '<li><img src="' . $attachment->guid . '" alt="' . $attachment->post_title . '" />' . $caption . '</li>';
+                if ( ! is_single() ) {
+                  $content.= sprintf( '<li><a href="%s" rel="bookmark"><img src="%s" alt="%s" />%s</a></li>', esc_url( get_permalink() ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
+                } else {
+                  $content.= sprintf( '<li><img src="%s" alt="%s" />%s</li>', esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
+                }
               }
             }
           }
