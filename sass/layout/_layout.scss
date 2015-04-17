@@ -8,7 +8,7 @@
     .site-logo-anchor,
     .site-logo-link {
       display: block;
-      @include span($grid-sidebar of 12);
+      @include span($grid-branding of 12);
       clear: both;
 
       img {
@@ -22,7 +22,7 @@
   .woocommerce-active {
     .site-header {
       .secondary-navigation {
-        @include span(last $grid-content of 12);
+        @include span(last $grid-alt-nav of 12);
       }
 
       .main-navigation {

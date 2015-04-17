@@ -696,7 +696,7 @@ a {
 @media screen and (min-width: 768px) {
   .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: block;
-    width: 22.1153846154%;
+    width: 30.7692307692%;
     float: left;
     margin-right: 3.8461538462%;
     clear: both; }
@@ -705,7 +705,7 @@ a {
       max-width: 100%;
       max-height: none; }
   .woocommerce-active .site-header .secondary-navigation {
-    width: 74.0384615385%;
+    width: 65.3846153846%;
     float: right;
     margin-right: 0; }
   .woocommerce-active .site-header .main-navigation {
