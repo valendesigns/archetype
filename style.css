@@ -587,7 +587,7 @@ p {
   margin: 0 0 1.5em; }
 
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em 1.5em;
   padding: 0; }
 
 ul {
@@ -1378,7 +1378,7 @@ fieldset {
   .format-status .entry-body p {
     margin: 0 0 1em; }
   .format-status .entry-body ul, .format-status .entry-body ol {
-    margin: 0 0 1em 2em; }
+    margin: 0 0 1em 1em; }
   .format-status .entry-body li > ul, .format-status .entry-body li > ol {
     margin-left: 1em; }
   .format-status .entry-body dd {

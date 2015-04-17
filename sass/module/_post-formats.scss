@@ -13,7 +13,7 @@
 
     ul,
     ol {
-      margin: 0 0 $spacing-v-smaller ( $spacing-v-smaller * 2 );
+      margin: 0 0 $spacing-v-smaller $spacing-v-smaller;
     }
 
     li > ul,
