@@ -528,7 +528,7 @@ table {
     border-top: 1px dotted #e5e5e5; }
 
 @media screen and (min-width: 768px) {
-  .main-navigation-container {
+  #navigation {
     background-color: rgba(0, 0, 0, 0.1); }
   .site-branding {
     margin-top: 6px; } }

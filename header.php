@@ -35,7 +35,7 @@
       do_action( 'archetype_header' ); ?>
 
     </div>
-    <div class="main-navigation-container">
+    <div id="navigation">
       <div class="col-full">
 
       <?php
