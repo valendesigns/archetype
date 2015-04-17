@@ -210,22 +210,37 @@ function archetype_post_nav_background() {
     return;
   }
 
-  if ( $previous &&  has_post_thumbnail( $previous->ID ) ) {
-    $prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'post-thumbnail' );
+  $prev_gal = has_post_format( 'gallery', $previous->ID );
+  $next_gal = has_post_format( 'gallery', $next->ID );
+
+  if ( $previous && ( has_post_thumbnail( $previous->ID ) || $prev_gal ) ) {
+    if ( $prev_gal && $ids = archetype_post_format_gallery_images( $previous->ID ) ) {
+      $prevthumb = wp_get_attachment_image_src( $ids[0], 'post-thumbnail' );
+    } else if ( ! $prev_gal ) {
+      $prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'post-thumbnail' );
+    }
+    if ( isset( $prevthumb[0] ) ) {
     $css .= '
       .post-navigation .nav-previous { background-image: url(' . esc_url( $prevthumb[0] ) . '); }
       .post-navigation .nav-previous .post-title, .post-navigation .nav-previous a:hover .post-title, .post-navigation .nav-previous .meta-nav { color: #fff; }
       .post-navigation .nav-previous a:before { background-color: rgba(0, 0, 0, 0.4); }
     ';
+    }
   }
 
-  if ( $next && has_post_thumbnail( $next->ID ) ) {
-    $nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'post-thumbnail' );
+  if ( $next && ( has_post_thumbnail( $next->ID ) || $next_gal ) ) {
+    if ( $next_gal && $ids = archetype_post_format_gallery_images( $next->ID ) ) {
+      $nextthumb = wp_get_attachment_image_src( $ids[0], 'post-thumbnail' );
+    } else if ( ! $next_gal ) {
+      $nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'post-thumbnail' );
+    }
+    if ( isset( $nextthumb[0] ) ) {
     $css .= '
       .post-navigation .nav-next { background-image: url(' . esc_url( $nextthumb[0] ) . '); }
       .post-navigation .nav-next .post-title, .post-navigation .nav-next a:hover .post-title, .post-navigation .nav-next .meta-nav { color: #fff; }
       .post-navigation .nav-next a:before { background-color: rgba(0, 0, 0, 0.4); }
     ';
+    }
   }
 
   wp_add_inline_style( 'archetype-style', $css );

@@ -112,19 +112,17 @@ if ( ! function_exists( 'archetype_post_format_video' ) ) {
 }
 
 /**
- * Displays the gallery
- *
- * Must be used inside the loop.
+ * Returns an array of gallery images.
  *
  * @since 1.0.0
  *
- * @return  string
+ * @param int $post_id ID of the post.
+ * @return  bool|array
  */
-if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
-  function archetype_post_format_gallery() {
-    $post_id = get_the_ID();
+if ( ! function_exists( 'archetype_post_format_gallery_images' ) ) {
+  function archetype_post_format_gallery_images( $post_id = 0 ) {
+    if ( $gallery = get_post_meta( $post_id, '_format_gallery', true ) ) {
 
-    if ( has_post_format( 'gallery' ) && $gallery = get_post_meta( $post_id, '_format_gallery', true ) ) {
       // Search the string for the IDs
       preg_match( '/ids=\'(.*?)\'/', $gallery, $matches );
 
@@ -138,6 +136,32 @@ if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
         // The string is only IDs
         $ids = ! empty( $gallery ) && $gallery != '' ? explode( ',', $gallery ) : array();
       }
+
+      if ( ! empty( $ids ) ) {
+        return $ids;
+      }
+    }
+    return false;
+  }
+}
+
+/**
+ * Displays the gallery
+ *
+ * Must be used inside the loop.
+ *
+ * @since 1.0.0
+ *
+ * @return  string
+ */
+if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
+  function archetype_post_format_gallery() {
+    $post_id = get_the_ID();
+
+    if ( has_post_format( 'gallery' ) ) {
+
+      // Get the gallery images
+      $ids = archetype_post_format_gallery_images( $post_id );
 
       if ( ! empty( $ids ) ) {
         $content = '<ul class="bxslider">';
