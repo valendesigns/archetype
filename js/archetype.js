@@ -163,13 +163,15 @@
      * @return void
      */
     sliderInit: function() {
-      $('.bxslider').bxSlider({
-        adaptiveHeight: true,
-        mode: 'fade',
-        pager: false,
-        nextText: _archetype.next,
-        prevText: _archetype.prev
-      });
+      if ( typeof jQuery.fn.bxSlider == 'function' ) {
+        $('.bxslider').bxSlider({
+          adaptiveHeight: true,
+          mode: 'fade',
+          pager: false,
+          nextText: _archetype.next,
+          prevText: _archetype.prev
+        });
+      }
     },
 
   };
