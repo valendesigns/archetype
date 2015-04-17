@@ -111,3 +111,76 @@
     border-color: $color-post-border;
   }
 }
+
+.format-chat {
+  .entry-content {
+
+    .chat-transcript {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        @include clearfix;
+        padding: 1em;
+
+        &:nth-child(odd) {
+          background: rgba(0,0,0,0.05);
+        }
+
+        .chat-header {
+          overflow: hidden;
+          margin-bottom: .25em;
+
+          &:before {
+            content: "\f0e5";
+            display: inline-block;
+            font-family: "FontAwesome";
+            font-weight: normal;
+            font-size: 0.875em;
+            margin-right: .375em;
+            position: relative;
+            width: 1em;
+            top: .071em;
+            float: left;
+          }
+        }
+
+        .chat-datetime,
+        .chat-author {
+          margin-right: 0.250em;
+          position: relative;
+        }
+
+        .chat-datetime {
+          float: right;
+          font-size: 0.875em;
+          margin-top: .214em;
+          opacity: .75;
+        }
+
+        .chat-author {
+          float: left;
+          font-weight: 700;
+
+          &:after {
+            content: ": ";
+            font-weight: normal;
+          }
+
+          .fn {
+            font-style: normal;
+          }
+        }
+
+        p:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .chat-transcript + p {
+      margin-top: $spacing-v;
+    }
+  }
+}

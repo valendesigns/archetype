@@ -24,6 +24,7 @@ require get_template_directory() . '/inc/structure/footer.php';
 require get_template_directory() . '/inc/structure/comments.php';
 require get_template_directory() . '/inc/structure/navigation.php';
 require get_template_directory() . '/inc/structure/template-tags.php';
+require get_template_directory() . '/inc/structure/chat.php';
 
 /**
  * Custom functions that act independently of the theme templates.

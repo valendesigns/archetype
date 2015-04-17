@@ -1430,6 +1430,53 @@ fieldset {
 .format-quote .author-info + .entry-meta {
   border-color: #e5e5e5; }
 
+.format-chat .entry-content .chat-transcript {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .format-chat .entry-content .chat-transcript li {
+    padding: 1em; }
+    .format-chat .entry-content .chat-transcript li::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .format-chat .entry-content .chat-transcript li:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.05); }
+    .format-chat .entry-content .chat-transcript li .chat-header {
+      overflow: hidden;
+      margin-bottom: .25em; }
+      .format-chat .entry-content .chat-transcript li .chat-header:before {
+        content: "\f0e5";
+        display: inline-block;
+        font-family: "FontAwesome";
+        font-weight: normal;
+        font-size: 0.875em;
+        margin-right: .375em;
+        position: relative;
+        width: 1em;
+        top: .071em;
+        float: left; }
+    .format-chat .entry-content .chat-transcript li .chat-datetime, .format-chat .entry-content .chat-transcript li .chat-author {
+      margin-right: 0.25em;
+      position: relative; }
+    .format-chat .entry-content .chat-transcript li .chat-datetime {
+      float: right;
+      font-size: 0.875em;
+      margin-top: .214em;
+      opacity: .75; }
+    .format-chat .entry-content .chat-transcript li .chat-author {
+      float: left;
+      font-weight: 700; }
+      .format-chat .entry-content .chat-transcript li .chat-author:after {
+        content: ": ";
+        font-weight: normal; }
+      .format-chat .entry-content .chat-transcript li .chat-author .fn {
+        font-style: normal; }
+    .format-chat .entry-content .chat-transcript li p:last-child {
+      margin-bottom: 0; }
+.format-chat .entry-content .chat-transcript + p {
+  margin-top: 1.5em; }
+
 /**
  * Media
  */
