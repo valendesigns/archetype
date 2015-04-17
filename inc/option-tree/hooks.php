@@ -28,6 +28,7 @@ add_filter( 'ot_post_formats', '__return_true' );
 /**
  * Post Formats
  */
-add_action( 'archetype_post_format_media', 'archetype_post_format_audio' );
-add_action( 'archetype_post_format_media', 'archetype_post_format_video' );
+add_action( 'archetype_post_format_media', 'archetype_post_format_audio'   );
+add_action( 'archetype_post_format_media', 'archetype_post_format_video'   );
 add_action( 'archetype_post_format_media', 'archetype_post_format_gallery' );
+add_filter( 'the_content',                 'archetype_post_format_quote'   );

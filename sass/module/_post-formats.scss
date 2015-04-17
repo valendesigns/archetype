@@ -2,7 +2,8 @@
  * Post Formats
  */
 
-.format-status {
+.format-status,
+.format-quote {
   .entry-body {
     font-size: 1.500em;
     font-weight: 300;
@@ -37,5 +38,76 @@
       margin-bottom: $spacing-v-smaller;
       padding: $spacing-v-smaller;
     }
+  }
+}
+
+.format-quote {
+  .entry-header {
+    background: $color-button-bg;
+
+    h1 {
+      color: $color-button;
+
+      a {
+        color: $color-button;
+
+        &:hover {
+          border-bottom: 1px solid $color-button;
+        }
+      }
+    }
+  }
+
+  .entry-content {
+    background: $color-button-bg;
+    color: $color-button;
+
+    .entry-body {
+      a {
+        color: $color-button;
+
+        &:hover {
+          border-bottom: 1px solid $color-button;
+        }
+      }
+    }
+
+    figure {
+
+      figcaption {
+        font-size: 0.667em;
+
+        &:before {
+          content: "— ";
+        }
+      }
+    }
+
+    blockquote {
+      font-style: normal;
+      border: 0;
+      padding: 0 1.75em 0 0;
+      margin: 0;
+      position: relative;
+
+      &:before {
+        display: inline-block;
+        font-family: "FontAwesome";
+        content: "\f10e";
+        font-size: 1.250em;
+        position: absolute;
+        right: 0;
+        top: -.1em;
+      }
+    }
+  }
+
+  .author-info,
+  .entry-meta {
+    border-color: $color-button-border;
+  }
+
+  .author-info + .entry-meta {
+    border-color: $color-post-border;
   }
 }

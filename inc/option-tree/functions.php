@@ -192,3 +192,58 @@ if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
     }
   }
 }
+
+/**
+ * Displays the quote
+ *
+ * @since 1.0.0
+ *
+ * @return  string
+ */
+if ( ! function_exists( 'archetype_post_format_quote' ) ) {
+  function archetype_post_format_quote( $content ) {
+    if ( has_post_format( 'quote' ) ) {
+      $_content = array();
+      $post_id  = get_the_ID();
+      $name     = get_post_meta( $post_id, '_format_quote_source_name', true );
+      $url      = get_post_meta( $post_id, '_format_quote_source_url', true );
+      $title    = get_post_meta( $post_id, '_format_quote_source_title', true );
+      $date     = get_post_meta( $post_id, '_format_quote_source_date', true );
+
+      // Add the name & url
+      if ( $name ) {
+        $open = $close = '';
+        if ( ! $title ) {
+          $open = '<cite>';
+          $close = '</cite>';
+        }
+        $_content[] = $url ? sprintf( '%s<a href="%s" rel="nofollow" target="_blank">%s</a>%s', $open, esc_url( $url ), esc_html( $name ), $close ) : $open . esc_html( $name ) .$close;
+      }
+
+      // Add the comma
+      if ( $name && ( $title || $date ) ) {
+        $_content[] = ', ';
+      }
+
+      // Add the title
+      if ( $title ) {
+        $_content[] = sprintf( '%s%s%s ', '<cite>', esc_html( $title ), '</cite>' );
+      }
+
+      // Add the date
+      if ( $date ) {
+        $_content[] = esc_html( $date );
+      }
+
+      // Replace the content
+      if ( ! empty( $_content ) ) {
+        $cite = $url ? ' cite="' . esc_url( $url ) . '"' : '';
+        $content = '<figure>' .
+          '<blockquote' . $cite . '>' . $content . '</blockquote>' .
+          '<figcaption>' . implode( $_content, '' ) . '</figcaption>' .
+        '</figure>';
+      }
+    }
+    return $content;
+  }
+}

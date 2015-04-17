@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Archetype
 Theme URI: http://valendesigns.com/themes/archetype
@@ -1372,24 +1373,62 @@ fieldset {
 /**
  * Post Formats
  */
-.format-status .entry-body {
+.format-status .entry-body, .format-quote .entry-body {
   font-size: 1.5em;
   font-weight: 300; }
-  .format-status .entry-body p {
+  .format-status .entry-body p, .format-quote .entry-body p {
     margin: 0 0 1em; }
-  .format-status .entry-body ul, .format-status .entry-body ol {
+  .format-status .entry-body ul, .format-status .entry-body ol, .format-quote .entry-body ul, .format-quote .entry-body ol {
     margin: 0 0 1em 1em; }
-  .format-status .entry-body li > ul, .format-status .entry-body li > ol {
+  .format-status .entry-body li > ul, .format-status .entry-body li > ol, .format-quote .entry-body li > ul, .format-quote .entry-body li > ol {
     margin-left: 1em; }
-  .format-status .entry-body dd {
+  .format-status .entry-body dd, .format-quote .entry-body dd {
     margin: 0 0 1em; }
-  .format-status .entry-body blockquote {
+  .format-status .entry-body blockquote, .format-quote .entry-body blockquote {
     padding: 0 1em; }
-  .format-status .entry-body address {
+  .format-status .entry-body address, .format-quote .entry-body address {
     margin: 0 0 1em; }
-  .format-status .entry-body pre {
+  .format-status .entry-body pre, .format-quote .entry-body pre {
     margin-bottom: 1em;
     padding: 1em; }
+
+.format-quote .entry-header {
+  background: #ed543f; }
+  .format-quote .entry-header h1 {
+    color: #fff; }
+    .format-quote .entry-header h1 a {
+      color: #fff; }
+      .format-quote .entry-header h1 a:hover {
+        border-bottom: 1px solid #fff; }
+.format-quote .entry-content {
+  background: #ed543f;
+  color: #fff; }
+  .format-quote .entry-content .entry-body a {
+    color: #fff; }
+    .format-quote .entry-content .entry-body a:hover {
+      border-bottom: 1px solid #fff; }
+  .format-quote .entry-content figure figcaption {
+    font-size: 0.667em; }
+    .format-quote .entry-content figure figcaption:before {
+      content: "— "; }
+  .format-quote .entry-content blockquote {
+    font-style: normal;
+    border: 0;
+    padding: 0 1.75em 0 0;
+    margin: 0;
+    position: relative; }
+    .format-quote .entry-content blockquote:before {
+      display: inline-block;
+      font-family: "FontAwesome";
+      content: "\f10e";
+      font-size: 1.25em;
+      position: absolute;
+      right: 0;
+      top: -.1em; }
+.format-quote .author-info, .format-quote .entry-meta {
+  border-color: #d94834; }
+.format-quote .author-info + .entry-meta {
+  border-color: #e5e5e5; }
 
 /**
  * Media
