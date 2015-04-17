@@ -210,8 +210,8 @@ function archetype_post_nav_background() {
     return;
   }
 
-  $prev_gal = has_post_format( 'gallery', $previous->ID );
-  $next_gal = has_post_format( 'gallery', $next->ID );
+  $prev_gal = $previous ? has_post_format( 'gallery', $previous->ID ) : false;
+  $next_gal = $next ? has_post_format( 'gallery', $next->ID ) : false;
 
   if ( $previous && ( has_post_thumbnail( $previous->ID ) || $prev_gal ) ) {
     if ( $prev_gal && $ids = archetype_post_format_gallery_images( $previous->ID ) ) {
