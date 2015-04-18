@@ -8,7 +8,7 @@
     .site-logo-anchor,
     .site-logo-link {
       display: block;
-      @include span($grid-branding of 12);
+      @include span(4 of 12);
       clear: both;
 
       img {
@@ -22,7 +22,7 @@
   .woocommerce-active {
     .site-header {
       .secondary-navigation {
-        @include span(last $grid-nav-alt of 12);
+        @include span(last 8 of 12);
       }
 
       .main-navigation {
@@ -55,30 +55,54 @@
   }
 
   .content-area {
-    @include span($grid-content of 12);
+    @include span(9 of 12);
+
+    .grid-alt & {
+      @include span(8 of 12);
+    }
   }
 
   .widget-area {
-    @include span(last $grid-sidebar of 12);
+    @include span(last 3 of 12);
   }
 
   .right-sidebar {
     .content-area {
-      @include span($grid-content of 12);
+      @include span(9 of 12);
     }
 
     .widget-area {
-      @include span(last $grid-sidebar of 12);
+      @include span(last 3 of 12);
+    }
+
+    &.grid-alt {
+      .content-area {
+        @include span(8 of 12);
+      }
+
+      .widget-area {
+        @include span(last 4 of 12);
+      }
     }
   }
 
   .left-sidebar {
     .content-area {
-      @include span(last $grid-content of 12);
+      @include span(last 9 of 12);
     }
 
     .widget-area {
-      @include span($grid-sidebar of 12);
+      @include span(3 of 12);
+    }
+    
+    &.grid-alt {
+      .content-area {
+        @include span(last 8 of 12);
+      }
+
+      .widget-area {
+        @include span(4 of 12);
+      }
     }
   }
 
