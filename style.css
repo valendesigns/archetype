@@ -2021,7 +2021,10 @@ embed, iframe, object {
   font-weight: 700 !important;
   color: #fff; }
   .widget-area .widget a.button:hover {
-    color: #fff; }
+    color: #555; }
+.widget-area .widget.widget_shopping_cart a.button {
+  font-size: .938em;
+  font-weight: normal !important; }
 
 .header-widget-region::after {
   clear: both;

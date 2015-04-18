@@ -39,10 +39,17 @@
   .widget {
     a.button {
       font-weight: 700 !important;
-      color: #fff;
+      color: $color-button;
 
       &:hover {
-        color: #fff;
+        color: $color-button-hover;
+      }
+    }
+    
+    &.widget_shopping_cart {
+      a.button {
+        font-size: .938em;
+        font-weight: normal !important;
       }
     }
   }
