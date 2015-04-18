@@ -90,6 +90,13 @@ input[type="submit"],
       opacity: 0.5 !important;
     }
   }
+
+  &.block-level {
+    clear: both;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 input[type="checkbox"],

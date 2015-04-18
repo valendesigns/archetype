@@ -45,27 +45,6 @@
     margin-bottom: 1em;
   }
 
-  .site-header {
-    .subscribe-and-connect-connect {
-      float: right;
-      margin-bottom: 1em;
-
-      .icons {
-        list-style: none;
-        margin: 0;
-
-        a {
-          font-size: 1em !important;
-        }
-
-        li {
-          margin: 0 0 0 .53em !important;
-          display: inline-block;
-        }
-      }
-    }
-  }
-
   .col-full {
     @include clearfix;
     @include container(71.25em);
@@ -129,8 +108,6 @@
    */
   .footer-widgets {
     @include clearfix;
-    padding-top: 4.236em;
-    border-bottom: 3px solid rgba(0,0,0,0.05);
 
     &.col-2 {
       .block {

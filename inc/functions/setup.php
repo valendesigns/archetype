@@ -155,9 +155,9 @@ function archetype_widgets_init() {
       'name'         => sprintf( __( 'Footer %d', 'archetype' ), $i ),
       'id'         => sprintf( 'footer-%d', $i ),
       'description'     => sprintf( __( 'Widgetized Footer Region %d.', 'archetype' ), $i ),
-      'before_widget'   => '<aside id="%1$s" class="widget %2$s">',
-      'after_widget'     => '</aside>',
-      'before_title'     => '<h3>',
+      'before_widget'   => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'    => '</section>',
+      'before_title'    => '<h3 class="widget-title">',
       'after_title'     => '</h3>',
       )
     );

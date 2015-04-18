@@ -15,7 +15,6 @@
  */
 .site-header {
   background-color: $color-header-bg;
-  padding-top: 1.618em;
   color: $color-header;
   background-position: center center;
   position: relative;
@@ -32,12 +31,24 @@
 
   .site-branding,
   .site-logo-anchor {
-    margin-bottom: 1.618em;
+    margin: 1.618em 0;
   }
 
   .widget {
     margin-bottom: 0;
   }
+  
+  .subscribe-and-connect-connect {
+    @include clearfix;
+
+    .icons {
+      text-align: right;
+    }
+  }
+}
+
+#masthead > .col-full {
+  @include clearfix;
 }
 
 .home.blog,
@@ -78,6 +89,27 @@
   }
 }
 
+.subscribe-and-connect-connect {
+  .icons {
+    list-style: none;
+    margin: 0;
+    padding: .5em 0;
+
+    a {
+      font-size: 1em !important;
+
+      &:hover {
+        color: $color-header;
+      }
+    }
+
+    li {
+      margin: 0 0 0 .5em !important;
+      display: inline-block;
+    }
+  }
+}
+
 /**
  * Main content area
  */
@@ -97,9 +129,8 @@
  * Footer
  */
 .site-footer {
-  background-color: #353b3f;
-  color: $color-body + #333;
-  padding: 1.618em 0;
+  background-color: $color-footer-bg;
+  color: $color-footer;
 
   h1,
   h2,
@@ -107,16 +138,47 @@
   h4,
   h5,
   h6 {
-    color: $color-body + #222;
+    color: $color-footer-heading;
   }
 
   a:not(.button) {
-    color: $color-link;
+    color: $color-footer-link;
+
+    &:hover {
+      color: $color-footer-link-hover;
+    }
+
+    &:focus {
+      outline: 1px dotted $color-footer-link;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
 .site-info {
+  background-color: rgba(0,0,0,0.2);
   padding: 2.625em 0;
+
+  .credit {
+    text-align: center;
+  }
+  
+  .subscribe-and-connect-connect {
+    text-align: center;
+    margin-bottom: 1em;
+
+    > .col-full {
+      margin: 0;
+      width: auto;
+    }
+
+    .icons {
+      padding: 0;
+    }
+  }
 }
 
 /**
@@ -271,7 +333,22 @@ table {
     background-color: rgba(0,0,0,0.1);
   }
 
-  .site-branding {
-    margin-top: 6px; // TODO remove
+  .site-header {
+    .subscribe-and-connect-connect {
+      background-color: rgba(0,0,0,0.1);
+    }
+  }
+
+  .site-info {
+    .credit {
+      float: right;
+      text-align: left;
+    }
+  
+    .subscribe-and-connect-connect {
+      float: left;
+      text-align: left;
+      margin-bottom: 0;
+    }
   }
 }

@@ -26,21 +26,21 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) {
 
     if ( $widget_columns > 0 ) : ?>
 
-      <section class="footer-widgets col-<?php echo intval( $widget_columns ); ?> fix">
+      <aside class="footer-widgets col-<?php echo intval( $widget_columns ); ?> fix">
 
         <?php $i = 0; while ( $i < $widget_columns ) : $i++; ?>
 
           <?php if ( is_active_sidebar( 'footer-' . $i ) ) : ?>
 
             <section class="block footer-widget-<?php echo intval( $i ); ?>">
-                  <?php dynamic_sidebar( 'footer-' . intval( $i ) ); ?>
+              <?php dynamic_sidebar( 'footer-' . intval( $i ) ); ?>
             </section>
 
-              <?php endif; ?>
+          <?php endif; ?>
 
         <?php endwhile; ?>
 
-      </section><!-- /.footer-widgets  -->
+      </aside><!-- .footer-widgets  -->
 
     <?php endif;
   }
@@ -54,12 +54,18 @@ if ( ! function_exists( 'archetype_credit' ) ) {
    */
   function archetype_credit() {
     ?>
-    <div class="site-info">
-      <?php echo esc_html( apply_filters( 'archetype_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
-      <?php if ( apply_filters( 'archetype_credit_link', true ) ) { ?>
-      <br /> <?php printf( __( '%1$s designed by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" alt="Premium WordPress Themes by Valen Designs" title="Premium WordPress Themes by Valen Designs" rel="designer">Valen Designs</a>' ); ?>
-      <?php } ?>
-    </div><!-- .site-info -->
+    <div class="credit">
+      <?php
+      // Copyright text
+      $content = sprintf( '&copy; %s %s. ', date( 'Y' ), get_bloginfo( 'name' ) );
+      echo esc_html( apply_filters( 'archetype_copyright_text', $content ) );
+
+      // Credits
+      if ( apply_filters( 'archetype_credit_link', true ) ) {
+        printf( __( '%1$s theme by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" alt="Premium WordPress Themes by Valen Designs" title="Premium WordPress Themes by Valen Designs" rel="designer">Valen Designs</a>' );
+      }
+      ?>
+    </div><!-- .credit  -->
     <?php
   }
 }

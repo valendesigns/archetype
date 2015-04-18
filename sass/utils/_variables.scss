@@ -1,4 +1,5 @@
 // Grid
+
 $susy: (
   columns: 12,
   gutters: .8,
@@ -6,6 +7,7 @@ $susy: (
   output: float,
   gutter-position: after
 );
+
 
 // Font Stacks
 
@@ -22,30 +24,60 @@ $grid-branding:                 4 !default;
 $grid-alt-nav:                  8 !default;
 
 
-// Color Scheme
+// Body
 
 $color-body-bg:                 #f1f1f1 !default;
 $color-body:                    #555 !default;
 
+
+// Header
+
 $color-header-bg:               #353b3f !default;
 $color-header:                  #888 !default;
 
+
+// Footer
+
+$color-footer-bg:               $color-header-bg !default;
+$color-footer:                  $color-header !default;
+$color-footer-heading:          #eee !default;
+$color-footer-link:             #ee543f !default;
+$color-footer-link-hover:       #fff !default;
+
+
+// Headings
+
 $color-heading:                 #333 !default;
+
+
+// Post
 
 $color-post-bg:                 #fff !default;
 $color-post-border:             #e5e5e5 !default;
 $color-post-shadow:             #8b949b !default;
 
+
+// Search
+
 $color-search-bg:               #fff !default;
 $color-search-shadow:           $color-post-shadow !default;
+
+
+// Forms
 
 $color-input-bg:                darken( $color-body-bg, 5% ) !default;
 $color-input-bg-focus:          darken( $color-body-bg, 10% ) !default;
 $color-input:                   $color-body !default;
 $color-input-focus:             darken( $color-input, 10% ) !default;
 
+
+// Navigation
+
 $color-nav-alt-bg:              $color-header-bg !default;
 $color-nav-alt:                 $color-header !default;
+
+
+// Links
 
 $color-link:                    #ee543f !default;
 $color-link-hover:              #111 !default;
@@ -58,17 +90,25 @@ $color-link-nav-alt:            #ddd !default;
 $color-link-active-alt-nav:     #fff !default;
 $color-link-hover-nav-alt:      $color-link !default;
 
-$color-button:                  #fff !default;
-$color-button-bg:               #ed543f !default;
-$color-button-border:           #d94834 !default;
-$color-button-shadow:           $color-button-border !default;
 
+// Buttons
+
+$color-button:                  #fff !default;
 $color-button-hover:            $color-body !default;
+$color-button-bg:               #ed543f !default;
 $color-button-hover-bg:         #fff !default;
+$color-button-border:           #d94834 !default;
 $color-button-hover-border:     #8b949b !default;
+$color-button-shadow:           $color-button-border !default;
 $color-button-hover-shadow:     $color-button-hover-border !default;
 
+
+// Cart
+
 $color-subtotal:                #eee !default;
+
+
+// Notices
 
 $color-error:                   #e2401c !default;
 $color-success:                 #0f834d !default;

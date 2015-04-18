@@ -173,7 +173,9 @@ if ( ! function_exists( 'archetype_social_icons' ) ) {
   function archetype_social_icons() {
     if ( class_exists( 'Subscribe_And_Connect' ) ) {
       echo '<div class="subscribe-and-connect-connect">';
-      subscribe_and_connect_connect();
+        echo '<div class="col-full">';
+          subscribe_and_connect_connect();
+        echo '</div>';
       echo '</div>';
     }
   }

@@ -14,11 +14,15 @@
   }
 
   h3.widget-title {
-    font-size: 1.5em;
     letter-spacing: 0;
     border-bottom: 3px solid $color-body;
     padding: 0 0 1em;
     margin-bottom: 1em;
+
+    .footer-widgets & {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
   }
 
   ul {
@@ -129,6 +133,10 @@
   }
 }
 
+.footer-widgets {
+  padding: 5.250em 0 2.625em 0;
+}
+
 .widget_recent_entries,
 .widget_pages {
   ul {
@@ -222,11 +230,23 @@
 @media screen and (max-width: 568px) {
   .widget {
     margin-bottom: 1.387em;
+
+    h3.widget-title {
+      font-size: 1.5em;
+    }
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .widget {
     margin-bottom: 2.125em;
+  }
+}
+
+@media screen and (min-width: 74em) {
+  .widget {
+    h3.widget-title {
+      font-size: 1.5em;
+    }
   }
 }
