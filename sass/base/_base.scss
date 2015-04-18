@@ -40,6 +40,7 @@
   
   .subscribe-and-connect-connect {
     @include clearfix;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 
     .icons {
       text-align: right;
@@ -331,12 +332,6 @@ table {
 @media screen and (min-width: 768px) {
   #navigation {
     background-color: rgba(0,0,0,0.1);
-  }
-
-  .site-header {
-    .subscribe-and-connect-connect {
-      background-color: rgba(0,0,0,0.1);
-    }
   }
 
   .site-info {
