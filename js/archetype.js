@@ -141,18 +141,20 @@
     wooCommerceStarRating: function() {
       var $stars = '#respond p.stars a';
 
-      $( 'body' ).on( 'mouseenter.archetype', $stars, function() {
-        $( this ).prevAll().toggleClass( 'toggled' );
-      });
-
-      $( 'body' ).on( 'mouseleave.archetype', $stars, function() {
-        $( this ).siblings( 'a' ).removeClass( 'toggled' );
-      });
-
-      $( 'body' ).on( 'click.archetype', $stars, function() {
-        $( this ).siblings( 'a' ).removeClass( 'active' );
-        $( this ).addClass( 'active' ).prevAll().addClass( 'active' );
-      });
+      if ( $( $stars ).length ) {
+        $( 'body' ).on( 'mouseenter.archetype', $stars, function() {
+          $( this ).prevAll().toggleClass( 'toggled' );
+        });
+  
+        $( 'body' ).on( 'mouseleave.archetype', $stars, function() {
+          $( this ).siblings( 'a' ).removeClass( 'toggled' );
+        });
+  
+        $( 'body' ).on( 'click.archetype', $stars, function() {
+          $( this ).siblings( 'a' ).removeClass( 'active' );
+          $( this ).addClass( 'active' ).prevAll().addClass( 'active' );
+        });
+      }
     },
 
     /**
