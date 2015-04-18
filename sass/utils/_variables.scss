@@ -11,118 +11,116 @@ $susy: (
 
 // Font Stacks
 
-$font-base:                     "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
-$font-mono:                     Monaco, Menlo, Consolas, "Courier New", monospace !default;
-$font-heading:                  $font-base !default;
+$font-base:                     "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-mono:                     Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-heading:                  $font-base;
 
 
 // Grid Layout
 
-$grid-content:                  9 !default;
-$grid-sidebar:                  3 !default;
-$grid-branding:                 4 !default;
-$grid-alt-nav:                  8 !default;
+$grid-sidebar:                  3;
+$grid-content:                  9;
+$grid-branding:                 4;
+$grid-nav-alt:                  8;
 
 
 // Body
 
-$color-body-bg:                 #f1f1f1 !default;
-$color-body:                    #555 !default;
+$color-body:                    #555;
+$color-body-bg:                 #f1f1f1;
 
 
 // Header
 
-$color-header-bg:               #353b3f !default;
-$color-header:                  #888 !default;
-
-
-// Footer
-
-$color-footer-bg:               $color-header-bg !default;
-$color-footer:                  $color-header !default;
-$color-footer-heading:          #eee !default;
-$color-footer-link:             #ee543f !default;
-$color-footer-link-hover:       #fff !default;
+$color-header:                  #888;
+$color-header-bg:               #353b3f;
 
 
 // Headings
 
-$color-heading:                 #333 !default;
+$color-heading:                 #333;
 
 
 // Post
 
-$color-post-bg:                 #fff !default;
-$color-post-border:             #e5e5e5 !default;
-$color-post-shadow:             #8b949b !default;
+$color-post-bg:                 #fff;
+$color-post-border:             #e5e5e5;
+$color-post-shadow:             #8b949b;
 
 
 // Search
 
-$color-search-bg:               #fff !default;
-$color-search-shadow:           $color-post-shadow !default;
+$color-search-bg:               #fff;
+$color-search-shadow:           $color-post-shadow;
 
 
 // Forms
 
-$color-input-bg:                darken( $color-body-bg, 5% ) !default;
-$color-input-bg-focus:          darken( $color-body-bg, 10% ) !default;
-$color-input:                   $color-body !default;
-$color-input-focus:             darken( $color-input, 10% ) !default;
+$color-input:                   $color-body;
+$color-input-focus:             darken( $color-input, 10% );
+$color-input-bg:                darken( $color-body-bg, 5% );
+$color-input-bg-focus:          darken( $color-body-bg, 10% );
 
 
 // Navigation
 
-$color-nav-alt-bg:              $color-header-bg !default;
-$color-nav-alt:                 $color-header !default;
+$color-nav-alt:                 $color-header;
+$color-nav-alt-bg:              $color-header-bg;
+
+
+// Footer
+
+$color-footer:                  $color-header;
+$color-footer-bg:               $color-header-bg;
+$color-footer-heading:          #eee;
 
 
 // Links
 
-$color-link:                    #ee543f !default;
-$color-link-hover:              #111 !default;
-
-$color-link-nav:                #bbb !default;
-$color-link-active-nav:         #fff !default;
-$color-link-hover-nav:          $color-link-active-nav !default;
-
-$color-link-nav-alt:            #ddd !default;
-$color-link-active-alt-nav:     #fff !default;
-$color-link-hover-nav-alt:      $color-link !default;
+$color-link:                    #ee543f;
+$color-link-hover:              #111;
+$color-link-nav:                #bbb;
+$color-link-nav-active:         #fff;
+$color-link-nav-hover:          $color-link-nav-active;
+$color-link-nav-alt:            #ddd;
+$color-link-nav-alt-active:     #fff;
+$color-link-nav-alt-hover:      $color-link;
+$color-link-footer:             #ee543f;
+$color-link-footer-hover:       #fff;
 
 
 // Buttons
 
-$color-button:                  #fff !default;
-$color-button-hover:            $color-body !default;
-$color-button-bg:               #ed543f !default;
-$color-button-hover-bg:         #fff !default;
-$color-button-border:           #d94834 !default;
-$color-button-hover-border:     #8b949b !default;
-$color-button-shadow:           $color-button-border !default;
-$color-button-hover-shadow:     $color-button-hover-border !default;
+$color-button:                  #fff;
+$color-button-hover:            $color-body;
+$color-button-bg:               #ed543f;
+$color-button-bg-hover:         #fff;
+$color-button-border:           #d94834;
+$color-button-border-hover:     #8b949b;
+$color-button-shadow:           $color-button-border;
+$color-button-shadow-hover:     $color-button-border-hover;
 
 
 // Cart
 
-$color-subtotal:                #eee !default;
+$color-nav-alt-subtotal:        #eee;
 
 
 // Notices
 
-$color-error:                   #e2401c !default;
-$color-success:                 #0f834d !default;
-$color-info:                    #3D9CD2 !default;
+$color-error:                   #e2401c;
+$color-success:                 #0f834d;
+$color-info:                    #3D9CD2;
 
 
 // Spacing
 
-$spacing-v:                     1.500em !default;
-$spacing-v-smaller:             ( $spacing-v / 3 ) * 2 !default;
+$spacing-v:                     1.500em;
+$spacing-v-smaller:             1em;
 
 
 // Border Radius
 
-$radius-post:                   0px !default;
-$radius-button:                 3px !default;
-$radius-avatar:                 3px !default;
+$radius-post:                   0px;
+$radius-button:                 3px;
+$radius-avatar:                 3px;

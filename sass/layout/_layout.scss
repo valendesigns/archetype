@@ -22,7 +22,7 @@
   .woocommerce-active {
     .site-header {
       .secondary-navigation {
-        @include span(last $grid-alt-nav of 12);
+        @include span(last $grid-nav-alt of 12);
       }
 
       .main-navigation {

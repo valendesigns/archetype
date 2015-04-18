@@ -143,14 +143,14 @@
   }
 
   a:not(.button) {
-    color: $color-footer-link;
+    color: $color-link-footer;
 
     &:hover {
-      color: $color-footer-link-hover;
+      color: $color-link-footer-hover;
     }
 
     &:focus {
-      outline: 1px dotted $color-footer-link;
+      outline: 1px dotted $color-link-footer;
     }
   }
 

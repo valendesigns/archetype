@@ -42,10 +42,10 @@ input[type="submit"],
 
   &.cta,
   &.alt {
-    background: $color-button-hover-bg;
-    border-color: $color-button-hover-border;
+    background: $color-button-bg-hover;
+    border-color: $color-button-border-hover;
     color: $color-button-hover;
-    box-shadow: 0 -2px 0 $color-button-hover-shadow inset;
+    box-shadow: 0 -2px 0 $color-button-shadow-hover inset;
 
     &:hover {
       background-color: $color-button-bg;
@@ -56,10 +56,10 @@ input[type="submit"],
   }
 
   &:hover {
-    background: $color-button-hover-bg;
-    border-color: $color-button-hover-border;
+    background: $color-button-bg-hover;
+    border-color: $color-button-border-hover;
     color: $color-button-hover;
-    box-shadow: 0 -2px 0 $color-button-hover-shadow inset;
+    box-shadow: 0 -2px 0 $color-button-shadow-hover inset;
   }
 
   &:focus {
