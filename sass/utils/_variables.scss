@@ -39,6 +39,11 @@ $color-post-shadow:             #8b949b !default;
 $color-search-bg:               #fff !default;
 $color-search-shadow:           $color-post-shadow !default;
 
+$color-input-bg:                darken( $color-body-bg, 5% ) !default;
+$color-input-bg-focus:          darken( $color-body-bg, 10% ) !default;
+$color-input:                   $color-body !default;
+$color-input-focus:             darken( $color-input, 10% ) !default;
+
 $color-nav-alt-bg:              $color-header-bg !default;
 $color-nav-alt:                 $color-header !default;
 
