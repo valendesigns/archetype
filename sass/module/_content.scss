@@ -35,12 +35,37 @@
   }
 
   .post-thumbnail {
-  	border: 0;
-  	display: block;
+    position: relative;
+    
+    a {
+      border: 0;
+      display: block;
+    }
 
     img {
-  	 display: block;
-  	 margin: 0 auto;
+     display: block;
+     margin: 0 auto;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      background-color: rgba(0,0,0,0.5);
+      width: 100%;
+  
+      .caption-body {
+        color: #fff;
+        font-family: Arial;
+        display: block;
+        font-size: .875em;
+        padding: 1em;
+        
+        p:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 

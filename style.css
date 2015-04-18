@@ -1165,11 +1165,28 @@ fieldset {
     content: "";
     display: table; }
   .hentry .post-thumbnail {
-    border: 0;
-    display: block; }
+    position: relative; }
+    .hentry .post-thumbnail a {
+      border: 0;
+      display: block; }
     .hentry .post-thumbnail img {
       display: block;
       margin: 0 auto; }
+    .hentry .post-thumbnail .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%; }
+      .hentry .post-thumbnail .caption .caption-body {
+        color: #fff;
+        font-family: Arial;
+        display: block;
+        font-size: .875em;
+        padding: 1em; }
+        .hentry .post-thumbnail .caption .caption-body p:last-child {
+          margin-bottom: 0; }
   .hentry .entry-header {
     padding: 2.625em; }
     .hentry .entry-header.no-title {
