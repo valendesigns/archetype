@@ -24,8 +24,8 @@ add_action( 'archetype_sidebar',        'archetype_get_sidebar',          10 );
 
 /**
  * Header
- * @see archetype_social_icons()
  * @see archetype_skip_links()
+ * @see archetype_social_icons()
  * @see archetype_site_branding()
  * @see archetype_secondary_navigation()
  */
