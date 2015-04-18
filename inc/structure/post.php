@@ -109,7 +109,7 @@ if ( ! function_exists( 'archetype_post_author_bio' ) ) {
    * @since 1.0.0
    */
   function archetype_post_author_bio() {
-    if ( is_single() && get_the_author_meta( 'description' ) ) {
+    if ( is_single() && get_the_author_meta( 'description' ) && ! archetype_hide_author_bio() ) {
       get_template_part( 'author-bio' );
     }
   }
@@ -160,7 +160,7 @@ if ( ! function_exists( 'archetype_post_meta' ) ) {
       }
     
       if ( 'post' == get_post_type() ) {
-        if ( is_singular() || is_multi_author() ) {
+        if ( ( is_singular() || is_multi_author() ) && ! archetype_hide_author_bio() ) {
           printf( '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
             _x( 'Author', 'Used before post author name.', 'archetype' ),
             esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),

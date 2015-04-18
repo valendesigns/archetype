@@ -5,6 +5,45 @@
  * @package archetype
  */
 
+if ( ! function_exists( 'archetype_hide_title_post_meta' ) ) {
+  /**
+   * Filter the visibility of the post title.
+   *
+   * @see archetype_hide_title()
+   *
+   * @since 1.0.0
+   *
+   * @param WP_Post $post WP_Post object.
+   * @return bool
+   */
+  function archetype_hide_title_post_meta( $hide, $post ) {
+    if ( get_post_meta( $post->ID, '_archetype_hide_title', true ) == 'on' ) {
+      $hide = true;
+    }
+    return $hide;
+  }
+}
+
+if ( ! function_exists( 'archetype_hide_author_bio_post_meta' ) ) {
+  /**
+   * Filter the visibility of the author bio.
+   *
+   * @see archetype_hide_author_bio()
+   *
+   * @since 1.0.0
+   *
+   * @param bool $hide Whether the title has been hidden.
+   * @param WP_Post $post WP_Post object.
+   * @return bool
+   */
+  function archetype_hide_author_bio_post_meta( $hide, $post ) {
+    if ( get_post_meta( $post->ID, '_archetype_hide_title', true ) == 'on' ) {
+      $hide = true;
+    }
+    return $hide;
+  }
+}
+
 if ( ! function_exists( 'archetype_link_has_title' ) ) {
   /**
    * Removes `link` from the array of post formats that do not have a title.
@@ -47,13 +86,13 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) {
 
       $title = sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark nofollow" target="_blank">%s</a></h1>', esc_url( $link_url ), esc_attr( $link_title ) );
 
-      // Remove the `no-title` class by filtering the `archetype_no_title_post_formats` array.
-      add_filter( 'archetype_no_title_post_formats', 'archetype_link_has_title' );
+      // Remove the `hide-title` class by filtering the `archetype_hide_title_post_formats` array.
+      add_filter( 'archetype_hide_title_post_formats', 'archetype_link_has_title' );
 
     // Remove the filter so it does not alter other posts
     } else {
 
-      remove_filter( 'archetype_no_title_post_formats', 'archetype_link_has_title' );
+      remove_filter( 'archetype_hide_title_post_formats', 'archetype_link_has_title' );
 
     }
 

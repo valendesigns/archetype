@@ -35,6 +35,7 @@ require get_template_directory() . '/inc/functions/extras.php';
  * Load OptionTree compatibility files.
  */
 require get_template_directory() . '/inc/option-tree/hooks.php';
+require get_template_directory() . '/inc/option-tree/meta-boxes.php';
 require get_template_directory() . '/inc/option-tree/functions.php';
 
 /**

@@ -1189,9 +1189,9 @@ fieldset {
           margin-bottom: 0; }
   .hentry .entry-header {
     padding: 2.625em; }
-    .hentry .entry-header.no-title {
+    .hentry .entry-header.hide-title {
       padding-bottom: 1.3125em; }
-      .hentry .entry-header.no-title .entry-title {
+      .hentry .entry-header.hide-title .entry-title {
         display: none; }
     .hentry .entry-header h1 {
       margin: 0; }
@@ -1304,7 +1304,7 @@ fieldset {
     margin-bottom: 1.387em; }
     .hentry .entry-header {
       padding: 1.387em; }
-      .hentry .entry-header.no-title {
+      .hentry .entry-header.hide-title {
         padding-bottom: .6935em; }
     .hentry .entry-meta {
       padding: 1.387em; }
@@ -1322,7 +1322,7 @@ fieldset {
     margin-bottom: 2.125em; }
     .hentry .entry-header {
       padding: 2.125em; }
-      .hentry .entry-header.no-title {
+      .hentry .entry-header.hide-title {
         padding-bottom: 1.0625em; }
     .hentry .entry-meta {
       padding: 2.125em; }

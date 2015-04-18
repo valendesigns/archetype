@@ -190,7 +190,7 @@ if ( ! function_exists( 'archetype_get_sidebar' ) ) {
   }
 }
 
-if ( ! function_exists( 'archetype_no_title_post_formats' ) ) {
+if ( ! function_exists( 'archetype_hide_title_post_formats' ) ) {
   /**
    * Returns an array of post formats that do not have a title.
    *
@@ -198,7 +198,7 @@ if ( ! function_exists( 'archetype_no_title_post_formats' ) ) {
    *
    * @return array An array of post formats.
    */
-  function archetype_no_title_post_formats() {
+  function archetype_hide_title_post_formats() {
     /**
      * Filter the array of post formats that do not have a title.
      *
@@ -206,7 +206,7 @@ if ( ! function_exists( 'archetype_no_title_post_formats' ) ) {
      *
      * @param array $post_formats An array of post formats.
      */
-    $post_formats = apply_filters( 'archetype_no_title_post_formats', array( 'aside', 'link', 'status' ) );
+    $post_formats = apply_filters( 'archetype_hide_title_post_formats', array( 'aside', 'link', 'status' ) );
 
     return $post_formats;
   }
@@ -246,6 +246,40 @@ if ( ! function_exists( 'archetype_has_title' ) ) {
   }
 }
 
+if ( ! function_exists( 'archetype_hide_title' ) ) {
+  /**
+   * Check for a hidden post title.
+   *
+   * @uses get_post()
+   *
+   * @since 1.0.0
+   *
+   * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
+   * @return bool
+   */
+  function archetype_hide_title( $post = 0 ) {
+    $post = get_post( $post );
+    return apply_filters( 'archetype_hide_title', false, $post );
+  }
+}
+
+if ( ! function_exists( 'archetype_hide_author_bio' ) ) {
+  /**
+   * Check for a hidden author bio.
+   *
+   * @uses get_post()
+   *
+   * @since 1.0.0
+   *
+   * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
+   * @return bool
+   */
+  function archetype_hide_author_bio( $post = 0 ) {
+    $post = get_post( $post );
+    return apply_filters( 'archetype_hide_author_bio', false, $post );
+  }
+}
+
 if ( ! function_exists( 'archetype_entry_header_class' ) ) {
   /**
    * Setup the entry-header classes.
@@ -261,11 +295,10 @@ if ( ! function_exists( 'archetype_entry_header_class' ) ) {
     $classes = array( 'entry-header' );
 
     /*
-     * Add the `no-title` class when the title is missing or we're viewing an aside or status 
-     * that is not a single post.
+     * Add the `hide-title` class when the title is missing or we're viewing certain post formats.
      */
-    if ( ! archetype_has_title() || has_post_format( archetype_no_title_post_formats() ) ) {
-      $classes[] = 'no-title';
+    if ( archetype_hide_title() || ! archetype_has_title() || has_post_format( archetype_hide_title_post_formats() ) ) {
+      $classes[] = 'hide-title';
     }
 
     /**
