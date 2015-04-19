@@ -29,6 +29,7 @@
       border: 0;
       background-color: $color-body;
       background-image: none;
+      border-radius: $radius-post $radius-post 0 0;
     }
 
     .ui-widget-content {
@@ -39,19 +40,98 @@
     }
 
     .ui-datepicker {
+      .ui-datepicker-header {
+        position: relative;
+        height: 48px;
+      }
+
+      .ui-datepicker-title {
+        text-align: center;
+      }
+
       .ui-datepicker-prev,
       .ui-datepicker-next {
-        background-color: rgba(0,0,0,0.1) !important;
+        -webkit-tap-highlight-color: $color-button-bg;
+        background-color: $color-body;
+        color: #fff;
+        display: inline-block;
+        height: 48px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        width: 48px;
+        text-align: center;
+
+        &:before {
+          display: inline-block;
+          font-family: "FontAwesome";
+          font-size: 1.250em;
+          height: 48px;
+          line-height: 48px;
+          position: relative;
+          width: 48px;
+          vertical-align: top;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: $color-button-bg;
+        }
+
+        span {
+          background: none;
+        }
+      }
+
+      .ui-datepicker-prev {
+        left: 0;
+
+        .rtl & {
+          left: 0;
+          right: auto;
+        }
+      }
+
+      .ui-datepicker-next {
+        right: 0;
+
+        .rtl & {
+          right: 0;
+          left: auto;
+        }
+      }
+
+      .ui-datepicker-prev:before {
+        content: "\f053";
+
+        .rtl & {
+          content: "\f054" !important;
+        }
+      }
+
+      .ui-datepicker-next:before {
+        content: "\f054";
+
+        .rtl & {
+          content: "\f053";
+        }
       }
 
       th {
-        background: rgba(0,0,0,0.1);
+        background: rgba(0,0,0,0.2);
         border: 0;
         color: $color-body;
+        text-align: center;
       }
 
       td {
         border: 0;
+        
+        span,
+        a {
+          display: block;
+        }
 
         &.ui-state-disabled {
           background: none;
@@ -91,6 +171,23 @@
 
   .wc-bookings-date-picker-choose-date {
     color: $color-link;
+    font-size: .875em;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    
+    /*rtl:ignore*/
+    &:before {
+      content: "\f073";
+      display: inline-block;
+      font-family: "FontAwesome";
+      margin-right: .53em;
+      
+      .rtl & {
+        margin-left: 0;
+        margin-right: .53em;
+      }
+    }
   }
 
   .block-picker {
