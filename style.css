@@ -2207,6 +2207,15 @@ embed, iframe, object {
 .infinity-end.neverending .site-footer {
   display: block; }
 
+.infinite-scroll.neverending .pagination {
+  display: none; }
+
+.infinite-scroll.neverending .site-main {
+  position: relative; }
+
+.infinite-loader {
+  margin: 0 0 2.625em 50%; }
+
 /**
  * bxSlider
  */
