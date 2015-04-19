@@ -126,6 +126,10 @@
       @include span(full);
     }
   }
+  
+  .error-404 {
+    @include span(isolate 50% at 25%);
+  }
 
   /**
    * Footer widgets

@@ -44,6 +44,11 @@ function archetype_body_classes( $classes ) {
     $classes[]	= 'no-wc-breadcrumb';
   }
 
+  // Add full width 404
+  if ( is_404() ) {
+    $classes[]	= 'archetype-full-width-content';
+  }
+
   /**
    * What is this?!
    * Take the blue pill, close this file and forget you saw the following code.

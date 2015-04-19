@@ -839,6 +839,11 @@ a {
     float: left;
     margin-left: 0;
     margin-right: 0; }
+  .error-404 {
+    width: 50%;
+    float: left;
+    margin-left: 25%;
+    margin-right: -100%; }
   /**
    * Footer widgets
    */
@@ -1279,6 +1284,26 @@ fieldset {
     .entry-meta + .hentry .entry-content {
       padding-top: 2.625em; }
 
+.error-404 {
+  text-align: center; }
+  .error-404 h1 {
+    display: inline-block;
+    font-size: 7.5em;
+    line-height: 1.8;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    max-width: 100%;
+    border: 5px solid #ee543f;
+    color: #ee543f; }
+  .error-404 .page-content p {
+    font-size: 1.25em;
+    font-weight: 300; }
+  .error-404 .page-content h2 {
+    font-size: 1.5em; }
+  .error-404 .page-content .error-404-search {
+    margin-bottom: 2.625em; }
+
 .updated:not(.published) {
   display: none; }
 
@@ -1395,6 +1420,12 @@ fieldset {
       padding-top: 0; }
       .entry-meta + .hentry .entry-content {
         padding-top: 2.125em; } }
+
+@media screen and (min-width: 768px) {
+  .error-404 h1 {
+    line-height: 2.35;
+    height: 2.5em;
+    width: 2.5em; } }
 
 /**
  * Author Bio
@@ -2075,21 +2106,21 @@ embed, iframe, object {
   padding: 1em 0;
   font-size: .938em; }
 
-.widget_search form, .widget_product_search form {
+.widget_search form, .widget_product_search form, .error-404-search form {
   position: relative;
   margin-bottom: 0; }
-  .widget_search form input[type=text], .widget_search form input[type=search], .widget_product_search form input[type=text], .widget_product_search form input[type=search] {
+  .widget_search form input[type=text], .widget_search form input[type=search], .widget_product_search form input[type=text], .widget_product_search form input[type=search], .error-404-search form input[type=text], .error-404-search form input[type=search] {
     background: #fff;
     width: 100%;
     font-size: 1.067em;
     padding: .75em 1em .75em 2.625em;
     box-shadow: 0px -1px 0px #8b949b inset;
     border-radius: 0px; }
-    .widget_search form input[type=text]:focus, .widget_search form input[type=search]:focus, .widget_product_search form input[type=text]:focus, .widget_product_search form input[type=search]:focus {
+    .widget_search form input[type=text]:focus, .widget_search form input[type=search]:focus, .widget_product_search form input[type=text]:focus, .widget_product_search form input[type=search]:focus, .error-404-search form input[type=text]:focus, .error-404-search form input[type=search]:focus {
       color: #3b3b3b; }
-  .widget_search form input[type=submit], .widget_product_search form input[type=submit] {
+  .widget_search form input[type=submit], .widget_product_search form input[type=submit], .error-404-search form input[type=submit] {
     display: none; }
-  .widget_search form:before, .widget_product_search form:before {
+  .widget_search form:before, .widget_product_search form:before, .error-404-search form:before {
     content: "\f002";
     font-family: "FontAwesome";
     position: absolute;

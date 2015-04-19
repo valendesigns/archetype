@@ -119,6 +119,37 @@
   }
 }
 
+.error-404 {
+  text-align: center;
+
+  h1 {
+    display: inline-block;
+    font-size: 7.5em;
+    line-height: 1.8;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    max-width: 100%;
+    border: 5px solid $color-link;
+    color: $color-link;
+  }
+
+  .page-content {
+    p {
+      font-size: 1.25em;
+      font-weight: 300;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    .error-404-search {
+      margin-bottom: 2.625em;
+    }
+  }
+}
+
 .updated:not(.published) {
   display: none;
 }
@@ -333,6 +364,16 @@
       .entry-meta + & {
         padding-top: 2.125em;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .error-404 {
+    h1 {
+      line-height: 2.35;
+      height: 2.5em;
+      width: 2.5em;
     }
   }
 }
