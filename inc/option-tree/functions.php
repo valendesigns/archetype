@@ -216,7 +216,7 @@ if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
                 if ( ! is_single() ) {
                   $content.= sprintf( '<li><a href="%s" rel="bookmark"><img src="%s" alt="%s" />%s</a></li>', esc_url( get_permalink() ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
                 } else {
-                  $content.= sprintf( '<li><img src="%s" alt="%s" />%s</li>', esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
+                  $content.= sprintf( '<li><a href="%s" rel="lightbox[gallery-main]" title="%s"><img src="%s" alt="%s" />%s</a></li>', esc_url( $attachment->guid ), esc_attr( $attachment->post_excerpt ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
                 }
               }
             }
