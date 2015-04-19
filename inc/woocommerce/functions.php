@@ -80,6 +80,26 @@ function archetype_woocommerce_body_class( $classes ) {
   return $classes;
 }
 
+
+/*
+* goes in theme functions.php or a custom plugin. Replace the image filename/path with your own :)
+*
+**/
+/**
+ * Replaces the placeholder image.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function archetype_fix_thumbnail() {
+  add_filter( 'woocommerce_placeholder_img_src', 'archetype_woocommerce_placeholder_img_src', 0 );
+
+	function archetype_woocommerce_placeholder_img_src( $src ) {
+    return get_template_directory_uri() . '/inc/woocommerce/images/placeholder.png';
+	}
+}
+
 /**
  * Replaces `get_search_form()` with Product Search.
  *

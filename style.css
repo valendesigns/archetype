@@ -538,13 +538,13 @@ table {
     padding: 1em 0;
     font-weight: 700; }
   table td, table th {
-    padding: .857em 1.387em;
+    padding: .875em 1.387em;
     text-align: left;
     vertical-align: top; }
     table td p:last-child, table th p:last-child {
       margin-bottom: 0; }
   table thead th {
-    border-bottom: 2px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
     text-transform: uppercase;
     padding: 1.387em;
     vertical-align: middle; }
@@ -986,12 +986,16 @@ textarea {
   padding-left: .875em;
   vertical-align: top;
   /* Improves readability and alignment in all browsers */
-  width: 100%; }
+  width: 100%;
+  resize: vertical; }
 
 label {
   display: block;
   font-weight: 700;
   margin-bottom: .875em; }
+
+input + label {
+  display: inline; }
 
 label.inline input {
   display: inline;
@@ -1879,16 +1883,17 @@ embed, iframe, object {
       display: table; }
   #comments .comment-list .comment-content {
     background: #fff;
-    margin-bottom: 1.875em;
-    padding: 1.875em;
+    margin-bottom: 2.625em;
+    padding: 2.625em;
+    padding-top: 0 !important;
     position: relative;
     box-shadow: 0px -1px 0px #8b949b inset;
     border-radius: 0px; }
   #comments .comment-list .comment-meta {
     border-bottom: 1px solid #e5e5e5;
     font-weight: 300;
-    margin-bottom: 1em;
-    padding-bottom: .5em; }
+    margin-bottom: 1.3125em;
+    padding: 1.3125em 0; }
     #comments .comment-list .comment-meta::after {
       clear: both;
       content: "";
@@ -1905,6 +1910,9 @@ embed, iframe, object {
       border-radius: 3px; }
     #comments .comment-list .comment-meta cite {
       font-style: normal; }
+    #comments .comment-list .comment-meta .star-rating {
+      float: right;
+      margin: .25em 0 0 .53em; }
     #comments .comment-list .comment-meta .reply {
       float: left;
       font-size: .857em;
@@ -1959,8 +1967,8 @@ embed, iframe, object {
 #respond {
   background: #fff;
   clear: both;
-  margin-bottom: 1.875em;
-  padding: 1.875em;
+  margin-bottom: 2.625em;
+  padding: 2.625em;
   box-shadow: 0px -1px 0px #8b949b inset;
   border-radius: 0px; }
   #respond .comment-form-author input, #respond .comment-form-email input, #respond .comment-form-url input {
@@ -1971,12 +1979,24 @@ embed, iframe, object {
 @media screen and (max-width: 568px) {
   #comments p.no-comments {
     margin-bottom: 1.387em;
-    padding: 1.387em; } }
+    padding: 1.387em; }
+  #respond, #comments .comment-list .comment-content {
+    margin-bottom: 1.387em;
+    padding: 1.387em; }
+  #comments .comment-list .comment-meta {
+    margin-bottom: .6935em;
+    padding: .6935em 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
   #comments p.no-comments {
     margin-bottom: 2.125em;
-    padding: 2.125em; } }
+    padding: 2.125em; }
+  #respond, #comments .comment-list .comment-content {
+    margin-bottom: 2.125em;
+    padding: 2.125em; }
+  #comments .comment-list .comment-meta {
+    margin-bottom: 1.0625em;
+    padding: 1.0625em 0; } }
 
 @media screen and (min-width: 768px) {
   #comments .comment-list::after {

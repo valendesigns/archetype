@@ -191,6 +191,17 @@ function archetype_scripts() {
 }
 
 /**
+ * JavaScript Detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ *
+ * @since 1.0.0
+ */
+function archetype_javascript_detection() {
+  echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+
+/**
  * Add featured image as background image to post navigation elements.
  *
  * @since 1.0.0

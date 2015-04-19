@@ -22,15 +22,22 @@ if ( ! function_exists( 'archetype_product_categories' ) ) {
         'child_categories' => 0,
         'orderby'          => 'name',
         'title'            => __( 'Product Categories', 'archetype' ),
-        ) );
+      ) );
 
-      echo '<section class="archetype-product-section archetype-product-categories">';
+      $products = do_shortcode( '[product_categories number="' . $args['limit'] . '" columns="' . $args['columns'] . '" orderby="' . $args['orderby'] . '" parent="' . $args['child_categories'] . '"]' );
 
-      echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
-      echo do_shortcode( '[product_categories number="' . $args['limit'] . '" columns="' . $args['columns'] . '" orderby="' . $args['orderby'] . '" parent="' . $args['child_categories'] . '"]' );
+      $empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
-      echo '</section>';
+      if ( ! empty( $products ) && $empty !== $products ) {
 
+        echo '<section class="archetype-product-section archetype-product-categories">';
+
+          echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
+          echo $products;
+
+        echo '</section>';
+
+      }
     }
   }
 }
@@ -47,18 +54,25 @@ if ( ! function_exists( 'archetype_recent_products' ) ) {
     if ( is_woocommerce_activated() ) {
 
       $args = apply_filters( 'archetype_recent_products_args', array(
-        'limit'       => 4,
-        'columns'       => 4,
-        'title'        => __( 'Recent Products', 'archetype' ),
-        ) );
+        'limit'   => 4,
+        'columns' => 4,
+        'title'   => __( 'Recent Products', 'archetype' ),
+      ) );
 
-      echo '<section class="archetype-product-section archetype-recent-products">';
+      $products = do_shortcode( '[recent_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
 
-      echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
-      echo do_shortcode( '[recent_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+      $empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
-      echo '</section>';
+      if ( ! empty( $products ) && $empty !== $products ) {
 
+        echo '<section class="archetype-product-section archetype-recent-products">';
+
+          echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
+          echo $products;
+
+        echo '</section>';
+
+      }
     }
   }
 }
@@ -75,18 +89,25 @@ if ( ! function_exists( 'archetype_featured_products' ) ) {
     if ( is_woocommerce_activated() ) {
 
       $args = apply_filters( 'archetype_featured_products_args', array(
-        'limit'       => 4,
-        'columns'       => 4,
-        'title'        => __( 'Featured Products', 'archetype' ),
-        ) );
+        'limit'   => 4,
+        'columns' => 4,
+        'title'   => __( 'Featured Products', 'archetype' ),
+      ) );
 
-      echo '<section class="archetype-product-section archetype-featured-products">';
+      $products = do_shortcode( '[featured_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
 
-      echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
-      echo do_shortcode( '[featured_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+      $empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
-      echo '</section>';
+      if ( ! empty( $products ) && $empty !== $products ) {
 
+        echo '<section class="archetype-product-section archetype-featured-products">';
+
+          echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
+          echo $products;
+
+        echo '</section>';
+
+      }
     }
   }
 }
@@ -103,18 +124,25 @@ if ( ! function_exists( 'archetype_popular_products' ) ) {
     if ( is_woocommerce_activated() ) {
 
       $args = apply_filters( 'archetype_popular_products_args', array(
-        'limit'       => 4,
-        'columns'       => 4,
-        'title'        => __( 'Top Rated Products', 'archetype' ),
-        ) );
+        'limit'   => 4,
+        'columns' => 4,
+        'title'   => __( 'Top Rated Products', 'archetype' ),
+      ) );
 
-      echo '<section class="archetype-product-section archetype-popular-products">';
+      $products = do_shortcode( '[top_rated_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
 
-      echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
-      echo do_shortcode( '[top_rated_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+      $empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
-      echo '</section>';
+      if ( ! empty( $products ) && $empty !== $products ) {
 
+        echo '<section class="archetype-product-section archetype-popular-products">';
+
+          echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
+          echo $products;
+
+        echo '</section>';
+
+      }
     }
   }
 }
@@ -131,18 +159,25 @@ if ( ! function_exists( 'archetype_on_sale_products' ) ) {
     if ( is_woocommerce_activated() ) {
 
       $args = apply_filters( 'archetype_on_sale_products_args', array(
-        'limit'       => 4,
-        'columns'       => 4,
-        'title'        => __( 'On Sale', 'archetype' ),
-        ) );
+        'limit'   => 4,
+        'columns' => 4,
+        'title'   => __( 'On Sale', 'archetype' ),
+      ) );
 
-      echo '<section class="archetype-product-section archetype-on-sale-products">';
+      $products = do_shortcode( '[sale_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
 
-      echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
-      echo do_shortcode( '[sale_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+      $empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
-      echo '</section>';
+      if ( ! empty( $products ) && $empty !== $products ) {
 
+        echo '<section class="archetype-product-section archetype-on-sale-products">';
+
+          echo '<h2 class="section-title">' . esc_attr( $args['title'] ) . '</h2>';
+          echo $products;
+
+        echo '</section>';
+
+      }
     }
   }
 }

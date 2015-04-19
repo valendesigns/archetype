@@ -18,7 +18,7 @@ if ( ! comments_open() ) {
 ?>
 <div id="reviews">
   <div id="comments">
-    <h2><?php
+    <h2 class="comments-title" class="comments-area"><?php
       if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) )
         printf( _n( '%s review for %s', '%s reviews for %s', $count, 'archetype' ), $count, get_the_title() );
       else
@@ -27,8 +27,8 @@ if ( ! comments_open() ) {
 
     <?php if ( have_comments() ) : ?>
 
-      <ol class="commentlist">
-        <?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
+      <ol class="comment-list">
+        <?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'archetype_comment', 'max_depth' => 0 ) ) ); ?>
       </ol>
 
       <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :

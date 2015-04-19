@@ -114,6 +114,16 @@ ul.products {
     margin-bottom: 2.625em;
     text-align: center;
     position: relative;
+    background: $color-post-bg;
+    box-shadow: 0px -1px 0px $color-post-shadow inset;
+    border-radius: $radius-post;
+    padding-bottom: 2.625em;
+    
+    .woocommerce-cart & {
+      padding-bottom: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
 
     .star-rating,
     .price {
@@ -133,11 +143,11 @@ ul.products {
     }
 
     h3 {
-      font-size: 1.1em;
+      font-size: 1.125em;
     }
 
     .star-rating {
-      font-size: .857em;
+      font-size: .875em;
     }
 
     img {
@@ -166,6 +176,14 @@ ul.products {
     position: relative;
     overflow: hidden;
 
+    .onsale {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: $color-body;
+      color: $color-post-bg;
+    }
+
     .images,
     .summary {
       margin-bottom: 2.625em;
@@ -174,11 +192,17 @@ ul.products {
 
     .images {
       .woocommerce-main-image {
-        margin-bottom: 1.618em;
         display: block;
       }
 
       .thumbnails {
+        padding: 1em;
+        padding-bottom: 0;
+        background: $color-post-bg;
+        box-shadow: 0px -1px 0px $color-post-shadow inset;
+        border-radius: 0 0 $radius-post $radius-post;
+        overflow: hidden;
+        
         a.zoom {
           display: block;
           width: 22.05%;
@@ -196,13 +220,20 @@ ul.products {
         }
       }
     }
+    
+    .summary {
+      padding: 2.625em;
+      background: $color-post-bg;
+      box-shadow: 0px -1px 0px $color-post-shadow inset;
+      border-radius: 0 0 $radius-post $radius-post;
+    }
 
     form.cart {
       @include clearfix;
       margin-bottom: 1.618em;
       padding: 1.618em 0;
-      border-top: 3px solid rgba(0,0,0,0.025);
-      border-bottom: 3px solid rgba(0,0,0,0.025);
+      border-top: 1px solid $color-post-border;
+      border-bottom: 1px solid $color-post-border;
 
       .quantity {
         float: left;
@@ -255,7 +286,7 @@ ul.products {
       margin-top: -.618em;
 
       a {
-        font-size: .857em;
+        font-size: .875em;
       }
 
       .star-rating {
@@ -264,7 +295,7 @@ ul.products {
     }
 
     .product_meta {
-      font-size: .857em;
+      font-size: .875em;
 
       .sku_wrapper,
       .posted_in,
@@ -300,46 +331,6 @@ ul.products {
  * Reviews
  */
 #reviews {
-  #comments {
-    padding-top: 0;
-  }
-
-  .commentlist {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-      border-bottom: 1px solid $color-post-border;
-      margin-bottom: 3.631em;
-      list-style: none;
-      clear: both;
-
-      time {
-        opacity: 0.8;
-      }
-
-      .avatar {
-        float: right;
-        width: 2.625em;
-        height: auto;
-      }
-
-      p.meta {
-        margin-bottom: 1em;
-      }
-
-      .description {
-        padding-bottom: 1.618em;
-      }
-
-      ul.children {
-        border-top: 1px solid $color-post-border;
-        @include span(last 5 of 6);
-        padding-top: 1.618em;
-      }
-    }
-  }
-
   .comment-form-rating {
     clear: both;
   }
@@ -381,6 +372,16 @@ ul.products {
         }
       }
     }
+  }
+}
+
+/**
+ * Products (upsells, related etc.)
+ */
+div.products,
+.cart-collaterals {
+  h2 {
+    margin-bottom: $spacing-v;
   }
 }
 
@@ -714,6 +715,25 @@ a.remove {
 
 form.checkout {
   @include clearfix;
+
+  h3:not(#ship-to-different-address) {
+    font-size: $spacing-v;
+    margin-bottom: $spacing-v;
+  }
+  
+  #ship-to-different-address {
+    font-size: $spacing-v;
+
+    label {
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.select2-choice,
+.select2-chosen {
+  padding: 8px;
 }
 
 #payment {
@@ -1010,7 +1030,7 @@ p.stars {
   font-size: 1.618em;
 
   a {
-    display: block;
+    display: inline-block;
     text-indent: -9999px;
     position: relative;
     color: $color-body;
@@ -1048,11 +1068,10 @@ p.stars {
 }
 
 .onsale {
-  border: 2px solid;
-  border-color: $color-body;
+  border: 2px solid $color-body;
   color: $color-body;
-  padding: .202em .618em;
-  font-size: .857em;
+  padding: .214em .571em;
+  font-size: .875em;
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
@@ -1090,46 +1109,63 @@ p.stars {
 }
 
 .woocommerce-tabs {
-  border: 1px solid $color-post-border;
-  border-width: 1px 0;
-  padding: 1em 0;
+  clear: both;
+  margin-bottom: 2.625em;
 
   ul.tabs {
+    background: $color-post-bg;
+    box-shadow: 0px -1px 0px $color-post-shadow inset;
+    float: left;
     list-style: none;
-    margin-left: 0;
-    text-align: center;
+    margin: 0 0 2.625em 0;
+    width: 100%;
 
     li {
-      display: inline-block;
-      margin-right: 1em;
+      display: block;
+      float: left;
       position: relative;
+
+      a {
+        display: block;
+        padding: 1em;
+        background: $color-post-bg;
+        border-bottom: 1px solid $color-post-shadow;
+      }
 
       &.active {
         a {
-          color: $color-body;
-        }
-
-        &:after {
-          content: "\f107";
-          font-family: "FontAwesome";
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          height: 1em;
-          width: 1em;
-          line-height: 1;
-          margin-left: -.5em;
+          color: $color-button;
+          background: $color-button-bg;
+          border-color: $color-button-border;
         }
       }
     }
   }
+
+  .panel {
+    clear: both;
+
+    .js & {
+      display: none;
+    }
+  }
+  
+  #tab-description {
+    background: $color-post-bg;
+    position: relative;
+    box-shadow: 0px -1px 0px $color-post-shadow inset;
+    border-radius: $radius-post;
+    padding: 2.625em;
+  }
+}
+
+.woocommerce-noreviews {
+  display: none;
 }
 
 .woocommerce-message,
 .woocommerce-info,
-.woocommerce-error,
-.woocommerce-noreviews,
-p.no-comments {
+.woocommerce-error {
   padding: 1em 1.618em;
   @include clearfix;
   margin-bottom: 2.625em;
@@ -1187,9 +1223,7 @@ p.no-comments {
   list-style: none;
 }
 
-.woocommerce-info,
-.woocommerce-noreviews,
-p.no-comments {
+.woocommerce-info {
   background-color: $color-info;
 }
 
@@ -1209,15 +1243,11 @@ dl.variation {
  * Homepage
  */
 .archetype-product-section {
-  border-bottom: 3px solid rgba(0,0,0,0.025);
   margin-bottom: 2.625em;
 
   .section-title {
     text-align: center;
-  }
-
-  &:last-child {
-    border-bottom: 0;
+    margin-bottom: $spacing-v;
   }
 }
 
@@ -1226,8 +1256,6 @@ dl.variation {
     font-size: 1em;
 
     a {
-      display: inline-block;
-
       &.star-1,
       &.star-2,
       &.star-3,
@@ -1518,43 +1546,14 @@ dl.variation {
     div.product {
       .images {
         @include span(4 of 9);
-        margin-bottom: 3.631em;
-
-        .thumbnails {
-          @include clearfix;
-
-          a.zoom {
-            @include span(1 of 4);
-
-            &.last {
-              @include last;
-            }
-          }
-        }
       }
 
       .summary {
         @include span(last 5 of 9);
-        margin-bottom: 3.631em;
-      }
-
-      .woocommerce-tabs {
-        clear: both;
       }
     }
   }
 
-  #reviews {
-    .comment-form-author,
-    .comment-form-email {
-      width: 47%;
-    }
-
-    .comment-form-email {
-      margin-right: 0;
-    }
-  }
-  
   .woocommerce-breadcrumb {
     font-size: .875em;
     padding: .938em 0;
@@ -1566,26 +1565,10 @@ dl.variation {
     div.product {
       .images {
         @include span(4 of 12);
-        margin-bottom: 3.631em;
-
-        .thumbnails {
-          a.zoom {
-            @include span(1 of 4);
-
-            &.last {
-              @include last;
-            }
-          }
-        }
       }
 
       .summary {
         @include span(last 8 of 12);
-        margin-bottom: 3.631em;
-      }
-
-      .woocommerce-tabs {
-        clear: both;
       }
     }
 
@@ -1749,16 +1732,12 @@ dl.variation {
   #order_review_heading,
   #order_review {
     @include span(last 4 of 9);
-    border: 3px solid $color-link;
     clear: right;
   }
 
   #order_review_heading {
     margin-bottom: 0;
     padding-bottom: .618em;
-    padding-top: .618em;
-    border-width: 3px 3px 0 3px;
-    @include gutters(inside);
   }
 
   #order_review {
@@ -1848,63 +1827,25 @@ dl.variation {
       @include span(last 6 of 12);
     }
   }
-
-  .archetype-full-width-content {
-    .woocommerce-tabs {
-      ul.tabs {
-        @include span(4 of 12);
-      }
-
-      .panel {
-        @include span(last 8 of 12);
-        margin-bottom: 3.631em;
-      }
-    }
-  }
-
-  .woocommerce-tabs {
-    @include clearfix;
-    margin-bottom: 2.625em;
-    padding-top: 2.625em;
-    padding-bottom: 2.625em;
-
-    ul.tabs {
-      @include span(3 of 9);
-      text-align: left;
-
-      li {
-        display: block;
-        margin: 0;
-        border-bottom: 1px dotted $color-post-border;
-
-        a {
-          padding: 1em 0;
-          display: block;
-        }
-
-        &.active {
-          &:after {
-            margin: 0;
-            right: 0;
-            left: auto;
-            top: 50%;
-            content: "\f105";
-            margin-top: -.5em;
-          }
-        }
-      }
-    }
-
-    .panel {
-      @include span(last 6 of 9);
-      margin-top: 0;
-    }
-  }
 }
 
+/**
+ * Phone
+ */
+ 
 @media screen and (max-width: 568px) {
-  .woocommerce-breadcrumb {
+  .woocommerce-breadcrumb,
+  ul.products li.product,
+  .woocommerce-tabs,
+  .archetype-product-section,
+  .single-product div.product .images,
+  .single-product div.product .summary {
     margin-bottom: 1.387em;
+  }
+
+  #tab-description,
+  .single-product div.product .summary {
+    padding: 1.387em;
   }
 
   .archetype-sorting {
@@ -1918,8 +1859,22 @@ dl.variation {
   }
 }
 
+/**
+ * Tablet
+ */
+
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .woocommerce-breadcrumb {
-    margin-bottom: 2.429em;
+  .woocommerce-breadcrumb,
+  ul.products li.product,
+  .woocommerce-tabs,
+  .archetype-product-section,
+  .single-product div.product .images,
+  .single-product div.product .summary {
+    margin-bottom: 2.125em;
+  }
+
+  #tab-description,
+  .single-product div.product .summary {
+    padding: 2.125em;
   }
 }

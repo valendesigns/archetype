@@ -15,7 +15,7 @@
   }
 
   .comments-title {
-    margin-bottom: 1.500em;
+    margin-bottom: $spacing-v;
   }
 
   .comment-list {
@@ -29,8 +29,9 @@
 
     .comment-content {
       background: $color-post-bg;
-      margin-bottom: 1.875em;
-      padding: 1.875em;
+      margin-bottom: 2.625em;
+      padding: 2.625em;
+      padding-top: 0 !important;
       position: relative;
       box-shadow: 0px -1px 0px $color-post-shadow inset;
       border-radius: $radius-post;
@@ -39,8 +40,8 @@
     .comment-meta {
       border-bottom: 1px solid $color-post-border;
       font-weight: 300;
-      margin-bottom: 1em;
-      padding-bottom: .500em;
+      margin-bottom: 1.3125em;
+      padding: 1.3125em 0;
       @include clearfix;
       
       .comment-author {
@@ -60,7 +61,12 @@
       cite {
         font-style: normal;
       }
-      
+
+      .star-rating {
+        float: right;
+        margin: .25em 0 0 .53em;
+      }
+
       .reply {
         float: left;
         font-size: .857em;
@@ -137,8 +143,8 @@
 #respond {
   background: $color-post-bg;
   clear: both;
-  margin-bottom: 1.875em;
-  padding: 1.875em;
+  margin-bottom: 2.625em;
+  padding: 2.625em;
   box-shadow: 0px -1px 0px $color-post-shadow inset;
   border-radius: $radius-post;
 
@@ -163,6 +169,17 @@
       padding: 1.387em;
     }
   }
+
+  #respond,
+  #comments .comment-list .comment-content {
+    margin-bottom: 1.387em;
+    padding: 1.387em;
+  }
+
+  #comments .comment-list .comment-meta {
+    margin-bottom: .6935em;
+    padding: .6935em 0;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
@@ -171,6 +188,17 @@
       margin-bottom: 2.125em;
       padding: 2.125em;
     }
+  }
+
+  #respond,
+  #comments .comment-list .comment-content {
+    margin-bottom: 2.125em;
+    padding: 2.125em;
+  }
+
+  #comments .comment-list .comment-meta {
+    margin-bottom: 1.0625em;
+    padding: 1.0625em 0;
   }
 }
 
