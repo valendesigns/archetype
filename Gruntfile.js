@@ -88,13 +88,21 @@ module.exports = function( grunt ) {
           autoRename: false,
           preserveDirectives: true
         },
-        saveUnmodified: false
+        saveUnmodified: true
       },
       core: {
         expand: true,
         ext: '-rtl.css',
         src: [
           'style.css'
+        ]
+      },
+      woocommerce: {
+        expand: true,
+        ext: '-rtl.css',
+        src: [
+          'inc/woocommerce/css/*.css',
+          '!inc/woocommerce/css/*-rtl.css'
         ]
       }
     },

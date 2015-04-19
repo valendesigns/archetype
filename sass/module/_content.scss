@@ -196,6 +196,7 @@
 .comments-link,
 .edit-link {
   margin-right: 1em;
+  display: inline-block;
 
   &:before {
     content: "\f114";
@@ -204,6 +205,22 @@
     margin-right: .375em;
     position: relative;
     width: 1em;
+    
+    .rtl & {
+      content: "" !important;
+      margin: 0 !important;
+    }
+  }
+
+  .rtl & {
+    &:after {
+      content: "\f114";
+      display: inline-block;
+      font-family: "FontAwesome";
+      margin-left: .375em;
+      position: relative;
+      width: 1em;
+    }
   }
 }
 
@@ -213,11 +230,23 @@
     &:before {
       content: "\f192";
     }
+
+    .rtl & {
+      &:after {
+        content: "\f192";
+      }
+    }
   }
 
   .format-gallery & {
     &:before {
       content: "\f00a";
+    }
+
+    .rtl & {
+      &:after {
+        content: "\f00a";
+      }
     }
   }
 
@@ -225,11 +254,23 @@
     &:before {
       content: "\f0c1";
     }
+
+    .rtl & {
+      &:after {
+        content: "\f0c1";
+      }
+    }
   }
 
   .format-image & {
     &:before {
       content: "\f03e";
+    }
+
+    .rtl & {
+      &:after {
+        content: "\f03e";
+      }
     }
   }
 
@@ -237,11 +278,23 @@
     &:before {
       content: "\f10d";
     }
+
+    .rtl & {
+      &:after {
+        content: "\f10d";
+      }
+    }
   }
 
   .format-status & {
     &:before {
       content: "\f0b0";
+    }
+
+    .rtl & {
+      &:after {
+        content: "\f0b0";
+      }
     }
   }
 
@@ -249,17 +302,35 @@
     &:before {
       content: "\f008";
     }
+
+    .rtl & {
+      &:after {
+        content: "\f008";
+      }
+    }
   }
 
   .format-audio & {
     &:before {
       content: "\f001";
     }
+
+    .rtl & {
+      &:after {
+        content: "\f001";
+      }
+    }
   }
 
   .format-chat & {
     &:before {
       content: "\f1d7";
+    }
+
+    .rtl & {
+      &:after {
+        content: "\f1d7";
+      }
     }
   }
 }
@@ -268,7 +339,13 @@
   &:before {
     content: "\f017";
   }
-  
+
+  .rtl & {
+    &:after {
+      content: "\f017";
+    }
+  }
+
   .sticky-post + & {
     display: none;
   }
@@ -278,11 +355,23 @@
   &:before {
     content: "\f007";
   }
+
+  .rtl & {
+    &:after {
+      content: "\f007";
+    }
+  } 
 }
 
 .tags-links {
   &:before {
     content: "\f02b";
+  }
+
+  .rtl & {
+    &:after {
+      content: "\f02b";
+    }
   }
 }
 
@@ -290,17 +379,35 @@
   &:before {
     content: "\f00e";
   }
+
+  .rtl & {
+    &:after {
+      content: "\f00e";
+    }
+  }
 }
 
 .comments-link {
   &:before {
     content: "\f0e5";
   }
+
+  .rtl & {
+    &:after {
+      content: "\f0e5";
+    }
+  }
 }
 
 .edit-link {
   &:before {
     content: "\f040";
+  }
+
+  .rtl & {
+    &:after {
+      content: "\f040";
+    }
   }
 }
 

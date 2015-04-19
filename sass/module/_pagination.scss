@@ -102,21 +102,33 @@
     left: 0;
   }
   
+  /*rtl:ignore*/
   .prev:before,
   .nav-previous a:before {
     content: "\f053";
     left: -1px;
+
+    .rtl & {
+      content: "\f054";
+      right: -1px;
+    }
   }
   
   .next,
   .nav-next a {
     right: 0;
   }
-  
+
+  /*rtl:ignore*/
   .next:before,
   .nav-next a:before {
     content: "\f054";
     right: -1px;
+
+    .rtl & {
+      content: "\f053";
+      left: -1px;
+    }
   }
 }
 

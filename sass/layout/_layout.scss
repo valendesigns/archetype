@@ -17,18 +17,14 @@
         max-height: none;
       }
     }
-  }
 
-  .woocommerce-active {
-    .site-header {
-      .secondary-navigation {
-        @include span(last 8 of 12);
-      }
+    .secondary-navigation {
+      @include span(last 8 of 12);
+    }
 
-      .main-navigation {
-        @include span(full);
-        clear: both;
-      }
+    .main-navigation {
+      @include span(full);
+      clear: both;
     }
   }
 

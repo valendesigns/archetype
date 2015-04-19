@@ -98,6 +98,10 @@
         position: absolute;
         right: 0;
         top: -.1em;
+
+        .rtl & {
+          content: "\f10d";
+        }
       }
     }
   }

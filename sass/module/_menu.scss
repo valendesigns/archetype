@@ -208,6 +208,11 @@
               font-family: "FontAwesome";
               margin-left: 1em;
               line-height: 1;
+
+              .rtl & {
+                margin-right: 1em;
+                margin-left: 0;
+              }
             }
           }
         }
@@ -238,6 +243,10 @@
                 content: "\f105";
                 font-family: "FontAwesome";
                 float: right;
+
+                .rtl & {
+                  content: "\f104";
+                }
               }
             }
           }

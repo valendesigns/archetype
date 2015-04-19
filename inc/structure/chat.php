@@ -80,7 +80,7 @@ class Archetype_Chat_API {
     $chat_excerpt_responses = apply_filters( 'archetype_chat_excerpt_responses', 5, get_the_ID() );
     
     // Filter the chat more text
-    $chat_more_text = apply_filters( 'archetype_chat_more_text', sprintf( __( 'Continue reading %1$s', 'archetype' ), '<span class="sep">&rarr;</span>' ), get_the_ID() );
+    $chat_more_text = apply_filters( 'archetype_chat_more_text', __( 'Continue reading', 'archetype' ), get_the_ID() );
     
     // Set response count
     $chat_excerpt_response_count = 0;

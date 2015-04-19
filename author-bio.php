@@ -13,7 +13,7 @@
     /**
      * Filter the author bio avatar size.
      *
-     * @since Twenty Fifteen 1.0
+     * @since 1.0.0
      *
      * @param int $size The avatar height and width size in pixels.
      */
@@ -29,7 +29,7 @@
     <div class="author-bio">
       <?php echo wpautop( get_the_author_meta( 'description' ) ); ?>
       <a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-        <?php printf( __( 'View all posts by %s %s', 'archetype' ), get_the_author(), '<span class="meta-nav">&rarr;</span>' ); ?>
+        <?php printf( __( 'View all posts by %s', 'archetype' ), get_the_author() ); ?>
       </a>
     </div><!-- .author-bio -->
 

@@ -568,6 +568,11 @@ div.products,
 
     &:last-child {
       margin-left: -1em;
+
+      .rtl & {
+        margin-right: -1em;
+        margin-left: 0;
+      }
     }
 
     &:hover,
@@ -576,7 +581,7 @@ div.products,
     }
   }
 
-    .ui-slider .ui-slider-range {
+  .ui-slider .ui-slider-range {
     position: absolute;
     z-index: 1;
     font-size: .7em;
@@ -587,22 +592,22 @@ div.products,
     @include border-bottom-radius(1em);
   }
 
-    .price_slider_wrapper .ui-widget-content {
+  .price_slider_wrapper .ui-widget-content {
     @include border-top-radius(1em);
     @include border-bottom-radius(1em);
     background: rgba(0,0,0,0.1);
   }
 
-    .ui-slider-horizontal {
+  .ui-slider-horizontal {
     height: .5em;
   }
 
-    .ui-slider-horizontal .ui-slider-range {
+  .ui-slider-horizontal .ui-slider-range {
     top: 0;
     height: 100%;
   }
 
-    .ui-slider-horizontal .ui-slider-range-min {
+  .ui-slider-horizontal .ui-slider-range-min {
     left: -1px;
   }
 
@@ -1216,6 +1221,19 @@ p.stars {
     font-family: "FontAwesome";
     margin-left: .53em;
     font-weight: 400;
+
+    .rtl & {
+      content: "";
+      margin: 0;
+    }
+  }
+  .rtl & {
+    &:before {
+      content: "\f177";
+      font-family: "FontAwesome";
+      margin-left: .53em;
+      font-weight: 400;
+    }
   }
 }
 
