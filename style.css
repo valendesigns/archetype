@@ -2237,7 +2237,7 @@ embed, iframe, object {
   .bxslider img {
     max-width: 100%;
     display: block; }
-  .bxslider > li {
+  .js .bxslider > li {
     display: none; }
   .bxslider .caption {
     position: absolute;
