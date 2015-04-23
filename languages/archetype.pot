@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-04-12 20:24:45+00:00\n"
+"POT-Creation-Date: 2015-04-23 21:30:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,21 +14,15 @@ msgstr ""
 "X-Generator: grunt-wp-i18n 0.5.1\n"
 
 #: 404.php:15
-msgid "Oops! That page can&rsquo;t be found."
+msgid "404"
 msgstr ""
 
 #: 404.php:19
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the "
-"links below or a search?"
+msgid "Oops!"
 msgstr ""
 
-#: 404.php:27
-msgid "Most Used Categories"
-msgstr ""
-
-#: 404.php:43
-msgid "Try looking in the monthly archives."
+#: 404.php:21
+msgid "The page you're looking for could not be found. Try searching."
 msgstr ""
 
 #: author-bio.php:10
@@ -36,7 +30,7 @@ msgid "About the Author"
 msgstr ""
 
 #: author-bio.php:32
-msgid "View all posts by %s %s"
+msgid "View all posts by %s"
 msgstr ""
 
 #: comments.php:48
@@ -351,7 +345,7 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/controls.php:29 inc/functions/setup.php:134
+#: inc/customizer/controls.php:29 inc/functions/setup.php:142
 msgid "Header"
 msgstr ""
 
@@ -491,39 +485,89 @@ msgstr ""
 msgid "Handheld Menu"
 msgstr ""
 
-#: inc/functions/setup.php:124
+#: inc/functions/setup.php:132
 msgid "Sidebar"
 msgstr ""
 
-#: inc/functions/setup.php:147
+#: inc/functions/setup.php:155
 msgid "Footer %d"
 msgstr ""
 
-#: inc/functions/setup.php:149
+#: inc/functions/setup.php:157
 msgid "Widgetized Footer Region %d."
 msgstr ""
 
-#: inc/structure/comments.php:62
-msgid "<cite class=\"fn\">%s</cite>"
+#: inc/functions/setup.php:182 inc/structure/navigation.php:41
+msgid "Previous"
 msgstr ""
 
-#: inc/structure/comments.php:74
+#: inc/functions/setup.php:183 inc/structure/navigation.php:38
+msgid "Next"
+msgstr ""
+
+#: inc/option-tree/meta-boxes.php:25
+msgid ""
+"Note: that this will not unhide titles for certain post formats. These are "
+"hidden with the %s filter."
+msgstr ""
+
+#: inc/option-tree/meta-boxes.php:29
+msgid "Hide the Title."
+msgstr ""
+
+#: inc/option-tree/meta-boxes.php:32
+msgid "Setting this to %s will hide the %s title. %s"
+msgstr ""
+
+#: inc/option-tree/meta-boxes.php:39
+msgid "Hide the Author Bio."
+msgstr ""
+
+#: inc/option-tree/meta-boxes.php:42
+msgid "Setting this to %s will hide the author bio and post footer meta link."
+msgstr ""
+
+#: inc/option-tree/meta-boxes.php:50
+msgid "Archetype Meta"
+msgstr ""
+
+#: inc/structure/chat.php:83
+msgid "Continue reading"
+msgstr ""
+
+#: inc/structure/comments.php:85
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: inc/structure/comments.php:86
+msgid "out of 5"
+msgstr ""
+
+#: inc/structure/comments.php:97
+msgid "<cite class=\"fn\" itemprop=\"author\">%s</cite>"
+msgstr ""
+
+#: inc/structure/comments.php:101
+msgid "verified owner"
+msgstr ""
+
+#: inc/structure/comments.php:115
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/structure/comments.php:81 inc/structure/post.php:186
+#: inc/structure/comments.php:122 inc/structure/post.php:211
 msgid "Edit"
 msgstr ""
 
-#: inc/structure/footer.php:60
-msgid "%1$s designed by %2$s."
+#: inc/structure/footer.php:65
+msgid "%1$s theme by %2$s."
 msgstr ""
 
-#: inc/structure/header.php:52
+#: inc/structure/header.php:50
 msgid "Primary Navigation"
 msgstr ""
 
-#: inc/structure/header.php:53
+#: inc/structure/header.php:51
 msgid "Navigation"
 msgstr ""
 
@@ -531,11 +575,11 @@ msgstr ""
 msgid "Secondary Navigation"
 msgstr ""
 
-#: inc/structure/header.php:103
+#: inc/structure/header.php:105
 msgid "Skip to navigation"
 msgstr ""
 
-#: inc/structure/header.php:104
+#: inc/structure/header.php:106
 msgid "Skip to content"
 msgstr ""
 
@@ -548,20 +592,12 @@ msgid "Next page"
 msgstr ""
 
 #: inc/structure/navigation.php:19 inc/structure/navigation.php:62
-#: inc/structure/navigation.php:113
+#: inc/structure/navigation.php:113 inc/woocommerce/template-tags.php:91
 msgid "Page"
-msgstr ""
-
-#: inc/structure/navigation.php:38
-msgid "Next"
 msgstr ""
 
 #: inc/structure/navigation.php:39
 msgid "Next post:"
-msgstr ""
-
-#: inc/structure/navigation.php:41
-msgid "Previous"
 msgstr ""
 
 #: inc/structure/navigation.php:42
@@ -588,43 +624,43 @@ msgstr ""
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/structure/post.php:73
+#: inc/structure/post.php:92
 msgid "Continue reading %s"
 msgstr ""
 
-#: inc/structure/post.php:109
+#: inc/structure/post.php:129
 msgid "Featured"
 msgstr ""
 
-#: inc/structure/post.php:182
+#: inc/structure/post.php:207
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/structure/post.php:182
+#: inc/structure/post.php:207
 msgid "1 Comment"
 msgstr ""
 
-#: inc/structure/post.php:182
+#: inc/structure/post.php:207
 msgid "% Comments"
 msgstr ""
 
-#: inc/structure/template-tags.php:26
+#: inc/structure/template-tags.php:24
 msgid "Product Categories"
 msgstr ""
 
-#: inc/structure/template-tags.php:54
+#: inc/structure/template-tags.php:59
 msgid "Recent Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:82
+#: inc/structure/template-tags.php:94
 msgid "Featured Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:110
+#: inc/structure/template-tags.php:129
 msgid "Top Rated Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:138
+#: inc/structure/template-tags.php:164
 msgid "On Sale"
 msgstr ""
 
@@ -640,6 +676,80 @@ msgstr[1] ""
 
 #: search.php:16
 msgid "Search Results for: %s"
+msgstr ""
+
+#: single-product-reviews.php:23
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: single-product-reviews.php:25
+msgid "Reviews"
+msgstr ""
+
+#: single-product-reviews.php:40
+msgid "There are no reviews yet."
+msgstr ""
+
+#: single-product-reviews.php:53
+msgid "Add a review"
+msgstr ""
+
+#: single-product-reviews.php:53
+msgid "Be the first to review"
+msgstr ""
+
+#: single-product-reviews.php:54
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: single-product-reviews.php:58
+msgid "Name"
+msgstr ""
+
+#: single-product-reviews.php:60
+msgid "Email"
+msgstr ""
+
+#: single-product-reviews.php:63
+msgid "Submit"
+msgstr ""
+
+#: single-product-reviews.php:69
+msgid "Your Rating"
+msgstr ""
+
+#: single-product-reviews.php:70
+msgid "Rate&hellip;"
+msgstr ""
+
+#: single-product-reviews.php:71
+msgid "Perfect"
+msgstr ""
+
+#: single-product-reviews.php:72
+msgid "Good"
+msgstr ""
+
+#: single-product-reviews.php:73
+msgid "Average"
+msgstr ""
+
+#: single-product-reviews.php:74
+msgid "Not that bad"
+msgstr ""
+
+#: single-product-reviews.php:75
+msgid "Very Poor"
+msgstr ""
+
+#: single-product-reviews.php:79
+msgid "Your Review"
+msgstr ""
+
+#: single-product-reviews.php:88
+msgid "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -683,6 +793,27 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
+#: inc/functions/extras.php:156 inc/functions/extras.php:157
+#: inc/woocommerce/functions.php:116 inc/woocommerce/functions.php:117
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: inc/functions/extras.php:157
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: inc/woocommerce/functions.php:117
+msgctxt "placeholder"
+msgid "Search Products &hellip;"
+msgstr ""
+
+#: inc/functions/extras.php:159 inc/woocommerce/functions.php:119
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
 #: inc/structure/navigation.php:34
 msgctxt "Parent post link"
 msgid ""
@@ -690,37 +821,42 @@ msgid ""
 "class=\"post-title\">%title</span>"
 msgstr ""
 
-#: inc/structure/post.php:115
+#: inc/structure/post.php:140
 msgctxt "Used before post format."
 msgid "Format"
 msgstr ""
 
-#: inc/structure/post.php:136
+#: inc/structure/post.php:161
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr ""
 
-#: inc/structure/post.php:145
+#: inc/structure/post.php:170
 msgctxt "Used before post author name."
 msgid "Author"
 msgstr ""
 
-#: inc/structure/post.php:151 inc/structure/post.php:159
+#: inc/structure/post.php:176 inc/structure/post.php:184
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: inc/structure/post.php:154
+#: inc/structure/post.php:179
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr ""
 
-#: inc/structure/post.php:162
+#: inc/structure/post.php:187
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr ""
 
-#: inc/structure/post.php:173
+#: inc/structure/post.php:198
 msgctxt "Used before full size attachment link."
 msgid "Full size"
+msgstr ""
+
+#: inc/woocommerce/functions.php:186
+msgctxt "breadcrumb"
+msgid "Home"
 msgstr ""
