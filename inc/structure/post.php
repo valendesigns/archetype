@@ -109,7 +109,7 @@ if ( ! function_exists( 'archetype_post_author_bio' ) ) {
    * @since 1.0.0
    */
   function archetype_post_author_bio() {
-    if ( is_single() && get_the_author_meta( 'description' ) && ! archetype_hide_author_bio() ) {
+    if ( is_singular() && get_the_author_meta( 'description' ) && ! archetype_hide_author_bio() ) {
       get_template_part( 'author-bio' );
     }
   }

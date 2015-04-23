@@ -2184,17 +2184,17 @@ embed, iframe, object {
     left: 1em;
     line-height: 1; }
 
-.widget_recent_entries ul, .widget_pages ul, .widget_categories ul, .widget_archive ul, .widget_recent_comments ul, .widget_nav_menu ul, .widget_links ul, .widget_project_types ul {
+.widget_recent_entries ul, .widget_pages ul, .widget_categories ul, .widget_archive ul, .widget_recent_comments ul, .widget_nav_menu ul, .widget_links ul, .widget_projects ul, .widget_project_types ul {
   margin: 0; }
-  .widget_recent_entries ul li, .widget_pages ul li, .widget_categories ul li, .widget_archive ul li, .widget_recent_comments ul li, .widget_nav_menu ul li, .widget_links ul li, .widget_project_types ul li {
+  .widget_recent_entries ul li, .widget_pages ul li, .widget_categories ul li, .widget_archive ul li, .widget_recent_comments ul li, .widget_nav_menu ul li, .widget_links ul li, .widget_projects ul li, .widget_project_types ul li {
     list-style: none;
     margin-bottom: .618em; }
-    .widget_recent_entries ul li:before, .widget_pages ul li:before, .widget_categories ul li:before, .widget_archive ul li:before, .widget_recent_comments ul li:before, .widget_nav_menu ul li:before, .widget_links ul li:before, .widget_project_types ul li:before {
+    .widget_recent_entries ul li:before, .widget_pages ul li:before, .widget_categories ul li:before, .widget_archive ul li:before, .widget_recent_comments ul li:before, .widget_nav_menu ul li:before, .widget_links ul li:before, .widget_projects ul li:before, .widget_project_types ul li:before {
       font-family: "FontAwesome";
       margin-right: .53em;
       display: inline-block;
       opacity: 0.35; }
-  .widget_recent_entries ul .sub-menu, .widget_pages ul .sub-menu, .widget_categories ul .sub-menu, .widget_archive ul .sub-menu, .widget_recent_comments ul .sub-menu, .widget_nav_menu ul .sub-menu, .widget_links ul .sub-menu, .widget_project_types ul .sub-menu {
+  .widget_recent_entries ul .sub-menu, .widget_pages ul .sub-menu, .widget_categories ul .sub-menu, .widget_archive ul .sub-menu, .widget_recent_comments ul .sub-menu, .widget_nav_menu ul .sub-menu, .widget_links ul .sub-menu, .widget_projects ul .sub-menu, .widget_project_types ul .sub-menu {
     margin-top: .618em;
     margin-left: 1.618em; }
 
@@ -2205,9 +2205,9 @@ embed, iframe, object {
 .footer-widgets {
   padding: 5.25em 0 2.625em 0; }
 
-.widget_recent_entries ul li:before, .widget_pages ul li:before, .widget_project_types ul li:before {
+.widget_recent_entries ul li:before, .widget_pages ul li:before, .widget_projects ul li:before, .widget_project_types ul li:before {
   content: "\f0f6"; }
-.widget_recent_entries ul ul.children, .widget_pages ul ul.children, .widget_project_types ul ul.children {
+.widget_recent_entries ul ul.children, .widget_pages ul ul.children, .widget_projects ul ul.children, .widget_project_types ul ul.children {
   margin: .618em 0 0 1.387em; }
 
 .widget_categories ul li:before {

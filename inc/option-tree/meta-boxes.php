@@ -12,6 +12,8 @@ function archetype_register_meta_boxes() {
   if ( ! function_exists( 'ot_register_meta_box' ) )
     return false;
 
+  global $wp_post_types;
+
   $post_id   = isset( $_GET['post'] ) ? $_GET['post'] : ( isset( $_POST['post_ID'] ) ? $_POST['post_ID'] : 0 );
   $post_data = get_post( $post_id, ARRAY_A );
   $post_name = isset( $post_data['post_name'] ) ? $post_data['post_name'] : '';
@@ -32,7 +34,7 @@ function archetype_register_meta_boxes() {
   );
 
   // Hide bio
-  if ( $is_post ) {
+  if ( in_array( $post_type, array( 'post', 'project' ) ) ) {
     $fields[] = array(
       'label'       => __( 'Hide the Author Bio.', 'archetype' ),
       'id'          => '_archetype_hide_author_bio',
@@ -47,7 +49,7 @@ function archetype_register_meta_boxes() {
     'id'          => 'archetype_meta_box',
     'title'       => __( 'Archetype Meta', 'archetype' ),
     'desc'        => '',
-    'pages'       => apply_filters( 'archetype_register_meta_boxes_pages', array( 'post', 'page' ) ),
+    'pages'       => apply_filters( 'archetype_register_meta_boxes_pages', array( 'post', 'page', 'project' ) ),
     'context'     => 'normal',
     'priority'    => 'high',
     'fields'      => apply_filters( 'archetype_register_meta_boxes_fields', $fields )

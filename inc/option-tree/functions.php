@@ -37,7 +37,7 @@ if ( ! function_exists( 'archetype_hide_author_bio_post_meta' ) ) {
    * @return bool
    */
   function archetype_hide_author_bio_post_meta( $hide, $post ) {
-    if ( get_post_meta( $post->ID, '_archetype_hide_title', true ) == 'on' ) {
+    if ( get_post_meta( $post->ID, '_archetype_hide_author_bio', true ) == 'on' ) {
       $hide = true;
     }
     return $hide;
