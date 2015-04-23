@@ -143,7 +143,7 @@ if ( ! function_exists( 'archetype_post_meta' ) ) {
         );
       }
 
-      if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
+      if ( in_array( get_post_type(), array( 'post', 'project', 'attachment' ) ) ) {
         $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
         if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
