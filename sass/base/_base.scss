@@ -69,18 +69,11 @@
 .site-branding {
   h1 {
     font-size: 1.618em;
-    letter-spacing: -1px;
+    font-weight: 700;
     margin: 0;
-    background: url(images/logo.png); // TODO - remove
-    width: 184px;
-    height: 41px;
-    text-indent: -999em; // END TODO
 
     a {
-      font-weight: 700;
-      display: block; // TODO - remove
-      width: 184px;
-      height: 41px; // END TODO
+      display: block;
     }
   }
 

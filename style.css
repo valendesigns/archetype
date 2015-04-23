@@ -405,17 +405,10 @@ td, th {
 
 .site-branding h1 {
   font-size: 1.618em;
-  letter-spacing: -1px;
-  margin: 0;
-  background: url(images/logo.png);
-  width: 184px;
-  height: 41px;
-  text-indent: -999em; }
+  font-weight: 700;
+  margin: 0; }
   .site-branding h1 a {
-    font-weight: 700;
-    display: block;
-    width: 184px;
-    height: 41px; }
+    display: block; }
 .site-branding .site-description {
   font-size: .857em;
   display: none; }
