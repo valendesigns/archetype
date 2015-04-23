@@ -373,13 +373,15 @@ td, th {
   background-position: center center;
   position: relative;
   z-index: 999; }
-  .site-header .site-logo-anchor {
+  .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: block; }
-    .site-header .site-logo-anchor img {
+    .site-header .site-logo-anchor img, .site-header .site-logo-link img {
       max-height: 2.625em;
       width: auto; }
-  .site-header .site-branding, .site-header .site-logo-anchor {
+  .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link img {
     margin: 1.618em 0; }
+  .site-header .site-logo-link img {
+    margin: 2em 0 1.618em 0; }
   .site-header .widget {
     margin-bottom: 0; }
   .site-header .subscribe-and-connect-connect {
