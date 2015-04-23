@@ -1,0 +1,40 @@
+/**
+ * Print
+ */
+
+
+@media print {
+  #masthead,
+  .header-widget-region,
+  .woocommerce-breadcrumb,
+  #secondary,
+  #colophon,
+  nav,
+  .author-info,
+  .entry-meta,
+  #comments {
+    display: none;
+  }
+
+  #primary p {
+    font-size: 11pt;
+    color: black;
+  }
+
+  #primary img {
+    display:block;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  #primary ul, li {
+    display: block;
+    page-break-inside: avoid;
+  }
+  
+  div,
+  article {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+}
