@@ -53,7 +53,7 @@
       .ui-datepicker-next {
         -webkit-tap-highlight-color: $color-button-bg;
         background-color: $color-body;
-        color: #fff;
+        color: $color-button;
         display: inline-block;
         height: 48px;
         overflow: hidden;
@@ -145,10 +145,10 @@
         &.bookable {
           a {
             text-shadow: none;
-            background-color: $color-link !important;
+            background-color: $color-button-bg !important;
 
             &:hover {
-              background-color: $color-link !important;
+              background-color: $color-button-bg !important;
             }
 
             &.ui-state-active {
@@ -199,19 +199,19 @@
         padding: .236em .53em;
         display: inline-block;
         text-align: center;
-        color: #fff;
+        color: $color-button;
         background-color: $color-body;
 
         &:hover {
-          color: #fff;
-          background-color: $color-link;
+          color: $color-button-hover;
+          background-color: $color-button-bg-hover;
           text-decoration: none;
           border: 0;
         }
 
         &.selected {
-          background-color: $color-link;
-          color: #fff;
+          background-color: $color-button-bg;
+          color: $color-button;
         }
       }
     }
