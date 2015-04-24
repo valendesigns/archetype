@@ -176,14 +176,6 @@ ul.products {
     position: relative;
     overflow: hidden;
 
-    .onsale {
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: $color-body;
-      color: $color-post-bg;
-    }
-
     .images,
     .summary {
       margin-bottom: 2.625em;
@@ -1074,14 +1066,17 @@ p.stars {
 }
 
 .onsale {
-  border: 2px solid $color-body;
-  color: $color-body;
-  padding: .214em .571em;
+  background: $color-body;
+  color: $color-post-bg;
+  padding: .357em .714em;
   font-size: .875em;
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
   margin-bottom: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .quantity {
