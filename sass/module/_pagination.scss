@@ -11,10 +11,28 @@
   clear: both;
   width: 100%;
 
-  .nav-links {
+  .nav-links,
+  ul.page-numbers {
     min-height: 3.000em;
     position: relative;
     text-align: center;
+  }
+  
+  ul.page-numbers {
+    display: block !important;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      
+      a.prev,
+      a.next {
+        top: 0px;
+      }
+    }
   }
   
   /* reset screen-reader-text */

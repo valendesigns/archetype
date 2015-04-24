@@ -1766,10 +1766,20 @@ embed, iframe, object {
   /* reset screen-reader-text */
   /*rtl:ignore*/
   /*rtl:ignore*/ }
-  .pagination .nav-links, .image-navigation .nav-links, .comment-navigation .nav-links, .woocommerce-pagination .nav-links {
+  .pagination .nav-links, .pagination ul.page-numbers, .image-navigation .nav-links, .image-navigation ul.page-numbers, .comment-navigation .nav-links, .comment-navigation ul.page-numbers, .woocommerce-pagination .nav-links, .woocommerce-pagination ul.page-numbers {
     min-height: 3em;
     position: relative;
     text-align: center; }
+  .pagination ul.page-numbers, .image-navigation ul.page-numbers, .comment-navigation ul.page-numbers, .woocommerce-pagination ul.page-numbers {
+    display: block !important;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    .pagination ul.page-numbers li, .image-navigation ul.page-numbers li, .comment-navigation ul.page-numbers li, .woocommerce-pagination ul.page-numbers li {
+      display: inline-block; }
+      .pagination ul.page-numbers li a.prev, .pagination ul.page-numbers li a.next, .image-navigation ul.page-numbers li a.prev, .image-navigation ul.page-numbers li a.next, .comment-navigation ul.page-numbers li a.prev, .comment-navigation ul.page-numbers li a.next, .woocommerce-pagination ul.page-numbers li a.prev, .woocommerce-pagination ul.page-numbers li a.next {
+        top: 0px; }
   .pagination .current .screen-reader-text, .image-navigation .current .screen-reader-text, .comment-navigation .current .screen-reader-text, .woocommerce-pagination .current .screen-reader-text {
     position: static !important; }
     .pagination .current .screen-reader-text:hover, .pagination .current .screen-reader-text:active, .pagination .current .screen-reader-text:focus, .image-navigation .current .screen-reader-text:hover, .image-navigation .current .screen-reader-text:active, .image-navigation .current .screen-reader-text:focus, .comment-navigation .current .screen-reader-text:hover, .comment-navigation .current .screen-reader-text:active, .comment-navigation .current .screen-reader-text:focus, .woocommerce-pagination .current .screen-reader-text:hover, .woocommerce-pagination .current .screen-reader-text:active, .woocommerce-pagination .current .screen-reader-text:focus {
