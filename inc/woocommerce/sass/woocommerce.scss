@@ -527,8 +527,8 @@ div.products,
 
 .widget_price_filter {
   .price_slider {
-    background: lighten( $color-button-bg, 25% ) !important;
-    border-color: $color-button-bg;
+    background: $color-body !important;
+    border: 0 !important;
     margin-bottom: 1em;
   }
 
@@ -557,7 +557,7 @@ div.products,
     z-index: 2;
     width: 1em;
     height: 1em;
-    border-color: $color-button-bg;
+    border: $color-button-bg;
     @include border-top-radius(1em);
     @include border-bottom-radius(1em);
     cursor: ew-resize;
@@ -566,6 +566,7 @@ div.products,
     box-sizing: border-box;
     opacity: 1;
     margin-left: -.5em;
+    top: -.25em;
 
     &:hover,
     &.ui-state-active {
