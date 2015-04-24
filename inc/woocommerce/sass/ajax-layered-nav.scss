@@ -18,6 +18,7 @@
         border-radius: .202em;
         height: 1.618em;
         width: 1.618em;
+        
       }
 
       &.chosen {
@@ -47,7 +48,7 @@
       }
 
       .size-filter {
-        font-size: 1em;
+        font-size: 1.067em;
         height: 1.618em;
         min-width: 1.618em;
         text-align: center;
@@ -55,8 +56,9 @@
         background-color: #fff;
         border: 0;
         opacity: 0.5;
-        font-weight: 700;
+        font-weight: 300;
         border-radius: .202em;
+        padding: 0 .5em;
 
         &:hover {
           opacity: 1;
@@ -95,6 +97,10 @@
           line-height: 1.618;
           font-size: 1em;
         }
+      }
+
+      &:before {
+        display: none;
       }
     }
   }
