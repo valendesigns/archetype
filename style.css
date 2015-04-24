@@ -699,10 +699,10 @@ sub {
   top: .5ex; }
 
 small {
-  font-size: 75%; }
+  font-size: .75em; }
 
 big {
-  font-size: 125%; }
+  font-size: 1.25em; }
 
 figure {
   margin: 0; }
