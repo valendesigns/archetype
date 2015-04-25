@@ -12,13 +12,13 @@
  */
 if ( ! function_exists( 'archetype_add_customize_css' ) ) {
   function archetype_add_customize_css() {
-    $style                    = '';
+    $style = '';
 
     // Site Logo
     if ( $logo_top_margin = get_theme_mod( 'archetype_site_logo_margin_top' ) ) {
       $style.= '
       .site-logo-link img {
-        margin-top: ' . intval( $logo_top_margin ) . 'em;
+        margin-top: ' . esc_attr( $logo_top_margin ) . 'em;
       }';
     }
 

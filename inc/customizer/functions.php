@@ -47,12 +47,12 @@ if ( ! function_exists( 'archetype_site_logo_svg' ) ) {
         $html = sprintf( 
           '<a href="%1$s" class="site-logo-link" rel="home" itemprop="url"><img class="site-logo attachment-%2$s" width="%3$s" height="%4$s" itemprop="logo" data-size="%2$s" alt="%5$s" src="%6$s" onerror="this.src=%7$s;this.onerror=null;"></a>',
           esc_url( home_url( '/' ) ),
-          $size,
-          $image[1],
-          $image[2],
-          get_bloginfo( 'name' ),
+          esc_attr( $size ),
+          esc_attr( $image[1] ),
+          esc_attr( $image[2] ),
+          esc_attr( get_bloginfo( 'name' ) ),
           esc_url( $logo_svg ),
-          $image[0]
+          esc_url( $image[0] )
         );
       }
     }
