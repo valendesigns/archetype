@@ -28,6 +28,21 @@ if ( ! function_exists( 'archetype_is_woocommerce' ) ) {
 }
 
 /**
+ * Product review arguments passed to the comments list.
+ *
+ * @see wp_list_comments()
+ *
+ * @since 1.0.0
+ * @param array $args A list of arguments.
+ * @return array
+ */
+if ( ! function_exists( 'archetype_product_review_list_args' ) ) {
+  function archetype_product_review_list_args( $args ) {
+    return array( 'callback' => 'archetype_comment', 'max_depth' => 0 );
+  }
+}
+
+/**
  * Before Content
  * Wraps all WooCommerce content in wrappers which match the theme markup
  * @since   1.0.0

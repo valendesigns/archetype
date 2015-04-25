@@ -1962,18 +1962,18 @@ embed, iframe, object {
   border-radius: 0 0px 0px 0;
   border: 0;
   color: #555; }
-#comments .comments-title {
+#comments .comments-title, #comments > h2 {
   margin-bottom: 1.5em; }
-#comments .comment-list {
+#comments .comment-list, #comments .commentlist {
   list-style: none;
   margin: 0; }
-  #comments .comment-list .comment-body {
+  #comments .comment-list .comment-body, #comments .commentlist .comment-body {
     position: relative; }
-    #comments .comment-list .comment-body::after {
+    #comments .comment-list .comment-body::after, #comments .commentlist .comment-body::after {
       clear: both;
       content: "";
       display: table; }
-  #comments .comment-list .comment-content {
+  #comments .comment-list .comment-content, #comments .commentlist .comment-content {
     background: #fff;
     margin-bottom: 2.625em;
     padding: 2.625em;
@@ -1981,56 +1981,56 @@ embed, iframe, object {
     position: relative;
     box-shadow: 0px -1px 0px #8b949b inset;
     border-radius: 0px; }
-  #comments .comment-list .comment-meta {
+  #comments .comment-list .comment-meta, #comments .commentlist .comment-meta {
     border-bottom: 1px solid #e5e5e5;
     font-weight: 300;
     margin-bottom: 1.3125em;
     padding: 1.3125em 0; }
-    #comments .comment-list .comment-meta::after {
+    #comments .comment-list .comment-meta::after, #comments .commentlist .comment-meta::after {
       clear: both;
       content: "";
       display: table; }
-    #comments .comment-list .comment-meta .comment-author {
+    #comments .comment-list .comment-meta .comment-author, #comments .commentlist .comment-meta .comment-author {
       float: left;
       margin-right: .5em; }
-    #comments .comment-list .comment-meta .avatar {
+    #comments .comment-list .comment-meta .avatar, #comments .commentlist .comment-meta .avatar {
       height: auto;
       max-width: 24px;
       position: absolute;
       top: 8px;
       left: -40px;
       border-radius: 3px; }
-    #comments .comment-list .comment-meta cite {
+    #comments .comment-list .comment-meta cite, #comments .commentlist .comment-meta cite {
       font-style: normal; }
-    #comments .comment-list .comment-meta .star-rating {
+    #comments .comment-list .comment-meta .star-rating, #comments .commentlist .comment-meta .star-rating {
       float: right;
       margin: .25em 0 0 .53em; }
-    #comments .comment-list .comment-meta .reply {
+    #comments .comment-list .comment-meta .reply, #comments .commentlist .comment-meta .reply {
       float: left;
       font-size: .857em;
       line-height: 1.86; }
-    #comments .comment-list .comment-meta a.comment-date {
+    #comments .comment-list .comment-meta a.comment-date, #comments .commentlist .comment-meta a.comment-date {
       display: none;
       font-size: .857em;
       float: right;
       line-height: 1.86; }
-  #comments .comment-list .bypostauthor > .comment-body cite:after {
+  #comments .comment-list .bypostauthor > .comment-body cite:after, #comments .commentlist .bypostauthor > .comment-body cite:after {
     color: #888888;
     content: "Author";
     font-size: .857em;
     font-weight: 300;
     line-height: 1.74;
     margin-left: .5em; }
-  #comments .comment-list .comment-awaiting-moderation {
+  #comments .comment-list .comment-awaiting-moderation, #comments .commentlist .comment-awaiting-moderation {
     clear: both;
     font-size: .857em;
     display: block;
     width: 100%; }
-  #comments .comment-list .comment-edit-link {
+  #comments .comment-list .comment-edit-link, #comments .commentlist .comment-edit-link {
     font-size: .857em;
     font-weight: 300;
     line-height: 1.75; }
-  #comments .comment-list .children {
+  #comments .comment-list .children, #comments .commentlist .children {
     list-style: none;
     margin: 0; }
 #comments .with-avatar > .comment-body {

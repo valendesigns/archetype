@@ -14,11 +14,13 @@
     color: $color-body;
   }
 
-  .comments-title {
+  .comments-title,
+  > h2 {
     margin-bottom: $spacing-v;
   }
 
-  .comment-list {
+  .comment-list,
+  .commentlist {
     list-style: none;
     margin: 0;
 
