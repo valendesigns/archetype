@@ -1084,7 +1084,29 @@ p.stars {
   }
 }
 
-.onsale {
+.type-product {
+  overflow: hidden;
+
+  .onsale {
+    display: block;
+    position: absolute;
+    top: 1em;
+    left: -1.75em;
+    width: 7.25em;
+    height: 1.75em;
+    text-align: center;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform:    rotate(-45deg);
+    -ms-transform:     rotate(-45deg);
+    transform:         rotate(-45deg);
+    color: $color-post-bg !important;
+    background-color: $color-body;
+    z-index: 99;
+  }
+}
+
+// TODO Make fallback
+.onsale-fallback {
   background: $color-body;
   color: $color-post-bg;
   padding: .357em .714em;
@@ -1097,6 +1119,7 @@ p.stars {
   left: 0;
   top: 0;
 }
+
 
 .quantity {
   .qty {
