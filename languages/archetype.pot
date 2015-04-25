@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-04-23 21:30:30+00:00\n"
+"POT-Creation-Date: 2015-04-25 10:02:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -345,123 +345,131 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/controls.php:29 inc/functions/setup.php:142
+#: inc/customizer/controls.php:29 inc/functions/setup.php:141
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/controls.php:45
+#: inc/customizer/controls.php:51
+msgid "Logo SVG (logo above required)"
+msgstr ""
+
+#: inc/customizer/controls.php:65
+msgid "Logo Margin Top (em)"
+msgstr ""
+
+#: inc/customizer/controls.php:75
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/controls.php:58
+#: inc/customizer/controls.php:88
 msgid "Link / accent color"
 msgstr ""
 
-#: inc/customizer/controls.php:74 inc/customizer/controls.php:122
-#: inc/customizer/controls.php:202 inc/customizer/controls.php:270
+#: inc/customizer/controls.php:104 inc/customizer/controls.php:152
+#: inc/customizer/controls.php:232 inc/customizer/controls.php:300
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer/controls.php:90 inc/customizer/controls.php:187
+#: inc/customizer/controls.php:120 inc/customizer/controls.php:217
 msgid "Heading color"
 msgstr ""
 
-#: inc/customizer/controls.php:106 inc/customizer/controls.php:163
-#: inc/customizer/controls.php:232 inc/customizer/controls.php:255
+#: inc/customizer/controls.php:136 inc/customizer/controls.php:193
+#: inc/customizer/controls.php:262 inc/customizer/controls.php:285
 msgid "Background color"
 msgstr ""
 
-#: inc/customizer/controls.php:138 inc/customizer/controls.php:217
+#: inc/customizer/controls.php:168 inc/customizer/controls.php:247
 msgid "Link color"
 msgstr ""
 
-#: inc/customizer/controls.php:148
+#: inc/customizer/controls.php:178
 msgid "Content"
 msgstr ""
 
-#: inc/customizer/controls.php:150
+#: inc/customizer/controls.php:180
 msgid "Customize the look & feel of your web site content area."
 msgstr ""
 
-#: inc/customizer/controls.php:172
+#: inc/customizer/controls.php:202
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:174
+#: inc/customizer/controls.php:204
 msgid "Customise the look & feel of your web site footer."
 msgstr ""
 
-#: inc/customizer/controls.php:241
+#: inc/customizer/controls.php:271
 msgid "Buttons"
 msgstr ""
 
-#: inc/customizer/controls.php:243
+#: inc/customizer/controls.php:273
 msgid "Customise the look & feel of your web site buttons."
 msgstr ""
 
-#: inc/customizer/controls.php:285
+#: inc/customizer/controls.php:315
 msgid "Alternate button background color"
 msgstr ""
 
-#: inc/customizer/controls.php:300
+#: inc/customizer/controls.php:330
 msgid "Alternate button text color"
 msgstr ""
 
-#: inc/customizer/controls.php:310
+#: inc/customizer/controls.php:340
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/controls.php:320
+#: inc/customizer/controls.php:350
 msgid "General layout"
 msgstr ""
 
-#: inc/customizer/controls.php:337
+#: inc/customizer/controls.php:367
 msgid "Import & Export"
 msgstr ""
 
-#: inc/customizer/controls.php:353
+#: inc/customizer/controls.php:383
 msgid "Import Customizer"
 msgstr ""
 
-#: inc/customizer/controls.php:356
+#: inc/customizer/controls.php:386
 msgid "Upload a file to import customization settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:371
+#: inc/customizer/controls.php:401
 msgid "Export Customizer"
 msgstr ""
 
-#: inc/customizer/controls.php:374
+#: inc/customizer/controls.php:404
 msgid "Click the button below to export the customization settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:389
+#: inc/customizer/controls.php:419
 msgid "Import Widgets"
 msgstr ""
 
-#: inc/customizer/controls.php:392
+#: inc/customizer/controls.php:422
 msgid "Upload a file to import widget settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:407
+#: inc/customizer/controls.php:437
 msgid "Export Widgets"
 msgstr ""
 
-#: inc/customizer/controls.php:410
+#: inc/customizer/controls.php:440
 msgid "Click the button below to export the widgets for this theme."
 msgstr ""
 
-#: inc/customizer/functions.php:44
+#: inc/customizer/functions.php:76
 msgid "Please choose a file to import."
 msgstr ""
 
-#: inc/customizer/functions.php:262 inc/customizer/functions.php:266
+#: inc/customizer/functions.php:294 inc/customizer/functions.php:298
 msgid ""
 "Error importing settings! Please check that you uploaded a customizer "
 "export file."
 msgstr ""
 
-#: inc/customizer/functions.php:270
+#: inc/customizer/functions.php:302
 msgid ""
 "Error importing settings! The settings you uploaded are not for the current "
 "theme."
@@ -485,23 +493,23 @@ msgstr ""
 msgid "Handheld Menu"
 msgstr ""
 
-#: inc/functions/setup.php:132
+#: inc/functions/setup.php:131
 msgid "Sidebar"
 msgstr ""
 
-#: inc/functions/setup.php:155
+#: inc/functions/setup.php:154
 msgid "Footer %d"
 msgstr ""
 
-#: inc/functions/setup.php:157
+#: inc/functions/setup.php:156
 msgid "Widgetized Footer Region %d."
 msgstr ""
 
-#: inc/functions/setup.php:182 inc/structure/navigation.php:41
+#: inc/functions/setup.php:181 inc/structure/navigation.php:41
 msgid "Previous"
 msgstr ""
 
-#: inc/functions/setup.php:183 inc/structure/navigation.php:38
+#: inc/functions/setup.php:182 inc/structure/navigation.php:38
 msgid "Next"
 msgstr ""
 
@@ -678,80 +686,6 @@ msgstr[1] ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single-product-reviews.php:23
-msgid "%s review for %s"
-msgid_plural "%s reviews for %s"
-msgstr[0] ""
-msgstr[1] ""
-
-#: single-product-reviews.php:25
-msgid "Reviews"
-msgstr ""
-
-#: single-product-reviews.php:40
-msgid "There are no reviews yet."
-msgstr ""
-
-#: single-product-reviews.php:53
-msgid "Add a review"
-msgstr ""
-
-#: single-product-reviews.php:53
-msgid "Be the first to review"
-msgstr ""
-
-#: single-product-reviews.php:54
-msgid "Leave a Reply to %s"
-msgstr ""
-
-#: single-product-reviews.php:58
-msgid "Name"
-msgstr ""
-
-#: single-product-reviews.php:60
-msgid "Email"
-msgstr ""
-
-#: single-product-reviews.php:63
-msgid "Submit"
-msgstr ""
-
-#: single-product-reviews.php:69
-msgid "Your Rating"
-msgstr ""
-
-#: single-product-reviews.php:70
-msgid "Rate&hellip;"
-msgstr ""
-
-#: single-product-reviews.php:71
-msgid "Perfect"
-msgstr ""
-
-#: single-product-reviews.php:72
-msgid "Good"
-msgstr ""
-
-#: single-product-reviews.php:73
-msgid "Average"
-msgstr ""
-
-#: single-product-reviews.php:74
-msgid "Not that bad"
-msgstr ""
-
-#: single-product-reviews.php:75
-msgid "Very Poor"
-msgstr ""
-
-#: single-product-reviews.php:79
-msgid "Your Review"
-msgstr ""
-
-#: single-product-reviews.php:88
-msgid "Only logged in customers who have purchased this product may leave a review."
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "Archetype"
 msgstr ""
@@ -794,7 +728,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: inc/functions/extras.php:156 inc/functions/extras.php:157
-#: inc/woocommerce/functions.php:116 inc/woocommerce/functions.php:117
+#: inc/woocommerce/functions.php:131 inc/woocommerce/functions.php:132
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
@@ -804,12 +738,12 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: inc/woocommerce/functions.php:117
+#: inc/woocommerce/functions.php:132
 msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: inc/functions/extras.php:159 inc/woocommerce/functions.php:119
+#: inc/functions/extras.php:159 inc/woocommerce/functions.php:134
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -856,7 +790,7 @@ msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr ""
 
-#: inc/woocommerce/functions.php:186
+#: inc/woocommerce/functions.php:201
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
