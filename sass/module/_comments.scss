@@ -173,12 +173,14 @@
   }
 
   #respond,
-  #comments .comment-list .comment-content {
+  #comments .comment-list .comment-content
+  #comments .commentlist .comment-content {
     margin-bottom: 1.387em;
     padding: 1.387em;
   }
 
-  #comments .comment-list .comment-meta {
+  #comments .comment-list .comment-meta,
+  #comments .commentlist .comment-meta {
     margin-bottom: .6935em;
     padding: .6935em 0;
   }
@@ -193,12 +195,14 @@
   }
 
   #respond,
-  #comments .comment-list .comment-content {
+  #comments .comment-list .comment-content,
+  #comments .commentlist .comment-content {
     margin-bottom: 2.125em;
     padding: 2.125em;
   }
 
-  #comments .comment-list .comment-meta {
+  #comments .comment-list .comment-meta,
+  #comments .commentlist .comment-meta {
     margin-bottom: 1.0625em;
     padding: 1.0625em 0;
   }
@@ -207,7 +211,8 @@
 @media screen and (min-width: 768px) {
   #comments {
 
-    .comment-list {
+    .comment-list,
+    .commentlist {
       @include clearfix;
       
       .comment-content {

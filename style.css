@@ -2070,10 +2070,10 @@ embed, iframe, object {
   #comments p.no-comments {
     margin-bottom: 1.387em;
     padding: 1.387em; }
-  #respond, #comments .comment-list .comment-content {
+  #respond, #comments .comment-list .comment-content #comments .commentlist .comment-content {
     margin-bottom: 1.387em;
     padding: 1.387em; }
-  #comments .comment-list .comment-meta {
+  #comments .comment-list .comment-meta, #comments .commentlist .comment-meta {
     margin-bottom: .6935em;
     padding: .6935em 0; } }
 
@@ -2081,39 +2081,39 @@ embed, iframe, object {
   #comments p.no-comments {
     margin-bottom: 2.125em;
     padding: 2.125em; }
-  #respond, #comments .comment-list .comment-content {
+  #respond, #comments .comment-list .comment-content, #comments .commentlist .comment-content {
     margin-bottom: 2.125em;
     padding: 2.125em; }
-  #comments .comment-list .comment-meta {
+  #comments .comment-list .comment-meta, #comments .commentlist .comment-meta {
     margin-bottom: 1.0625em;
     padding: 1.0625em 0; } }
 
 @media screen and (min-width: 768px) {
-  #comments .comment-list::after {
+  #comments .comment-list::after, #comments .commentlist::after {
     clear: both;
     content: "";
     display: table; }
-  #comments .comment-list .comment-content:after {
+  #comments .comment-list .comment-content:after, #comments .commentlist .comment-content:after {
     top: 1.5em;
     border-width: .75em;
     margin-top: -.75em; }
-  .children #comments .comment-list .comment-content:after {
+  .children #comments .comment-list .comment-content:after, .children #comments .commentlist .comment-content:after {
     top: 1.125em; }
-  #comments .comment-list .children .comment-content:after {
+  #comments .comment-list .children .comment-content:after, #comments .commentlist .children .comment-content:after {
     top: 1.125em;
     border-width: .625em;
     margin-top: -.625em; }
-  #comments .comment-list .comment-meta .avatar {
+  #comments .comment-list .comment-meta .avatar, #comments .commentlist .comment-meta .avatar {
     max-width: 60px;
     left: -90px;
     top: 0px; }
-  #comments .comment-list .comment-meta cite {
+  #comments .comment-list .comment-meta cite, #comments .commentlist .comment-meta cite {
     margin-top: .5em; }
-  #comments .comment-list .comment-meta a.comment-date {
+  #comments .comment-list .comment-meta a.comment-date, #comments .commentlist .comment-meta a.comment-date {
     display: inline; }
-  #comments .comment-list .children {
+  #comments .comment-list .children, #comments .commentlist .children {
     margin-left: 60px; }
-    #comments .comment-list .children .avatar {
+    #comments .comment-list .children .avatar, #comments .commentlist .children .avatar {
       left: -60px;
       max-width: 40px; }
   #comments .with-avatar > .comment-body, #comments .children .show-avatars.without-avatar > .comment-body, #comments .show-avatars.without-avatar > .comment-body #respond {
