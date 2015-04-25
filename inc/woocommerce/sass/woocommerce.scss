@@ -1152,7 +1152,8 @@ p.stars {
     }
   }
   
-  #tab-description {
+  #tab-description,
+  #tab-additional_information {
     background: $color-post-bg;
     position: relative;
     box-shadow: 0px -1px 0px $color-post-shadow inset;
@@ -1859,8 +1860,9 @@ dl.variation {
   }
 
   #tab-description,
+  #tab-additional_information,
   .single-product div.product .summary {
-    padding: 1.387em;
+    padding: 1.387em !important;
   }
 
   .archetype-sorting {
@@ -1889,7 +1891,8 @@ dl.variation {
   }
 
   #tab-description,
+  #tab-additional_information,
   .single-product div.product .summary {
-    padding: 2.125em;
+    padding: 2.125em !important;
   }
 }
