@@ -48,8 +48,8 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
     wp_localize_script( 'archetype_customize', 'Archetype_CustomizerConfig', array(
       'customizerURL'        => admin_url( 'customize.php' ),
       'exportCustomizeNonce' => wp_create_nonce( 'customize-exporting' ),
-      'exportWidgetsNonce'   => wp_create_nonce( 'widgets-exporting' )
-    ));
+      'exportWidgetsNonce'   => wp_create_nonce( 'widgets-exporting' ),
+    ) );
   }
 }
 

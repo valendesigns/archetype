@@ -6,10 +6,10 @@
 ( function( $ ) {
   var Archetype_Customizer = {
     init: function() {
-      $( 'input[name=customize-import-button]' ).on( 'click', Archetype_Customizer._import_customize );
-      $( 'input[name=customize-export-button]' ).on( 'click', Archetype_Customizer._export_customize );
-      $( 'input[name=widgets-import-button]'   ).on( 'click', Archetype_Customizer._import_widgets   );
-      $( 'input[name=widgets-export-button]'   ).on( 'click', Archetype_Customizer._export_widgets   );
+      $( document ).on( 'click', 'input[name=customize-import-button]', Archetype_Customizer._import_customize );
+      $( document ).on( 'click', 'input[name=customize-export-button]', Archetype_Customizer._export_customize );
+      $( document ).on( 'click', 'input[name=widgets-import-button]', Archetype_Customizer._import_widgets   );
+      $( document ).on( 'click', 'input[name=widgets-export-button]', Archetype_Customizer._export_widgets   );
     },
     _import_customize: function() {
       Archetype_Customizer._import( 'customize' );
@@ -42,8 +42,9 @@
       }
     },
     _export: function( type ) {
-      var nonce = type == 'customize' ? exportCustomizeNonce : exportWidgetsNonce;
-      window.location.href = Archetype_CustomizerConfig.customizerURL + '?' + type + '-export=' + Archetype_CustomizerConfig.nonce;
+      var nonce = type == 'customize' ? Archetype_CustomizerConfig.exportCustomizeNonce : Archetype_CustomizerConfig.exportWidgetsNonce;
+      window.location.href = Archetype_CustomizerConfig.customizerURL + '?' + type + '-export=' + nonce;
+      return false;
     }
   };
   $( Archetype_Customizer.init );
