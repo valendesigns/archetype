@@ -213,6 +213,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
 
     wp_add_inline_style( 'archetype-style', $style );
-    wp_add_inline_style( 'archetype-woocommerce-style', $woocommerce_style );
+    //wp_add_inline_style( 'archetype-woocommerce-style', $woocommerce_style );
   }
 }
