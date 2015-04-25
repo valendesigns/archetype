@@ -68,8 +68,6 @@ function archetype_woocommerce_integrations_scripts() {
    */
   if ( is_woocommerce_extension_activated( 'WC_Product_Reviews_Pro' ) ) {
     wp_enqueue_style( 'archetype-woocommerce-product-reviews-pro-style', get_template_directory_uri() . '/inc/woocommerce/css/product-reviews-pro' . $rtl . '.css' );
-  } else {
-    add_filter( 'woocommerce_product_review_list_args', 'archetype_product_review_list_args' );
   }
 
   /**

@@ -108,6 +108,9 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
   add_filter( 'add_to_cart_fragments', 'archetype_cart_link_fragment' );
 }
 
+if ( ! class_exists( 'WC_Product_Reviews_Pro' ) ) {
+  add_filter( 'woocommerce_product_review_list_args', 'archetype_product_review_list_args' );
+}
 
 /**
  * Integrations
