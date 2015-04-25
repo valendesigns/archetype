@@ -34,13 +34,43 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     require_once dirname( __FILE__ ) . '/controls/color.php';
     require_once dirname( __FILE__ ) . '/controls/arbitrary.php';
+    require_once dirname( __FILE__ ) . '/controls/number.php';
     require_once dirname( __FILE__ ) . '/controls/export.php';
     require_once dirname( __FILE__ ) . '/controls/layout.php';
     require_once dirname( __FILE__ ) . '/controls/import.php';
 
+    if ( current_theme_supports( 'site-logo' ) && class_exists( 'Site_Logo', false ) ) {
+      // Add the setting for our svg logo.
+      $wp_customize->add_setting( 'archetype_site_logo_svg', array(
+        'capability'  => 'manage_options',
+        'transport'   => 'postMessage',
+      ) );
+
+      // Add our image uploader.
+      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'archetype_site_logo_svg', array(
+        'label'       => __( 'Logo SVG (logo above required)', 'archetype' ),
+        'section'     => 'title_tagline',
+        'settings'    => 'archetype_site_logo_svg',
+      ) ) );
+
+      /**
+       * Logo Top Margin
+       */
+      $wp_customize->add_setting( 'archetype_site_logo_margin_top', array(
+        'capability'        => 'manage_options',
+        'transport'         => 'postMessage',
+      ) );
+
+      $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_site_logo_margin_top', array(
+        'label'       => __( 'Logo Margin Top (em)', 'archetype' ),
+        'section'     => 'title_tagline',
+        'settings'    => 'archetype_site_logo_margin_top',
+      ) ) );
+    }
+    
     /**
      * Add the typography section
-       */
+     */
     $wp_customize->add_section( 'archetype_typography' , array(
       'title'       => __( 'Typography', 'archetype' ),
       'priority'    => 45,

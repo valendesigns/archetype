@@ -12,6 +12,16 @@
  */
 if ( ! function_exists( 'archetype_add_customize_css' ) ) {
   function archetype_add_customize_css() {
+    $style                    = '';
+
+    // Site Logo
+    if ( $logo_top_margin = get_theme_mod( 'archetype_site_logo_margin_top' ) ) {
+      $style.= '
+      .site-logo-link img {
+        margin-top: ' . intval( $logo_top_margin ) . 'em;
+      }';
+    }
+
     $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#96588a' ) ) );
     
     $background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_background_color', apply_filters( 'archetype_default_background_color', '#25292c' ) ) );
@@ -34,10 +44,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     $button_alt_background_color   = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_alt_background_color', apply_filters( 'archetype_default_button_alt_background_color', '#96588a' ) ) );
     $button_alt_text_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_alt_text_color', apply_filters( 'archetype_default_button_alt_text_color', '#ffffff' ) ) );
 
-    $brighten_factor         = apply_filters( 'archetype_brighten_factor', 25 );
-    $darken_factor           = apply_filters( 'archetype_darken_factor', -25 );
-
-    $style               = '
+    $brighten_factor          = apply_filters( 'archetype_brighten_factor', 25 );
+    $darken_factor            = apply_filters( 'archetype_darken_factor', -25 );
+    
+    $style2               = '
     body {
       background-color: ' . $background_color . ';
     }

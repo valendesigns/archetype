@@ -15,6 +15,14 @@
       $( '.site-description' ).text( to );
     } );
   } );
+  wp.customize( 'archetype_site_logo_margin_top', function( value ) {
+    value.bind( function( to ) {
+      if ( to )
+        $( '.site-logo-link img' ).css( 'margin-top', to + 'em' );
+      else
+        $( '.site-logo-link img' ).css( 'margin-top', '0' );
+    } );
+  } );
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
       $( 'body, .widget-area .widget a, .onsale, .woocommerce-tabs ul.tabs li.active a, ul.products li.product .price, .widget-area .widget a' ).css( 'color', to );

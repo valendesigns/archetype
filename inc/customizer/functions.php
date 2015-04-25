@@ -30,6 +30,38 @@ if ( ! function_exists( 'archetype_customize_init' ) ) {
 }
 
 /**
+ * Filter the site logo and add the SVG version
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_site_logo_svg' ) ) {
+  function archetype_site_logo_svg( $html, $logo, $size ) {
+
+    $logo_svg = get_theme_mod( 'archetype_site_logo_svg' );
+
+    // We have a logo. Logo is go.
+    if ( ! jetpack_is_customize_preview() && jetpack_has_site_logo() && $logo_svg ) {
+      $image = wp_get_attachment_image_src( $logo['id'], $size, false );
+
+      if ( count( $image ) >= 3 ) {
+        $html = sprintf( 
+          '<a href="%1$s" class="site-logo-link" rel="home" itemprop="url"><img class="site-logo attachment-%2$s" width="%3$s" height="%4$s" itemprop="logo" data-size="%2$s" alt="%5$s" src="%6$s" onerror="this.src=%7$s;this.onerror=null;"></a>',
+          esc_url( home_url( '/' ) ),
+          $size,
+          $image[1],
+          $image[2],
+          get_bloginfo( 'name' ),
+          esc_url( $logo_svg ),
+          $image[0]
+        );
+      }
+    }
+
+    return $html;
+  }
+}
+
+/**
  * Loads the Customizer import and export scripts.
  *
  * @since  1.0.0
@@ -61,7 +93,7 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
 if ( ! function_exists( 'archetype_customize_preview_js' ) ) {
   function archetype_customize_preview_js() {
     global $archetype_version;
-    wp_enqueue_script( 'archetype_customize_preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
+    wp_enqueue_script( 'archetype_customize_preview', get_template_directory_uri() . '/inc/customizer/js/preview.js', array( 'customize-preview' ), $archetype_version, true );
   }
 }
 
@@ -461,7 +493,7 @@ if ( ! function_exists( 'archetype_sanitize_layout' ) ) {
     $valid = array(
       'right' => 'Right',
       'left'  => 'Left',
-      );
+    );
 
     if ( array_key_exists( $input, $valid ) ) {
       return $input;

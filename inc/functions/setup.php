@@ -106,9 +106,8 @@ if ( ! function_exists( 'archetype_setup' ) ) :
     ) ) );
 
     /*
-     * Add support for the Site Logo plugin and the site logo functionality in JetPack
+     * Add support for the site logo functionality in JetPack
      *
-     * @link https://github.com/automattic/site-logo
      * @link http://jetpack.me/
      */
     add_theme_support( 'site-logo', array( 'size' => 'full' ) );
