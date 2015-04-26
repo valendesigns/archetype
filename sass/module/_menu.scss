@@ -130,16 +130,19 @@
         &.focus {
           > ul {
             left: 0;
+            display: block;
 
             li {
-              ul {
-                left: -999em;
+              > ul {
+                display: none; // display: none; is required to make dropdowns work on touch devices
               }
 
               &:hover,
               &.focus {
-                ul {
+                > ul {
                   left: 100%;
+                  top: 0;
+                  display: block;
                 }
               }
             }
@@ -152,27 +155,17 @@
         float: left;
         position: absolute;
         top: 100%;
-        left: -999em;
         z-index: 99999;
         background-color: $color-header-bg;
-
-        &:hover {
-          > a {};
-        }
+        display: none; // display: none; is required to make dropdowns work on touch devices
 
         li {
           float: none;
+
           a {
             width: 200px;
           }
         }
-
-        // third level
-        ul {
-          left: 100%;
-          top: 0;
-        }
-
       }
     }
 

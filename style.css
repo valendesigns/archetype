@@ -1093,25 +1093,25 @@ fieldset {
           .main-navigation ul li a:not(.remove):before, .secondary-navigation ul li a:not(.remove):before {
             display: none; }
         .main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul, .secondary-navigation ul li:hover > ul, .secondary-navigation ul li.focus > ul {
-          left: 0; }
-          .main-navigation ul li:hover > ul li ul, .main-navigation ul li.focus > ul li ul, .secondary-navigation ul li:hover > ul li ul, .secondary-navigation ul li.focus > ul li ul {
-            left: -999em; }
-          .main-navigation ul li:hover > ul li:hover ul, .main-navigation ul li:hover > ul li.focus ul, .main-navigation ul li.focus > ul li:hover ul, .main-navigation ul li.focus > ul li.focus ul, .secondary-navigation ul li:hover > ul li:hover ul, .secondary-navigation ul li:hover > ul li.focus ul, .secondary-navigation ul li.focus > ul li:hover ul, .secondary-navigation ul li.focus > ul li.focus ul {
-            left: 100%; }
+          left: 0;
+          display: block; }
+          .main-navigation ul li:hover > ul li > ul, .main-navigation ul li.focus > ul li > ul, .secondary-navigation ul li:hover > ul li > ul, .secondary-navigation ul li.focus > ul li > ul {
+            display: none; }
+          .main-navigation ul li:hover > ul li:hover > ul, .main-navigation ul li:hover > ul li.focus > ul, .main-navigation ul li.focus > ul li:hover > ul, .main-navigation ul li.focus > ul li.focus > ul, .secondary-navigation ul li:hover > ul li:hover > ul, .secondary-navigation ul li:hover > ul li.focus > ul, .secondary-navigation ul li.focus > ul li:hover > ul, .secondary-navigation ul li.focus > ul li.focus > ul {
+            left: 100%;
+            top: 0;
+            display: block; }
       .main-navigation ul ul, .secondary-navigation ul ul {
         float: left;
         position: absolute;
         top: 100%;
-        left: -999em;
         z-index: 99999;
-        background-color: #353b3f; }
+        background-color: #353b3f;
+        display: none; }
         .main-navigation ul ul li, .secondary-navigation ul ul li {
           float: none; }
           .main-navigation ul ul li a, .secondary-navigation ul ul li a {
             width: 200px; }
-        .main-navigation ul ul ul, .secondary-navigation ul ul ul {
-          left: 100%;
-          top: 0; }
   /**
    * Primary Navigation
    */
