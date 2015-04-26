@@ -8,8 +8,6 @@
 /**
  * Cart Link
  * Displayed a link to the cart including the number of items present and the cart total
- * @param  array $settings Settings
- * @return array           Settings
  * @since  1.0.0
  */
 if ( ! function_exists( 'archetype_cart_link' ) ) {
@@ -154,4 +152,15 @@ function archetype_sorting_wrapper() {
  */
 function archetype_sorting_wrapper_close() {
   echo '</div>';
+}
+
+/**
+ * Storefront shop messages
+ * @since   1.0.0
+ * @uses    do_shortcode
+ */
+function archetype_shop_messages() {
+  if ( ! is_checkout() ) {
+    echo do_shortcode( '[woocommerce_messages]' );
+  }
 }
