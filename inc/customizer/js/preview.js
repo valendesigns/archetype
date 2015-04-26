@@ -88,4 +88,33 @@
       } );
     } );
   } );
+  wp.customize( 'archetype_header_background_color', function( value ) {
+    value.bind( function( to ) {
+      // Background Color
+      $( '.site-header' ).css( 'background-color', to );
+    } );
+  } );
+  wp.customize( 'archetype_header_text_color', function( value ) {
+    value.bind( function( to ) {
+      // Color
+      $( '.site-header' ).css( 'color', to );
+    } );
+  } );
+  wp.customize( 'archetype_header_link_color', function( value ) {
+    value.bind( function( to ) {
+      // Link Color
+      $( '.site-header a' ).css( 'color', to );
+      $( '.site-header a' ).on( 'mouseleave', function() {
+        $( this ).css( 'color', to );
+      } );
+    } );
+  } );
+  wp.customize( 'archetype_header_link_color_hover', function( value ) {
+    value.bind( function( to ) {
+      // Link Color Hover
+      $( '.site-header a' ).on( 'mouseenter', function() {
+        $( this ).css( 'color', to );
+      } );
+    } );
+  } );
 } )( jQuery );

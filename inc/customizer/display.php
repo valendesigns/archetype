@@ -97,7 +97,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .widget-area .widget a:hover {
       color: ' . $link_color . ';
     }
-    
     a:focus,
     button:focus,
     input[type="button"]:focus,
@@ -107,7 +106,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .added_to_cart:focus {
       outline-color: ' . $link_color . ';
     }
-    
     .error-404 h1 {
       border-color: ' . $link_color . ';
     }';
@@ -120,14 +118,38 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       color: ' . $link_color_hover . ';
     }';
 
-    // Header Background
+    // Header Background Color
     $header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );
 
     $style.= '
     .site-header {
       background-color: ' . $header_background_color . ';
     }';
-    
+
+    // Header Color
+    $header_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#888' ) ) );
+
+    $style.= '
+    .site-header {
+      color: ' . $header_text_color . ';
+    }';
+
+    // Header Link Color
+    $header_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color', apply_filters( 'archetype_default_header_link_color', '#aaa' ) ) );
+
+    $style.= '
+    .site-header a {
+      color: ' . $header_link_color . ';
+    }';
+
+    // Header Link Color Hover
+    $header_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color_hover', apply_filters( 'archetype_default_header_link_color_hover', '#ee543f' ) ) );
+
+    $style.= '
+    .site-header a:hover {
+      color: ' . $header_link_color_hover . ';
+    }';
+
     $woocommerce_style = '';
 
     wp_add_inline_style( 'archetype-style', $style );
