@@ -57,7 +57,7 @@
 .home.blog,
 .home.page:not(.page-template-template-homepage),
 .home.post-type-archive-product,
-.no-wc-breadcrumb {
+.no-wc-breadcrumb:not(.home) {
   .site-header {
     margin-bottom: 2.625em;
   }
@@ -113,7 +113,7 @@
 
 .page-template-template-homepage {
   .site-main {
-    padding-top: 4.236em;
+    padding-top: 2.625em;
   }
 }
 

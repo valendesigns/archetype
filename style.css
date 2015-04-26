@@ -396,7 +396,7 @@ td, th {
   content: "";
   display: table; }
 
-.home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header, .no-wc-breadcrumb .site-header {
+.home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header, .no-wc-breadcrumb:not(.home) .site-header {
   margin-bottom: 2.625em; }
 
 .header-widget-region {
@@ -429,7 +429,7 @@ td, th {
  * Main content area
  */
 .page-template-template-homepage .site-main {
-  padding-top: 4.236em; }
+  padding-top: 2.625em; }
 
 .site-content {
   outline: none; }
