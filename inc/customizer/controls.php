@@ -376,11 +376,24 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'title'       => __( 'Import & Export', 'archetype' ),
       'priority'    => 10000000,
     ));
+    
+    if ( ! current_user_can( 'manage_options' ) ) {
+      /**
+       * Add the import Customizer control.
+       */
+      $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_import_export_missing', array(
+        'section'     => 'archetype_import_export',
+        'type'        => 'text',
+        'description' => __( 'You do not have the capability role to import or export customizer settings.', 'archetype' ),
+        'priority'    => 1,
+      ) ) );
+    }
 
     /**
      * Add an empty import & export setting.
      */ 
     $wp_customize->add_setting( 'archetype_import_export', array(
+      'capability'  => 'manage_options',
       'default'     => '',
       'type'        => 'none',
     ));
