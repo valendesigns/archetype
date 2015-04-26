@@ -28,6 +28,11 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     // Change header image section title & priority
     $wp_customize->get_section( 'header_image' )->title         = __( 'Header', 'archetype' );
     $wp_customize->get_section( 'header_image' )->priority      = 35;
+    
+    // Change navigation section title, panel, & priority
+    $wp_customize->get_section( 'nav' )->title                  = __( 'Menus', 'archetype' );
+    $wp_customize->get_section( 'nav' )->panel                  = 'archetype_navigation';
+    $wp_customize->get_section( 'nav' )->priority               = 10;
 
     /**
      * Custom controls
@@ -198,7 +203,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Link color', 'archetype' ),
       'section'     => 'header_image',
       'settings'    => 'archetype_header_link_color',
-      'priority'    => 30,
+      'priority'    => 25,
     ) ) );
 
     /**
@@ -214,26 +219,143 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Link hover color', 'archetype' ),
       'section'     => 'header_image',
       'settings'    => 'archetype_header_link_color_hover',
-      'priority'    => 40,
+      'priority'    => 30,
     ) ) );
 
     // END Header
 
+    // BEGIN Navigation
+
+    $wp_customize->add_panel( 'archetype_navigation', array(
+      'theme_supports'  => 'menus',
+      'title'           => __( 'Navigation', 'archetype' ),
+      'description'     => __( 'Customize menu locations & styles.', 'archetype' ),
+      'priority'        => 40,
+    ) );
+
     /**
-     * Content section
+     * Add the typography section
      */
-    $wp_customize->add_section( 'archetype_content' , array(
-      'title'       => __( 'Content', 'archetype' ),
-      'priority'    => 36,
-      'description' => __( 'Customize the look & feel of your web site content area.', 'archetype' ),
+    $wp_customize->add_section( 'archetype_nav_styles' , array(
+      'title'       => __( 'Primary Menu Styles', 'archetype' ),
+      'priority'    => 20,
+      'description' => __( 'You must choose a menu location, in the Menus tab above, for the primary navigation styles to work.', 'archetype' ),
+      'panel'       => 'archetype_navigation',
     ) );
     
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_nav_background_color_info', array(
+      'section'     => 'archetype_nav_styles',
+      'type'        => 'text',
+      'description' => __( 'The background color will not be seen below 768px, even though it does display in the customizer when you make changes.', 'archetype' ),
+      'priority'    => 1,
+    ) ) );
+
+    /**
+     * Primary Navigation Background Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_background_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_background_color', '#292E31' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_nav_styles',
+      'settings'    => 'archetype_nav_background_color',
+      'priority'    => 10,
+    ) ) );
+
+    /**
+     * Primary Navigation Link Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_link_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_color', '#bbb' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color', array(
+      'label'       => __( 'Link color', 'archetype' ),
+      'section'     => 'archetype_nav_styles',
+      'settings'    => 'archetype_nav_link_color',
+      'priority'    => 15,
+    ) ) );
+
+    /**
+     * Primary Navigation Link Hover Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_link_color_hover', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_color_hover', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_hover', array(
+      'label'       => __( 'Link hover color', 'archetype' ),
+      'section'     => 'archetype_nav_styles',
+      'settings'    => 'archetype_nav_link_color_hover',
+      'priority'    => 20,
+    ) ) );
+
+    /**
+     * Primary Navigation Link Hover Background Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_link_color_hover_bg', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_color_hover_bg', '#2f3538' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_hover_bg', array(
+      'label'       => __( 'Link hover background color', 'archetype' ),
+      'section'     => 'archetype_nav_styles',
+      'settings'    => 'archetype_nav_link_color_hover_bg',
+      'priority'    => 25,
+    ) ) );
+
+    /**
+     * Primary Navigation Link Active Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_link_color_active', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_color_active', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_active', array(
+      'label'       => __( 'Link active color', 'archetype' ),
+      'section'     => 'archetype_nav_styles',
+      'settings'    => 'archetype_nav_link_color_active',
+      'priority'    => 25,
+    ) ) );
+
+    /**
+     * Primary Navigation Link Active Background Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_link_color_active_bg', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_color_active_bg', '#24282A' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_active_bg', array(
+      'label'       => __( 'Link active background color', 'archetype' ),
+      'section'     => 'archetype_nav_styles',
+      'settings'    => 'archetype_nav_link_color_active_bg',
+      'priority'    => 25,
+    ) ) );
+
+    
+
+    // END Navigation
+
     /**
      * Footer section
      */
     $wp_customize->add_section( 'archetype_footer' , array(
       'title'       => __( 'Footer', 'archetype' ),
-      'priority'    => 40,
+      'priority'    => 45,
       'description' => __( 'Customise the look & feel of your web site footer.', 'archetype' ),
     ) );
 
@@ -302,7 +424,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_buttons' , array(
       'title'       => __( 'Buttons', 'archetype' ),
-      'priority'    => 45,
+      'priority'    => 50,
       'description' => __( 'Customise the look & feel of your web site buttons.', 'archetype' ),
     ) );
 
@@ -371,7 +493,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_layout' , array(
       'title'       => __( 'Layout', 'archetype' ),
-      'priority'    => 50,
+      'priority'    => 60,
     ) );
 
     $wp_customize->add_setting( 'archetype_layout', array(

@@ -151,12 +151,11 @@
       }
 
       // second level
-      ul:not(.product_list_widget) {
+      ul {
         float: left;
         position: absolute;
         top: 100%;
         z-index: 99999;
-        background-color: $color-nav-bg;
         display: none; // display: none; is required to make dropdowns work on touch devices
 
         li {
@@ -178,8 +177,7 @@
     position: relative;
     font-size: .938em;
 
-    ul.menu,
-    ul.nav-menu {
+    ul.menu {
       > li {
         // The first level menu item
         > a {

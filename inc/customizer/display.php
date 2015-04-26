@@ -149,6 +149,58 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .site-header a:hover {
       color: ' . $header_link_color_hover . ';
     }';
+    
+    // Navigation Background Color
+    $nav_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_background_color', apply_filters( 'archetype_default_nav_background_color', '#2f3538' ) ) );
+
+    $style.= '
+    @media screen and (min-width: 768px) {
+      #navigation,
+      .main-navigation ul.menu ul {
+        background-color: ' . $nav_background_color . ';
+      }
+    }';
+    
+    // Navigation Link Color
+    $nav_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color', apply_filters( 'archetype_default_nav_link_color', '#bbb' ) ) );
+
+    $style.= '
+    .main-navigation ul li a {
+      color: ' . $nav_link_color . ';
+    }';
+    
+    // Navigation Link Hover Color
+    $nav_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_hover', apply_filters( 'archetype_default_nav_link_color_hover', '#fff' ) ) );
+
+    $style.= '
+    .main-navigation ul li a:hover {
+      color: ' . $nav_link_color_hover . ';
+    }';
+    
+    // Navigation Link Hover Background Color
+    $nav_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_hover_bg', apply_filters( 'archetype_default_nav_link_color_hover_bg', '#2f3538' ) ) );
+
+    $style.= '
+    @media screen and (min-width: 768px) {
+      .main-navigation ul.menu ul a:hover,
+      .main-navigation ul.menu ul li:hover > a {
+        background-color: ' . $nav_link_color_hover_bg . ';
+      }
+    }';
+    
+    // Navigation Link Active Color
+    $nav_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_active', apply_filters( 'archetype_default_nav_link_color_active', '#fff' ) ) );
+    
+    // Navigation Link Active Background Color
+    $nav_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_active_bg', apply_filters( 'archetype_default_nav_link_color_active_bg', '#24282A' ) ) );
+
+    $style.= '
+    .main-navigation ul li.current-menu-item > a,
+    .main-navigation ul li.current_page_parent > a,
+    .main-navigation ul li.current-menu-ancestor > a {
+      color: ' . $nav_link_color_active . ';
+      background-color: ' . $nav_link_color_active_bg . ';
+    }';
 
     $woocommerce_style = '';
 

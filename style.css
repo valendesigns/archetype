@@ -618,6 +618,10 @@ table {
   table tfoot th, table tfoot td {
     border-top: 1px dotted #e5e5e5; }
 
+@media screen and (max-width: 767px) {
+  body.wp-customizer #navigation {
+    background-color: none !important; } }
+
 @media screen and (min-width: 768px) {
   #navigation {
     background-color: #292e31; }
@@ -1159,16 +1163,15 @@ fieldset {
             left: 100%;
             top: 0;
             display: block; }
-      .main-navigation ul ul:not(.product_list_widget), .secondary-navigation ul ul:not(.product_list_widget) {
+      .main-navigation ul ul, .secondary-navigation ul ul {
         float: left;
         position: absolute;
         top: 100%;
         z-index: 99999;
-        background-color: #292e31;
         display: none; }
-        .main-navigation ul ul:not(.product_list_widget) li, .secondary-navigation ul ul:not(.product_list_widget) li {
+        .main-navigation ul ul li, .secondary-navigation ul ul li {
           float: none; }
-          .main-navigation ul ul:not(.product_list_widget) li a, .secondary-navigation ul ul:not(.product_list_widget) li a {
+          .main-navigation ul ul li a, .secondary-navigation ul ul li a {
             width: 12.5em; }
   /**
    * Primary Navigation
@@ -1176,37 +1179,37 @@ fieldset {
   .main-navigation {
     position: relative;
     font-size: .938em; }
-    .main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a {
+    .main-navigation ul.menu > li > a {
       padding: 1.267em 1.333em; }
-    .main-navigation ul.menu > li.menu-item-has-children:hover:after, .main-navigation ul.menu > li.page_item_has_children:hover:after, .main-navigation ul.nav-menu > li.menu-item-has-children:hover:after, .main-navigation ul.nav-menu > li.page_item_has_children:hover:after {
+    .main-navigation ul.menu > li.menu-item-has-children:hover:after, .main-navigation ul.menu > li.page_item_has_children:hover:after {
       display: block; }
-    .main-navigation ul.menu > li.menu-item-has-children > a:after, .main-navigation ul.menu > li.page_item_has_children > a:after, .main-navigation ul.nav-menu > li.menu-item-has-children > a:after, .main-navigation ul.nav-menu > li.page_item_has_children > a:after {
+    .main-navigation ul.menu > li.menu-item-has-children > a:after, .main-navigation ul.menu > li.page_item_has_children > a:after {
       content: "\f107";
       font-family: "FontAwesome";
       margin-left: 1em;
       line-height: 1; }
-      .rtl .main-navigation ul.menu > li.menu-item-has-children > a:after, .rtl .main-navigation ul.menu > li.page_item_has_children > a:after, .rtl .main-navigation ul.nav-menu > li.menu-item-has-children > a:after, .rtl .main-navigation ul.nav-menu > li.page_item_has_children > a:after {
+      .rtl .main-navigation ul.menu > li.menu-item-has-children > a:after, .rtl .main-navigation ul.menu > li.page_item_has_children > a:after {
         margin-right: 1em;
         margin-left: 0; }
-    .main-navigation ul.menu ul, .main-navigation ul.nav-menu ul {
+    .main-navigation ul.menu ul {
       background-color: #292e31;
       margin-left: 0; }
-      .main-navigation ul.menu ul li, .main-navigation ul.nav-menu ul li {
+      .main-navigation ul.menu ul li {
         display: block; }
-        .main-navigation ul.menu ul li a, .main-navigation ul.nav-menu ul li a {
+        .main-navigation ul.menu ul li a {
           padding: .857em 1em; }
-        .main-navigation ul.menu ul li:last-child, .main-navigation ul.nav-menu ul li:last-child {
+        .main-navigation ul.menu ul li:last-child {
           border-bottom: 0; }
-        .main-navigation ul.menu ul li.menu-item-has-children > a:after, .main-navigation ul.menu ul li.page_item_has_children > a:after, .main-navigation ul.nav-menu ul li.menu-item-has-children > a:after, .main-navigation ul.nav-menu ul li.page_item_has_children > a:after {
+        .main-navigation ul.menu ul li.menu-item-has-children > a:after, .main-navigation ul.menu ul li.page_item_has_children > a:after {
           content: "\f105";
           font-family: "FontAwesome";
           float: right; }
-          .rtl .main-navigation ul.menu ul li.menu-item-has-children > a:after, .rtl .main-navigation ul.menu ul li.page_item_has_children > a:after, .rtl .main-navigation ul.nav-menu ul li.menu-item-has-children > a:after, .rtl .main-navigation ul.nav-menu ul li.page_item_has_children > a:after {
+          .rtl .main-navigation ul.menu ul li.menu-item-has-children > a:after, .rtl .main-navigation ul.menu ul li.page_item_has_children > a:after {
             content: "\f104"; }
-      .main-navigation ul.menu ul ul, .main-navigation ul.nav-menu ul ul {
+      .main-navigation ul.menu ul ul {
         margin-left: 0;
         box-shadow: none; }
-      .main-navigation ul.menu ul a:hover, .main-navigation ul.menu ul li:hover > a, .main-navigation ul.nav-menu ul a:hover, .main-navigation ul.nav-menu ul li:hover > a {
+      .main-navigation ul.menu ul a:hover, .main-navigation ul.menu ul li:hover > a {
         background-color: #2f3538; }
     .main-navigation a {
       padding: 0 1em 2.244em; }

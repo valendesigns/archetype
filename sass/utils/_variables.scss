@@ -44,11 +44,12 @@ $color-header-link-hover:       #ee543f;
 // Navigation
 
 $color-nav-bg:                  darken( $color-header-bg, 5% );
-$color-nav-link-active-bg:      darken( $color-nav-bg, 2.5% );
-$color-nav-link-hover-bg:       lighten( $color-nav-bg, 2.5% );
 $color-nav-link:                #bbb;
-$color-nav-link-active:         #fff;
 $color-nav-link-hover:          #fff;
+$color-nav-link-hover-bg:       lighten( $color-nav-bg, 2.5% );
+$color-nav-link-active:         #fff;
+$color-nav-link-active-bg:      darken( $color-nav-bg, 2.5% );
+
 
 $color-nav-alt:                 $color-header;
 $color-nav-alt-bg:              lighten( $color-header-bg, 5% );

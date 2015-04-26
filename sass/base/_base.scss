@@ -415,6 +415,12 @@ table {
   }
 }
 
+@media screen and (max-width: 767px) {
+  body.wp-customizer #navigation {
+    background-color: none !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   #navigation {
     background-color: $color-nav-bg;
