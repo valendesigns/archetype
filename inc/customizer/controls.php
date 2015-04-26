@@ -234,7 +234,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     /**
-     * Add the typography section
+     * Add the Primary Menu Styles section
      */
     $wp_customize->add_section( 'archetype_nav_styles' , array(
       'title'       => __( 'Primary Menu Styles', 'archetype' ),
@@ -327,7 +327,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Link active color', 'archetype' ),
       'section'     => 'archetype_nav_styles',
       'settings'    => 'archetype_nav_link_color_active',
-      'priority'    => 25,
+      'priority'    => 30,
     ) ) );
 
     /**
@@ -343,10 +343,130 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Link active background color', 'archetype' ),
       'section'     => 'archetype_nav_styles',
       'settings'    => 'archetype_nav_link_color_active_bg',
+      'priority'    => 35,
+    ) ) );
+
+    /**
+     * Add the Secondary Menu Styles section
+     */
+    $wp_customize->add_section( 'archetype_nav_alt_styles' , array(
+      'title'       => __( 'Secondary Menu Styles', 'archetype' ),
+      'priority'    => 20,
+      'description' => __( 'You must choose a menu location, in the Menus tab above, for the secondary navigation styles to work.', 'archetype' ),
+      'panel'       => 'archetype_navigation',
+    ) );
+
+    /**
+     * Secondary Navigation Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_alt_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_color', '#888' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_color', array(
+      'label'       => __( 'Text color', 'archetype' ),
+      'section'     => 'archetype_nav_alt_styles',
+      'settings'    => 'archetype_nav_alt_color',
+      'priority'    => 10,
+    ) ) );
+
+    /**
+     * Secondary Navigation Background Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_alt_background_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_background_color', '#41484d' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_nav_alt_styles',
+      'settings'    => 'archetype_nav_alt_background_color',
+      'priority'    => 15,
+    ) ) );
+    
+    /**
+     * Secondary Navigation Link Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_alt_link_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_color', '#ddd' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color', array(
+      'label'       => __( 'Link color', 'archetype' ),
+      'section'     => 'archetype_nav_alt_styles',
+      'settings'    => 'archetype_nav_alt_link_color',
+      'priority'    => 20,
+    ) ) );
+
+    /**
+     * Secondary Navigation Link Hover Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_alt_link_color_hover', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_hover', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_hover', array(
+      'label'       => __( 'Link hover color', 'archetype' ),
+      'section'     => 'archetype_nav_alt_styles',
+      'settings'    => 'archetype_nav_alt_link_color_hover',
       'priority'    => 25,
     ) ) );
 
-    
+    /**
+     * Secondary Navigation Link Hover Background Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_alt_link_color_hover_bg', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_hover_bg', '#464e54' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_hover_bg', array(
+      'label'       => __( 'Link hover background color', 'archetype' ),
+      'section'     => 'archetype_nav_alt_styles',
+      'settings'    => 'archetype_nav_alt_link_color_hover_bg',
+      'priority'    => 30,
+    ) ) );
+
+    /**
+     * Secondary Navigation Link Active Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_alt_link_color_active', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_active', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_active', array(
+      'label'       => __( 'Link active color', 'archetype' ),
+      'section'     => 'archetype_nav_alt_styles',
+      'settings'    => 'archetype_nav_alt_link_color_active',
+      'priority'    => 35,
+    ) ) );
+
+    /**
+     * Secondary Navigation Link Active Background Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_alt_link_color_active_bg', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_active_bg', '#3b4146' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_active_bg', array(
+      'label'       => __( 'Link active background color', 'archetype' ),
+      'section'     => 'archetype_nav_alt_styles',
+      'settings'    => 'archetype_nav_alt_link_color_active_bg',
+      'priority'    => 40,
+    ) ) );
 
     // END Navigation
 

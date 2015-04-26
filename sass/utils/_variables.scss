@@ -49,15 +49,13 @@ $color-nav-link-hover:          #fff;
 $color-nav-link-hover-bg:       lighten( $color-nav-bg, 2.5% );
 $color-nav-link-active:         #fff;
 $color-nav-link-active-bg:      darken( $color-nav-bg, 2.5% );
-
-
 $color-nav-alt:                 $color-header;
 $color-nav-alt-bg:              lighten( $color-header-bg, 5% );
-$color-nav-alt-link-active-bg:  darken( $color-nav-alt-bg, 2.5% );
-$color-nav-alt-link-hover-bg:   lighten( $color-nav-alt-bg, 2.5% );
 $color-nav-alt-link:            #ddd;
-$color-nav-alt-link-active:     #fff;
 $color-nav-alt-link-hover:      #fff;
+$color-nav-alt-link-hover-bg:   lighten( $color-nav-alt-bg, 2.5% );
+$color-nav-alt-link-active:     #fff;
+$color-nav-alt-link-active-bg:  darken( $color-nav-alt-bg, 2.5% );
 
 
 // Post

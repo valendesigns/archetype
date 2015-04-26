@@ -202,6 +202,55 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       background-color: ' . $nav_link_color_active_bg . ';
     }';
 
+    // Secondary Navigation Color
+    $nav_alt_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_color', apply_filters( 'archetype_nav_alt_alt_color', '#888' ) ) );
+
+    $style.= '
+    .secondary-navigation {
+      color: ' . $nav_alt_color . ';
+    }';
+    
+    // Secondary Navigation Background Color
+    $nav_alt_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_background_color', apply_filters( 'archetype_default_nav_alt_background_color', '#41484d' ) ) );
+    
+    // Secondary Navigation Link Color
+    $nav_alt_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color', apply_filters( 'archetype_default_nav_alt_link_color', '#ddd' ) ) );
+
+    // Secondary Navigation Link Hover Color
+    $nav_alt_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_hover', apply_filters( 'archetype_default_nav_alt_link_color_hover', '#fff' ) ) );
+    
+    // Secondary Navigation Link Hover Background Color
+    $nav_alt_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_hover_bg', apply_filters( 'archetype_default_nav_alt_link_color_hover_bg', '#464e54' ) ) );
+    
+    // Secondary Navigation Link Active Color
+    $nav_alt_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_active', apply_filters( 'archetype_default_nav_alt_link_color_active', '#fff' ) ) );
+    
+    // Secondary Navigation Link Active Background Color
+    $nav_alt_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_active_bg', apply_filters( 'archetype_default_nav_alt_link_color_active_bg', '#3b4146' ) ) );
+
+    $style.= '
+    @media screen and (min-width: 768px) {
+      .secondary-navigation ul.menu li a {
+        color: ' . $nav_alt_link_color . ';
+      }
+      .secondary-navigation ul.menu li a:hover {
+        color: ' . $nav_alt_link_color_hover . ';
+      }
+      .secondary-navigation ul.menu li ul {
+        background-color: ' . $nav_alt_background_color . ';
+      }
+      .secondary-navigation ul.menu li ul a:hover,
+      .secondary-navigation ul.menu li ul li:hover > a {
+        background-color: ' . $nav_alt_link_color_hover_bg . ';
+      }
+      .secondary-navigation ul.menu li li.current-menu-item > a,
+      .secondary-navigation ul.menu li li.current_page_parent > a,
+      .secondary-navigation ul.menu li li.current-menu-ancestor > a {
+        color: ' . $nav_alt_link_color_active . ';
+        background-color: ' . $nav_alt_link_color_active_bg . ';
+      }
+    }';
+
     $woocommerce_style = '';
 
     wp_add_inline_style( 'archetype-style', $style );

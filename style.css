@@ -376,9 +376,9 @@ body {
   background-position: center center;
   position: relative;
   z-index: 999; }
-  .site-header a {
+  .site-header a:not(.menu *) {
     color: #aaa; }
-    .site-header a:hover {
+    .site-header a:not(.menu *):hover {
       color: #ee543f; }
   .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: block; }
@@ -617,10 +617,6 @@ table {
     border-bottom: 0; }
   table tfoot th, table tfoot td {
     border-top: 1px dotted #e5e5e5; }
-
-@media screen and (max-width: 767px) {
-  body.wp-customizer #navigation {
-    background-color: none !important; } }
 
 @media screen and (min-width: 768px) {
   #navigation {
@@ -1222,24 +1218,24 @@ fieldset {
     width: auto;
     clear: none;
     line-height: 1; }
-    .secondary-navigation ul.menu:not(.site-header-cart) li a {
+    .secondary-navigation ul.menu li a {
       color: #ddd; }
-      .secondary-navigation ul.menu:not(.site-header-cart) li a:hover {
+      .secondary-navigation ul.menu li a:hover {
         color: #fff; }
-    .secondary-navigation ul.menu:not(.site-header-cart) li:hover > ul, .secondary-navigation ul.menu:not(.site-header-cart) li.focus > ul {
+    .secondary-navigation ul.menu li:hover > ul, .secondary-navigation ul.menu li.focus > ul {
       left: auto;
       right: 0; }
-      .secondary-navigation ul.menu:not(.site-header-cart) li:hover > ul li:hover > ul, .secondary-navigation ul.menu:not(.site-header-cart) li:hover > ul li.focus > ul, .secondary-navigation ul.menu:not(.site-header-cart) li.focus > ul li:hover > ul, .secondary-navigation ul.menu:not(.site-header-cart) li.focus > ul li.focus > ul {
+      .secondary-navigation ul.menu li:hover > ul li:hover > ul, .secondary-navigation ul.menu li:hover > ul li.focus > ul, .secondary-navigation ul.menu li.focus > ul li:hover > ul, .secondary-navigation ul.menu li.focus > ul li.focus > ul {
         left: auto;
         right: 100%; }
-    .secondary-navigation ul.menu:not(.site-header-cart) li ul {
+    .secondary-navigation ul.menu li ul {
       background-color: #41484d; }
-      .secondary-navigation ul.menu:not(.site-header-cart) li ul a:hover, .secondary-navigation ul.menu:not(.site-header-cart) li ul li:hover > a {
+      .secondary-navigation ul.menu li ul a:hover, .secondary-navigation ul.menu li ul li:hover > a {
         background-color: #464e54; }
-    .secondary-navigation ul.menu:not(.site-header-cart) li.current-menu-item > a, .secondary-navigation ul.menu:not(.site-header-cart) li.current_page_parent > a, .secondary-navigation ul.menu:not(.site-header-cart) li.current-menu-ancestor > a {
+    .secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a {
       color: #fff;
       background-color: #3b4146; }
-    .secondary-navigation ul.menu:not(.site-header-cart) > li > a {
+    .secondary-navigation ul.menu > li > a {
       background: none; }
     .secondary-navigation .menu {
       font-size: .875em;

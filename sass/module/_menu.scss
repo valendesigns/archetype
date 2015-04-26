@@ -269,7 +269,7 @@
     clear: none;
     line-height: 1;
     
-    ul.menu:not(.site-header-cart) {
+    ul.menu {
       li {
         a {
           color: $color-nav-alt-link;
@@ -306,12 +306,14 @@
           }
         }
 
-        &.current-menu-item,
-        &.current_page_parent,
-        &.current-menu-ancestor {
-          > a {
-            color: $color-nav-alt-link-active;
-            background-color: $color-nav-alt-link-active-bg;
+        li {
+          &.current-menu-item,
+          &.current_page_parent,
+          &.current-menu-ancestor {
+            > a {
+              color: $color-nav-alt-link-active;
+              background-color: $color-nav-alt-link-active-bg;
+            }
           }
         }
       }

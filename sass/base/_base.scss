@@ -24,7 +24,7 @@ body {
   position: relative;
   z-index: 999;
   
-  a {
+  a:not(.menu *) {
     color: $color-header-link;
 
     &:hover {
@@ -412,12 +412,6 @@ table {
     td {
       border-top:1px dotted $color-post-border;
     }
-  }
-}
-
-@media screen and (max-width: 767px) {
-  body.wp-customizer #navigation {
-    background-color: none !important;
   }
 }
 
