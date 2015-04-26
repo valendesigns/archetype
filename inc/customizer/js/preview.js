@@ -25,37 +25,37 @@
   } );
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
+      var boxShadow = '5px 0px 0px ' + to + ' inset';
+
+      // Color
       $( 'body, button, input, select, textarea, .author-info .author-heading, #comments p.no-comments, .post-navigation .meta-nav, .widget-area .widget a' ).css( 'color', to );
-    } );
-  } );
-  wp.customize( 'archetype_text_color', function( value ) {
-    value.bind( function( to ) {
-      $( '.page-header, #comments p.no-comments' ).css( 'box-shadow', '5px 0px 0px ' + to + ' inset' );
+
+      // Box Shadow
+      $( '.page-header, #comments p.no-comments' ).css( 'box-shadow', boxShadow );
+
+      // Box Shadow Hover
       $( '.post-navigation a' ).on( 'mouseenter', function() {
-        $( this ).css( 'box-shadow', '5px 0px 0px ' + to + ' inset' );
+        $( this ).css( 'box-shadow', boxShadow );
       } );
-    } );
-  } );
-  wp.customize( 'archetype_text_color', function( value ) {
-    value.bind( function( to ) {
+
+      // Background Color
       $( '.sticky-post, .pagination .prev, .pagination .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .woocommerce-pagination .prev, .woocommerce-pagination .next, .page-links a' ).css( 'background-color', to );
+
+      // Background Color Hover
       $( '.bx-controls-direction .bx-prev, .bx-controls-direction .bx-next' ).on( 'mouseenter', function() {
         $( this ).css( 'background-color', to );
       } );
-    } );
-  } );
-  wp.customize( 'archetype_text_color', function( value ) {
-    value.bind( function( to ) {
+
+      // Border Color
       $( '.page-links a, .widget h3.widget-title' ).css( 'border-color', to );
     } );
   } );
   wp.customize( 'archetype_heading_color', function( value ) {
     value.bind( function( to ) {
+      // Color
       $( 'h1, h2, h3, h4, h5, h6, .hentry .entry-header h1 a' ).css( 'color', to );
-    } );
-  } );
-  wp.customize( 'archetype_heading_color', function( value ) {
-    value.bind( function( to ) {
+
+      // Border Color Hover
       $( '.hentry .entry-header h1 a' ).on( 'mouseenter', function() {
         $( this ).css( 'border-color', to );
       } );
