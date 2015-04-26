@@ -157,7 +157,8 @@ label {
   margin-bottom: .875em;
 }
 
-input + label {
+input + label,
+.post-password-form label {
   display: inline;
 }
 

@@ -1049,7 +1049,7 @@ label {
   font-weight: 700;
   margin-bottom: .875em; }
 
-input + label {
+input + label, .post-password-form label {
   display: inline; }
 
 label.inline input {
@@ -1158,16 +1158,16 @@ fieldset {
             left: 100%;
             top: 0;
             display: block; }
-      .main-navigation ul ul, .secondary-navigation ul ul {
+      .main-navigation ul ul:not(.product_list_widget), .secondary-navigation ul ul:not(.product_list_widget) {
         float: left;
         position: absolute;
         top: 100%;
         z-index: 99999;
         background-color: #353b3f;
         display: none; }
-        .main-navigation ul ul li, .secondary-navigation ul ul li {
+        .main-navigation ul ul:not(.product_list_widget) li, .secondary-navigation ul ul:not(.product_list_widget) li {
           float: none; }
-          .main-navigation ul ul li a, .secondary-navigation ul ul li a {
+          .main-navigation ul ul:not(.product_list_widget) li a, .secondary-navigation ul ul:not(.product_list_widget) li a {
             width: 200px; }
   /**
    * Primary Navigation
@@ -1863,7 +1863,6 @@ embed, iframe, object {
   .pagination .current, .image-navigation .current, .comment-navigation .current, .woocommerce-pagination .current {
     display: inline-block; }
   .pagination .prev, .pagination .next, .pagination .nav-previous a, .pagination .nav-next a, .image-navigation .prev, .image-navigation .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .comment-navigation .nav-previous a, .comment-navigation .nav-next a, .woocommerce-pagination .prev, .woocommerce-pagination .next, .woocommerce-pagination .nav-previous a, .woocommerce-pagination .nav-next a {
-    -webkit-tap-highlight-color: #ed543f;
     background-color: #555;
     color: #fff;
     display: inline-block;
@@ -2225,14 +2224,14 @@ embed, iframe, object {
 .widget_search form, .widget_product_search form, .error-404-search form {
   position: relative;
   margin-bottom: 0; }
-  .widget_search form input[type=text], .widget_search form input[type=search], .widget_product_search form input[type=text], .widget_product_search form input[type=search], .error-404-search form input[type=text], .error-404-search form input[type=search] {
+  .widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search] {
     background: #fff;
     width: 100%;
     font-size: 1.067em;
     padding: .75em 1em .75em 2.625em;
     box-shadow: 0px -1px 0px #8b949b inset;
     border-radius: 0px; }
-    .widget_search form input[type=text]:focus, .widget_search form input[type=search]:focus, .widget_product_search form input[type=text]:focus, .widget_product_search form input[type=search]:focus, .error-404-search form input[type=text]:focus, .error-404-search form input[type=search]:focus {
+    .widget_search form input[type=search]:focus, .widget_product_search form input[type=search]:focus, .error-404-search form input[type=search]:focus {
       color: #3b3b3b; }
   .widget_search form input[type=submit], .widget_product_search form input[type=submit], .error-404-search form input[type=submit] {
     display: none; }
@@ -2375,7 +2374,6 @@ embed, iframe, object {
   /*rtl:ignore*/
   /*rtl:ignore*/ }
   .bx-controls-direction .bx-prev, .bx-controls-direction .bx-next {
-    -webkit-tap-highlight-color: #555;
     background-color: #ed543f;
     color: #fff;
     display: inline-block;

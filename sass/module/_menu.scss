@@ -151,7 +151,7 @@
       }
 
       // second level
-      ul {
+      ul:not(.product_list_widget) {
         float: left;
         position: absolute;
         top: 100%;

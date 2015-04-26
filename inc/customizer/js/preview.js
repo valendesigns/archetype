@@ -23,56 +23,36 @@
         $( '.site-logo-link img' ).css( 'margin-top', '0' );
     } );
   } );
-
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
-      $( 'body, .widget-area .widget a, .onsale, .woocommerce-tabs ul.tabs li.active a, ul.products li.product .price, .widget-area .widget a' ).css( 'color', to );
+      $( 'body, button, input, select, textarea, .author-info .author-heading, #comments p.no-comments, .post-navigation .meta-nav, .widget-area .widget a' ).css( 'color', to );
     } );
   } );
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
-      $( '.onsale' ).css( 'border-color', to );
+      $( '.page-header, #comments p.no-comments, .post-navigation a:hover' ).css( 'box-shadow', '5px 0px 0px ' + to + ' inset' );
+    } );
+  } );
+  wp.customize( 'archetype_text_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.sticky-post, .pagination .prev, .pagination .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .woocommerce-pagination .prev, .woocommerce-pagination .next, .page-links a, .bx-controls-direction .bx-prev:hover, .bx-controls-direction .bx-next:hover' ).css( 'background-color', to );
+    } );
+  } );
+  wp.customize( 'archetype_text_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.page-links a, .widget h3.widget-title' ).css( 'border-color', to );
     } );
   } );
   wp.customize( 'archetype_heading_color', function( value ) {
     value.bind( function( to ) {
-      $( '.site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6' ).css( 'color', to );
-      $( '.hentry .entry-header, .widget h1' ).css( 'border-color', to );
+      $( 'h1, h2, h3, h4, h5, h6, .hentry .entry-header h1 a' ).css( 'color', to );
     } );
   } );
-  wp.customize( 'archetype_header_text_color', function( value ) {
+  wp.customize( 'archetype_heading_color', function( value ) {
     value.bind( function( to ) {
-      $( 'p.site-description, ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li a, .secondary-navigation ul.menu a, .site-header-cart .widget_shopping_cart, .site-header .product_list_widget li .quantity' ).css( 'color', to );
-    } );
-  } );
-  wp.customize( 'archetype_header_link_color', function( value ) {
-    value.bind( function( to ) {
-      $( '.main-navigation ul li a, .site-title a, a.cart-contents, .site-header-cart .widget_shopping_cart a' ).css( 'color', to );
-    } );
-  } );
-  wp.customize( 'archetype_header_background_color', function( value ) {
-    value.bind( function( to ) {
-      $( '.site-header, .main-navigation ul ul, .secondary-navigation ul ul, .main-navigation ul.menu > li.menu-item-has-children:after, .site-header-cart .widget_shopping_cart, .secondary-navigation ul.menu ul' ).css( 'background-color', to );
-    } );
-  } );
-  wp.customize( 'archetype_footer_heading_color', function( value ) {
-    value.bind( function( to ) {
-      $( '.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6' ).css( 'color', to );
-    } );
-  } );
-  wp.customize( 'archetype_footer_text_color', function( value ) {
-    value.bind( function( to ) {
-      $( '.site-footer' ).css( 'color', to );
-    } );
-  } );
-  wp.customize( 'archetype_footer_link_color', function( value ) {
-    value.bind( function( to ) {
-      $( '.site-footer a:not(.button)' ).css( 'color', to );
-    } );
-  } );
-  wp.customize( 'archetype_footer_background_color', function( value ) {
-    value.bind( function( to ) {
-      $( '.site-footer' ).css( 'background-color', to );
+      $( '.hentry .entry-header h1 a' ).on( 'mouseenter', function() {
+        $( this ).css( 'border-color', to );
+      } );
     } );
   } );
 } )( jQuery );

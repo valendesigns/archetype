@@ -87,7 +87,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
   function archetype_add_integrations_customizer_css() {
 
     if ( is_archetype_customizer_enabled() ) {
-      $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#96588a' ) ) );
+      $link_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color', apply_filters( 'archetype_default_link_color', '#96588a' ) ) );
       $header_text_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#8a3125' ) ) );
       $header_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#ee543f' ) ) );
       $text_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_text_color', apply_filters( 'archetype_default_text_color', '#60646c' ) ) );
@@ -102,7 +102,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
         #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover,
         #wc-bookings-booking-form .block-picker li a:hover,
         #wc-bookings-booking-form .block-picker li a.selected {
-          background-color: ' . $accent_color . ' !important;
+          background-color: ' . $link_color . ' !important;
         }
 
         #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-state-disabled .ui-state-default,
@@ -138,7 +138,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
         .woocommerce-page #reviews #comments ol.commentlist li .contribution-actions a,
         .woocommerce #reviews .form-contribution .attachment-type:not(:checked) label.checkbox:before,
         .woocommerce-page #reviews .form-contribution .attachment-type:not(:checked) label.checkbox:before {
-          color: ' . $accent_color . ' !important;
+          color: ' . $link_color . ' !important;
         }';
       }
 
