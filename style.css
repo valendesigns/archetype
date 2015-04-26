@@ -456,6 +456,7 @@ body, .site {
 
 .site-info {
   background-color: #292e31;
+  color: #888;
   padding: 2.625em 0; }
   .site-info .credit {
     text-align: center; }
