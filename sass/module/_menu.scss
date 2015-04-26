@@ -271,7 +271,7 @@
     clear: none;
     line-height: 1;
     
-    ul.menu {
+    ul.menu:not(.site-header-cart) {
       li {
         a {
           color: $color-nav-alt-link;
@@ -280,7 +280,25 @@
             color: $color-nav-alt-link-hover;
           }
         }
-        
+
+        &:hover,
+        &.focus {
+          > ul {
+            left: auto;
+            right: 0;
+
+            li {
+              &:hover,
+              &.focus {
+                > ul {
+                  left: auto;
+                  right: 100%;
+                }
+              }
+            }
+          }
+        }
+
         ul {
           background-color: $color-nav-alt-bg;
 
@@ -300,7 +318,7 @@
         }
       }
       > li > a {
-        background: none !important;
+        background: none;
       }
     }
 

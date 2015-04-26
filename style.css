@@ -1219,19 +1219,25 @@ fieldset {
     width: auto;
     clear: none;
     line-height: 1; }
-    .secondary-navigation ul.menu li a {
+    .secondary-navigation ul.menu:not(.site-header-cart) li a {
       color: #ddd; }
-      .secondary-navigation ul.menu li a:hover {
+      .secondary-navigation ul.menu:not(.site-header-cart) li a:hover {
         color: #fff; }
-    .secondary-navigation ul.menu li ul {
+    .secondary-navigation ul.menu:not(.site-header-cart) li:hover > ul, .secondary-navigation ul.menu:not(.site-header-cart) li.focus > ul {
+      left: auto;
+      right: 0; }
+      .secondary-navigation ul.menu:not(.site-header-cart) li:hover > ul li:hover > ul, .secondary-navigation ul.menu:not(.site-header-cart) li:hover > ul li.focus > ul, .secondary-navigation ul.menu:not(.site-header-cart) li.focus > ul li:hover > ul, .secondary-navigation ul.menu:not(.site-header-cart) li.focus > ul li.focus > ul {
+        left: auto;
+        right: 100%; }
+    .secondary-navigation ul.menu:not(.site-header-cart) li ul {
       background-color: #41484d; }
-      .secondary-navigation ul.menu li ul a:hover, .secondary-navigation ul.menu li ul li:hover > a {
+      .secondary-navigation ul.menu:not(.site-header-cart) li ul a:hover, .secondary-navigation ul.menu:not(.site-header-cart) li ul li:hover > a {
         background-color: #464e54; }
-    .secondary-navigation ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li.current_page_parent > a, .secondary-navigation ul.menu li.current-menu-ancestor > a {
+    .secondary-navigation ul.menu:not(.site-header-cart) li.current-menu-item > a, .secondary-navigation ul.menu:not(.site-header-cart) li.current_page_parent > a, .secondary-navigation ul.menu:not(.site-header-cart) li.current-menu-ancestor > a {
       color: #fff;
       background-color: #3b4146; }
-    .secondary-navigation ul.menu > li > a {
-      background: none !important; }
+    .secondary-navigation ul.menu:not(.site-header-cart) > li > a {
+      background: none; }
     .secondary-navigation .menu {
       font-size: .875em;
       width: auto;
