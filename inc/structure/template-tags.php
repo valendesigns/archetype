@@ -24,7 +24,7 @@ if ( ! function_exists( 'archetype_product_categories' ) ) {
         'title'            => __( 'Product Categories', 'archetype' ),
       ) );
 
-      $products = do_shortcode( '[product_categories number="' . $args['limit'] . '" columns="' . $args['columns'] . '" orderby="' . $args['orderby'] . '" parent="' . $args['child_categories'] . '"]' );
+      $products = do_shortcode( '[product_categories number="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '" orderby="' . esc_attr( $args['orderby'] ) . '" parent="' . esc_attr( $args['child_categories'] ) . '"]' );
 
       $empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 

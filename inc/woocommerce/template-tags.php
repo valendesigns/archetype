@@ -161,6 +161,6 @@ function archetype_sorting_wrapper_close() {
  */
 function archetype_shop_messages() {
   if ( ! is_checkout() ) {
-    echo do_shortcode( '[woocommerce_messages]' );
+    echo wp_kses_post( do_shortcode( '[woocommerce_messages]' ) );
   }
 }
