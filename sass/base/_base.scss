@@ -98,10 +98,93 @@ body,
 
     a {
       font-size: 1em !important;
+      color: $color-header;
+      display: block;
+      text-decoration: none;
+      display: block;
+      text-indent: -999em;
+      position: relative;
+      height: 1em;
+      width: 1em;
+
+      &:before {
+        font-family: 'FontAwesome';
+        speak: none;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        content: "\f179";
+      }
 
       &:hover {
-        color: $color-header;
+        color: $color-link;
       }
+    }
+
+    .rss a:before {
+      content: '\f09e';
+    }
+
+    .twitter a:before {
+      content: '\f099';
+    }
+
+    .facebook a:before {
+      content: '\f09a';
+    }
+
+    .pinterest a:before {
+      content: '\f0d2';
+    }
+
+    .youtube a:before {
+      content: '\f167';
+    }
+
+    .instagram a:before {
+      content: '\f16d';
+    }
+
+    .flickr a:before {
+      content: '\f16e';
+    }
+
+    .google_plus a:before {
+      content: '\f0d5';
+    }
+
+    .linkedin a:before {
+      content: '\f0e1';
+    }
+
+    .vimeo a:before {
+      content: '\f194';
+    }
+
+    .tumblr a:before {
+      content: '\f173';
+    }
+
+    .dribbble a:before {
+      content: '\f17d';
+    }
+
+    .appdotnet a:before {
+      content: '\f170';
+    }
+
+    .github a:before {
+      content: '\f09b';
     }
 
     li {

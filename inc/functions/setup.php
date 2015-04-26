@@ -171,6 +171,9 @@ function archetype_widgets_init() {
 function archetype_scripts() {
   global $archetype_version;
 
+  // We have our own.
+  wp_dequeue_style( 'subscribe-and-connect' );
+
   wp_enqueue_style( 'archetype-style', get_template_directory_uri() . ( is_rtl() ? '/style-rtl.min.css' : '/style.min.css' ), '', $archetype_version );
 
   wp_enqueue_script( 'archetype-bxslider', get_template_directory_uri() . '/js/bxslider.min.js', array( 'jquery' ), '3.2', true );

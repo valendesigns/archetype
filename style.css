@@ -421,9 +421,62 @@ body, .site {
   margin: 0;
   padding: .5em 0; }
   .subscribe-and-connect-connect .icons a {
-    font-size: 1em !important; }
+    font-size: 1em !important;
+    color: #888;
+    display: block;
+    text-decoration: none;
+    display: block;
+    text-indent: -999em;
+    position: relative;
+    height: 1em;
+    width: 1em; }
+    .subscribe-and-connect-connect .icons a:before {
+      font-family: 'FontAwesome';
+      speak: none;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      text-indent: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      content: "\f179"; }
     .subscribe-and-connect-connect .icons a:hover {
-      color: #888; }
+      color: #ee543f; }
+  .subscribe-and-connect-connect .icons .rss a:before {
+    content: '\f09e'; }
+  .subscribe-and-connect-connect .icons .twitter a:before {
+    content: '\f099'; }
+  .subscribe-and-connect-connect .icons .facebook a:before {
+    content: '\f09a'; }
+  .subscribe-and-connect-connect .icons .pinterest a:before {
+    content: '\f0d2'; }
+  .subscribe-and-connect-connect .icons .youtube a:before {
+    content: '\f167'; }
+  .subscribe-and-connect-connect .icons .instagram a:before {
+    content: '\f16d'; }
+  .subscribe-and-connect-connect .icons .flickr a:before {
+    content: '\f16e'; }
+  .subscribe-and-connect-connect .icons .google_plus a:before {
+    content: '\f0d5'; }
+  .subscribe-and-connect-connect .icons .linkedin a:before {
+    content: '\f0e1'; }
+  .subscribe-and-connect-connect .icons .vimeo a:before {
+    content: '\f194'; }
+  .subscribe-and-connect-connect .icons .tumblr a:before {
+    content: '\f173'; }
+  .subscribe-and-connect-connect .icons .dribbble a:before {
+    content: '\f17d'; }
+  .subscribe-and-connect-connect .icons .appdotnet a:before {
+    content: '\f170'; }
+  .subscribe-and-connect-connect .icons .github a:before {
+    content: '\f09b'; }
   .subscribe-and-connect-connect .icons li {
     margin: 0 0 0 .5em !important;
     display: inline-block; }
