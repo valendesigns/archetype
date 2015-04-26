@@ -112,6 +112,13 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       border-color: ' . $link_color . ';
     }';
     
+    $link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color_hover', apply_filters( 'archetype_default_link_color_hover', '#111' ) ) );
+
+    $style.= '
+    a:hover {
+      color: ' . $link_color_hover . ';
+    }';
+    
     $woocommerce_style = '';
 
     wp_add_inline_style( 'archetype-style', $style );

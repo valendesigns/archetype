@@ -80,4 +80,12 @@
       $( '.error-404 h1' ).css( 'border-color', to );
     } );
   } );
+  wp.customize( 'archetype_link_color_hover', function( value ) {
+    value.bind( function( to ) {
+      // Color Hover
+      $( 'a' ).on( 'mouseenter', function() {
+        $( this ).css( 'color', to );
+      } );
+    } );
+  } );
 } )( jQuery );
