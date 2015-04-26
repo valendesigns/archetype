@@ -22,15 +22,17 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       }';
     }
 
+
+
+
+
+
     $accent_color           = archetype_sanitize_hex_color( get_theme_mod( 'archetype_accent_color', apply_filters( 'archetype_default_accent_color', '#96588a' ) ) );
-    
-    $background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_background_color', apply_filters( 'archetype_default_background_color', '#25292c' ) ) );
     
     $header_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#ee543f' ) ) );
     $header_link_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color', apply_filters( 'archetype_default_header_link_color', '#ffffff' ) ) );
     $header_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#9aa0a7' ) ) );
     
-    $content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_content_background_color' ) );
     
     $footer_background_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_background_color', apply_filters( 'archetype_default_footer_background_color', '#353b3f' ) ) );
     $footer_link_color         = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_color', apply_filters( 'archetype_default_footer_link_color', '#96588a' ) ) );

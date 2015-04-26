@@ -188,21 +188,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'priority'    => 36,
       'description' => __( 'Customize the look & feel of your web site content area.', 'archetype' ),
     ) );
-
-    /**
-     * Content Background
-     */
-    $wp_customize->add_setting( 'archetype_content_background_color', array(
-      'default'           => apply_filters( 'archetype_default_content_background_color', '#f1f1f1' ),
-      'sanitize_callback' => 'archetype_sanitize_hex_color',
-      'transport'         => 'postMessage',
-    ) );
-    
-    $wp_customize->add_control( new Archetype_Color_Control( $wp_customize, 'archetype_content_background_color', array(
-      'label'       => __( 'Background color', 'archetype' ),
-      'section'     => 'archetype_content',
-      'settings'    => 'archetype_content_background_color',
-    ) ) );
     
     /**
      * Footer section

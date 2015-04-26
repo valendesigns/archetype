@@ -101,7 +101,7 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 
     // Setup the WordPress core custom background feature.
     add_theme_support( 'custom-background', apply_filters( 'archetype_custom_background_args', array(
-      'default-color' => apply_filters( 'archetype_default_background_color', '25292c' ),
+      'default-color' => 'f1f1f1',
       'default-image' => '',
     ) ) );
 

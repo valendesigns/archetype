@@ -23,6 +23,7 @@
         $( '.site-logo-link img' ).css( 'margin-top', '0' );
     } );
   } );
+
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
       $( 'body, .widget-area .widget a, .onsale, .woocommerce-tabs ul.tabs li.active a, ul.products li.product .price, .widget-area .widget a' ).css( 'color', to );
@@ -72,14 +73,6 @@
   wp.customize( 'archetype_footer_background_color', function( value ) {
     value.bind( function( to ) {
       $( '.site-footer' ).css( 'background-color', to );
-    } );
-  } );
-  wp.customize( 'archetype_content_background_color', function( value ) {
-    value.bind( function( to ) {
-      if ( to )
-        $( '.site' ).css( 'background-color', to );
-      else
-        $( '.site' ).css( 'background-color', 'transparent' );
     } );
   } );
 } )( jQuery );
