@@ -9,14 +9,12 @@
  * Customizer & Widgets Import
  */
 
-.customize-import-form,
-.widgets-import-form {
+.customize-import-form {
   position: absolute;
-  left: -99999px;
+  left: -999em;
 }
 
-.customize-import-file,
-.widgets-import-file {
+.customize-import-file {
   background: #eee;
   width: 100%;
   margin: 10px 0;
@@ -24,14 +22,12 @@
   font-size: 12px;
 }
 
-.customize-import-images,
-.widgets-import-images {
+.customize-import-images {
   display: block;
   margin-bottom: 10px;
 }
 
-.customize-import-uploading,
-.widgets-import-uploading {
+.customize-import-uploading {
   background: #eee;
   display: none;
   margin: 10px 0;

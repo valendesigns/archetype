@@ -17,11 +17,7 @@ if ( ! function_exists( 'archetype_customize_init' ) ) {
       if ( isset( $_REQUEST['customize-export'] ) ) {
         archetype_customize_export();
       }
-      
-      if ( isset( $_REQUEST['widgets-export'] ) ) {
-        archetype_widgets_export();
-      }
-      
+
       if ( isset( $_REQUEST['customize-import'] ) && isset( $_FILES['customize-import-file'] ) ) {
         archetype_customize_import();
       }
@@ -70,17 +66,16 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
   function archetype_customize_js() {
     global $archetype_version;
     wp_enqueue_script( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
-    
+
     // Localize
     wp_localize_script( 'archetype_customize', 'Archetype_Customizerl10n', array(
       'emptyImport' => __( 'Please choose a file to import.', 'archetype' )
     ));
-    
+
     // Config
     wp_localize_script( 'archetype_customize', 'Archetype_CustomizerConfig', array(
-      'customizerURL'        => admin_url( 'customize.php' ),
-      'exportCustomizeNonce' => wp_create_nonce( 'customize-exporting' ),
-      'exportWidgetsNonce'   => wp_create_nonce( 'widgets-exporting' ),
+      'customizerURL'         => admin_url( 'customize.php' ),
+      'customizerExportNonce' => wp_create_nonce( 'customize-exporting' ),
     ) );
   }
 }
@@ -105,7 +100,7 @@ if ( ! function_exists( 'archetype_customize_preview_js' ) ) {
 if ( ! function_exists( 'archetype_customize_print_js' ) ) {
   function archetype_customize_print_js() {
     global $customize_error;
-    
+
     if ( $customize_error ) {
       echo '<script> alert("' . $customize_error . '"); </script>';
     }
@@ -134,138 +129,21 @@ if ( ! function_exists( 'archetype_customize_export' ) ) {
     if ( ! wp_verify_nonce( $_REQUEST['customize-export'], 'customize-exporting' ) ) {
       return;
     }
-    
+
     $theme    = get_option( 'stylesheet' );
     $template = get_option( 'template' );
     $charset  = get_option( 'blog_charset' );
     $mods     = get_theme_mods();
-  
+
     header( 'Content-disposition: attachment; filename=' . $theme . '-customize.json' );
     header( 'Content-Type: application/octet-stream; charset=' . $charset );
-    
+
     echo serialize( array( 
       'template' => $template,
       'mods'     => $mods ? $mods : array()
     ) );
-    
-    die();
-  }
-}
 
-/**
- * Exports customizer theme mods, active widgets & menus.
- *
- * @since  1.0.0
- */
-if ( ! function_exists( 'archetype_widgets_export' ) ) {
-  function archetype_widgets_export() {
-    if ( ! wp_verify_nonce( $_REQUEST['widgets-export'], 'widgets-exporting' ) ) {
-      return;
-    }
-    
-    $theme             = get_option( 'stylesheet' );
-    $template          = get_option( 'template' );
-    $charset           = get_option( 'blog_charset' );
-    $sidebars_widgets  = get_option( 'sidebars_widgets' );
-    $available_widgets = archetype_active_widgets();
-    $widget_instances  = array();
-    $active_widgets    = array();
-  
-    // Get all widget instances
-    foreach ( $available_widgets as $widget_data ) {
-  
-      // Get all instances for this ID base
-      $instances = get_option( 'widget_' . $widget_data['id_base'] );
-  
-      // Have instances
-      if ( ! empty( $instances ) ) {
-  
-        // Loop instances
-        foreach ( $instances as $instance_id => $instance_data ) {
-  
-          // Key is ID (not _multiwidget)
-          if ( is_numeric( $instance_id ) ) {
-            $unique_instance_id = $widget_data['id_base'] . '-' . $instance_id;
-            $widget_instances[$unique_instance_id] = $instance_data;
-          }
-  
-        }
-  
-      }
-  
-    }
-  
-    // Set active widgets instances
-    foreach ( $sidebars_widgets as $sidebar_id => $widget_ids ) {
-  
-      // Skip inactive widgets
-      if ( 'wp_inactive_widgets' == $sidebar_id ) {
-        continue;
-      }
-  
-      // Skip if no data or not an array (array_version)
-      if ( ! is_array( $widget_ids ) || empty( $widget_ids ) ) {
-        continue;
-      }
-  
-      // Loop widget IDs for this sidebar
-      foreach ( $widget_ids as $widget_id ) {
-  
-        // Is there an instance for this widget ID?
-        if ( isset( $widget_instances[$widget_id] ) ) {
-  
-          // Add to array
-          $active_widgets[$sidebar_id][$widget_id] = $widget_instances[$widget_id];
-  
-        }
-  
-      }
-  
-    }
-  
-    header( 'Content-disposition: attachment; filename=' . $theme . '-widgets.json' );
-    header( 'Content-Type: application/octet-stream; charset=' . $charset );
-    
-    echo serialize( array(
-      'template'         => $template,
-      'sidebars_widgets' => $active_widgets
-    ) );
-    
     die();
-  }
-}
-
-/**
- * Active widgets
- *
- * Gathers active widgets into an array with ID base, name, etc.
- * Used by export and import functions.
- *
- * @global array $wp_registered_widget_updates
- * @return array Widget information
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_active_widgets' ) ) {
-  function archetype_active_widgets() {
-    global $wp_registered_widget_controls;
-    
-    $available_widgets = array();
-    $widget_controls   = $wp_registered_widget_controls;
-    
-    // Get all available widgets the site supports
-    foreach ( $widget_controls as $widget ) {
-  
-      if ( ! empty( $widget['id_base'] ) && ! isset( $available_widgets[$widget['id_base']] ) ) { // no dupes
-  
-        $available_widgets[$widget['id_base']]['id_base'] = $widget['id_base'];
-        $available_widgets[$widget['id_base']]['name'] = $widget['name'];
-  
-      }
-  
-    }
-    
-    // Filter and return active widgets array
-    return apply_filters( 'archetype_active_widgets', $available_widgets );
   }
 }
 
@@ -280,15 +158,15 @@ if ( ! function_exists( 'archetype_customize_import' ) ) {
     if ( ! wp_verify_nonce( $_REQUEST['customize-import'], 'customize-importing' ) ) {
       return;
     }
-    
+
     global $wp_customize;
     global $customize_error;
-    
+
     $customize_error = false;
     $template        = get_option( 'template' );
     $raw             = file_get_contents( $_FILES['customize-import-file']['tmp_name'] );
     $data            = @unserialize( $raw );
-    
+
     // Data checks.
     if ( 'array' != gettype( $data ) ) {
       $customize_error = __( 'Error importing settings! Please check that you uploaded a customizer export file.', 'archetype' );
@@ -302,25 +180,25 @@ if ( ! function_exists( 'archetype_customize_import' ) ) {
       $customize_error = __( 'Error importing settings! The settings you uploaded are not for the current theme.', 'archetype' );
       return;
     }
-    
+
     // Import images.
     if ( isset( $_REQUEST['customize-import-images'] ) ) {
       $data['mods'] = archetype_customize_import_images( $data['mods'] );
     }
-    
+
     // Call the customize_save action.
     do_action( 'customize_save', $wp_customize );
-    
+
     // Loop through the mods.
     foreach ( $data['mods'] as $key => $val ) {
-      
+
       // Call the customize_save_ dynamic action.
       do_action( 'customize_save_' . $key, $wp_customize );
-      
+
       // Save the mod.
       set_theme_mod( $key, $val );
     }
-    
+
     // Call the customize_save_after action.
     do_action( 'customize_save_after', $wp_customize );
   }
@@ -334,15 +212,15 @@ if ( ! function_exists( 'archetype_customize_import' ) ) {
 if ( ! function_exists( 'archetype_customize_import_images' ) ) {
   function archetype_customize_import_images( $mods ) {
     foreach ( $mods as $key => $val ) {
-      
+
       if ( archetype_customize_is_image_url( $val ) ) {
-        
+
         $data = archetype_customize_sideload_image( $val );
-        
+
         if ( ! is_wp_error( $data ) ) {
-          
+
           $mods[ $key ] = $data->url;
-          
+
           // Handle header image controls.
           if ( isset( $mods[ $key . '_data' ] ) ) {
             $mods[ $key . '_data' ] = $data;
@@ -351,7 +229,7 @@ if ( ! function_exists( 'archetype_customize_import_images' ) ) {
         }
       }
     }
-    
+
     return $mods;
   }
 }
@@ -365,36 +243,36 @@ if ( ! function_exists( 'archetype_customize_import_images' ) ) {
 if ( ! function_exists( 'archetype_customize_sideload_image' ) ) {
   function archetype_customize_sideload_image( $file ) {
     $data = new stdClass();
-    
+
     if ( ! function_exists( 'media_handle_sideload' ) ) {
       require_once( ABSPATH . 'wp-admin/includes/media.php' );
       require_once( ABSPATH . 'wp-admin/includes/file.php' );
       require_once( ABSPATH . 'wp-admin/includes/image.php' );
     }
     if ( ! empty( $file ) ) {
-      
+
       // Set variables for storage, fix file filename for query strings.
       preg_match( '/[^\?]+\.(jpe?g|jpe|gif|png)\b/i', $file, $matches );
       $file_array = array();
       $file_array['name'] = basename( $matches[0] );
-  
+
       // Download file to temp location.
       $file_array['tmp_name'] = download_url( $file );
-  
+
       // If error storing temporarily, return the error.
       if ( is_wp_error( $file_array['tmp_name'] ) ) {
         return $file_array['tmp_name'];
       }
-  
+
       // Do the validation and storage stuff.
       $id = media_handle_sideload( $file_array, 0 );
-  
+
       // If error storing permanently, unlink.
       if ( is_wp_error( $id ) ) {
         @unlink( $file_array['tmp_name'] );
         return $id;
       }
-      
+
       // Build the object to return.
       $meta                = wp_get_attachment_metadata( $id );
       $data->attachment_id = $id;
@@ -403,7 +281,7 @@ if ( ! function_exists( 'archetype_customize_sideload_image' ) ) {
       $data->height        = $meta['height'];
       $data->width         = $meta['width'];
     }
-  
+
     return $data;
   }
 }
@@ -416,12 +294,12 @@ if ( ! function_exists( 'archetype_customize_sideload_image' ) ) {
 if ( ! function_exists( 'archetype_customize_is_image_url' ) ) {
   function archetype_customize_is_image_url( $string = '' ) {
     if ( is_string( $string ) ) {
-      
+
       if ( preg_match( '/\.(jpg|jpeg|jpe|gif|png|bmp|tif|tiff|ico|svg)/i', $string ) ) {
         return true;
       }
     }
-    
+
     return false;
   }
 }
@@ -513,13 +391,13 @@ if ( ! function_exists( 'archetype_sanitize_layout' ) ) {
 if ( ! function_exists( 'archetype_layout_class' ) ) {
   function archetype_layout_class( $classes ) {
     $layout = get_theme_mod( 'archetype_layout' );
-  
+
     if ( '' == $layout ) {
       $layout = 'right';
     }
-  
+
     $classes[] = $layout . '-sidebar';
-  
+
     return $classes;
   }
 }

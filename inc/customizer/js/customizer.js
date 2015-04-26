@@ -6,30 +6,16 @@
 ( function( $ ) {
   var Archetype_Customizer = {
     init: function() {
-      $( document ).on( 'click', 'input[name=customize-import-button]', Archetype_Customizer._import_customize );
-      $( document ).on( 'click', 'input[name=customize-export-button]', Archetype_Customizer._export_customize );
-      $( document ).on( 'click', 'input[name=widgets-import-button]', Archetype_Customizer._import_widgets   );
-      $( document ).on( 'click', 'input[name=widgets-export-button]', Archetype_Customizer._export_widgets   );
+      $( document ).on( 'click', 'input[name=customize-import-button]', Archetype_Customizer._import );
+      $( document ).on( 'click', 'input[name=customize-export-button]', Archetype_Customizer._export );
     },
-    _import_customize: function() {
-      Archetype_Customizer._import( 'customize' );
-    },
-    _export_customize: function() {
-      Archetype_Customizer._export( 'customize' );
-    },
-    _import_widgets: function() {
-      Archetype_Customizer._import( 'widgets' );
-    },
-    _export_widgets: function() {
-      Archetype_Customizer._export( 'widgets' );
-    },
-    _import: function( type ) {
+    _import: function() {
     var win     = $( window )
       , body    = $( 'body' )
-      , form    = $( '<form class="' + type + '-import-form" method="POST" enctype="multipart/form-data"></form>' )
-      , controls  = $( '.' + type + '-import-controls' )
-      , file    = $( 'input[name=' + type + '-import-file]' )
-      , message   = $( '.' + type + '-import-uploading' );
+      , form    = $( '<form class="customize-import-form" method="POST" enctype="multipart/form-data"></form>' )
+      , controls  = $( '.customize-import-controls' )
+      , file    = $( 'input[name=customize-import-file]' )
+      , message   = $( '.customize-import-uploading' );
       
       if ( '' == file.val() ) {
         alert( Archetype_Customizerl10n.emptyImport );
@@ -41,9 +27,8 @@
         form.submit();
       }
     },
-    _export: function( type ) {
-      var nonce = type == 'customize' ? Archetype_CustomizerConfig.exportCustomizeNonce : Archetype_CustomizerConfig.exportWidgetsNonce;
-      window.location.href = Archetype_CustomizerConfig.customizerURL + '?' + type + '-export=' + nonce;
+    _export: function() {
+      window.location.href = Archetype_CustomizerConfig.customizerURL + '?customize-export=' + Archetype_CustomizerConfig.customizerExportNonce;
       return false;
     }
   };

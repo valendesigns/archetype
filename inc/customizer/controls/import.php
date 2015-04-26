@@ -27,29 +27,3 @@ class Archetype_Import_Customizer_Control extends WP_Customize_Control {
     <?php
   }
 }
-
-/**
- * Class to create a Widget import control
- */
-class Archetype_Import_Widgets_Control extends WP_Customize_Control {
-  
-  /**
-   * Render the content on the theme customizer page
-   */
-  public function render_content() {
-    ?>
-    <span class="customize-control-title">
-      <?php echo esc_html( $this->label ); ?>
-    </span>
-    <span class="description customize-control-description">
-      <?php echo esc_attr( $this->description ); ?>
-    </span>
-    <div class="widgets-import-controls">
-      <input type="file" name="widgets-import-file" class="widgets-import-file" />
-      <?php wp_nonce_field( 'widgets-importing', 'widgets-import' ); ?>
-    </div>
-    <div class="widgets-import-uploading"><?php _e( 'Uploading...', 'archetype' ); ?></div>
-    <input type="button" class="button" name="widgets-import-button" value="<?php esc_attr_e( 'Import', 'archetype' ); ?>" />
-    <?php
-  }
-}

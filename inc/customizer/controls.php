@@ -51,6 +51,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
         'label'       => __( 'Logo SVG (logo above required)', 'archetype' ),
         'section'     => 'title_tagline',
         'settings'    => 'archetype_site_logo_svg',
+        'priority'    => 40,
       ) ) );
 
       /**
@@ -65,6 +66,14 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
         'label'       => __( 'Logo Margin Top (em)', 'archetype' ),
         'section'     => 'title_tagline',
         'settings'    => 'archetype_site_logo_margin_top',
+        'priority'    => 50,
+      ) ) );
+    } else {
+      $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_site_logo_info', array(
+        'section'     => 'title_tagline',
+        'type'        => 'text',
+        'description' => sprintf( __( 'Want to add your logo? Install %sJetpack%s!', 'archetype' ), '<a href="https://wordpress.org/plugins/jetpack/" target="_blank">', '</a>' ),
+        'priority'    => 40,
       ) ) );
     }
     
@@ -410,35 +419,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_import_export',
       'type'        => 'divider',
       'priority'    => 4,
-    ) ) );
-    
-    /**
-     * Add the import Widgets control.
-     */
-    $wp_customize->add_control( new Archetype_Import_Widgets_Control( $wp_customize, 'archetype_import_widgets', array(
-      'label'       => __( 'Import Widgets', 'archetype' ),
-      'section'     => 'archetype_import_export',
-      'settings'    => 'archetype_import_export',
-      'description' => __( 'Upload a file to import widget settings for this theme.', 'archetype' ),
-      'priority'    => 5,
-    ) ) );
-    
-    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_import_widgets_divider', array(
-      'section'     => 'archetype_import_export',
-      'settings'    => 'archetype_import_export',
-      'type'        => 'divider',
-      'priority'    => 6,
-    ) ) );
-    
-    /**
-     * Add the export Widgets control.
-     */
-    $wp_customize->add_control( new Archetype_Export_Widgets_Control( $wp_customize, 'archetype_export_widgets', array(
-      'label'       => __( 'Export Widgets', 'archetype' ),
-      'section'     => 'archetype_import_export',
-      'settings'    => 'archetype_import_export',
-      'description' => __( 'Click the button below to export the widgets for this theme.', 'archetype' ),
-      'priority'    => 7,
     ) ) );
   }
 }
