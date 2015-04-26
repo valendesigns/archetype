@@ -159,7 +159,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
         }';
       }
 
-      wp_add_inline_style( 'archetype-style', $woocommerce_style );
+      //wp_add_inline_style( 'archetype-style', $woocommerce_style );
 
     }
   }

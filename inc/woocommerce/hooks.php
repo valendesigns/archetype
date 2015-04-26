@@ -121,4 +121,4 @@ if ( ! class_exists( 'WC_Product_Reviews_Pro' ) ) {
  * @see archetype_add_bookings_customizer_css()
  */
 add_action( 'wp_enqueue_scripts',  'archetype_woocommerce_integrations_scripts' );
-//add_action( 'wp_enqueue_scripts', 'archetype_add_integrations_customizer_css'  );
+add_action( 'wp_enqueue_scripts', 'archetype_add_integrations_customizer_css'  );
