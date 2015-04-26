@@ -180,6 +180,9 @@ module.exports = function( grunt ) {
       frontend: {
         options: {
           potFilename: '<%= pkg.name %>.pot',
+          exclude: [
+            'dist/<%= pkg.name %>/.*' // Exclude deploy directory
+          ],
           processPot: function ( pot ) {
             pot.headers['project-id-version'];
             return pot;
@@ -243,7 +246,8 @@ module.exports = function( grunt ) {
         dot: true
       }
     },
-    
+
+    // Compress distribution package into a ZIP
     compress: {
       deploy: {
         options: {
@@ -258,13 +262,47 @@ module.exports = function( grunt ) {
         }]
       }
     },
-    
+
+    // Clean up
     clean: {
       core: {
         src: ['style-rtl.css']
       },
       deploy: {
         src: ['dist/<%= pkg.name %>']
+      }
+    },
+
+    // Shell actions for transifex client
+    shell: {
+      options: {
+        stdout: true,
+        stderr: true
+      },
+      txpush: {
+        command: 'tx push -s' // push the resources
+      },
+      txpull: {
+        command: 'tx pull -a -f' // pull the .po files
+      }
+    },
+
+    // Convert .po to .mo
+    potomo: {
+      options: {
+        poDel: false
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'languages/',
+          src: [
+            '*.po'
+          ],
+          dest: 'languages/',
+          ext: '.mo',
+          nonull: true
+        }]
       }
     }
 
@@ -282,6 +320,8 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-contrib-copy' );
   grunt.loadNpmTasks( 'grunt-contrib-compress' );
   grunt.loadNpmTasks( 'grunt-contrib-clean' );
+  grunt.loadNpmTasks( 'grunt-shell' );
+  grunt.loadNpmTasks( 'grunt-potomo' );
 
   // Register tasks
   grunt.registerTask( 'default', [
@@ -296,12 +336,23 @@ module.exports = function( grunt ) {
     'clean:core'
   ]);
 
+  grunt.registerTask( 'tx_update', [
+    'makepot',
+    'shell:txpush'
+  ]);
+
   grunt.registerTask( 'dev', [
     'default',
-    'makepot'
+    'tx_update'
+  ]);
+
+  grunt.registerTask( 'mo', [
+    'shell:txpull',
+    'potomo'
   ]);
 
   grunt.registerTask( 'deploy', [
+    'mo',
     'copy',
     'compress',
     'clean'
