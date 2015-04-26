@@ -30,12 +30,18 @@
   } );
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
-      $( '.page-header, #comments p.no-comments, .post-navigation a:hover' ).css( 'box-shadow', '5px 0px 0px ' + to + ' inset' );
+      $( '.page-header, #comments p.no-comments' ).css( 'box-shadow', '5px 0px 0px ' + to + ' inset' );
+      $( '.post-navigation a' ).on( 'mouseenter', function() {
+        $( this ).css( 'box-shadow', '5px 0px 0px ' + to + ' inset' );
+      } );
     } );
   } );
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
-      $( '.sticky-post, .pagination .prev, .pagination .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .woocommerce-pagination .prev, .woocommerce-pagination .next, .page-links a, .bx-controls-direction .bx-prev:hover, .bx-controls-direction .bx-next:hover' ).css( 'background-color', to );
+      $( '.sticky-post, .pagination .prev, .pagination .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .woocommerce-pagination .prev, .woocommerce-pagination .next, .page-links a' ).css( 'background-color', to );
+      $( '.bx-controls-direction .bx-prev, .bx-controls-direction .bx-next' ).on( 'mouseenter', function() {
+        $( this ).css( 'background-color', to );
+      } );
     } );
   } );
   wp.customize( 'archetype_text_color', function( value ) {
