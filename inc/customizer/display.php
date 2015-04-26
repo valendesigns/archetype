@@ -38,8 +38,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       color: ' . $text_color . ';
     }
     #comments .comment-list .bypostauthor > .comment-body cite:after,
-    #comments .commentlist .bypostauthor > .comment-body cite:after,
-    .secondary-navigation .menu a:not(.button) {
+    #comments .commentlist .bypostauthor > .comment-body cite:after {
       color: ' . archetype_adjust_color_brightness( $text_color, 51 ) . ';
     }
     .widget_search form input[type=search]:focus,
@@ -88,6 +87,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       border-color: ' . $heading_color . ';
     }';
     
+    // Link Color
     $link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color', apply_filters( 'archetype_default_link_color', '#ee543f' ) ) );
 
     $style.= '
@@ -112,11 +112,20 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       border-color: ' . $link_color . ';
     }';
     
+    // Link Color Hover
     $link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color_hover', apply_filters( 'archetype_default_link_color_hover', '#111' ) ) );
 
     $style.= '
     a:hover {
       color: ' . $link_color_hover . ';
+    }';
+
+    // Header Background
+    $header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );
+
+    $style.= '
+    .site-header {
+      background-color: ' . $header_background_color . ';
     }';
     
     $woocommerce_style = '';

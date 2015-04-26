@@ -22,15 +22,41 @@ $color-body:                    #555;
 $color-body-bg:                 #f1f1f1;
 
 
+// Headings
+
+$color-heading:                 #333;
+
+
+// Links
+
+$color-link:                    #ee543f;
+$color-link-hover:              #111;
+
+
 // Header
 
 $color-header:                  #888;
 $color-header-bg:               #353b3f;
+$color-header-link:             #aaa;
+$color-header-link-hover:       #ee543f;
 
 
-// Headings
+// Navigation
 
-$color-heading:                 #333;
+$color-nav-bg:                  darken( $color-header-bg, 5% );
+$color-nav-link-active-bg:      darken( $color-nav-bg, 2.5% );
+$color-nav-link-hover-bg:       lighten( $color-nav-bg, 2.5% );
+$color-nav-link:                #bbb;
+$color-nav-link-active:         #fff;
+$color-nav-link-hover:          #fff;
+
+$color-nav-alt:                 $color-header;
+$color-nav-alt-bg:              lighten( $color-header-bg, 5% );
+$color-nav-alt-link-active-bg:  darken( $color-nav-alt-bg, 2.5% );
+$color-nav-alt-link-hover-bg:   lighten( $color-nav-alt-bg, 2.5% );
+$color-nav-alt-link:            #ddd;
+$color-nav-alt-link-active:     #fff;
+$color-nav-alt-link-hover:      #fff;
 
 
 // Post
@@ -54,12 +80,6 @@ $color-input-bg:                darken( $color-body-bg, 5% );
 $color-input-bg-focus:          darken( $color-body-bg, 10% );
 
 
-// Navigation
-
-$color-nav-alt:                 $color-header;
-$color-nav-alt-bg:              $color-header-bg;
-
-
 // Footer
 
 $color-footer:                  $color-header;
@@ -68,17 +88,6 @@ $color-footer-heading:          #eee;
 $color-footer-lower:            $color-footer;
 $color-footer-lower-bg:         darken( $color-footer-bg, 5% );
 
-
-// Links
-
-$color-link:                    #ee543f;
-$color-link-hover:              #111;
-$color-link-nav:                #bbb;
-$color-link-nav-active:         #fff;
-$color-link-nav-hover:          $color-link-nav-active;
-$color-link-nav-alt:            #ddd;
-$color-link-nav-alt-active:     #fff;
-$color-link-nav-alt-hover:      $color-link;
 $color-link-footer:             #ee543f;
 $color-link-footer-hover:       #fff;
 

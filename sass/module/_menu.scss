@@ -56,7 +56,7 @@
 
   li {
     a {
-      color: $color-link-nav;
+      color: $color-nav-link;
       padding: .857em 1.387em;
       display: block;
 
@@ -68,7 +68,7 @@
       }
 
       &:hover {
-        color: $color-link-nav-hover;
+        color: $color-nav-link-hover;
       }
     }
 
@@ -76,8 +76,8 @@
     &.current_page_parent,
     &.current-menu-ancestor {
       > a {
-        background-color: rgba(0,0,0,0.1);
-        color: $color-link-nav-active;
+        background-color: $color-nav-link-active-bg;
+        color: $color-nav-link-active;
       }
     }
   }
@@ -156,14 +156,14 @@
         position: absolute;
         top: 100%;
         z-index: 99999;
-        background-color: $color-header-bg;
+        background-color: $color-nav-bg;
         display: none; // display: none; is required to make dropdowns work on touch devices
 
         li {
           float: none;
 
           a {
-            width: 200px;
+            width: 12.500em;
           }
         }
       }
@@ -213,11 +213,10 @@
 
       ul {
         // Dropdowns
-        background-color: $color-header-bg;
+        background-color: $color-nav-bg;
         margin-left: 0;
 
         li {
-          background-color: rgba(0,0,0,0.1);
           display: block;
 
           a {
@@ -247,13 +246,12 @@
 
         ul {
           margin-left: 0;
-          border-top-color: $color-post-border;
           box-shadow: none;
         }
 
         a:hover,
         li:hover > a {
-          background-color: rgba(255,255,255,0.05);
+          background-color: $color-nav-link-hover-bg;
         }
       }
     }
@@ -274,13 +272,21 @@
     line-height: 1;
     
     ul.menu {
-      li,
-      .product_list_widget {
+      li {
         a {
-          color: $color-link-nav-alt;
+          color: $color-nav-alt-link;
 
           &:hover {
-            color: $color-link-nav-alt-hover;
+            color: $color-nav-alt-link-hover;
+          }
+        }
+        
+        ul {
+          background-color: $color-nav-alt-bg;
+
+          a:hover,
+          li:hover > a {
+            background-color: $color-nav-alt-link-hover-bg;
           }
         }
 
@@ -288,9 +294,13 @@
         &.current_page_parent,
         &.current-menu-ancestor {
           > a {
-            color: $color-link-nav-alt-active;
+            color: $color-nav-alt-link-active;
+            background-color: $color-nav-alt-link-active-bg;
           }
         }
+      }
+      > li > a {
+        background: none !important;
       }
     }
 
@@ -321,30 +331,9 @@
         display: none;
       }
 
-      ul {
-        background-color: $color-nav-alt-bg;
-
-        a {
-          padding: .326em .857em;
-        }
-
-        li:first-child a {
-          padding-top: 1em;
-        }
-
-        li:last-child a {
-          padding-bottom: 1em;
-        }
-
-        ul {
-          margin-top: -.618em;
-        }
-      }
-
       a:not(.button) {
-        padding: 1.387em .857em;
+        padding: 1.214em 1em;
         font-weight: 400;
-        color: lighten( $color-body, 20% );
 
         &:hover {
           text-decoration: none;

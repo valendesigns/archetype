@@ -104,7 +104,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
 
     /**
-     * Heading color
+     * Heading Color
      */
     $wp_customize->add_setting( 'archetype_heading_color', array(
       'default'           => apply_filters( 'archetype_default_heading_color', '#333' ),
@@ -135,7 +135,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
     
     /**
-     * Accent Color Hover
+     * Link Color Hover
      */
     $wp_customize->add_setting( 'archetype_link_color_hover', array(
       'default'           => apply_filters( 'archetype_default_link_color_hover', '#111' ),
@@ -151,11 +151,13 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     // END Typography
 
+    // BEGIN Header
+
     /**
      * Header Background
      */
     $wp_customize->add_setting( 'archetype_header_background_color', array(
-      'default'           => apply_filters( 'archetype_default_header_background_color', '#ee543f' ),
+      'default'           => apply_filters( 'archetype_default_header_background_color', '#353b3f' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
@@ -168,10 +170,10 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
 
     /**
-     * Header text color
+     * Header Text Color
      */
     $wp_customize->add_setting( 'archetype_header_text_color', array(
-      'default'           => apply_filters( 'archetype_default_header_text_color', '#8a3125' ),
+      'default'           => apply_filters( 'archetype_default_header_text_color', '#888' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
@@ -184,10 +186,10 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
 
     /**
-     * Header link color
+     * Header Link Color
      */
     $wp_customize->add_setting( 'archetype_header_link_color', array(
-      'default'           => apply_filters( 'archetype_default_header_link_color', '#ffffff' ),
+      'default'           => apply_filters( 'archetype_default_header_link_color', '#aaa' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
@@ -198,7 +200,25 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_header_link_color',
       'priority'    => 30,
     ) ) );
-    
+
+    /**
+     * Header Link Color Hover
+     */
+    $wp_customize->add_setting( 'archetype_header_link_color_hover', array(
+      'default'           => apply_filters( 'archetype_default_header_link_color_hover', '#ee543f' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_link_color_hover', array(
+      'label'       => __( 'Link hover color', 'archetype' ),
+      'section'     => 'header_image',
+      'settings'    => 'archetype_header_link_color_hover',
+      'priority'    => 40,
+    ) ) );
+
+    // END Header
+
     /**
      * Content section
      */

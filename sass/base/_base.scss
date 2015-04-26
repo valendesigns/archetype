@@ -23,6 +23,14 @@ body {
   background-position: center center;
   position: relative;
   z-index: 999;
+  
+  a {
+    color: $color-header-link;
+
+    &:hover {
+      color: $color-header-link-hover;
+    }
+  }
 
   .site-logo-anchor,
   .site-logo-link {
@@ -97,7 +105,6 @@ body {
 
     a {
       font-size: 1em !important;
-      color: $color-header;
       display: block;
       text-decoration: none;
       display: block;
@@ -123,10 +130,6 @@ body {
         height: 100%;
         text-align: center;
         content: "\f179";
-      }
-
-      &:hover {
-        color: $color-link;
       }
     }
 
@@ -414,7 +417,7 @@ table {
 
 @media screen and (min-width: 768px) {
   #navigation {
-    background-color: rgba(0,0,0,0.1);
+    background-color: $color-nav-bg;
   }
 
   .site-info {
