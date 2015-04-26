@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: $color-footer-lower-bg;
+}
+
+body,
 .site {
   background-color: $color-body-bg;
 }
@@ -155,7 +160,7 @@
 }
 
 .site-info {
-  background-color: rgba(0,0,0,0.2);
+  background-color: $color-footer-lower-bg;
   padding: 2.625em 0;
 
   .credit {

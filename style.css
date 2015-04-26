@@ -361,7 +361,10 @@ td, th {
 * {
   box-sizing: border-box; }
 
-.site {
+html {
+  background-color: #292e31; }
+
+body, .site {
   background-color: #f1f1f1; }
 
 /**
@@ -452,7 +455,7 @@ td, th {
     margin-bottom: 0; }
 
 .site-info {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #292e31;
   padding: 2.625em 0; }
   .site-info .credit {
     text-align: center; }
