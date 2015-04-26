@@ -88,6 +88,30 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       border-color: ' . $heading_color . ';
     }';
     
+    $link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color', apply_filters( 'archetype_default_link_color', '#ee543f' ) ) );
+
+    $style.= '
+    a,
+    .error-404 h1
+    .subscribe-and-connect-connect a:hover,
+    .widget-area .widget a:hover {
+      color: ' . $link_color . ';
+    }
+    
+    a:focus,
+    button:focus,
+    input[type="button"]:focus,
+    input[type="reset"]:focus,
+    input[type="submit"]:focus,
+    .button:focus,
+    .added_to_cart:focus {
+      outline-color: ' . $link_color . ';
+    }
+    
+    .error-404 h1 {
+      border-color: ' . $link_color . ';
+    }';
+    
     $woocommerce_style = '';
 
     wp_add_inline_style( 'archetype-style', $style );

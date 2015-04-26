@@ -61,4 +61,23 @@
       } );
     } );
   } );
+  wp.customize( 'archetype_link_color', function( value ) {
+    value.bind( function( to ) {
+      // Color
+      $( 'a, .error-404 h1' ).css( 'color', to );
+
+      // Color Hover
+      $( '.subscribe-and-connect-connect a, .widget-area .widget a' ).on( 'mouseenter', function() {
+        $( this ).css( 'color', to );
+      } );
+
+      // Outline Color Focus
+      $( 'a:focus, button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart' ).on( 'focus', function() {
+        $( this ).css( 'outline-color', to );
+      } );
+
+      // Border Color
+      $( '.error-404 h1' ).css( 'border-color', to );
+    } );
+  } );
 } )( jQuery );
