@@ -80,17 +80,6 @@ $color-input-focus:             darken( $color-input, 10% );
 $color-input-bg-focus:          darken( $color-body-bg, 10% );
 
 
-// Footer
-
-$color-footer:                  $color-header;
-$color-footer-bg:               $color-header-bg;
-$color-footer-heading:          #eee;
-$color-footer-lower:            $color-footer;
-$color-footer-lower-bg:         darken( $color-footer-bg, 5% );
-$color-footer-link:             #ee543f;
-$color-footer-link-hover:       #fff;
-
-
 // Buttons
 
 $color-button:                  #fff;
@@ -101,6 +90,17 @@ $color-button-border:           #d94834;
 $color-button-border-hover:     #8b949b;
 $color-button-shadow:           $color-button-border;
 $color-button-shadow-hover:     $color-button-border-hover;
+
+
+// Footer
+
+$color-footer:                  $color-header;
+$color-footer-bg:               $color-header-bg;
+$color-footer-heading:          #eee;
+$color-footer-lower:            $color-footer;
+$color-footer-lower-bg:         darken( $color-footer-bg, 5% );
+$color-footer-link:             #ee543f;
+$color-footer-link-hover:       #fff;
 
 
 // Cart

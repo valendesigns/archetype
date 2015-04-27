@@ -324,6 +324,40 @@ article + .author-info,
   box-shadow: 0px -1px 0px ' . $post_background_color. ' inset;
 }';
 
+    // Form Text Color
+    $form_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_text_color', apply_filters( 'archetype_default_form_text_color', '#555' ) ) );
+
+    // Form Background Color
+    $form_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_background_color', apply_filters( 'archetype_default_form_background_color', '#e4e4e4' ) ) );
+
+    // Form Focus Text Color
+    $form_text_focus_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_text_focus_color', apply_filters( 'archetype_default_form_text_focus_color', '#3b3b3b' ) ) );
+
+    // Form Focus Background Color
+    $form_background_focus_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_background_focus_color', apply_filters( 'archetype_default_form_background_focus_color', '#d7d7d7' ) ) );
+
+    $style.= '
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+.input-text {
+  background-color: ' . $form_background_color . ';
+  color: ' . $form_text_color . ';
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+.input-text:focus {
+  background-color: ' . $form_background_focus_color . ';
+  color: ' . $form_text_focus_color . ';
+}';
+
     // Search Text Color
     $search_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_text_color', apply_filters( 'archetype_default_search_text_color', '#555' ) ) );
 

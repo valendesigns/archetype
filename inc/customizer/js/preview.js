@@ -72,7 +72,7 @@
       } );
 
       // Outline Color Focus
-      $( 'a:focus, button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart' ).on( 'focus', function() {
+      $( 'a, button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart' ).on( 'focus', function() {
         $( this ).css( 'outline-color', to );
       } );
 
@@ -260,6 +260,38 @@
     value.bind( function( to ) {
       // Box Shadow Color
       $( 'article + .author-info, #comments .comment-list .comment-content, #comments .commentlist .comment-content, #respond, .hentry, .post-navigation' ).css( 'box-shadow', '0px -1px 0px ' + to + ' inset' );
+    } );
+  } );
+  wp.customize( 'archetype_form_text_color', function( value ) {
+    value.bind( function( to ) {
+      // Text Color
+      $( 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .input-text' ).not( '.widget_search *, .widget_product_search *, .error-404-search *' ).css( 'color', to ).on( 'blur', function() {
+        $( this ).css( 'color', to );
+      } );
+    } );
+  } );
+  wp.customize( 'archetype_form_background_color', function( value ) {
+    value.bind( function( to ) {
+      // Background Color
+      $( 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .input-text' ).not( '.widget_search *, .widget_product_search *, .error-404-search *' ).css( 'background-color', to ).on( 'blur', function() {
+        $( this ).css( 'background-color', to );
+      } );
+    } );
+  } );
+  wp.customize( 'archetype_form_text_focus_color', function( value ) {
+    value.bind( function( to ) {
+      // Text Color
+      $( 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .input-text' ).not( '.widget_search *, .widget_product_search *, .error-404-search *' ).on( 'focus', function() {
+        $( this ).css( 'color', to );
+      } );
+    } );
+  } );
+  wp.customize( 'archetype_form_background_focus_color', function( value ) {
+    value.bind( function( to ) {
+      // Background Color
+      $( 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .input-text' ).not( '.widget_search *, .widget_product_search *, .error-404-search *' ).on( 'focus', function() {
+        $( this ).css( 'background-color', to );
+      } );
     } );
   } );
   wp.customize( 'archetype_search_text_color', function( value ) {
