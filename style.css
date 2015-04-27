@@ -1071,6 +1071,18 @@ fieldset {
   transition: opacity 0.5s 0.5s ease;
   opacity: 0; }
 
+::-webkit-input-placeholder {
+  color: inherit; }
+
+:-moz-placeholder {
+  color: inherit; }
+
+::-moz-placeholder {
+  color: inherit; }
+
+:-ms-input-placeholder {
+  color: inherit; }
+
 /**
  * Main Naivgation
  */
@@ -2221,9 +2233,10 @@ embed, iframe, object {
 
 .widget_search form, .widget_product_search form, .error-404-search form {
   position: relative;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  color: #555; }
   .widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search] {
-    background: #fff;
+    background-color: #fff;
     width: 100%;
     font-size: 1.067em;
     padding: .75em 1em .75em 2.625em;
@@ -2240,7 +2253,8 @@ embed, iframe, object {
     position: absolute;
     top: .813em;
     left: 1em;
-    line-height: 1; }
+    line-height: 1;
+    color: inherit; }
 
 .widget_recent_entries ul, .widget_pages ul, .widget_categories ul, .widget_archive ul, .widget_recent_comments ul, .widget_nav_menu ul, .widget_links ul, .widget_projects ul, .widget_project_types ul {
   margin: 0; }

@@ -324,6 +324,34 @@ article + .author-info,
   box-shadow: 0px -1px 0px ' . $post_background_color. ' inset;
 }';
 
+    // Search Text Color
+    $search_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_text_color', apply_filters( 'archetype_default_search_text_color', '#555' ) ) );
+
+    // Search Background Color
+    $search_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_background_color', apply_filters( 'archetype_default_search_background_color', '#fff' ) ) );
+
+    // Search Shadow Color
+    $search_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_shadow_color', apply_filters( 'archetype_default_search_shadow_color', '#8b949b' ) ) );
+
+    $style.= '
+.widget_search form input[type=search],
+.widget_product_search form input[type=search],
+.error-404-search form input[type=search] {
+  background-color: ' . $search_background_color . ';
+  box-shadow: 0px -1px 0px ' . $search_shadow_color . ' inset;
+  color: ' . $search_text_color . ';
+}
+.widget_search form input[type=search]:focus,
+.widget_product_search form input[type=search]:focus,
+.error-404-search form input[type=search]:focus {
+  color: ' . archetype_adjust_color_brightness( $search_text_color, -25.5 ) . ';
+}
+.widget_search form,
+.widget_product_search form,
+.error-404-search form {
+  color: ' . $search_text_color . ';
+}';
+
     $woocommerce_style = '';
 
     wp_add_inline_style( 'archetype-style', $style );

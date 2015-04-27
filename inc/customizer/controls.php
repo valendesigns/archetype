@@ -522,12 +522,72 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     
     // END Post
 
+    // BEGIN Search Widget
+
+    /**
+     * Add the Search Widget section
+     */
+    $wp_customize->add_section( 'archetype_search' , array(
+      'title'       => __( 'Search Widget', 'archetype' ),
+      'priority'    => 50,
+    ) );
+
+    /**
+     * Search Widget Text Color
+     */
+    $wp_customize->add_setting( 'archetype_search_text_color', array(
+      'default'           => apply_filters( 'archetype_default_search_text_color', '#555' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_search_text_color', array(
+      'label'       => __( 'Text color', 'archetype' ),
+      'section'     => 'archetype_search',
+      'settings'    => 'archetype_search_text_color',
+      'priority'    => 10,
+    ) ) );
+
+    /**
+     * Search Widget Background Color
+     */
+    $wp_customize->add_setting( 'archetype_search_background_color', array(
+      'default'           => apply_filters( 'archetype_default_search_background_color', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_search_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_search',
+      'settings'    => 'archetype_search_background_color',
+      'priority'    => 10,
+    ) ) );
+
+    /**
+     * Search Widget Shadow Color
+     */
+    $wp_customize->add_setting( 'archetype_search_shadow_color', array(
+      'default'           => apply_filters( 'archetype_default_search_shadow_color', '#8b949b' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_search_shadow_color', array(
+      'label'       => __( 'Shadow color', 'archetype' ),
+      'section'     => 'archetype_search',
+      'settings'    => 'archetype_search_shadow_color',
+      'priority'    => 10,
+    ) ) );
+
+    // END Search Widget
+
     /**
      * Footer section
      */
     $wp_customize->add_section( 'archetype_footer' , array(
       'title'       => __( 'Footer', 'archetype' ),
-      'priority'    => 45,
+      'priority'    => 60,
       'description' => __( 'Customise the look & feel of your web site footer.', 'archetype' ),
     ) );
 
@@ -596,7 +656,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_buttons' , array(
       'title'       => __( 'Buttons', 'archetype' ),
-      'priority'    => 50,
+      'priority'    => 65,
       'description' => __( 'Customise the look & feel of your web site buttons.', 'archetype' ),
     ) );
 
@@ -665,7 +725,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_layout' , array(
       'title'       => __( 'Layout', 'archetype' ),
-      'priority'    => 60,
+      'priority'    => 70,
     ) );
 
     $wp_customize->add_setting( 'archetype_layout', array(

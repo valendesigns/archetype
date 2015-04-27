@@ -262,4 +262,22 @@
       $( 'article + .author-info, #comments .comment-list .comment-content, #comments .commentlist .comment-content, #respond, .hentry, .post-navigation' ).css( 'box-shadow', '0px -1px 0px ' + to + ' inset' );
     } );
   } );
+  wp.customize( 'archetype_search_text_color', function( value ) {
+    value.bind( function( to ) {
+      // Text Color
+      $( '.widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search], .widget_search form, .widget_product_search form, .error-404-search form' ).css( 'color', to );
+    } );
+  } );
+  wp.customize( 'archetype_search_background_color', function( value ) {
+    value.bind( function( to ) {
+      // Background Color
+      $( '.widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search]' ).css( 'background-color', to );
+    } );
+  } );
+  wp.customize( 'archetype_search_shadow_color', function( value ) {
+    value.bind( function( to ) {
+      // Shadow Color
+      $( '.widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search]' ).css( 'box-shadow', '0px -1px 0px ' + to + ' inset' );
+    } );
+  } );
 } )( jQuery );

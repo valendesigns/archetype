@@ -71,9 +71,10 @@
   form {
     position: relative;
     margin-bottom: 0;
+    color: $color-search;
 
     input[type=search] {
-      background: $color-search-bg;
+      background-color: $color-search-bg;
       width: 100%;
       font-size: 1.067em;
       padding: .75em 1em .75em 2.625em;
@@ -97,6 +98,7 @@
       top: .813em;
       left: 1em;
       line-height: 1;
+      color: inherit;
     }
   }
 }
