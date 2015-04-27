@@ -43,7 +43,7 @@
 
 .format-quote {
   .entry-header {
-    background: $color-button-bg;
+    background-color: $color-button-bg;
 
     h1 {
       color: $color-button;
@@ -59,15 +59,16 @@
   }
 
   .entry-content {
-    background: $color-button-bg;
+    background-color: $color-button-bg;
     color: $color-button;
 
     .entry-body {
       a {
         color: $color-button;
+        border-bottom: 1px solid $color-button;
 
         &:hover {
-          border-bottom: 1px solid $color-button;
+          border-bottom: 0 !important;
         }
       }
     }

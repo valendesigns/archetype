@@ -969,7 +969,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
   border-radius: 3px;
   box-shadow: 0 -2px 0 #d94834 inset; }
   button.cta, button.alt, input[type="button"].cta, input[type="button"].alt, input[type="reset"].cta, input[type="reset"].alt, input[type="submit"].cta, input[type="submit"].alt, .button.cta, .button.alt, .added_to_cart.cta, .added_to_cart.alt {
-    background: #fff;
+    background-color: #fff;
     border-color: #8b949b;
     color: #555;
     box-shadow: 0 -2px 0 #8b949b inset; }
@@ -979,7 +979,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
       color: #fff;
       box-shadow: 0 -2px 0 #d94834 inset; }
   button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover {
-    background: #fff;
+    background-color: #fff;
     border-color: #8b949b;
     color: #555;
     box-shadow: 0 -2px 0 #8b949b inset; }
@@ -1613,7 +1613,7 @@ fieldset {
     padding: 1em; }
 
 .format-quote .entry-header {
-  background: #ed543f; }
+  background-color: #ed543f; }
   .format-quote .entry-header h1 {
     color: #fff; }
     .format-quote .entry-header h1 a {
@@ -1621,12 +1621,13 @@ fieldset {
       .format-quote .entry-header h1 a:hover {
         border-bottom: 1px solid #fff; }
 .format-quote .entry-content {
-  background: #ed543f;
+  background-color: #ed543f;
   color: #fff; }
   .format-quote .entry-content .entry-body a {
-    color: #fff; }
+    color: #fff;
+    border-bottom: 1px solid #fff; }
     .format-quote .entry-content .entry-body a:hover {
-      border-bottom: 1px solid #fff; }
+      border-bottom: 0 !important; }
   .format-quote .entry-content figure figcaption {
     font-size: 0.667em; }
     .format-quote .entry-content figure figcaption:before {

@@ -669,25 +669,45 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     /**
-     * Button background color
+     * Button 2D
      */
-    $wp_customize->add_setting( 'archetype_button_background_color', array(
-      'default'           => apply_filters( 'archetype_default_button_background_color', '#60646c' ),
-      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    $wp_customize->add_setting( 'archetype_button_2d', array(
+      'default'     => apply_filters( 'archetype_default_button_2d', false ),
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_background_color', array(
-      'label'       => __( 'Background color', 'archetype' ),
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_button_2d', array(
+      'label'       => __( '2D Buttons', 'archetype' ),
       'section'     => 'archetype_buttons',
-      'settings'    => 'archetype_button_background_color',
-      'priority'    => 10,
+      'settings'    => 'archetype_button_2d',
+      'priority'    => 5,
+      'type'        => 'checkbox',
+    ) ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_2d_text', array(
+      'section'     => 'archetype_buttons',
+      'type'        => 'text',
+      'description' => __( 'Checking 2D will remove the shadow effect.', 'archetype' ),
+      'priority'    => 6,
+    ) ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_2d_divider', array(
+      'section'     => 'archetype_buttons',
+      'type'        => 'divider',
+      'priority'    => 7,
+    ) ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_text', array(
+      'section'     => 'archetype_buttons',
+      'type'        => 'text',
+      'description' => __( "It's important to note that the default button colors are used in many places as an accent color.", 'archetype' ),
+      'priority'    => 8,
     ) ) );
 
     /**
      * Button text color
      */
     $wp_customize->add_setting( 'archetype_button_text_color', array(
-      'default'           => apply_filters( 'archetype_default_button_text_color', '#ffffff' ),
+      'default'           => apply_filters( 'archetype_default_button_text_color', '#fff' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
     ) );
 
@@ -695,37 +715,119 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Text color', 'archetype' ),
       'section'     => 'archetype_buttons',
       'settings'    => 'archetype_button_text_color',
+      'priority'    => 10,
+    ) ) );
+
+    /**
+     * Button background color
+     */
+    $wp_customize->add_setting( 'archetype_button_background_color', array(
+      'default'           => apply_filters( 'archetype_default_button_background_color', '#ed543f' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_buttons',
+      'settings'    => 'archetype_button_background_color',
+      'priority'    => 15,
+    ) ) );
+
+    /**
+     * Button border color
+     */
+    $wp_customize->add_setting( 'archetype_button_border_color', array(
+      'default'           => apply_filters( 'archetype_default_button_border_color', '#d94834' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_border_color', array(
+      'label'       => __( 'Border color', 'archetype' ),
+      'section'     => 'archetype_buttons',
+      'settings'    => 'archetype_button_border_color',
       'priority'    => 20,
     ) ) );
 
     /**
-     * Button alt background color
+     * Button shadow color
      */
-    $wp_customize->add_setting( 'archetype_button_alt_background_color', array(
-      'default'           => apply_filters( 'archetype_default_button_alt_background_color', '#96588a' ),
+    $wp_customize->add_setting( 'archetype_button_shadow_color', array(
+      'default'           => apply_filters( 'archetype_default_button_shadow_color', '#d94834' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_alt_background_color', array(
-      'label'       => __( 'Alternate button background color', 'archetype' ),
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_shadow_color', array(
+      'label'       => __( 'Shadow color', 'archetype' ),
       'section'     => 'archetype_buttons',
-      'settings'    => 'archetype_button_alt_background_color',
+      'settings'    => 'archetype_button_shadow_color',
+      'priority'    => 25,
+    ) ) );
+    
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_hover_text', array(
+      'section'     => 'archetype_buttons',
+      'type'        => 'text',
+      'description' => sprintf( __( "Adding the %s class to your buttons will inverse their styles. Which means the hover colors will become the default state, and vice versa.", 'archetype' ), '<code>.alt</code>' ),
+      'priority'    => 29,
+    ) ) );
+    
+    /**
+     * Button text hover color
+     */
+    $wp_customize->add_setting( 'archetype_button_text_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_button_text_hover_color', '#555' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_text_hover_color', array(
+      'label'       => __( 'Text alt/hover color', 'archetype' ),
+      'section'     => 'archetype_buttons',
+      'settings'    => 'archetype_button_text_hover_color',
       'priority'    => 30,
     ) ) );
 
     /**
-     * Button alt text color
+     * Button background hover color
      */
-    $wp_customize->add_setting( 'archetype_button_alt_text_color', array(
-      'default'           => apply_filters( 'archetype_default_button_alt_text_color', '#ffffff' ),
+    $wp_customize->add_setting( 'archetype_button_background_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_button_background_hover_color', '#fff' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_alt_text_color', array(
-      'label'       => __( 'Alternate button text color', 'archetype' ),
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_background_hover_color', array(
+      'label'       => __( 'Background alt/hover color', 'archetype' ),
       'section'     => 'archetype_buttons',
-      'settings'    => 'archetype_button_alt_text_color',
+      'settings'    => 'archetype_button_background_hover_color',
+      'priority'    => 35,
+    ) ) );
+
+    /**
+     * Button border hover color
+     */
+    $wp_customize->add_setting( 'archetype_button_border_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_button_border_hover_color', '#8b949b' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_border_hover_color', array(
+      'label'       => __( 'Border alt/hover color', 'archetype' ),
+      'section'     => 'archetype_buttons',
+      'settings'    => 'archetype_button_border_hover_color',
       'priority'    => 40,
+    ) ) );
+
+    /**
+     * Button shadow hover color
+     */
+    $wp_customize->add_setting( 'archetype_button_shadow_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_button_shadow_hover_color', '#8b949b' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_shadow_hover_color', array(
+      'label'       => __( 'Shadow alt/hover color', 'archetype' ),
+      'section'     => 'archetype_buttons',
+      'settings'    => 'archetype_button_shadow_hover_color',
+      'priority'    => 45,
     ) ) );
 
     // END Buttons
