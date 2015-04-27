@@ -228,14 +228,14 @@ body {
   }
 
   a:not(.button) {
-    color: $color-link-footer;
+    color: $color-footer-link;
 
     &:hover {
-      color: $color-link-footer-hover;
+      color: $color-footer-link-hover;
     }
 
     &:focus {
-      outline: 1px dotted $color-link-footer;
+      outline: 1px dotted $color-footer-link;
     }
   }
 

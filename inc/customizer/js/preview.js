@@ -47,7 +47,7 @@
       } );
 
       // Border Color
-      $( '.page-links a, .widget h3.widget-title' ).css( 'border-color', to );
+      $( '.page-links a, .page-links > span, .widget h3.widget-title' ).css( 'border-color', to );
     } );
   } );
   wp.customize( 'archetype_heading_color', function( value ) {
@@ -230,6 +230,36 @@
     value.bind( function( to ) {
       // Background Color
       $( '.secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a' ).css( 'background-color', to );
+    } );
+  } );
+  wp.customize( 'archetype_post_background_color', function( value ) {
+    value.bind( function( to ) {
+      // Background Color
+      $( 'article + .author-info, #comments p.no-comments, #comments .comment-list .comment-content, #comments .commentlist .comment-content, #respond, .page-header, .hentry, .pagination, .image-navigation, .comment-navigation, .woocommerce-pagination, .post-navigation' ).css( 'background-color', to );
+
+      // Color
+      $( '.sticky-post, .page-links a, .page-links a > span' ).css( 'color', to );
+    } );
+  } );
+  wp.customize( 'archetype_post_border_color', function( value ) {
+    value.bind( function( to ) {
+      // Border Bottom Color
+      $( 'table thead th, #comments .comment-list .comment-meta, #comments .commentlist .comment-meta' ).css( 'border-bottom-color', to );
+
+      // Border Top Color
+      $( 'table tfoot th, table tfoot td, .author-info, .hentry .entry-meta' ).css( 'border-top-color', to );
+
+      // Border Color
+      $( '.format-quote .author-info + .entry-meta' ).css( 'border-color', to );
+
+      // Box Shadow Color
+      $( '.post-navigation div + div' ).css( 'box-shadow', '0px 1px 0px ' + to + ' inset' );
+    } );
+  } );
+  wp.customize( 'archetype_post_shadow_color', function( value ) {
+    value.bind( function( to ) {
+      // Box Shadow Color
+      $( 'article + .author-info, #comments .comment-list .comment-content, #comments .commentlist .comment-content, #respond, .hentry, .post-navigation' ).css( 'box-shadow', '0px -1px 0px ' + to + ' inset' );
     } );
   } );
 } )( jQuery );

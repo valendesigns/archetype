@@ -79,9 +79,10 @@
       padding: .75em 1em .75em 2.625em;
       box-shadow: 0px -1px 0px $color-search-shadow inset;
       border-radius: $radius-post;
+      color: $color-search;
       
       &:focus {
-        color: darken( $color-body, 10% );
+        color: darken( $color-search, 10% );
       }
     }
 

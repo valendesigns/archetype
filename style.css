@@ -1265,7 +1265,7 @@ fieldset {
  * Content
  */
 .page-header {
-  background: #fff;
+  background-color: #fff;
   margin-bottom: 2.625em;
   padding: 2.625em;
   box-shadow: 5px 0px 0px #555 inset;
@@ -1278,7 +1278,7 @@ fieldset {
       margin-bottom: 0; }
 
 .hentry {
-  background: #fff;
+  background-color: #fff;
   margin-bottom: 2.625em;
   position: relative;
   box-shadow: 0px -1px 0px #8b949b inset;
@@ -1530,7 +1530,7 @@ fieldset {
   border-top: 1px solid #e5e5e5;
   padding: 2.625em; }
   article + .author-info {
-    background: #fff;
+    background-color: #fff;
     border-top: 0;
     margin-bottom: 2.625em;
     position: relative;
@@ -1952,7 +1952,7 @@ embed, iframe, object {
   clear: both;
   margin-bottom: 1.5em; }
   .page-links a, .page-links > span {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #555;
     display: inline-block;
     font-size: .938em;
     height: 2em;
@@ -1961,9 +1961,7 @@ embed, iframe, object {
     text-align: center;
     width: 2em; }
   .page-links a {
-    -webkit-tap-highlight-color: #ed543f;
     background-color: #555;
-    border-color: #555;
     color: #fff; }
     .page-links a > span {
       color: #fff; }
@@ -2009,7 +2007,7 @@ embed, iframe, object {
  * Comments
  */
 #comments p.no-comments {
-  background: #fff;
+  background-color: #fff;
   margin-bottom: 2.625em;
   padding: 2.625em;
   box-shadow: 5px 0px 0px #555 inset;
@@ -2028,7 +2026,7 @@ embed, iframe, object {
       content: "";
       display: table; }
   #comments .comment-list .comment-content, #comments .commentlist .comment-content {
-    background: #fff;
+    background-color: #fff;
     margin-bottom: 2.625em;
     padding: 2.625em;
     padding-top: 0 !important;
@@ -2111,7 +2109,7 @@ embed, iframe, object {
   word-wrap: break-word; }
 
 #respond {
-  background: #fff;
+  background-color: #fff;
   clear: both;
   margin-bottom: 2.625em;
   padding: 2.625em;
@@ -2230,7 +2228,8 @@ embed, iframe, object {
     font-size: 1.067em;
     padding: .75em 1em .75em 2.625em;
     box-shadow: 0px -1px 0px #8b949b inset;
-    border-radius: 0px; }
+    border-radius: 0px;
+    color: #555; }
     .widget_search form input[type=search]:focus, .widget_product_search form input[type=search]:focus, .error-404-search form input[type=search]:focus {
       color: #3b3b3b; }
   .widget_search form input[type=submit], .widget_product_search form input[type=submit], .error-404-search form input[type=submit] {

@@ -66,6 +66,7 @@ textarea,
   background-color: ' . $text_color . ';
 }
 .page-links a,
+.page-links > span,
 .widget h3.widget-title {
   border-color: ' . $text_color . ';
 }';
@@ -249,6 +250,78 @@ a:hover {
     color: ' . $nav_alt_link_color_active . ';
     background-color: ' . $nav_alt_link_color_active_bg . ';
   }
+}';
+
+    // Post Background Color
+    $post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_background_color', apply_filters( 'archetype_default_post_background_color', '#fff' ) ) );
+
+    // Get the RGB value from hex and set the comment rgba `border-color` for our tricky triangle shape.
+    $rgb = archetype_rgb_from_hex( $post_background_color );
+    $border_color = 3 === count( $rgb ) ? 'border-color: rgba(' . $rgb[ 'r' ] . ', ' . $rgb[ 'g' ] . ', ' . $rgb[ 'b' ] . ', 0);' : '';
+
+    $style.= '
+article + .author-info,
+#comments p.no-comments,
+#comments .comment-list .comment-content,
+#comments .commentlist .comment-content,
+#respond,
+.page-header,
+.hentry,
+.pagination,
+.image-navigation,
+.comment-navigation,
+.woocommerce-pagination,
+.post-navigation {
+  background-color: ' . $post_background_color . ';
+}
+.sticky-post,
+.page-links a,
+.page-links a > span,
+.page-links a:hover,
+.page-links a:focus,
+.page-links a:hover > span,
+.page-links a:focus > span {
+  color: ' . $post_background_color . ';
+}
+#comments .with-avatar > .comment-body .comment-content:after {
+  ' . $border_color . '
+  border-right-color: ' . $post_background_color . ';
+}
+';
+
+    // Post Border Color
+    $post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_border_color', apply_filters( 'archetype_default_post_border_color', '#e5e5e5' ) ) );
+
+    $style.= '
+table thead th,
+#comments .comment-list .comment-meta,
+#comments .commentlist .comment-meta {
+  border-bottom-color: ' . $post_background_color. ';
+}
+table tfoot th,
+table tfoot td,
+.author-info,
+.hentry .entry-meta {
+  border-top-color: ' . $post_background_color. ';
+}
+.format-quote .author-info + .entry-meta {
+  border-color: ' . $post_background_color. ';
+}
+.post-navigation div + div {
+  box-shadow: 0px 1px 0px ' . $post_background_color. ' inset;
+}';
+
+    // Post Shadow Color
+    $post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_shadow_color', apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ) ) );
+
+    $style.= '
+article + .author-info,
+#comments .comment-list .comment-content,
+#comments .commentlist .comment-content,
+#respond,
+.hentry,
+.post-navigation {
+  box-shadow: 0px -1px 0px ' . $post_background_color. ' inset;
 }';
 
     $woocommerce_style = '';

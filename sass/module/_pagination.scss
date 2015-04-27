@@ -230,7 +230,7 @@
   
   a,
   > span {
-    border: 1px solid $color-post-border;
+    border: 1px solid $color-body;
     display: inline-block;
     font-size: .938em;
     height: 2em;
@@ -241,9 +241,7 @@
   }
   
   a {
-    -webkit-tap-highlight-color: $color-button-bg;
     background-color: $color-body;
-    border-color: $color-body;
     color: $color-post-bg;
     
     > span {

@@ -67,6 +67,7 @@ $color-post-shadow:             #8b949b;
 
 // Search
 
+$color-search:                  $color-body;
 $color-search-bg:               #fff;
 $color-search-shadow:           $color-post-shadow;
 
@@ -74,8 +75,8 @@ $color-search-shadow:           $color-post-shadow;
 // Forms
 
 $color-input:                   $color-body;
-$color-input-focus:             darken( $color-input, 10% );
 $color-input-bg:                darken( $color-body-bg, 5% );
+$color-input-focus:             darken( $color-input, 10% );
 $color-input-bg-focus:          darken( $color-body-bg, 10% );
 
 
@@ -86,9 +87,8 @@ $color-footer-bg:               $color-header-bg;
 $color-footer-heading:          #eee;
 $color-footer-lower:            $color-footer;
 $color-footer-lower-bg:         darken( $color-footer-bg, 5% );
-
-$color-link-footer:             #ee543f;
-$color-link-footer-hover:       #fff;
+$color-footer-link:             #ee543f;
+$color-footer-link-hover:       #fff;
 
 
 // Buttons

@@ -5,7 +5,7 @@
 #comments {
 
   p.no-comments {
-    background: $color-post-bg;
+    background-color: $color-post-bg;
     margin-bottom: 2.625em;
     padding: 2.625em;
     box-shadow: 5px 0px 0px $color-body inset;
@@ -30,7 +30,7 @@
     }
 
     .comment-content {
-      background: $color-post-bg;
+      background-color: $color-post-bg;
       margin-bottom: 2.625em;
       padding: 2.625em;
       padding-top: 0 !important;
@@ -143,7 +143,7 @@
 .bypostauthor {}
 
 #respond {
-  background: $color-post-bg;
+  background-color: $color-post-bg;
   clear: both;
   margin-bottom: 2.625em;
   padding: 2.625em;

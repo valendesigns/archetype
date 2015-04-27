@@ -88,7 +88,7 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
 if ( ! function_exists( 'archetype_customize_preview_js' ) ) {
   function archetype_customize_preview_js() {
     global $archetype_version;
-    wp_enqueue_script( 'archetype_customize_preview', get_template_directory_uri() . '/inc/customizer/js/preview.js', array( 'customize-preview' ), $archetype_version, true );
+    wp_enqueue_script( 'archetype_customize_preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
   }
 }
 

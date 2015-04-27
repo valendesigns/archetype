@@ -242,13 +242,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'description' => __( 'You must choose a menu location, in the Menus tab above, for the primary navigation styles to work.', 'archetype' ),
       'panel'       => 'archetype_navigation',
     ) );
-    
-    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_nav_background_color_info', array(
-      'section'     => 'archetype_nav_styles',
-      'type'        => 'text',
-      'description' => __( 'The background color will not be seen below 768px, even though it does display in the customizer when you make changes.', 'archetype' ),
-      'priority'    => 1,
-    ) ) );
 
     /**
      * Primary Navigation Background Color
@@ -256,7 +249,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     $wp_customize->add_setting( 'archetype_nav_background_color', array(
       'default'           => apply_filters( 'archetype_default_nav_background_color', '#292E31' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
-      'transport'         => 'postMessage',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_background_color', array(
@@ -469,6 +461,66 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
 
     // END Navigation
+    
+    // BEGIN Post
+
+    /**
+     * Add the Post section
+     */
+    $wp_customize->add_section( 'archetype_post' , array(
+      'title'       => __( 'Post', 'archetype' ),
+      'priority'    => 45,
+    ) );
+
+    /**
+     * Post Background
+     */
+    $wp_customize->add_setting( 'archetype_post_background_color', array(
+      'default'           => apply_filters( 'archetype_default_post_background_color', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_post_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_post',
+      'settings'    => 'archetype_post_background_color',
+      'priority'    => 10,
+    ) ) );
+
+    /**
+     * Post Border
+     */
+    $wp_customize->add_setting( 'archetype_post_border_color', array(
+      'default'           => apply_filters( 'archetype_default_post_border_color', '#e5e5e5' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_post_border_color', array(
+      'label'       => __( 'Border color', 'archetype' ),
+      'section'     => 'archetype_post',
+      'settings'    => 'archetype_post_border_color',
+      'priority'    => 15,
+    ) ) );
+
+    /**
+     * Post Shadow
+     */
+    $wp_customize->add_setting( 'archetype_post_shadow_color', array(
+      'default'           => apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_post_shadow_color', array(
+      'label'       => __( 'Shadow color', 'archetype' ),
+      'section'     => 'archetype_post',
+      'settings'    => 'archetype_post_shadow_color',
+      'priority'    => 20,
+    ) ) );
+    
+    // END Post
 
     /**
      * Footer section

@@ -3,7 +3,7 @@
  */
 
 .page-header {
-  background: $color-post-bg;
+  background-color: $color-post-bg;
   margin-bottom: 2.625em;
   padding: 2.625em;
   box-shadow: 5px 0px 0px $color-body inset;
@@ -23,7 +23,7 @@
 }
 
 .hentry {
-  background: $color-post-bg;
+  background-color: $color-post-bg;
   margin-bottom: 2.625em;
   position: relative;
   box-shadow: 0px -1px 0px $color-post-shadow inset;
