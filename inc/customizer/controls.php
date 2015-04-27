@@ -352,7 +352,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Secondary Navigation Color
      */
     $wp_customize->add_setting( 'archetype_nav_alt_color', array(
-      'default'           => apply_filters( 'archetype_default_nav_alt_color', '#888' ),
+      'default'           => apply_filters( 'archetype_default_nav_alt_color', '#bbb' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );

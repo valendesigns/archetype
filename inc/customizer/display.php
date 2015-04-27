@@ -204,7 +204,7 @@ a:hover {
 }';
 
     // Secondary Navigation Color
-    $nav_alt_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_color', apply_filters( 'archetype_nav_alt_alt_color', '#888' ) ) );
+    $nav_alt_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_color', apply_filters( 'archetype_nav_alt_alt_color', '#bbb' ) ) );
 
     $style.= '
 .secondary-navigation {

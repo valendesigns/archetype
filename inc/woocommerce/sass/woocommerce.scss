@@ -467,10 +467,6 @@ div.products,
 
   p.total {
     border-bottom: 1px solid rgba(0,0,0,0.15);
-    
-    .secondary-navigation & {
-      color: $color-nav-alt-subtotal;
-    }
   }
 }
 
