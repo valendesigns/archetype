@@ -466,6 +466,57 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .widget-area .widget a.button:hover {
       color: ' . $button_text_hover_color . '; 
     }';
+    
+    // Post border radius
+    $post_radius = (int) get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', '0' ) );
+
+    $style.= '
+    article + .author-info,
+    #comments .comment-list .comment-content, #comments .commentlist .comment-content,
+    #respond,
+    .hentry,
+    .post-navigation,
+    .widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search] {
+      border-radius: ' . $post_radius. 'px;
+    }';
+
+    if ( is_rtl() ) {
+      $style.= '
+      #comments p.no-comments,
+      .page-header {
+        border-radius: ' . $post_radius. 'px 0 0 ' . $post_radius. 'px;
+      }
+      .sticky-post {
+        border-radius: 0 0 0 ' . $post_radius. 'px;
+      }';
+    } else {
+      $style.= '
+      #comments p.no-comments,
+      .page-header {
+        border-radius: 0 ' . $post_radius. 'px ' . $post_radius. 'px 0;
+      }
+      .sticky-post {
+        border-radius: 0 0 ' . $post_radius. 'px 0;
+      }';
+    }
+
+    // Button border radius
+    $button_radius = (int) get_theme_mod( 'archetype_button_radius', apply_filters( 'archetype_default_button_radius', '3' ) );
+    
+    $style.= '
+    button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart {
+      border-radius: ' . $button_radius. 'px;
+    }';
+    
+    // Avatar border radius
+    $avatar_radius = (int) get_theme_mod( 'archetype_avatar_radius', apply_filters( 'archetype_default_avatar_radius', '3' ) );
+
+    $style.= '
+    .author-info .avatar,
+    #comments .comment-list .comment-meta .avatar, 
+    #comments .commentlist .comment-meta .avatar {
+      border-radius: ' . $avatar_radius . 'px;
+    }';
 
     $woocommerce_style = '';
 

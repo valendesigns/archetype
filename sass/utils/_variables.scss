@@ -83,13 +83,20 @@ $color-input-bg-focus:          darken( $color-body-bg, 10% );
 // Buttons
 
 $color-button:                  #fff;
-$color-button-hover:            $color-body;
 $color-button-bg:               #ed543f;
-$color-button-bg-hover:         #fff;
 $color-button-border:           #d94834;
-$color-button-border-hover:     #8b949b;
 $color-button-shadow:           $color-button-border;
+$color-button-hover:            $color-body;
+$color-button-bg-hover:         #fff;
+$color-button-border-hover:     #8b949b;
 $color-button-shadow-hover:     $color-button-border-hover;
+
+
+// Notices
+
+$color-error:                   #f75f46;
+$color-success:                 #36c478;
+$color-info:                    #3D9CD2;
 
 
 // Footer
@@ -103,21 +110,14 @@ $color-footer-link:             #ee543f;
 $color-footer-link-hover:       #fff;
 
 
-// Notices
+// Border Radius
 
-$color-error:                   #f75f46;
-$color-success:                 #36c478;
-$color-info:                    #3D9CD2;
+$radius-post:                   0px;
+$radius-button:                 3px;
+$radius-avatar:                 3px;
 
 
 // Spacing
 
 $spacing-v:                     1.500em;
 $spacing-v-smaller:             1em;
-
-
-// Border Radius
-
-$radius-post:                   0px;
-$radius-button:                 3px;
-$radius-avatar:                 3px;

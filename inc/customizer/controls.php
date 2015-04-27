@@ -473,6 +473,34 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     /**
+     * Post Radius
+     */
+    $wp_customize->add_setting( 'archetype_post_radius', array(
+      'default'     => apply_filters( 'archetype_default_post_radius', '0' ),
+    ) );
+
+    $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_post_radius', array(
+      'label'       => __( 'Post Border Radius', 'archetype' ),
+      'section'     => 'archetype_post',
+      'settings'    => 'archetype_post_radius',
+      'priority'    => 5,
+    ) ) );
+
+    /**
+     * Avatar Radius
+     */
+    $wp_customize->add_setting( 'archetype_avatar_radius', array(
+      'default'     => apply_filters( 'archetype_default_avatar_radius', '3' ),
+    ) );
+
+    $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_avatar_radius', array(
+      'label'       => __( 'Avatar Border Radius', 'archetype' ),
+      'section'     => 'archetype_post',
+      'settings'    => 'archetype_avatar_radius',
+      'priority'    => 6,
+    ) ) );
+
+    /**
      * Post Background
      */
     $wp_customize->add_setting( 'archetype_post_background_color', array(
@@ -695,12 +723,26 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'type'        => 'divider',
       'priority'    => 7,
     ) ) );
+    
+    /**
+     * Button Radius
+     */
+    $wp_customize->add_setting( 'archetype_button_radius', array(
+      'default'     => apply_filters( 'archetype_default_button_radius', '3' ),
+    ) );
+
+    $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_button_radius', array(
+      'label'       => __( 'Button Border Radius', 'archetype' ),
+      'section'     => 'archetype_buttons',
+      'settings'    => 'archetype_button_radius',
+      'priority'    => 8,
+    ) ) );
 
     $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_text', array(
       'section'     => 'archetype_buttons',
       'type'        => 'text',
       'description' => __( "It's important to note that the default button colors are used in many places as an accent color.", 'archetype' ),
-      'priority'    => 8,
+      'priority'    => 9,
     ) ) );
 
     /**
