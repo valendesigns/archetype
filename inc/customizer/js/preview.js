@@ -25,10 +25,18 @@
   } );
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
-      var boxShadow = '5px 0px 0px ' + to + ' inset';
+      var $link = $( '#wc-bookings-booking-form .block-picker li a' ),
+          color = $link.css( 'color' ),
+          boxShadow = '5px 0px 0px ' + to + ' inset';
 
       // Color
-      $( 'body, button, input, select, textarea, .author-info .author-heading, #comments p.no-comments, .post-navigation .meta-nav, .widget-area .widget a' ).css( 'color', to );
+      $( 'body, button, input, select, textarea, .author-info .author-heading, #comments p.no-comments, .post-navigation .meta-nav, .widget-area .widget a, ul.products li.product .price, p.stars a, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-state-disabled .ui-state-default, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker th' ).css( 'color', to );
+
+      $link.on( 'mouseenter', function() { 
+        $( this ).css( 'color', to );
+      } ).on( 'mouseleave', function() { 
+        $( this ).css( 'color', color );
+      } );
 
       // Box Shadow
       $( '.page-header, #comments p.no-comments' ).css( 'box-shadow', boxShadow );
@@ -39,7 +47,7 @@
       } );
 
       // Background Color
-      $( '.sticky-post, .pagination .prev, .pagination .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .woocommerce-pagination .prev, .woocommerce-pagination .next, .page-links a' ).css( 'background-color', to );
+      $( '.sticky-post, .pagination .prev, .pagination .next, .image-navigation .nav-previous a, .image-navigation .nav-next a, .comment-navigation .prev, .comment-navigation .next, .woocommerce-pagination .prev, .woocommerce-pagination .next, .page-links a, .widget_price_filter .price_slider, .type-product .onsale, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-header, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker .ui-datepicker-next, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker .ui-datepicker-prev, .woocommerce #reviews .product-rating .product-rating-details table td.rating-graph .bar, .woocommerce-page #reviews .product-rating .product-rating-details table td.rating-graph .bar' ).css( 'background-color', to );
 
       // Background Color Hover
       $( '.bx-controls-direction .bx-prev, .bx-controls-direction .bx-next' ).on( 'mouseenter', function() {

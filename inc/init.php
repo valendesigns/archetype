@@ -68,5 +68,6 @@ if ( is_woocommerce_activated() ) {
   require get_template_directory() . '/inc/woocommerce/hooks.php';
   require get_template_directory() . '/inc/woocommerce/functions.php';
   require get_template_directory() . '/inc/woocommerce/template-tags.php';
+  require get_template_directory() . '/inc/woocommerce/controls.php';
   require get_template_directory() . '/inc/woocommerce/integrations.php';
 }

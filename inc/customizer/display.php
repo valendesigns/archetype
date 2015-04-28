@@ -466,7 +466,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .widget-area .widget a.button:hover {
       color: ' . $button_text_hover_color . '; 
     }';
-    
+
     // Post border radius
     $post_radius = (int) get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', '0' ) );
 
@@ -502,12 +502,12 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 
     // Button border radius
     $button_radius = (int) get_theme_mod( 'archetype_button_radius', apply_filters( 'archetype_default_button_radius', '3' ) );
-    
+
     $style.= '
     button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart {
       border-radius: ' . $button_radius. 'px;
     }';
-    
+
     // Avatar border radius
     $avatar_radius = (int) get_theme_mod( 'archetype_avatar_radius', apply_filters( 'archetype_default_avatar_radius', '3' ) );
 
@@ -520,28 +520,28 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 
     // Footer heading
     $footer_heading_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_heading_color', apply_filters( 'archetype_default_footer_heading_color', '#eee' ) ) );
-    
+
     // Footer text
     $footer_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_text_color', apply_filters( 'archetype_default_footer_text_color', '#888' ) ) );
-    
+
     // Footer background
     $footer_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_background_color', apply_filters( 'archetype_default_footer_background_color', '#353b3f' ) ) );
-    
+
     // Footer link
     $footer_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_color', apply_filters( 'archetype_default_footer_link_color', '#ee543f' ) ) );
-    
+
     // Footer link hover
     $footer_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_hover_color', apply_filters( 'archetype_default_footer_link_hover_color', '#fff' ) ) );
-    
+
     // Lower footer text
     $footer_lower_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_text_color', apply_filters( 'archetype_default_footer_lower_text_color', '#888' ) ) );
-    
+
     // Lower footer background
     $footer_lower_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_background_color', apply_filters( 'archetype_default_footer_lower_background_color', '#292e31' ) ) );
-    
+
     // Lower footer link
     $footer_lower_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_link_color', apply_filters( 'archetype_default_footer_lower_link_color', '#ee543f' ) ) );
-    
+
     // Lower footer link hover
     $footer_lower_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_link_hover_color', apply_filters( 'archetype_default_footer_lower_link_hover_color', '#fff' ) ) );
 
@@ -575,15 +575,12 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
       outline-color: ' . $footer_lower_link_color . ';
     }';
 
-    $woocommerce_style = '';
-
     // Remove space after colons
     $style = str_replace( ': ', ':', $style );
-    
+
     // Remove whitespace
     $style = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $style );
 
     wp_add_inline_style( 'archetype-style', $style );
-    wp_add_inline_style( 'archetype-woocommerce-style', $woocommerce_style );
   }
 }

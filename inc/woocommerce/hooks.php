@@ -9,8 +9,9 @@
  * Styles
  * @see archetype_woocommerce_scripts()
  */
-add_action( 'wp_enqueue_scripts',         'archetype_woocommerce_scripts', 20 );
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array'              );
+add_action( 'wp_enqueue_scripts',           'archetype_woocommerce_scripts',           20 );
+add_filter( 'woocommerce_enqueue_styles',   '__return_empty_array'                        );
+add_filter( 'archetype_customize_register', 'archetype_woocommerce_customize_register'    );
 
 
 /**
@@ -120,5 +121,5 @@ if ( ! class_exists( 'WC_Product_Reviews_Pro' ) ) {
  * @see archetype_woocommerce_integrations_scripts()
  * @see archetype_add_bookings_customizer_css()
  */
-add_action( 'wp_enqueue_scripts',  'archetype_woocommerce_integrations_scripts' );
-add_action( 'wp_enqueue_scripts', 'archetype_add_integrations_customizer_css'  );
+add_action( 'wp_enqueue_scripts', 'archetype_woocommerce_integrations_scripts' );
+add_action( 'wp_enqueue_scripts', 'archetype_add_integrations_customizer_css', 140  );

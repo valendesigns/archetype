@@ -44,6 +44,14 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     require_once dirname( __FILE__ ) . '/controls/layout.php';
     require_once dirname( __FILE__ ) . '/controls/import.php';
 
+    /**
+     * Add customizer settings without reloading the environment.
+     *
+     * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+     * @since 1.0.0
+     */
+    do_action( 'archetype_customize_register', $wp_customize );
+
     if ( current_theme_supports( 'site-logo' ) && class_exists( 'Site_Logo', false ) ) {
       // Add the setting for our svg logo.
       $wp_customize->add_setting( 'archetype_site_logo_svg', array(

@@ -712,7 +712,7 @@ a.remove {
     left: 0;
     right: 0;
     bottom: 0;
-    color: $color-error;
+    color: $color-notice-error;
     line-height: 1.618;
     text-indent: 0;
     text-align: center;
@@ -960,13 +960,13 @@ ul.digital-downloads {
 
   &.woocommerce-validated {
     input.input-text {
-      box-shadow: 2px 0 0 $color-success inset;
+      box-shadow: 2px 0 0 $color-notice-success inset;
     }
   }
 
   &.woocommerce-invalid {
     input.input-text {
-      box-shadow: 2px 0 0 $color-error inset;
+      box-shadow: 2px 0 0 $color-notice-error inset;
     }
   }
 }
@@ -992,7 +992,7 @@ ul.digital-downloads {
   right: 0;
   margin: 0;
   padding: 1em 1.387em;
-  background-color: $color-info;
+  background-color: $color-notice-info;
   color: #fff;
 
   &:before {
@@ -1102,22 +1102,6 @@ p.stars {
   }
 }
 
-// TODO Make fallback
-.onsale-fallback {
-  background: $color-body;
-  color: $color-post-bg;
-  padding: .357em .714em;
-  font-size: .875em;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: inline-block;
-  margin-bottom: 1em;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-
 .quantity {
   .qty {
     max-width: 3.631em;
@@ -1210,7 +1194,7 @@ p.stars {
   padding: 1em 1.618em;
   @include clearfix;
   margin-bottom: 2.625em;
-  background-color: $color-success;
+  background-color: $color-notice-success;
   margin-left: 0;
   color: #fff;
   clear: both;
@@ -1278,11 +1262,11 @@ p.stars {
 }
 
 .woocommerce-info {
-  background-color: $color-info;
+  background-color: $color-notice-info;
 }
 
 .woocommerce-error {
-  background-color: $color-error !important;
+  background-color: $color-notice-error !important;
 }
 
 dl.variation {
