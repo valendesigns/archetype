@@ -61,6 +61,11 @@ function archetype_body_classes( $classes ) {
     $classes[] = 'archetype-cute';
   }
 
+  // 4 out of 12 columns
+  if ( 4 == get_theme_mod( 'archetype_columns', apply_filters( 'archetype_default_columns', '3' ) ) ) {
+    $classes[] = 'grid-alt';
+  }
+
   return $classes;
 }
 

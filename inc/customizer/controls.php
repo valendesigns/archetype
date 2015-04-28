@@ -82,6 +82,56 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       ) ) );
     }
 
+    // START Layout
+
+    /**
+     * Layout
+     */
+    $wp_customize->add_section( 'archetype_layout' , array(
+      'title'       => __( 'Layout', 'archetype' ),
+      'priority'    => 21,
+    ) );
+
+    $wp_customize->add_setting( 'archetype_layout', array(
+      'default'           => 'right',
+      'sanitize_callback' => 'archetype_sanitize_layout',
+    ) );
+
+    $wp_customize->add_control( new Archetype_Layout_Control( $wp_customize, 'archetype_layout', array(
+      'label'       => __( 'Sidebar Position', 'archetype' ),
+      'section'     => 'archetype_layout',
+      'settings'    => 'archetype_layout',
+      'priority'    => 1,
+    ) ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_layout_divider', array(
+      'section'     => 'archetype_layout',
+      'settings'    => 'archetype_layout',
+      'type'        => 'divider',
+      'priority'    => 2,
+    ) ) );
+
+    /**
+     * Sidebar columns
+     */
+    $wp_customize->add_setting( 'archetype_columns', array(
+      'default'     => apply_filters( 'archetype_default_columns', '3' ),
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_columns', array(
+      'label'       => __( 'Sidebar Columns', 'archetype' ),
+      'section'     => 'archetype_layout',
+      'settings'    => 'archetype_columns',
+      'priority'    => 1,
+      'type'        => 'radio',
+      'choices'     => array(
+        '3'         => '3 of 12',
+        '4'         => '4 of 12',
+      )
+    ) ) );
+
+    // END Layout
+
     // BEGIN Typography
 
     /**
@@ -138,7 +188,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_link_color',
       'priority'    => 3,
     ) ) );
-    
+
     /**
      * Link Color Hover
      */
@@ -379,7 +429,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_nav_alt_background_color',
       'priority'    => 15,
     ) ) );
-    
+
     /**
      * Secondary Navigation Link Color
      */
@@ -461,7 +511,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
 
     // END Navigation
-    
+
     // BEGIN Post
 
     /**
@@ -547,7 +597,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_post_shadow_color',
       'priority'    => 20,
     ) ) );
-    
+
     // END Post
 
     // START Forms
@@ -707,7 +757,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( '2D Buttons', 'archetype' ),
       'section'     => 'archetype_buttons',
       'settings'    => 'archetype_button_2d',
-      'priority'    => 5,
+      'priority'    => 1,
       'type'        => 'checkbox',
     ) ) );
 
@@ -715,15 +765,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'section'     => 'archetype_buttons',
       'type'        => 'text',
       'description' => __( 'Checking 2D will remove the shadow effect.', 'archetype' ),
-      'priority'    => 6,
+      'priority'    => 2,
     ) ) );
 
-    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_2d_divider', array(
-      'section'     => 'archetype_buttons',
-      'type'        => 'divider',
-      'priority'    => 7,
-    ) ) );
-    
     /**
      * Button Radius
      */
@@ -732,17 +776,17 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_button_radius', array(
-      'label'       => __( 'Button Border Radius', 'archetype' ),
+      'label'       => __( 'Border Radius', 'archetype' ),
       'section'     => 'archetype_buttons',
       'settings'    => 'archetype_button_radius',
-      'priority'    => 8,
+      'priority'    => 3,
     ) ) );
 
     $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_text', array(
       'section'     => 'archetype_buttons',
       'type'        => 'text',
       'description' => __( "It's important to note that the default button colors are used in many places as an accent color.", 'archetype' ),
-      'priority'    => 9,
+      'priority'    => 4,
     ) ) );
 
     /**
@@ -804,14 +848,14 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_button_shadow_color',
       'priority'    => 25,
     ) ) );
-    
+
     $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_hover_text', array(
       'section'     => 'archetype_buttons',
       'type'        => 'text',
       'description' => sprintf( __( "Adding the %s class to your buttons will inverse their styles. Which means the hover colors will become the default state, and vice versa.", 'archetype' ), '<code>.alt</code>' ),
       'priority'    => 29,
     ) ) );
-    
+
     /**
      * Button text hover color
      */
@@ -884,11 +928,17 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'priority'    => 65,
     ) );
 
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_footer_upper', array(
+      'section'     => 'archetype_footer',
+      'type'        => 'heading',
+      'label'       => __( 'Upper Footer', 'archetype' ),
+    ) ) );
+
     /**
      * Footer heading color
      */
     $wp_customize->add_setting( 'archetype_footer_heading_color', array(
-      'default'           => apply_filters( 'archetype_default_footer_heading_color', '#494c50' ),
+      'default'           => apply_filters( 'archetype_default_footer_heading_color', '#eee' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
@@ -903,7 +953,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Footer text color
      */
     $wp_customize->add_setting( 'archetype_footer_text_color', array(
-      'default'           => apply_filters( 'archetype_default_footer_text_color', '#61656b' ),
+      'default'           => apply_filters( 'archetype_default_footer_text_color', '#888' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
@@ -912,21 +962,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Text color', 'archetype' ),
       'section'     => 'archetype_footer',
       'settings'    => 'archetype_footer_text_color',
-    ) ) );
-
-    /**
-     * Footer link color
-     */
-    $wp_customize->add_setting( 'archetype_footer_link_color', array(
-      'default'           => apply_filters( 'archetype_default_footer_link_color', '#96588a' ),
-      'sanitize_callback' => 'archetype_sanitize_hex_color',
-      'transport'         => 'postMessage',
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_link_color', array(
-      'label'       => __( 'Link color', 'archetype' ),
-      'section'     => 'archetype_footer',
-      'settings'    => 'archetype_footer_link_color',
     ) ) );
 
     /**
@@ -944,38 +979,105 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_footer_background_color',
     ) ) );
 
-    // END Footer
+    /**
+     * Footer link color
+     */
+    $wp_customize->add_setting( 'archetype_footer_link_color', array(
+      'default'           => apply_filters( 'archetype_default_footer_link_color', '#ee543f' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
 
-    // START Layout
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_link_color', array(
+      'label'       => __( 'Link color', 'archetype' ),
+      'section'     => 'archetype_footer',
+      'settings'    => 'archetype_footer_link_color',
+    ) ) );
 
     /**
-     * Layout
+     * Footer link hover color
      */
-    $wp_customize->add_section( 'archetype_layout' , array(
-      'title'       => __( 'Layout', 'archetype' ),
-      'priority'    => 70,
+    $wp_customize->add_setting( 'archetype_footer_link_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_footer_link_hover_color', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
     ) );
 
-    $wp_customize->add_setting( 'archetype_layout', array(
-      'default'           => 'right',
-      'sanitize_callback' => 'archetype_sanitize_layout',
-    ) );
-
-    $wp_customize->add_control( new Archetype_Layout_Control( $wp_customize, 'archetype_layout', array(
-      'label'       => __( 'Sidebar Position', 'archetype' ),
-      'section'     => 'archetype_layout',
-      'settings'    => 'archetype_layout',
-      'priority'    => 1,
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_link_hover_color', array(
+      'label'       => __( 'Link hover color', 'archetype' ),
+      'section'     => 'archetype_footer',
+      'settings'    => 'archetype_footer_link_hover_color',
     ) ) );
 
-    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_layout_divider', array(
-      'section'     => 'archetype_layout',
-      'settings'    => 'archetype_layout',
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_footer_lower_divider', array(
+      'section'     => 'archetype_footer',
       'type'        => 'divider',
-      'priority'    => 2,
+      'description' => __( '', 'archetype' ),
     ) ) );
 
-    // END Layout
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_footer_lower_text', array(
+      'section'     => 'archetype_footer',
+      'type'        => 'heading',
+      'label'       => __( 'Lower Footer', 'archetype' ),
+    ) ) );
+
+    /**
+     * Lower footer text color
+     */
+    $wp_customize->add_setting( 'archetype_footer_lower_text_color', array(
+      'default'           => apply_filters( 'archetype_default_footer_lower_text_color', '#888' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_lower_text_color', array(
+      'label'       => __( 'Text color', 'archetype' ),
+      'section'     => 'archetype_footer',
+      'settings'    => 'archetype_footer_lower_text_color',
+    ) ) );
+
+    /**
+     * Lower footer Background
+     */
+    $wp_customize->add_setting( 'archetype_footer_lower_background_color', array(
+      'default'           => apply_filters( 'archetype_default_footer_lower_background_color', '#292e31' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_lower_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_footer',
+      'settings'    => 'archetype_footer_lower_background_color',
+    ) ) );
+
+    /**
+     * Lower footer link color
+     */
+    $wp_customize->add_setting( 'archetype_footer_lower_link_color', array(
+      'default'           => apply_filters( 'archetype_default_footer_lower_link_color', '#ee543f' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_lower_link_color', array(
+      'label'       => __( 'Link color', 'archetype' ),
+      'section'     => 'archetype_footer',
+      'settings'    => 'archetype_footer_lower_link_color',
+    ) ) );
+
+    /**
+     * Lower footer link hover color
+     */
+    $wp_customize->add_setting( 'archetype_footer_lower_link_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_footer_lower_link_hover_color', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_lower_link_hover_color', array(
+      'label'       => __( 'Link hover color', 'archetype' ),
+      'section'     => 'archetype_footer',
+      'settings'    => 'archetype_footer_lower_link_hover_color',
+    ) ) );
+
+    // END Footer
 
     // START Import/Export
 

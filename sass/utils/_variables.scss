@@ -104,10 +104,12 @@ $color-info:                    #3D9CD2;
 $color-footer:                  $color-header;
 $color-footer-bg:               $color-header-bg;
 $color-footer-heading:          #eee;
-$color-footer-lower:            $color-footer;
-$color-footer-lower-bg:         darken( $color-footer-bg, 5% );
 $color-footer-link:             #ee543f;
 $color-footer-link-hover:       #fff;
+$color-footer-lower:            $color-footer;
+$color-footer-lower-bg:         darken( $color-footer-bg, 5% );
+$color-footer-lower-link:       #ee543f;
+$color-footer-lower-link-hover: #fff;
 
 
 // Border Radius

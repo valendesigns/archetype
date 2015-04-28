@@ -253,6 +253,18 @@ body {
     text-align: center;
   }
   
+  a:not(.button) {
+    color: $color-footer-lower-link;
+
+    &:hover {
+      color: $color-footer-lower-link-hover;
+    }
+
+    &:focus {
+      outline: 1px dotted $color-footer-lower-link;
+    }
+  }
+  
   .subscribe-and-connect-connect {
     text-align: center;
     margin-bottom: 1em;

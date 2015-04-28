@@ -514,6 +514,12 @@ body {
   padding: 2.625em 0; }
   .site-info .credit {
     text-align: center; }
+  .site-info a:not(.button) {
+    color: #ee543f; }
+    .site-info a:not(.button):hover {
+      color: #fff; }
+    .site-info a:not(.button):focus {
+      outline: 1px dotted #ee543f; }
   .site-info .subscribe-and-connect-connect {
     text-align: center;
     margin-bottom: 1em; }
@@ -880,12 +886,22 @@ a {
     float: left;
     margin-left: 0;
     margin-right: 0; }
+  .archetype-full-width-content.grid-alt .content-area {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
   .content-area, .widget-area {
     margin-bottom: 2.625em; }
   /**
    * Full width & homepage template
    */
   .page-template-template-fullwidth-php .content-area, .page-template-template-homepage-php .content-area {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  .page-template-template-fullwidth-php.grid-alt .content-area, .page-template-template-homepage-php.grid-alt .content-area {
     width: 100%;
     float: left;
     margin-left: 0;

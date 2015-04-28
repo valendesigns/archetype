@@ -312,4 +312,44 @@
       $( '.widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search]' ).css( 'box-shadow', '0px -1px 0px ' + to + ' inset' );
     } );
   } );
+  wp.customize( 'archetype_footer_heading_color', function( value ) {
+    value.bind( function( to ) {
+      // Heading Color
+      $( '.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6' ).css( 'color', to );
+    } );
+  } );
+  wp.customize( 'archetype_footer_text_color', function( value ) {
+    value.bind( function( to ) {
+      // Text Color
+      $( '.site-footer' ).css( 'color', to );
+
+      // Outline Color
+      $( '.site-footer a:not(.button)' ).on( 'focus', function() {
+        $( this ).css( 'outline-color', to );
+      } );
+    } );
+  } );
+  wp.customize( 'archetype_footer_background_color', function( value ) {
+    value.bind( function( to ) {
+      // Background Color
+      $( '.site-footer' ).css( 'background-color', to );
+    } );
+  } );
+  wp.customize( 'archetype_footer_lower_text_color', function( value ) {
+    value.bind( function( to ) {
+      // Text Color
+      $( '.site-info' ).css( 'color', to );
+
+      // Outline Color
+      $( '.site-info a:not(.button)' ).on( 'focus', function() {
+        $( this ).css( 'outline-color', to );
+      } );
+    } );
+  } );
+  wp.customize( 'archetype_footer_lower_background_color', function( value ) {
+    value.bind( function( to ) {
+      // Background Color
+      $( '.site-info' ).css( 'background-color', to );
+    } );
+  } );
 } )( jQuery );
