@@ -463,6 +463,14 @@ div.products,
   p.buttons {
     background: rgba(0,0,0,0.05);
     padding: 1.5em 0;
+
+    a.button {
+      color: $color-button;
+
+      &:hover {
+        color: $color-button-hover;
+      }
+    }
   }
 
   p.total {
@@ -1096,7 +1104,7 @@ p.stars {
     -moz-transform:    rotate(-45deg);
     -ms-transform:     rotate(-45deg);
     transform:         rotate(-45deg);
-    color: $color-post-bg !important;
+    color: $color-post-bg;
     background-color: $color-body;
     z-index: 99;
   }
@@ -1298,7 +1306,7 @@ dl.variation {
       &.star-2,
       &.star-3,
       &.star-4 {
-        border-right:1px solid $color-post-border;
+        border-right: 1px solid $color-post-border;
       }
     }
   }

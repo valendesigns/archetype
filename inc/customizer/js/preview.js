@@ -69,33 +69,6 @@
       } );
     } );
   } );
-  wp.customize( 'archetype_link_color', function( value ) {
-    value.bind( function( to ) {
-      // Color
-      $( 'a, .error-404 h1' ).css( 'color', to );
-
-      // Color Hover
-      $( '.subscribe-and-connect-connect a, .widget-area .widget a' ).on( 'mouseenter', function() {
-        $( this ).css( 'color', to );
-      } );
-
-      // Outline Color Focus
-      $( 'a, button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart' ).on( 'focus', function() {
-        $( this ).css( 'outline-color', to );
-      } );
-
-      // Border Color
-      $( '.error-404 h1' ).css( 'border-color', to );
-    } );
-  } );
-  wp.customize( 'archetype_link_color_hover', function( value ) {
-    value.bind( function( to ) {
-      // Color Hover
-      $( 'a' ).on( 'mouseenter', function() {
-        $( this ).css( 'color', to );
-      } );
-    } );
-  } );
   wp.customize( 'archetype_header_background_color', function( value ) {
     value.bind( function( to ) {
       // Background Color
@@ -188,7 +161,7 @@
   wp.customize( 'archetype_nav_alt_background_color', function( value ) {
     value.bind( function( to ) {
       // Background Color
-      $( '.secondary-navigation ul.menu li ul' ).css( 'background-color', to );
+      $( '.secondary-navigation ul.menu li ul, .site-header-cart .widget_shopping_cart' ).css( 'background-color', to );
     } );
   } );
   wp.customize( 'archetype_nav_alt_link_color', function( value ) {
@@ -243,10 +216,10 @@
   wp.customize( 'archetype_post_background_color', function( value ) {
     value.bind( function( to ) {
       // Background Color
-      $( 'article + .author-info, #comments p.no-comments, #comments .comment-list .comment-content, #comments .commentlist .comment-content, #respond, .page-header, .hentry, .pagination, .image-navigation, .comment-navigation, .woocommerce-pagination, .post-navigation' ).css( 'background-color', to );
+      $( 'article + .author-info, #comments p.no-comments, #comments .comment-list .comment-content, #comments .commentlist .comment-content, #respond, .page-header, .hentry, .pagination, .image-navigation, .comment-navigation, .woocommerce-pagination, .post-navigation, ul.products li.product, .single-product div.product .images .thumbnails, .single-product div.product .summary, .woocommerce-breadcrumb, .woocommerce-tabs ul.tabs, .woocommerce-tabs ul.tabs li a, .woocommerce-tabs #tab-description, .woocommerce-tabs #tab-additional_information, .woocommerce #reviews .product-rating, .woocommerce-page #reviews .product-rating, .woocommerce #reviews .contribution-form-wrapper .form-contribution, .woocommerce-page #reviews .contribution-form-wrapper .form-contribution, .woocommerce #reviews #comments ol.commentlist li, .woocommerce-page #reviews #comments ol.commentlist li, .woocommerce #reviews .contribution-flag-form, .woocommerce-page #reviews .contribution-flag-form, .woocommerce #reviews .contribution-type-selector > a.active, .woocommerce-page #reviews .contribution-type-selector > a.active, #wl-wrapper ul.wl-tabs, #wl-wrapper ul.wl-tabs > li > a, .wl-list-pop, .woocommerce .photography-products .tools, .woocommerce-page .photography-products .tools' ).css( 'background-color', to );
 
       // Color
-      $( '.sticky-post, .page-links a, .page-links a > span' ).css( 'color', to );
+      $( '.sticky-post, .page-links a, .page-links a > span, .type-product .onsale' ).css( 'color', to );
     } );
   } );
   wp.customize( 'archetype_post_border_color', function( value ) {
@@ -258,16 +231,10 @@
       $( 'table tfoot th, table tfoot td, .author-info, .hentry .entry-meta' ).css( 'border-top-color', to );
 
       // Border Color
-      $( '.format-quote .author-info + .entry-meta' ).css( 'border-color', to );
+      $( '.format-quote .author-info + .entry-meta, .single-product div.product form.cart, .single-product div.product .variations_button, .single-product div.product .woocommerce-product-rating, .single-product div.product .product_meta .posted_in, .single-product div.product .product_meta .sku_wrapper, .single-product div.product .product_meta .tagged_as, .woocommerce-breadcrumb, table.cart td.actions .coupon, #payment, #payment .payment_methods, #payment .payment_methods li, #payment .payment_methods li .payment_box, #customer_login .col-1, ul.order_details, ul.order_details li, ul.digital-downloads li, .wl-list-pop, #wl-wrapper .wl-meta-share, #wl-wrapper .wl-share-url, .single-product div.product .component_selections .component_summary' ).css( 'border-color', to );
 
       // Box Shadow Color
       $( '.post-navigation div + div' ).css( 'box-shadow', '0px 1px 0px ' + to + ' inset' );
-    } );
-  } );
-  wp.customize( 'archetype_post_shadow_color', function( value ) {
-    value.bind( function( to ) {
-      // Box Shadow Color
-      $( 'article + .author-info, #comments .comment-list .comment-content, #comments .commentlist .comment-content, #respond, .hentry, .post-navigation' ).css( 'box-shadow', '0px -1px 0px ' + to + ' inset' );
     } );
   } );
   wp.customize( 'archetype_form_text_color', function( value ) {
