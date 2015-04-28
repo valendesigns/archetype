@@ -40,7 +40,7 @@ function archetype_body_classes( $classes ) {
   }
 
   // Adds a class of no-wc-breadcrumb when WooCommerce isn't activated or has been filtered off.
-  if ( ! function_exists( 'woocommerce_breadcrumb' ) || true !== apply_filters( 'archetype_show_breadcrumb', true ) ) {
+  if ( ! function_exists( 'woocommerce_breadcrumb' ) || true == (bool) get_theme_mod( 'archetype_breadcrumbs_hide', apply_filters( 'archetype_default_breadcrumbs_hide', false ) ) ) {
     $classes[]	= 'no-wc-breadcrumb';
   }
 

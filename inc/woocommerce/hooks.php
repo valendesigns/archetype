@@ -31,8 +31,9 @@ remove_action( 'woocommerce_before_shop_loop',    'woocommerce_catalog_ordering'
 add_action( 'woocommerce_before_main_content',    'archetype_before_content',               10    );
 add_action( 'woocommerce_after_main_content',     'archetype_after_content',                10    );
 add_action( 'storefront_content_top',             'archetype_shop_messages',                1     );
+add_filter( 'archetype_show_breadcrumb',          'archetype_filter_breadcrumbs'                  );
 
-if ( true === apply_filters( 'archetype_show_breadcrumb', true ) ) {
+if ( false == (bool) get_theme_mod( 'archetype_breadcrumbs_hide', apply_filters( 'archetype_default_breadcrumbs_hide', false ) ) ) {
   add_action( 'archetype_content_top',            'woocommerce_breadcrumb',                 10    );
 }
 

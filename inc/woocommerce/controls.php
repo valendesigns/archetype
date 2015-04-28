@@ -72,6 +72,31 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
       'settings'    => 'archetype_notice_info_color',
       'priority'    => 20,
     ) ) );
+    
+    /**
+     * Breadcrumbs
+     */
+    $wp_customize->add_section( 'archetype_breadcrumbs' , array(
+      'title'       => __( 'Breadcrumbs', 'archetype' ),
+      'priority'    => 15,
+      'panel'       => 'archetype_woocommerce'
+    ) );
+
+    /**
+     * Notice Error Color
+     */
+    $wp_customize->add_setting( 'archetype_breadcrumbs_hide', array(
+      'default'     => apply_filters( 'archetype_default_breadcrumbs_hide', false ),
+      'transport'   => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_breadcrumbs_hide', array(
+      'label'       => __( 'Hide Breadcrumbs', 'archetype' ),
+      'section'     => 'archetype_breadcrumbs',
+      'settings'    => 'archetype_breadcrumbs_hide',
+      'priority'    => 10,
+      'type'        => 'checkbox',
+    ) ) );
 
   }
 
