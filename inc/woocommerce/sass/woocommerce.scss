@@ -1095,18 +1095,36 @@ p.stars {
   .onsale {
     display: block;
     position: absolute;
+    text-align: center;
     top: 1em;
     left: -1.75em;
     width: 7.25em;
     height: 1.75em;
-    text-align: center;
+    font-size: 1em;
+    color: $color-post-bg;
+    background-color: $color-body;
+    z-index: 99;
     -webkit-transform: rotate(-45deg);
     -moz-transform:    rotate(-45deg);
     -ms-transform:     rotate(-45deg);
     transform:         rotate(-45deg);
-    color: $color-post-bg;
-    background-color: $color-body;
-    z-index: 99;
+
+    .no-transform & {
+      display: inline-block;
+      top: 0;
+      left: 0;
+      width: auto;
+      height : auto;
+      font-size: .875em;
+      text-transform: uppercase;
+      padding: .357em .714em;
+      font-weight: 700;
+      // Just incase our JS fails we need to reset the transform
+      -webkit-transform: rotate(0deg);
+      -moz-transform:    rotate(0deg);
+      -ms-transform:     rotate(0deg);
+      transform:         rotate(0deg);
+    }
   }
 }
 

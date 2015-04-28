@@ -26,11 +26,35 @@
       var self = this;
 
       this.cache.$document.on( 'ready', function() {
+        self.initTransform()
         self.navigationInit();
         self.skipLinkFocusFix();
         self.wooCommerceStarRating();
         self.sliderInit();
       } );
+    },
+
+    /**
+     * Add a no-transform class to the HTML element when transform is not supported.
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    initTransform: function() {
+      function canTransform() {
+        var prefixes = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
+            div = document.createElement('div');
+        for ( var i = 0; i < prefixes.length; i++ ) {
+          if ( div && div.style[prefixes[i]] !== undefined ) {
+            return prefixes[i];
+          }
+        }
+        return false;
+      }
+      if ( ! canTransform() ) {
+        $( 'html' ).addClass( 'no-transform' );
+      }
     },
     
     /**
