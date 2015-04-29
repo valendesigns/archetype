@@ -35,7 +35,7 @@ if ( ! function_exists( 'archetype_site_logo_svg' ) ) {
 
     // We have a logo. Logo is go.
     if ( jetpack_has_site_logo() && get_theme_mod( 'archetype_site_logo_svg' ) ) {
-      $html = str_replace( '</a>', '<span class="svg-site-logo" itemprop="logo"></span></a>', $html );
+      $html = str_replace( '</a>', '<span class="svg-site-logo"></span></a>', $html );
     }
 
     return $html;
