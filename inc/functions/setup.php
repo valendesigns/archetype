@@ -171,6 +171,8 @@ function archetype_widgets_init() {
 function archetype_scripts() {
   global $archetype_version;
 
+  wp_enqueue_script( 'archetype-modernizr', get_template_directory_uri() . '/js/modernizr.min.js', null, '2.8.3', false );
+
   // We have our own.
   wp_dequeue_style( 'subscribe-and-connect' );
 
@@ -190,17 +192,6 @@ function archetype_scripts() {
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
-}
-
-/**
- * JavaScript Detection.
- *
- * Adds a `js` class to the root `<html>` element when JavaScript is detected.
- *
- * @since 1.0.0
- */
-function archetype_javascript_detection() {
-  echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 
 /**

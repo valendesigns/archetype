@@ -33,24 +33,9 @@ if ( ! function_exists( 'archetype_customize_init' ) ) {
 if ( ! function_exists( 'archetype_site_logo_svg' ) ) {
   function archetype_site_logo_svg( $html, $logo, $size ) {
 
-    $logo_svg = get_theme_mod( 'archetype_site_logo_svg' );
-
     // We have a logo. Logo is go.
-    if ( ! jetpack_is_customize_preview() && jetpack_has_site_logo() && $logo_svg ) {
-      $image = wp_get_attachment_image_src( $logo['id'], $size, false );
-
-      if ( count( $image ) >= 3 ) {
-        $html = sprintf( 
-          '<a href="%1$s" class="site-logo-link" rel="home" itemprop="url"><img class="site-logo attachment-%2$s" width="%3$s" height="%4$s" itemprop="logo" data-size="%2$s" alt="%5$s" src="%6$s" onerror="this.src=%7$s;this.onerror=null;"></a>',
-          esc_url( home_url( '/' ) ),
-          esc_attr( $size ),
-          esc_attr( $image[1] ),
-          esc_attr( $image[2] ),
-          esc_attr( get_bloginfo( 'name' ) ),
-          esc_url( $logo_svg ),
-          esc_url( $image[0] )
-        );
-      }
+    if ( jetpack_has_site_logo() && get_theme_mod( 'archetype_site_logo_svg' ) ) {
+      $html = str_replace( '</a>', '<span class="svg-site-logo" itemprop="logo"></span></a>', $html );
     }
 
     return $html;

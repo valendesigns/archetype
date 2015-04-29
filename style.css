@@ -382,7 +382,7 @@ body {
       color: #ee543f; }
   .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: block; }
-    .site-header .site-logo-anchor img, .site-header .site-logo-link img {
+    .site-header .site-logo-anchor .site-logo, .site-header .site-logo-link .site-logo {
       max-height: 2.625em;
       width: auto; }
   .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link {
@@ -802,7 +802,7 @@ a {
     float: left;
     margin-right: 3.8461538462%;
     clear: both; }
-    .site-header .site-branding img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
+    .site-header .site-branding .site-logo, .site-header .site-logo-anchor .site-logo, .site-header .site-logo-link .site-logo {
       height: auto;
       max-width: 100%;
       max-height: none; }

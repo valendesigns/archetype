@@ -10,7 +10,6 @@
  * @see archetype_setup()
  * @see archetype_widgets_init()
  * @see archetype_scripts()
- * @see archetype_javascript_detection()
  * @see archetype_post_nav_background()
  * @see archetype_header_widget_region()
  * @see archetype_get_sidebar()
@@ -18,7 +17,6 @@
 add_action( 'after_setup_theme',        'archetype_setup'                    );
 add_action( 'widgets_init',             'archetype_widgets_init'             );
 add_action( 'wp_enqueue_scripts',       'archetype_scripts',              10 );
-add_action( 'wp_head',                  'archetype_javascript_detection', 0  );
 add_action( 'wp_enqueue_scripts',       'archetype_post_nav_background',  20 );
 add_action( 'archetype_before_content', 'archetype_header_widget_region', 10 );
 add_action( 'archetype_sidebar',        'archetype_get_sidebar',          10 );

@@ -56,7 +56,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       // Add the setting for our svg logo.
       $wp_customize->add_setting( 'archetype_site_logo_svg', array(
         'capability'  => 'manage_options',
-        'transport'   => 'postMessage',
       ) );
 
       // Add our image uploader.

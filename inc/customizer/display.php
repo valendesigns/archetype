@@ -12,12 +12,40 @@
  */
 if ( ! function_exists( 'archetype_add_customize_css' ) ) {
   function archetype_add_customize_css() {
+
     $style = '/* Customizer Styles */';
+
+    $logo_svg = get_theme_mod( 'archetype_site_logo_svg' );
+
+    // We have a logo. Logo is go.
+    if ( $logo_svg && jetpack_has_site_logo() ) {
+      $image = wp_get_attachment_image_src( jetpack_get_site_logo( 'id' ), 'full', false );
+
+      if ( count( $image ) >= 3 ) {
+        $style.= sprintf( '
+          .svg .site-logo-link .svg-site-logo {
+            display: block;
+            background-image: url(%1$s);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: %2$spx;
+            height: %3$spx
+          }
+          .svg .site-logo-link .site-logo {
+            display: none;
+          }',
+          esc_url( set_url_scheme( $logo_svg ) ),
+          esc_attr( $image[1] ),
+          esc_attr( $image[2] )
+        );
+      }
+    }
 
     // Site Logo
     if ( $logo_top_margin = get_theme_mod( 'archetype_site_logo_margin_top' ) ) {
       $style.= '
-      .site-logo-link img {
+      .site-logo-link .site-logo,
+      .svg .site-logo-link .svg-site-logo {
         margin-top: ' . esc_attr( $logo_top_margin ) . 'em;
       }';
     }
