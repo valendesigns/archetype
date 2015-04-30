@@ -122,15 +122,15 @@
 
     .chat-transcript {
       list-style: none;
-      margin: 0;
+      margin: 0 -2.625em;
       padding: 0;
 
       li {
         @include clearfix;
-        padding: 1em;
+        padding: 1em 2.625em;
 
         &:nth-child(odd) {
-          background: rgba(0,0,0,0.05);
+          background: rgba(0,0,0,0.025);
         }
 
         .chat-header {
@@ -186,6 +186,26 @@
 
     .chat-transcript + p {
       margin-top: $spacing-v;
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .chat-transcript {
+    margin: 0 -1.387em;
+
+    li {
+      padding: 1em 1.387em;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .chat-transcript {
+    margin: 0 -2.125em;
+
+    li {
+      padding: 1em 2.125em;
     }
   }
 }

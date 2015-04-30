@@ -1691,16 +1691,16 @@ fieldset {
 
 .format-chat .entry-content .chat-transcript {
   list-style: none;
-  margin: 0;
+  margin: 0 -2.625em;
   padding: 0; }
   .format-chat .entry-content .chat-transcript li {
-    padding: 1em; }
+    padding: 1em 2.625em; }
     .format-chat .entry-content .chat-transcript li::after {
       clear: both;
       content: "";
       display: table; }
     .format-chat .entry-content .chat-transcript li:nth-child(odd) {
-      background: rgba(0, 0, 0, 0.05); }
+      background: rgba(0, 0, 0, 0.025); }
     .format-chat .entry-content .chat-transcript li .chat-header {
       overflow: hidden;
       margin-bottom: .25em; }
@@ -1735,6 +1735,18 @@ fieldset {
       margin-bottom: 0; }
 .format-chat .entry-content .chat-transcript + p {
   margin-top: 1.5em; }
+
+@media screen and (max-width: 568px) {
+  .chat-transcript {
+    margin: 0 -1.387em; }
+    .chat-transcript li {
+      padding: 1em 1.387em; } }
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .chat-transcript {
+    margin: 0 -2.125em; }
+    .chat-transcript li {
+      padding: 1em 2.125em; } }
 
 /**
  * Media
