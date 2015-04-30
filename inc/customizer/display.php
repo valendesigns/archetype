@@ -18,7 +18,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     $logo_svg = get_theme_mod( 'archetype_site_logo_svg' );
 
     // We have a logo. Logo is go.
-    if ( $logo_svg && jetpack_has_site_logo() ) {
+    if ( $logo_svg && ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) ) {
       $image = wp_get_attachment_image_src( jetpack_get_site_logo( 'id' ), 'full', false );
 
       if ( count( $image ) >= 3 ) {

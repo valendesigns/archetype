@@ -2,6 +2,19 @@
  * General Layout
  */
 
+.col-full {
+  .expand-full-width {
+    position: relative;
+    margin-left: -2.625em;
+    margin-right: -2.625em;
+
+    .col-full {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .site-header {
     .site-branding,
@@ -182,9 +195,23 @@
   }
 }
 
+@media screen and (min-width: 74.001em) {
+	.col-full {
+    .expand-full-width {
+      margin-left: -46em;
+      margin-right: -46em;
+    }
+  }
+}
+
 @media screen and (max-width: 568px) {
   .col-full {
     margin-left: 1.387em;
     margin-right: 1.387em;
+
+    .expand-full-width {
+      margin-left: -1.387em;
+      margin-right: -1.387em;
+    }
   }
 }

@@ -145,11 +145,11 @@
         $( 'body' ).on( 'mouseenter.archetype', $stars, function() {
           $( this ).prevAll().toggleClass( 'toggled' );
         });
-  
+
         $( 'body' ).on( 'mouseleave.archetype', $stars, function() {
           $( this ).siblings( 'a' ).removeClass( 'toggled' );
         });
-  
+
         $( 'body' ).on( 'click.archetype', $stars, function() {
           $( this ).siblings( 'a' ).removeClass( 'active' );
           $( this ).addClass( 'active' ).prevAll().addClass( 'active' );
@@ -166,17 +166,25 @@
      */
     sliderInit: function() {
       if ( typeof jQuery.fn.bxSlider == 'function' ) {
-        $('.bxslider').bxSlider({
+        var _slider;
+
+        _slider = $( '.bxslider' ).bxSlider( {
           adaptiveHeight: true,
           mode: 'fade',
           pager: false,
           nextText: _archetype.next,
           prevText: _archetype.prev
+        } );
+
+        $( window ).on( 'orientationchange', function () {
+
+          _slider.reloadSlider();
+
         });
       }
     },
 
   };
-  
+
   archetype.init();
 })(jQuery);
