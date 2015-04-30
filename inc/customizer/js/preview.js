@@ -18,9 +18,9 @@
   wp.customize( 'archetype_site_logo_margin_top', function( value ) {
     value.bind( function( to ) {
       if ( to )
-        $( '.site-logo-link .site-logo' ).css( 'margin-top', to + 'em' );
+        $( '.site-logo-link img, .svg-site-logo' ).css( 'margin-top', to + 'em' );
       else
-        $( '.site-logo-link .site-logo' ).css( 'margin-top', '0' );
+        $( '.site-logo-link img, .svg-site-logo' ).css( 'margin-top', '0' );
     } );
   } );
   wp.customize( 'archetype_text_color', function( value ) {

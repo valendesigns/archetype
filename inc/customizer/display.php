@@ -23,16 +23,17 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 
       if ( count( $image ) >= 3 ) {
         $style.= sprintf( '
-          .svg .site-logo-link .svg-site-logo {
+          .svg .site-logo,
+          .no-svg .svg-site-logo {
+            display: none;
+          }
+          .svg .svg-site-logo {
             display: block;
             background-image: url(%1$s);
             background-repeat: no-repeat;
             background-size: contain;
             width: %2$spx;
             height: %3$spx
-          }
-          .svg .site-logo-link .site-logo {
-            display: none;
           }',
           esc_url( set_url_scheme( $logo_svg ) ),
           esc_attr( $image[1] ),
