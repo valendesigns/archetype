@@ -1327,6 +1327,9 @@ fieldset {
   box-shadow: 0px -1px 0px #8b949b inset;
   border-radius: 0px;
   overflow: hidden; }
+  .page-template-template-homepage .hentry {
+    background: none !important;
+    box-shadow: none !important; }
   .hentry.type-post::after {
     clear: both;
     content: "";
@@ -1377,6 +1380,8 @@ fieldset {
   .hentry .entry-content {
     padding: 2.625em;
     padding-top: 0; }
+    .page-template-template-homepage .hentry .entry-content {
+      padding: 0 !important; }
     .hentry .entry-content.no-content {
       padding: 0 !important; }
     .entry-meta + .hentry .entry-content {

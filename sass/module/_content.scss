@@ -30,6 +30,11 @@
   border-radius: $radius-post;
   overflow: hidden;
 
+  .page-template-template-homepage & {
+    background: none !important;
+    box-shadow: none !important;
+  }
+
   &.type-post {
     @include clearfix;
   }
@@ -108,6 +113,10 @@
   .entry-content {
     padding: 2.625em;
     padding-top: 0;
+
+    .page-template-template-homepage & {
+      padding: 0 !important;
+    }
 
     &.no-content {
       padding: 0 !important;
