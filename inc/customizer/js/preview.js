@@ -327,15 +327,4 @@
       $( '.site-info' ).css( 'background-color', to );
     } );
   } );
-  wp.customize( 'archetype_breadcrumbs_hide', function( value ) {
-    value.bind( function( to ) {
-      if ( to ) {
-        $( '.woocommerce-breadcrumb' ).hide();
-        $( 'body' ).addClass( 'no-wc-breadcrumb' );
-      } else {
-        $( '.woocommerce-breadcrumb' ).show();
-        $( 'body' ).removeClass( 'no-wc-breadcrumb' );
-      }
-    } );
-  } );
 } )( jQuery );

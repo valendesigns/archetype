@@ -76,7 +76,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
     /**
      * Breadcrumbs
      */
-    $wp_customize->add_section( 'archetype_breadcrumbs' , array(
+    $wp_customize->add_section( 'archetype_breadcrumb' , array(
       'title'       => __( 'Breadcrumbs', 'archetype' ),
       'priority'    => 15,
       'panel'       => 'archetype_woocommerce'
@@ -85,15 +85,14 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
     /**
      * Notice Error Color
      */
-    $wp_customize->add_setting( 'archetype_breadcrumbs_hide', array(
-      'default'     => apply_filters( 'archetype_default_breadcrumbs_hide', false ),
-      'transport'   => 'postMessage',
+    $wp_customize->add_setting( 'archetype_breadcrumb_hide', array(
+      'default'     => apply_filters( 'archetype_default_breadcrumb_hide', false ),
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_breadcrumbs_hide', array(
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_breadcrumb_hide', array(
       'label'       => __( 'Hide Breadcrumbs', 'archetype' ),
-      'section'     => 'archetype_breadcrumbs',
-      'settings'    => 'archetype_breadcrumbs_hide',
+      'section'     => 'archetype_breadcrumb',
+      'settings'    => 'archetype_breadcrumb_hide',
       'priority'    => 10,
       'type'        => 'checkbox',
     ) ) );

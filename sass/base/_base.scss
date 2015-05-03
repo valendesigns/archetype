@@ -65,10 +65,7 @@ body {
   @include clearfix;
 }
 
-.home.blog,
-.home.page:not(.page-template-template-homepage),
-.home.post-type-archive-product,
-.no-wc-breadcrumb:not(.home) {
+.no-wc-breadcrumb:not(.page-template-template-homepage) {
   .site-header {
     margin-bottom: 2.625em;
   }

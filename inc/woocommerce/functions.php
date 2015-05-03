@@ -28,6 +28,25 @@ if ( ! function_exists( 'archetype_is_woocommerce' ) ) {
 }
 
 /**
+ * Adds breadcrumbs depending on the value set in the customizer.
+ *
+ * @uses woocommerce_breadcrumb() to create the breadcrumb markup.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+if ( ! function_exists( 'archetype_breadcrumb' ) ) {
+  function archetype_breadcrumb() {
+    $hidden = (bool) get_theme_mod( 'archetype_breadcrumb_hide', apply_filters( 'archetype_default_breadcrumb_hide', false ) );
+
+    if ( false === $hidden ) {
+      woocommerce_breadcrumb();
+    }
+  }
+}
+
+/**
  * Product review arguments passed to the comments list.
  *
  * @see wp_list_comments()
