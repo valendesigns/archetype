@@ -15,10 +15,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 
     $style = '/* Customizer Styles */';
 
-    $logo_svg = get_theme_mod( 'archetype_site_logo_svg' );
+    $logo_svg = wp_get_attachment_image_src( get_theme_mod( 'archetype_site_logo_svg' ), 'full' );
 
     // We have a logo. Logo is go.
-    if ( $logo_svg && ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) ) {
+    if ( isset( $logo_svg[0] ) && ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) ) {
       $image = wp_get_attachment_image_src( jetpack_get_site_logo( 'id' ), 'full', false );
 
       if ( count( $image ) >= 3 ) {
@@ -35,7 +35,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
             width: %2$spx;
             height: %3$spx
           }',
-          esc_url( set_url_scheme( $logo_svg ) ),
+          esc_url( $logo_svg[0] ),
           esc_attr( $image[1] ),
           esc_attr( $image[2] )
         );

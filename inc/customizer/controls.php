@@ -59,10 +59,11 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       ) );
 
       // Add our image uploader.
-      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'archetype_site_logo_svg', array(
+      $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_site_logo_svg', array(
         'label'       => __( 'Logo SVG (logo above required)', 'archetype' ),
         'section'     => 'title_tagline',
         'settings'    => 'archetype_site_logo_svg',
+        'mime_type'   => 'image',
         'priority'    => 40,
       ) ) );
 
