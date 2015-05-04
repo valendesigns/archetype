@@ -4,7 +4,7 @@
  *
  * @package archetype
  */
-if ( is_page_template( 'template-homepage.php' ) && empty( get_the_content() ) )
+if ( is_page_template( 'template-homepage.php' ) && get_the_content() == '' )
   return;
 ?>
 
