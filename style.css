@@ -737,6 +737,9 @@ code, kbd, tt, var {
   background-color: rgba(0, 0, 0, 0.05);
   padding: .125em .25em; }
 
+pre > code {
+  background: none; }
+
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help; }

@@ -153,6 +153,10 @@ var {
   padding: .125em .250em;
 }
 
+pre > code {
+  background: none;
+}
+
 abbr,
 acronym {
   border-bottom: 1px dotted #666;
