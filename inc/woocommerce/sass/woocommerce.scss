@@ -941,8 +941,12 @@ ul.digital-downloads {
  * General WooCommerce components
  */
 .form-row {
-  label {
+  label:not(.inline) {
     display: block;
+  }
+
+  .button + label[for=rememberme] {
+    margin-left: 1em;
   }
 
   input,

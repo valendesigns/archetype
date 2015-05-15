@@ -1085,7 +1085,7 @@ label {
   font-weight: 700;
   margin-bottom: .875em; }
 
-input + label, .post-password-form label {
+input + label, .post-password-form label, label.inline {
   display: inline; }
 
 label.inline input {

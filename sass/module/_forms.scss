@@ -158,7 +158,8 @@ label {
 }
 
 input + label,
-.post-password-form label {
+.post-password-form label,
+label.inline {
   display: inline;
 }
 
