@@ -30,9 +30,11 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     $wp_customize->get_section( 'header_image' )->priority      = 35;
     
     // Change navigation section title, panel, & priority
-    $wp_customize->get_section( 'nav' )->title                  = __( 'Menus', 'archetype' );
-    $wp_customize->get_section( 'nav' )->panel                  = 'archetype_navigation';
-    $wp_customize->get_section( 'nav' )->priority               = 10;
+    if ( 'menus' !== $wp_customize->get_section( 'nav' )->panel ) {
+      $wp_customize->get_section( 'nav' )->title                = __( 'Menus Locations', 'archetype' );
+      $wp_customize->get_section( 'nav' )->panel                = 'archetype_menus';
+      $wp_customize->get_section( 'nav' )->priority             = 10;
+    }
 
     /**
      * Custom controls
@@ -284,21 +286,26 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     // BEGIN Navigation
 
-    $wp_customize->add_panel( 'archetype_navigation', array(
-      'theme_supports'  => 'menus',
-      'title'           => __( 'Navigation', 'archetype' ),
-      'description'     => __( 'Customize menu locations & styles.', 'archetype' ),
-      'priority'        => 40,
-    ) );
+    if ( 'menus' !== $wp_customize->get_section( 'nav' )->panel ) {
+      $wp_customize->add_panel( $wp_customize->get_section( 'nav' )->panel, array(
+        'theme_supports'  => 'menus',
+        'title'           => __( 'Menus', 'archetype' ),
+        'description'     => __( 'Customize your menu locations and styles.', 'archetype' ),
+        'priority'        => 40,
+        'panel'           => 'menus',
+      ) );
+    } else {
+      $wp_customize->get_panel( $wp_customize->get_section( 'nav' )->panel )->priority = 40;
+    }
 
     /**
      * Add the Primary Menu Styles section
      */
     $wp_customize->add_section( 'archetype_nav_styles' , array(
-      'title'       => __( 'Primary Menu Styles', 'archetype' ),
-      'priority'    => 20,
-      'description' => __( 'You must choose a menu location, in the Menus tab above, for the primary navigation styles to work.', 'archetype' ),
-      'panel'       => 'archetype_navigation',
+      'title'       => __( 'Primary Menu', 'archetype' ),
+      'priority'    => 1,
+      'description' => __( 'The Primary Menu must be set to a menu location in order to preview style changes.', 'archetype' ),
+      'panel'       => $wp_customize->get_section( 'nav' )->panel,
     ) );
 
     /**
@@ -400,10 +407,10 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Add the Secondary Menu Styles section
      */
     $wp_customize->add_section( 'archetype_nav_alt_styles' , array(
-      'title'       => __( 'Secondary Menu Styles', 'archetype' ),
-      'priority'    => 20,
-      'description' => __( 'You must choose a menu location, in the Menus tab above, for the secondary navigation styles to work.', 'archetype' ),
-      'panel'       => 'archetype_navigation',
+      'title'       => __( 'Secondary Menu', 'archetype' ),
+      'priority'    => 2,
+      'description' => __( 'The Secondary Menu must be set to a menu location in order to preview style changes.', 'archetype' ),
+      'panel'       => $wp_customize->get_section( 'nav' )->panel,
     ) );
 
     /**
@@ -516,6 +523,32 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'section'     => 'archetype_nav_alt_styles',
       'settings'    => 'archetype_nav_alt_link_color_active_bg',
       'priority'    => 40,
+    ) ) );
+
+    /**
+     * Add the Handheld Menu Styles section
+     */
+    $wp_customize->add_section( 'archetype_nav_handheld_styles' , array(
+      'title'       => __( 'Handheld Menu', 'archetype' ),
+      'priority'    => 3,
+      'description' => __( 'The Handheld Menu must be set to a menu location in order to preview style changes. As well, you might need to make your browser window smaller so the Handheld Menu is visible.', 'archetype' ),
+      'panel'       => $wp_customize->get_section( 'nav' )->panel,
+    ) );
+
+    /**
+     * Secondary Navigation Color
+     */
+    $wp_customize->add_setting( 'archetype_nav_handheld_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_handheld_color', '#bbb' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_color', array(
+      'label'       => __( 'Text color', 'archetype' ),
+      'section'     => 'archetype_nav_handheld_styles',
+      'settings'    => 'archetype_nav_handheld_color',
+      'priority'    => 10,
     ) ) );
 
     // END Navigation
