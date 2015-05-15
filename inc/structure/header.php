@@ -28,8 +28,6 @@ if ( ! function_exists( 'archetype_site_branding' ) ) {
   function archetype_site_branding() {
     if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
       jetpack_the_site_logo();
-    } else if ( function_exists( 'has_site_logo' ) && has_site_logo() ) {
-      the_site_logo();
     } else { ?>
       <div class="site-branding">
         <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
