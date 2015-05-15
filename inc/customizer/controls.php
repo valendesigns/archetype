@@ -553,6 +553,249 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     // END Navigation
 
+    // BEGIN Homepage
+
+    /**
+     * Add the Homepage panel
+     */
+    $wp_customize->add_panel( 'archetype_homepage' , array(
+      'title'           => __( 'Homepage', 'archetype' ),
+      'priority'        => 45,
+      'active_callback' => 'is_front_page',
+    ) );
+
+    /**
+     * Add the Hero Component section
+     */
+    $wp_customize->add_section( 'archetype_homepage_hero' , array(
+      'title'       => __( 'Hero Component', 'archetype' ),
+      'priority'    => 10,
+      'description' => __( 'These controls modify the style and content for the Homepage Hero Component. You could even turn it off if you wanted by unchecking the Activated option below.' ),
+      'panel'       => 'archetype_homepage',
+    ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_hero_divider', array(
+      'section'     => 'archetype_homepage_hero',
+      'type'        => 'divider',
+      'priority'    => 4,
+    ) ) );
+
+    /**
+     * Active
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_active', array(
+      'default'     => true,
+    ) );
+
+    $wp_customize->add_control( 'archetype_homepage_hero_active', array(
+      'label'       => __( 'Activated', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_active',
+      'priority'    => 5,
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Layout
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_layout', array(
+      'default'     => true,
+    ) );
+
+    $wp_customize->add_control( 'archetype_homepage_hero_layout', array(
+      'label'       => __( 'Full Width', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_layout',
+      'priority'    => 10,
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Alignment
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_alignment', array(
+      'default'     => 'center',
+    ) );
+
+    $wp_customize->add_control( 'archetype_homepage_hero_alignment', array(
+      'label'       => __( 'Text alignment', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_alignment',
+      'priority'    => 15,
+      'type'        => 'radio',
+      'choices'     => array(
+        'left'        => 'Left',
+        'center'      => 'Center',
+        'right'       => 'Right',
+      ),
+    ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_hero_display_divider', array(
+      'section'     => 'archetype_homepage_hero',
+      'type'        => 'divider',
+      'priority'    => 16,
+    ) ) );
+
+    /**
+     * Background image
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_background_image', array(
+      'default'           => '',
+      'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_homepage_hero_background_image', array(
+      'label'       => __( 'Background image', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_background_image',
+      'mime_type'   => 'image',
+      'priority'    => 20,
+    ) ) );
+
+    /**
+     * Background size
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_background_image_size', array(
+      'default'     => 'auto',
+    ) );
+
+    $wp_customize->add_control( 'archetype_homepage_hero_background_image_size', array(
+      'label'       => __( 'Background image size', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_background_image_size',
+      'priority'    => 25,
+      'type'        => 'select',
+      'choices'     => array(
+        'auto'        => 'Auto',
+        'cover'       => 'Cover',
+      ),
+    ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_hero_background_image_divider', array(
+      'section'     => 'archetype_homepage_hero',
+      'type'        => 'divider',
+      'priority'    => 26,
+    ) ) );
+
+    /**
+     * Background Color
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_background_color', array(
+      'default'           => apply_filters( 'archetype_default_header_background_color', '#353b3f' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_hero_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_background_color',
+      'priority'    => 30,
+    ) ) );
+
+    /**
+     * Heading text color
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_heading_color', array(
+      'default'           => apply_filters( 'archetype_default_header_link_color', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_hero_heading_color', array(
+      'label'       => __( 'Heading text color', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_heading_color',
+      'priority'    => 35,
+    ) ) );
+
+    /**
+     * Text color
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_text_color', array(
+      'default'           => apply_filters( 'archetype_default_homepage_hero_text_color', '#888' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_hero_text_color', array(
+      'label'       => __( 'Body text color', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_text_color',
+      'priority'    => 40,
+    ) ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_hero_color_divider', array(
+      'section'     => 'archetype_homepage_hero',
+      'type'        => 'divider',
+      'priority'    => 41,
+    ) ) );
+
+    /**
+     * Heading Text
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_heading_text', array(
+      'default'           => __( 'Heading Text', 'archetype' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_heading_text', array(
+      'label'       => __( 'Heading text', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_heading_text',
+      'priority'    => 45,
+      'type'        => 'text',
+    ) ) );
+
+    /**
+     * Body Text
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_text', array(
+      'default'     => __( 'Body Text', 'archetype' ),
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_text', array(
+      'label'       => __( 'Body text', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_text',
+      'priority'    => 50,
+      'type'        => 'textarea',
+    ) ) );
+
+    /**
+     * Button Text
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_button_text', array(
+      'default'           => __( 'Call to Action', 'archetype' ),
+      'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_button_text', array(
+      'label'       => __( 'Button text', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_button_text',
+      'priority'    => 55,
+      'type'        => 'text',
+    ) ) );
+
+    /**
+     * Button URL
+     */
+    $wp_customize->add_setting( 'archetype_homepage_hero_button_url', array(
+      'default'           => home_url(),
+      'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_button_url', array(
+      'label'       => __( 'Button url', 'archetype' ),
+      'section'     => 'archetype_homepage_hero',
+      'settings'    => 'archetype_homepage_hero_button_url',
+      'priority'    => 60,
+      'type'        => 'text',
+    ) ) );
+
+    // END Homepage
+
     // BEGIN Post
 
     /**
@@ -560,7 +803,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_post' , array(
       'title'       => __( 'Post', 'archetype' ),
-      'priority'    => 45,
+      'priority'    => 50,
     ) );
 
     /**
@@ -647,7 +890,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_forms' , array(
       'title'       => __( 'Form Inputs & Textareas', 'archetype' ),
-      'priority'    => 50,
+      'priority'    => 55,
     ) );
 
     /**
@@ -723,7 +966,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_search' , array(
       'title'       => __( 'Search Widget', 'archetype' ),
-      'priority'    => 55,
+      'priority'    => 60,
     ) );
 
     /**
@@ -783,7 +1026,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_buttons' , array(
       'title'       => __( 'Buttons', 'archetype' ),
-      'priority'    => 60,
+      'priority'    => 65,
     ) );
 
     /**
@@ -965,7 +1208,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_footer' , array(
       'title'       => __( 'Footer', 'archetype' ),
-      'priority'    => 65,
+      'priority'    => 70,
     ) );
 
     $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_footer_upper', array(
@@ -1181,5 +1424,81 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     // END Import/Export
 
+  }
+
+}
+
+/**
+ * Display the Homepage Hero
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_homepage_hero_active' ) ) {
+  function archetype_homepage_hero() {
+    if ( false == get_theme_mod( 'archetype_homepage_hero_active', true ) ) {
+      return false;
+    }
+
+    // Layout
+    $layout               = get_theme_mod( 'archetype_homepage_hero_layout', true ) ? 'expand-full-width' : '';
+
+    // Alignment
+    $alignment            = get_theme_mod( 'archetype_homepage_hero_alignment', 'center' );
+
+    // Background image
+    $background_img_src   = wp_get_attachment_image_src( get_theme_mod( 'archetype_homepage_hero_background_image', '' ), 'full' );
+    $background_img       = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
+
+    // Background image size
+    $background_img_size  = get_theme_mod( 'archetype_homepage_hero_background_image_size', 'auto' );
+
+    // Background color
+    $background_color     = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_background_color', apply_filters( 'archetype_default_homepage_hero_background_color', '#353b3f' ) ) );
+
+    // Heading color
+    $heading_text_color   = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_heading_color', apply_filters( 'archetype_default_homepage_hero_heading_color', '#fff' ) ) );
+
+    // Body color
+    $body_text_color      = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_text_color', apply_filters( 'archetype_default_homepage_hero_text_color', '#888' ) ) );
+
+    // Heading text
+    $heading_text         = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_heading_text', __( 'Heading Text', 'archetype' ) ) );
+
+    // Body Text
+    $body_text            = wp_kses_post( get_theme_mod( 'archetype_homepage_hero_text', __( 'Body Text', 'archetype' ) ) );
+
+    // Button text
+    $button_text          = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_text', __( 'Call to Action', 'archetype' ) ) );
+
+    // Button URL
+    $button_url           = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_url', home_url() ) );
+
+    // CSS classes
+    $classes = array( 'archetype-homepage-hero' );
+    $classes[] = $alignment;
+    $classes[] = $layout;
+
+    // CSS style attributes
+    $styles = array();
+    $styles[] = "color: $body_text_color;";
+    $styles[] = "background-color: $background_color;";
+    $styles[] = "background-image: url($background_img);";
+    $styles[] = "background-size: $background_img_size;";
+    $styles[] = "background-repeat: no-repeat;";
+    ?>
+    <section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>;">
+      <div class="col-full">
+        <?php do_action( 'archetype_homepage_hero_content_before' ); ?>
+        <?php echo sprintf( '<h1 style="color: %s">%s</h1>', $heading_text_color, $heading_text ); ?>
+        <div class="archetype-homepage-hero-body">
+          <?php echo wpautop( $body_text ); ?>
+          <?php if ( $button_text && $button_url ) { ?>
+            <?php echo sprintf( '<p><a href="%s" class="button">%s</a></p>', $button_url, $button_text ); ?>
+          <?php } ?>
+        </div>
+        <?php do_action( 'archetype_homepage_hero_content_after' ); ?>
+      </div>
+    </section>
+    <?php
   }
 }

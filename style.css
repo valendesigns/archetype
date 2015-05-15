@@ -365,7 +365,8 @@ html {
   background-color: #292e31; }
 
 body {
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  overflow-x: hidden; }
 
 /**
  * Header
@@ -2374,6 +2375,33 @@ embed, iframe, object {
 @media screen and (min-width: 74em) {
   .widget h3.widget-title {
     font-size: 1.5em; } }
+
+.archetype-homepage-hero {
+  margin-bottom: 2.625em;
+  text-align: center;
+  background-position: 50% 0;
+  margin-top: -2.625em; }
+
+.archetype-homepage-hero .col-full {
+  padding: 5.25em 0; }
+
+.archetype-homepage-hero.fixed {
+  margin-left: 0;
+  margin-right: 0; }
+
+.archetype-homepage-hero.left {
+  text-align: left; }
+
+.archetype-homepage-hero.right {
+  text-align: right; }
+
+@media screen and (max-width: 74em) {
+  .archetype-homepage-hero .col-full {
+    padding: 5.25em 2.625em; } }
+
+@media screen and (max-width: 568px) {
+  .archetype-homepage-hero .col-full {
+    padding: 2.75em 1.387em; } }
 
 /**
  * Infinite Scroll

@@ -16,7 +16,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 
     $wp_customize->add_panel( 'archetype_woocommerce', array(
       'title'           => __( 'WooCommerce', 'archetype' ),
-      'priority'        => 70,
+      'priority'        => 75,
     ) );
 
     /**

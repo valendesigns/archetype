@@ -52,6 +52,7 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
 
 /**
  * Homepage
+ * @see archetype_homepage_hero()
  * @see archetype_homepage_content()
  * @see archetype_product_categories()
  * @see archetype_recent_products()
@@ -59,6 +60,7 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
  * @see archetype_popular_products()
  * @see archetype_on_sale_products()
  */
+add_action( 'homepage', 'archetype_homepage_hero',      0  );
 add_action( 'homepage', 'archetype_homepage_content',   10 );
 add_action( 'homepage', 'archetype_product_categories', 20 );
 add_action( 'homepage', 'archetype_recent_products',    30 );

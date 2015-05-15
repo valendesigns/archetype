@@ -213,6 +213,21 @@
       $( '.secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a' ).css( 'background-color', to );
     } );
   } );
+  wp.customize( 'archetype_homepage_hero_heading_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.archetype-homepage-hero h1' ).css( 'color', to );
+    } );
+  } );
+  wp.customize( 'archetype_homepage_hero_text_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.archetype-homepage-hero-body' ).css( 'color', to );
+    } );
+  } );
+  wp.customize( 'archetype_homepage_hero_background_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.archetype-homepage-hero' ).css( 'background-color', to );
+    } );
+  } );
   wp.customize( 'archetype_post_background_color', function( value ) {
     value.bind( function( to ) {
       // Background Color

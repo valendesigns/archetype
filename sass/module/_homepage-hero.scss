@@ -1,0 +1,35 @@
+.archetype-homepage-hero {
+	margin-bottom: 2.625em;
+	text-align: center;
+	background-position: 50% 0;
+	margin-top: -2.625em;
+}
+
+.archetype-homepage-hero .col-full {
+	padding: 5.250em 0;
+}
+
+.archetype-homepage-hero.fixed {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.archetype-homepage-hero.left {
+	text-align: left;
+}
+
+.archetype-homepage-hero.right {
+	text-align: right;
+}
+
+@media screen and (max-width: 74em) {
+  .archetype-homepage-hero .col-full {
+  	padding: 5.250em 2.625em;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .archetype-homepage-hero .col-full {
+  	padding: 2.750em 1.387em;
+  }
+}
