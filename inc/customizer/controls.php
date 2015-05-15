@@ -1293,7 +1293,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_footer_lower_divider', array(
       'section'     => 'archetype_footer',
       'type'        => 'divider',
-      'description' => __( '', 'archetype' ),
     ) ) );
 
     $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_footer_lower_text', array(
