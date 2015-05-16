@@ -680,7 +680,7 @@ if ( ! function_exists( 'archetype_homepage_hero_active' ) ) {
     $styles[] = "background-size: $background_img_size;";
     $styles[] = "background-repeat: no-repeat;";
     ?>
-    <section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>;">
+    <section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
       <div class="col-full">
         <?php do_action( 'archetype_homepage_hero_content_before' ); ?>
         <?php echo sprintf( '<h1 style="color: %s">%s</h1>', $heading_text_color, $heading_text ); ?>

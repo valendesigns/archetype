@@ -1,0 +1,47 @@
+.archetype-homepage-content {
+  margin-top: -2.625em;
+  text-align: center;
+}
+
+.hentry + .archetype-homepage-content {
+  margin-top: -$spacing-v;
+}
+
+.archetype-homepage-content .col-full {
+  padding: 2.625em 0;
+}
+
+.is-full-width .archetype-homepage-content .col-full {
+  padding-left: 2.625em;
+  padding-right: 2.625em;
+}
+
+.archetype-homepage-content.left {
+  text-align: left;
+}
+
+.archetype-homepage-content.right {
+  text-align: right;
+}
+
+.archetype-homepage-content p:last-child {
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 74em) {
+  .archetype-homepage-content .col-full {
+    padding: 2.625em;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .archetype-homepage-content .col-full {
+    padding: 1.387em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .archetype-homepage-content .col-full {
+    padding: 2.125em;
+  }
+}

@@ -583,6 +583,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_panel( 'archetype_homepage' , array(
       'title'           => __( 'Homepage', 'archetype' ),
+      'description'     => __( 'Customize the the homepage template.', 'archetype' ),
       'priority'        => 45,
       'active_callback' => 'is_front_page',
     ) );
@@ -820,6 +821,108 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_homepage_hero_button_url',
       'priority'    => 60,
       'type'        => 'text',
+    ) ) );
+    
+    /**
+     * Content section
+     */
+    $wp_customize->add_section( 'archetype_homepage_content' , array(
+      'title'       => __( 'Content', 'archetype' ),
+      'priority'    => 15,
+      'panel'       => 'archetype_homepage',
+    ) );
+
+    /**
+     * Toggle content
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_toggle', array(
+      'default'           => true,
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'archetype_homepage_content_toggle', array(
+      'label'       => __( 'Display page content', 'archetype' ),
+      'description' => __( 'Toggle the display of the page content.', 'archetype' ),
+      'section'     => 'archetype_homepage_content',
+      'settings'    => 'archetype_homepage_content_toggle',
+      'type'        => 'checkbox',
+    ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_content_divider', array(
+      'section'     => 'archetype_homepage_content',
+      'type'        => 'divider',
+    ) ) );
+
+    /**
+     * Content editor
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content', array(
+      'default'           => '',
+      'sanitize_callback' => 'wp_kses_post',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_content', array(
+      'label'       => __( 'Content', 'archetype' ),
+      'section'     => 'archetype_homepage_content',
+      'settings'    => 'archetype_homepage_content',
+      'type'        => 'textarea',
+    ) ) );
+    
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_content_text', array(
+      'section'     => 'archetype_homepage_content',
+      'description' => __( 'Add custom content after the page content.', 'archetype' ),
+      'settings'    => 'archetype_homepage_content',
+      'type'        => 'text',
+    ) ) );
+
+    /**
+     * Alignment
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_alignment', array(
+      'default'           => 'left',
+      'sanitize_callback' => 'archetype_sanitize_choices',
+    ) );
+
+    $wp_customize->add_control( 'archetype_homepage_content_alignment', array(
+      'label'       => __( 'Text alignment', 'archetype' ),
+      'section'     => 'archetype_homepage_content',
+      'settings'    => 'archetype_homepage_content_alignment',
+      'type'        => 'radio',
+      'choices'     => array(
+        'left'        => 'Left',
+        'center'      => 'Center',
+        'right'       => 'Right',
+      ),
+    ) );
+
+    /**
+     * Content color
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_text_color', array(
+      'default'           => apply_filters( 'archetype_default_homepage_content_text_color', '#555' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_content_text_color', array(
+      'label'       => __( 'Text color', 'archetype' ),
+      'section'     => 'archetype_homepage_content',
+      'settings'    => 'archetype_homepage_content_text_color',
+    ) ) );
+
+    /**
+     * Content background color
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_background_color', array(
+      'default'           => apply_filters( 'archetype_default_homepage_content_background_color', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_content_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_homepage_content',
+      'settings'    => 'archetype_homepage_content_background_color',
     ) ) );
 
     // END Homepage

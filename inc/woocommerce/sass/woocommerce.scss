@@ -1307,7 +1307,11 @@ dl.variation {
  * Homepage
  */
 .archetype-product-section {
-  margin-bottom: 2.625em;
+  padding: 2.625em 0;
+
+  &:last-child {
+    margin-bottom: -2.625em;
+  }
 
   .section-title {
     text-align: center;
@@ -1901,10 +1905,17 @@ dl.variation {
   .woocommerce-breadcrumb,
   ul.products li.product,
   .woocommerce-tabs,
-  .archetype-product-section,
   .single-product div.product .images,
   .single-product div.product .summary {
     margin-bottom: 1.387em;
+  }
+
+  .archetype-product-section {
+    padding: 1.387em 0;
+
+    &:last-child {
+      margin-bottom: -1.387em;
+    }
   }
 
   #tab-description,
@@ -1932,10 +1943,17 @@ dl.variation {
   .woocommerce-breadcrumb,
   ul.products li.product,
   .woocommerce-tabs,
-  .archetype-product-section,
   .single-product div.product .images,
   .single-product div.product .summary {
     margin-bottom: 2.125em;
+  }
+
+  .archetype-product-section {
+    padding: 2.125em 0;
+
+    &:last-child {
+      margin-bottom: -2.125em;
+    }
   }
 
   #tab-description,

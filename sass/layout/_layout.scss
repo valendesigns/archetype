@@ -2,19 +2,6 @@
  * General Layout
  */
 
-.col-full {
-  .expand-full-width {
-    position: relative;
-    margin-left: -2.625em;
-    margin-right: -2.625em;
-
-    .col-full {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-
 @media screen and (min-width: 768px) {
   .is-boxed .site {
     max-width: 76.5em;
@@ -205,6 +192,17 @@
   .col-full {
     margin-left: 2.625em;
     margin-right: 2.625em;
+    
+    .expand-full-width {
+      position: relative;
+      margin-left: -2.625em;
+      margin-right: -2.625em;
+
+      .col-full {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -224,6 +222,18 @@
         margin-left: -2.625em;
         margin-right: -2.625em;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .col-full {
+    margin-left: 2.125em;
+    margin-right: 2.125em;
+
+    .expand-full-width {
+      margin-left: -2.125em;
+      margin-right: -2.125em;
     }
   }
 }

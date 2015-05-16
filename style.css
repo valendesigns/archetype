@@ -798,14 +798,6 @@ a {
 /**
  * General Layout
  */
-.col-full .expand-full-width {
-  position: relative;
-  margin-left: -2.625em;
-  margin-right: -2.625em; }
-  .col-full .expand-full-width .col-full {
-    margin-left: auto;
-    margin-right: auto; }
-
 @media screen and (min-width: 768px) {
   .is-boxed .site {
     max-width: 76.5em;
@@ -961,7 +953,14 @@ a {
 @media screen and (max-width: 74em) {
   .col-full {
     margin-left: 2.625em;
-    margin-right: 2.625em; } }
+    margin-right: 2.625em; }
+    .col-full .expand-full-width {
+      position: relative;
+      margin-left: -2.625em;
+      margin-right: -2.625em; }
+      .col-full .expand-full-width .col-full {
+        margin-left: 0;
+        margin-right: 0; } }
 
 @media screen and (min-width: 74.001em) {
   .is-full-width .col-full {
@@ -979,6 +978,14 @@ a {
     .is-boxed .col-full .expand-full-width, .is-full-width .col-full .expand-full-width {
       margin-left: -2.625em;
       margin-right: -2.625em; } }
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .col-full {
+    margin-left: 2.125em;
+    margin-right: 2.125em; }
+    .col-full .expand-full-width {
+      margin-left: -2.125em;
+      margin-right: -2.125em; } }
 
 @media screen and (max-width: 568px) {
   .col-full {
@@ -2404,6 +2411,10 @@ embed, iframe, object {
 .archetype-homepage-hero .col-full {
   padding: 5.25em 0; }
 
+.is-full-width .archetype-homepage-hero .col-full {
+  padding-left: 2.625em;
+  padding-right: 2.625em; }
+
 .archetype-homepage-hero.fixed {
   margin-left: 0;
   margin-right: 0; }
@@ -2421,6 +2432,46 @@ embed, iframe, object {
 @media screen and (max-width: 568px) {
   .archetype-homepage-hero .col-full {
     padding: 2.75em 1.387em; } }
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .is-full-width .archetype-homepage-hero .col-full {
+    padding-left: 2.125em;
+    padding-right: 2.125em; } }
+
+.archetype-homepage-content {
+  margin-top: -2.625em;
+  text-align: center; }
+
+.hentry + .archetype-homepage-content {
+  margin-top: -1.5em; }
+
+.archetype-homepage-content .col-full {
+  padding: 2.625em 0; }
+
+.is-full-width .archetype-homepage-content .col-full {
+  padding-left: 2.625em;
+  padding-right: 2.625em; }
+
+.archetype-homepage-content.left {
+  text-align: left; }
+
+.archetype-homepage-content.right {
+  text-align: right; }
+
+.archetype-homepage-content p:last-child {
+  margin-bottom: 0px; }
+
+@media screen and (max-width: 74em) {
+  .archetype-homepage-content .col-full {
+    padding: 2.625em; } }
+
+@media screen and (max-width: 568px) {
+  .archetype-homepage-content .col-full {
+    padding: 1.387em; } }
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+  .archetype-homepage-content .col-full {
+    padding: 2.125em; } }
 
 /**
  * Infinite Scroll
