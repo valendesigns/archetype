@@ -149,8 +149,40 @@ if ( ! function_exists( 'archetype_customize_import' ) ) {
 
     $customize_error = false;
     $template        = get_option( 'template' );
-    $raw             = file_get_contents( $_FILES['customize-import-file']['tmp_name'] );
-    $data            = @unserialize( $raw );
+
+    // Check for function and require
+    if ( ! function_exists( 'wp_handle_sideload' ) ) {
+      require_once( ABSPATH . 'wp-admin/includes/file.php' );
+    }
+
+    // Override the sideload defaults
+    $overrides = array(
+      'test_form' => false,
+      'test_size' => true,
+      'test_upload' => true, 
+    );
+
+    // move the temporary file into the uploads directory
+    add_filter( 'upload_mimes', 'archetype_customize_json_mime' );
+    $results = wp_handle_sideload( $_FILES['customize-import-file'], $overrides );
+    remove_filter( 'upload_mimes', 'archetype_customize_json_mime' );
+
+    // If error storing temporarily, return the error.
+    if ( ! empty( $results['error'] ) ) {
+      $customize_error = $results['error'];
+      return;
+    }
+
+    if ( is_wp_error( $results ) ) {
+      $customize_error = $results->get_error_message();
+      return;
+    }
+
+    $raw  = wp_remote_fopen( $results['url'] );
+    $data = maybe_unserialize( $raw );
+
+    // Remove the file
+    @unlink( $results['file'] );
 
     // Data checks.
     if ( 'array' != gettype( $data ) ) {
@@ -286,6 +318,18 @@ if ( ! function_exists( 'archetype_customize_is_image_url' ) ) {
     }
 
     return false;
+  }
+}
+
+/**
+ * Adds the json mime type.
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_customize_json_mime' ) ) {
+  function archetype_customize_json_mime( $mimes ) {
+    $mimes['json'] = 'application/json';
+    return $mimes;
   }
 }
 
