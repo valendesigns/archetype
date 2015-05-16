@@ -588,7 +588,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     $wp_customize->add_section( 'archetype_homepage_hero' , array(
       'title'       => __( 'Hero Component', 'archetype' ),
       'priority'    => 10,
-      'description' => __( 'These controls modify the style and content for the Homepage Hero Component. You could even turn it off if you wanted by unchecking the Activated option below.' ),
+      'description' => __( 'These controls modify the style and content for the Homepage Hero Component. You could even turn it off if you wanted by unchecking the Activated option below.', 'archetype' ),
       'panel'       => 'archetype_homepage',
     ) );
 
