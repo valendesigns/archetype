@@ -86,7 +86,8 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
      * Notice Error Color
      */
     $wp_customize->add_setting( 'archetype_breadcrumb_hide', array(
-      'default'     => apply_filters( 'archetype_default_breadcrumb_hide', false ),
+      'default'           => apply_filters( 'archetype_default_breadcrumb_hide', false ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_breadcrumb_hide', array(

@@ -65,12 +65,12 @@ function archetype_body_classes( $classes ) {
   }
   
   // Full width
-  if ( true === get_theme_mod( 'archetype_full_width', (bool) apply_filters( 'archetype_default_full_width', false ) ) ) {
+  if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_full_width', apply_filters( 'archetype_default_full_width', false ) ) ) ) {
     $classes[] = 'is-full-width';
   }
 
   // Boxed
-  if ( true === get_theme_mod( 'archetype_boxed', (bool) apply_filters( 'archetype_default_boxed', false ) ) ) {
+  if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
     $classes[] = 'is-boxed';
   }
 

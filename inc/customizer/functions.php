@@ -302,6 +302,47 @@ if ( ! function_exists( 'archetype_customize_upload_mimes' ) ) {
 }
 
 /**
+ * Sanitizes an integer value.
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_sanitize_integer' ) ) {
+  function archetype_sanitize_integer( $input ) {
+    return absint( $input );
+  }
+}
+
+/**
+ * Sanitizes an integer value or return empty.
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_sanitize_number' ) ) {
+  function archetype_sanitize_number( $input ) {
+    if ( is_numeric( $input ) ) {
+      return $input;
+    }
+
+    return 0;
+  }
+}
+
+/**
+ * Sanitizes a checkbox value.
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) {
+  function archetype_sanitize_checkbox( $input ) {
+    if ( $input == 1 ) {
+      return 1;
+    }
+
+    return '';
+  }
+}
+
+/**
  * Sanitizes a hex color. Identical to core's sanitize_hex_color(), which is not available on the wp_head hook.
  *
  * Returns either '', a 3 or 6 digit hex color (with #), or null.
@@ -375,7 +416,7 @@ if ( ! function_exists( 'archetype_sanitize_layout' ) ) {
  */
 if ( ! function_exists( 'archetype_layout_class' ) ) {
   function archetype_layout_class( $classes ) {
-    $layout = get_theme_mod( 'archetype_layout' );
+    $layout = archetype_sanitize_layout( get_theme_mod( 'archetype_layout' ) );
 
     if ( '' == $layout ) {
       $layout = 'right';

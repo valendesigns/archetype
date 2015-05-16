@@ -35,7 +35,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
             width: %2$spx;
             height: %3$spx
           }',
-          esc_url( $logo_svg[0] ),
+          esc_url_raw( $logo_svg[0] ),
           esc_attr( $image[1] ),
           esc_attr( $image[2] )
         );
@@ -43,7 +43,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }
 
     // Site Logo
-    if ( $logo_top_margin = get_theme_mod( 'archetype_site_logo_margin_top' ) ) {
+    if ( $logo_top_margin = archetype_sanitize_number( get_theme_mod( 'archetype_site_logo_margin_top' ) ) ) {
       $style.= '
       .site-logo-link .site-logo,
       .svg .site-logo-link .svg-site-logo {
@@ -208,7 +208,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
     
     // Navigation Link Hover Color
-    $nav_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_hover', apply_filters( 'archetype_default_nav_link_color_hover', '#fff' ) ) );
+    $nav_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_hover_color', apply_filters( 'archetype_default_nav_link_hover_color', '#fff' ) ) );
 
     $style.= '
     .main-navigation ul li a:hover {
@@ -216,7 +216,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
     
     // Navigation Link Hover Background Color
-    $nav_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_hover_bg', apply_filters( 'archetype_default_nav_link_color_hover_bg', '#2f3538' ) ) );
+    $nav_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_hover_background_color', apply_filters( 'archetype_default_nav_link_hover_background_color', '#2f3538' ) ) );
 
     $style.= '
     @media screen and (min-width: 768px) {
@@ -227,10 +227,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
     
     // Navigation Link Active Color
-    $nav_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_active', apply_filters( 'archetype_default_nav_link_color_active', '#fff' ) ) );
+    $nav_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_active_color', apply_filters( 'archetype_default_nav_link_active_color', '#fff' ) ) );
     
     // Navigation Link Active Background Color
-    $nav_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color_active_bg', apply_filters( 'archetype_default_nav_link_color_active_bg', '#24282A' ) ) );
+    $nav_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_active_background_color', apply_filters( 'archetype_default_nav_link_active_background_color', '#24282A' ) ) );
 
     $style.= '
     .main-navigation ul li.current-menu-item > a,
@@ -255,16 +255,16 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     $nav_alt_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color', apply_filters( 'archetype_default_nav_alt_link_color', '#ddd' ) ) );
 
     // Secondary Navigation Link Hover Color
-    $nav_alt_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_hover', apply_filters( 'archetype_default_nav_alt_link_color_hover', '#fff' ) ) );
+    $nav_alt_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_hover_color', apply_filters( 'archetype_default_nav_alt_link_hover_color', '#fff' ) ) );
     
     // Secondary Navigation Link Hover Background Color
-    $nav_alt_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_hover_bg', apply_filters( 'archetype_default_nav_alt_link_color_hover_bg', '#464e54' ) ) );
+    $nav_alt_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_hover_background_color', apply_filters( 'archetype_default_nav_alt_link_hover_background_color', '#464e54' ) ) );
     
     // Secondary Navigation Link Active Color
-    $nav_alt_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_active', apply_filters( 'archetype_default_nav_alt_link_color_active', '#fff' ) ) );
+    $nav_alt_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_active_color', apply_filters( 'archetype_default_nav_alt_link_active_color', '#fff' ) ) );
     
     // Secondary Navigation Link Active Background Color
-    $nav_alt_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color_active_bg', apply_filters( 'archetype_default_nav_alt_link_color_active_bg', '#3b4146' ) ) );
+    $nav_alt_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_active_background_color', apply_filters( 'archetype_default_nav_alt_link_active_background_color', '#3b4146' ) ) );
 
     $style.= '
     @media screen and (min-width: 768px) {
@@ -423,7 +423,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
 
     // Button 2D
-    $button_2d = (bool) get_theme_mod( 'archetype_button_2d', apply_filters( 'archetype_default_button_2d', false ) );
+    $button_2d = archetype_sanitize_checkbox( get_theme_mod( 'archetype_button_2d', apply_filters( 'archetype_default_button_2d', 0 ) ) );
 
     // Button Text Color
     $button_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_text_color', apply_filters( 'archetype_default_button_text_color', '#fff' ) ) );
@@ -505,7 +505,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
 
     // Post border radius
-    $post_radius = (int) get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', '0' ) );
+    $post_radius = archetype_sanitize_number( get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', 0 ) ) );
 
     $style.= '
     article + .author-info,
@@ -538,7 +538,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }
 
     // Button border radius
-    $button_radius = (int) get_theme_mod( 'archetype_button_radius', apply_filters( 'archetype_default_button_radius', '3' ) );
+    $button_radius = archetype_sanitize_number( get_theme_mod( 'archetype_button_radius', apply_filters( 'archetype_default_button_radius', 3 ) ) );
 
     $style.= '
     button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart {
@@ -546,7 +546,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
 
     // Avatar border radius
-    $avatar_radius = (int) get_theme_mod( 'archetype_avatar_radius', apply_filters( 'archetype_default_avatar_radius', '3' ) );
+    $avatar_radius = archetype_sanitize_number( get_theme_mod( 'archetype_avatar_radius', apply_filters( 'archetype_default_avatar_radius', 3 ) ) );
 
     $style.= '
     .author-info .avatar,
@@ -629,22 +629,22 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
  */
 if ( ! function_exists( 'archetype_homepage_hero_active' ) ) {
   function archetype_homepage_hero() {
-    if ( false == get_theme_mod( 'archetype_homepage_hero_active', true ) ) {
+    if ( false == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_active', true ) ) ) {
       return false;
     }
 
     // Layout
-    $layout               = get_theme_mod( 'archetype_homepage_hero_layout', true ) ? 'expand-full-width' : '';
+    $layout               = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '';
 
     // Alignment
-    $alignment            = get_theme_mod( 'archetype_homepage_hero_alignment', 'center' );
+    $alignment            = esc_attr( get_theme_mod( 'archetype_homepage_hero_alignment', 'center' ) );
 
     // Background image
     $background_img_src   = wp_get_attachment_image_src( get_theme_mod( 'archetype_homepage_hero_background_image', '' ), 'full' );
-    $background_img       = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
+    $background_img       = isset( $background_img_src[0] ) ? esc_url_raw( $background_img_src[0] ) : '';
 
     // Background image size
-    $background_img_size  = get_theme_mod( 'archetype_homepage_hero_background_image_size', 'auto' );
+    $background_img_size  = esc_attr( get_theme_mod( 'archetype_homepage_hero_background_image_size', 'auto' ) );
 
     // Background color
     $background_color     = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_background_color', apply_filters( 'archetype_default_homepage_hero_background_color', '#353b3f' ) ) );

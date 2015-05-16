@@ -57,7 +57,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     if ( current_theme_supports( 'site-logo' ) && class_exists( 'Site_Logo', false ) ) {
       // Add the setting for our svg logo.
       $wp_customize->add_setting( 'archetype_site_logo_svg', array(
-        'capability'  => 'manage_options',
+        'capability'        => 'manage_options',
+        'sanitize_callback' => 'esc_url_raw',
       ) );
 
       // Add our image uploader.
@@ -74,6 +75,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
        */
       $wp_customize->add_setting( 'archetype_site_logo_margin_top', array(
         'capability'        => 'manage_options',
+        'sanitize_callback' => 'archetype_sanitize_number',
         'transport'         => 'postMessage',
       ) );
 
@@ -118,7 +120,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Sidebar columns
      */
     $wp_customize->add_setting( 'archetype_columns', array(
-      'default'     => apply_filters( 'archetype_default_columns', '3' ),
+      'default'           => apply_filters( 'archetype_default_columns', '3' ),
+      'sanitize_callback' => 'archetype_sanitize_choices',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_columns', array(
@@ -137,8 +140,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Full width
      */
     $wp_customize->add_setting( 'archetype_full_width', array(
-      'default'     => (bool) apply_filters( 'archetype_default_full_width', false ),
-      'transport'   => 'postMessage',
+      'default'           => (bool) apply_filters( 'archetype_default_full_width', false ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+      'transport'         => 'postMessage',
     ) );
 
     $wp_customize->add_control( 'archetype_full_width', array(
@@ -154,8 +158,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Boxed
      */
     $wp_customize->add_setting( 'archetype_boxed', array(
-      'default'     => (bool) apply_filters( 'archetype_default_boxed', false ),
-      'transport'   => 'postMessage',
+      'default'           => (bool) apply_filters( 'archetype_default_boxed', false ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+      'transport'         => 'postMessage',
     ) );
 
     $wp_customize->add_control( 'archetype_boxed', array(
@@ -386,64 +391,64 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     /**
      * Primary Navigation Link Hover Color
      */
-    $wp_customize->add_setting( 'archetype_nav_link_color_hover', array(
-      'default'           => apply_filters( 'archetype_default_nav_link_color_hover', '#fff' ),
+    $wp_customize->add_setting( 'archetype_nav_link_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_hover_color', '#fff' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_hover', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_hover_color', array(
       'label'       => __( 'Link hover color', 'archetype' ),
       'section'     => 'archetype_nav_styles',
-      'settings'    => 'archetype_nav_link_color_hover',
+      'settings'    => 'archetype_nav_link_hover_color',
       'priority'    => 20,
     ) ) );
 
     /**
      * Primary Navigation Link Hover Background Color
      */
-    $wp_customize->add_setting( 'archetype_nav_link_color_hover_bg', array(
-      'default'           => apply_filters( 'archetype_default_nav_link_color_hover_bg', '#2f3538' ),
+    $wp_customize->add_setting( 'archetype_nav_link_hover_background_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_hover_background_color', '#2f3538' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_hover_bg', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_hover_background_color', array(
       'label'       => __( 'Link hover background color', 'archetype' ),
       'section'     => 'archetype_nav_styles',
-      'settings'    => 'archetype_nav_link_color_hover_bg',
+      'settings'    => 'archetype_nav_link_hover_background_color',
       'priority'    => 25,
     ) ) );
 
     /**
      * Primary Navigation Link Active Color
      */
-    $wp_customize->add_setting( 'archetype_nav_link_color_active', array(
-      'default'           => apply_filters( 'archetype_default_nav_link_color_active', '#fff' ),
+    $wp_customize->add_setting( 'archetype_nav_link_active_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_active_color', '#fff' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_active', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_active_color', array(
       'label'       => __( 'Link active color', 'archetype' ),
       'section'     => 'archetype_nav_styles',
-      'settings'    => 'archetype_nav_link_color_active',
+      'settings'    => 'archetype_nav_link_active_color',
       'priority'    => 30,
     ) ) );
 
     /**
      * Primary Navigation Link Active Background Color
      */
-    $wp_customize->add_setting( 'archetype_nav_link_color_active_bg', array(
-      'default'           => apply_filters( 'archetype_default_nav_link_color_active_bg', '#24282A' ),
+    $wp_customize->add_setting( 'archetype_nav_link_active_background_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_link_active_background_color', '#24282A' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_color_active_bg', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_active_background_color', array(
       'label'       => __( 'Link active background color', 'archetype' ),
       'section'     => 'archetype_nav_styles',
-      'settings'    => 'archetype_nav_link_color_active_bg',
+      'settings'    => 'archetype_nav_link_active_background_color',
       'priority'    => 35,
     ) ) );
 
@@ -508,64 +513,64 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     /**
      * Secondary Navigation Link Hover Color
      */
-    $wp_customize->add_setting( 'archetype_nav_alt_link_color_hover', array(
-      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_hover', '#fff' ),
+    $wp_customize->add_setting( 'archetype_nav_alt_link_hover_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_hover_color', '#fff' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_hover', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_hover_color', array(
       'label'       => __( 'Link hover color', 'archetype' ),
       'section'     => 'archetype_nav_alt_styles',
-      'settings'    => 'archetype_nav_alt_link_color_hover',
+      'settings'    => 'archetype_nav_alt_link_hover_color',
       'priority'    => 25,
     ) ) );
 
     /**
      * Secondary Navigation Link Hover Background Color
      */
-    $wp_customize->add_setting( 'archetype_nav_alt_link_color_hover_bg', array(
-      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_hover_bg', '#464e54' ),
+    $wp_customize->add_setting( 'archetype_nav_alt_link_hover_background_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_hover_background_color', '#464e54' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_hover_bg', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_hover_background_color', array(
       'label'       => __( 'Link hover background color', 'archetype' ),
       'section'     => 'archetype_nav_alt_styles',
-      'settings'    => 'archetype_nav_alt_link_color_hover_bg',
+      'settings'    => 'archetype_nav_alt_link_hover_background_color',
       'priority'    => 30,
     ) ) );
 
     /**
      * Secondary Navigation Link Active Color
      */
-    $wp_customize->add_setting( 'archetype_nav_alt_link_color_active', array(
-      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_active', '#fff' ),
+    $wp_customize->add_setting( 'archetype_nav_alt_link_active_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_active_color', '#fff' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_active', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_active_color', array(
       'label'       => __( 'Link active color', 'archetype' ),
       'section'     => 'archetype_nav_alt_styles',
-      'settings'    => 'archetype_nav_alt_link_color_active',
+      'settings'    => 'archetype_nav_alt_link_active_color',
       'priority'    => 35,
     ) ) );
 
     /**
      * Secondary Navigation Link Active Background Color
      */
-    $wp_customize->add_setting( 'archetype_nav_alt_link_color_active_bg', array(
-      'default'           => apply_filters( 'archetype_default_nav_alt_link_color_active_bg', '#3b4146' ),
+    $wp_customize->add_setting( 'archetype_nav_alt_link_active_background_color', array(
+      'default'           => apply_filters( 'archetype_default_nav_alt_link_active_background_color', '#3b4146' ),
       'sanitize_callback' => 'archetype_sanitize_hex_color',
       'transport'         => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_color_active_bg', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_active_background_color', array(
       'label'       => __( 'Link active background color', 'archetype' ),
       'section'     => 'archetype_nav_alt_styles',
-      'settings'    => 'archetype_nav_alt_link_color_active_bg',
+      'settings'    => 'archetype_nav_alt_link_active_background_color',
       'priority'    => 40,
     ) ) );
 
@@ -602,7 +607,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Active
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_active', array(
-      'default'     => true,
+      'default'           => true,
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 
     $wp_customize->add_control( 'archetype_homepage_hero_active', array(
@@ -617,7 +623,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Layout
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_layout', array(
-      'default'     => true,
+      'default'           => true,
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 
     $wp_customize->add_control( 'archetype_homepage_hero_layout', array(
@@ -632,7 +639,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Alignment
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_alignment', array(
-      'default'     => 'center',
+      'default'           => 'center',
+      'sanitize_callback' => 'archetype_sanitize_choices',
     ) );
 
     $wp_customize->add_control( 'archetype_homepage_hero_alignment', array(
@@ -659,7 +667,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_background_image', array(
       'default'           => '',
-      'sanitize_callback' => 'sanitize_text_field',
+      'sanitize_callback' => 'esc_url_raw',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_homepage_hero_background_image', array(
@@ -674,7 +682,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Background size
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_background_image_size', array(
-      'default'     => 'auto',
+      'default'           => 'auto',
+      'sanitize_callback' => 'archetype_sanitize_choices',
     ) );
 
     $wp_customize->add_control( 'archetype_homepage_hero_background_image_size', array(
@@ -754,7 +763,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_heading_text', array(
       'default'           => __( 'Heading Text', 'archetype' ),
-      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'sanitize_callback' => 'sanitize_text_field',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_heading_text', array(
@@ -769,7 +778,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Body Text
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_text', array(
-      'default'     => __( 'Body Text', 'archetype' ),
+      'default'           => __( 'Body Text', 'archetype' ),
+      'sanitize_callback' => 'wp_kses_post',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_text', array(
@@ -828,7 +838,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Post Radius
      */
     $wp_customize->add_setting( 'archetype_post_radius', array(
-      'default'     => apply_filters( 'archetype_default_post_radius', '0' ),
+      'default'           => apply_filters( 'archetype_default_post_radius', 0 ),
+      'sanitize_callback' => 'archetype_sanitize_number',
     ) );
 
     $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_post_radius', array(
@@ -842,7 +853,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Avatar Radius
      */
     $wp_customize->add_setting( 'archetype_avatar_radius', array(
-      'default'     => apply_filters( 'archetype_default_avatar_radius', '3' ),
+      'default'           => apply_filters( 'archetype_default_avatar_radius', 3 ),
+      'sanitize_callback' => 'archetype_sanitize_number',
     ) );
 
     $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_avatar_radius', array(
@@ -1051,7 +1063,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Button 2D
      */
     $wp_customize->add_setting( 'archetype_button_2d', array(
-      'default'     => apply_filters( 'archetype_default_button_2d', false ),
+      'default'           => apply_filters( 'archetype_default_button_2d', false ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_button_2d', array(
@@ -1073,7 +1086,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Button Radius
      */
     $wp_customize->add_setting( 'archetype_button_radius', array(
-      'default'     => apply_filters( 'archetype_default_button_radius', '3' ),
+      'default'           => apply_filters( 'archetype_default_button_radius', 3 ),
+      'sanitize_callback' => 'archetype_sanitize_number',
     ) );
 
     $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_button_radius', array(
@@ -1323,7 +1337,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Credits
      */
     $wp_customize->add_setting( 'archetype_footer_credit', array(
-      'default'     => true,
+      'default'           => true,
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_footer_credit', array(

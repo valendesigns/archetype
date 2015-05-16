@@ -136,7 +136,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
       $notice_info_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_notice_info_color', apply_filters( 'archetype_default_notice_info_color', '#3D9CD2' ) ) );
 
       // Post border radius
-      $post_radius = (int) get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', '0' ) );
+      $post_radius = archetype_sanitize_number( get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', 0 ) ) );
       
       $woocommerce_style .= '
       .woocommerce-message,

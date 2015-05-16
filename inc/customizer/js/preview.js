@@ -134,7 +134,7 @@
       } );
     } );
   } );
-  wp.customize( 'archetype_nav_link_color_hover', function( value ) {
+  wp.customize( 'archetype_nav_link_hover_color', function( value ) {
     value.bind( function( to ) {
       var $link = $( '.main-navigation ul li:not(.current-menu-item,.current_page_parent,.current-menu-ancestor) a' ),
           color = $link.css( 'color' );
@@ -146,7 +146,7 @@
       } );
     } );
   } );
-  wp.customize( 'archetype_nav_link_color_hover_bg', function( value ) {
+  wp.customize( 'archetype_nav_link_hover_background_color', function( value ) {
     value.bind( function( to ) {
       var $link = $( '.main-navigation ul.menu ul a' ),
           color = $link.css( 'background-color' );
@@ -163,13 +163,13 @@
       } );
     } );
   } );
-  wp.customize( 'archetype_nav_link_color_active', function( value ) {
+  wp.customize( 'archetype_nav_link_active_color', function( value ) {
     value.bind( function( to ) {
       // Color
       $( '.main-navigation ul li.current-menu-item > a, .main-navigation ul li.current_page_parent > a, .main-navigation ul li.current-menu-ancestor > a' ).css( 'color', to );
     } );
   } );
-  wp.customize( 'archetype_nav_link_color_active_bg', function( value ) {
+  wp.customize( 'archetype_nav_link_active_background_color', function( value ) {
     value.bind( function( to ) {
       // Background Color
       $( '.main-navigation ul li.current-menu-item > a, .main-navigation ul li.current_page_parent > a, .main-navigation ul li.current-menu-ancestor > a' ).css( 'background-color', to );
@@ -195,7 +195,7 @@
       } );
     } );
   } );
-  wp.customize( 'archetype_nav_alt_link_color_hover', function( value ) {
+  wp.customize( 'archetype_nav_alt_link_hover_color', function( value ) {
     value.bind( function( to ) {
       var $link = $( '.secondary-navigation ul.menu li:not(.current-menu-item,.current_page_parent,.current-menu-ancestor) a' ),
           color = $link.css( 'color' );
@@ -207,7 +207,7 @@
       } );
     } );
   } );
-  wp.customize( 'archetype_nav_alt_link_color_hover_bg', function( value ) {
+  wp.customize( 'archetype_nav_alt_link_hover_background_color', function( value ) {
     value.bind( function( to ) {
       var $link = $( '.secondary-navigation ul.menu li ul a' ),
           color = $link.css( 'background-color' );
@@ -224,13 +224,13 @@
       } );
     } );
   } );
-  wp.customize( 'archetype_nav_alt_link_color_active', function( value ) {
+  wp.customize( 'archetype_nav_alt_link_active_color', function( value ) {
     value.bind( function( to ) {
       // Color
       $( '.secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a' ).css( 'color', to );
     } );
   } );
-  wp.customize( 'archetype_nav_alt_link_color_active_bg', function( value ) {
+  wp.customize( 'archetype_nav_alt_link_active_background_color', function( value ) {
     value.bind( function( to ) {
       // Background Color
       $( '.secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a' ).css( 'background-color', to );
