@@ -6,7 +6,7 @@
  */
 
 /**
- * Listens for import & export events.
+ * Listens for import & export events and filter hooks
  *
  * @since  1.0.0
  */
