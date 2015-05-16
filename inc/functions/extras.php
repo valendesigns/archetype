@@ -2,8 +2,6 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * Eventually, some of the functionality here could be replaced by core features
- *
  * @package archetype
  */
 
@@ -64,6 +62,16 @@ function archetype_body_classes( $classes ) {
   // 4 out of 12 columns
   if ( 4 == get_theme_mod( 'archetype_columns', apply_filters( 'archetype_default_columns', '3' ) ) ) {
     $classes[] = 'grid-alt';
+  }
+  
+  // Full width
+  if ( true === get_theme_mod( 'archetype_full_width', (bool) apply_filters( 'archetype_default_full_width', false ) ) ) {
+    $classes[] = 'is-full-width';
+  }
+
+  // Boxed
+  if ( true === get_theme_mod( 'archetype_boxed', (bool) apply_filters( 'archetype_default_boxed', false ) ) ) {
+    $classes[] = 'is-boxed';
   }
 
   return $classes;

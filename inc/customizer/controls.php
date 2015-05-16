@@ -111,14 +111,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Sidebar Position', 'archetype' ),
       'section'     => 'archetype_layout',
       'settings'    => 'archetype_layout',
-      'priority'    => 1,
-    ) ) );
-
-    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_layout_divider', array(
-      'section'     => 'archetype_layout',
-      'settings'    => 'archetype_layout',
-      'type'        => 'divider',
-      'priority'    => 2,
+      'priority'    => 5,
     ) ) );
 
     /**
@@ -132,12 +125,63 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Sidebar Columns', 'archetype' ),
       'section'     => 'archetype_layout',
       'settings'    => 'archetype_columns',
-      'priority'    => 1,
+      'priority'    => 10,
       'type'        => 'radio',
       'choices'     => array(
         '3'         => '3 of 12',
         '4'         => '4 of 12',
       )
+    ) ) );
+
+    /**
+     * Full width
+     */
+    $wp_customize->add_setting( 'archetype_full_width', array(
+      'default'     => (bool) apply_filters( 'archetype_default_full_width', false ),
+      'transport'   => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( 'archetype_full_width', array(
+      'label'       => __( 'Full Width', 'archetype' ),
+      'description' => __( 'Expand the sites width to fill all of the browser window space.', 'archetype' ),
+      'section'     => 'archetype_layout',
+      'settings'    => 'archetype_full_width',
+      'priority'    => 15,
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Boxed
+     */
+    $wp_customize->add_setting( 'archetype_boxed', array(
+      'default'     => (bool) apply_filters( 'archetype_default_boxed', false ),
+      'transport'   => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( 'archetype_boxed', array(
+      'label'       => __( 'Boxed', 'archetype' ),
+      'description' => __( 'Adds a wrapper to the content of the site which creates a boxed look.', 'archetype' ),
+      'section'     => 'archetype_layout',
+      'settings'    => 'archetype_boxed',
+      'priority'    => 20,
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Boxed background color
+     */
+    $wp_customize->add_setting( 'archetype_boxed_background_color', array(
+      'default'           => apply_filters( 'archetype_default_boxed_background_color', '#f1f1f1' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_boxed_background_color', array(
+      'label'       => __( 'Boxed background color', 'archetype' ),
+      'description' => __( 'Changes the background color of the boxed content wrapper.', 'archetype' ),
+      'section'     => 'archetype_layout',
+      'settings'    => 'archetype_boxed_background_color',
+      'priority'    => 25,
     ) ) );
 
     // END Layout
@@ -1425,79 +1469,4 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
   }
 
-}
-
-/**
- * Display the Homepage Hero
- *
- * @since  1.0.0
- */
-if ( ! function_exists( 'archetype_homepage_hero_active' ) ) {
-  function archetype_homepage_hero() {
-    if ( false == get_theme_mod( 'archetype_homepage_hero_active', true ) ) {
-      return false;
-    }
-
-    // Layout
-    $layout               = get_theme_mod( 'archetype_homepage_hero_layout', true ) ? 'expand-full-width' : '';
-
-    // Alignment
-    $alignment            = get_theme_mod( 'archetype_homepage_hero_alignment', 'center' );
-
-    // Background image
-    $background_img_src   = wp_get_attachment_image_src( get_theme_mod( 'archetype_homepage_hero_background_image', '' ), 'full' );
-    $background_img       = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
-
-    // Background image size
-    $background_img_size  = get_theme_mod( 'archetype_homepage_hero_background_image_size', 'auto' );
-
-    // Background color
-    $background_color     = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_background_color', apply_filters( 'archetype_default_homepage_hero_background_color', '#353b3f' ) ) );
-
-    // Heading color
-    $heading_text_color   = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_heading_color', apply_filters( 'archetype_default_homepage_hero_heading_color', '#fff' ) ) );
-
-    // Body color
-    $body_text_color      = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_text_color', apply_filters( 'archetype_default_homepage_hero_text_color', '#888' ) ) );
-
-    // Heading text
-    $heading_text         = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_heading_text', __( 'Heading Text', 'archetype' ) ) );
-
-    // Body Text
-    $body_text            = wp_kses_post( get_theme_mod( 'archetype_homepage_hero_text', __( 'Body Text', 'archetype' ) ) );
-
-    // Button text
-    $button_text          = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_text', __( 'Call to Action', 'archetype' ) ) );
-
-    // Button URL
-    $button_url           = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_url', home_url() ) );
-
-    // CSS classes
-    $classes = array( 'archetype-homepage-hero' );
-    $classes[] = $alignment;
-    $classes[] = $layout;
-
-    // CSS style attributes
-    $styles = array();
-    $styles[] = "color: $body_text_color;";
-    $styles[] = "background-color: $background_color;";
-    $styles[] = "background-image: url($background_img);";
-    $styles[] = "background-size: $background_img_size;";
-    $styles[] = "background-repeat: no-repeat;";
-    ?>
-    <section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>;">
-      <div class="col-full">
-        <?php do_action( 'archetype_homepage_hero_content_before' ); ?>
-        <?php echo sprintf( '<h1 style="color: %s">%s</h1>', $heading_text_color, $heading_text ); ?>
-        <div class="archetype-homepage-hero-body">
-          <?php echo wpautop( $body_text ); ?>
-          <?php if ( $button_text && $button_url ) { ?>
-            <?php echo sprintf( '<p><a href="%s" class="button">%s</a></p>', $button_url, $button_text ); ?>
-          <?php } ?>
-        </div>
-        <?php do_action( 'archetype_homepage_hero_content_after' ); ?>
-      </div>
-    </section>
-    <?php
-  }
 }

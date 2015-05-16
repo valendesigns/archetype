@@ -16,6 +16,19 @@
 }
 
 @media screen and (min-width: 768px) {
+  .is-boxed .site {
+    max-width: 76.5em;
+    margin: 0 auto;
+  }
+
+  .is-full-width.is-boxed .site {
+    margin: 0 2.625em;
+  }
+
+  .is-full-width .site {
+    max-width: 100%;
+  }
+
   .site-header {
     .site-branding,
     .site-logo-anchor,
@@ -41,7 +54,7 @@
     }
   }
 
-  .site-branding{
+  .site-branding {
     .site-description {
       margin-bottom: 0;
       display: block;
@@ -196,10 +209,25 @@
 }
 
 @media screen and (min-width: 74.001em) {
-	.col-full {
+  .col-full {
+    .is-full-width & {
+      @include container(full);
+      padding: 0 2.625em;
+    }
+
     .expand-full-width {
       margin-left: -46em;
       margin-right: -46em;
+
+      .is-boxed & {
+        margin-left: -2.625em;
+        margin-right: -2.625em;
+      }
+
+      .is-full-width & {
+        margin-left: -2.625em;
+        margin-right: -2.625em;
+      }
     }
   }
 }

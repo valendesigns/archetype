@@ -23,6 +23,29 @@
         $( '.site-logo-link img, .svg-site-logo' ).css( 'margin-top', '0' );
     } );
   } );
+  wp.customize( 'archetype_full_width', function( value ) {
+    value.bind( function( to ) {
+      if ( true == to ) {
+        $( 'body' ).addClass( 'is-full-width' );
+      } else {
+        $( 'body' ).removeClass( 'is-full-width' );
+      }
+    } );
+  } );
+  wp.customize( 'archetype_boxed', function( value ) {
+    value.bind( function( to ) {
+      if ( true == to ) {
+        $( 'body' ).addClass( 'is-boxed' );
+      } else {
+        $( 'body' ).removeClass( 'is-boxed' );
+      }
+    } );
+  } );
+  wp.customize( 'archetype_boxed_background_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.is-boxed .site' ).css( 'background-color', to );
+    } );
+  } );
   wp.customize( 'archetype_text_color', function( value ) {
     value.bind( function( to ) {
       var $link = $( '#wc-bookings-booking-form .block-picker li a' ),
