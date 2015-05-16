@@ -219,11 +219,7 @@
       margin-left: -46em;
       margin-right: -46em;
 
-      .is-boxed & {
-        margin-left: -2.625em;
-        margin-right: -2.625em;
-      }
-
+      .is-boxed &,
       .is-full-width & {
         margin-left: -2.625em;
         margin-right: -2.625em;
