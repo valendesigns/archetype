@@ -569,32 +569,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'priority'    => 40,
     ) ) );
 
-    /**
-     * Add the Handheld Menu Styles section
-     */
-    $wp_customize->add_section( 'archetype_nav_handheld_styles' , array(
-      'title'       => __( 'Handheld Menu', 'archetype' ),
-      'priority'    => 3,
-      'description' => __( 'The Handheld Menu must be set to a menu location in order to preview style changes. As well, you might need to make your browser window smaller so the Handheld Menu is visible.', 'archetype' ),
-      'panel'       => $wp_customize->get_section( 'nav' )->panel,
-    ) );
-
-    /**
-     * Secondary Navigation Color
-     */
-    $wp_customize->add_setting( 'archetype_nav_handheld_color', array(
-      'default'           => apply_filters( 'archetype_default_nav_handheld_color', '#bbb' ),
-      'sanitize_callback' => 'archetype_sanitize_hex_color',
-      'transport'         => 'postMessage',
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_color', array(
-      'label'       => __( 'Text color', 'archetype' ),
-      'section'     => 'archetype_nav_handheld_styles',
-      'settings'    => 'archetype_nav_handheld_color',
-      'priority'    => 10,
-    ) ) );
-
     // END Navigation
 
     // BEGIN Homepage
