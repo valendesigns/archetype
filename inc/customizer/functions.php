@@ -343,6 +343,19 @@ if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) {
 }
 
 /**
+ * Sanitizes the import/export control value.
+ *
+ * This is to pass theme check and returns false.
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_sanitize_import_export' ) ) {
+  function archetype_sanitize_import_export( $input ) {
+    return false;
+  }
+}
+
+/**
  * Sanitizes a hex color. Identical to core's sanitize_hex_color(), which is not available on the wp_head hook.
  *
  * Returns either '', a 3 or 6 digit hex color (with #), or null.

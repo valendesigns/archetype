@@ -1434,9 +1434,10 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Add an empty import & export setting.
      */ 
     $wp_customize->add_setting( 'archetype_import_export', array(
-      'capability'  => 'manage_options',
-      'default'     => '',
-      'type'        => 'none',
+      'capability'        => 'manage_options',
+      'default'           => '',
+      'sanitize_callback' => 'archetype_sanitize_import_export',
+      'type'              => 'none',
     ));
 
     /**
