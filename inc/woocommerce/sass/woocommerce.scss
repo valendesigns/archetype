@@ -1309,10 +1309,6 @@ dl.variation {
 .archetype-product-section {
   padding: 2.625em;
 
-  &:last-child {
-    margin-bottom: -2.625em;
-  }
-
   .section-title {
     text-align: center;
     margin-bottom: $spacing-v;

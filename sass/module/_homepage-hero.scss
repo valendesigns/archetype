@@ -1,8 +1,11 @@
 .archetype-homepage-hero {
-  margin-bottom: 2.625em;
   text-align: center;
   background-position: 50% 0;
   margin-top: -2.625em;
+}
+
+section + .archetype-homepage-hero {
+  margin-top: 0;
 }
 
 .archetype-homepage-hero .col-full {

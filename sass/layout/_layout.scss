@@ -134,6 +134,12 @@
   /**
    * Full width & homepage template
    */
+  .page-template-template-homepage {
+    .content-area {
+      margin-bottom: 0;
+    }
+  }
+
   .page-template-template-fullwidth-php,
   .page-template-template-homepage-php {
     .content-area {
