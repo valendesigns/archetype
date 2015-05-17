@@ -1307,7 +1307,7 @@ dl.variation {
  * Homepage
  */
 .archetype-product-section {
-  padding: 2.625em 0;
+  padding: 2.625em;
 
   &:last-child {
     margin-bottom: -2.625em;
@@ -1316,6 +1316,10 @@ dl.variation {
   .section-title {
     text-align: center;
     margin-bottom: $spacing-v;
+  }
+
+  .products {
+    margin-bottom: 0;
   }
 }
 
@@ -1911,7 +1915,7 @@ dl.variation {
   }
 
   .archetype-product-section {
-    padding: 1.387em 0;
+    padding: 1.387em;
 
     &:last-child {
       margin-bottom: -1.387em;
@@ -1935,6 +1939,12 @@ dl.variation {
   }
 }
 
+@media screen and (min-width: 71.25em) {
+  .archetype-product-section {
+    padding: 2.625em !important;
+  }
+}
+
 /**
  * Tablet
  */
@@ -1949,7 +1959,7 @@ dl.variation {
   }
 
   .archetype-product-section {
-    padding: 2.125em 0;
+    padding: 2.125em;
 
     &:last-child {
       margin-bottom: -2.125em;

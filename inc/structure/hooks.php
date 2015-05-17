@@ -54,19 +54,23 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
  * Homepage
  * @see archetype_homepage_hero()
  * @see archetype_homepage_content()
+ * @see archetype_homepage_custom_content()
  * @see archetype_product_categories()
  * @see archetype_recent_products()
  * @see archetype_featured_products()
  * @see archetype_popular_products()
  * @see archetype_on_sale_products()
+ * @see archetype_homepage_custom_content_alt()
  */
-add_action( 'homepage', 'archetype_homepage_hero',      0  );
-add_action( 'homepage', 'archetype_homepage_content',   10 );
-add_action( 'homepage', 'archetype_product_categories', 20 );
-add_action( 'homepage', 'archetype_recent_products',    30 );
-add_action( 'homepage', 'archetype_featured_products',  40 );
-add_action( 'homepage', 'archetype_popular_products',   50 );
-add_action( 'homepage', 'archetype_on_sale_products',   60 );
+add_action( 'homepage', 'archetype_homepage_hero',               0  );
+add_action( 'homepage', 'archetype_homepage_content',            10 );
+add_action( 'homepage', 'archetype_homepage_custom_content',     20 );
+add_action( 'homepage', 'archetype_product_categories',          30 );
+add_action( 'homepage', 'archetype_recent_products',             40 );
+add_action( 'homepage', 'archetype_featured_products',           50 );
+add_action( 'homepage', 'archetype_popular_products',            60 );
+add_action( 'homepage', 'archetype_on_sale_products',            70 );
+add_action( 'homepage', 'archetype_homepage_custom_content_alt', 80 );
 
 /**
  * Posts

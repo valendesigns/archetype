@@ -261,6 +261,16 @@
       $( '.archetype-homepage-content' ).css( 'background-color', to );
     } );
   } );
+  wp.customize( 'archetype_homepage_content_alt_text_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.archetype-homepage-content-alt' ).css( 'color', to );
+    } );
+  } );
+  wp.customize( 'archetype_homepage_content_alt_background_color', function( value ) {
+    value.bind( function( to ) {
+      $( '.archetype-homepage-content-alt' ).css( 'background-color', to );
+    } );
+  } );
   wp.customize( 'archetype_post_background_color', function( value ) {
     value.bind( function( to ) {
       // Background Color

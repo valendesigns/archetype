@@ -925,6 +925,87 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'settings'    => 'archetype_homepage_content_background_color',
     ) ) );
 
+    /**
+     * Content section
+     */
+    $wp_customize->add_section( 'archetype_homepage_content_alt' , array(
+      'title'       => __( 'Lower Content', 'archetype' ),
+      'priority'    => 45,
+      'panel'       => 'archetype_homepage',
+    ) );
+
+    /**
+     * Content editor
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_alt', array(
+      'default'           => '',
+      'sanitize_callback' => 'wp_kses_post',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_content_alt', array(
+      'label'       => __( 'Content', 'archetype' ),
+      'section'     => 'archetype_homepage_content_alt',
+      'settings'    => 'archetype_homepage_content_alt',
+      'type'        => 'textarea',
+    ) ) );
+    
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_content_alt_text', array(
+      'section'     => 'archetype_homepage_content',
+      'description' => __( 'Add custom content after the page content.', 'archetype' ),
+      'settings'    => 'archetype_homepage_content_alt',
+      'type'        => 'text',
+    ) ) );
+
+    /**
+     * Alignment
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_alt_alignment', array(
+      'default'           => 'left',
+      'sanitize_callback' => 'archetype_sanitize_choices',
+    ) );
+
+    $wp_customize->add_control( 'archetype_homepage_content_alt_alignment', array(
+      'label'       => __( 'Text alignment', 'archetype' ),
+      'section'     => 'archetype_homepage_content_alt',
+      'settings'    => 'archetype_homepage_content_alt_alignment',
+      'type'        => 'radio',
+      'choices'     => array(
+        'left'        => 'Left',
+        'center'      => 'Center',
+        'right'       => 'Right',
+      ),
+    ) );
+
+    /**
+     * Content color
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_alt_text_color', array(
+      'default'           => apply_filters( 'archetype_default_homepage_content_alt_text_color', '#555' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_content_alt_text_color', array(
+      'label'       => __( 'Text color', 'archetype' ),
+      'section'     => 'archetype_homepage_content_alt',
+      'settings'    => 'archetype_homepage_content_alt_text_color',
+    ) ) );
+
+    /**
+     * Content background color
+     */
+    $wp_customize->add_setting( 'archetype_homepage_content_alt_background_color', array(
+      'default'           => apply_filters( 'archetype_default_homepage_content_alt_background_color', '#fff' ),
+      'sanitize_callback' => 'archetype_sanitize_hex_color',
+      'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_content_alt_background_color', array(
+      'label'       => __( 'Background color', 'archetype' ),
+      'section'     => 'archetype_homepage_content_alt',
+      'settings'    => 'archetype_homepage_content_alt_background_color',
+    ) ) );
+
     // END Homepage
 
     // BEGIN Post
