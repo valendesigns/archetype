@@ -34,30 +34,32 @@ if ( ! function_exists( 'archetype_homepage_custom_content' ) ) {
    * @since 1.0.0
    */
   function archetype_homepage_custom_content() {
-    // Customizer content
-    $custom_content           = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content', '' ) ) );
-    $content_text_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_text_color', apply_filters( 'archetype_default_homepage_custom_content_text_color', '#555' ) ) );
-    $content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_background_color', apply_filters( 'archetype_default_homepage_custom_content_background_color', '#fff' ) ) );
-    $content_alignment        = esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alignment', 'left' ) );
+    if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_custom_content_toggle', true ) ) ) {
+      // Customizer content
+      $custom_content           = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content', '' ) ) );
+      $content_text_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_text_color', apply_filters( 'archetype_default_homepage_custom_content_text_color', '#555' ) ) );
+      $content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_background_color', apply_filters( 'archetype_default_homepage_custom_content_background_color', '#fff' ) ) );
+      $content_alignment        = esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alignment', 'left' ) );
 
-    // CSS classes
-    $classes = array();
-    $classes[] = 'archetype-homepage-content';
-    $classes[] = 'archetype-homepage-custom-content';
-    $classes[] = $content_alignment;
-    $classes[] = 'expand-full-width';
+      // CSS classes
+      $classes = array();
+      $classes[] = 'archetype-homepage-content';
+      $classes[] = 'archetype-homepage-custom-content';
+      $classes[] = $content_alignment;
+      $classes[] = 'expand-full-width';
 
-    // CSS style attributes
-    $styles = array();
-    $styles[] = "color: $content_text_color;";
-    $styles[] = "background-color: $content_background_color;";
+      // CSS style attributes
+      $styles = array();
+      $styles[] = "color: $content_text_color;";
+      $styles[] = "background-color: $content_background_color;";
 
-    if ( '' !== $custom_content ) {
-      echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
-        echo '<div class="col-full">';
-          echo do_shortcode( wpautop( $custom_content ) );
-        echo '</div>';
-      echo '</section>';
+      if ( '' !== $custom_content ) {
+        echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
+          echo '<div class="col-full">';
+            echo do_shortcode( wpautop( $custom_content ) );
+          echo '</div>';
+        echo '</section>';
+      }
     }
   }
 }
@@ -71,30 +73,32 @@ if ( ! function_exists( 'archetype_homepage_custom_content_alt' ) ) {
    * @since 1.0.0
    */
   function archetype_homepage_custom_content_alt() {
-    // Customizer content
-    $custom_content           = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content_alt', '' ) ) );
-    $content_text_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_text_color', apply_filters( 'archetype_default_homepage_custom_content_alt_text_color', '#555' ) ) );
-    $content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_background_color', apply_filters( 'archetype_default_homepage_custom_content_alt_background_color', '#fff' ) ) );
-    $content_alignment        = esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alt_alignment', 'left' ) );
+    if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_custom_content_alt_toggle', true ) ) ) {
+      // Customizer content
+      $custom_content           = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content_alt', '' ) ) );
+      $content_text_color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_text_color', apply_filters( 'archetype_default_homepage_custom_content_alt_text_color', '#555' ) ) );
+      $content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_background_color', apply_filters( 'archetype_default_homepage_custom_content_alt_background_color', '#fff' ) ) );
+      $content_alignment        = esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alt_alignment', 'left' ) );
 
-    // CSS classes
-    $classes = array();
-    $classes[] = 'archetype-homepage-content';
-    $classes[] = 'archetype-homepage-custom-content-alt';
-    $classes[] = $content_alignment;
-    $classes[] = 'expand-full-width';
+      // CSS classes
+      $classes = array();
+      $classes[] = 'archetype-homepage-content';
+      $classes[] = 'archetype-homepage-custom-content-alt';
+      $classes[] = $content_alignment;
+      $classes[] = 'expand-full-width';
 
-    // CSS style attributes
-    $styles = array();
-    $styles[] = "color: $content_text_color;";
-    $styles[] = "background-color: $content_background_color;";
+      // CSS style attributes
+      $styles = array();
+      $styles[] = "color: $content_text_color;";
+      $styles[] = "background-color: $content_background_color;";
 
-    if ( '' !== $custom_content ) {
-      echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
-        echo '<div class="col-full">';
-          echo do_shortcode( wpautop( $custom_content ) );
-        echo '</div>';
-      echo '</section>';
+      if ( '' !== $custom_content ) {
+        echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
+          echo '<div class="col-full">';
+            echo do_shortcode( wpautop( $custom_content ) );
+          echo '</div>';
+        echo '</section>';
+      }
     }
   }
 }
