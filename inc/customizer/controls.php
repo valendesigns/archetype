@@ -35,6 +35,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       $wp_customize->get_section( 'nav' )->panel                = 'archetype_menus';
       $wp_customize->get_section( 'nav' )->priority             = 10;
     }
+    
+    // Change the title of the Site Title & Tagline
+    $wp_customize->get_section( 'title_tagline' )->title        = __( 'Branding', 'archetype' );
 
     /**
      * Custom controls
