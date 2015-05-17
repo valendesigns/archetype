@@ -58,7 +58,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       // Add the setting for our svg logo.
       $wp_customize->add_setting( 'archetype_site_logo_svg', array(
         'capability'        => 'manage_options',
-        'sanitize_callback' => 'esc_url_raw',
+        'sanitize_callback' => 'sanitize_text_field',
       ) );
 
       // Add our image uploader.
@@ -668,7 +668,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_setting( 'archetype_homepage_hero_background_image', array(
       'default'           => '',
-      'sanitize_callback' => 'esc_url_raw',
+      'sanitize_callback' => 'sanitize_text_field',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_homepage_hero_background_image', array(

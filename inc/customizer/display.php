@@ -641,7 +641,7 @@ if ( ! function_exists( 'archetype_homepage_hero_active' ) ) {
 
     // Background image
     $background_img_src   = wp_get_attachment_image_src( get_theme_mod( 'archetype_homepage_hero_background_image', '' ), 'full' );
-    $background_img       = isset( $background_img_src[0] ) ? esc_url_raw( $background_img_src[0] ) : '';
+    $background_img       = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
 
     // Background image size
     $background_img_size  = esc_attr( get_theme_mod( 'archetype_homepage_hero_background_image_size', 'auto' ) );
