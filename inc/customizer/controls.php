@@ -72,7 +72,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       // Add our image uploader.
       $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_site_logo_svg', array(
         'label'       => __( 'Logo SVG', 'archetype' ),
-        'description' => __( 'You must add a logo. The logo acts as a fallback for browsers that do not support SVG images.', 'archetype' ),
+        'description' => __( 'You must add the logo above. The logo acts as a fallback for browsers that do not support SVG images.', 'archetype' ),
         'section'     => 'title_tagline',
         'settings'    => 'archetype_site_logo_svg',
         'mime_type'   => 'image',
