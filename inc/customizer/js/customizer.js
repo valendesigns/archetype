@@ -1,17 +1,14 @@
 /**
  * Theme Customizer enhancements for a better user experience.
  *
- * Contains handlers to import and export theme mods.
+ * Contains handlers to import and export theme mods & toggle controls.
  */
 ( function( $ ) {
   var Archetype_Customizer = {
     init: function() {
+      $( document ).ready( Archetype_Customizer._toggleInit );
       $( document ).on( 'click', 'input[name=customize-import-button]', Archetype_Customizer._import );
       $( document ).on( 'click', 'input[name=customize-export-button]', Archetype_Customizer._export );
-      $( document ).on( 'click', 'input[data-customize-setting-link=archetype_boxed]', Archetype_Customizer._toggle );
-      $( document ).ready( function() {
-        Archetype_Customizer._toggle();
-      });
     },
     _import: function() {
     var win     = $( window )
@@ -35,13 +32,24 @@
       window.location.href = Archetype_CustomizerConfig.customizerURL + '?customize-export=' + Archetype_CustomizerConfig.customizerExportNonce;
       return false;
     },
-    _toggle: function() {
-      var input = $( 'input[data-customize-setting-link=archetype_boxed]' ),
-        color = $( '#customize-control-archetype_boxed_background_color' );
-      if ( input.prop( 'checked' ) ) {
-        color.show();
+    _toggleInit: function() {
+      var toggles = {
+        'input[data-customize-setting-link=archetype_boxed]' : '#customize-control-archetype_boxed_background_color'
+      };
+      $.each( toggles, function( input, control ) {
+        Archetype_Customizer._toggle( input, control );
+        $( document ).on( 'click', input, function() { 
+          Archetype_Customizer._toggle( input, control );
+        } );
+      } );
+    },
+    _toggle: function( input, control ) {
+      var $input = $( input ),
+        $control = $( control );
+      if ( $input.prop( 'checked' ) ) {
+        $control.show();
       } else {
-        color.hide();
+        $control.hide();
       }
     }
   };

@@ -194,7 +194,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_boxed_background_color', array(
       'label'       => __( 'Boxed background color', 'archetype' ),
-      'description' => __( 'Changes the background color of the boxed content wrapper.', 'archetype' ),
+      'description' => __( 'Changes the background color of the boxed content wrapper. Does not affect change on the homepage.', 'archetype' ),
       'section'     => 'archetype_layout',
       'settings'    => 'archetype_boxed_background_color',
       'priority'    => 25,
