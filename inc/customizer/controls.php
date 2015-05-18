@@ -136,13 +136,14 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_columns', array(
       'label'       => __( 'Sidebar Columns', 'archetype' ),
+      'description' => __( 'Choose the number of columns, out of a 12 column grid, that the sidebar will occupy.', 'archetype' ),
       'section'     => 'archetype_layout',
       'settings'    => 'archetype_columns',
       'priority'    => 10,
-      'type'        => 'radio',
+      'type'        => 'select',
       'choices'     => array(
-        '3'         => '3 of 12',
-        '4'         => '4 of 12',
+        '3'         => __( '3', 'archetype' ),
+        '4'         => __( '4', 'archetype' ),
       )
     ) ) );
 
