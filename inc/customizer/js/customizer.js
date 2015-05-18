@@ -1,7 +1,7 @@
 /**
  * Theme Customizer enhancements for a better user experience.
  *
- * Contains handlers to import and export theme mods & toggle controls.
+ * Contains handlers for logo, toggle controls, & import and export theme mods.
  */
 ( function( $ ) {
   var $body, $anchor, $logo, $svg, $branding, size;
