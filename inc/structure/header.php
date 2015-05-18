@@ -26,14 +26,27 @@ if ( ! function_exists( 'archetype_site_branding' ) ) {
    * @return void
    */
   function archetype_site_branding() {
-    if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+    // Default branding markup
+    $branding = '<div class="site-branding">
+      <h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name', 'display' ) . '</a></h1>
+      <p class="site-description">' . get_bloginfo( 'description', 'display' ) . '</p>
+    </div>';
+
+    // Support Jetpack Site Logo
+    if ( function_exists( 'jetpack_has_site_logo' ) ) {
       jetpack_the_site_logo();
-    } else { ?>
-      <div class="site-branding">
-        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        <p class="site-description"><?php bloginfo( 'description' ); ?></p>
-      </div>
-    <?php }
+
+      if ( jetpack_has_site_logo() ) {
+        if ( is_customize_preview() ) {
+          $branding = str_replace( '<div class="site-branding">', '<div class="site-branding" style="display:none">', $branding );
+        } else {
+          return;
+        }
+      }
+    }
+
+    // Display default
+    echo $branding;
   }
 }
 

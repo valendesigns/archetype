@@ -32,13 +32,7 @@ if ( ! function_exists( 'archetype_customize_init' ) ) {
  */
 if ( ! function_exists( 'archetype_site_logo_svg' ) ) {
   function archetype_site_logo_svg( $html, $logo, $size ) {
-
-    // We have a logo. Logo is go.
-    if ( jetpack_has_site_logo() && get_theme_mod( 'archetype_site_logo_svg' ) ) {
-      $html = str_replace( '</a>', '<span class="svg-site-logo"></span></a>', $html );
-    }
-
-    return $html;
+    return str_replace( '</a>', '<span class="svg-site-logo"></span></a>', $html );
   }
 }
 
@@ -54,13 +48,16 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
 
     // Localize
     wp_localize_script( 'archetype_customize', 'Archetype_Customizerl10n', array(
-      'emptyImport' => __( 'Please choose a file to import.', 'archetype' )
+      'emptyImport' => __( 'Please choose a file to import.', 'archetype' ),
+      'missingLogo' => __( 'The SVG will not display properly without adding a fallback first.', 'archetype' ) ,
     ));
 
     // Config
     wp_localize_script( 'archetype_customize', 'Archetype_CustomizerConfig', array(
+      'ajaxURL'               => admin_url( 'admin-ajax.php' ),
       'customizerURL'         => admin_url( 'customize.php' ),
       'customizerExportNonce' => wp_create_nonce( 'customize-exporting' ),
+      'customizerLogoNonce'   => wp_create_nonce( 'customize-logo-change' ),
     ) );
   }
 }
@@ -101,6 +98,27 @@ if ( ! function_exists( 'archetype_customize_css' ) ) {
   function archetype_customize_css() {
     global $archetype_version;
     wp_enqueue_style( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/css/customizer.css', array(), $archetype_version );
+  }
+}
+
+/**
+ * Returns the logo URL in the customizer
+ *
+ * @since  1.0.0
+ */
+if ( ! function_exists( 'archetype_customize_get_logo_url' ) ) {
+  function archetype_customize_get_logo_url() {
+    if ( ! wp_verify_nonce( $_REQUEST['customize-logo'], 'customize-logo-change' ) ) {
+      return;
+    }
+
+    $logo_svg = wp_get_attachment_image_src( $_REQUEST['id'], 'full', false );
+
+    if ( isset( $logo_svg[0] ) ) {
+      wp_send_json_success( $logo_svg[0] );
+    }
+
+    wp_send_json_error( array( 'message' => __( 'An unknown error occurred while setting your SVG logo.', 'archetype' ) ) );
   }
 }
 

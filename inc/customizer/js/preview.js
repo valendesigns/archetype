@@ -17,10 +17,11 @@
   } );
   wp.customize( 'archetype_site_logo_margin_top', function( value ) {
     value.bind( function( to ) {
-      if ( to )
+      if ( to ) {
         $( '.site-logo-link img, .svg-site-logo' ).css( 'margin-top', to + 'em' );
-      else
+      } else {
         $( '.site-logo-link img, .svg-site-logo' ).css( 'margin-top', '0' );
+      }
     } );
   } );
   wp.customize( 'archetype_full_width', function( value ) {

@@ -67,6 +67,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       $wp_customize->add_setting( 'archetype_site_logo_svg', array(
         'capability'        => 'manage_options',
         'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage'
       ) );
 
       // Add our image uploader.
