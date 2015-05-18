@@ -274,6 +274,13 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'priority'    => 4,
     ) ) );
 
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_typography_text', array(
+      'section'     => 'archetype_typography',
+      'description' => __( 'Sidebar links use text color for the default state, and link color for the hover state.', 'archetype' ),
+      'type'        => 'text',
+      'priority'    => 5,
+    ) ) );
+
     // END Typography
 
     // BEGIN Header
