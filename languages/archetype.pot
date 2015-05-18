@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-05-16 13:47:28+00:00\n"
+"POT-Creation-Date: 2015-05-18 01:57:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,6 +12,14 @@ msgstr ""
 "Last-Translator: Valen Designs <support@valendesigns.com>\n"
 "Language-Team: Valen Designs <support@valendesigns.com>\n"
 "X-Generator: grunt-wp-i18n 0.5.1\n"
+
+#: inc/customizer/controls.php:145
+msgid "3"
+msgstr ""
+
+#: inc/customizer/controls.php:146
+msgid "4"
+msgstr ""
 
 #: 404.php:15
 msgid "404"
@@ -353,124 +361,156 @@ msgstr ""
 msgid "Menus Locations"
 msgstr ""
 
-#: inc/customizer/controls.php:65
-msgid "Logo SVG (logo above required)"
+#: inc/customizer/controls.php:40
+msgid "Branding"
 msgstr ""
 
-#: inc/customizer/controls.php:81
-msgid "Logo Margin Top (em)"
+#: inc/customizer/controls.php:45
+msgid "Re-order"
 msgstr ""
 
-#: inc/customizer/controls.php:90
-msgid "Want to add your logo? Install %sJetpack%s!"
+#: inc/customizer/controls.php:74
+msgid "Logo SVG (Scalable Vector Graphics)"
+msgstr ""
+
+#: inc/customizer/controls.php:75
+msgid ""
+"You must add the logo above. The logo acts as a fallback for browsers that "
+"do not support SVG images."
+msgstr ""
+
+#: inc/customizer/controls.php:92
+msgid "Logo Margin Top"
+msgstr ""
+
+#: inc/customizer/controls.php:93
+msgid "Margin top must be numeric, and an em value like .5 or 1"
 msgstr ""
 
 #: inc/customizer/controls.php:101
+msgid "Want to add your logo? Install %sJetpack%s!"
+msgstr ""
+
+#: inc/customizer/controls.php:113
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/controls.php:111
+#: inc/customizer/controls.php:123
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer/controls.php:125
+#: inc/customizer/controls.php:138
 msgid "Sidebar Columns"
 msgstr ""
 
-#: inc/customizer/controls.php:145 inc/customizer/controls.php:624
+#: inc/customizer/controls.php:139
+msgid ""
+"Choose the number of columns, out of a 12 column grid, that the sidebar "
+"will occupy."
+msgstr ""
+
+#: inc/customizer/controls.php:160 inc/customizer/controls.php:644
 msgid "Full Width"
 msgstr ""
 
-#: inc/customizer/controls.php:146
+#: inc/customizer/controls.php:161
 msgid "Expand the sites width to fill all of the browser window space."
 msgstr ""
 
-#: inc/customizer/controls.php:162
+#: inc/customizer/controls.php:178
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/controls.php:163
+#: inc/customizer/controls.php:179
 msgid "Adds a wrapper to the content of the site which creates a boxed look."
 msgstr ""
 
-#: inc/customizer/controls.php:180
+#: inc/customizer/controls.php:196
 msgid "Boxed background color"
 msgstr ""
 
-#: inc/customizer/controls.php:181
+#: inc/customizer/controls.php:197
 msgid "Changes the background color of the boxed content wrapper."
 msgstr ""
 
-#: inc/customizer/controls.php:195
+#: inc/customizer/controls.php:211
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/controls.php:209 inc/customizer/controls.php:291
-#: inc/customizer/controls.php:470 inc/customizer/controls.php:924
-#: inc/customizer/controls.php:1000 inc/customizer/controls.php:1102
-#: inc/customizer/controls.php:1263 inc/customizer/controls.php:1346
+#: inc/customizer/controls.php:225 inc/customizer/controls.php:307
+#: inc/customizer/controls.php:486 inc/customizer/controls.php:941
+#: inc/customizer/controls.php:1038 inc/customizer/controls.php:1182
+#: inc/customizer/controls.php:1259 inc/customizer/controls.php:1364
+#: inc/customizer/controls.php:1531 inc/customizer/controls.php:1614
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer/controls.php:225 inc/customizer/controls.php:1248
+#: inc/customizer/controls.php:241 inc/customizer/controls.php:1516
+#: inc/woocommerce/controls.php:234 inc/woocommerce/controls.php:386
+#: inc/woocommerce/controls.php:546 inc/woocommerce/controls.php:700
+#: inc/woocommerce/controls.php:852
 msgid "Heading color"
 msgstr ""
 
-#: inc/customizer/controls.php:240 inc/customizer/controls.php:307
-#: inc/customizer/controls.php:380 inc/customizer/controls.php:502
-#: inc/customizer/controls.php:1292 inc/customizer/controls.php:1375
+#: inc/customizer/controls.php:256 inc/customizer/controls.php:323
+#: inc/customizer/controls.php:396 inc/customizer/controls.php:518
+#: inc/customizer/controls.php:1560 inc/customizer/controls.php:1643
 msgid "Link color"
 msgstr ""
 
-#: inc/customizer/controls.php:255 inc/customizer/controls.php:323
-#: inc/customizer/controls.php:396 inc/customizer/controls.php:518
-#: inc/customizer/controls.php:1306 inc/customizer/controls.php:1389
+#: inc/customizer/controls.php:271 inc/customizer/controls.php:339
+#: inc/customizer/controls.php:412 inc/customizer/controls.php:534
+#: inc/customizer/controls.php:1574 inc/customizer/controls.php:1657
 msgid "Link hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:275 inc/customizer/controls.php:364
-#: inc/customizer/controls.php:486 inc/customizer/controls.php:708
-#: inc/customizer/controls.php:865 inc/customizer/controls.php:940
-#: inc/customizer/controls.php:1016 inc/customizer/controls.php:1117
-#: inc/customizer/controls.php:1278 inc/customizer/controls.php:1361
+#: inc/customizer/controls.php:291 inc/customizer/controls.php:380
+#: inc/customizer/controls.php:502 inc/customizer/controls.php:731
+#: inc/customizer/controls.php:956 inc/customizer/controls.php:1053
+#: inc/customizer/controls.php:1122 inc/customizer/controls.php:1198
+#: inc/customizer/controls.php:1275 inc/customizer/controls.php:1379
+#: inc/customizer/controls.php:1546 inc/customizer/controls.php:1629
+#: inc/woocommerce/controls.php:248 inc/woocommerce/controls.php:400
+#: inc/woocommerce/controls.php:560 inc/woocommerce/controls.php:714
+#: inc/woocommerce/controls.php:866
 msgid "Background color"
 msgstr ""
 
-#: inc/customizer/controls.php:336
+#: inc/customizer/controls.php:352
 msgid "Menus"
 msgstr ""
 
-#: inc/customizer/controls.php:337
+#: inc/customizer/controls.php:353
 msgid "Customize your menu locations and styles."
 msgstr ""
 
-#: inc/customizer/controls.php:349 inc/functions/setup.php:55
+#: inc/customizer/controls.php:365 inc/functions/setup.php:55
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/customizer/controls.php:351
+#: inc/customizer/controls.php:367
 msgid ""
 "The Primary Menu must be set to a menu location in order to preview style "
 "changes."
 msgstr ""
 
-#: inc/customizer/controls.php:412 inc/customizer/controls.php:534
+#: inc/customizer/controls.php:428 inc/customizer/controls.php:550
 msgid "Link hover background color"
 msgstr ""
 
-#: inc/customizer/controls.php:428 inc/customizer/controls.php:550
+#: inc/customizer/controls.php:444 inc/customizer/controls.php:566
 msgid "Link active color"
 msgstr ""
 
-#: inc/customizer/controls.php:444 inc/customizer/controls.php:566
+#: inc/customizer/controls.php:460 inc/customizer/controls.php:582
 msgid "Link active background color"
 msgstr ""
 
-#: inc/customizer/controls.php:454 inc/functions/setup.php:56
+#: inc/customizer/controls.php:470 inc/functions/setup.php:56
 msgid "Secondary Menu"
 msgstr ""
 
-#: inc/customizer/controls.php:456
+#: inc/customizer/controls.php:472
 msgid ""
 "The Secondary Menu must be set to a menu location in order to preview style "
 "changes."
@@ -480,187 +520,268 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: inc/customizer/controls.php:589
-msgid "Hero Component"
+#: inc/customizer/controls.php:597
+msgid "Customize the look & feel of your websites homepage."
 msgstr ""
 
-#: inc/customizer/controls.php:591
-msgid ""
-"These controls modify the style and content for the Homepage Hero "
-"Component. You could even turn it off if you wanted by unchecking the "
-"Activated option below."
+#: inc/customizer/controls.php:606
+msgid "Hero"
 msgstr ""
 
-#: inc/customizer/controls.php:609
-msgid "Activated"
+#: inc/customizer/controls.php:608
+msgid "Customize the look & feel of the hero component."
 msgstr ""
 
-#: inc/customizer/controls.php:639
+#: inc/customizer/controls.php:627
+msgid "Display hero component"
+msgstr ""
+
+#: inc/customizer/controls.php:628
+msgid "Toggle the display of the hero component."
+msgstr ""
+
+#: inc/customizer/controls.php:645
+msgid "Toggle the width of the hero component."
+msgstr ""
+
+#: inc/customizer/controls.php:661 inc/customizer/controls.php:920
+#: inc/customizer/controls.php:1017
 msgid "Text alignment"
 msgstr ""
 
-#: inc/customizer/controls.php:666
+#: inc/customizer/controls.php:688
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer/controls.php:681
+#: inc/customizer/controls.php:704
 msgid "Background image size"
 msgstr ""
 
-#: inc/customizer/controls.php:724
+#: inc/customizer/controls.php:747
 msgid "Heading text color"
 msgstr ""
 
-#: inc/customizer/controls.php:740
+#: inc/customizer/controls.php:763
 msgid "Body text color"
 msgstr ""
 
-#: inc/customizer/controls.php:756 inc/customizer/display.php:659
+#: inc/customizer/controls.php:779 inc/customizer/display.php:659
 msgid "Heading Text"
 msgstr ""
 
-#: inc/customizer/controls.php:761
+#: inc/customizer/controls.php:784 inc/woocommerce/controls.php:199
+#: inc/woocommerce/controls.php:351 inc/woocommerce/controls.php:511
+#: inc/woocommerce/controls.php:665 inc/woocommerce/controls.php:817
 msgid "Heading text"
 msgstr ""
 
-#: inc/customizer/controls.php:772 inc/customizer/display.php:662
+#: inc/customizer/controls.php:795 inc/customizer/display.php:662
 msgid "Body Text"
 msgstr ""
 
-#: inc/customizer/controls.php:776
+#: inc/customizer/controls.php:800
 msgid "Body text"
 msgstr ""
 
-#: inc/customizer/controls.php:787 inc/customizer/display.php:665
+#: inc/customizer/controls.php:811 inc/customizer/display.php:665
 msgid "Call to Action"
 msgstr ""
 
-#: inc/customizer/controls.php:792
+#: inc/customizer/controls.php:816
 msgid "Button text"
 msgstr ""
 
-#: inc/customizer/controls.php:808
+#: inc/customizer/controls.php:832
 msgid "Button url"
 msgstr ""
 
-#: inc/customizer/controls.php:823
+#: inc/customizer/controls.php:843 inc/customizer/controls.php:898
+#: inc/customizer/controls.php:995 inc/customizer/controls.php:1066
+msgid "Content"
+msgstr ""
+
+#: inc/customizer/controls.php:857
+msgid "Display page content"
+msgstr ""
+
+#: inc/customizer/controls.php:858
+msgid ""
+"Toggle the display of page content. This is the content that has been added "
+"via the WordPress editor for the front page."
+msgstr ""
+
+#: inc/customizer/controls.php:868
+msgid "Custom Content"
+msgstr ""
+
+#: inc/customizer/controls.php:882
+msgid "Display custom content"
+msgstr ""
+
+#: inc/customizer/controls.php:883
+msgid "Toggle the display of custom content."
+msgstr ""
+
+#: inc/customizer/controls.php:893
+msgid "This is some custom content!"
+msgstr ""
+
+#: inc/customizer/controls.php:906
+msgid "Add custom content after the page content, HTML is allowed here."
+msgstr ""
+
+#: inc/customizer/controls.php:965
+msgid "Custom Content Alt"
+msgstr ""
+
+#: inc/customizer/controls.php:979
+msgid "Display custom content alt"
+msgstr ""
+
+#: inc/customizer/controls.php:980
+msgid "Toggle the display of custom content alt."
+msgstr ""
+
+#: inc/customizer/controls.php:990
+msgid "This is some custom content too!"
+msgstr ""
+
+#: inc/customizer/controls.php:1003
+msgid ""
+"Add custom content just before the footer on the homepage, HTML is allowed "
+"here."
+msgstr ""
+
+#: inc/customizer/controls.php:1067
+msgid "Customize the look & feel of your websites content."
+msgstr ""
+
+#: inc/customizer/controls.php:1077
 msgid "Post"
 msgstr ""
 
-#: inc/customizer/controls.php:835
+#: inc/customizer/controls.php:1091
 msgid "Post Border Radius"
 msgstr ""
 
-#: inc/customizer/controls.php:849
+#: inc/customizer/controls.php:1106
 msgid "Avatar Border Radius"
 msgstr ""
 
-#: inc/customizer/controls.php:881 inc/customizer/controls.php:1132
+#: inc/customizer/controls.php:1138 inc/customizer/controls.php:1394
 msgid "Border color"
 msgstr ""
 
-#: inc/customizer/controls.php:896 inc/customizer/controls.php:1032
-#: inc/customizer/controls.php:1147
+#: inc/customizer/controls.php:1153 inc/customizer/controls.php:1291
+#: inc/customizer/controls.php:1409
 msgid "Shadow color"
 msgstr ""
 
-#: inc/customizer/controls.php:910
+#: inc/customizer/controls.php:1167
 msgid "Form Inputs & Textareas"
 msgstr ""
 
-#: inc/customizer/controls.php:956
+#: inc/customizer/controls.php:1214
 msgid "Text focus color"
 msgstr ""
 
-#: inc/customizer/controls.php:972
+#: inc/customizer/controls.php:1230
 msgid "Background focus color"
 msgstr ""
 
-#: inc/customizer/controls.php:986
+#: inc/customizer/controls.php:1244
 msgid "Search Widget"
 msgstr ""
 
-#: inc/customizer/controls.php:1046
+#: inc/customizer/controls.php:1305
 msgid "Buttons"
 msgstr ""
 
-#: inc/customizer/controls.php:1058
+#: inc/customizer/controls.php:1319
 msgid "2D Buttons"
 msgstr ""
 
-#: inc/customizer/controls.php:1068
+#: inc/customizer/controls.php:1329
 msgid "Checking 2D will remove the shadow effect."
 msgstr ""
 
-#: inc/customizer/controls.php:1080
+#: inc/customizer/controls.php:1342
 msgid "Border Radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1089
+#: inc/customizer/controls.php:1351
 msgid ""
 "It's important to note that the default button colors are used in many "
 "places as an accent color."
 msgstr ""
 
-#: inc/customizer/controls.php:1156
+#: inc/customizer/controls.php:1418
 msgid ""
 "Adding the %s class to your buttons will inverse their styles. Which means "
 "the hover colors will become the default state, and vice versa."
 msgstr ""
 
-#: inc/customizer/controls.php:1169
+#: inc/customizer/controls.php:1431
 msgid "Text alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1184
+#: inc/customizer/controls.php:1446
 msgid "Background alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1199
+#: inc/customizer/controls.php:1461
 msgid "Border alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1214
+#: inc/customizer/controls.php:1476
 msgid "Shadow alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1228
+#: inc/customizer/controls.php:1492
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:1235
+#: inc/customizer/controls.php:1493
+msgid "Customize the look & feel of your websites footer."
+msgstr ""
+
+#: inc/customizer/controls.php:1501
 msgid "Upper Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:1319
+#: inc/customizer/controls.php:1583
 msgid "Lower Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:1330
+#: inc/customizer/controls.php:1597
 msgid "Display the footer credits"
 msgstr ""
 
-#: inc/customizer/controls.php:1402
+#: inc/customizer/controls.php:1598
+msgid "Toggle the display of the footer credits."
+msgstr ""
+
+#: inc/customizer/controls.php:1670
 msgid "Import & Export"
 msgstr ""
 
-#: inc/customizer/controls.php:1413
+#: inc/customizer/controls.php:1681
 msgid "You do not have the capability role to import or export customizer settings."
 msgstr ""
 
-#: inc/customizer/controls.php:1431
+#: inc/customizer/controls.php:1700
 msgid "Import Customizer"
 msgstr ""
 
-#: inc/customizer/controls.php:1434
+#: inc/customizer/controls.php:1703
 msgid "Upload a file to import customization settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:1449
+#: inc/customizer/controls.php:1718
 msgid "Export Customizer"
 msgstr ""
 
-#: inc/customizer/controls.php:1452
+#: inc/customizer/controls.php:1721
 msgid "Click the button below to export the customization settings for this theme."
 msgstr ""
 
@@ -668,13 +789,13 @@ msgstr ""
 msgid "Please choose a file to import."
 msgstr ""
 
-#: inc/customizer/functions.php:157 inc/customizer/functions.php:161
+#: inc/customizer/functions.php:189 inc/customizer/functions.php:193
 msgid ""
 "Error importing settings! Please check that you uploaded a customizer "
 "export file."
 msgstr ""
 
-#: inc/customizer/functions.php:165
+#: inc/customizer/functions.php:197
 msgid ""
 "Error importing settings! The settings you uploaded are not for the current "
 "theme."
@@ -849,24 +970,29 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/structure/template-tags.php:24
+#: inc/structure/template-tags.php:120 inc/woocommerce/controls.php:105
+#: inc/woocommerce/controls.php:194
 msgid "Product Categories"
 msgstr ""
 
-#: inc/structure/template-tags.php:59
+#: inc/structure/template-tags.php:167 inc/woocommerce/controls.php:257
+#: inc/woocommerce/controls.php:346
 msgid "Recent Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:94
+#: inc/structure/template-tags.php:212 inc/woocommerce/controls.php:417
+#: inc/woocommerce/controls.php:506
 msgid "Featured Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:129
+#: inc/structure/template-tags.php:257 inc/woocommerce/controls.php:571
+#: inc/woocommerce/controls.php:660
 msgid "Top Rated Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:164
-msgid "On Sale"
+#: inc/structure/template-tags.php:302 inc/woocommerce/controls.php:723
+#: inc/woocommerce/controls.php:812
+msgid "On Sale Products"
 msgstr ""
 
 #: inc/woocommerce/controls.php:18
@@ -893,8 +1019,96 @@ msgstr ""
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/woocommerce/controls.php:93
-msgid "Hide Breadcrumbs"
+#: inc/woocommerce/controls.php:94
+msgid "Display breadcrumbs"
+msgstr ""
+
+#: inc/woocommerce/controls.php:95
+msgid "Toggle the display of the breadcumbs."
+msgstr ""
+
+#: inc/woocommerce/controls.php:119
+msgid "Display product categories"
+msgstr ""
+
+#: inc/woocommerce/controls.php:120
+msgid "Toggle the display of the product categories."
+msgstr ""
+
+#: inc/woocommerce/controls.php:135 inc/woocommerce/controls.php:287
+#: inc/woocommerce/controls.php:447 inc/woocommerce/controls.php:601
+#: inc/woocommerce/controls.php:753
+msgid "Limit"
+msgstr ""
+
+#: inc/woocommerce/controls.php:157
+msgid "Choose the number of product categories to display."
+msgstr ""
+
+#: inc/woocommerce/controls.php:171 inc/woocommerce/controls.php:323
+#: inc/woocommerce/controls.php:483 inc/woocommerce/controls.php:637
+#: inc/woocommerce/controls.php:789
+msgid "Columns"
+msgstr ""
+
+#: inc/woocommerce/controls.php:185 inc/woocommerce/controls.php:337
+#: inc/woocommerce/controls.php:497 inc/woocommerce/controls.php:651
+#: inc/woocommerce/controls.php:803
+msgid "Choose the number of columns to display."
+msgstr ""
+
+#: inc/woocommerce/controls.php:214 inc/woocommerce/controls.php:366
+#: inc/woocommerce/controls.php:526 inc/woocommerce/controls.php:680
+#: inc/woocommerce/controls.php:832
+msgid "Heading alignment"
+msgstr ""
+
+#: inc/woocommerce/controls.php:271
+msgid "Display recent products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:272
+msgid "Toggle the display of the recent products."
+msgstr ""
+
+#: inc/woocommerce/controls.php:309
+msgid "Choose the number of recent products to display."
+msgstr ""
+
+#: inc/woocommerce/controls.php:431
+msgid "Display featured products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:432
+msgid "Toggle the display of the featured products."
+msgstr ""
+
+#: inc/woocommerce/controls.php:469
+msgid "Choose the number of featured products to display."
+msgstr ""
+
+#: inc/woocommerce/controls.php:585
+msgid "Display top rated products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:586
+msgid "Toggle the display of the top rated products."
+msgstr ""
+
+#: inc/woocommerce/controls.php:623
+msgid "Choose the number of top rated products to display."
+msgstr ""
+
+#: inc/woocommerce/controls.php:737
+msgid "Display on sale products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:738
+msgid "Toggle the display of the on sale products."
+msgstr ""
+
+#: inc/woocommerce/controls.php:775
+msgid "Choose the number of on sale products to display."
 msgstr ""
 
 #: inc/woocommerce/template-tags.php:16
@@ -949,7 +1163,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: inc/functions/extras.php:169 inc/functions/extras.php:170
-#: inc/woocommerce/functions.php:150 inc/woocommerce/functions.php:151
+#: inc/woocommerce/functions.php:148 inc/woocommerce/functions.php:149
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
@@ -959,12 +1173,12 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: inc/woocommerce/functions.php:151
+#: inc/woocommerce/functions.php:149
 msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: inc/functions/extras.php:172 inc/woocommerce/functions.php:153
+#: inc/functions/extras.php:172 inc/woocommerce/functions.php:151
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -1011,7 +1225,7 @@ msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr ""
 
-#: inc/woocommerce/functions.php:220
+#: inc/woocommerce/functions.php:218
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
