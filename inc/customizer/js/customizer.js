@@ -40,13 +40,13 @@
             }
     
             $svg.css({
-    					height: to.sizes[ size ].height,
-    					width: to.sizes[ size ].width
-    				});
+              height: to.sizes[ size ].height,
+              width: to.sizes[ size ].width
+            });
     
-    				if ( 'block' != $svg.css( 'display' ) ) {
-    				  $logo.show();
-    				}
+            if ( 'block' != $svg.css( 'display' ) ) {
+              $logo.show();
+            }
           } else {
             $branding.show();
           }
