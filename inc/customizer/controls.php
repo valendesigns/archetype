@@ -88,7 +88,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       ) );
 
       $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_site_logo_margin_top', array(
-        'label'       => __( 'Logo Margin Top (em)', 'archetype' ),
+        'label'       => __( 'Logo Margin Top', 'archetype' ),
+        'description' => __( 'Margin top must be numeric, and an em value like .5 or 1', 'archetype' ),
         'section'     => 'title_tagline',
         'settings'    => 'archetype_site_logo_margin_top',
         'priority'    => 50,
@@ -96,8 +97,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     } else {
       $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_site_logo_info', array(
         'section'     => 'title_tagline',
-        'type'        => 'text',
         'description' => sprintf( __( 'Want to add your logo? Install %sJetpack%s!', 'archetype' ), '<a href="https://wordpress.org/plugins/jetpack/" target="_blank">', '</a>' ),
+        'type'        => 'text',
         'priority'    => 40,
       ) ) );
     }
