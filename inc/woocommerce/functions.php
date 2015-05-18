@@ -38,9 +38,7 @@ if ( ! function_exists( 'archetype_is_woocommerce' ) ) {
  */
 if ( ! function_exists( 'archetype_breadcrumb' ) ) {
   function archetype_breadcrumb() {
-    $hidden = (bool) get_theme_mod( 'archetype_breadcrumb_hide', apply_filters( 'archetype_default_breadcrumb_hide', false ) );
-
-    if ( false === $hidden ) {
+    if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
       woocommerce_breadcrumb();
     }
   }

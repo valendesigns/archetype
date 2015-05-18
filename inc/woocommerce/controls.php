@@ -81,22 +81,22 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
       'priority'    => 15,
       'panel'       => 'archetype_woocommerce'
     ) );
-
+  
     /**
-     * Notice Error Color
+     * Toggle breadcrumbs
      */
-    $wp_customize->add_setting( 'archetype_breadcrumb_hide', array(
-      'default'           => apply_filters( 'archetype_default_breadcrumb_hide', false ),
+    $wp_customize->add_setting( 'archetype_breadcrumb_toggle', array(
+      'default'           => true,
       'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_breadcrumb_hide', array(
-      'label'       => __( 'Hide Breadcrumbs', 'archetype' ),
+    $wp_customize->add_control( 'archetype_breadcrumb_toggle', array(
+      'label'       => __( 'Display breadcrumbs', 'archetype' ),
+      'description' => __( 'Toggle the display of the breadcumbs.', 'archetype' ),
       'section'     => 'archetype_breadcrumb',
-      'settings'    => 'archetype_breadcrumb_hide',
-      'priority'    => 10,
+      'settings'    => 'archetype_breadcrumb_toggle',
       'type'        => 'checkbox',
-    ) ) );
+    ) );
 
     /**
      * Product Categories
