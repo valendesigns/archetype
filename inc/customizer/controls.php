@@ -1592,6 +1592,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_footer_credit', array(
       'label'       => __( 'Display the footer credits', 'archetype' ),
+      'description' => __( 'Toggle the display of the footer credits.', 'archetype' ),
       'section'     => 'archetype_footer_lower',
       'settings'    => 'archetype_footer_credit',
       'type'        => 'checkbox',
