@@ -310,7 +310,7 @@ function archetype_thumbnail_columns() {
   /**
    * Filter the number of image columns for each gallery row.
    *
-   * Built-in support for 1, 2, 3, 4, 6, and 12 columns per row.
+   * Built-in support for 1, 2, 3, 4, 6, and 12 columns.
    */
   return intval( apply_filters( 'archetype_product_thumbnail_columns', $columns ) );
 }
