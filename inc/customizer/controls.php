@@ -462,6 +462,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_link_hover_background_color', array(
       'label'       => __( 'Link hover background color', 'archetype' ),
+      'description' => __( 'This setting does not effect top level links, only sub menus.', 'archetype' ),
       'section'     => 'archetype_nav_styles',
       'settings'    => 'archetype_nav_link_hover_background_color',
       'priority'    => 25,
@@ -584,6 +585,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_alt_link_hover_background_color', array(
       'label'       => __( 'Link hover background color', 'archetype' ),
+      'description' => __( 'This setting does not effect top level links, only sub menus.', 'archetype' ),
       'section'     => 'archetype_nav_alt_styles',
       'settings'    => 'archetype_nav_alt_link_hover_background_color',
       'priority'    => 30,
