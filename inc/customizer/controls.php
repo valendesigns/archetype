@@ -24,25 +24,35 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     // Change background image section title & priority
     $wp_customize->get_section( 'background_image' )->title     = __( 'Background', 'archetype' );
     $wp_customize->get_section( 'background_image' )->priority  = 30;
+    $wp_customize->get_section( 'background_image' )->panel     = 'archetype_general';
 
-    // Change header image section title & priority
-    $wp_customize->get_section( 'header_image' )->title         = __( 'Header', 'archetype' );
-    $wp_customize->get_section( 'header_image' )->priority      = 35;
+    // Change header image title, priority & panel
+    $wp_customize->get_section( 'header_image' )->title         = __( 'Background Image', 'archetype' );
+    $wp_customize->get_section( 'header_image' )->priority      = 15;
+    $wp_customize->get_section( 'header_image' )->panel         = 'archetype_header';
     
-    // Change navigation section title, panel, & priority
-    if ( 'menus' !== $wp_customize->get_section( 'nav' )->panel ) {
+    // Change navigation panel or section
+    if ( 'menus' === $wp_customize->get_section( 'nav' )->panel ) {
+      $wp_customize->get_panel( 'menus' )->priority             = 40;
+    } else {
       $wp_customize->get_section( 'nav' )->title                = __( 'Menus Locations', 'archetype' );
-      $wp_customize->get_section( 'nav' )->panel                = 'archetype_menus';
-      $wp_customize->get_section( 'nav' )->priority             = 10;
+      $wp_customize->get_section( 'nav' )->panel                = 'archetype_header';
+      $wp_customize->get_section( 'nav' )->priority             = 25;
     }
     
     // Change the title of the Site Title & Tagline
     $wp_customize->get_section( 'title_tagline' )->title        = __( 'Branding', 'archetype' );
+    $wp_customize->get_section( 'title_tagline' )->priority     = 10;
+    $wp_customize->get_section( 'title_tagline' )->panel        = 'archetype_header';
     
     // Change the Homepage Control panel, priority, & title
     $wp_customize->get_section( 'homepage_control' )->panel     = 'archetype_homepage';
     $wp_customize->get_section( 'homepage_control' )->priority  = 1;
-    $wp_customize->get_section( 'homepage_control' )->title     = __( 'Re-order', 'archetype' );
+    $wp_customize->get_section( 'homepage_control' )->title     = __( 'Component Order', 'archetype' );
+
+    // Change the Static Front Page panel, & priority
+    $wp_customize->get_section( 'static_front_page' )->panel    = 'archetype_general';
+    $wp_customize->get_section( 'static_front_page' )->priority = 1;
 
     /**
      * Custom controls
@@ -105,6 +115,15 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       ) ) );
     }
 
+    /**
+     * Add the General panel
+     */
+    $wp_customize->add_panel( 'archetype_general' , array(
+      'title'           => __( 'General', 'archetype' ),
+      'description'     => __( 'Customize the look & feel of your website.', 'archetype' ),
+      'priority'        => 1,
+    ) );
+
     // START Layout
 
     /**
@@ -113,6 +132,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     $wp_customize->add_section( 'archetype_layout' , array(
       'title'       => __( 'Layout', 'archetype' ),
       'priority'    => 21,
+      'panel'       => 'archetype_general',
     ) );
 
     $wp_customize->add_setting( 'archetype_layout', array(
@@ -211,6 +231,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     $wp_customize->add_section( 'archetype_typography' , array(
       'title'       => __( 'Typography', 'archetype' ),
       'priority'    => 31,
+      'panel'       => 'archetype_general',
     ) );
 
     /**
@@ -287,6 +308,25 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     // BEGIN Header
 
     /**
+     * Add the Header panel
+     */
+    $wp_customize->add_panel( 'archetype_header' , array(
+      'title'           => __( 'Header', 'archetype' ),
+      'description'     => __( 'Customize the look & feel of your header.', 'archetype' ),
+      'priority'        => 35,
+    ) );
+
+    /**
+     * Add the Header colors section
+     */
+    $wp_customize->add_section( 'archetype_header_colors' , array(
+      'title'       => __( 'Colors', 'archetype' ),
+      'description' => __( 'Customize the look & feel of your header. These controls do not change menu colors.', 'archetype' ),
+      'priority'    => 20,
+      'panel'       => 'archetype_header',
+    ) );
+
+    /**
      * Header Background
      */
     $wp_customize->add_setting( 'archetype_header_background_color', array(
@@ -297,9 +337,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_background_color', array(
       'label'       => __( 'Background color', 'archetype' ),
-      'section'     => 'header_image',
+      'section'     => 'archetype_header_colors',
       'settings'    => 'archetype_header_background_color',
-      'priority'    => 15,
+      'priority'    => 10,
     ) ) );
 
     /**
@@ -313,9 +353,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_text_color', array(
       'label'       => __( 'Text color', 'archetype' ),
-      'section'     => 'header_image',
+      'section'     => 'archetype_header_colors',
       'settings'    => 'archetype_header_text_color',
-      'priority'    => 20,
+      'priority'    => 15,
     ) ) );
 
     /**
@@ -329,9 +369,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_link_color', array(
       'label'       => __( 'Link color', 'archetype' ),
-      'section'     => 'header_image',
+      'section'     => 'archetype_header_colors',
       'settings'    => 'archetype_header_link_color',
-      'priority'    => 25,
+      'priority'    => 20,
     ) ) );
 
     /**
@@ -345,35 +385,23 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_link_color_hover', array(
       'label'       => __( 'Link hover color', 'archetype' ),
-      'section'     => 'header_image',
+      'section'     => 'archetype_header_colors',
       'settings'    => 'archetype_header_link_color_hover',
-      'priority'    => 30,
+      'priority'    => 25,
     ) ) );
 
     // END Header
 
     // BEGIN Navigation
 
-    if ( 'menus' !== $wp_customize->get_section( 'nav' )->panel ) {
-      $wp_customize->add_panel( $wp_customize->get_section( 'nav' )->panel, array(
-        'theme_supports'  => 'menus',
-        'title'           => __( 'Menus', 'archetype' ),
-        'description'     => __( 'Customize your menu locations and styles.', 'archetype' ),
-        'priority'        => 40,
-        'panel'           => 'menus',
-      ) );
-    } else {
-      $wp_customize->get_panel( $wp_customize->get_section( 'nav' )->panel )->priority = 40;
-    }
-
     /**
      * Add the Primary Menu Styles section
      */
     $wp_customize->add_section( 'archetype_nav_styles' , array(
       'title'       => __( 'Primary Menu', 'archetype' ),
-      'priority'    => 1,
+      'priority'    => 30,
       'description' => __( 'The Primary Menu must be set to a menu location in order to preview style changes.', 'archetype' ),
-      'panel'       => $wp_customize->get_section( 'nav' )->panel,
+      'panel'       => 'archetype_header',
     ) );
 
     /**
@@ -476,9 +504,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_nav_alt_styles' , array(
       'title'       => __( 'Secondary Menu', 'archetype' ),
-      'priority'    => 2,
+      'priority'    => 35,
       'description' => __( 'The Secondary Menu must be set to a menu location in order to preview style changes.', 'archetype' ),
-      'panel'       => $wp_customize->get_section( 'nav' )->panel,
+      'panel'       => 'archetype_header',
     ) );
 
     /**
@@ -602,7 +630,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_panel( 'archetype_homepage' , array(
       'title'           => __( 'Homepage', 'archetype' ),
-      'description'     => __( 'Customize the look & feel of your websites homepage.', 'archetype' ),
+      'description'     => __( 'Customize the look & feel of your homepage.', 'archetype' ),
       'priority'        => 45,
       'active_callback' => 'is_front_page',
     ) );
@@ -1072,7 +1100,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_panel( 'archetype_content' , array(
       'title'           => __( 'Content', 'archetype' ),
-      'description'     => __( 'Customize the look & feel of your websites content.', 'archetype' ),
+      'description'     => __( 'Customize the look & feel of your content.', 'archetype' ),
       'priority'        => 50,
     ) );
 
@@ -1498,7 +1526,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_panel( 'archetype_footer' , array(
       'title'           => __( 'Footer', 'archetype' ),
-      'description'     => __( 'Customize the look & feel of your websites footer.', 'archetype' ),
+      'description'     => __( 'Customize the look & feel of your footer.', 'archetype' ),
       'priority'        => 55,
     ) );
 
@@ -1672,60 +1700,93 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     // START Import/Export
 
     /**
-     * Import & Export Section
+     * Add the General panel
      */
-    $wp_customize->add_section( 'archetype_import_export', array(
-      'title'       => __( 'Import & Export', 'archetype' ),
+    $wp_customize->add_panel( 'archetype_tools' , array(
+      'title'           => __( 'Tools', 'archetype' ),
+      'description'     => __( 'Customize the look & feel of your website.', 'archetype' ),
       'priority'    => 10000000,
-    ));
-
-    if ( ! current_user_can( 'manage_options' ) ) {
-      /**
-       * Add the import Customizer control.
-       */
-      $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_import_export_missing', array(
-        'section'     => 'archetype_import_export',
-        'type'        => 'text',
-        'description' => __( 'You do not have the capability role to import or export customizer settings.', 'archetype' ),
-        'priority'    => 1,
-      ) ) );
-    }
+    ) );
 
     /**
-     * Add an empty import & export setting.
+     * Import Section
+     */
+    $wp_customize->add_section( 'archetype_tools_import', array(
+      'title'       => __( 'Import', 'archetype' ),
+      'priority'    => 10,
+      'panel'       => 'archetype_tools',
+    ));
+
+    /**
+     * Add an empty import setting.
      */ 
-    $wp_customize->add_setting( 'archetype_import_export', array(
+    $wp_customize->add_setting( 'archetype_tools_import', array(
       'capability'        => 'manage_options',
       'default'           => '',
       'sanitize_callback' => 'archetype_sanitize_import_export',
       'type'              => 'none',
     ));
 
+    if ( ! current_user_can( 'manage_options' ) ) {
+      /**
+       * Add the import Customizer control.
+       */
+      $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_tools_import_text', array(
+        'section'     => 'archetype_tools_import',
+        'settings'    => 'archetype_tools_import',
+        'type'        => 'text',
+        'description' => __( 'You do not have the capability role to import customizer settings.', 'archetype' ),
+      ) ) );
+    }
+
     /**
      * Add the import Customizer control.
      */
     $wp_customize->add_control( new Archetype_Import_Customizer_Control( $wp_customize, 'archetype_import_customizer', array(
-      'label'       => __( 'Import Customizer', 'archetype' ),
-      'section'     => 'archetype_import_export',
-      'settings'    => 'archetype_import_export',
+      'label'       => __( 'Import', 'archetype' ),
+      'section'     => 'archetype_tools_import',
+      'settings'    => 'archetype_tools_import',
       'description' => __( 'Upload a file to import customization settings for this theme.', 'archetype' ),
-      'priority'    => 1,
     ) ) );
+    
+    /**
+     * Export Section
+     */
+    $wp_customize->add_section( 'archetype_tools_export', array(
+      'title'       => __( 'Export', 'archetype' ),
+      'priority'    => 15,
+      'panel'       => 'archetype_tools',
+    ));
 
-    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_import_customizer_divider', array(
-      'section'     => 'archetype_import_export',
-      'settings'    => 'archetype_import_export',
-      'type'        => 'divider',
-      'priority'    => 2,
-    ) ) );
+    /**
+     * Add an empty export setting.
+     */ 
+    $wp_customize->add_setting( 'archetype_tools_export', array(
+      'capability'        => 'manage_options',
+      'default'           => '',
+      'sanitize_callback' => 'archetype_sanitize_import_export',
+      'type'              => 'none',
+    ));
+
+    if ( ! current_user_can( 'manage_options' ) ) {
+      /**
+       * Add the import Customizer control.
+       */
+      $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_tools_export_text', array(
+        'section'     => 'archetype_tools_export',
+        'settings'    => 'archetype_tools_export',
+        'type'        => 'text',
+        'description' => __( 'You do not have the capability role to import or export customizer settings.', 'archetype' ),
+      ) ) );
+    }
 
     /**
      * Add the export Customizer control.
      */
     $wp_customize->add_control( new Archetype_Export_Customizer_Control( $wp_customize, 'archetype_export_customizer', array(
-      'label'       => __( 'Export Customizer', 'archetype' ),
-      'section'     => 'archetype_import_export',
-      'settings'    => 'archetype_import_export',
+      'label'       => __( 'Export', 'archetype' ),
+      'section'     => 'archetype_tools_export',
+      'settings'    => 'archetype_tools_export',
       'description' => __( 'Click the button below to export the customization settings for this theme.', 'archetype' ),
       'priority'    => 3,
     ) ) );
