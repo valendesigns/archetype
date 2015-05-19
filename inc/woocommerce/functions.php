@@ -101,7 +101,17 @@ if ( ! function_exists( 'archetype_after_content' ) ) {
  * @return integer products per row
  */
 function archetype_loop_columns() {
-  return apply_filters( 'archetype_loop_columns', 3 ); // 3 products per row
+  $columns = 3;
+
+  if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
+    $columns = archetype_sanitize_integer( get_theme_mod( 'archetype_shop_columns', '3' ) );
+  }
+
+  if ( is_product() ) {
+    $columns = archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
+  }
+
+  return apply_filters( 'archetype_loop_columns', $columns ); // Products per row
 }
 
 /**
@@ -157,6 +167,10 @@ function archetype_woocommerce_body_class( $classes ) {
  * @return array $classes modified array of classes
  */
 function archetype_woocommerce_post_class( $classes ) {
+  if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
+    $classes[] = 'columns-' . archetype_sanitize_integer( get_theme_mod( 'archetype_shop_columns', '3' ) );
+  }
+
   if ( is_product() ) {
     $classes[] = 'columns-' . archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
   }
