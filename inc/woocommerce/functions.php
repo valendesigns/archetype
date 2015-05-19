@@ -143,8 +143,6 @@ function archetype_woocommerce_body_class( $classes ) {
     if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_related_products_toggle', apply_filters( 'archetype_default_related_products_toggle', true ) ) ) ) {
       remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
     }
-
-    $classes[] = 'columns-' - archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
   }
 
   return $classes;
