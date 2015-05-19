@@ -637,6 +637,19 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'active_callback' => 'is_front_page',
     ) );
 
+    if ( ! class_exists( 'Homepage_Control', false ) ) {
+      $wp_customize->add_section( 'archetype_homepage_control' , array(
+        'title'       => __( 'Component Order', 'archetype' ),
+        'priority'    => 1,
+        'panel'       => 'archetype_homepage',
+      ) );
+      $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_control', array(
+        'section'       => 'archetype_homepage_control',
+        'description' => sprintf( esc_html__( 'You can toggle and re-order the homepage components using the %sHomepage Control%s plugin.', 'archetype' ), '<a href="https://wordpress.org/plugins/homepage-control/" target="_blank">', '</a>' ),
+        'type'        => 'text',
+      ) ) );
+    }
+    
     /**
      * Add the Hero section
      */

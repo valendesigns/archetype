@@ -94,6 +94,36 @@ if ( ! function_exists( 'archetype_after_content' ) ) {
 }
 
 /**
+ * Before product loop
+ *
+ * Inserts a wrapper for the product loop on product pages.
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'archetype_before_product_loop' ) ) {
+  function archetype_before_product_loop() {
+    if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
+      echo '<div class="columns-' . archetype_sanitize_integer( get_theme_mod( 'archetype_shop_columns', '3' ) ) . '">';
+    }
+  }
+}
+
+/**
+ * After product loop
+ *
+ * Closes the product loop wrapper on product pages.
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'archetype_after_product_loop' ) ) {
+  function archetype_after_product_loop() {
+    if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
+      echo '</div>';
+    }
+  }
+}
+
+/**
  * Default loop columns on product archives
  *
  * @since 1.0.0
@@ -103,7 +133,7 @@ if ( ! function_exists( 'archetype_after_content' ) ) {
 function archetype_loop_columns() {
   $columns = 3;
 
-  if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
+  if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
     $columns = archetype_sanitize_integer( get_theme_mod( 'archetype_shop_columns', '3' ) );
   }
 
@@ -167,10 +197,6 @@ function archetype_woocommerce_body_class( $classes ) {
  * @return array $classes modified array of classes
  */
 function archetype_woocommerce_post_class( $classes ) {
-  if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
-    $classes[] = 'columns-' . archetype_sanitize_integer( get_theme_mod( 'archetype_shop_columns', '3' ) );
-  }
-
   if ( is_product() ) {
     $classes[] = 'columns-' . archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
   }

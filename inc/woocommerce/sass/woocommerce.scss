@@ -1487,30 +1487,50 @@ dl.variation {
   .page-template-template-homepage-php,
   .archetype-full-width-content {
     .site-main {
+      .columns-1 {
+        ul.products {
+          li.product {
+            width: 100%;
+            margin-right: 0;
+            float: none;
+          }
+        }
+      }
+
+      .columns-2 {
+        ul.products {
+          li.product {
+            @include span(6 of 12);
+          }
+        }
+      }
+
+      .columns-3 {
+        ul.products {
+          li.product {
+            @include span(4 of 12);
+          }
+        }
+      }
+
+      .columns-4 {
+        ul.products {
+          li.product {
+            @include span(3 of 12);
+          }
+        }
+      }
+
+      .columns-5 {
+        ul.products {
+          li.product {
+            width: 16.9%;
+            margin-right: 3.8%;
+          }
+        }
+      }
+
       ul.products {
-        li.product.columns-1 {
-          width: 100%;
-          margin-right: 0;
-          float: none;
-        }
-
-        li.product.columns-2 {
-          @include span(6 of 12);
-        }
-
-        li.product.columns-3 {
-          @include span(4 of 12);
-        }
-
-        li.product.columns-4 {
-          @include span(3 of 12);
-        }
-
-        li.product.columns-5 {
-          width: 16.9%;
-          margin-right: 3.8%;
-        }
-
         li.product {
           @include span(4 of 12);
         }
@@ -1522,34 +1542,54 @@ dl.variation {
    * Main content area (adjacent to sidebar) product layout
    */
   .site-main {
+    .columns-1 {
+      ul.products {
+        li.product {
+          width: 100%;
+          margin-right: 0;
+          float: none;
+        }
+      }
+    }
+
+    .columns-2 {
+      ul.products {
+        li.product {
+          width: 48%;
+          margin-right: 3.8%;
+        }
+      }
+    }
+
+    .columns-3 {
+      ul.products {
+        li.product {
+          @include span(3 of 9);
+        }
+      }
+    }
+
+    .columns-4 {
+      ul.products {
+        li.product {
+          width: 22.05%;
+          margin-right: 3.8%;
+        }
+      }
+    }
+
+    .columns-5 {
+      ul.products {
+        li.product {
+          width: 16.9%;
+          margin-right: 3.8%;
+        }
+      }
+    }
+
     ul.products {
-      li.product.columns-1 {
-        width: 100%;
-        margin-right: 0;
-        float: none;
-      }
-
-      li.product.columns-2 {
-        width: 48%;
-        margin-right: 3.8%;
-      }
-
-      li.product.columns-3 {
-        @include span(3 of 9);
-      }
-
-      li.product.columns-4 {
-        width: 22.05%;
-        margin-right: 3.8%;
-      }
-
-      li.product.columns-5 {
-        width: 16.9%;
-        margin-right: 3.8%;
-      }
-
       li.product {
-        @include span(3 of 9);
+        @include span(4 of 12);
       }
     }
   }
