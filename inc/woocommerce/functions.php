@@ -50,6 +50,7 @@ if ( ! function_exists( 'archetype_breadcrumb' ) ) {
  * @see wp_list_comments()
  *
  * @since 1.0.0
+ *
  * @param array $args A list of arguments.
  * @return array
  */
@@ -61,9 +62,10 @@ if ( ! function_exists( 'archetype_product_review_list_args' ) ) {
 
 /**
  * Before Content
+ *
  * Wraps all WooCommerce content in wrappers which match the theme markup
- * @since   1.0.0
- * @return  void
+ *
+ * @since 1.0.0
  */
 if ( ! function_exists( 'archetype_before_content' ) ) {
   function archetype_before_content() {
@@ -76,9 +78,10 @@ if ( ! function_exists( 'archetype_before_content' ) ) {
 
 /**
  * After Content
+ *
  * Closes the wrapping divs
- * @since   1.0.0
- * @return  void
+ *
+ * @since 1.0.0
  */
 if ( ! function_exists( 'archetype_after_content' ) ) {
   function archetype_after_content() {
@@ -92,21 +95,72 @@ if ( ! function_exists( 'archetype_after_content' ) ) {
 
 /**
  * Default loop columns on product archives
+ *
+ * @since 1.0.0
+ *
  * @return integer products per row
- * @since  1.0.0
  */
 function archetype_loop_columns() {
   return apply_filters( 'archetype_loop_columns', 3 ); // 3 products per row
 }
 
 /**
- * Add 'woocommerce-active' class to the body tag
- * @param  array $classes
- * @return array $classes modified to include 'woocommerce-active' class
+ * Adds various classes to the body tag
+ *
+ * @sine 1.0.0
+ *
+ * @param array $classes
+ * @return array $classes modified array of classes
  */
 function archetype_woocommerce_body_class( $classes ) {
   if ( is_woocommerce_activated() ) {
     $classes[] = 'woocommerce-active';
+  }
+
+  if ( is_product() ) {
+    if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_full_width', apply_filters( 'archetype_default_product_full_width', false ) ) ) ) {
+      $classes[] = 'archetype-full-width-content';
+      remove_action( 'archetype_sidebar', 'archetype_get_sidebar' );
+    }
+
+    if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_gallery_full_width', apply_filters( 'archetype_default_product_gallery_full_width', false ) ) ) ) {
+      $classes[] = 'archetype-full-width-product-gallery';
+    }
+
+    if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_gallery_toggle', apply_filters( 'archetype_default_product_gallery_toggle', true ) ) ) ) {
+      $classes[] = 'archetype-full-width-product-summary';
+      remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+    }
+
+    if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_meta_toggle', apply_filters( 'archetype_default_product_meta_toggle', true ) ) ) ) {
+      remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+    }
+
+    if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_tabs_toggle', apply_filters( 'archetype_default_product_tabs_toggle', true ) ) ) ) {
+      remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+    }
+
+    if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_related_products_toggle', apply_filters( 'archetype_default_related_products_toggle', true ) ) ) ) {
+      remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+    }
+
+    $classes[] = 'columns-' - archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
+  }
+
+  return $classes;
+}
+
+/**
+ * Adds a column class to the post tag
+ *
+ * @sine 1.0.0
+ *
+ * @param array $classes
+ * @return array $classes modified array of classes
+ */
+function archetype_woocommerce_post_class( $classes ) {
+  if ( is_product() ) {
+    $classes[] = 'columns-' . archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
   }
 
   return $classes;
@@ -127,9 +181,9 @@ function archetype_woocommerce_body_class( $classes ) {
 function archetype_fix_thumbnail() {
   add_filter( 'woocommerce_placeholder_img_src', 'archetype_woocommerce_placeholder_img_src', 0 );
 
-	function archetype_woocommerce_placeholder_img_src( $src ) {
+  function archetype_woocommerce_placeholder_img_src( $src ) {
     return get_template_directory_uri() . '/inc/woocommerce/images/placeholder.png';
-	}
+  }
 }
 
 /**
@@ -158,9 +212,13 @@ if ( ! function_exists( 'archetype_product_search_form' ) ) {
 
 /**
  * Cart Fragments
+ *
  * Ensure cart contents update when products are added to the cart via AJAX
- * @param  array $fragments Fragments to refresh via AJAX
- * @return array            Fragments to refresh via AJAX
+ *
+ * @since 1.0.0
+ *
+ * @param array $fragments Fragments to refresh via AJAX
+ * @return array Fragments to refresh via AJAX
  */
 if ( ! function_exists( 'archetype_cart_link_fragment' ) ) {
   function archetype_cart_link_fragment( $fragments ) {
@@ -178,6 +236,7 @@ if ( ! function_exists( 'archetype_cart_link_fragment' ) ) {
 
 /**
  * WooCommerce specific scripts & stylesheets
+ *
  * @since 1.0.0
  */
 function archetype_woocommerce_scripts() {
@@ -189,14 +248,19 @@ function archetype_woocommerce_scripts() {
 
 /**
  * Related Products Args
- * @param  array $args related products args
+ *
  * @since 1.0.0
- * @return  array $args related products args
+ *
+ * @param array $args related products args
+ * @return array $args related products args
  */
 function archetype_related_products_args( $args ) {
+  $limit = archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_limit', '3' ) );
+  $columns = archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
+
   $args = apply_filters( 'archetype_related_products_args', array(
-    'posts_per_page' => 3,
-    'columns'        => 3,
+    'posts_per_page' => $limit,
+    'columns'        => $columns,
   ) );
 
   return $args;
@@ -204,8 +268,10 @@ function archetype_related_products_args( $args ) {
 
 /**
  * Breadcrumb Defaults
- * @param array $args default breadcrumb args
+ *
  * @since 1.0.0
+ *
+ * @param array $args default breadcrumb args
  * @return array $args default breadcrumb args
  */
 function archetype_breadcrumbs_defaults( $args ) {
@@ -223,17 +289,40 @@ function archetype_breadcrumbs_defaults( $args ) {
 
 /**
  * Product gallery thumnail columns
- * @return integer number of columns
+ *
  * @since  1.0.0
+ *
+ * @return integer number of columns
  */
 function archetype_thumbnail_columns() {
-  return intval( apply_filters( 'archetype_product_thumbnail_columns', 4 ) );
+  $product_page = get_theme_mod( 'archetype_product_full_width', apply_filters( 'archetype_default_product_full_width', false ) );
+
+  $product_gallery = get_theme_mod( 'archetype_product_gallery_full_width', apply_filters( 'archetype_default_product_gallery_full_width', false ) );
+
+  $columns = 3;
+
+  if ( 1 === $product_gallery ) {
+    $columns = 4;
+  }
+
+  if ( 1 === $product_page && 1 === $product_gallery ) {
+    $columns = 6;
+  }
+
+  /**
+   * Filter the number of image columns for each gallery row.
+   *
+   * Built-in support for 1, 2, 3, 4, 6, and 12 columns per row.
+   */
+  return intval( apply_filters( 'archetype_product_thumbnail_columns', $columns ) );
 }
 
 /**
  * Products per page
+ *
+ * @since 1.0.0
+ *
  * @return integer number of products
- * @since  1.0.0
  */
 function archetype_products_per_page() {
   return intval( apply_filters( 'archetype_products_per_page', 12 ) );
@@ -241,7 +330,10 @@ function archetype_products_per_page() {
 
 /**
  * Query WooCommerce Extension Activation.
- * @var  $extension main extension class name
+ *
+ * @since 1.0.0
+ *
+ * @param $extension main extension class name
  * @return boolean
  */
 function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {

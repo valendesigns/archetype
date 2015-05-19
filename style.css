@@ -487,9 +487,6 @@ body {
 /**
  * Main content area
  */
-.page-template-template-homepage .site-main {
-  padding-top: 2.625em; }
-
 .site-content {
   outline: none; }
 
@@ -2408,8 +2405,7 @@ embed, iframe, object {
 
 .archetype-homepage-hero {
   text-align: center;
-  background-position: 50% 0;
-  margin-top: -2.625em; }
+  background-position: 50% 0; }
 
 section + .archetype-homepage-hero {
   margin-top: 0; }

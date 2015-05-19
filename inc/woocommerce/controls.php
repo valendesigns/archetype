@@ -24,6 +24,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_notices' , array(
       'title'       => __( 'Notices', 'archetype' ),
+      'description' => __( 'Customize the look & feel of the shop notices.', 'archetype' ),
       'priority'    => 10,
       'panel'       => 'archetype_woocommerce'
     ) );
@@ -78,6 +79,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
      */
     $wp_customize->add_section( 'archetype_breadcrumb' , array(
       'title'       => __( 'Breadcrumbs', 'archetype' ),
+      'description' => __( 'Customize the look & feel of the breadcrumbs.', 'archetype' ),
       'priority'    => 15,
       'panel'       => 'archetype_woocommerce'
     ) );
@@ -866,6 +868,168 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
       'label'       => __( 'Background color', 'archetype' ),
       'section'     => 'archetype_on_sale_products',
       'settings'    => 'archetype_on_sale_products_background_color',
+    ) ) );
+
+    /**
+     * Product
+     */
+    $wp_customize->add_section( 'archetype_product' , array(
+      'title'           => __( 'Product', 'archetype' ),
+      'description'     => __( 'Customize the look & feel of a single product.', 'archetype' ),
+      'priority'        => 45,
+      'panel'           => 'archetype_woocommerce',
+    ) );
+
+    /**
+     * Full width product page
+     */
+    $wp_customize->add_setting( 'archetype_product_full_width', array(
+      'default'           => apply_filters( 'archetype_default_product_full_width', false ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'archetype_product_full_width', array(
+      'label'       => __( 'Full width product', 'archetype' ),
+      'description' => __( 'Expand products the entire page width. This will remove the sidebar.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_product_full_width',
+      'type'        => 'checkbox',
+    ) );
+    
+    /**
+     * Full width product gallery
+     */
+    $wp_customize->add_setting( 'archetype_product_gallery_full_width', array(
+      'default'           => apply_filters( 'archetype_default_product_gallery_full_width', false ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'archetype_product_gallery_full_width', array(
+      'label'       => __( 'Full width product gallery', 'archetype' ),
+      'description' => __( 'Expand product galleries the entire content width.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_product_gallery_full_width',
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Toggle product gallery
+     */
+    $wp_customize->add_setting( 'archetype_product_gallery_toggle', array(
+      'default'           => apply_filters( 'archetype_default_product_gallery_toggle', true ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'archetype_product_gallery_toggle', array(
+      'label'       => __( 'Display product gallery', 'archetype' ),
+      'description' => __( 'Toggle the display of the product gallery.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_product_gallery_toggle',
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Toggle product meta
+     */
+    $wp_customize->add_setting( 'archetype_product_meta_toggle', array(
+      'default'           => apply_filters( 'archetype_default_product_meta_toggle', true ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'archetype_product_meta_toggle', array(
+      'label'       => __( 'Display product meta', 'archetype' ),
+      'description' => __( 'Toggle the display of the product meta. category/sku etc.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_product_meta_toggle',
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Toggle product tabs
+     */
+    $wp_customize->add_setting( 'archetype_product_tabs_toggle', array(
+      'default'           => apply_filters( 'archetype_default_product_tabs_toggle', true ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'archetype_product_tabs_toggle', array(
+      'label'       => __( 'Display product tabs', 'archetype' ),
+      'description' => __( 'Toggle the display of the product tabs.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_product_tabs_toggle',
+      'type'        => 'checkbox',
+    ) );
+  
+    /**
+     * Toggle related products
+     */
+    $wp_customize->add_setting( 'archetype_related_products_toggle', array(
+      'default'           => apply_filters( 'archetype_default_related_products_toggle', true ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'archetype_related_products_toggle', array(
+      'label'       => __( 'Display related products', 'archetype' ),
+      'description' => __( 'Toggle the display of the related products.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_related_products_toggle',
+      'type'        => 'checkbox',
+    ) );
+
+    /**
+     * Related products limit
+     */
+    $wp_customize->add_setting( 'archetype_related_products_limit', array(
+      'default'           => '3',
+      'sanitize_callback' => 'archetype_sanitize_choices',
+    ) );
+
+    $wp_customize->add_control( 'archetype_related_products_limit', array(
+      'label'       => __( 'Limit', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_related_products_limit',
+      'type'        => 'select',
+      'choices'     => array(
+        '1'           => '1',
+        '2'           => '2',
+        '3'           => '3',
+        '4'           => '4',
+      ),
+    ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_related_products_limit_text', array(
+      'description' => __( 'Choose the number of related products to display.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_related_products_limit',
+      'type'        => 'text',
+    ) ) );
+
+    /**
+     * Related products columns
+     */
+    $wp_customize->add_setting( 'archetype_related_products_columns', array(
+      'default'           => '3',
+      'sanitize_callback' => 'archetype_sanitize_choices',
+    ) );
+
+    $wp_customize->add_control( 'archetype_related_products_columns', array(
+      'label'       => __( 'Columns', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_related_products_columns',
+      'type'        => 'select',
+      'choices'     => array(
+        '1'           => '1',
+        '2'           => '2',
+        '3'           => '3',
+        '4'           => '4',
+      ),
+    ) );
+
+    $wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_related_products_columns_text', array(
+      'description' => __( 'Choose the number of columns to display.', 'archetype' ),
+      'section'     => 'archetype_product',
+      'settings'    => 'archetype_related_products_columns',
+      'type'        => 'text',
     ) ) );
 
   }

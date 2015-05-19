@@ -84,6 +84,7 @@ add_action( 'archetype_secondary_navigation', 'archetype_header_cart' );
 /**
  * Filters
  * @see archetype_woocommerce_body_class()
+ * @see archetype_woocommerce_post_class()
  * @see archetype_fix_thumbnail()
  * @see archetype_product_search_form()
  * @see archetype_thumbnail_columns()
@@ -94,6 +95,7 @@ add_action( 'archetype_secondary_navigation', 'archetype_header_cart' );
  * @see archetype_cart_link_fragment()
  */
 add_filter( 'body_class',                               'archetype_woocommerce_body_class' );
+add_filter( 'post_class',                               'archetype_woocommerce_post_class' );
 add_action( 'init',                                     'archetype_fix_thumbnail'          );
 add_filter( 'get_search_form',                          'archetype_product_search_form'    );
 add_filter( 'woocommerce_product_thumbnails_columns',   'archetype_thumbnail_columns'      );
