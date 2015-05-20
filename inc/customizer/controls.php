@@ -1719,7 +1719,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      */
     $wp_customize->add_panel( 'archetype_tools' , array(
       'title'           => __( 'Tools', 'archetype' ),
-      'description'     => __( 'Customize the look & feel of your website.', 'archetype' ),
+      'description'     => __( 'Customizer tools for administering your website.', 'archetype' ),
       'priority'    => 10000000,
     ) );
 
