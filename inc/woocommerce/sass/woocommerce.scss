@@ -233,9 +233,7 @@ ul.products {
     }
     
     .summary {
-      padding: 2.625em;
       background: $color-post-bg;
-      box-shadow: 0px -1px 0px $color-post-shadow inset;
       border-radius: 0 0 $radius-post $radius-post;
     }
 
@@ -337,7 +335,16 @@ ul.products {
     }
   }
 }
-	
+
+.single-product.is-padded {
+  div.product {
+    .summary {
+      padding: 2.625em;
+      box-shadow: 0px -1px 0px $color-post-shadow inset;
+    }
+  }
+}
+
 /**
  * Reviews
  */
@@ -1207,7 +1214,10 @@ p.stars {
     position: relative;
     box-shadow: 0px -1px 0px $color-post-shadow inset;
     border-radius: $radius-post;
-    padding: 2.625em;
+
+    .is-padded & {
+      padding: 2.625em;
+    }
   }
 }
 
@@ -1623,8 +1633,7 @@ dl.variation {
         @include span(4 of 9);
 
         .thumbnails {
-          padding: gutter();
-          padding-bottom: .125em;
+          padding-top: gutter();
           overflow: hidden;
 
           a.zoom {
@@ -1679,6 +1688,17 @@ dl.variation {
 
       .summary {
         @include span(last 5 of 9);
+      }
+    }
+  }
+  
+  .single-product.is-padded {
+    div.product {
+      .images {
+        .thumbnails {
+          padding: gutter();
+          padding-bottom: .125em;
+        }
       }
     }
   }
@@ -2002,10 +2022,10 @@ dl.variation {
     }
   }
 
-  #tab-description,
-  #tab-additional_information,
-  .single-product div.product .summary {
-    padding: 1.387em !important;
+  .single-product.is-padded div.product .summary,
+  .is-padded #tab-description,
+  .is-padded #tab-additional_information {
+    padding: 1.387em;
   }
 
   .archetype-sorting {
@@ -2079,9 +2099,9 @@ dl.variation {
     }
   }
 
-  #tab-description,
-  #tab-additional_information,
-  .single-product div.product .summary {
-    padding: 2.125em !important;
+  .single-product.is-padded div.product .summary,
+  .is-padded #tab-description,
+  .is-padded #tab-additional_information {
+    padding: 2.125em;
   }
 }
