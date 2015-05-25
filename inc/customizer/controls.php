@@ -1656,16 +1656,16 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     /**
      * Credits
      */
-    $wp_customize->add_setting( 'archetype_footer_credit', array(
+    $wp_customize->add_setting( 'archetype_footer_credit_toggle', array(
       'default'           => true,
       'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_footer_credit', array(
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_footer_credit_toggle', array(
       'label'       => __( 'Display the footer credits', 'archetype' ),
       'description' => __( 'Toggle the display of the footer credits.', 'archetype' ),
       'section'     => 'archetype_footer_lower',
-      'settings'    => 'archetype_footer_credit',
+      'settings'    => 'archetype_footer_credit_toggle',
       'type'        => 'checkbox',
     ) ) );
 
