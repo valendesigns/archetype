@@ -22,7 +22,6 @@
     margin-bottom: $spacing-v;
   }
 
-  .comment-list,
   .commentlist {
     list-style: none;
     margin: 0;
@@ -186,7 +185,6 @@
   }
 
   #respond,
-  #comments .comment-list .comment-content
   #comments .commentlist .comment-content {
     margin-bottom: 1.387em;
 
@@ -195,7 +193,6 @@
     }
   }
 
-  #comments .comment-list .comment-meta,
   #comments .commentlist .comment-meta {
     margin-bottom: .6935em;
     padding-bottom: .6935em;
@@ -215,7 +212,6 @@
   }
 
   #respond,
-  #comments .comment-list .comment-content,
   #comments .commentlist .comment-content {
     margin-bottom: 2.125em;
 
@@ -224,7 +220,6 @@
     }
   }
 
-  #comments .comment-list .comment-meta,
   #comments .commentlist .comment-meta {
     margin-bottom: 1.0625em;
     padding-bottom: 1.0625em;
@@ -238,7 +233,6 @@
 @media screen and (min-width: 768px) {
   #comments {
 
-    .comment-list,
     .commentlist {
       @include clearfix;
       

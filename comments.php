@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 
     <?php archetype_comment_navigation(); ?>
 
-    <ol class="comment-list">
+    <ol class="commentlist">
       <?php
         wp_list_comments( array(
           'style'        => 'ol',
@@ -38,7 +38,7 @@ if ( post_password_required() ) {
           'callback'    => 'archetype_comment',
         ) );
       ?>
-    </ol><!-- .comment-list -->
+    </ol><!-- .commentlist -->
 
     <?php archetype_comment_navigation(); ?>
 

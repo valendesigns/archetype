@@ -74,7 +74,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .widget-area .widget a {
       color: ' . $text_color . ';
     }
-    #comments .comment-list .bypostauthor > .comment-body cite:after,
     #comments .commentlist .bypostauthor > .comment-body cite:after {
       color: ' . archetype_adjust_color_brightness( $text_color, 51 ) . ';
     }
@@ -299,7 +298,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     $style.= '
     article + .author-info,
     #comments p.no-comments,
-    #comments .comment-list .comment-content,
     #comments .commentlist .comment-content,
     #respond,
     .page-header,
@@ -330,7 +328,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 
     $style.= '
     table thead th,
-    #comments .comment-list .comment-meta,
     #comments .commentlist .comment-meta {
       border-bottom-color: ' . $post_border_color. ';
     }
@@ -355,7 +352,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 
     $style.= '
     article + .author-info,
-    #comments .comment-list .comment-content,
     #comments .commentlist .comment-content,
     #respond,
     .hentry,
@@ -512,7 +508,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 
     $style.= '
     article + .author-info,
-    #comments .comment-list .comment-content, #comments .commentlist .comment-content,
+    #comments .commentlist .comment-content,
     #respond,
     .hentry,
     .post-navigation,
@@ -552,8 +548,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     $avatar_radius = archetype_sanitize_number( get_theme_mod( 'archetype_avatar_radius', apply_filters( 'archetype_default_avatar_radius', 3 ) ) );
 
     $style.= '
-    .author-info .avatar,
-    #comments .comment-list .comment-meta .avatar, 
+    .author-info .avatar, 
     #comments .commentlist .comment-meta .avatar {
       border-radius: ' . $avatar_radius . 'px;
     }';
