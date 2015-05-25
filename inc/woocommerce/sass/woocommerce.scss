@@ -136,7 +136,17 @@ ul.products {
     box-shadow: 0px -1px 0px $color-post-shadow inset;
     border-radius: $radius-post;
     padding-bottom: 2.625em;
-    
+
+    .archetype-products-no-image & {
+      padding-top: 2.625em;
+    }
+
+    .archetype-products-image-only & {
+      padding: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
     .woocommerce-cart & {
       padding-bottom: 0;
       box-shadow: none;
@@ -162,6 +172,10 @@ ul.products {
 
     h3 {
       font-size: 1.125em;
+
+      .archetype-hide-products-title & {
+        display: none;
+      }
     }
 
     .star-rating {
@@ -170,21 +184,27 @@ ul.products {
 
     img {
       display: block;
-      margin: 0 auto 1.618em;
-    }
-
-    &.product-category {
-      img {
-        margin-bottom: 1.618em;
+      margin: 0 auto 2.625em;
+      
+      .archetype-products-image-only & {
+        margin-bottom: 0 !important;
       }
     }
 
     .button {
       margin-bottom: .236em;
     }
+
+    .product-item-content,
+    .product-item-buttons {
+      .is-padded & {
+        padding-left: 2.625em;
+        padding-right: 2.625em;
+      }
+    }
   }
 }
-
+    
 /**
  * Single Product
  */
@@ -1955,10 +1975,23 @@ dl.variation {
 @media screen and (max-width: 568px) {
   .woocommerce-breadcrumb,
   ul.products li.product,
+  ul.products li.product img,
   .woocommerce-tabs,
   .single-product div.product .images,
   .single-product div.product .summary {
     margin-bottom: 1.387em;
+  }
+
+  .is-padded {
+    ul.products {
+      li.product {  
+        .product-item-content,
+        .product-item-buttons {
+          padding-left: 1.387em;
+          padding-right: 1.387em;
+        }
+      }
+    }
   }
 
   .archetype-product-section {
@@ -2019,10 +2052,23 @@ dl.variation {
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .woocommerce-breadcrumb,
   ul.products li.product,
+  ul.products li.product img,
   .woocommerce-tabs,
   .single-product div.product .images,
   .single-product div.product .summary {
     margin-bottom: 2.125em;
+  }
+
+  .is-padded {
+    ul.products {
+      li.product {  
+        .product-item-content,
+        .product-item-buttons {
+          padding-left: 2.125em;
+          padding-right: 2.125em;
+        }
+      }
+    }
   }
 
   .archetype-product-section {

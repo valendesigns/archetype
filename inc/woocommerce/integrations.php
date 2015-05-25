@@ -141,6 +141,9 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
       // Post border radius
       $post_radius = archetype_sanitize_number( get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', 0 ) ) );
       
+      // Alignment
+      $alignment = esc_attr( get_theme_mod( 'archetype_products_alignment', 'center' ) );
+      
       $woocommerce_style .= '
       .woocommerce-message,
       .woocommerce-info,
@@ -201,7 +204,13 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
         background: ' . $post_background_color . ';
         box-shadow: ' . ( false == $post_shadow_toggle ? 'none' : '0px -1px 0px ' . $post_shadow_color . ' inset' ) . ';
         border-radius: ' . $post_radius . 'px;
+        text-align: ' . $alignment . ';
       }
+      
+      ' . ( 'center' != $alignment ? 'ul.products li.product .star-rating {
+        margin-left: ' . ( 'right' == $alignment ? 'auto' : '0' ) . ';
+        margin-right: ' . ( 'left' == $alignment ? 'auto' : '0' ) . ';
+      }' : '' ) . '
 
       .single-product div.product .images .thumbnails {
         background: ' . $post_background_color . ';

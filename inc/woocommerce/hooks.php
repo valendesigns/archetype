@@ -75,6 +75,11 @@ add_action( 'woocommerce_after_single_product_summary',    'archetype_upsell_dis
 remove_action( 'woocommerce_before_shop_loop_item_title',  'woocommerce_show_product_loop_sale_flash', 10 );
 add_action( 'woocommerce_after_shop_loop_item_title',      'woocommerce_show_product_loop_sale_flash', 6  );
 
+add_action( 'woocommerce_before_shop_loop_item_title',     'archetype_before_product_loop_item',       11 );
+add_action( 'woocommerce_after_shop_loop_item_title',      'archetype_after_product_loop_item',      9999 );
+
+add_action( 'woocommerce_after_shop_loop_item',            'archetype_before_product_loop_item_buttons', 9 );
+add_action( 'woocommerce_after_shop_loop_item',            'archetype_after_product_loop_item_buttons', 11 );
 
 /**
  * Header
