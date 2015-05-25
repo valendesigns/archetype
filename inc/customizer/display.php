@@ -83,9 +83,9 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .error-404-search form input[type=search]:focus {
       color: ' . archetype_adjust_color_brightness( $text_color, -25.5 ) . ';
     }
-    .page-header,
-    #comments p.no-comments,
-    .post-navigation a:hover {
+    .is-padded .page-header,
+    .is-padded #comments p.no-comments,
+    .is-padded .post-navigation a:hover {
       box-shadow: 5px 0px 0px ' . $text_color . ' inset;
     }
     .sticky-post,
@@ -348,7 +348,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
 
     // Post Shadow Toggle
-    $post_shadow_toggle = archetype_sanitize_checkbox( get_theme_mod( 'archetype_post_shadow_toggle', true ) );
+    $post_shadow_toggle = archetype_sanitize_checkbox( get_theme_mod( 'archetype_post_shadow_toggle', apply_filters( 'archetype_default_post_shadow_toggle', true ) ) );
 
     // Post Shadow Color
     $post_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_shadow_color', apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ) ) );

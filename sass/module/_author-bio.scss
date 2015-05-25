@@ -4,7 +4,11 @@
  
 .author-info {
   border-top: 1px solid $color-post-border;
-  padding: 2.625em;
+  padding: 2.625em 0;
+
+  .is-padded & {
+    padding: 2.625em;
+  }
 
   article + & {
     background-color: $color-post-bg;
@@ -54,8 +58,12 @@
 
 @media screen and (max-width: 568px) {
   .author-info {
-    padding: 1.387em;
-    
+    padding: 1.387em 0;
+
+    .is-padded & {
+      padding: 1.387em;
+    }
+
     article + & {
       margin-bottom: 1.387em;
     }
@@ -64,8 +72,12 @@
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .author-info {
-    padding: 2.125em;
-    
+    padding: 2.125em 0;
+
+    .is-padded & {
+      padding: 2.125em;
+    }
+
     article + & {
       margin-bottom: 2.125em;
     }

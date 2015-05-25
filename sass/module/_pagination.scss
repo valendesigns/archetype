@@ -163,10 +163,16 @@
 
   a {
     display: block;
-    padding: 2.625em;
+    padding: 2.625em 0;
+
+    .is-padded & {
+      padding: 2.625em !important;
+    }
     
     &:hover {
-      box-shadow: 5px 0px 0px $color-body inset;
+      .is-padded & {
+        box-shadow: 5px 0px 0px $color-body inset;
+      }
     }
   }
 

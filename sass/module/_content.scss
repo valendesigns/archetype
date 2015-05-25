@@ -5,9 +5,12 @@
 .page-header {
   background-color: $color-post-bg;
   margin-bottom: 2.625em;
-  padding: 2.625em;
-  box-shadow: 5px 0px 0px $color-body inset;
   border-radius: 0 $radius-post $radius-post 0;
+
+  .is-padded & {
+    padding: 2.625em;
+    box-shadow: 5px 0px 0px $color-body inset;
+  }
 
   .page-title {
     margin-bottom: 0;
@@ -75,10 +78,14 @@
   }
 
   .entry-header {
-    padding: 2.625em;
+    padding-bottom: 2.625em;
+
+    .is-padded & {
+      padding: 2.625em;
+    }
 
     &.hide-title {
-      padding-bottom: 1.3125em;
+      padding: 0;
 
       .entry-title {
         display: none;
@@ -103,16 +110,35 @@
     }
   }
 
+  div + .entry-header,
+  div + .entry-header.hide-title {
+    padding-top: 2.625em;
+  }
+
+  .entry-header.hide-title {
+    .is-padded & {
+      padding-top: 2.625em;
+    }
+  }
+
   .entry-meta {
     border-top: 1px solid $color-post-border;
     font-size: .875em;
     font-weight: 300;
-    padding: 2.625em;
+    padding: 2.625em 0;
+
+    .is-padded & {
+      padding: 2.625em;
+    }
   }
 
   .entry-content {
-    padding: 2.625em;
-    padding-top: 0;
+    padding-bottom: 2.625em;
+
+    .is-padded & {
+      padding-left: 2.625em;
+      padding-right: 2.625em;
+    }
 
     .page-template-template-homepage & {
       padding: 0 !important;
@@ -423,27 +449,50 @@
 @media screen and (max-width: 568px) {
   .page-header {
     margin-bottom: 1.387em;
-    padding: 1.387em;
+    padding: 1.387em 0;
+
+    .is-padded & {
+      padding: 1.387em;
+    }
   }
 
   .hentry {
     margin-bottom: 1.387em;
 
     .entry-header {
-      padding: 1.387em;
+      padding-bottom: 1.387em;
 
-      &.hide-title {
-        padding-bottom: .6935em;
+      .is-padded & {
+        padding: 1.387em;
+      }
+    }
+
+    div + .entry-header,
+    div + .entry-header.hide-title {
+      padding-top: 1.387em;
+    }
+    
+    .entry-header.hide-title {
+      .is-padded & {
+        padding-top: 1.387em;
       }
     }
 
     .entry-meta {
-      padding: 1.387em;
+      padding: 1.387em 0;
+
+      .is-padded & {
+        padding: 1.387em;
+      }
     }
 
     .entry-content {
-      padding: 1.387em;
-      padding-top: 0;
+      padding-bottom: 1.387em;
+      
+      .is-padded & {
+        padding-left: 1.387em;
+        padding-right: 1.387em;
+      }
       
       .entry-meta + & {
         padding-top: 1.387em;
@@ -455,27 +504,50 @@
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .page-header {
     margin-bottom: 2.125em;
-    padding: 2.125em;
+    padding: 2.125em 0;
+
+    .is-padded & {
+      padding: 2.125em;
+    }
   }
 
   .hentry {
     margin-bottom: 2.125em;
 
     .entry-header {
-      padding: 2.125em;
+      padding-bottom: 2.125em;
 
-      &.hide-title {
-        padding-bottom: 1.0625em;
+      .is-padded & {
+        padding: 2.125em;
+      }
+    }
+
+    div + .entry-header,
+    div + .entry-header.hide-title {
+      padding-top: 2.125em;
+    }
+
+    .entry-header.hide-title {
+      .is-padded & {
+        padding-top: 2.125em;
       }
     }
 
     .entry-meta {
-      padding: 2.125em;
+      padding: 2.125em 0;
+
+      .is-padded & {
+        padding: 2.125em;
+      }
     }
 
     .entry-content {
-      padding: 2.125em;
-      padding-top: 0;
+      padding-bottom: 2.125em;
+
+      .is-padded & {
+        padding-left: 2.125em;
+        padding-right: 2.125em;
+      }
 
       .entry-meta + & {
         padding-top: 2.125em;

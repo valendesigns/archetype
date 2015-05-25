@@ -74,6 +74,11 @@ function archetype_body_classes( $classes ) {
     $classes[] = 'is-boxed';
   }
 
+  // Padding
+  if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_padded', apply_filters( 'archetype_default_padded', true ) ) ) ) {
+    $classes[] = 'is-padded';
+  }
+
   return $classes;
 }
 

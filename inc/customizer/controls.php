@@ -1131,6 +1131,23 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     /**
+     * Padded
+     */
+    $wp_customize->add_setting( 'archetype_padded', array(
+      'default'           => apply_filters( 'archetype_default_padded', true ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_padded', array(
+      'label'       => __( 'Padded', 'archetype' ),
+      'description' => __( 'Adds padding to various elements such as page titles, posts and comments. Useful when the post background is a different color than the website background.', 'archetype' ),
+      'section'     => 'archetype_post',
+      'settings'    => 'archetype_padded',
+      'type'        => 'checkbox',
+      'priority'    => 1,
+    ) ) );
+
+    /**
      * Post Radius
      */
     $wp_customize->add_setting( 'archetype_post_radius', array(
@@ -1196,7 +1213,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
      * Post shadow toggle
      */
     $wp_customize->add_setting( 'archetype_post_shadow_toggle', array(
-      'default'           => true,
+      'default'           => apply_filters( 'archetype_default_post_shadow_toggle', true ),
       'sanitize_callback' => 'archetype_sanitize_checkbox',
     ) );
 

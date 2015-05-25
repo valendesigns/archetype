@@ -7,11 +7,14 @@
   p.no-comments {
     background-color: $color-post-bg;
     margin-bottom: 2.625em;
-    padding: 2.625em;
-    box-shadow: 5px 0px 0px $color-body inset;
     border-radius: 0 $radius-post $radius-post 0;
     border: 0;
     color: $color-body;
+    
+    .is-padded & {
+      padding: 2.625em;
+      box-shadow: 5px 0px 0px $color-body inset;
+    }
   }
 
   .comments-title,
@@ -32,25 +35,32 @@
     .comment-content {
       background-color: $color-post-bg;
       margin-bottom: 2.625em;
-      padding: 2.625em;
       padding-top: 0 !important;
       position: relative;
       box-shadow: 0px -1px 0px $color-post-shadow inset;
       border-radius: $radius-post;
+
+      .is-padded & {
+        padding: 2.625em;
+      }
     }
-    
+
     .comment-meta {
       border-bottom: 1px solid $color-post-border;
       font-weight: 300;
       margin-bottom: 1.3125em;
-      padding: 1.3125em 0;
+      padding-bottom: 1.3125em;
       @include clearfix;
-      
+
+      .is-padded & {
+        padding-top: 1.3125em
+      }
+
       .comment-author {
         float: left;
         margin-right: .500em;
       }
-      
+
       .avatar {
         height: auto;
         max-width: 24px;
@@ -59,7 +69,7 @@
         left: -40px;
         border-radius: $radius-avatar;
       }
-      
+
       cite {
         font-style: normal;
       }
@@ -146,9 +156,12 @@
   background-color: $color-post-bg;
   clear: both;
   margin-bottom: 2.625em;
-  padding: 2.625em;
   box-shadow: 0px -1px 0px $color-post-shadow inset;
   border-radius: $radius-post;
+
+  .is-padded & {
+    padding: 2.625em;
+  }
 
   .comment-form-author,
   .comment-form-email,
@@ -176,13 +189,20 @@
   #comments .comment-list .comment-content
   #comments .commentlist .comment-content {
     margin-bottom: 1.387em;
-    padding: 1.387em;
+
+    .is-padded & {
+      padding: 1.387em;
+    }
   }
 
   #comments .comment-list .comment-meta,
   #comments .commentlist .comment-meta {
     margin-bottom: .6935em;
-    padding: .6935em 0;
+    padding-bottom: .6935em;
+    
+    .is-padded & {
+      padding-top: .6935em;
+    }
   }
 }
 
@@ -198,13 +218,20 @@
   #comments .comment-list .comment-content,
   #comments .commentlist .comment-content {
     margin-bottom: 2.125em;
-    padding: 2.125em;
+
+    .is-padded & {
+      padding: 2.125em;
+    }
   }
 
   #comments .comment-list .comment-meta,
   #comments .commentlist .comment-meta {
     margin-bottom: 1.0625em;
-    padding: 1.0625em 0;
+    padding-bottom: 1.0625em;
+
+    .is-padded & {
+      padding-top: 1.0625em;
+    }
   }
 }
 

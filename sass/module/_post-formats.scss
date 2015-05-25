@@ -43,6 +43,17 @@
 
 .format-quote {
   .entry-header {
+    padding: 2.625em;
+    padding-bottom: 0;
+  }
+
+  .entry-content {
+    padding: 2.625em;
+  }
+}
+
+.format-quote {
+  .entry-header {
     background-color: $color-button-bg;
 
     h1 {
@@ -119,6 +130,8 @@
 
 .format-chat {
   .entry-content {
+    padding-left: 2.625em;
+    padding-right: 2.625em;
 
     .chat-transcript {
       list-style: none;
@@ -191,6 +204,24 @@
 }
 
 @media screen and (max-width: 568px) {
+  .format-quote {
+    .entry-header {
+      padding: 1.387em;
+      padding-bottom: 0;
+    }
+
+    .entry-content {
+      padding: 1.387em;
+    }
+  }
+
+  .format-chat {
+    .entry-content {
+      padding-left: 1.387em;
+      padding-right: 1.387em;
+    }
+  }
+
   .chat-transcript {
     margin: 0 -1.387em;
 
@@ -201,6 +232,24 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
+  .format-quote {
+    .entry-header {
+      padding: 2.125em;
+      padding-bottom: 0;
+    }
+
+    .entry-content {
+      padding: 2.125em;
+    }
+  }
+
+  .format-chat {
+    .entry-content {
+      padding-left: 2.125em;
+      padding-right: 2.125em;
+    }
+  }
+
   .chat-transcript {
     margin: 0 -2.125em;
 
