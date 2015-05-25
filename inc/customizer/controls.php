@@ -1193,7 +1193,24 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
 
     /**
-     * Post Shadow
+     * Post shadow toggle
+     */
+    $wp_customize->add_setting( 'archetype_post_shadow_toggle', array(
+      'default'           => true,
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_post_shadow_toggle', array(
+      'label'       => __( 'Display the post shadow', 'archetype' ),
+      'description' => __( 'Toggle the display of the post shadow.', 'archetype' ),
+      'section'     => 'archetype_post',
+      'settings'    => 'archetype_post_shadow_toggle',
+      'type'        => 'checkbox',
+      'priority'    => 20,
+    ) ) );
+
+    /**
+     * Post shadow
      */
     $wp_customize->add_setting( 'archetype_post_shadow_color', array(
       'default'           => apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ),
@@ -1204,7 +1221,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Shadow color', 'archetype' ),
       'section'     => 'archetype_post',
       'settings'    => 'archetype_post_shadow_color',
-      'priority'    => 20,
+      'priority'    => 25,
     ) ) );
 
     // END Post

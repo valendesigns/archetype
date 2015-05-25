@@ -326,29 +326,32 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     }';
 
     // Post Border Color
-    $post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_border_color', apply_filters( 'archetype_default_post_border_color', '#e5e5e5' ) ) );
+    $post_border_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_border_color', apply_filters( 'archetype_default_post_border_color', '#e5e5e5' ) ) );
 
     $style.= '
     table thead th,
     #comments .comment-list .comment-meta,
     #comments .commentlist .comment-meta {
-      border-bottom-color: ' . $post_background_color. ';
+      border-bottom-color: ' . $post_border_color. ';
     }
     table tfoot th,
     table tfoot td,
     .author-info,
     .hentry .entry-meta {
-      border-top-color: ' . $post_background_color. ';
+      border-top-color: ' . $post_border_color. ';
     }
     .format-quote .author-info + .entry-meta {
-      border-color: ' . $post_background_color. ';
+      border-color: ' . $post_border_color. ';
     }
     .post-navigation div + div {
-      box-shadow: 0px 1px 0px ' . $post_background_color. ' inset;
+      box-shadow: 0px 1px 0px ' . $post_border_color. ' inset;
     }';
 
+    // Post Shadow Toggle
+    $post_shadow_toggle = archetype_sanitize_checkbox( get_theme_mod( 'archetype_post_shadow_toggle', true ) );
+
     // Post Shadow Color
-    $post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_shadow_color', apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ) ) );
+    $post_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_shadow_color', apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ) ) );
 
     $style.= '
     article + .author-info,
@@ -357,7 +360,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     #respond,
     .hentry,
     .post-navigation {
-      box-shadow: 0px -1px 0px ' . $post_background_color. ' inset;
+      box-shadow: ' . ( false == $post_shadow_toggle ? 'none' : '0px -1px 0px ' . $post_shadow_color. ' inset' ) . ';
     }';
 
     // Form Text Color
