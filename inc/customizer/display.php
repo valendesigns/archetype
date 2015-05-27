@@ -399,6 +399,9 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     // Search Background Color
     $search_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_background_color', apply_filters( 'archetype_default_search_background_color', '#fff' ) ) );
 
+    // Search Shadow Toggle
+    $search_shadow_toggle = archetype_sanitize_checkbox( get_theme_mod( 'archetype_search_shadow_toggle', apply_filters( 'archetype_default_search_shadow_toggle', true ) ) );
+
     // Search Shadow Color
     $search_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_shadow_color', apply_filters( 'archetype_default_search_shadow_color', '#8b949b' ) ) );
 
@@ -407,7 +410,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     .widget_product_search form input[type=search],
     .error-404-search form input[type=search] {
       background-color: ' . $search_background_color . ';
-      box-shadow: 0px -1px 0px ' . $search_shadow_color . ' inset;
+      box-shadow: ' . ( false == $search_shadow_toggle ? 'none' : '0px -1px 0px ' . $search_shadow_color. ' inset' ) . ';
       color: ' . $search_text_color . ';
     }
     .widget_search form input[type=search]:focus,

@@ -110,6 +110,7 @@
       var toggles = {
         'input[data-customize-setting-link=archetype_boxed]' : '#customize-control-archetype_boxed_background_color',
         'input[data-customize-setting-link=archetype_post_shadow_toggle]' : '#customize-control-archetype_post_shadow_color',
+        'input[data-customize-setting-link=archetype_search_shadow_toggle]' : '#customize-control-archetype_search_shadow_color',
         'input[data-customize-setting-link=archetype_related_products_toggle]' : '#customize-control-archetype_related_products_limit, #customize-control-archetype_related_products_limit_text, #customize-control-archetype_related_products_columns, #customize-control-archetype_related_products_columns_text'
       };
       $.each( toggles, function( input, control ) {

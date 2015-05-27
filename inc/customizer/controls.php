@@ -1379,6 +1379,23 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) ) );
 
     /**
+     * Search shadow toggle
+     */
+    $wp_customize->add_setting( 'archetype_search_shadow_toggle', array(
+      'default'           => apply_filters( 'archetype_default_search_shadow_toggle', true ),
+      'sanitize_callback' => 'archetype_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_search_shadow_toggle', array(
+      'label'       => __( 'Display the search shadow', 'archetype' ),
+      'description' => __( 'Toggle the display of the search input shadow.', 'archetype' ),
+      'section'     => 'archetype_search',
+      'settings'    => 'archetype_search_shadow_toggle',
+      'type'        => 'checkbox',
+      'priority'    => 15,
+    ) ) );
+
+    /**
      * Search Widget Shadow Color
      */
     $wp_customize->add_setting( 'archetype_search_shadow_color', array(
@@ -1391,7 +1408,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'label'       => __( 'Shadow color', 'archetype' ),
       'section'     => 'archetype_search',
       'settings'    => 'archetype_search_shadow_color',
-      'priority'    => 10,
+      'priority'    => 20,
     ) ) );
 
     // END Search Widget
