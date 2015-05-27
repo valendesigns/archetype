@@ -48,7 +48,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_section( 'title_tagline' )->title        = __( 'Branding', 'archetype' );
 		$wp_customize->get_section( 'title_tagline' )->priority     = 10;
 		$wp_customize->get_section( 'title_tagline' )->panel        = 'archetype_header';
-	
+
 		// Change the Homepage Control panel, priority, & title.
 		$wp_customize->get_section( 'homepage_control' )->panel     = 'archetype_homepage';
 		$wp_customize->get_section( 'homepage_control' )->priority  = 1;
@@ -171,7 +171,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'choices'      => array(
 				'3'           => __( '3', 'archetype' ),
 				'4'           => __( '4', 'archetype' ),
-			)
+			),
 		) ) );
 
 		/**
@@ -1762,7 +1762,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 
 		/**
 		 * Add an empty import setting.
-		 */ 
+		 */
 		$wp_customize->add_setting( 'archetype_tools_import', array(
 			'capability'         => 'manage_options',
 			'default'            => '',
@@ -1803,7 +1803,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 
 		/**
 		 * Add an empty export setting.
-		 */ 
+		 */
 		$wp_customize->add_setting( 'archetype_tools_export', array(
 			'capability'         => 'manage_options',
 			'default'            => '',

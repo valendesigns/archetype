@@ -1,16 +1,19 @@
 <?php
 /**
- * archetype Theme Customizer display functions
+ * Archetype Theme Customizer display functions
  *
- * @package archetype
- */
-
-/**
- * Add CSS in <head> for styles handled by the theme customizer
- *
+ * @package Archetype
+ * @subpackage Customize
  * @since 1.0.0
  */
-if ( ! function_exists( 'archetype_add_customize_css' ) ) {
+
+if ( ! function_exists( 'archetype_add_customize_css' ) ) :
+
+	/**
+	 * Add CSS in <head> for styles handled by the theme customizer
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_add_customize_css() {
 
 		$style = '/* Customizer Styles */';
@@ -22,7 +25,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			$image = wp_get_attachment_image_src( jetpack_get_site_logo( 'id' ), 'full', false );
 
 			if ( count( $image ) >= 3 ) {
-				$style.= sprintf( '
+				$style .= sprintf( '
 					.svg .site-logo,
 					.no-svg .svg-site-logo {
 						display: none;
@@ -42,27 +45,27 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			}
 		}
 
-		// Site Logo
+		// Site Logo.
 		if ( $logo_top_margin = archetype_sanitize_number( get_theme_mod( 'archetype_site_logo_margin_top' ) ) ) {
-			$style.= '
+			$style .= '
 			.site-logo-link .site-logo,
 			.svg .site-logo-link .svg-site-logo {
 				margin-top: ' . esc_attr( $logo_top_margin ) . 'em;
 			}';
 		}
 
-		// Boxed background color
+		// Boxed background color.
 		$boxed_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_boxed_background_color', apply_filters( 'archetype_default_boxed_background_color', '#f1f1f1' ) ) );
 
-		$style.= '
+		$style .= '
 		.is-boxed .site {
 			background-color: ' . $boxed_background_color . ';
 		}';
 
-		// Text color
+		// Text color.
 		$text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_text_color', apply_filters( 'archetype_default_text_color', '#555' ) ) );
 
-		$style.= '
+		$style .= '
 		body,
 		button,
 		input,
@@ -107,10 +110,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			border-color: ' . $text_color . ';
 		}';
 
-		// Heading color
+		// Heading color.
 		$heading_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_heading_color', apply_filters( 'archetype_default_heading_color', '#333' ) ) );
 
-		$style.= '
+		$style .= '
 		h1,
 		h2,
 		h3,
@@ -124,10 +127,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			border-color: ' . $heading_color . ';
 		}';
 		
-		// Link Color
+		// Link Color.
 		$link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color', apply_filters( 'archetype_default_link_color', '#ee543f' ) ) );
 
-		$style.= '
+		$style .= '
 		a,
 		.error-404 h1
 		.subscribe-and-connect-connect a:hover,
@@ -147,50 +150,50 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			border-color: ' . $link_color . ';
 		}';
 		
-		// Link Color Hover
+		// Link Color Hover.
 		$link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color_hover', apply_filters( 'archetype_default_link_color_hover', '#111' ) ) );
 
-		$style.= '
+		$style .= '
 		a:hover {
 			color: ' . $link_color_hover . ';
 		}';
 
-		// Header Background Color
+		// Header Background Color.
 		$header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );
 
-		$style.= '
+		$style .= '
 		.site-header {
 			background-color: ' . $header_background_color . ';
 		}';
 
-		// Header Color
+		// Header Color.
 		$header_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_text_color', apply_filters( 'archetype_default_header_text_color', '#888' ) ) );
 
-		$style.= '
+		$style .= '
 		.site-header {
 			color: ' . $header_text_color . ';
 		}';
 
-		// Header Link Color
+		// Header Link Color.
 		$header_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color', apply_filters( 'archetype_default_header_link_color', '#aaa' ) ) );
 
-		$style.= '
+		$style .= '
 		.site-header a {
 			color: ' . $header_link_color . ';
 		}';
 
-		// Header Link Color Hover
+		// Header Link Color Hover.
 		$header_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color_hover', apply_filters( 'archetype_default_header_link_color_hover', '#ee543f' ) ) );
 
-		$style.= '
+		$style .= '
 		.site-header a:hover {
 			color: ' . $header_link_color_hover . ';
 		}';
 		
-		// Navigation Background Color
+		// Navigation Background Color.
 		$nav_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_background_color', apply_filters( 'archetype_default_nav_background_color', '#2f3538' ) ) );
 
-		$style.= '
+		$style .= '
 		@media screen and (min-width: 768px) {
 			#navigation,
 			.main-navigation ul.menu ul {
@@ -198,26 +201,26 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			}
 		}';
 		
-		// Navigation Link Color
+		// Navigation Link Color.
 		$nav_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color', apply_filters( 'archetype_default_nav_link_color', '#bbb' ) ) );
 
-		$style.= '
+		$style .= '
 		.main-navigation ul li a {
 			color: ' . $nav_link_color . ';
 		}';
 		
-		// Navigation Link Hover Color
+		// Navigation Link Hover Color.
 		$nav_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_hover_color', apply_filters( 'archetype_default_nav_link_hover_color', '#fff' ) ) );
 
-		$style.= '
+		$style .= '
 		.main-navigation ul li a:hover {
 			color: ' . $nav_link_color_hover . ';
 		}';
 		
-		// Navigation Link Hover Background Color
+		// Navigation Link Hover Background Color.
 		$nav_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_hover_background_color', apply_filters( 'archetype_default_nav_link_hover_background_color', '#2f3538' ) ) );
 
-		$style.= '
+		$style .= '
 		@media screen and (min-width: 768px) {
 			.main-navigation ul.menu ul a:hover,
 			.main-navigation ul.menu ul li:hover > a {
@@ -225,13 +228,13 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			}
 		}';
 		
-		// Navigation Link Active Color
+		// Navigation Link Active Color.
 		$nav_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_active_color', apply_filters( 'archetype_default_nav_link_active_color', '#fff' ) ) );
 		
-		// Navigation Link Active Background Color
+		// Navigation Link Active Background Color.
 		$nav_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_active_background_color', apply_filters( 'archetype_default_nav_link_active_background_color', '#24282A' ) ) );
 
-		$style.= '
+		$style .= '
 		.main-navigation ul li.current-menu-item > a,
 		.main-navigation ul li.current_page_parent > a,
 		.main-navigation ul li.current-menu-ancestor > a {
@@ -239,33 +242,33 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			background-color: ' . $nav_link_color_active_bg . ';
 		}';
 		
-				// Secondary Navigation Color
+				// Secondary Navigation Color.
 				$nav_alt_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_color', apply_filters( 'archetype_nav_alt_alt_color', '#bbb' ) ) );
 		
-				$style.= '
+				$style .= '
 		.secondary-navigation {
 			color: ' . $nav_alt_color . ';
 		}';
 		
-		// Secondary Navigation Background Color
+		// Secondary Navigation Background Color.
 		$nav_alt_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_background_color', apply_filters( 'archetype_default_nav_alt_background_color', '#41484d' ) ) );
 		
-		// Secondary Navigation Link Color
+		// Secondary Navigation Link Color.
 		$nav_alt_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color', apply_filters( 'archetype_default_nav_alt_link_color', '#ddd' ) ) );
 
-		// Secondary Navigation Link Hover Color
+		// Secondary Navigation Link Hover Color.
 		$nav_alt_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_hover_color', apply_filters( 'archetype_default_nav_alt_link_hover_color', '#fff' ) ) );
 		
-		// Secondary Navigation Link Hover Background Color
+		// Secondary Navigation Link Hover Background Color.
 		$nav_alt_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_hover_background_color', apply_filters( 'archetype_default_nav_alt_link_hover_background_color', '#464e54' ) ) );
 		
-		// Secondary Navigation Link Active Color
+		// Secondary Navigation Link Active Color.
 		$nav_alt_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_active_color', apply_filters( 'archetype_default_nav_alt_link_active_color', '#fff' ) ) );
 		
-		// Secondary Navigation Link Active Background Color
+		// Secondary Navigation Link Active Background Color.
 		$nav_alt_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_active_background_color', apply_filters( 'archetype_default_nav_alt_link_active_background_color', '#3b4146' ) ) );
 
-		$style.= '
+		$style .= '
 		@media screen and (min-width: 768px) {
 			.secondary-navigation ul.menu li a {
 				color: ' . $nav_alt_link_color . ';
@@ -288,14 +291,14 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			}
 		}';
 
-		// Post Background Color
+		// Post Background Color.
 		$post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_background_color', apply_filters( 'archetype_default_post_background_color', '#fff' ) ) );
 
 		// Get the RGB value from hex and set the comment rgba `border-color` for our tricky triangle shape.
 		$rgb = archetype_rgb_from_hex( $post_background_color );
 		$border_color = 3 === count( $rgb ) ? 'border-color: rgba(' . $rgb[ 'r' ] . ', ' . $rgb[ 'g' ] . ', ' . $rgb[ 'b' ] . ', 0);' : '';
 
-		$style.= '
+		$style .= '
 		article + .author-info,
 		#comments p.no-comments,
 		#comments .commentlist .comment-content,
@@ -323,10 +326,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			border-right-color: ' . $post_background_color . ';
 		}';
 
-		// Post Border Color
+		// Post Border Color.
 		$post_border_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_border_color', apply_filters( 'archetype_default_post_border_color', '#e5e5e5' ) ) );
 
-		$style.= '
+		$style .= '
 		table thead th,
 		#comments .commentlist .comment-meta {
 			border-bottom-color: ' . $post_border_color. ';
@@ -344,13 +347,13 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			box-shadow: 0px 1px 0px ' . $post_border_color. ' inset;
 		}';
 
-		// Post Shadow Toggle
+		// Post Shadow Toggle.
 		$post_shadow_toggle = archetype_sanitize_checkbox( get_theme_mod( 'archetype_post_shadow_toggle', apply_filters( 'archetype_default_post_shadow_toggle', true ) ) );
 
-		// Post Shadow Color
+		// Post Shadow Color.
 		$post_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_shadow_color', apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ) ) );
 
-		$style.= '
+		$style .= '
 		article + .author-info,
 		#comments .commentlist .comment-content,
 		#respond,
@@ -359,19 +362,19 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			box-shadow: ' . ( false == $post_shadow_toggle ? 'none' : '0px -1px 0px ' . $post_shadow_color. ' inset' ) . ';
 		}';
 
-		// Form Text Color
+		// Form Text Color.
 		$form_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_text_color', apply_filters( 'archetype_default_form_text_color', '#555' ) ) );
 
-		// Form Background Color
+		// Form Background Color.
 		$form_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_background_color', apply_filters( 'archetype_default_form_background_color', '#e4e4e4' ) ) );
 
-		// Form Focus Text Color
+		// Form Focus Text Color.
 		$form_text_focus_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_text_focus_color', apply_filters( 'archetype_default_form_text_focus_color', '#3b3b3b' ) ) );
 
-		// Form Focus Background Color
+		// Form Focus Background Color.
 		$form_background_focus_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_form_background_focus_color', apply_filters( 'archetype_default_form_background_focus_color', '#d7d7d7' ) ) );
 
-		$style.= '
+		$style .= '
 		input[type="text"],
 		input[type="email"],
 		input[type="url"],
@@ -393,19 +396,19 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			color: ' . $form_text_focus_color . ';
 		}';
 
-		// Search Text Color
+		// Search Text Color.
 		$search_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_text_color', apply_filters( 'archetype_default_search_text_color', '#555' ) ) );
 
-		// Search Background Color
+		// Search Background Color.
 		$search_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_background_color', apply_filters( 'archetype_default_search_background_color', '#fff' ) ) );
 
-		// Search Shadow Toggle
+		// Search Shadow Toggle.
 		$search_shadow_toggle = archetype_sanitize_checkbox( get_theme_mod( 'archetype_search_shadow_toggle', apply_filters( 'archetype_default_search_shadow_toggle', true ) ) );
 
-		// Search Shadow Color
+		// Search Shadow Color.
 		$search_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_search_shadow_color', apply_filters( 'archetype_default_search_shadow_color', '#8b949b' ) ) );
 
-		$style.= '
+		$style .= '
 		.widget_search form input[type=search],
 		.widget_product_search form input[type=search],
 		.error-404-search form input[type=search] {
@@ -424,34 +427,34 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			color: ' . $search_text_color . ';
 		}';
 
-		// Button 2D
+		// Button 2D.
 		$button_2d = archetype_sanitize_checkbox( get_theme_mod( 'archetype_button_2d', apply_filters( 'archetype_default_button_2d', 0 ) ) );
 
-		// Button Text Color
+		// Button Text Color.
 		$button_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_text_color', apply_filters( 'archetype_default_button_text_color', '#fff' ) ) );
 
-		// Button Background Color
+		// Button Background Color.
 		$button_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_background_color', apply_filters( 'archetype_default_button_background_color', '#ed543f' ) ) );
 
-		// Button Border Color
+		// Button Border Color.
 		$button_border_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_border_color', apply_filters( 'archetype_default_button_border_color', '#d94834' ) ) );
 
-		// Button Shadow Color
+		// Button Shadow Color.
 		$button_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_shadow_color', apply_filters( 'archetype_default_button_shadow_color', '#d94834' ) ) );
 
-		// Button Hover Text Color
+		// Button Hover Text Color.
 		$button_text_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_text_hover_color', apply_filters( 'archetype_default_button_text_hover_color', '#555' ) ) );
 
-		// Button Hover Background Color
+		// Button Hover Background Color.
 		$button_background_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_background_hover_color', apply_filters( 'archetype_default_button_background_hover_color', '#fff' ) ) );
 
-		// Button Hover Border Color
+		// Button Hover Border Color.
 		$button_border_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_border_hover_color', apply_filters( 'archetype_default_button_border_hover_color', '#8b949b' ) ) );
 
-		// Button Hover Shadow Color
+		// Button Hover Shadow Color.
 		$button_shadow_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_shadow_hover_color', apply_filters( 'archetype_default_button_shadow_hover_color', '#8b949b' ) ) );
 
-		$style.= '
+		$style .= '
 		.bx-controls-direction .bx-prev, .bx-controls-direction .bx-next {
 			background-color: ' . $button_background_color . ';
 			color: ' . $button_text_color . ';
@@ -506,13 +509,13 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			color: ' . $button_text_hover_color . '; 
 		}';
 
-		// Post border radius
+		// Post border radius.
 		$post_radius = archetype_sanitize_number( get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', 0 ) ) );
 
-		// Search border radius
+		// Search border radius.
 		$search_radius = archetype_sanitize_number( get_theme_mod( 'archetype_search_radius', apply_filters( 'archetype_default_search_radius', 0 ) ) );
 
-		$style.= '
+		$style .= '
 		article + .author-info,
 		#comments .commentlist .comment-content,
 		#respond,
@@ -521,7 +524,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			border-radius: ' . $post_radius. 'px;
 		}';
 
-		$style.= '
+		$style .= '
 		.widget_search form input[type=search],
 		.widget_product_search form input[type=search],
 		.error-404-search form input[type=search] {
@@ -529,7 +532,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 		}';
 
 		if ( is_rtl() ) {
-			$style.= '
+			$style .= '
 			#comments p.no-comments,
 			.page-header {
 				border-radius: ' . $post_radius. 'px 0 0 ' . $post_radius. 'px;
@@ -538,7 +541,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 				border-radius: 0 0 0 ' . $post_radius. 'px;
 			}';
 		} else {
-			$style.= '
+			$style .= '
 			#comments p.no-comments,
 			.page-header {
 				border-radius: 0 ' . $post_radius. 'px ' . $post_radius. 'px 0;
@@ -548,51 +551,51 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			}';
 		}
 
-		// Button border radius
+		// Button border radius.
 		$button_radius = archetype_sanitize_number( get_theme_mod( 'archetype_button_radius', apply_filters( 'archetype_default_button_radius', 3 ) ) );
 
-		$style.= '
+		$style .= '
 		button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart {
 			border-radius: ' . $button_radius. 'px;
 		}';
 
-		// Avatar border radius
+		// Avatar border radius.
 		$avatar_radius = archetype_sanitize_number( get_theme_mod( 'archetype_avatar_radius', apply_filters( 'archetype_default_avatar_radius', 3 ) ) );
 
-		$style.= '
+		$style .= '
 		.author-info .avatar, 
 		#comments .commentlist .comment-meta .avatar {
 			border-radius: ' . $avatar_radius . 'px;
 		}';
 
-		// Footer heading
+		// Footer heading.
 		$footer_heading_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_heading_color', apply_filters( 'archetype_default_footer_heading_color', '#eee' ) ) );
 
-		// Footer text
+		// Footer text.
 		$footer_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_text_color', apply_filters( 'archetype_default_footer_text_color', '#888' ) ) );
 
-		// Footer background
+		// Footer background.
 		$footer_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_background_color', apply_filters( 'archetype_default_footer_background_color', '#353b3f' ) ) );
 
-		// Footer link
+		// Footer link.
 		$footer_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_color', apply_filters( 'archetype_default_footer_link_color', '#ee543f' ) ) );
 
-		// Footer link hover
+		// Footer link hover.
 		$footer_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_hover_color', apply_filters( 'archetype_default_footer_link_hover_color', '#fff' ) ) );
 
-		// Lower footer text
+		// Lower footer text.
 		$footer_lower_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_text_color', apply_filters( 'archetype_default_footer_lower_text_color', '#888' ) ) );
 
-		// Lower footer background
+		// Lower footer background.
 		$footer_lower_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_background_color', apply_filters( 'archetype_default_footer_lower_background_color', '#292e31' ) ) );
 
-		// Lower footer link
+		// Lower footer link.
 		$footer_lower_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_link_color', apply_filters( 'archetype_default_footer_lower_link_color', '#ee543f' ) ) );
 
-		// Lower footer link hover
+		// Lower footer link hover.
 		$footer_lower_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_link_hover_color', apply_filters( 'archetype_default_footer_lower_link_hover_color', '#fff' ) ) );
 
-		$style.= '.site-footer {
+		$style .= '.site-footer {
 			background-color: ' . $footer_background_color . ';
 			color: ' . $footer_text_color . ';
 		}
@@ -622,67 +625,69 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
 			outline-color: ' . $footer_lower_link_color . ';
 		}';
 
-		// Remove space after colons
+		// Remove space after colons.
 		$style = str_replace( ': ', ':', $style );
 
-		// Remove whitespace
+		// Remove whitespace.
 		$style = str_replace( array( "\r\n", "\r", "\n", "\t", '	', '		', '		' ), '', $style );
 
 		wp_add_inline_style( 'archetype-style', $style );
 	}
-}
 
-/**
- * Display the Homepage Hero
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) {
+endif;
+
+if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) :
+
+	/**
+	 * Display the Homepage Hero
+	 *
+	 * @since	1.0.0
+	 */
 	function archetype_homepage_hero() {
 		if ( false == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_toggle', true ) ) ) {
 			return false;
 		}
 
-		// Layout
+		// Layout.
 		$layout 							= archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '';
 
-		// Alignment
+		// Alignment.
 		$alignment						= esc_attr( get_theme_mod( 'archetype_homepage_hero_alignment', 'center' ) );
 
-		// Background image
+		// Background image.
 		$background_img_src 	= wp_get_attachment_image_src( get_theme_mod( 'archetype_homepage_hero_background_image', '' ), 'full' );
 		$background_img 			= isset( $background_img_src[0] ) ? $background_img_src[0] : '';
 
-		// Background image size
+		// Background image size.
 		$background_img_size	= esc_attr( get_theme_mod( 'archetype_homepage_hero_background_image_size', 'auto' ) );
 
-		// Background color
+		// Background color.
 		$background_color 		= sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_background_color', apply_filters( 'archetype_default_homepage_hero_background_color', '#353b3f' ) ) );
 
-		// Heading color
+		// Heading color.
 		$heading_text_color 	= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_heading_color', apply_filters( 'archetype_default_homepage_hero_heading_color', '#fff' ) ) );
 
-		// Body color
+		// Body color.
 		$body_text_color			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_text_color', apply_filters( 'archetype_default_homepage_hero_text_color', '#888' ) ) );
 
-		// Heading text
+		// Heading text.
 		$heading_text 				= sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_heading_text', __( 'Heading Text', 'archetype' ) ) );
 
-		// Body Text
+		// Body Text.
 		$body_text						= wp_kses_post( get_theme_mod( 'archetype_homepage_hero_text', __( 'Body Text', 'archetype' ) ) );
 
-		// Button text
+		// Button text.
 		$button_text					= sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_text', __( 'Call to Action', 'archetype' ) ) );
 
-		// Button URL
+		// Button URL.
 		$button_url 					= sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_url', home_url() ) );
 
-		// CSS classes
+		// CSS classes.
 		$classes = array( 'archetype-homepage-hero' );
 		$classes[] = $alignment;
 		$classes[] = $layout;
 
-		// CSS style attributes
+		// CSS style attributes.
 		$styles = array();
 		$styles[] = "color: $body_text_color;";
 		$styles[] = "background-color: $background_color;";
@@ -705,4 +710,5 @@ if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) {
 		</section>
 		<?php
 	}
-}
+
+endif;
