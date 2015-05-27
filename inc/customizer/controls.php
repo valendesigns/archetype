@@ -1,6 +1,6 @@
 <?php
 /**
- * archetype Theme Customizer controls
+ * Archetype Theme Customizer controls
  *
  * @package Archetype
  * @subpackage Customize
@@ -21,21 +21,21 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-		// Move background color setting alongside background image
+		// Move background color setting alongside background image.
 		$wp_customize->get_control( 'background_color' )->section   = 'background_image';
 		$wp_customize->get_control( 'background_color' )->priority  = 20;
 
-		// Change background image section title & priority
+		// Change background image section title & priority.
 		$wp_customize->get_section( 'background_image' )->title     = __( 'Background', 'archetype' );
 		$wp_customize->get_section( 'background_image' )->priority  = 30;
 		$wp_customize->get_section( 'background_image' )->panel     = 'archetype_general';
 
-		// Change header image title, priority & panel
+		// Change header image title, priority & panel.
 		$wp_customize->get_section( 'header_image' )->title         = __( 'Background Image', 'archetype' );
 		$wp_customize->get_section( 'header_image' )->priority      = 15;
 		$wp_customize->get_section( 'header_image' )->panel         = 'archetype_header';
-	
-		// Change navigation panel or section
+
+		// Change navigation panel or section.
 		if ( 'menus' === $wp_customize->get_section( 'menu_locations' )->panel ) {
 			$wp_customize->get_panel( 'menus' )->priority             = 40;
 		} else {
@@ -43,18 +43,18 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			$wp_customize->get_section( 'nav' )->panel                = 'archetype_header';
 			$wp_customize->get_section( 'nav' )->priority             = 25;
 		}
-	
-		// Change the title of the Site Title & Tagline
+
+		// Change the title of the Site Title & Tagline.
 		$wp_customize->get_section( 'title_tagline' )->title        = __( 'Branding', 'archetype' );
 		$wp_customize->get_section( 'title_tagline' )->priority     = 10;
 		$wp_customize->get_section( 'title_tagline' )->panel        = 'archetype_header';
 	
-		// Change the Homepage Control panel, priority, & title
+		// Change the Homepage Control panel, priority, & title.
 		$wp_customize->get_section( 'homepage_control' )->panel     = 'archetype_homepage';
 		$wp_customize->get_section( 'homepage_control' )->priority  = 1;
 		$wp_customize->get_section( 'homepage_control' )->title     = __( 'Component Order', 'archetype' );
 
-		// Change the Static Front Page panel, & priority
+		// Change the Static Front Page panel, & priority.
 		$wp_customize->get_section( 'static_front_page' )->panel    = 'archetype_general';
 		$wp_customize->get_section( 'static_front_page' )->priority = 1;
 
@@ -78,14 +78,14 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		do_action( 'archetype_customize_register', $wp_customize );
 
 		if ( current_theme_supports( 'site-logo' ) && class_exists( 'Site_Logo', false ) ) {
-			// Add tagline description
+			// Add tagline description.
 			$wp_customize->get_section( 'title_tagline' )->description = __( 'Site Title & Tagline do not display when a logo is added.', 'archetype' );
 
 			// Add the setting for our svg logo.
 			$wp_customize->add_setting( 'archetype_site_logo_svg', array(
 				'capability'        => 'manage_options',
 				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage'
+				'transport'         => 'postMessage',
 			) );
 
 			// Add our image uploader.
@@ -131,8 +131,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'description'  => __( 'Customize the look & feel of your website.', 'archetype' ),
 			'priority'     => 1,
 		) );
-
-		// START Layout.
 
 		/**
 		 * Layout
@@ -229,10 +227,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'priority'     => 25,
 		) ) );
 
-		// END Layout.
-
-		// BEGIN Typography.
-
 		/**
 		 * Add the typography section
 		 */
@@ -310,10 +304,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'type'         => 'text',
 			'priority'     => 5,
 		) ) );
-
-		// END Typography.
-
-		// BEGIN Header.
 
 		/**
 		 * Add the Header panel
@@ -397,10 +387,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_header_link_color_hover',
 			'priority'     => 25,
 		) ) );
-
-		// END Header.
-
-		// BEGIN Navigation.
 
 		/**
 		 * Add the Primary Menu Styles section
@@ -631,10 +617,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'priority'     => 40,
 		) ) );
 
-		// END Navigation.
-
-		// BEGIN Homepage.
-
 		/**
 		 * Add the Homepage panel
 		 */
@@ -657,7 +639,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'type'          => 'text',
 			) ) );
 		}
-	
+
 		/**
 		 * Add the Hero section
 		 */
@@ -894,7 +876,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'priority'     => 60,
 			'type'         => 'text',
 		) ) );
-	
+
 		/**
 		 * Content section
 		 */
@@ -959,7 +941,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_homepage_custom_content',
 			'type'         => 'textarea',
 		) ) );
-	
+
 		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_custom_content_text', array(
 			'section'      => 'archetype_homepage_custom_content',
 			'description'  => __( 'Add custom content after the page content, HTML is allowed here.', 'archetype' ),
@@ -1056,7 +1038,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_homepage_custom_content_alt',
 			'type'         => 'textarea',
 		) ) );
-	
+
 		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_custom_content_alt_text', array(
 			'section'      => 'archetype_homepage_custom_content_alt',
 			'description'  => __( 'Add custom content just before the footer on the homepage, HTML is allowed here.', 'archetype' ),
@@ -1114,10 +1096,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_homepage_custom_content_alt_background_color',
 		) ) );
 
-		// END Homepage.
-
-		// BEGIN Content.
-
 		/**
 		 * Add the Content panel
 		 */
@@ -1126,8 +1104,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'description'  => __( 'Customize the look & feel of your content.', 'archetype' ),
 			'priority'     => 50,
 		) );
-
-		// BEGIN Post.
 
 		/**
 		 * Add the Post section
@@ -1249,10 +1225,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'priority'     => 25,
 		) ) );
 
-		// END Post.
-
-		// START Forms.
-
 		/**
 		 * Add the Forms section
 		 */
@@ -1325,10 +1297,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_form_background_focus_color',
 			'priority'     => 25,
 		) ) );
-
-		// END Forms.
-
-		// BEGIN Search Widget.
 
 		/**
 		 * Add the Search Widget section
@@ -1418,10 +1386,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_search_shadow_color',
 			'priority'     => 20,
 		) ) );
-
-		// END Search Widget.
-
-		// START Buttons.
 
 		/**
 		 * Buttons section
@@ -1540,7 +1504,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_button_hover_text', array(
 			'section'      => 'archetype_buttons',
 			'type'         => 'text',
-			'description'  => sprintf( __( "Adding the %s class to your buttons will inverse their styles. Which means the hover colors will become the default state, and vice versa.", 'archetype' ), '<code>.alt</code>' ),
+			'description'  => sprintf( __( 'Adding the %s class to your buttons will inverse their styles. Which means the hover colors will become the default state, and vice versa.', 'archetype' ), '<code>.alt</code>' ),
 			'priority'     => 29,
 		) ) );
 
@@ -1603,12 +1567,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_button_shadow_hover_color',
 			'priority'     => 45,
 		) ) );
-
-		// END Buttons.
-
-		// END Content.
-
-		// START Footer.
 
 		/**
 		 * Add the Footer panel
@@ -1784,10 +1742,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'settings'     => 'archetype_footer_lower_link_hover_color',
 		) ) );
 
-		// END Footer.
-
-		// START Import/Export.
-
 		/**
 		 * Add the General panel
 		 */
@@ -1804,7 +1758,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'title'        => __( 'Import', 'archetype' ),
 			'priority'     => 10,
 			'panel'        => 'archetype_tools',
-		));
+		) );
 
 		/**
 		 * Add an empty import setting.
@@ -1814,7 +1768,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'default'            => '',
 			'sanitize_callback'  => 'archetype_sanitize_import_export',
 			'type'               => 'none',
-		));
+		) );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			/**
@@ -1845,7 +1799,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'title'        => __( 'Export', 'archetype' ),
 			'priority'     => 15,
 			'panel'        => 'archetype_tools',
-		));
+		) );
 
 		/**
 		 * Add an empty export setting.
@@ -1855,7 +1809,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'default'            => '',
 			'sanitize_callback'  => 'archetype_sanitize_import_export',
 			'type'               => 'none',
-		));
+		) );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			/**
@@ -1879,8 +1833,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'description'  => __( 'Click the button below to export the customization settings for this theme.', 'archetype' ),
 			'priority'     => 3,
 		) ) );
-
-		// END Import/Export.
 
 	}
 

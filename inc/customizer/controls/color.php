@@ -26,7 +26,7 @@ if ( class_exists( 'WP_Customize_Color_Control' ) ) :
 		 */
 		public final function save() {
 			$value = $this->post_value();
-	
+
 			if ( ! $this->check_capabilities() ) {
 				return false;
 			}
