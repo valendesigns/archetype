@@ -3,9 +3,9 @@ module.exports = function( grunt ) {
   'use strict';
 
   grunt.initConfig({
-    
+
     pkg: grunt.file.readJSON( 'package.json' ),
-    
+
     // JavaScript linting with JSHint.
     jshint: {
       options: {
@@ -26,7 +26,7 @@ module.exports = function( grunt ) {
         preserveComments: 'some'
       },
       core: {
-        files: [{
+        files: [ {
           expand: true,
           cwd: 'js/',
           src: [
@@ -35,10 +35,10 @@ module.exports = function( grunt ) {
           ],
           dest: 'js/',
           ext: '.min.js'
-        }]
+        } ]
       },
       customizer: {
-        files: [{
+        files: [ {
           expand: true,
           cwd: 'inc/customizer/js/',
           src: [
@@ -47,7 +47,7 @@ module.exports = function( grunt ) {
           ],
           dest: 'inc/customizer/js/',
           ext: '.min.js'
-        }]
+        } ]
       }
     },
 
@@ -59,23 +59,23 @@ module.exports = function( grunt ) {
         includePaths: require( 'node-bourbon' ).includePaths
       },
       core: {
-        files: [{
+        files: [ {
           'style.css': 'style.scss'
-        }]
+        } ]
       },
       customizer: {
-        files: [{
+        files: [ {
           'inc/customizer/css/customizer.css': 'inc/customizer/sass/customizer.scss'
-        }]
+        } ]
       },
       woocommerce: {
-        files: [{
+        files: [ {
           expand: true,
           cwd: 'inc/woocommerce/sass/',
-          src: ['*.scss'],
+          src: [ '*.scss' ],
           dest: 'inc/woocommerce/css/',
           ext: '.css'
-        }]
+        } ]
       }
     },
 
@@ -111,28 +111,28 @@ module.exports = function( grunt ) {
     cssmin: {
       core: {
         expand: true,
-        files: [{
+        files: [ {
           'style.min.css': 'style.css',
           'style-rtl.min.css': 'style-rtl.css'
-        }]
+        } ]
       },
       customizer: {
-        files: [{
+        files: [ {
           expand: true,
           cwd: 'inc/customizer/css/',
-          src: ['*.css'],
+          src: [ '*.css' ],
           dest: 'inc/customizer/css/',
           ext: '.css'
-        }]
+        } ]
       },
       woocommerce: {
-        files: [{
+        files: [ {
           expand: true,
           cwd: 'inc/woocommerce/css/',
-          src: ['*.css'],
+          src: [ '*.css' ],
           dest: 'inc/woocommerce/css/',
           ext: '.css'
-        }]
+        } ]
       }
     },
 
@@ -162,7 +162,7 @@ module.exports = function( grunt ) {
           'inc/customizer/js/*js',
           '!inc/customizer/js/*.min.js'
         ],
-        tasks: ['uglify']
+        tasks: [ 'uglify' ]
       }
     },
 
@@ -183,7 +183,7 @@ module.exports = function( grunt ) {
           exclude: [
             'dist/<%= pkg.name %>/.*' // Exclude deploy directory
           ],
-          processPot: function ( pot ) {
+          processPot: function( pot ) {
             pot.headers['project-id-version'];
             return pot;
           }
@@ -254,22 +254,22 @@ module.exports = function( grunt ) {
           archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip',
           mode: 'zip'
         },
-        files: [{
+        files: [ {
           expand: true,
           cwd: 'dist/<%= pkg.name %>/',
-          src: ['**/*'],
+          src: [ '**/*' ],
           dest: '<%= pkg.name %>'
-        }]
+        } ]
       }
     },
 
     // Clean up
     clean: {
       core: {
-        src: ['style-rtl.css']
+        src: [ 'style-rtl.css' ]
       },
       deploy: {
-        src: ['dist/<%= pkg.name %>']
+        src: [ 'dist/<%= pkg.name %>' ]
       }
     },
 
@@ -293,7 +293,7 @@ module.exports = function( grunt ) {
         poDel: false
       },
       dist: {
-        files: [{
+        files: [ {
           expand: true,
           cwd: 'languages/',
           src: [
@@ -302,7 +302,7 @@ module.exports = function( grunt ) {
           dest: 'languages/',
           ext: '.mo',
           nonull: true
-        }]
+        } ]
       }
     }
 
@@ -357,4 +357,5 @@ module.exports = function( grunt ) {
     'compress',
     'clean'
   ]);
+
 };

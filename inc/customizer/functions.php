@@ -47,13 +47,13 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
     wp_enqueue_script( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
 
     // Localize
-    wp_localize_script( 'archetype_customize', 'Archetype_Customizerl10n', array(
+    wp_localize_script( 'archetype_customize', 'ArchetypeCustomizerl10n', array(
       'emptyImport' => __( 'Please choose a file to import.', 'archetype' ),
       'missingLogo' => __( 'The SVG will not display properly without adding a fallback first.', 'archetype' ) ,
     ));
 
     // Config
-    wp_localize_script( 'archetype_customize', 'Archetype_CustomizerConfig', array(
+    wp_localize_script( 'archetype_customize', 'ArchetypeCustomizerConfig', array(
       'ajaxURL'               => admin_url( 'admin-ajax.php' ),
       'customizerURL'         => admin_url( 'customize.php' ),
       'customizerExportNonce' => wp_create_nonce( 'customize-exporting' ),

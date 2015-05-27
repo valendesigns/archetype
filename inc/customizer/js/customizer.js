@@ -1,4 +1,4 @@
-/* global Archetype_CustomizerConfig, Archetype_Customizerl10n, alert */
+/* global ArchetypeCustomizerConfig, ArchetypeCustomizerl10n, alert */
 
 /**
  * Theme Customizer enhancements for a better user experience.
@@ -10,16 +10,16 @@
 
   var $body, $anchor, $logo, $svg, $branding, size;
 
-  var Archetype_Customizer = {
+  var ArchetypeCustomizer = {
     init: function() {
-      Archetype_Customizer._logoInit();
-      Archetype_Customizer._toggleInit();
-      $( document ).on( 'click', 'input[name=customize-import-button]', Archetype_Customizer._import );
-      $( document ).on( 'click', 'input[name=customize-export-button]', Archetype_Customizer._export );
+      ArchetypeCustomizer._logoInit();
+      ArchetypeCustomizer._toggleInit();
+      $( document ).on( 'click', 'input[name=customize-import-button]', ArchetypeCustomizer._import );
+      $( document ).on( 'click', 'input[name=customize-export-button]', ArchetypeCustomizer._export );
     },
     _cacheSelectors: function() {
       var _frame = $( 'iframe' ).contents();
-  
+
       $body     = $( 'body', _frame );
       $anchor   = $( '.site-logo-link', _frame );
       $logo     = $( '.site-logo', _frame );
@@ -32,22 +32,22 @@
         value.bind( function( to ) {
           // grab selectors the first time through
           if ( ! $body ) {
-            Archetype_Customizer._cacheSelectors();
+            ArchetypeCustomizer._cacheSelectors();
           }
 
           if ( to && to.url ) {
             $logo.hide();
             $branding.hide();
-    
+
             if ( ! to.sizes[ size ] ) {
               size = 'full';
             }
-    
+
             $svg.css({
               height: to.sizes[ size ].height,
               width: to.sizes[ size ].width
             });
-    
+
             if ( 'block' !== $svg.css( 'display' ) ) {
               $logo.show();
             }
@@ -60,7 +60,7 @@
         value.bind( function( to ) {
           // grab selectors the first time through
           if ( ! $body ) {
-            Archetype_Customizer._cacheSelectors();
+            ArchetypeCustomizer._cacheSelectors();
           }
 
           if ( to ) {
@@ -68,10 +68,10 @@
               'action': 'archetype-get-logo-url',
               'wp_customize': 'on',
               'id': to,
-              'customize-logo': Archetype_CustomizerConfig.customizerLogoNonce
+              'customize-logo': ArchetypeCustomizerConfig.customizerLogoNonce
             };
 
-            $.post( Archetype_CustomizerConfig.ajaxURL, params, function( response ) {
+            $.post( ArchetypeCustomizerConfig.ajaxURL, params, function( response ) {
               if ( response.data && response.data.message ) {
                 // Display error message
                 alert( response.data.message );
@@ -97,7 +97,7 @@
 
                 // Display error message
                 if ( $anchor.is( ':hidden' ) ) {
-                  alert( Archetype_Customizerl10n.missingLogo );
+                  alert( ArchetypeCustomizerl10n.missingLogo );
                 }
               }
             } );
@@ -118,9 +118,9 @@
         'input[data-customize-setting-link=archetype_related_products_toggle]': '#customize-control-archetype_related_products_limit, #customize-control-archetype_related_products_limit_text, #customize-control-archetype_related_products_columns, #customize-control-archetype_related_products_columns_text'
       };
       $.each( toggles, function( input, control ) {
-        Archetype_Customizer._toggle( input, control );
-        $( document ).on( 'click', input, function() { 
-          Archetype_Customizer._toggle( input, control );
+        ArchetypeCustomizer._toggle( input, control );
+        $( document ).on( 'click', input, function() {
+          ArchetypeCustomizer._toggle( input, control );
         } );
       } );
     },
@@ -140,9 +140,9 @@
         controls  = $( '.customize-import-controls' ),
         file      = $( 'input[name=customize-import-file]' ),
         message   = $( '.customize-import-uploading' );
-      
+
       if ( '' === file.val() ) {
-        alert( Archetype_Customizerl10n.emptyImport );
+        alert( ArchetypeCustomizerl10n.emptyImport );
       } else {
         win.off( 'beforeunload' );
         body.append( form );
@@ -152,9 +152,9 @@
       }
     },
     _export: function() {
-      window.location.href = Archetype_CustomizerConfig.customizerURL + '?customize-export=' + Archetype_CustomizerConfig.customizerExportNonce;
+      window.location.href = ArchetypeCustomizerConfig.customizerURL + '?customize-export=' + ArchetypeCustomizerConfig.customizerExportNonce;
       return false;
     }
   };
-  $( Archetype_Customizer.init );
+  $( ArchetypeCustomizer.init );
 } )( jQuery );

@@ -4,6 +4,8 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 ( function( $ ) {
+  'use strict';
+
   // Site title and description.
   wp.customize( 'blogname', function( value ) {
     value.bind( function( to ) {
@@ -56,9 +58,9 @@
       // Color
       $( 'body, button, input, select, textarea, .author-info .author-heading, #comments p.no-comments, .post-navigation .meta-nav, .widget-area .widget a, ul.products li.product .price, p.stars a, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-state-disabled .ui-state-default, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker th' ).css( 'color', to );
 
-      $link.on( 'mouseenter', function() { 
+      $link.on( 'mouseenter', function() {
         $( this ).css( 'color', to );
-      } ).on( 'mouseleave', function() { 
+      } ).on( 'mouseleave', function() {
         $( this ).css( 'color', color );
       } );
 
@@ -158,9 +160,9 @@
         $( this ).css( 'background-color', color );
       } );
       $( '.main-navigation ul.menu ul li' ).on( 'mouseenter', function() {
-        $( this ).next('a').css( 'background-color', to );
+        $( this ).next( 'a' ).css( 'background-color', to );
       } ).on( 'mouseleave', function() {
-        $( this ).next('a').css( 'background-color', color );
+        $( this ).next( 'a' ).css( 'background-color', color );
       } );
     } );
   } );
@@ -219,9 +221,9 @@
         $( this ).css( 'background-color', color );
       } );
       $( '.secondary-navigation ul.menu li ul li' ).on( 'mouseenter', function() {
-        $( this ).next('a').css( 'background-color', to );
+        $( this ).next( 'a' ).css( 'background-color', to );
       } ).on( 'mouseleave', function() {
-        $( this ).next('a').css( 'background-color', color );
+        $( this ).next( 'a' ).css( 'background-color', color );
       } );
     } );
   } );
@@ -386,4 +388,5 @@
       $( '.site-info' ).css( 'background-color', to );
     } );
   } );
+
 } )( jQuery );

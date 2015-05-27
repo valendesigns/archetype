@@ -7,20 +7,20 @@
  */
 ( function( $ ) {
   'use strict';
-  
+
   var archetype = {
-    
+
     cache: {},
-    
+
     init: function() {
       this.cacheElements();
       this.bindEvents();
     },
-    
+
     cacheElements: function() {
       this.cache = {
-        $window: $(window),
-        $document: $(document)
+        $window: $( window ),
+        $document: $( document )
       };
     },
 
@@ -34,7 +34,7 @@
         self.sliderInit();
       } );
     },
-    
+
     /**
      * Initialize the mobile menu functionality.
      *
@@ -103,7 +103,7 @@
         }
       });
     },
-    
+
     /**
      * Fix tab destination after 'Skip to content' link has been clicked.
      *
@@ -112,12 +112,12 @@
      * @return void
      */
     skipLinkFocusFix: function() {
-      var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-          is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-          is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1,
+      var isWebkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
+          isOpera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
+          isIE     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1,
           eventMethod;
 
-      if ( ( is_webkit || is_opera || is_ie ) && 'undefined' !== typeof( document.getElementById ) ) {
+      if ( ( isWebkit || isOpera || isIE ) && 'undefined' !== typeof( document.getElementById ) ) {
         eventMethod = ( window.addEventListener ) ? 'addEventListener' : 'attachEvent';
         window[ eventMethod ]( 'hashchange', function() {
           var element = document.getElementById( location.hash.substring( 1 ) );
@@ -178,7 +178,7 @@
           prevText: _archetype.prev
         } );
 
-        $( window ).on( 'orientationchange', function () {
+        $( window ).on( 'orientationchange', function() {
 
           _slider.reloadSlider();
 
@@ -189,4 +189,5 @@
   };
 
   archetype.init();
+
 } )( jQuery );
