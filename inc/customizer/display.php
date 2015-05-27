@@ -506,14 +506,23 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) {
     // Post border radius
     $post_radius = archetype_sanitize_number( get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', 0 ) ) );
 
+    // Search border radius
+    $search_radius = archetype_sanitize_number( get_theme_mod( 'archetype_search_radius', apply_filters( 'archetype_default_search_radius', 0 ) ) );
+
     $style.= '
     article + .author-info,
     #comments .commentlist .comment-content,
     #respond,
     .hentry,
-    .post-navigation,
-    .widget_search form input[type=search], .widget_product_search form input[type=search], .error-404-search form input[type=search] {
+    .post-navigation {
       border-radius: ' . $post_radius. 'px;
+    }';
+
+    $style.= '
+    .widget_search form input[type=search],
+    .widget_product_search form input[type=search],
+    .error-404-search form input[type=search] {
+      border-radius: ' . $search_radius. 'px;
     }';
 
     if ( is_rtl() ) {

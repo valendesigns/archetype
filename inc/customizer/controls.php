@@ -1156,7 +1156,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_post_radius', array(
-      'label'       => __( 'Post Border Radius', 'archetype' ),
+      'label'       => __( 'Post border radius', 'archetype' ),
       'section'     => 'archetype_post',
       'settings'    => 'archetype_post_radius',
       'priority'    => 5,
@@ -1171,7 +1171,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     ) );
 
     $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_avatar_radius', array(
-      'label'       => __( 'Avatar Border Radius', 'archetype' ),
+      'label'       => __( 'Avatar border radius', 'archetype' ),
       'section'     => 'archetype_post',
       'settings'    => 'archetype_avatar_radius',
       'priority'    => 6,
@@ -1330,6 +1330,21 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
       'priority'    => 20,
       'panel'       => 'archetype_content',
     ) );
+
+    /**
+     * Search border radius
+     */
+    $wp_customize->add_setting( 'archetype_search_radius', array(
+      'default'           => apply_filters( 'archetype_default_search_radius', 0 ),
+      'sanitize_callback' => 'archetype_sanitize_number',
+    ) );
+
+    $wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_search_radius', array(
+      'label'       => __( 'Border radius', 'archetype' ),
+      'section'     => 'archetype_search',
+      'settings'    => 'archetype_search_radius',
+      'priority'    => 5,
+    ) ) );
 
     /**
      * Search Widget Text Color
