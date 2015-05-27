@@ -1,11 +1,13 @@
+/* global Archetype_CustomizerConfig, Archetype_Customizerl10n, alert */
+
 /**
  * Theme Customizer enhancements for a better user experience.
  *
  * Contains handlers for logo, toggle controls, & import and export theme mods.
- *
- * global Archetype_CustomizerConfig, Archetype_Customizerl10n, alert
  */
 ( function( $ ) {
+  'use strict';
+
   var $body, $anchor, $logo, $svg, $branding, size;
 
   var Archetype_Customizer = {
