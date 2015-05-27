@@ -157,4 +157,4 @@
     }
   };
   $( Archetype_Customizer.init );
-})( jQuery );
+} )( jQuery );

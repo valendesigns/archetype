@@ -1,9 +1,11 @@
+/* global _archetype */
+
 /**
  * Script for initializing globally-used functions and libs.
  *
  * @since 1.0.0
  */
-(function($) {
+( function( $ ) {
   'use strict';
   
   var archetype = {
@@ -165,7 +167,7 @@
      * @return void
      */
     sliderInit: function() {
-      if ( typeof jQuery.fn.bxSlider == 'function' ) {
+      if ( 'function' === typeof jQuery.fn.bxSlider ) {
         var _slider;
 
         _slider = $( '.bxslider' ).bxSlider( {
@@ -182,9 +184,9 @@
 
         });
       }
-    },
+    }
 
   };
 
   archetype.init();
-})(jQuery);
+} )( jQuery );

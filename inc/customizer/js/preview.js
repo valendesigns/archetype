@@ -26,7 +26,7 @@
   } );
   wp.customize( 'archetype_full_width', function( value ) {
     value.bind( function( to ) {
-      if ( true == to ) {
+      if ( true === to ) {
         $( 'body' ).addClass( 'is-full-width' );
       } else {
         $( 'body' ).removeClass( 'is-full-width' );
@@ -35,7 +35,7 @@
   } );
   wp.customize( 'archetype_boxed', function( value ) {
     value.bind( function( to ) {
-      if ( true == to ) {
+      if ( true === to ) {
         $( 'body' ).addClass( 'is-boxed' );
       } else {
         $( 'body' ).removeClass( 'is-boxed' );
