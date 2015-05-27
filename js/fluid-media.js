@@ -24,9 +24,9 @@
     this.process();
   };
 
-  Fluidmedia.prototype.process = function ( e ) {
+  Fluidmedia.prototype.process = function () {
 
-    var tag = this.$element.prop('tagName').toLowerCase();
+    var tag = this.$element.prop( 'tagName' ).toLowerCase();
 
     if ( tag === 'embed' && this.$element.parent( 'object' ).length ) {
       return;
@@ -51,7 +51,7 @@
 
     this.$element.removeAttr( 'height' ).removeAttr( 'width' );
 
-  }
+  };
 
   /* FLUIDMEDIA PLUGIN DEFINITION */
   var old = $.fn.fluidmedia;
