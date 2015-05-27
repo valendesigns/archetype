@@ -22,6 +22,9 @@ class Archetype_Number_Customizer_Control extends WP_Customize_Control {
 	 */
 	public $type = 'number';
 
+	/**
+	 * Render the content on the theme customizer page
+	 */
 	public function render_content() {
 	?>
 		<label>
