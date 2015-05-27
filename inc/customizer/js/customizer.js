@@ -2,6 +2,8 @@
  * Theme Customizer enhancements for a better user experience.
  *
  * Contains handlers for logo, toggle controls, & import and export theme mods.
+ *
+ * global Archetype_CustomizerConfig, Archetype_Customizerl10n, alert
  */
 ( function( $ ) {
   var $body, $anchor, $logo, $svg, $branding, size;
@@ -44,7 +46,7 @@
               width: to.sizes[ size ].width
             });
     
-            if ( 'block' != $svg.css( 'display' ) ) {
+            if ( 'block' !== $svg.css( 'display' ) ) {
               $logo.show();
             }
           } else {
@@ -60,11 +62,11 @@
           }
 
           if ( to ) {
-            params = {
-              'action': 'archetype-get-logo-url'
-            , 'wp_customize': 'on'
-            , 'id': to
-            , 'customize-logo': Archetype_CustomizerConfig.customizerLogoNonce
+            var params = {
+              'action': 'archetype-get-logo-url',
+              'wp_customize': 'on',
+              'id': to,
+              'customize-logo': Archetype_CustomizerConfig.customizerLogoNonce
             };
 
             $.post( Archetype_CustomizerConfig.ajaxURL, params, function( response ) {
@@ -75,8 +77,8 @@
                 // Show logo
                 $logo.show();
               } else if ( response.success ) {
-                var width = $logo.attr( 'width' )
-                  , height = $logo.attr( 'height' );
+                var width = $logo.attr( 'width' ),
+                  height = $logo.attr( 'height' );
 
                 // Hide logo
                 $logo.hide();
@@ -108,10 +110,10 @@
     },
     _toggleInit: function() {
       var toggles = {
-        'input[data-customize-setting-link=archetype_boxed]' : '#customize-control-archetype_boxed_background_color',
-        'input[data-customize-setting-link=archetype_post_shadow_toggle]' : '#customize-control-archetype_post_shadow_color',
-        'input[data-customize-setting-link=archetype_search_shadow_toggle]' : '#customize-control-archetype_search_shadow_color',
-        'input[data-customize-setting-link=archetype_related_products_toggle]' : '#customize-control-archetype_related_products_limit, #customize-control-archetype_related_products_limit_text, #customize-control-archetype_related_products_columns, #customize-control-archetype_related_products_columns_text'
+        'input[data-customize-setting-link=archetype_boxed]': '#customize-control-archetype_boxed_background_color',
+        'input[data-customize-setting-link=archetype_post_shadow_toggle]': '#customize-control-archetype_post_shadow_color',
+        'input[data-customize-setting-link=archetype_search_shadow_toggle]': '#customize-control-archetype_search_shadow_color',
+        'input[data-customize-setting-link=archetype_related_products_toggle]': '#customize-control-archetype_related_products_limit, #customize-control-archetype_related_products_limit_text, #customize-control-archetype_related_products_columns, #customize-control-archetype_related_products_columns_text'
       };
       $.each( toggles, function( input, control ) {
         Archetype_Customizer._toggle( input, control );
@@ -130,14 +132,14 @@
       }
     },
     _import: function() {
-      var win     = $( window )
-        , body    = $( 'body' )
-        , form    = $( '<form class="customize-import-form" method="POST" enctype="multipart/form-data"></form>' )
-        , controls  = $( '.customize-import-controls' )
-        , file    = $( 'input[name=customize-import-file]' )
-        , message   = $( '.customize-import-uploading' );
+      var win     = $( window ),
+        body      = $( 'body' ),
+        form      = $( '<form class="customize-import-form" method="POST" enctype="multipart/form-data"></form>' ),
+        controls  = $( '.customize-import-controls' ),
+        file      = $( 'input[name=customize-import-file]' ),
+        message   = $( '.customize-import-uploading' );
       
-      if ( '' == file.val() ) {
+      if ( '' === file.val() ) {
         alert( Archetype_Customizerl10n.emptyImport );
       } else {
         win.off( 'beforeunload' );
