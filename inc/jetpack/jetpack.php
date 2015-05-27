@@ -11,9 +11,9 @@
  * See: http://jetpack.me/support/infinite-scroll/
  */
 function archetype_jetpack_setup() {
-  add_theme_support( 'infinite-scroll', array(
-    'container' => 'main',
-    'footer'    => 'page',
-  ) );
+	add_theme_support( 'infinite-scroll', array(
+		'container' => 'main',
+		'footer'    => 'page',
+	) );
 }
 add_action( 'after_setup_theme', 'archetype_jetpack_setup' );

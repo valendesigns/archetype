@@ -7,8 +7,8 @@
 
 // Activates this theme in WordPress so it can be tested.
 $GLOBALS['wp_tests_options'] = array(
-  'template'   => 'archetype',
-  'stylesheet' => 'archetype'
+	'template'   => 'archetype',
+	'stylesheet' => 'archetype'
 );
 
 // Load the WordPress test suite.

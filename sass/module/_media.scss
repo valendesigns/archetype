@@ -5,13 +5,13 @@
 .page-content,
 .entry-content,
 .comment-content {
-  img.wp-smiley {
-    border: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
-    display: inline-block;
-  }
+	img.wp-smiley {
+		border: none;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding: 0;
+		display: inline-block;
+	}
 }
 
 
@@ -23,17 +23,17 @@
 	margin-bottom: $spacing-v;
 	max-width: 100%;
 
-  img[class*="wp-image-"] {
-  	display: block;
-  	margin: 0;
-  }
-  
-  .wp-caption-text {
-    font-size: .938em;
-    line-height: 1.5;
-    padding: 0.5em 0;
-    text-align: center;
-  }
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 0;
+	}
+	
+	.wp-caption-text {
+		font-size: .938em;
+		line-height: 1.5;
+		padding: 0.5em 0;
+		text-align: center;
+	}
 }
 
 
@@ -43,29 +43,29 @@
 
 .gallery {
 
-  @extend %clearfix;
+	@extend %clearfix;
 
-  margin-bottom: $spacing-v;
+	margin-bottom: $spacing-v;
 
-  .gallery-item {
-    float: left;
+	.gallery-item {
+		float: left;
 
-    .gallery-icon {
-      a { display: block; }
+		.gallery-icon {
+			a { display: block; }
 
-      img {
-        border: none;
-        height: auto;
-        margin-bottom: 0;
-      }
-    }
+			img {
+				border: none;
+				height: auto;
+				margin-bottom: 0;
+			}
+		}
 
-    .gallery-caption {
-      margin: 0;
-      text-align: center;
-    }
+		.gallery-caption {
+			margin: 0;
+			text-align: center;
+		}
 
-  }
+	}
 
 }
 
@@ -75,93 +75,93 @@
  */
 
 .gallery-item {
-  display: inline-block;
-  padding: 1.79104477%;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
+	display: inline-block;
+	padding: 1.79104477%;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
 
-  .gallery-columns-2 & {
-    max-width: 50%;
-    
-    &:nth-child(2n+1){
-      clear: left;
-    }
-  }
-  
-  .gallery-columns-3 & {
-    max-width: 33.33%;
-    
-    &:nth-child(3n+1){
-      clear: left;
-    }
-  }
-  
-  .gallery-columns-4 & {
-    max-width: 25%;
-    
-    &:nth-child(4n+1){
-      clear: left;
-    }
-  }
-  
-  .gallery-columns-5 & {
-    max-width: 20%;
-    
-    &:nth-child(5n+1){
-      clear: left;
-    }
-  }
-  
-  .gallery-columns-6 & {
-    max-width: 16.66%;
-    
-    &:nth-child(6n+1){
-      clear: left;
-    }
-  }
-  
-  .gallery-columns-7 & {
-    max-width: 14.28%;
-    
-    &:nth-child(7n+1){
-      clear: left;
-    }
-  }
-  
-  .gallery-columns-8 & {
-    max-width: 12.5%;
-    
-    &:nth-child(8n+1){
-      clear: left;
-    }
-  }
-  
-  .gallery-columns-9 & {
-    max-width: 11.11%;
-    
-    &:nth-child(9n+1){
-      clear: left;
-    }
-  }
+	.gallery-columns-2 & {
+		max-width: 50%;
+		
+		&:nth-child(2n+1){
+			clear: left;
+		}
+	}
+	
+	.gallery-columns-3 & {
+		max-width: 33.33%;
+		
+		&:nth-child(3n+1){
+			clear: left;
+		}
+	}
+	
+	.gallery-columns-4 & {
+		max-width: 25%;
+		
+		&:nth-child(4n+1){
+			clear: left;
+		}
+	}
+	
+	.gallery-columns-5 & {
+		max-width: 20%;
+		
+		&:nth-child(5n+1){
+			clear: left;
+		}
+	}
+	
+	.gallery-columns-6 & {
+		max-width: 16.66%;
+		
+		&:nth-child(6n+1){
+			clear: left;
+		}
+	}
+	
+	.gallery-columns-7 & {
+		max-width: 14.28%;
+		
+		&:nth-child(7n+1){
+			clear: left;
+		}
+	}
+	
+	.gallery-columns-8 & {
+		max-width: 12.5%;
+		
+		&:nth-child(8n+1){
+			clear: left;
+		}
+	}
+	
+	.gallery-columns-9 & {
+		max-width: 11.11%;
+		
+		&:nth-child(9n+1){
+			clear: left;
+		}
+	}
 
-  .gallery-icon img {
-    margin: 0 auto;
-  }
-  
-  .gallery-caption {
-    display: block;
-    font-size: .938em;
-    line-height: 1.5;
-    padding: 0.5em 0;
-  
-    .gallery-columns-6 &,
-    .gallery-columns-7 &,
-    .gallery-columns-8 &,
-    .gallery-columns-9 & {
-      display: none;
-    }
-  }
+	.gallery-icon img {
+		margin: 0 auto;
+	}
+	
+	.gallery-caption {
+		display: block;
+		font-size: .938em;
+		line-height: 1.5;
+		padding: 0.5em 0;
+	
+		.gallery-columns-6 &,
+		.gallery-columns-7 &,
+		.gallery-columns-8 &,
+		.gallery-columns-9 & {
+			display: none;
+		}
+	}
 }
 
 
@@ -170,13 +170,13 @@
  */
  
 .mejs-controls {
-  .mejs-time-rail .mejs-time-current {
-    background: $color-button-bg !important;
-  }
+	.mejs-time-rail .mejs-time-current {
+		background: $color-button-bg !important;
+	}
 
-  .mejs-button button {
-    box-shadow: none !important;
-  }
+	.mejs-button button {
+		box-shadow: none !important;
+	}
 }
 
 
@@ -185,21 +185,21 @@
  */
 
 .fluid-media {
-  height: 0;
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  
-  iframe, 
-  object, 
-  embed {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
+	height: 0;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	
+	iframe, 
+	object, 
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 }
 
 
@@ -210,5 +210,5 @@
 embed,
 iframe,
 object {
-  max-width: 100%;
+	max-width: 100%;
 }

@@ -6,147 +6,147 @@
 .image-navigation,
 .comment-navigation,
 .woocommerce-pagination {
-  background-color: $color-post-bg;
-  margin-bottom: 2.625em;
-  clear: both;
-  width: 100%;
+	background-color: $color-post-bg;
+	margin-bottom: 2.625em;
+	clear: both;
+	width: 100%;
 
-  .nav-links,
-  ul.page-numbers {
-    min-height: 3.000em;
-    position: relative;
-    text-align: center;
-  }
-  
-  ul.page-numbers {
-    display: block !important;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+	.nav-links,
+	ul.page-numbers {
+		min-height: 3.000em;
+		position: relative;
+		text-align: center;
+	}
+	
+	ul.page-numbers {
+		display: block !important;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
 
-    li {
-      display: inline-block;
-      
-      a.prev,
-      a.next {
-        top: 0px;
-      }
-    }
-  }
-  
-  /* reset screen-reader-text */
-  .current .screen-reader-text {
-    position: static !important;
-    
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: transparent;
-      border-radius: 0;
-      box-shadow: none;
-      clip: none !important;
-      color: inherit;
-      display: inline-block;
-      font-size: inherit;
-      font-weight: inherit;
-      height: inherit;
-      left: auto;
-      line-height: inherit;
-      padding: 0 .250em 0 0;
-      text-decoration: none;
-      top: auto;
-      width: auto;
-    }
-  }
-  
-  .page-numbers {
-    display: none;
-    font-weight: 300;
-    line-height: 3.000em;
-    padding: 0 .625em;
-  }
-  
-  .page-numbers.current {
-    text-transform: uppercase;
-  }
-  
-  .current {
-    display: inline-block;
-  }
-  
-  .prev,
-  .next,
-  .nav-previous a,
-  .nav-next a {
-    background-color: $color-body;
-    color: #fff;
-    display: inline-block;
-    height: 48px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 48px;
-  }
+		li {
+			display: inline-block;
+			
+			a.prev,
+			a.next {
+				top: 0px;
+			}
+		}
+	}
+	
+	/* reset screen-reader-text */
+	.current .screen-reader-text {
+		position: static !important;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: transparent;
+			border-radius: 0;
+			box-shadow: none;
+			clip: none !important;
+			color: inherit;
+			display: inline-block;
+			font-size: inherit;
+			font-weight: inherit;
+			height: inherit;
+			left: auto;
+			line-height: inherit;
+			padding: 0 .250em 0 0;
+			text-decoration: none;
+			top: auto;
+			width: auto;
+		}
+	}
+	
+	.page-numbers {
+		display: none;
+		font-weight: 300;
+		line-height: 3.000em;
+		padding: 0 .625em;
+	}
+	
+	.page-numbers.current {
+		text-transform: uppercase;
+	}
+	
+	.current {
+		display: inline-block;
+	}
+	
+	.prev,
+	.next,
+	.nav-previous a,
+	.nav-next a {
+		background-color: $color-body;
+		color: #fff;
+		display: inline-block;
+		height: 48px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 48px;
+	}
 
-  .prev:before,
-  .next:before,
-  .nav-previous a:before,
-  .nav-next a:before {
-    display: inline-block;
-    font-family: "FontAwesome";
-    font-size: 1.250em;
-    height: 48px;
-    line-height: 48px;
-    position: relative;
-    width: 48px;
-    vertical-align: top;
-  }
-  
-  .prev:hover,
-  .prev:focus,
-  .next:hover,
-  .next:focus,
-  .nav-previous a:hover,
-  .nav-previous a:focus,
-  .nav-next a:hover,
-  .nav-next a:focus {
-    background-color: $color-button-bg;
-  }
-  
-  .prev,
-  .nav-previous a {
-    left: 0;
-  }
-  
-  /*rtl:ignore*/
-  .prev:before,
-  .nav-previous a:before {
-    content: "\f053";
-    left: -1px;
+	.prev:before,
+	.next:before,
+	.nav-previous a:before,
+	.nav-next a:before {
+		display: inline-block;
+		font-family: "FontAwesome";
+		font-size: 1.250em;
+		height: 48px;
+		line-height: 48px;
+		position: relative;
+		width: 48px;
+		vertical-align: top;
+	}
+	
+	.prev:hover,
+	.prev:focus,
+	.next:hover,
+	.next:focus,
+	.nav-previous a:hover,
+	.nav-previous a:focus,
+	.nav-next a:hover,
+	.nav-next a:focus {
+		background-color: $color-button-bg;
+	}
+	
+	.prev,
+	.nav-previous a {
+		left: 0;
+	}
+	
+	/*rtl:ignore*/
+	.prev:before,
+	.nav-previous a:before {
+		content: "\f053";
+		left: -1px;
 
-    .rtl & {
-      content: "\f054";
-      right: -1px;
-    }
-  }
-  
-  .next,
-  .nav-next a {
-    right: 0;
-  }
+		.rtl & {
+			content: "\f054";
+			right: -1px;
+		}
+	}
+	
+	.next,
+	.nav-next a {
+		right: 0;
+	}
 
-  /*rtl:ignore*/
-  .next:before,
-  .nav-next a:before {
-    content: "\f054";
-    right: -1px;
+	/*rtl:ignore*/
+	.next:before,
+	.nav-next a:before {
+		content: "\f054";
+		right: -1px;
 
-    .rtl & {
-      content: "\f053";
-      left: -1px;
-    }
-  }
+		.rtl & {
+			content: "\f053";
+			left: -1px;
+		}
+	}
 }
 
 
@@ -155,73 +155,73 @@
  */
 
 .post-navigation {
-  background-color: $color-post-bg;
-  box-shadow: 0px -1px 0px $color-post-shadow inset;
-  border-radius: $radius-post;
-  margin-bottom: 2.625em;
-  overflow: hidden;
+	background-color: $color-post-bg;
+	box-shadow: 0px -1px 0px $color-post-shadow inset;
+	border-radius: $radius-post;
+	margin-bottom: 2.625em;
+	overflow: hidden;
 
-  a {
-    display: block;
-    padding: 2.625em 0;
+	a {
+		display: block;
+		padding: 2.625em 0;
 
-    .is-padded & {
-      padding: 2.625em !important;
-    }
-    
-    &:hover {
-      .is-padded & {
-        box-shadow: 5px 0px 0px $color-body inset;
-      }
-    }
-  }
+		.is-padded & {
+			padding: 2.625em !important;
+		}
+		
+		&:hover {
+			.is-padded & {
+				box-shadow: 5px 0px 0px $color-body inset;
+			}
+		}
+	}
 
-  span {
-    display: block;
-  }
+	span {
+		display: block;
+	}
 
-  .meta-nav {
-    color: $color-body;
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    position: relative;
-    text-transform: uppercase;
-    z-index: 2;
-  }
+	.meta-nav {
+		color: $color-body;
+		font-weight: 300;
+		letter-spacing: 0.04em;
+		position: relative;
+		text-transform: uppercase;
+		z-index: 2;
+	}
 
-  .post-title {
-    font-size: 1.500em;
-    font-weight: 300;
-    position: relative;
-    z-index: 2;
-  }
+	.post-title {
+		font-size: 1.500em;
+		font-weight: 300;
+		position: relative;
+		z-index: 2;
+	}
 
-  .nav-next,
-  .nav-previous {
-    background-position: center;
-    background-size: cover;
-    position: relative;
-  }
+	.nav-next,
+	.nav-previous {
+		background-position: center;
+		background-size: cover;
+		position: relative;
+	}
 
-  a:before {
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  a:hover:before,
-  .post-navigation a:focus:before {
-    opacity: 0.5;
-  }
-  
-  div + div {
-    box-shadow: 0px 1px 0px $color-post-border inset;
-  }
+	a:before {
+		content: "";
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+	}
+	
+	a:hover:before,
+	.post-navigation a:focus:before {
+		opacity: 0.5;
+	}
+	
+	div + div {
+		box-shadow: 0px 1px 0px $color-post-border inset;
+	}
 
 }
 
@@ -231,48 +231,48 @@
  */
  
 .page-links {
-  clear: both;
-  margin-bottom: $spacing-v;
-  
-  a,
-  > span {
-    border: 1px solid $color-body;
-    display: inline-block;
-    font-size: .938em;
-    height: 2em;
-    line-height: 2;
-    margin: 0 0.333em 0.333em 0;
-    text-align: center;
-    width: 2em;
-  }
-  
-  a {
-    background-color: $color-body;
-    color: $color-post-bg;
-    
-    > span {
-      color: $color-post-bg;
-    }
-  
-    &:hover,
-    &:focus {
-      background-color: $color-button-bg;
-      border-color: $color-button-bg;
-      color: $color-post-bg;
-      
-      > span {
-        color: $color-post-bg;
-      }
-    }
-  }
-  
-  > .page-links-title {
-    border: 0;
-    height: auto;
-    margin: 0;
-    padding-right: .500em;
-    width: auto;
-  }
+	clear: both;
+	margin-bottom: $spacing-v;
+	
+	a,
+	> span {
+		border: 1px solid $color-body;
+		display: inline-block;
+		font-size: .938em;
+		height: 2em;
+		line-height: 2;
+		margin: 0 0.333em 0.333em 0;
+		text-align: center;
+		width: 2em;
+	}
+	
+	a {
+		background-color: $color-body;
+		color: $color-post-bg;
+		
+		> span {
+			color: $color-post-bg;
+		}
+	
+		&:hover,
+		&:focus {
+			background-color: $color-button-bg;
+			border-color: $color-button-bg;
+			color: $color-post-bg;
+			
+			> span {
+				color: $color-post-bg;
+			}
+		}
+	}
+	
+	> .page-links-title {
+		border: 0;
+		height: auto;
+		margin: 0;
+		padding-right: .500em;
+		width: auto;
+	}
 }
 
 
@@ -281,13 +281,13 @@
  */
  
 @media screen and (max-width: 568px) {
-  .post-navigation,
-  .pagination,
-  .image-navigation,
-  .comment-navigation,
-  .woocommerce-pagination {
-    margin-bottom: 1.387em;
-  }
+	.post-navigation,
+	.pagination,
+	.image-navigation,
+	.comment-navigation,
+	.woocommerce-pagination {
+		margin-bottom: 1.387em;
+	}
 }
 
 /**
@@ -295,13 +295,13 @@
  */
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .post-navigation,
-  .pagination,
-  .image-navigation,
-  .comment-navigation,
-  .woocommerce-pagination {
-    margin-bottom: 2.125em;
-  }
+	.post-navigation,
+	.pagination,
+	.image-navigation,
+	.comment-navigation,
+	.woocommerce-pagination {
+		margin-bottom: 2.125em;
+	}
 }
 
 /**
@@ -309,17 +309,17 @@
  */
 
 @media screen and (min-width: 768px) {
-  .pagination,
-  .comment-navigation,
-  .woocommerce-pagination {
-    
-    /* restore screen-reader-text */
-    .current .screen-reader-text {
-      position: absolute !important;
-    }
-    
-    .page-numbers {
-      display: inline-block;
-    }
-  }
+	.pagination,
+	.comment-navigation,
+	.woocommerce-pagination {
+		
+		/* restore screen-reader-text */
+		.current .screen-reader-text {
+			position: absolute !important;
+		}
+		
+		.page-numbers {
+			display: inline-block;
+		}
+	}
 }

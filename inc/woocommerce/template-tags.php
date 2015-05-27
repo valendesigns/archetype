@@ -8,110 +8,110 @@
 /**
  * Cart Link
  * Displayed a link to the cart including the number of items present and the cart total
- * @since  1.0.0
+ * @since 1.0.0
  */
 if ( ! function_exists( 'archetype_cart_link' ) ) {
-  function archetype_cart_link() {
-    ?>
-    <a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php _e( 'View your shopping cart', 'archetype' ); ?>">
-      <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'archetype' ), WC()->cart->get_cart_contents_count() ) );?></span>
-    </a>
-    <?php
-  }
+	function archetype_cart_link() {
+		?>
+		<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php _e( 'View your shopping cart', 'archetype' ); ?>">
+			<?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'archetype' ), WC()->cart->get_cart_contents_count() ) );?></span>
+		</a>
+		<?php
+	}
 }
 
 /**
  * Display Header Cart
- * @since  1.0.0
- * @uses  is_woocommerce_activated() check if WooCommerce is activated
+ * @since 1.0.0
+ * @uses is_woocommerce_activated() check if WooCommerce is activated
  * @return void
  */
 if ( ! function_exists( 'archetype_header_cart' ) ) {
-  function archetype_header_cart() {
-    if ( is_woocommerce_activated() ) { 
-      if ( is_cart() ) {
-        $class = 'current-menu-item';
-      } else {
-        $class = '';
-      }
-      ?>
-      <ul class="site-header-cart menu">
-        <li class="<?php echo esc_attr( $class ); ?>">
-          <?php archetype_cart_link(); ?>
-        </li>
-        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-      </ul>
-    <?php
-    }
-  }
+	function archetype_header_cart() {
+		if ( is_woocommerce_activated() ) { 
+			if ( is_cart() ) {
+				$class = 'current-menu-item';
+			} else {
+				$class = '';
+			}
+			?>
+			<ul class="site-header-cart menu">
+				<li class="<?php echo esc_attr( $class ); ?>">
+					<?php archetype_cart_link(); ?>
+				</li>
+				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+			</ul>
+		<?php
+		}
+	}
 }
 
 /**
  * Upsells
  * Replace the default upsell function with our own which displays the correct number product columns
- * @since   1.0.0
- * @return  void
- * @uses    woocommerce_upsell_display()
+ * @since 1.0.0
+ * @return void
+ * @uses woocommerce_upsell_display()
  */
 if ( ! function_exists( 'archetype_upsell_display' ) ) {
-  function archetype_upsell_display() {
-    woocommerce_upsell_display( -1, 3 );
-  }
+	function archetype_upsell_display() {
+		woocommerce_upsell_display( -1, 3 );
+	}
 }
 
 if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
-  /**
-   * Display navigation to next/previous set of posts when applicable.
-   *
-   * @since 1.0.0
-   */
-  function archetype_woocommerce_pagination() {
-    global $wp_query;
-    $term = get_queried_object();
+	/**
+	 * Display navigation to next/previous set of posts when applicable.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_woocommerce_pagination() {
+		global $wp_query;
+		$term = get_queried_object();
 
-    if ( is_product_category() ) {
-      $display_type = get_woocommerce_term_meta( $term->term_id, 'display_type', true );
+		if ( is_product_category() ) {
+			$display_type = get_woocommerce_term_meta( $term->term_id, 'display_type', true );
 
-      switch ( $display_type ) {
-        case 'subcategories' :
-          $wp_query->max_num_pages = 0;
-        break;
-        case '' :
-          if ( 'subcategories' == get_option( 'woocommerce_category_archive_display' ) ) {
-            $wp_query->max_num_pages = 0;
-          }
-        break;
-      }
-    }
+			switch ( $display_type ) {
+				case 'subcategories' :
+					$wp_query->max_num_pages = 0;
+				break;
+				case '' :
+					if ( 'subcategories' == get_option( 'woocommerce_category_archive_display' ) ) {
+						$wp_query->max_num_pages = 0;
+					}
+				break;
+			}
+		}
 
-    if ( is_shop() && 'subcategories' == get_option( 'woocommerce_shop_page_display' ) ) {
-      $wp_query->max_num_pages = 0;
-    }
+		if ( is_shop() && 'subcategories' == get_option( 'woocommerce_shop_page_display' ) ) {
+			$wp_query->max_num_pages = 0;
+		}
 
-    if ( $wp_query->max_num_pages <= 1 ) {
-      return;
-    }
+		if ( $wp_query->max_num_pages <= 1 ) {
+			return;
+		}
 
-    echo '<nav class="woocommerce-pagination" role="navigation">';
-      echo '<h2 class="screen-reader-text">Shop navigation</h2>';
-      echo '<div class="nav-links">';
-        echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
-          'base'         => esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
-          'format'       => '',
-          'add_args'     => '',
-          'current'      => max( 1, get_query_var( 'paged' ) ),
-          'total'        => $wp_query->max_num_pages,
-          'prev_text'    => '&larr;',
-          'next_text'    => '&rarr;',
-          'type'         => 'plain',
-          'end_size'     => 3,
-          'mid_size'     => 3,
-          'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
-          'after_page_number'  => ''
-        ) ) );
-      echo '</div>';
-    echo '</nav>';
-  }
+		echo '<nav class="woocommerce-pagination" role="navigation">';
+			echo '<h2 class="screen-reader-text">Shop navigation</h2>';
+			echo '<div class="nav-links">';
+				echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
+					'base'               => esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
+					'format'             => '',
+					'add_args'           => '',
+					'current'            => max( 1, get_query_var( 'paged' ) ),
+					'total'              => $wp_query->max_num_pages,
+					'prev_text'          => '&larr;',
+					'next_text'          => '&rarr;',
+					'type'               => 'plain',
+					'end_size'           => 3,
+					'mid_size'           => 3,
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
+					'after_page_number'  => ''
+				) ) );
+			echo '</div>';
+		echo '</nav>';
+	}
 }
 
 /**
@@ -126,61 +126,61 @@ if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
  * @return void
  */
 function archetype_shop_heading() {
-  if ( ! is_product() ) {
-    add_action( 'woocommerce_before_main_content', 'archetype_shop_heading_wrapper',       1001 );
-    add_action( 'woocommerce_archive_description', 'archetype_shop_heading_wrapper_close', 1001 );
-  }
+	if ( ! is_product() ) {
+		add_action( 'woocommerce_before_main_content',    'archetype_shop_heading_wrapper',        1001 );
+		add_action( 'woocommerce_archive_description',    'archetype_shop_heading_wrapper_close',  1001 );
+	}
 
-  if ( true === apply_filters( 'archetype_shop_heading', false ) ) {
-    add_filter( 'woocommerce_show_page_title', '__return_false' );
-    remove_action( 'woocommerce_before_main_content', 'archetype_shop_heading_wrapper',       1001 );
-    remove_action( 'woocommerce_archive_description', 'archetype_shop_heading_wrapper_close', 1001 );
-  }
+	if ( true === apply_filters( 'archetype_shop_heading', false ) ) {
+		add_filter( 'woocommerce_show_page_title', '__return_false' );
+		remove_action( 'woocommerce_before_main_content', 'archetype_shop_heading_wrapper',         1001 );
+		remove_action( 'woocommerce_archive_description', 'archetype_shop_heading_wrapper_close',   1001 );
+	}
 }
 
 /**
  * Shop heading wrapper
- * @since   1.0.0
- * @return  void
+ * @since 	1.0.0
+ * @return	void
  */
 function archetype_shop_heading_wrapper() {
-  echo '<header class="page-header">';
+	echo '<header class="page-header">';
 }
 
 /**
  * Shop heading wrapper close
- * @since   1.0.0
- * @return  void
+ * @since 	1.0.0
+ * @return	void
  */
 function archetype_shop_heading_wrapper_close() {
-  echo '</header>';
+	echo '</header>';
 }
 
 /**
  * Sorting wrapper
- * @since   1.0.0
- * @return  void
+ * @since 	1.0.0
+ * @return	void
  */
 function archetype_sorting_wrapper() {
-  echo '<div class="archetype-sorting">';
+	echo '<div class="archetype-sorting">';
 }
 
 /**
  * Sorting wrapper close
- * @since   1.0.0
- * @return  void
+ * @since 	1.0.0
+ * @return	void
  */
 function archetype_sorting_wrapper_close() {
-  echo '</div>';
+	echo '</div>';
 }
 
 /**
  * Storefront shop messages
- * @since   1.0.0
- * @uses    do_shortcode
+ * @since 	1.0.0
+ * @uses		do_shortcode
  */
 function archetype_shop_messages() {
-  if ( ! is_checkout() ) {
-    echo wp_kses_post( do_shortcode( '[woocommerce_messages]' ) );
-  }
+	if ( ! is_checkout() ) {
+		echo wp_kses_post( do_shortcode( '[woocommerce_messages]' ) );
+	}
 }

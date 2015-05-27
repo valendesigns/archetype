@@ -5,158 +5,158 @@
  */
 
 #wl-wrapper.wl-button-wrap {
-  padding: 1.618em 0 0 0;
+	padding: 1.618em 0 0 0;
 }
 
 .wl-add-link {
-  padding-left: 0 !important;
-  background: none !important;
+	padding-left: 0 !important;
+	background: none !important;
 
-  &:before {
-    font-family: "FontAwesome";
-    content: "\f004";
-    margin-right: .53em;
-    font-weight: 400;
-  }
+	&:before {
+		font-family: "FontAwesome";
+		content: "\f004";
+		margin-right: .53em;
+		font-weight: 400;
+	}
 }
 
 #wl-wrapper {
-  ul.wl-tabs {
-    border-bottom: 0;
-    background: $color-post-bg;
-    margin: 0 0 2.625em 0;
+	ul.wl-tabs {
+		border-bottom: 0;
+		background: $color-post-bg;
+		margin: 0 0 2.625em 0;
 
-    > li {
-      display: block;
-      float: left;
-      position: relative;
-      margin-bottom: 0;
+		> li {
+			display: block;
+			float: left;
+			position: relative;
+			margin-bottom: 0;
 
-      > a {
-        border: 0 !important;
-        margin: 0;
-        border-radius: 0;
-        display: block;
-        padding: 1em;
-        background: $color-post-bg;
-        border-bottom: 1px solid $color-post-shadow !important;
+			> a {
+				border: 0 !important;
+				margin: 0;
+				border-radius: 0;
+				display: block;
+				padding: 1em;
+				background: $color-post-bg;
+				border-bottom: 1px solid $color-post-shadow !important;
 
-        &:hover {
-          background: $color-post-bg;
-        }
-      }
+				&:hover {
+					background: $color-post-bg;
+				}
+			}
 
-      &.active {
-        a {
-          color: $color-button;
-          background: $color-button-bg;
-          border-color: $color-button-border;
-        }
-      }
-    }
+			&.active {
+				a {
+					color: $color-button;
+					background: $color-button-bg;
+					border-color: $color-button-border;
+				}
+			}
+		}
 
-    &.manage {
-      td {
-        padding: .53em;
-      }
-    }
-  }
-  
-  .wl-form {
-    textarea {
-      min-height: 7em;
-    }
-  }
+		&.manage {
+			td {
+				padding: .53em;
+			}
+		}
+	}
+	
+	.wl-form {
+		textarea {
+			min-height: 7em;
+		}
+	}
 
-  .wl-table {
-    thead {
-      th.wl-privacy-col {
-        text-indent: -999em;
-      }
-    }
-      
-    td {
-      padding: .875em 1.387em !important;
+	.wl-table {
+		thead {
+			th.wl-privacy-col {
+				text-indent: -999em;
+			}
+		}
+			
+		td {
+			padding: .875em 1.387em !important;
 
-      &:first-child {
-        padding-left: 1.387em !important;
-      }
-    }
-  }
+			&:first-child {
+				padding-left: 1.387em !important;
+			}
+		}
+	}
 
-  .wl-meta-share,
-  .wl-share-url {
-    border-bottom-color: $color-post-border;
-  }
+	.wl-meta-share,
+	.wl-share-url {
+		border-bottom-color: $color-post-border;
+	}
 
-  .wl-already-in,
-  .wl-share-url {
-    font-size: .875em;
-  }
+	.wl-already-in,
+	.wl-share-url {
+		font-size: .875em;
+	}
 
-  .wl-small {
-    font-size: .750em !important;
-  }
+	.wl-small {
+		font-size: .750em !important;
+	}
 
-  .wl-share-links {
-    a {
-      background: none !important;
-      height: 1em;
-      width: 1em;
-      font-size: 1em;
-      line-height: 1 !important;
-      overflow: hidden;
-      text-indent: 0;
-      color: $color-link;
+	.wl-share-links {
+		a {
+			background: none !important;
+			height: 1em;
+			width: 1em;
+			font-size: 1em;
+			line-height: 1 !important;
+			overflow: hidden;
+			text-indent: 0;
+			color: $color-link;
 
-      &:hover {
-        color: $color-link-hover;
-      }
+			&:hover {
+				color: $color-link-hover;
+			}
 
-      &:before {
-        display: inline-block;
-        font-family: "FontAwesome" !important;
-        position: relative;
-        width: 1em;
-      }
-    }
+			&:before {
+				display: inline-block;
+				font-family: "FontAwesome" !important;
+				position: relative;
+				width: 1em;
+			}
+		}
 
-    .wl-email a:before {
-      content: "\f003";
-    }
+		.wl-email a:before {
+			content: "\f003";
+		}
 
-    .wl-facebook a:before {
-      content: "\f082";
-    }
+		.wl-facebook a:before {
+			content: "\f082";
+		}
 
-    .wl-twitter a:before {
-      content: "\f081";
-    }
+		.wl-twitter a:before {
+			content: "\f081";
+		}
 
-    .wl-pinterest a:before {
-      content: "\f0d3";
-    }
-  }
+		.wl-pinterest a:before {
+			content: "\f0d3";
+		}
+	}
 }
 
 .button.wl-create-new {
-  &:before {
-    font-family: "FontAwesome";
-    content: "\f067";
-    margin-right: .53em;
-    font-weight: 400;
-  }
+	&:before {
+		font-family: "FontAwesome";
+		content: "\f067";
+		margin-right: .53em;
+		font-weight: 400;
+	}
 }
 
 .wl-list-pop {
-  background: $color-post-bg;
-  border-color: $color-post-border;
-  border-bottom-color: $color-post-shadow;
-  border-radius: $radius-post;
-  box-shadow: none;
+	background: $color-post-bg;
+	border-color: $color-post-border;
+	border-bottom-color: $color-post-shadow;
+	border-radius: $radius-post;
+	box-shadow: none;
 
-  dd {
-    font-size: .875em;
-    margin-left: 0;
-  }
+	dd {
+		font-size: .875em;
+		margin-left: 0;
+	}
 }

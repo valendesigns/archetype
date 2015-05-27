@@ -19,9 +19,9 @@
  * @since 1.0.0
  */
 function archetype_switch_theme() {
-  switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
-  unset( $_GET['activated'] );
-  add_action( 'admin_notices', 'archetype_upgrade_notice' );
+	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
+	unset( $_GET['activated'] );
+	add_action( 'admin_notices', 'archetype_upgrade_notice' );
 }
 add_action( 'after_switch_theme', 'archetype_switch_theme' );
 
@@ -34,7 +34,7 @@ add_action( 'after_switch_theme', 'archetype_switch_theme' );
  * @since 1.0.0
  */
 function archetype_upgrade_notice() {
-  printf( '<div class="error"><p>%s</p></div>', archetype_back_compat_msg() );
+	printf( '<div class="error"><p>%s</p></div>', archetype_back_compat_msg() );
 }
 
 /**
@@ -43,9 +43,9 @@ function archetype_upgrade_notice() {
  * @since 1.0.0
  */
 function archetype_customize() {
-  wp_die( archetype_back_compat_msg(), '', array(
-    'back_link' => true
-  ) );
+	wp_die( archetype_back_compat_msg(), '', array(
+		'back_link' => true
+	) );
 }
 add_action( 'load-customize.php', 'archetype_customize' );
 
@@ -55,9 +55,9 @@ add_action( 'load-customize.php', 'archetype_customize' );
  * @since 1.0.0
  */
 function archetype_preview() {
-  if ( isset( $_GET['preview'] ) ) {
-    wp_die( archetype_back_compat_msg() );
-  }
+	if ( isset( $_GET['preview'] ) ) {
+		wp_die( archetype_back_compat_msg() );
+	}
 }
 add_action( 'template_redirect', 'archetype_preview' );
 
@@ -67,6 +67,6 @@ add_action( 'template_redirect', 'archetype_preview' );
  * @since 1.0.0
  */
 function archetype_back_compat_msg() {
-  return sprintf( __( 'Archetype requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'archetype' ), $GLOBALS['wp_version'] );
-  }
+	return sprintf( __( 'Archetype requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'archetype' ), $GLOBALS['wp_version'] );
+	}
 }

@@ -1,9 +1,9 @@
 {
-  "preset": "wordpress",
-  "requirePaddingNewLinesBeforeLineComments": null,
-  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
-  "excludeFiles": [
-    "**/*.min.js",
-    "**/node_modules/**"
-  ]
+	"preset": "wordpress",
+	"requirePaddingNewLinesBeforeLineComments": null,
+	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+	"excludeFiles": [
+		"**/*.min.js",
+		"**/node_modules/**"
+	]
 }

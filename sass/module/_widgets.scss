@@ -3,104 +3,104 @@
  */
 
 .widget {
-  margin: 0 0 2.625em;
+	margin: 0 0 2.625em;
 
-  select {
-    max-width: 100%;
-  }
+	select {
+		max-width: 100%;
+	}
 
-  .widget-search .search-submit {
-    @include screen-reader-text();
-  }
+	.widget-search .search-submit {
+		@include screen-reader-text();
+	}
 
-  h3.widget-title {
-    letter-spacing: 0;
-    border-bottom: 3px solid $color-body;
-    padding: 0 0 1em;
-    margin-bottom: 1em;
+	h3.widget-title {
+		letter-spacing: 0;
+		border-bottom: 3px solid $color-body;
+		padding: 0 0 1em;
+		margin-bottom: 1em;
 
-    .footer-widgets & {
-      border-bottom: 0;
-      margin-bottom: 0;
-    }
-  }
+		.footer-widgets & {
+			border-bottom: 0;
+			margin-bottom: 0;
+		}
+	}
 
-  ul {
-    margin-left: 0;
-    list-style: none;
-    
-    ul {
-      margin-left: 1.618em;
-    }
-  }
+	ul {
+		margin-left: 0;
+		list-style: none;
+		
+		ul {
+			margin-left: 1.618em;
+		}
+	}
 }
 
 .widget-area {
-  .widget {
-    a.button {
-      font-weight: 700 !important;
-      color: $color-button;
+	.widget {
+		a.button {
+			font-weight: 700 !important;
+			color: $color-button;
 
-      &:hover {
-        color: $color-button-hover;
-      }
-    }
-    
-    &.widget_shopping_cart {
-      a.button {
-        font-size: .938em;
-        font-weight: normal !important;
-      }
-    }
-  }
+			&:hover {
+				color: $color-button-hover;
+			}
+		}
+		
+		&.widget_shopping_cart {
+			a.button {
+				font-size: .938em;
+				font-weight: normal !important;
+			}
+		}
+	}
 }
 
 .header-widget-region {
-  @include clearfix;
+	@include clearfix;
 
-  .widget {
-    margin: 0;
-    padding: 1em 0;
-    font-size: .938em;
-  }
+	.widget {
+		margin: 0;
+		padding: 1em 0;
+		font-size: .938em;
+	}
 }
 
 .widget_search,
 .widget_product_search,
 .error-404-search {
-  form {
-    position: relative;
-    margin-bottom: 0;
-    color: $color-search;
+	form {
+		position: relative;
+		margin-bottom: 0;
+		color: $color-search;
 
-    input[type=search] {
-      background-color: $color-search-bg;
-      width: 100%;
-      font-size: 1.067em;
-      padding: .75em 1em .75em 2.625em;
-      box-shadow: 0px -1px 0px $color-search-shadow inset;
-      border-radius: $radius-post;
-      color: $color-search;
-      
-      &:focus {
-        color: darken( $color-search, 10% );
-      }
-    }
+		input[type=search] {
+			background-color: $color-search-bg;
+			width: 100%;
+			font-size: 1.067em;
+			padding: .75em 1em .75em 2.625em;
+			box-shadow: 0px -1px 0px $color-search-shadow inset;
+			border-radius: $radius-post;
+			color: $color-search;
+			
+			&:focus {
+				color: darken( $color-search, 10% );
+			}
+		}
 
-    input[type=submit] {
-      display: none;
-    }
+		input[type=submit] {
+			display: none;
+		}
 
-    &:before {
-      content: "\f002";
-      font-family: "FontAwesome";
-      position: absolute;
-      top: .813em;
-      left: 1em;
-      line-height: 1;
-      color: inherit;
-    }
-  }
+		&:before {
+			content: "\f002";
+			font-family: "FontAwesome";
+			position: absolute;
+			top: .813em;
+			left: 1em;
+			line-height: 1;
+			color: inherit;
+		}
+	}
 }
 
 .widget_recent_entries,
@@ -112,155 +112,155 @@
 .widget_links,
 .widget_projects,
 .widget_project_types {
-  ul {
-    margin: 0;
+	ul {
+		margin: 0;
 
-    li {
-      list-style: none;
-      margin-bottom: .618em;
+		li {
+			list-style: none;
+			margin-bottom: .618em;
 
-      &:before {
-        font-family: "FontAwesome";
-        margin-right: .53em;
-        display: inline-block;
-        opacity: 0.35;
-      }
-    }
+			&:before {
+				font-family: "FontAwesome";
+				margin-right: .53em;
+				display: inline-block;
+				opacity: 0.35;
+			}
+		}
 
-    .sub-menu {
-      margin-top: .618em;
-      margin-left: 1.618em;
-    }
-  }
+		.sub-menu {
+			margin-top: .618em;
+			margin-left: 1.618em;
+		}
+	}
 }
 
 .widget-area,
 .footer-widgets {
-  #wp-calendar {
-    th,
-    td {
-      padding: .236em;
-      text-align: center;
-    }
-  }
+	#wp-calendar {
+		th,
+		td {
+			padding: .236em;
+			text-align: center;
+		}
+	}
 }
 
 .footer-widgets {
-  padding: 5.250em 0 2.625em 0;
+	padding: 5.250em 0 2.625em 0;
 }
 
 .widget_recent_entries,
 .widget_pages,
 .widget_projects,
 .widget_project_types {
-  ul {
-    li {
-      &:before {
-        content: "\f0f6";
-      }
-    }
+	ul {
+		li {
+			&:before {
+				content: "\f0f6";
+			}
+		}
 
-    ul.children {
-      margin: .618em 0 0 1.387em;
-    }
-  }
+		ul.children {
+			margin: .618em 0 0 1.387em;
+		}
+	}
 }
 
 .widget_categories {
-  ul {
-    li {
-      &:before {
-        content: "\f114";
-      }
+	ul {
+		li {
+			&:before {
+				content: "\f114";
+			}
 
-      &.current-cat {
-        &:before {
-          content: "\f115";
-        }
-      }
-    }
-  }
+			&.current-cat {
+				&:before {
+					content: "\f115";
+				}
+			}
+		}
+	}
 }
 
 .widget_archive {
-  ul {
-    li {
-      &:before {
-        content: "\f115";
-      }
-    }
-  }
+	ul {
+		li {
+			&:before {
+				content: "\f115";
+			}
+		}
+	}
 }
 
 .widget_recent_comments {
-  ul {
-    li {
-      &:before {
-        content: "\f0e5";
-      }
-    }
-  }
+	ul {
+		li {
+			&:before {
+				content: "\f0e5";
+			}
+		}
+	}
 }
 
 .widget_nav_menu {
-  ul {
-    li {
-      &:before {
-        content: "\f0f6";
-      }
-    }
-  }
+	ul {
+		li {
+			&:before {
+				content: "\f0f6";
+			}
+		}
+	}
 }
 
 .widget_links {
-  ul {
-    li {
-      &:before {
-        content: "\f08e";
-      }
-    }
-  }
+	ul {
+		li {
+			&:before {
+				content: "\f08e";
+			}
+		}
+	}
 }
 
 .widget-area {
-  .widget {
-    font-size: .938em;
+	.widget {
+		font-size: .938em;
 
-    h1.widget-title {
-      font-size: 1.387em;
-    }
+		h1.widget-title {
+			font-size: 1.387em;
+		}
 
-    a {
-      color: $color-body;
-      font-weight: 400;
+		a {
+			color: $color-body;
+			font-weight: 400;
 
-      &:hover {
-        color: $color-link;
-      }
-    }
-  }
+			&:hover {
+				color: $color-link;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 568px) {
-  .widget {
-    margin-bottom: 1.387em;
+	.widget {
+		margin-bottom: 1.387em;
 
-    h3.widget-title {
-      font-size: 1.5em;
-    }
-  }
+		h3.widget-title {
+			font-size: 1.5em;
+		}
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .widget {
-    margin-bottom: 2.125em;
-  }
+	.widget {
+		margin-bottom: 2.125em;
+	}
 }
 
 @media screen and (min-width: 74em) {
-  .widget {
-    h3.widget-title {
-      font-size: 1.5em;
-    }
-  }
+	.widget {
+		h3.widget-title {
+			font-size: 1.5em;
+		}
+	}
 }

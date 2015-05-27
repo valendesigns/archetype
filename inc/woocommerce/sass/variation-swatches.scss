@@ -5,25 +5,25 @@
  */
 
 .variations-table {
-  .swatch-wrapper {
-    padding: 0;
-    border: 0;
-    opacity: 0.5;
+	.swatch-wrapper {
+		padding: 0;
+		border: 0;
+		opacity: 0.5;
 
-    .swatch-anchor {
-      border-radius: .236em;
-    }
+		.swatch-anchor {
+			border-radius: .236em;
+		}
 
-    &.selected,
-    &:hover {
-      padding: 0;
-      border: 0;
-      opacity: 1;
-    }
-  }
+		&.selected,
+		&:hover {
+			padding: 0;
+			border: 0;
+			opacity: 1;
+		}
+	}
 }
 
 #variations_clear {
-  display: block;
-  margin-bottom: 1em;
+	display: block;
+	margin-bottom: 1em;
 }

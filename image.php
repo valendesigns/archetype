@@ -7,30 +7,30 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-    <?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-      <?php
-      /**
-       * @hooked archetype_image_navigation - 10
-       */
-      do_action( 'archetype_single_image_before' );
+			<?php
+			/**
+			 * @hooked archetype_image_navigation - 10
+			 */
+			do_action( 'archetype_single_image_before' );
 
-      get_template_part( 'content', 'image-attachment' );
-      
-      /**
-       * @hooked archetype_post_navigation - 10
-       * @hooked archetype_display_comments - 20
-       */
-      do_action( 'archetype_single_image_after' );
-      ?>
+			get_template_part( 'content', 'image-attachment' );
+			
+			/**
+			 * @hooked archetype_post_navigation - 10
+			 * @hooked archetype_display_comments - 20
+			 */
+			do_action( 'archetype_single_image_after' );
+			?>
 
-    <?php endwhile; // end of the loop. ?>
+		<?php endwhile; // end of the loop. ?>
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php do_action( 'archetype_sidebar' ); ?>
 <?php get_footer(); ?>

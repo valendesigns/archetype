@@ -42,11 +42,11 @@ require get_template_directory() . '/inc/option-tree/functions.php';
  * Customizer additions.
  */
 if ( is_archetype_customizer_enabled() ) {
-  require get_template_directory() . '/inc/customizer/hooks.php';
-  require get_template_directory() . '/inc/customizer/controls.php';
-  require get_template_directory() . '/inc/customizer/display.php';
-  require get_template_directory() . '/inc/customizer/functions.php';
-  require get_template_directory() . '/inc/customizer/custom-header.php';
+	require get_template_directory() . '/inc/customizer/hooks.php';
+	require get_template_directory() . '/inc/customizer/controls.php';
+	require get_template_directory() . '/inc/customizer/display.php';
+	require get_template_directory() . '/inc/customizer/functions.php';
+	require get_template_directory() . '/inc/customizer/custom-header.php';
 }
 
 /**
@@ -58,16 +58,16 @@ require get_template_directory() . '/inc/jetpack/jetpack.php';
  * Welcome screen
  */
 if ( is_admin() ) {
-  require get_template_directory() . '/inc/admin/welcome-screen.php';
+	require get_template_directory() . '/inc/admin/welcome-screen.php';
 }
 
 /**
  * Load WooCommerce compatibility files.
  */
 if ( is_woocommerce_activated() ) {
-  require get_template_directory() . '/inc/woocommerce/hooks.php';
-  require get_template_directory() . '/inc/woocommerce/functions.php';
-  require get_template_directory() . '/inc/woocommerce/template-tags.php';
-  require get_template_directory() . '/inc/woocommerce/controls.php';
-  require get_template_directory() . '/inc/woocommerce/integrations.php';
+	require get_template_directory() . '/inc/woocommerce/hooks.php';
+	require get_template_directory() . '/inc/woocommerce/functions.php';
+	require get_template_directory() . '/inc/woocommerce/template-tags.php';
+	require get_template_directory() . '/inc/woocommerce/controls.php';
+	require get_template_directory() . '/inc/woocommerce/integrations.php';
 }

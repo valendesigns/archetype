@@ -5,103 +5,103 @@
  */
 
 .widget_layered_nav {
-  ul.colors {
-    li {
-      a {
-        display: block;
-      }
+	ul.colors {
+		li {
+			a {
+				display: block;
+			}
 
-      .box {
-        border: 0;
-        display: inline-block;
-        box-sizing: border-box;
-        border-radius: .202em;
-        height: 1.618em;
-        width: 1.618em;
-        
-      }
+			.box {
+				border: 0;
+				display: inline-block;
+				box-sizing: border-box;
+				border-radius: .202em;
+				height: 1.618em;
+				width: 1.618em;
+				
+			}
 
-      &.chosen {
-        a {
-          opacity: 1;
+			&.chosen {
+				a {
+					opacity: 1;
 
-          &:hover {
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-  }
+					&:hover {
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+	}
 
-  ul.checkboxes {
-    li {
-      input {
-        margin-right: .618em;
-      }
-    }
-  }
+	ul.checkboxes {
+		li {
+			input {
+				margin-right: .618em;
+			}
+		}
+	}
 
-  ul.sizes {
-    li {
-      a {
-        opacity: 1;
-      }
+	ul.sizes {
+		li {
+			a {
+				opacity: 1;
+			}
 
-      .size-filter {
-        font-size: 1.067em;
-        height: 1.618em;
-        min-width: 1.618em;
-        text-align: center;
-        line-height: 1.618;
-        background-color: #fff;
-        border: 0;
-        opacity: 0.5;
-        font-weight: 300;
-        border-radius: .202em;
-        padding: 0 .5em;
+			.size-filter {
+				font-size: 1.067em;
+				height: 1.618em;
+				min-width: 1.618em;
+				text-align: center;
+				line-height: 1.618;
+				background-color: #fff;
+				border: 0;
+				opacity: 0.5;
+				font-weight: 300;
+				border-radius: .202em;
+				padding: 0 .5em;
 
-        &:hover {
-          opacity: 1;
-        }
-      }
+				&:hover {
+					opacity: 1;
+				}
+			}
 
-      &.chosen {
-        .size-filter {
-          opacity: 1;
+			&.chosen {
+				.size-filter {
+					opacity: 1;
 
-          &:hover {
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-  }
+					&:hover {
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+	}
 
-  ul.colors,
-  ul.checkboxes,
-  ul.sizes {
-    li {
-      &.chosen {
-        &:before {
-          display: none;
-        }
-      }
+	ul.colors,
+	ul.checkboxes,
+	ul.sizes {
+		li {
+			&.chosen {
+				&:before {
+					display: none;
+				}
+			}
 
-      &.show-count {
-        a {
-          display: inline-block;
-        }
+			&.show-count {
+				a {
+					display: inline-block;
+				}
 
-        .count {
-          float: right;
-          line-height: 1.618;
-          font-size: 1em;
-        }
-      }
+				.count {
+					float: right;
+					line-height: 1.618;
+					font-size: 1em;
+				}
+			}
 
-      &:before {
-        display: none;
-      }
-    }
-  }
+			&:before {
+				display: none;
+			}
+		}
+	}
 }

@@ -5,22 +5,22 @@
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-  display: none;
+	display: none;
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
-  display: block;
+	display: block;
 }
 
 .infinite-scroll.neverending .pagination {
-  display: none;
+	display: none;
 }
 
 .infinite-scroll.neverending .site-main {
-  position: relative;
+	position: relative;
 }
 
 .infinite-loader {
-  margin: 0 0 2.625em 50%;
+	margin: 0 0 2.625em 50%;
 }

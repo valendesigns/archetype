@@ -6,181 +6,181 @@
 
 .composite_summary .summary_element {
 
-  .summary_element_wrapper {
-    box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
+	.summary_element_wrapper {
+		box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
 
-    &.selected,
-    &.selected:hover {
-      box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.06 );
-    }
+		&.selected,
+		&.selected:hover {
+			box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.06 );
+		}
 
-    &:hover {
-      box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.03 );
-    }
+		&:hover {
+			box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.03 );
+		}
 
-    &.disabled,
-    &.disabled:hover {
-      box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
-    }
-  }
+		&.disabled,
+		&.disabled:hover {
+			box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
+		}
+	}
 }
 
 .single-product div.product {
-  .selection_thumbnail_hidden .component_selections .component_summary {
-    .component_data {
-      @include span(12 of 12);
-    }
-  }
+	.selection_thumbnail_hidden .component_selections .component_summary {
+		.component_data {
+			@include span(12 of 12);
+		}
+	}
 
-  .component_selections {
-    .component_summary {
-      border-bottom: 1px solid $color-post-border;
+	.component_selections {
+		.component_summary {
+			border-bottom: 1px solid $color-post-border;
 
-      .content {
-        margin-bottom: 1.618em;
-      }
+			.content {
+				margin-bottom: 1.618em;
+			}
 
-      .composited_product_images,
-      .images {
-        @include span(3 of 12);
+			.composited_product_images,
+			.images {
+				@include span(3 of 12);
 
-        a {
-          padding-right: 0;
-        }
+				a {
+					padding-right: 0;
+				}
 
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
 
-      .component_data {
-        @include span(last 9 of 12);
-        margin-left: 0;
-      }
-    }
+			.component_data {
+				@include span(last 9 of 12);
+				margin-left: 0;
+			}
+		}
 
-    .component_content,
-    .component_options {
-      padding: 0;
-    }
+		.component_content,
+		.component_options {
+			padding: 0;
+		}
 
-    .select_label {
-      display: block;
-      margin-bottom: 1em;
-    }
+		.select_label {
+			display: block;
+			margin-bottom: 1em;
+		}
 
-    .component_option_thumbnails {
+		.component_option_thumbnails {
 
-      .component_option_thumbnail {
-        margin-left: 5px; /* v2.5.5 compat */
-        box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
+			.component_option_thumbnail {
+				margin-left: 5px; /* v2.5.5 compat */
+				box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
 
-        &.selected,
-        &.selected:hover {
-          box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.06 );
-        }
+				&.selected,
+				&.selected:hover {
+					box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.06 );
+				}
 
-        &:hover {
-          box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.03 );
-        }
+				&:hover {
+					box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0.03 );
+				}
 
-        &.disabled,
-        &.disabled:hover {
-          box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
-        }
-      }
-    }
-  }
+				&.disabled,
+				&.disabled:hover {
+					box-shadow: 0px 0px 0px 4px rgba( 0, 0, 0, 0 );
+				}
+			}
+		}
+	}
 
-  .component.progressive .component_summary {
-    border-bottom: none;
-  }
+	.component.progressive .component_summary {
+		border-bottom: none;
+	}
 }
 
 .composite_navigation {
-  font-size: .909em;
+	font-size: .909em;
 }
 
 .archetype-full-width-content {
-  &.single-product div.product {
-    .selection_thumbnail_hidden .component_selections .component_summary {
-      .component_data {
-        @include span(12 of 12);
-      }
-    }
+	&.single-product div.product {
+		.selection_thumbnail_hidden .component_selections .component_summary {
+			.component_data {
+				@include span(12 of 12);
+			}
+		}
 
-    .component_selections {
-      .component_summary {
-        .composited_product_images,
-        .images {
-          @include span(3 of 12);
+		.component_selections {
+			.component_summary {
+				.composited_product_images,
+				.images {
+					@include span(3 of 12);
 
-          a {
-            padding-right: 0;
-          }
-        }
+					a {
+						padding-right: 0;
+					}
+				}
 
-        .component_data {
-          @include span(last 9 of 12);
-          margin-left: 0;
-        }
-      }
-    }
-  }
+				.component_data {
+					@include span(last 9 of 12);
+					margin-left: 0;
+				}
+			}
+		}
+	}
 }
 
 .swc-product-gallery-stacked,
 .swc-product-gallery-hidden {
-  &.single-product div.product {
-    .selection_thumbnail_hidden .component_selections .component_summary {
-      .component_data {
-        @include span(12 of 12);
-      }
-    }
+	&.single-product div.product {
+		.selection_thumbnail_hidden .component_selections .component_summary {
+			.component_data {
+				@include span(12 of 12);
+			}
+		}
 
-    .component_selections {
-      .component_summary {
-        .composited_product_images,
-        .images {
-          @include span(3 of 12);
+		.component_selections {
+			.component_summary {
+				.composited_product_images,
+				.images {
+					@include span(3 of 12);
 
-          a {
-            padding-right: 0;
-          }
-        }
+					a {
+						padding-right: 0;
+					}
+				}
 
-        .component_data {
-          @include span(last 9 of 12);
-        }
-      }
-    }
-  }
+				.component_data {
+					@include span(last 9 of 12);
+				}
+			}
+		}
+	}
 
-  &.archetype-full-width-content {
-    &.single-product div.product {
-      .selection_thumbnail_hidden .component_selections .component_summary {
-        .component_data {
-          @include span(12 of 12);
-        }
-      }
+	&.archetype-full-width-content {
+		&.single-product div.product {
+			.selection_thumbnail_hidden .component_selections .component_summary {
+				.component_data {
+					@include span(12 of 12);
+				}
+			}
 
-      .component_selections {
-        .component_summary {
-          .composited_product_images,
-          .images {
-            @include span(1 of 12);
+			.component_selections {
+				.component_summary {
+					.composited_product_images,
+					.images {
+						@include span(1 of 12);
 
-            a {
-              padding-right: 0;
-            }
-          }
+						a {
+							padding-right: 0;
+						}
+					}
 
-          .component_data {
-            @include span(last 9 of 12);
-          }
-        }
-      }
-    }
-  }
+					.component_data {
+						@include span(last 9 of 12);
+					}
+				}
+			}
+		}
+	}
 }

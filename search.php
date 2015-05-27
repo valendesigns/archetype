@@ -7,25 +7,25 @@
 
 get_header(); ?>
 
-  <section id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-    <?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-      <header class="page-header">
-        <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'archetype' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-      </header><!-- .page-header -->
+			<header class="page-header">
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'archetype' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			</header><!-- .page-header -->
 
-      <?php get_template_part( 'loop' ); ?>
+			<?php get_template_part( 'loop' ); ?>
 
-    <?php else : ?>
+		<?php else : ?>
 
-      <?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'content', 'none' ); ?>
 
-    <?php endif; ?>
+		<?php endif; ?>
 
-    </main><!-- #main -->
-  </section><!-- #primary -->
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
 <?php do_action( 'archetype_sidebar' ); ?>
 <?php get_footer(); ?>

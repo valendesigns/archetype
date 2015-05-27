@@ -3,255 +3,255 @@
  */
 
 @media screen and (min-width: 768px) {
-  .is-boxed .site {
-    max-width: 76.5em;
-    margin: 0 auto;
-  }
+	.is-boxed .site {
+		max-width: 76.5em;
+		margin: 0 auto;
+	}
 
-  .is-full-width.is-boxed .site {
-    margin: 0 2.625em;
-  }
+	.is-full-width.is-boxed .site {
+		margin: 0 2.625em;
+	}
 
-  .is-full-width .site {
-    max-width: 100%;
-  }
+	.is-full-width .site {
+		max-width: 100%;
+	}
 
-  .site-header {
-    .site-branding,
-    .site-logo-anchor,
-    .site-logo-link {
-      display: block;
-      @include span(4 of 12);
-      clear: both;
+	.site-header {
+		.site-branding,
+		.site-logo-anchor,
+		.site-logo-link {
+			display: block;
+			@include span(4 of 12);
+			clear: both;
 
-      img {
-        height: auto;
-        max-width: 100%;
-        max-height: none;
-      }
-    }
+			img {
+				height: auto;
+				max-width: 100%;
+				max-height: none;
+			}
+		}
 
-    .secondary-navigation {
-      @include span(last 8 of 12);
-    }
+		.secondary-navigation {
+			@include span(last 8 of 12);
+		}
 
-    .main-navigation {
-      @include span(full);
-      clear: both;
-    }
-  }
+		.main-navigation {
+			@include span(full);
+			clear: both;
+		}
+	}
 
-  .site-branding {
-    .site-description {
-      margin-bottom: 0;
-      display: block;
-    }
-  }
+	.site-branding {
+		.site-description {
+			margin-bottom: 0;
+			display: block;
+		}
+	}
 
-  .site-branding,
-  .site-header-cart,
-  .site-logo-anchor {
-    margin-bottom: 1em;
-  }
+	.site-branding,
+	.site-header-cart,
+	.site-logo-anchor {
+		margin-bottom: 1em;
+	}
 
-  .col-full {
-    @include clearfix;
-    @include container(71.25em);
-  }
+	.col-full {
+		@include clearfix;
+		@include container(71.25em);
+	}
 
-  .site-content {
-    @include clearfix;
-  }
+	.site-content {
+		@include clearfix;
+	}
 
-  .content-area {
-    @include span(9 of 12);
+	.content-area {
+		@include span(9 of 12);
 
-    .grid-alt & {
-      @include span(8 of 12);
-    }
-  }
+		.grid-alt & {
+			@include span(8 of 12);
+		}
+	}
 
-  .widget-area {
-    @include span(last 3 of 12);
-  }
+	.widget-area {
+		@include span(last 3 of 12);
+	}
 
-  .right-sidebar {
-    .content-area {
-      @include span(9 of 12);
-    }
+	.right-sidebar {
+		.content-area {
+			@include span(9 of 12);
+		}
 
-    .widget-area {
-      @include span(last 3 of 12);
-    }
+		.widget-area {
+			@include span(last 3 of 12);
+		}
 
-    &.grid-alt {
-      .content-area {
-        @include span(8 of 12);
-      }
+		&.grid-alt {
+			.content-area {
+				@include span(8 of 12);
+			}
 
-      .widget-area {
-        @include span(last 4 of 12);
-      }
-    }
-  }
+			.widget-area {
+				@include span(last 4 of 12);
+			}
+		}
+	}
 
-  .left-sidebar {
-    .content-area {
-      @include span(last 9 of 12);
-    }
+	.left-sidebar {
+		.content-area {
+			@include span(last 9 of 12);
+		}
 
-    .widget-area {
-      @include span(3 of 12);
-    }
-    
-    &.grid-alt {
-      .content-area {
-        @include span(last 8 of 12);
-      }
+		.widget-area {
+			@include span(3 of 12);
+		}
+		
+		&.grid-alt {
+			.content-area {
+				@include span(last 8 of 12);
+			}
 
-      .widget-area {
-        @include span(4 of 12);
-      }
-    }
-  }
+			.widget-area {
+				@include span(4 of 12);
+			}
+		}
+	}
 
-  .archetype-full-width-content {
-    .content-area {
-      @include span(full);
-    }
-    &.grid-alt {
-      .content-area {
-        @include span(full);
-      }
-    }
-  }
+	.archetype-full-width-content {
+		.content-area {
+			@include span(full);
+		}
+		&.grid-alt {
+			.content-area {
+				@include span(full);
+			}
+		}
+	}
 
-  .content-area,
-  .widget-area {
-    margin-bottom: 2.625em;
-  }
+	.content-area,
+	.widget-area {
+		margin-bottom: 2.625em;
+	}
 
-  /**
-   * Full width & homepage template
-   */
-  .page-template-template-homepage {
-    .content-area {
-      margin-bottom: 0;
-    }
-  }
+	/**
+	 * Full width & homepage template
+	 */
+	.page-template-template-homepage {
+		.content-area {
+			margin-bottom: 0;
+		}
+	}
 
-  .page-template-template-fullwidth-php,
-  .page-template-template-homepage-php {
-    .content-area {
-      @include span(full);
-    }
-    &.grid-alt {
-      .content-area {
-        @include span(full);
-      }
-    }
-  }
-  
-  .error-404 {
-    @include span(isolate 50% at 25%);
-  }
+	.page-template-template-fullwidth-php,
+	.page-template-template-homepage-php {
+		.content-area {
+			@include span(full);
+		}
+		&.grid-alt {
+			.content-area {
+				@include span(full);
+			}
+		}
+	}
+	
+	.error-404 {
+		@include span(isolate 50% at 25%);
+	}
 
-  /**
-   * Footer widgets
-   */
-  .footer-widgets {
-    @include clearfix;
+	/**
+	 * Footer widgets
+	 */
+	.footer-widgets {
+		@include clearfix;
 
-    &.col-2 {
-      .block {
-        @include span(6 of 12);
+		&.col-2 {
+			.block {
+				@include span(6 of 12);
 
-        &.footer-widget-2 {
-          @include last;
-        }
-      }
-    }
+				&.footer-widget-2 {
+					@include last;
+				}
+			}
+		}
 
-    &.col-3 {
-      .block {
-        @include span(4 of 12);
+		&.col-3 {
+			.block {
+				@include span(4 of 12);
 
-        &.footer-widget-3 {
-          @include last;
-        }
-      }
-    }
+				&.footer-widget-3 {
+					@include last;
+				}
+			}
+		}
 
-    &.col-4 {
-      .block {
-        @include span(3 of 12);
+		&.col-4 {
+			.block {
+				@include span(3 of 12);
 
-        &.footer-widget-4 {
-          @include last;
-        }
-      }
-    }
-  }
+				&.footer-widget-4 {
+					@include last;
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 74em) {
-  .col-full {
-    margin-left: 2.625em;
-    margin-right: 2.625em;
-    
-    .expand-full-width {
-      position: relative;
-      margin-left: -2.625em;
-      margin-right: -2.625em;
+	.col-full {
+		margin-left: 2.625em;
+		margin-right: 2.625em;
+		
+		.expand-full-width {
+			position: relative;
+			margin-left: -2.625em;
+			margin-right: -2.625em;
 
-      .col-full {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-  }
+			.col-full {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 74.001em) {
-  .col-full {
-    .is-full-width & {
-      @include container(full);
-      padding: 0 2.625em;
-    }
+	.col-full {
+		.is-full-width & {
+			@include container(full);
+			padding: 0 2.625em;
+		}
 
-    .expand-full-width {
-      margin-left: -46em;
-      margin-right: -46em;
+		.expand-full-width {
+			margin-left: -46em;
+			margin-right: -46em;
 
-      .is-boxed &,
-      .is-full-width & {
-        margin-left: -2.625em;
-        margin-right: -2.625em;
-      }
-    }
-  }
+			.is-boxed &,
+			.is-full-width & {
+				margin-left: -2.625em;
+				margin-right: -2.625em;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .col-full {
-    margin-left: 2.125em;
-    margin-right: 2.125em;
+	.col-full {
+		margin-left: 2.125em;
+		margin-right: 2.125em;
 
-    .expand-full-width {
-      margin-left: -2.125em;
-      margin-right: -2.125em;
-    }
-  }
+		.expand-full-width {
+			margin-left: -2.125em;
+			margin-right: -2.125em;
+		}
+	}
 }
 
 @media screen and (max-width: 568px) {
-  .col-full {
-    margin-left: 1.387em;
-    margin-right: 1.387em;
+	.col-full {
+		margin-left: 1.387em;
+		margin-right: 1.387em;
 
-    .expand-full-width {
-      margin-left: -1.387em;
-      margin-right: -1.387em;
-    }
-  }
+		.expand-full-width {
+			margin-left: -1.387em;
+			margin-right: -1.387em;
+		}
+	}
 }

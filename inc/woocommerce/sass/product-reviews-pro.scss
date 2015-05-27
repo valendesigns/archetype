@@ -6,223 +6,223 @@
 
 .woocommerce,
 .woocommerce-page {
-  #reviews {
-    textarea {
-      min-height: 7em;
-    }
-    
-    fieldset {
-      margin: 0;
-    } 
+	#reviews {
+		textarea {
+			min-height: 7em;
+		}
+		
+		fieldset {
+			margin: 0;
+		} 
 
-    .contributions-title,
-    .contributions-form-title,
-    #contributions-list-title {
-      margin-bottom: $spacing-v;
-    }
+		.contributions-title,
+		.contributions-form-title,
+		#contributions-list-title {
+			margin-bottom: $spacing-v;
+		}
 
-    .product-rating {
-      background: $color-post-bg;
-      margin-bottom: 2.625em;
-      padding: 2.625em;
-      box-shadow: 0px -1px 0px $color-post-shadow inset;
-      border-radius: $radius-post;
+		.product-rating {
+			background: $color-post-bg;
+			margin-bottom: 2.625em;
+			padding: 2.625em;
+			box-shadow: 0px -1px 0px $color-post-shadow inset;
+			border-radius: $radius-post;
 
-      .product-rating-summary,
-      .product-rating-details {
-        display: block;
-        width: 100%;
-      }
+			.product-rating-summary,
+			.product-rating-details {
+				display: block;
+				width: 100%;
+			}
 
-      .product-rating-summary {
-        text-align: left;
-      }
+			.product-rating-summary {
+				text-align: left;
+			}
 
-      .product-rating-details {
-        table {
-          td {
-            padding: .313em .625em;
+			.product-rating-details {
+				table {
+					td {
+						padding: .313em .625em;
 
-            &.rating-graph {
-              .bar {
-                background-color: $color-body;
-              }
-            }
+						&.rating-graph {
+							.bar {
+								background-color: $color-body;
+							}
+						}
 
-            &.rating-count {
-              a {
-                text-decoration: none;
-              }
-            }
-          }
-        }
-      }
-    }
-    
-    .contribution-form-wrapper {
-      .form-contribution {
-        border: 0;
-        background: $color-post-bg;
-        margin-bottom: 2.625em;
-        padding: 2.625em;
-        box-shadow: 0px -1px 0px $color-post-shadow inset;
-        border-radius: $radius-post;
-      }
-    }
+						&.rating-count {
+							a {
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		.contribution-form-wrapper {
+			.form-contribution {
+				border: 0;
+				background: $color-post-bg;
+				margin-bottom: 2.625em;
+				padding: 2.625em;
+				box-shadow: 0px -1px 0px $color-post-shadow inset;
+				border-radius: $radius-post;
+			}
+		}
 
-    #comments {
+		#comments {
 
-      .woocommerce-error {
-        margin-left: 0 !important;
-      }
+			.woocommerce-error {
+				margin-left: 0 !important;
+			}
 
-      .form-contribution_comment {
-        margin-left: 0 !important;
-      }
+			.form-contribution_comment {
+				margin-left: 0 !important;
+			}
 
-      ol.commentlist {
-        list-style: none;
-        margin: 0;
+			ol.commentlist {
+				list-style: none;
+				margin: 0;
 
-        li {
-          background: $color-post-bg;
-          margin-bottom: 2.625em;
-          padding: 2.625em;
-          box-shadow: 0px -1px 0px $color-post-shadow inset;
-          border-radius: $radius-post;
+				li {
+					background: $color-post-bg;
+					margin-bottom: 2.625em;
+					padding: 2.625em;
+					box-shadow: 0px -1px 0px $color-post-shadow inset;
+					border-radius: $radius-post;
 
-          img.avatar {
-            width: 2.625em;
-            height: auto;
-            margin: 0;
-            float: right;
-          }
+					img.avatar {
+						width: 2.625em;
+						height: auto;
+						margin: 0;
+						float: right;
+					}
 
-          .comment-text {
-            margin-left: 0;
+					.comment-text {
+						margin-left: 0;
 
-            img,
-            iframe,
-            .fluid-media {
-              margin-bottom: 1.618em;
-            }
-          }
+						img,
+						iframe,
+						.fluid-media {
+							margin-bottom: 1.618em;
+						}
+					}
 
-          .contribution-actions {
+					.contribution-actions {
 
-            a {
-              color: $color-link;
-              font-size: 1.125em;
-              line-height: 1.333;
-              
-              &.vote-down:before {
-                position: relative;
-                top: 3px;
-              }
+						a {
+							color: $color-link;
+							font-size: 1.125em;
+							line-height: 1.333;
+							
+							&.vote-down:before {
+								position: relative;
+								top: 3px;
+							}
 
-              &.done {
-                opacity: 0.5;
-              }
-            }
-          }
-        }
-      }
+							&.done {
+								opacity: 0.5;
+							}
+						}
+					}
+				}
+			}
 
-      .woocommerce-noreviews {
-        display: block;
-      }
-    }
+			.woocommerce-noreviews {
+				display: block;
+			}
+		}
 
-    .contribution-flag-form {
-      background-color: $color-post-bg;
-      padding: 0;
-      margin-bottom: 1.618em;
-    }
-  }
+		.contribution-flag-form {
+			background-color: $color-post-bg;
+			padding: 0;
+			margin-bottom: 1.618em;
+		}
+	}
 
-  .form-photo {
-    #photo_attachment_file {
-      color: inherit;
-      margin: 1em 0;
-    }
-  }
+	.form-photo {
+		#photo_attachment_file {
+			color: inherit;
+			margin: 1em 0;
+		}
+	}
 
 	.contribution-type-selector {
-    margin: 0;
+		margin: 0;
 
-    > a {
-      display: inline-block;
-      margin: 0;
-      padding: 1em;
+		> a {
+			display: inline-block;
+			margin: 0;
+			padding: 1em;
 
-      &.active {
-        background: $color-post-bg;
-      }
-    }
-  }
+			&.active {
+				background: $color-post-bg;
+			}
+		}
+	}
 
 	.star-rating-selector:not(:checked) {
-    input:checked ~ label.checkbox,
-    label.checkbox:hover,
-    label.checkbox:hover ~ label.checkbox,
-    input:checked+label.checkbox:hover,
-    input:checked+label.checkbox:hover ~ label.checkbox,
-    input:checked ~ label.checkbox:hover,
-    input:checked ~ label.checkbox:hover ~ label.checkbox,
-    label.checkbox:hover ~ input:checked ~ label.checkbox {
-      color: $color-link;
-    }
-  }
+		input:checked ~ label.checkbox,
+		label.checkbox:hover,
+		label.checkbox:hover ~ label.checkbox,
+		input:checked+label.checkbox:hover,
+		input:checked+label.checkbox:hover ~ label.checkbox,
+		input:checked ~ label.checkbox:hover,
+		input:checked ~ label.checkbox:hover ~ label.checkbox,
+		label.checkbox:hover ~ input:checked ~ label.checkbox {
+			color: $color-link;
+		}
+	}
 }
 
 #tiptip_content,
 .chart-tooltip {
-  font-size: .875em;
-  padding: .5em 1em;
-  background-color: rgba(0,0,0,0.8);
+	font-size: .875em;
+	padding: .5em 1em;
+	background-color: rgba(0,0,0,0.8);
 }
 
 #tiptip_holder.tip_bottom #tiptip_arrow_inner {
-  border-bottom-color: rgba(0,0,0,0.8);
-  margin-top: -6px;
+	border-bottom-color: rgba(0,0,0,0.8);
+	margin-top: -6px;
 }
 
 @media screen and (max-width: 568px) {
-  .woocommerce,
-  .woocommerce-page {
-    #reviews {
-      .product-rating,
-      .contribution-form-wrapper .form-contribution,
-      #comments ol.commentlist li {
-        margin-bottom: 1.387em;
-        padding: 1.387em;
-      }
-    }
-    .contribution-type-selector {
-      > a {
-        padding: .75em .5em;
-        font-size: .875em;
-      }
-    }
-  }
+	.woocommerce,
+	.woocommerce-page {
+		#reviews {
+			.product-rating,
+			.contribution-form-wrapper .form-contribution,
+			#comments ol.commentlist li {
+				margin-bottom: 1.387em;
+				padding: 1.387em;
+			}
+		}
+		.contribution-type-selector {
+			> a {
+				padding: .75em .5em;
+				font-size: .875em;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .woocommerce,
-  .woocommerce-page {
-    #reviews {
-      .product-rating,
-      .contribution-form-wrapper .form-contribution,
-      #comments ol.commentlist li {
-        margin-bottom: 2.125em;
-        padding: 2.125em;
-      }
-    }
-    .contribution-type-selector {
-      > a {
-        padding: .75em;
-        font-size: .938em;
-      }
-    }
-  }
+	.woocommerce,
+	.woocommerce-page {
+		#reviews {
+			.product-rating,
+			.contribution-form-wrapper .form-contribution,
+			#comments ol.commentlist li {
+				margin-bottom: 2.125em;
+				padding: 2.125em;
+			}
+		}
+		.contribution-type-selector {
+			> a {
+				padding: .75em;
+				font-size: .938em;
+			}
+		}
+	}
 }

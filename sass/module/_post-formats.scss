@@ -4,257 +4,257 @@
 
 .format-status,
 .format-quote {
-  .entry-body {
-    font-size: 1.500em;
-    font-weight: 300;
+	.entry-body {
+		font-size: 1.500em;
+		font-weight: 300;
 
-    p {
-      margin: 0 0 $spacing-v-smaller;
-    }
+		p {
+			margin: 0 0 $spacing-v-smaller;
+		}
 
-    ul,
-    ol {
-      margin: 0 0 $spacing-v-smaller $spacing-v-smaller;
-    }
+		ul,
+		ol {
+			margin: 0 0 $spacing-v-smaller $spacing-v-smaller;
+		}
 
-    li > ul,
-    li > ol {
-      margin-left: $spacing-v-smaller;
-    }
+		li > ul,
+		li > ol {
+			margin-left: $spacing-v-smaller;
+		}
 
-    dd {
-      margin: 0 0 $spacing-v-smaller;
-    }
+		dd {
+			margin: 0 0 $spacing-v-smaller;
+		}
 
-    blockquote {
-      padding: 0 $spacing-v-smaller;
-    }
+		blockquote {
+			padding: 0 $spacing-v-smaller;
+		}
 
-    address {
-      margin: 0 0 $spacing-v-smaller;
-    }
+		address {
+			margin: 0 0 $spacing-v-smaller;
+		}
 
-    pre {
-      margin-bottom: $spacing-v-smaller;
-      padding: $spacing-v-smaller;
-    }
-  }
+		pre {
+			margin-bottom: $spacing-v-smaller;
+			padding: $spacing-v-smaller;
+		}
+	}
 }
 
 .format-quote {
-  .entry-header {
-    padding: 2.625em;
-    padding-bottom: 0;
-  }
+	.entry-header {
+		padding: 2.625em;
+		padding-bottom: 0;
+	}
 
-  .entry-content {
-    padding: 2.625em;
-  }
+	.entry-content {
+		padding: 2.625em;
+	}
 }
 
 .format-quote {
-  .entry-header {
-    background-color: $color-button-bg;
+	.entry-header {
+		background-color: $color-button-bg;
 
-    h1 {
-      color: $color-button;
+		h1 {
+			color: $color-button;
 
-      a {
-        color: $color-button;
+			a {
+				color: $color-button;
 
-        &:hover {
-          border-bottom: 1px solid $color-button;
-        }
-      }
-    }
-  }
+				&:hover {
+					border-bottom: 1px solid $color-button;
+				}
+			}
+		}
+	}
 
-  .entry-content {
-    background-color: $color-button-bg;
-    color: $color-button;
+	.entry-content {
+		background-color: $color-button-bg;
+		color: $color-button;
 
-    .entry-body {
-      a {
-        color: $color-button;
-        border-bottom: 1px solid $color-button;
+		.entry-body {
+			a {
+				color: $color-button;
+				border-bottom: 1px solid $color-button;
 
-        &:hover {
-          border-bottom: 0 !important;
-        }
-      }
-    }
+				&:hover {
+					border-bottom: 0 !important;
+				}
+			}
+		}
 
-    figure {
+		figure {
 
-      figcaption {
-        font-size: 0.667em;
+			figcaption {
+				font-size: 0.667em;
 
-        &:before {
-          content: "— ";
-        }
-      }
-    }
+				&:before {
+					content: "— ";
+				}
+			}
+		}
 
-    blockquote {
-      font-style: normal;
-      border: 0;
-      padding: 0 1.75em 0 0;
-      margin: 0;
-      position: relative;
+		blockquote {
+			font-style: normal;
+			border: 0;
+			padding: 0 1.75em 0 0;
+			margin: 0;
+			position: relative;
 
-      &:before {
-        display: inline-block;
-        font-family: "FontAwesome";
-        content: "\f10e";
-        font-size: 1.250em;
-        position: absolute;
-        right: 0;
-        top: -.1em;
+			&:before {
+				display: inline-block;
+				font-family: "FontAwesome";
+				content: "\f10e";
+				font-size: 1.250em;
+				position: absolute;
+				right: 0;
+				top: -.1em;
 
-        .rtl & {
-          content: "\f10d";
-        }
-      }
-    }
-  }
+				.rtl & {
+					content: "\f10d";
+				}
+			}
+		}
+	}
 
-  .author-info,
-  .entry-meta {
-    border-color: $color-button-border;
-  }
+	.author-info,
+	.entry-meta {
+		border-color: $color-button-border;
+	}
 
-  .author-info + .entry-meta {
-    border-color: $color-post-border;
-  }
+	.author-info + .entry-meta {
+		border-color: $color-post-border;
+	}
 }
 
 .format-chat {
-  .entry-content {
-    padding-left: 2.625em;
-    padding-right: 2.625em;
+	.entry-content {
+		padding-left: 2.625em;
+		padding-right: 2.625em;
 
-    .chat-transcript {
-      list-style: none;
-      margin: 0 -2.625em;
-      padding: 0;
+		.chat-transcript {
+			list-style: none;
+			margin: 0 -2.625em;
+			padding: 0;
 
-      li {
-        @include clearfix;
-        padding: 1em 2.625em;
+			li {
+				@include clearfix;
+				padding: 1em 2.625em;
 
-        &:nth-child(odd) {
-          background: rgba(0,0,0,0.025);
-        }
+				&:nth-child(odd) {
+					background: rgba(0,0,0,0.025);
+				}
 
-        .chat-header {
-          overflow: hidden;
-          margin-bottom: .25em;
+				.chat-header {
+					overflow: hidden;
+					margin-bottom: .25em;
 
-          &:before {
-            content: "\f0e5";
-            display: inline-block;
-            font-family: "FontAwesome";
-            font-weight: normal;
-            font-size: 0.875em;
-            margin-right: .375em;
-            position: relative;
-            width: 1em;
-            top: .071em;
-            float: left;
-          }
-        }
+					&:before {
+						content: "\f0e5";
+						display: inline-block;
+						font-family: "FontAwesome";
+						font-weight: normal;
+						font-size: 0.875em;
+						margin-right: .375em;
+						position: relative;
+						width: 1em;
+						top: .071em;
+						float: left;
+					}
+				}
 
-        .chat-datetime,
-        .chat-author {
-          margin-right: 0.250em;
-          position: relative;
-        }
+				.chat-datetime,
+				.chat-author {
+					margin-right: 0.250em;
+					position: relative;
+				}
 
-        .chat-datetime {
-          float: right;
-          font-size: 0.875em;
-          margin-top: .214em;
-          opacity: .75;
-        }
+				.chat-datetime {
+					float: right;
+					font-size: 0.875em;
+					margin-top: .214em;
+					opacity: .75;
+				}
 
-        .chat-author {
-          float: left;
-          font-weight: 700;
+				.chat-author {
+					float: left;
+					font-weight: 700;
 
-          &:after {
-            content: ": ";
-            font-weight: normal;
-          }
+					&:after {
+						content: ": ";
+						font-weight: normal;
+					}
 
-          .fn {
-            font-style: normal;
-          }
-        }
+					.fn {
+						font-style: normal;
+					}
+				}
 
-        p:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 
-    .chat-transcript + p {
-      margin-top: $spacing-v;
-    }
-  }
+		.chat-transcript + p {
+			margin-top: $spacing-v;
+		}
+	}
 }
 
 @media screen and (max-width: 568px) {
-  .format-quote {
-    .entry-header {
-      padding: 1.387em;
-      padding-bottom: 0;
-    }
+	.format-quote {
+		.entry-header {
+			padding: 1.387em;
+			padding-bottom: 0;
+		}
 
-    .entry-content {
-      padding: 1.387em;
-    }
-  }
+		.entry-content {
+			padding: 1.387em;
+		}
+	}
 
-  .format-chat {
-    .entry-content {
-      padding-left: 1.387em;
-      padding-right: 1.387em;
-    }
-  }
+	.format-chat {
+		.entry-content {
+			padding-left: 1.387em;
+			padding-right: 1.387em;
+		}
+	}
 
-  .chat-transcript {
-    margin: 0 -1.387em;
+	.chat-transcript {
+		margin: 0 -1.387em;
 
-    li {
-      padding: 1em 1.387em;
-    }
-  }
+		li {
+			padding: 1em 1.387em;
+		}
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .format-quote {
-    .entry-header {
-      padding: 2.125em;
-      padding-bottom: 0;
-    }
+	.format-quote {
+		.entry-header {
+			padding: 2.125em;
+			padding-bottom: 0;
+		}
 
-    .entry-content {
-      padding: 2.125em;
-    }
-  }
+		.entry-content {
+			padding: 2.125em;
+		}
+	}
 
-  .format-chat {
-    .entry-content {
-      padding-left: 2.125em;
-      padding-right: 2.125em;
-    }
-  }
+	.format-chat {
+		.entry-content {
+			padding-left: 2.125em;
+			padding-right: 2.125em;
+		}
+	}
 
-  .chat-transcript {
-    margin: 0 -2.125em;
+	.chat-transcript {
+		margin: 0 -2.125em;
 
-    li {
-      padding: 1em 2.125em;
-    }
-  }
+		li {
+			padding: 1em 2.125em;
+		}
+	}
 }

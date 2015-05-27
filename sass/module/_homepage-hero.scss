@@ -1,49 +1,49 @@
 .archetype-homepage-hero {
-  text-align: center;
-  background-position: 50% 0;
+	text-align: center;
+	background-position: 50% 0;
 }
 
 section + .archetype-homepage-hero {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .archetype-homepage-hero .col-full {
-  padding: 5.250em 0;
+	padding: 5.250em 0;
 }
 
 .is-full-width .archetype-homepage-hero .col-full {
-  padding-left: 2.625em;
-  padding-right: 2.625em;
+	padding-left: 2.625em;
+	padding-right: 2.625em;
 }
 
 .archetype-homepage-hero.fixed {
-  margin-left: 0;
-  margin-right: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .archetype-homepage-hero.left {
-  text-align: left;
+	text-align: left;
 }
 
 .archetype-homepage-hero.right {
-  text-align: right;
+	text-align: right;
 }
 
 @media screen and (max-width: 74em) {
-  .archetype-homepage-hero .col-full {
-    padding: 5.250em 2.625em;
-  }
+	.archetype-homepage-hero .col-full {
+		padding: 5.250em 2.625em;
+	}
 }
 
 @media screen and (max-width: 568px) {
-  .archetype-homepage-hero .col-full {
-    padding: 2.750em 1.387em;
-  }
+	.archetype-homepage-hero .col-full {
+		padding: 2.750em 1.387em;
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .is-full-width .archetype-homepage-hero .col-full {
-    padding-left: 2.125em;
-    padding-right: 2.125em;
-  }
+	.is-full-width .archetype-homepage-hero .col-full {
+		padding-left: 2.125em;
+		padding-right: 2.125em;
+	}
 }
