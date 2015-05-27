@@ -73,6 +73,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) {
     do_action( 'archetype_customize_register', $wp_customize );
 
     if ( current_theme_supports( 'site-logo' ) && class_exists( 'Site_Logo', false ) ) {
+      // Add tagline description
+      $wp_customize->get_section( 'title_tagline' )->description = __( 'Site Title & Tagline do not display when a logo is added.', 'archetype' );
+
       // Add the setting for our svg logo.
       $wp_customize->add_setting( 'archetype_site_logo_svg', array(
         'capability'        => 'manage_options',
