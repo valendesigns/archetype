@@ -4,6 +4,7 @@
  *
  * @package archetype
  */
+
 ?>
 
 <div class="author-info">

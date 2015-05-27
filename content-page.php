@@ -4,13 +4,17 @@
  *
  * @package archetype
  */
-if ( is_page_template( 'template-homepage.php' ) && get_the_content() == '' )
+
+if ( is_page_template( 'template-homepage.php' ) && get_the_content() == '' ) {
 	return;
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/**
+	 * Default hooks
+	 *
 	 * @hooked archetype_page_header - 10
 	 * @hooked archetype_page_content - 20
 	 */

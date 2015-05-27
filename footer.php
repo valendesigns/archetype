@@ -6,6 +6,7 @@
  *
  * @package archetype
  */
+
 ?>
 
 		</div><!-- .col-full -->
@@ -19,6 +20,8 @@
 
 			<?php
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_footer_widgets - 10
 			 */
 			do_action( 'archetype_footer' ); ?>
@@ -31,6 +34,8 @@
 
 				<?php
 				/**
+				 * Default hooks
+				 *
 				 * @hooked archetype_social_icons - 10
 				 * @hooked archetype_credit - 20
 				 */

@@ -14,20 +14,24 @@ get_header(); ?>
 
 			<?php
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_image_navigation - 10
 			 */
 			do_action( 'archetype_single_image_before' );
 
 			get_template_part( 'content', 'image-attachment' );
-			
+
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_post_navigation - 10
 			 * @hooked archetype_display_comments - 20
 			 */
 			do_action( 'archetype_single_image_after' );
 			?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

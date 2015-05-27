@@ -6,6 +6,7 @@
  *
  * @package archetype
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php archetype_html_tag_schema(); ?> class="no-js">
 <head>
@@ -20,8 +21,10 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<?php 
+	<?php
 	/**
+	 * Default hooks
+	 *
 	 * @hooked archetype_skip_links - 0
 	 */
  	do_action( 'archetype_before_header' ); ?>
@@ -30,6 +33,8 @@
 
 		<?php
 		/**
+		 * Default hooks
+		 *
 		 * @hooked archetype_social_icons - 10
 		 */
 		do_action( 'archetype_inside_header' ); ?>
@@ -38,6 +43,8 @@
 
 			<?php
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_site_branding - 10
 			 * @hooked archetype_secondary_navigation - 20
 			 */
@@ -49,6 +56,8 @@
 
 			<?php
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_primary_navigation - 10
 			 */
 			do_action( 'archetype_navigation' ); ?>
@@ -59,6 +68,8 @@
 
 	<?php
 	/**
+	 * Default hooks
+	 *
 	 * @hooked archetype_header_widget_region - 10
 	 */
 	do_action( 'archetype_before_content' ); ?>
@@ -68,6 +79,8 @@
 
 		<?php
 		/**
+		 * Default hooks
+		 *
 		 * @hooked woocommerce_breadcrumb - 10
 		 */
 		do_action( 'archetype_content_top' ); ?>
