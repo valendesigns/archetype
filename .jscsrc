@@ -1,0 +1,8 @@
+{
+	"preset": "wordpress",
+	"requirePaddingNewLinesBeforeLineComments": null,
+	"excludeFiles": [
+		"**/*.min.js",
+		"**/node_modules/**"
+	]
+}
