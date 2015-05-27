@@ -126,7 +126,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		.hentry .entry-header h1 a:hover {
 			border-color: ' . $heading_color . ';
 		}';
-		
+
 		// Link Color.
 		$link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color', apply_filters( 'archetype_default_link_color', '#ee543f' ) ) );
 
@@ -149,7 +149,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		.error-404 h1 {
 			border-color: ' . $link_color . ';
 		}';
-		
+
 		// Link Color Hover.
 		$link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color_hover', apply_filters( 'archetype_default_link_color_hover', '#111' ) ) );
 
@@ -189,7 +189,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		.site-header a:hover {
 			color: ' . $header_link_color_hover . ';
 		}';
-		
+
 		// Navigation Background Color.
 		$nav_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_background_color', apply_filters( 'archetype_default_nav_background_color', '#2f3538' ) ) );
 
@@ -200,7 +200,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 				background-color: ' . $nav_background_color . ';
 			}
 		}';
-		
+
 		// Navigation Link Color.
 		$nav_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color', apply_filters( 'archetype_default_nav_link_color', '#bbb' ) ) );
 
@@ -208,7 +208,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		.main-navigation ul li a {
 			color: ' . $nav_link_color . ';
 		}';
-		
+
 		// Navigation Link Hover Color.
 		$nav_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_hover_color', apply_filters( 'archetype_default_nav_link_hover_color', '#fff' ) ) );
 
@@ -216,7 +216,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		.main-navigation ul li a:hover {
 			color: ' . $nav_link_color_hover . ';
 		}';
-		
+
 		// Navigation Link Hover Background Color.
 		$nav_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_hover_background_color', apply_filters( 'archetype_default_nav_link_hover_background_color', '#2f3538' ) ) );
 
@@ -227,10 +227,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 				background-color: ' . $nav_link_color_hover_bg . ';
 			}
 		}';
-		
+
 		// Navigation Link Active Color.
 		$nav_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_active_color', apply_filters( 'archetype_default_nav_link_active_color', '#fff' ) ) );
-		
+
 		// Navigation Link Active Background Color.
 		$nav_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_active_background_color', apply_filters( 'archetype_default_nav_link_active_background_color', '#24282A' ) ) );
 
@@ -241,30 +241,30 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			color: ' . $nav_link_color_active . ';
 			background-color: ' . $nav_link_color_active_bg . ';
 		}';
-		
+
 				// Secondary Navigation Color.
 				$nav_alt_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_color', apply_filters( 'archetype_nav_alt_alt_color', '#bbb' ) ) );
-		
+
 				$style .= '
 		.secondary-navigation {
 			color: ' . $nav_alt_color . ';
 		}';
-		
+
 		// Secondary Navigation Background Color.
 		$nav_alt_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_background_color', apply_filters( 'archetype_default_nav_alt_background_color', '#41484d' ) ) );
-		
+
 		// Secondary Navigation Link Color.
 		$nav_alt_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_color', apply_filters( 'archetype_default_nav_alt_link_color', '#ddd' ) ) );
 
 		// Secondary Navigation Link Hover Color.
 		$nav_alt_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_hover_color', apply_filters( 'archetype_default_nav_alt_link_hover_color', '#fff' ) ) );
-		
+
 		// Secondary Navigation Link Hover Background Color.
 		$nav_alt_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_hover_background_color', apply_filters( 'archetype_default_nav_alt_link_hover_background_color', '#464e54' ) ) );
-		
+
 		// Secondary Navigation Link Active Color.
 		$nav_alt_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_active_color', apply_filters( 'archetype_default_nav_alt_link_active_color', '#fff' ) ) );
-		
+
 		// Secondary Navigation Link Active Background Color.
 		$nav_alt_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_link_active_background_color', apply_filters( 'archetype_default_nav_alt_link_active_background_color', '#3b4146' ) ) );
 
@@ -296,7 +296,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		// Get the RGB value from hex and set the comment rgba `border-color` for our tricky triangle shape.
 		$rgb = archetype_rgb_from_hex( $post_background_color );
-		$border_color = 3 === count( $rgb ) ? 'border-color: rgba(' . $rgb[ 'r' ] . ', ' . $rgb[ 'g' ] . ', ' . $rgb[ 'b' ] . ', 0);' : '';
+		$border_color = ( 3 === count( $rgb ) ) ? 'border-color: rgba(' . $rgb['r'] . ', ' . $rgb['g'] . ', ' . $rgb['b'] . ', 0);' : '';
 
 		$style .= '
 		article + .author-info,
@@ -693,7 +693,7 @@ if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) :
 		$styles[] = "background-color: $background_color;";
 		$styles[] = "background-image: url($background_img);";
 		$styles[] = "background-size: $background_img_size;";
-		$styles[] = "background-repeat: no-repeat;";
+		$styles[] = 'background-repeat: no-repeat;';
 		?>
 		<section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
 			<div class="col-full">

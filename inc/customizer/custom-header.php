@@ -1,18 +1,11 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
+ * Implementation of the Custom Header feature
  * http://codex.wordpress.org/Custom_Headers
  *
- * You can add an optional custom header image to header.php like so ...
-
-	<?php if ( get_header_image() ) : ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-	</a>
-	<?php endif; // End header image check. ?>
-
- *
- * @package archetype
+ * @package Archetype
+ * @subpackage Customize
+ * @since 1.0.0
  */
 
 /**
@@ -21,6 +14,8 @@
  * @uses archetype_header_style()
  * @uses archetype_admin_header_style()
  * @uses archetype_admin_header_image()
+ *
+ * @since 1.0.0
  */
 function archetype_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'archetype_custom_header_args', array(
