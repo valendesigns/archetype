@@ -1,14 +1,19 @@
 <?php
 /**
  * Class to create a custom arbitrary html control for dividers etc
+ *
+ * @since 1.0.0
+ *
+ * @category customizer
+ * @package archetype
  */
 class Archetype_Arbitrary_Control extends WP_Customize_Control {
 	public $settings    = 'blogname';
 	public $description = '';
 
 	/**
-	* Render the content on the theme customizer page
-	*/
+	 * Render the content on the theme customizer page
+	 */
 	public function render_content() {
 		switch ( $this->type ) {
 			default:

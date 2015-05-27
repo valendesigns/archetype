@@ -3,6 +3,9 @@
  * Welcome Screen Class
  * Sets up the welcome screen page, hides the menu item
  * and contains the screen content.
+ *
+ * @category admin
+ * @package archetype
  */
 class Archetype_Welcome {
 
@@ -15,7 +18,7 @@ class Archetype_Welcome {
 		add_action( 'admin_menu', array( $this, 'archetype_welcome_register_menu' ) );
 		add_action( 'load-themes.php', array( $this, 'archetype_activation_admin_notice' ) );
 
-		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_intro' ), 				10 );
+		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_intro' ), 10 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_getting_started' ), 	20 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_addons' ), 				30 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_who' ), 				40 );
@@ -24,19 +27,21 @@ class Archetype_Welcome {
 
 	/**
 	 * Adds an admin notice upon successful activation.
-	 * @since 1.0.3
+	 *
+	 * @since 1.0.0
 	 */
 	public function archetype_activation_admin_notice() {
 		global $pagenow;
 
-		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) { // input var okay
+		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) { // Input var okay.
 			add_action( 'admin_notices', array( $this, 'archetype_welcome_admin_notice' ), 99 );
 		}
 	}
 
 	/**
 	 * Display an admin notice linking to the welcome screen
-	 * @since 1.0.3
+	 *
+	 * @since 1.0.0
 	 */
 	public function archetype_welcome_admin_notice() {
 		?>
@@ -49,7 +54,9 @@ class Archetype_Welcome {
 
 	/**
 	 * Creates the dashboard page
+	 *
 	 * @see	add_theme_page()
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_register_menu() {
@@ -58,6 +65,7 @@ class Archetype_Welcome {
 
 	/**
 	 * The welcome screen
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_screen() {
@@ -69,6 +77,8 @@ class Archetype_Welcome {
 
 			<?php
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_welcome_intro - 10
 			 * @hooked archetype_welcome_getting_started - 20
 			 * @hooked archetype_welcome_addons - 30
@@ -82,6 +92,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen intro
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_intro() {
@@ -107,6 +118,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen about section
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_who() {
@@ -145,12 +157,13 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen getting started section
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_getting_started() {
-		// get theme customizer url
-		$url = admin_url() . 'customize.php?';
-		$url.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcome' );
+		// Get theme customizer url.
+		$url  = admin_url() . 'customize.php?';
+		$url .= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcome' );
 		?>
 		<div class="feature-section col two-col" style="margin-bottom: 1.618em; padding-top: 1.618em; overflow: hidden;">
 
@@ -196,6 +209,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen add ons
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_addons() {

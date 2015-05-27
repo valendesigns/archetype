@@ -1,9 +1,14 @@
 <?php
 /**
  * Class to create a Customizer import control
+ *
+ * @since 1.0.0
+ *
+ * @category customizer
+ * @package archetype
  */
 class Archetype_Import_Customizer_Control extends WP_Customize_Control {
-	
+
 	/**
 	 * Render the content on the theme customizer page
 	 */

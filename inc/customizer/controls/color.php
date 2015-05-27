@@ -3,6 +3,9 @@
  * Extends Customize Color Control Class
  *
  * @since 1.0.0
+ *
+ * @category customizer
+ * @package archetype
  */
 if ( class_exists( 'WP_Customize_Color_Control' ) ) {
 
@@ -18,10 +21,11 @@ if ( class_exists( 'WP_Customize_Color_Control' ) ) {
 		 */
 		public final function save() {
 			$value = $this->post_value();
-	
-			if ( ! $this->check_capabilities() )
+
+			if ( ! $this->check_capabilities() ) {
 				return false;
-	
+			}
+
 			/**
 			 * Fires when the WP_Customize_Setting::save() method is called.
 			 *
@@ -33,10 +37,10 @@ if ( class_exists( 'WP_Customize_Color_Control' ) ) {
 			 * @param WP_Customize_Setting $this WP_Customize_Setting instance.
 			 */
 			do_action( 'customize_save_' . $this->id_data[ 'base' ], $this );
-	
+
 			$this->update( $value );
 		}
-		
+
 	}
-	
+
 }
