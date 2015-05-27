@@ -13,6 +13,13 @@
  * @since 1.0.0
  */
 class Archetype_Number_Customizer_Control extends WP_Customize_Control {
+	/**
+	 * Control type
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @var string
+	 */
 	public $type = 'number';
 
 	public function render_content() {

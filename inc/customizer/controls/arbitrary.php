@@ -13,7 +13,22 @@
  * @since 1.0.0
  */
 class Archetype_Arbitrary_Control extends WP_Customize_Control {
+	/**
+	 * Setting ID
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @var string
+	 */
 	public $settings    = 'blogname';
+
+	/**
+	 * The description
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @var string
+	 */
 	public $description = '';
 
 	/**
