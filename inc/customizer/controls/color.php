@@ -1,11 +1,16 @@
 <?php
 /**
- * Extends Customize Color Control Class
+ * Color control classes.
+ *
+ * @package Archetype
+ * @subpackage Customize
+ * @since 1.0.0
+ */
+
+/**
+ * Extends the Customize Color Control class.
  *
  * @since 1.0.0
- *
- * @category customizer
- * @package archetype
  */
 if ( class_exists( 'WP_Customize_Color_Control' ) ) {
 

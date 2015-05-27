@@ -1,11 +1,16 @@
 <?php
 /**
- * Class to create a custom arbitrary html control for dividers etc
+ * Arbitrary control classes.
+ *
+ * @package Archetype
+ * @subpackage Customize
+ * @since 1.0.0
+ */
+
+/**
+ * Class to create a custom arbitrary html control for text block, headings, and dividers.
  *
  * @since 1.0.0
- *
- * @category customizer
- * @package archetype
  */
 class Archetype_Arbitrary_Control extends WP_Customize_Control {
 	public $settings    = 'blogname';

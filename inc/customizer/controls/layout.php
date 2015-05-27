@@ -1,11 +1,16 @@
 <?php
 /**
- * Class to create a custom layout control
+ * Layout control classes.
+ *
+ * @package Archetype
+ * @subpackage Customize
+ * @since 1.0.0
+ */
+
+/**
+ * Class to create a layout Customizer control.
  *
  * @since 1.0.0
- *
- * @category customizer
- * @package archetype
  */
 class Archetype_Layout_Control extends WP_Customize_Control {
 

@@ -1,11 +1,16 @@
 <?php
 /**
- * Class to create a Customizer import control
+ * Import control classes.
+ *
+ * @package Archetype
+ * @subpackage Customize
+ * @since 1.0.0
+ */
+
+/**
+ * Class to create an import Customizer control.
  *
  * @since 1.0.0
- *
- * @category customizer
- * @package archetype
  */
 class Archetype_Import_Customizer_Control extends WP_Customize_Control {
 
