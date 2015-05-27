@@ -22,14 +22,19 @@
   Fluidmedia = function ( element ) {
     this.$element = $( element );
     this.process();
-  }
+  };
 
   Fluidmedia.prototype.process = function ( e ) {
 
     var tag = this.$element.prop('tagName').toLowerCase();
 
-    if ( tag === 'embed' && this.$element.parent( 'object' ).length ) return;
-    if ( this.$element.parent( '.fluid-media' ).length ) return;
+    if ( tag === 'embed' && this.$element.parent( 'object' ).length ) {
+      return;
+    }
+
+    if ( this.$element.parent( '.fluid-media' ).length ) {
+      return;
+    }
 
     this.$element.wrap( '<div class="fluid-media"></div>' );
 
@@ -55,10 +60,14 @@
     return this.each( function () {
       var $this = $(this),
         data = $this.data( 'fluidmedia' );
-      if ( ! data ) $this.data( 'fluidmedia', ( data = new Fluidmedia( this ) ) );
-      if ( 'string' === typeof option ) data[option].call( $this ) ;
+      if ( ! data ) {
+        $this.data( 'fluidmedia', ( data = new Fluidmedia( this ) ) );
+      }
+      if ( 'string' === typeof option ) {
+        data[option].call( $this );
+      }
     } );
-  }
+  };
 
   $.fn.fluidmedia.Constructor = Fluidmedia;
 
@@ -66,7 +75,7 @@
   $.fn.fluidmedia.noConflict = function () {
     $.fn.fluidmedia = old;
     return this;
-  }
+  };
 
   /* FLUIDMEDIA DATA-API */
   $( document ).on( 'ready.fluidmedia.data-api', function () {
@@ -74,7 +83,7 @@
       var $spy = $( this ),
         data = $spy.data();
       $spy.fluidmedia( data );
-    })
-  })
+    } );
+  } );
 
 } )( window.jQuery );
