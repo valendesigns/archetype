@@ -472,18 +472,16 @@ function archetype_products_per_page() {
 	return intval( $products_per_page );
 }
 
-/**
- * Check whether a WooCommerce extension is activated or not
- *
- * @since 1.0.0
- *
- * @param  $extension The class name of the extension. Default is 'WC_Bookings'.
- * @return bool
- */
-function is_woocommerce_extension_activated( $extension = '' ) {
-	if ( empty( $extension ) ) {
-		$extension = 'WC_Bookings';
+if ( ! function_exists( 'is_woocommerce_extension_activated' ) ) :
+	/**
+	 * Check whether a WooCommerce extension is activated or not
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  $extension The class name of the extension. Default is 'WC_Bookings'.
+	 * @return bool
+	 */
+	function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
+		return class_exists( $extension, false ) ? true : false;
 	}
-
-	return class_exists( $extension, false ) ? true : false;
-}
+endif;
