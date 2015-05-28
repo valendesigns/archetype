@@ -473,11 +473,11 @@ function archetype_products_per_page() {
 }
 
 /**
- * Query WooCommerce Extension Activation.
+ * Check whether a WooCommerce extension is activated or not
  *
  * @since 1.0.0
  *
- * @param $extension Main extension class name. Default is 'WC_Bookings'.
+ * @param  $extension The class name of the extension. Default is 'WC_Bookings'.
  * @return bool
  */
 function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
