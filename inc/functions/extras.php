@@ -106,23 +106,16 @@ endif;
  * Schema type
  *
  * @since 1.0.0
- *
- * @return string Schema itemprop type.
  */
 function archetype_html_tag_schema() {
 	$schema  = 'http://schema.org/';
 	$type    = 'WebPage';
 
-	// Is single post.
-	if ( is_singular( 'post' ) ) {
+	if ( is_singular( 'post' ) ) { // Is single post.
 		$type = 'Article';
-
-	// Is author page.
-	} elseif ( is_author() ) {
+	} elseif ( is_author() ) { // Is author page.
 		$type = 'ProfilePage';
-
-	// Is search results page.
-	} elseif ( is_search() ) {
+	} elseif ( is_search() ) { // Is search results page.
 		$type = 'SearchResultsPage';
 	}
 

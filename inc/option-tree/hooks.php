@@ -1,8 +1,10 @@
 <?php
 /**
- * archetype OptionTree hooks
+ * Archetype OptionTree hooks
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Option_Tree
+ * @since 1.0.0
  */
 
 /**
@@ -33,13 +35,13 @@ add_action( 'admin_init', 'archetype_register_meta_boxes' );
 /**
  * Post Formats
  */
-add_action( 'archetype_post_format_media', 'archetype_post_format_audio'   );
-add_action( 'archetype_post_format_media', 'archetype_post_format_video'   );
+add_action( 'archetype_post_format_media', 'archetype_post_format_audio' );
+add_action( 'archetype_post_format_media', 'archetype_post_format_video' );
 add_action( 'archetype_post_format_media', 'archetype_post_format_gallery' );
-add_filter( 'the_content',                 'archetype_post_format_quote'   );
+add_filter( 'the_content',                 'archetype_post_format_quote' );
 
 /**
  * Filters
  */
-add_filter( 'archetype_hide_title',      'archetype_hide_title_post_meta',      10, 2 );
+add_filter( 'archetype_hide_title',      'archetype_hide_title_post_meta', 10, 2 );
 add_filter( 'archetype_hide_author_bio', 'archetype_hide_author_bio_post_meta', 10, 2 );

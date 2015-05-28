@@ -1,6 +1,6 @@
 <?php
 /**
- * archetype engine room
+ * Archetype engine room
  *
  * @package Archetype
  * @subpackage Init

@@ -44,7 +44,7 @@ class Archetype_Chat_API {
 	private function setup_actions() {
 
 		// Filter the content of chat posts.
-		add_filter( 'the_content', array( $this, 'filter_the_content'  ) );
+		add_filter( 'the_content', array( $this, 'filter_the_content' ) );
 
 		// Auto-add paragraphs to the chat text.
 		add_filter( 'archetype_chat_text', 'wpautop' );
@@ -52,13 +52,14 @@ class Archetype_Chat_API {
 	}
 
 	/**
-	 * This function filters the post content when viewing a post with the "chat" post format. 
-	 * It formats the content with structured HTML markup to make it easy for theme developers 
-	 * to style chat posts. The advantage of this solution is that it allows for more than 
-	 * two speakers (like most solutions). You can have 100s of speakers in your chat post, 
+	 * This function filters the post content when viewing a post with the "chat" post format.
+	 * It formats the content with structured HTML markup to make it easy for theme developers
+	 * to style chat posts. The advantage of this solution is that it allows for more than
+	 * two speakers (like most solutions). You can have 100s of speakers in your chat post,
 	 * each with their own, unique classes for styling.
 	 *
 	 * Based on the collaborative work of David Chandra & Justin Tadlock.
+	 *
 	 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 	 * @link http://justintadlock.com/archives/2012/08/21/post-formats-chat
 	 *
@@ -71,17 +72,18 @@ class Archetype_Chat_API {
 	public function filter_the_content( $content ) {
 
 		// If this is not a 'chat' post, return the content.
-		if ( ! has_post_format( 'chat' ) )
+		if ( ! has_post_format( 'chat' ) ) {
 			return $content;
+		}
 
 		// Set the global variable of speaker IDs to a new, empty array for this chat.
 		$_post_format_chat_ids = array();
 
 		// Allow the separator regex (separator for header/text) to be filtered.
-		$header_regex = apply_filters( 'archetype_chat_header_regex', "/:\s/", get_the_ID() );
+		$header_regex = apply_filters( 'archetype_chat_header_regex', '/:\s/', get_the_ID() );
 
 		// Allow the date separator regex (separator for date/author) to be filtered.
-		$date_regex = apply_filters( 'archetype_chat_date_regex', "/\[(.*?)\]\s/", get_the_ID() );
+		$date_regex = apply_filters( 'archetype_chat_date_regex', '/\[(.*?)\]\s/', get_the_ID() );
 
 		/*
 		 * Set how many responses are displayed in archive view.
@@ -109,8 +111,9 @@ class Archetype_Chat_API {
 		// Loop through each row and format the output.
 		foreach ( $chat_rows as $chat_row ) {
 
-			if ( ! is_singular() && $chat_excerpt_response_count >= $chat_excerpt_responses && $chat_excerpt_responses > 0 )
+			if ( ! is_singular() && $chat_excerpt_response_count >= $chat_excerpt_responses && $chat_excerpt_responses > 0 ) {
 				continue;
+			}
 
 			// Look for the date.
 			preg_match_all( $date_regex, $chat_row, $date_matches );
@@ -143,8 +146,8 @@ class Archetype_Chat_API {
 					// Add time markup & filter.
 					$get_chat_date = '<time class="chat-datetime" datetime="' . $date_matches[1][0] . '">' . date_i18n( get_option( 'time_format' ), strtotime( $date_matches[1][0] ) ) . '</time>';
 
-				// No date but we need these variables later.
 				} else {
+					// No date but we need these variables later.
 
 					// Set the author to the header string since there is not a date in it.
 					$get_chat_author = strip_tags( $get_chat_header );
@@ -155,7 +158,7 @@ class Archetype_Chat_API {
 				}
 
 				// Let's sanitize the chat author to avoid craziness and differences like "John" and "john".
-				$_chat_author = str_replace( array(' ', '8217' ), array( '-', '' ), strtolower( strip_tags( $get_chat_author ) ) );
+				$_chat_author = str_replace( array( ' ', '8217' ), array( '-', '' ), strtolower( strip_tags( $get_chat_author ) ) );
 
 				// Add the chat author to the array.
 				$_post_format_chat_ids[] = $_chat_author;
@@ -202,13 +205,13 @@ class Archetype_Chat_API {
 				// Add the chat text.
 				$chat_content .= "\n\t\t\t" . '<div class="chat-content">' . $chat_text;
 
-			// Add to the chat.
 			} else if ( ! empty( $chat_row ) ) {
+				// Add to the chat.
 
 				if ( $chat_start ) {
 
 					// Add text found at the beginning of the post back to the content.
-					$content.= $chat_row;
+					$content .= $chat_row;
 
 				} else {
 
@@ -218,7 +221,7 @@ class Archetype_Chat_API {
 				}
 
 			}
-			
+
 		}
 
 		if ( ! empty( $chat_content ) ) {

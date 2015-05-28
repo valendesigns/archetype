@@ -2,7 +2,9 @@
 /**
  * General functions used to integrate this theme with OptionTree.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Option_Tree
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'archetype_hide_title_post_meta' ) ) :
@@ -13,7 +15,8 @@ if ( ! function_exists( 'archetype_hide_title_post_meta' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param WP_Post $post WP_Post object.
+	 * @param bool $hide Whether to hide the title or not.
+	 * @param object $post WP_Post object.
 	 * @return bool
 	 */
 	function archetype_hide_title_post_meta( $hide, $post ) {
@@ -32,8 +35,8 @@ if ( ! function_exists( 'archetype_hide_author_bio_post_meta' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param bool $hide Whether the title has been hidden.
-	 * @param WP_Post $post WP_Post object.
+	 * @param bool $hide Whether to hide the title or not.
+	 * @param object $post WP_Post object.
 	 * @return bool
 	 */
 	function archetype_hide_author_bio_post_meta( $hide, $post ) {
@@ -74,7 +77,7 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return	string
+	 * @return string
 	 */
 	function archetype_post_format_title() {
 		$title = '';
@@ -89,9 +92,9 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) :
 			// Remove the `hide-title` class by filtering the `archetype_hide_title_post_formats` array.
 			add_filter( 'archetype_hide_title_post_formats', 'archetype_link_has_title' );
 
-		// Remove the filter so it does not alter other posts.
 		} else {
 
+			// Remove the filter so it does not alter other posts.
 			remove_filter( 'archetype_hide_title_post_formats', 'archetype_link_has_title' );
 
 		}
@@ -107,8 +110,6 @@ if ( ! function_exists( 'archetype_post_format_audio' ) ) :
 	 * Must be used inside the loop.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return	string
 	 */
 	function archetype_post_format_audio() {
 		if ( has_post_format( 'audio' ) && $audio = get_post_meta( get_the_ID(), '_format_audio_embed', true ) ) {
@@ -132,8 +133,6 @@ if ( ! function_exists( 'archetype_post_format_video' ) ) :
 	 * Must be used inside the loop.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return	string
 	 */
 	function archetype_post_format_video() {
 		if ( has_post_format( 'video' ) && $video = get_post_meta( get_the_ID(), '_format_video_embed', true ) ) {
@@ -157,7 +156,7 @@ if ( ! function_exists( 'archetype_post_format_gallery_images' ) ) :
 	 * @since 1.0.0
 	 *
 	 * @param int $post_id ID of the post.
-	 * @return	bool|array
+	 * @return bool|array
 	 */
 	function archetype_post_format_gallery_images( $post_id = 0 ) {
 		if ( $gallery = get_post_meta( $post_id, '_format_gallery', true ) ) {
@@ -173,7 +172,7 @@ if ( ! function_exists( 'archetype_post_format_gallery_images' ) ) :
 			} else {
 
 				// The string is only IDs.
-				$ids = ! empty( $gallery ) && $gallery != '' ? explode( ',', $gallery ) : array();
+				$ids = ! empty( $gallery ) && '' !== $gallery ? explode( ',', $gallery ) : array();
 			}
 
 			if ( ! empty( $ids ) ) {
@@ -204,24 +203,24 @@ if ( ! function_exists( 'archetype_post_format_gallery' ) ) :
 
 			if ( ! empty( $ids ) ) {
 				$content = '<ul class="bxslider">';
-					foreach( $ids as $image_id ) {
-						$attachments = get_posts( array(
- 							'post_type'      => 'attachment',
- 							'posts_per_page' => 1,
- 							'include'        => $image_id
-						) );
-						if ( $attachments ) {
-							foreach( $attachments as $attachment ) {
-								$caption = ! empty( $attachment->post_excerpt ) ? '<div class="caption"><span class="caption-body">' . wpautop( $attachment->post_excerpt ) . '</span></div>' : '';
-								if ( ! is_single() ) {
-									$content.= sprintf( '<li><a href="%s" rel="bookmark"><img src="%s" alt="%s" />%s</a></li>', esc_url( get_permalink() ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
-								} else {
-									$content.= sprintf( '<li><a href="%s" rel="lightbox[gallery-main]" title="%s"><img src="%s" alt="%s" />%s</a></li>', esc_url( $attachment->guid ), esc_attr( $attachment->post_excerpt ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
-								}
+				foreach ( $ids as $image_id ) {
+					$attachments = get_posts( array(
+						'post_type'      => 'attachment',
+						'posts_per_page' => 1,
+						'include'        => $image_id,
+					) );
+					if ( $attachments ) {
+						foreach ( $attachments as $attachment ) {
+							$caption = ! empty( $attachment->post_excerpt ) ? '<div class="caption"><span class="caption-body">' . wpautop( $attachment->post_excerpt ) . '</span></div>' : '';
+							if ( ! is_single() ) {
+								$content .= sprintf( '<li><a href="%s" rel="bookmark"><img src="%s" alt="%s" />%s</a></li>', esc_url( get_permalink() ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
+							} else {
+								$content .= sprintf( '<li><a href="%s" rel="lightbox[gallery-main]" title="%s"><img src="%s" alt="%s" />%s</a></li>', esc_url( $attachment->guid ), esc_attr( $attachment->post_excerpt ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
 							}
 						}
 					}
-				$content.= '</ul>';
+				}
+				$content .= '</ul>';
 			}
 
 			// Display the gallery.
@@ -238,7 +237,8 @@ if ( ! function_exists( 'archetype_post_format_quote' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return	string
+	 * @param string $content Post content.
+	 * @return string
 	 */
 	function archetype_post_format_quote( $content ) {
 		if ( has_post_format( 'quote' ) ) {
