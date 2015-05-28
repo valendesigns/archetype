@@ -478,7 +478,7 @@ if ( ! function_exists( 'is_woocommerce_extension_activated' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param  $extension The class name of the extension. Default is 'WC_Bookings'.
+	 * @param  string $extension The class name of the extension. Default is 'WC_Bookings'.
 	 * @return bool
 	 */
 	function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
