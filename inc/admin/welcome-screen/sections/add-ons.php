@@ -1,7 +1,12 @@
 <?php
 /**
  * Welcome screen add-ons template
+ *
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
  */
+
 ?>
 <div id="add_ons" class="storefront-add-ons panel" style="padding-top: 1.618em; clear: both;">
 	<h2><?php _e( 'Enhance your site', 'archetype' ); ?> <div class="dashicons dashicons-admin-plugins"></div></h2>

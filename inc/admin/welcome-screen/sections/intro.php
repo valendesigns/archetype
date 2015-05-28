@@ -1,11 +1,13 @@
 <?php
 /**
  * Welcome screen intro template
+ *
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
  */
-?>
-<?php
-$storefront = wp_get_theme( 'archetype' );
 
+$storefront = wp_get_theme( 'archetype' );
 ?>
 <div class="col two-col" style="margin-bottom: 1.618em; overflow: hidden;">
 	<div class="col-1">

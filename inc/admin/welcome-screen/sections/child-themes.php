@@ -1,7 +1,12 @@
 <?php
 /**
  * Welcome screen child themes template
+ *
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
  */
+
 ?>
 <div id="child_themes" class="storefront-add-ons panel" style="padding-top: 1.618em; clear: both;">
 	<?php

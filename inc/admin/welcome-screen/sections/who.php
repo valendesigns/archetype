@@ -1,7 +1,11 @@
 <?php
 /**
  * Welcome screen who are woo template
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
  */
+
 ?>
 <div id="who" class="feature-section col three-col" style="margin-bottom: 1.618em; padding-top: 1.618em; overflow: hidden;">
 	<div class="col-1">

@@ -1,8 +1,13 @@
 <?php
 /**
  * Welcome Screen Class
+ *
  * Sets up the welcome screen page, hides the menu item
  * and contains the screen content.
+ *
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
  */
 class Archetype_Welcome {
 
@@ -23,7 +28,7 @@ class Archetype_Welcome {
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_child_themes' ), 		50 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_who' ), 				60 );
 
-	} // end constructor
+	}
 
 	/**
 	 * Adds an admin notice upon successful activation.
@@ -32,7 +37,7 @@ class Archetype_Welcome {
 	public function archetype_activation_admin_notice() {
 		global $pagenow;
 
-		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) { // input var okay
+		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) { // Input var okay.
 			add_action( 'admin_notices', array( $this, 'archetype_welcome_admin_notice' ), 99 );
 		}
 	}
@@ -83,6 +88,8 @@ class Archetype_Welcome {
 
 			<?php
 			/**
+			 * Default hooks.
+			 *
 			 * @hooked archetype_welcome_intro - 10
 			 * @hooked archetype_welcome_getting_started - 20
 			 * @hooked archetype_welcome_addons - 30

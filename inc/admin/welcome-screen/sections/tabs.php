@@ -1,3 +1,13 @@
+<?php
+/**
+ * Welcome tabs template
+ *
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
+ */
+ 
+?>
 <h2 class="nav-tab-wrapper">
 	<a href="#getting_started" class="nav-tab nav-tab-active"><?php _e( 'Getting Started', 'archetype' ); ?></a>
 	<a href="#add_ons" class="nav-tab"><?php _e( 'Enhance Storefront', 'archetype' ); ?></a>

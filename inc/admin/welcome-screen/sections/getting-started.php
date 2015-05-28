@@ -1,10 +1,13 @@
 <?php
 /**
  * Welcome screen getting started template
+ *
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
  */
-?>
-<?php
-// get theme customizer url
+
+// Get theme customizer url.
 $url 	= admin_url() . 'customize.php?';
 $url 	.= 'url=' . urlencode( site_url() . '?storefront-customizer=true' );
 $url 	.= '&return=' . urlencode( admin_url() . 'themes.php?page=storefront-welcome' );
