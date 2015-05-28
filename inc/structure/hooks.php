@@ -9,6 +9,7 @@
 
 /**
  * General
+ *
  * @see archetype_setup()
  * @see archetype_widgets_init()
  * @see archetype_scripts()
@@ -26,6 +27,7 @@ add_action( 'archetype_sidebar',        'archetype_get_sidebar',          10 );
 
 /**
  * Header
+ *
  * @see archetype_skip_links()
  * @see archetype_social_icons()
  * @see archetype_site_branding()
@@ -39,12 +41,14 @@ add_action( 'archetype_header',        'archetype_secondary_navigation', 20 );
 
 /**
  * Navigation
+ *
  * @see archetype_primary_navigation()
  */
 add_action( 'archetype_navigation', 'archetype_primary_navigation', 10 );
 
 /**
  * Footer
+ *
  * @see archetype_footer_widgets()
  * @see archetype_credit()
  */
@@ -54,6 +58,7 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
 
 /**
  * Homepage
+ *
  * @see archetype_homepage_hero()
  * @see archetype_homepage_content()
  * @see archetype_homepage_custom_content()
@@ -76,6 +81,7 @@ add_action( 'homepage', 'archetype_homepage_custom_content_alt', 80 );
 
 /**
  * Posts
+ *
  * @see archetype_post_format_media()
  * @see archetype_post_header()
  * @see archetype_post_content()
@@ -104,6 +110,7 @@ add_action( 'archetype_single_post_after', 'archetype_display_comments',  10 );
 
 /**
  * Pages
+ *
  * @see archetype_page_header()
  * @see archetype_page_content()
  * @see archetype_display_comments()
@@ -114,6 +121,7 @@ add_action( 'archetype_page_after', 'archetype_display_comments', 10 );
 
 /**
  * Images
+ *
  * @see archetype_image_header()
  * @see archetype_image_content()
  * @see archetype_image_meta()
@@ -131,6 +139,7 @@ add_action( 'archetype_single_image_after',  'archetype_display_comments', 20 );
 
 /**
  * Extras
+ *
  * @see archetype_body_classes()
  * @see archetype_post_search_form()
  * @see archetype_page_menu_args()

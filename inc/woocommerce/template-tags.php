@@ -2,15 +2,19 @@
 /**
  * Custom template tags used to integrate this theme with WooCommerce.
  *
- * @package archetype
- */
-
-/**
- * Cart Link
- * Displayed a link to the cart including the number of items present and the cart total
+ * @package Archetype
+ * @subpackage WooCommerce
  * @since 1.0.0
  */
-if ( ! function_exists( 'archetype_cart_link' ) ) {
+
+if ( ! function_exists( 'archetype_cart_link' ) ) :
+/**
+ * Cart Link
+ *
+ * Displayed a link to the cart including the number of items present and the cart total
+ *
+ * @since 1.0.0
+ */
 	function archetype_cart_link() {
 		?>
 		<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php _e( 'View your shopping cart', 'archetype' ); ?>">
@@ -18,15 +22,16 @@ if ( ! function_exists( 'archetype_cart_link' ) ) {
 		</a>
 		<?php
 	}
-}
+endif;
 
-/**
- * Display Header Cart
- * @since 1.0.0
- * @uses is_woocommerce_activated() check if WooCommerce is activated
- * @return void
- */
-if ( ! function_exists( 'archetype_header_cart' ) ) {
+if ( ! function_exists( 'archetype_header_cart' ) ) :
+	/**
+	 * Display Header Cart
+	 *
+	 * @uses is_woocommerce_activated() check if WooCommerce is activated
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_header_cart() {
 		if ( is_woocommerce_activated() ) { 
 			if ( is_cart() ) {
@@ -44,22 +49,24 @@ if ( ! function_exists( 'archetype_header_cart' ) ) {
 		<?php
 		}
 	}
-}
+endif;
 
-/**
- * Upsells
- * Replace the default upsell function with our own which displays the correct number product columns
- * @since 1.0.0
- * @return void
- * @uses woocommerce_upsell_display()
- */
-if ( ! function_exists( 'archetype_upsell_display' ) ) {
+if ( ! function_exists( 'archetype_upsell_display' ) ) :
+	/**
+	 * Upsells
+	 *
+	 * Replace the default upsell function with our own which displays the correct number product columns
+	 *
+	 * @uses woocommerce_upsell_display()
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_upsell_display() {
 		woocommerce_upsell_display( -1, 3 );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
+if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
 	 *
@@ -107,12 +114,12 @@ if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
 					'end_size'           => 3,
 					'mid_size'           => 3,
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
-					'after_page_number'  => ''
+					'after_page_number'  => '',
 				) ) );
 			echo '</div>';
 		echo '</nav>';
 	}
-}
+endif;
 
 /**
  * Shop heading markup
@@ -123,7 +130,6 @@ if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) {
  * @see archetype_shop_heading_wrapper_close()
  *
  * @since 1.0.0
- * @return void
  */
 function archetype_shop_heading() {
 	if ( ! is_product() ) {
@@ -140,8 +146,8 @@ function archetype_shop_heading() {
 
 /**
  * Shop heading wrapper
- * @since 	1.0.0
- * @return	void
+ *
+ * @since 1.0.0
  */
 function archetype_shop_heading_wrapper() {
 	echo '<header class="page-header">';
@@ -149,8 +155,8 @@ function archetype_shop_heading_wrapper() {
 
 /**
  * Shop heading wrapper close
- * @since 	1.0.0
- * @return	void
+ *
+ * @since 1.0.0
  */
 function archetype_shop_heading_wrapper_close() {
 	echo '</header>';
@@ -158,8 +164,8 @@ function archetype_shop_heading_wrapper_close() {
 
 /**
  * Sorting wrapper
- * @since 	1.0.0
- * @return	void
+ *
+ * @since 1.0.0
  */
 function archetype_sorting_wrapper() {
 	echo '<div class="archetype-sorting">';
@@ -167,8 +173,8 @@ function archetype_sorting_wrapper() {
 
 /**
  * Sorting wrapper close
- * @since 	1.0.0
- * @return	void
+ *
+ * @since 1.0.0
  */
 function archetype_sorting_wrapper_close() {
 	echo '</div>';
@@ -176,8 +182,10 @@ function archetype_sorting_wrapper_close() {
 
 /**
  * Storefront shop messages
- * @since 	1.0.0
- * @uses		do_shortcode
+ *
+ * @uses do_shortcode
+ *
+ * @since 1.0.0
  */
 function archetype_shop_messages() {
 	if ( ! is_checkout() ) {

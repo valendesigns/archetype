@@ -2,7 +2,9 @@
 /**
  * Integration logic for WooCommerce extensions
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage WooCommerce
+ * @since 1.0.0
  */
 
 /**
@@ -11,7 +13,7 @@
  */
 function archetype_woocommerce_integrations_scripts() {
 
-	// Checks if current locale is RTL
+	// Checks if current locale is RTL.
 	$rtl = is_rtl() ? '-rtl' : '';
 
 	/**
@@ -78,72 +80,71 @@ function archetype_woocommerce_integrations_scripts() {
 	}
 }
 
-/**
- * Add CSS in <head> for integration styles handled by the theme customizer
- *
- * @since 1.0
- */
-if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
+if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
+	/**
+	 * Add CSS in <head> for integration styles handled by the theme customizer
+	 *
+	 * @since 1.0
+	 */
 	function archetype_add_integrations_customizer_css() {
-
 		if ( is_archetype_customizer_enabled() ) {
-
+			// Style comment
 			$woocommerce_style = '/* WooCommerce Customizer Styles */';
 
-			// Text color
+			// Text color.
 			$text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_text_color', apply_filters( 'archetype_default_text_color', '#555' ) ) );
 
-			// Link Color
+			// Link Color.
 			$link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color', apply_filters( 'archetype_default_link_color', '#ee543f' ) ) );
 
-			// Link Color Hover
+			// Link Color Hover.
 			$link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_link_color_hover', apply_filters( 'archetype_default_link_color_hover', '#111' ) ) );
 
-			// Secondary Navigation Background Color
+			// Secondary Navigation Background Color.
 			$nav_alt_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_alt_background_color', apply_filters( 'archetype_default_nav_alt_background_color', '#41484d' ) ) );
 
-			// Post Background Color
+			// Post Background Color.
 			$post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_background_color', apply_filters( 'archetype_default_post_background_color', '#fff' ) ) );
 
-			// Post Border Color
+			// Post Border Color.
 			$post_border_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_border_color', apply_filters( 'archetype_default_post_border_color', '#e5e5e5' ) ) );
 
-			// Post Shadow Toggle
+			// Post Shadow Toggle.
 			$post_shadow_toggle = archetype_sanitize_checkbox( get_theme_mod( 'archetype_post_shadow_toggle', apply_filters( 'archetype_default_post_shadow_toggle', true ) ) );
 
-			// Post Shadow Color
+			// Post Shadow Color.
 			$post_shadow_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_shadow_color', apply_filters( 'archetype_default_post_shadow_color', '#8b949b' ) ) );
 
-			// Button Text Color
+			// Button Text Color.
 			$button_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_text_color', apply_filters( 'archetype_default_button_text_color', '#fff' ) ) );
 
-			// Button Background Color
+			// Button Background Color.
 			$button_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_background_color', apply_filters( 'archetype_default_button_background_color', '#ed543f' ) ) );
 
-			// Button Border Color
+			// Button Border Color.
 			$button_border_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_border_color', apply_filters( 'archetype_default_button_border_color', '#d94834' ) ) );
 
-			// Button Hover Text Color
+			// Button Hover Text Color.
 			$button_text_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_text_hover_color', apply_filters( 'archetype_default_button_text_hover_color', '#555' ) ) );
 
-			// Button Hover Background Color
+			// Button Hover Background Color.
 			$button_background_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_button_background_hover_color', apply_filters( 'archetype_default_button_background_hover_color', '#fff' ) ) );
 
-			// Notice Error
+			// Notice Error.
 			$notice_error_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_notice_error_color', apply_filters( 'archetype_default_notice_error_color', '#f75f46' ) ) );
 
-			// Notice Success
+			// Notice Success.
 			$notice_success_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_notice_success_color', apply_filters( 'archetype_default_notice_success_color', '#36c478' ) ) );
 
-			// Notice Info
+			// Notice Info.
 			$notice_info_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_notice_info_color', apply_filters( 'archetype_default_notice_info_color', '#3D9CD2' ) ) );
 
-			// Post border radius
+			// Post border radius.
 			$post_radius = archetype_sanitize_number( get_theme_mod( 'archetype_post_radius', apply_filters( 'archetype_default_post_radius', 0 ) ) );
-			
-			// Alignment
+
+			// Alignment.
 			$alignment = esc_attr( get_theme_mod( 'archetype_products_alignment', 'center' ) );
-			
+
 			$woocommerce_style .= '
 			.woocommerce-message,
 			.woocommerce-info,
@@ -528,14 +529,13 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) {
 				}';
 			}
 
-			// Remove space after colons
+			// Remove space after colons.
 			$woocommerce_style = str_replace( ': ', ':', $woocommerce_style );
 
-			// Remove whitespace
+			// Remove whitespace.
 			$woocommerce_style = str_replace( array( "\r\n", "\r", "\n", "\t", '	', '		', '		' ), '', $woocommerce_style );
 
 			wp_add_inline_style( 'archetype-woocommerce-style', $woocommerce_style );
-
 		}
 	}
-}
+endif;
