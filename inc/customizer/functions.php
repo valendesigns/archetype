@@ -1,16 +1,18 @@
 <?php
 /**
- * archetype Theme Customizer functions
+ * Archetype Theme Customizer functions
  *
- * @package archetype
- */
-
-/**
- * Listens for import & export events and filter hooks
- *
+ * @package Archetype
+ * @subpackage Customize
  * @since 1.0.0
  */
-if ( ! function_exists( 'archetype_customize_init' ) ) {
+
+if ( ! function_exists( 'archetype_customize_init' ) ) :
+	/**
+	 * Listens for import & export events and filter hooks
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_init() {
 		if ( current_user_can( 'edit_theme_options' ) ) {
 
@@ -23,25 +25,25 @@ if ( ! function_exists( 'archetype_customize_init' ) ) {
 			}
 		}
 	}
-}
+endif;
 
-/**
- * Filter the site logo and add the SVG version
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_site_logo_svg' ) ) {
+if ( ! function_exists( 'archetype_site_logo_svg' ) ) :
+	/**
+	 * Filter the site logo and add the SVG version
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_site_logo_svg( $html, $logo, $size ) {
 		return str_replace( '</a>', '<span class="svg-site-logo"></span></a>', $html );
 	}
-}
+endif;
 
-/**
- * Loads the Customizer import and export scripts.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_js' ) ) {
+if ( ! function_exists( 'archetype_customize_js' ) ) :
+	/**
+	 * Loads the Customizer import and export scripts.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_js() {
 		global $archetype_version;
 		wp_enqueue_script( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
@@ -49,7 +51,7 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
 		// Localize
 		wp_localize_script( 'archetype_customize', 'ArchetypeCustomizerl10n', array(
 			'emptyImport' => __( 'Please choose a file to import.', 'archetype' ),
-			'missingLogo' => __( 'The SVG will not display properly without adding a fallback first.', 'archetype' ) ,
+			'missingLogo' => __( 'The SVG will not display properly without adding a fallback first.', 'archetype' ),
 		));
 
 		// Config
@@ -60,26 +62,26 @@ if ( ! function_exists( 'archetype_customize_js' ) ) {
 			'customizerLogoNonce' 	=> wp_create_nonce( 'customize-logo-change' ),
 		) );
 	}
-}
+endif;
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_preview_js' ) ) {
+if ( ! function_exists( 'archetype_customize_preview_js' ) ) :
+	/**
+	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_preview_js() {
 		global $archetype_version;
 		wp_enqueue_script( 'archetype_customize_preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
 	}
-}
+endif;
 
-/**
- * Displays import & export errors.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_print_js' ) ) {
+if ( ! function_exists( 'archetype_customize_print_js' ) ) :
+	/**
+	 * Displays import & export errors.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_print_js() {
 		global $customize_error;
 
@@ -87,26 +89,26 @@ if ( ! function_exists( 'archetype_customize_print_js' ) ) {
 			echo '<script> alert("' . $customize_error . '"); </script>';
 		}
 	}
-}
+endif;
 
-/**
- * Adds Customizer CSS for custom controls.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_css' ) ) {
+if ( ! function_exists( 'archetype_customize_css' ) ) :
+	/**
+	 * Adds Customizer CSS for custom controls.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_css() {
 		global $archetype_version;
 		wp_enqueue_style( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/css/customizer.css', array(), $archetype_version );
 	}
-}
+endif;
 
-/**
- * Returns the logo URL in the customizer
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_get_logo_url' ) ) {
+if ( ! function_exists( 'archetype_customize_get_logo_url' ) ) :
+	/**
+	 * Returns the logo URL in the customizer
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_get_logo_url() {
 		if ( ! wp_verify_nonce( $_REQUEST['customize-logo'], 'customize-logo-change' ) ) {
 			return;
@@ -120,14 +122,14 @@ if ( ! function_exists( 'archetype_customize_get_logo_url' ) ) {
 
 		wp_send_json_error( array( 'message' => __( 'An unknown error occurred while setting your SVG logo.', 'archetype' ) ) );
 	}
-}
+endif;
 
-/**
- * Exports customizer theme mods, active widgets & menus.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_export' ) ) {
+if ( ! function_exists( 'archetype_customize_export' ) ) :
+	/**
+	 * Exports customizer theme mods, active widgets & menus.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_export() {
 		if ( ! wp_verify_nonce( $_REQUEST['customize-export'], 'customize-exporting' ) ) {
 			return;
@@ -143,20 +145,20 @@ if ( ! function_exists( 'archetype_customize_export' ) ) {
 
 		echo serialize( array( 
 			'template' => $template,
-			'mods' 		=> $mods ? $mods : array()
+			'mods'     => $mods ? $mods : array(),
 		) );
 
 		die();
 	}
-}
+endif;
 
-/**
- * Imports uploaded mods and calls WordPress core customize_save actions so
- * themes that hook into them can act before mods are saved to the database.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_import' ) ) {
+if ( ! function_exists( 'archetype_customize_import' ) ) :
+	/**
+	 * Imports uploaded mods and calls WordPress core customize_save actions so
+	 * themes that hook into them can act before mods are saved to the database.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_import() {
 		if ( ! wp_verify_nonce( $_REQUEST['customize-import'], 'customize-importing' ) ) {
 			return;
@@ -237,14 +239,14 @@ if ( ! function_exists( 'archetype_customize_import' ) ) {
 		// Call the customize_save_after action.
 		do_action( 'customize_save_after', $wp_customize );
 	}
-}
+endif;
 
-/**
- * Imports customizer images.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_import_images' ) ) {
+if ( ! function_exists( 'archetype_customize_import_images' ) ) :
+	/**
+	 * Imports customizer images.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_import_images( $mods ) {
 		foreach ( $mods as $key => $val ) {
 
@@ -267,15 +269,15 @@ if ( ! function_exists( 'archetype_customize_import_images' ) ) {
 
 		return $mods;
 	}
-}
+endif;
 
-/**
- * Taken from the core media_sideload_image function and
- * modified to return the url instead of html.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_sideload_image' ) ) {
+if ( ! function_exists( 'archetype_customize_sideload_image' ) ) :
+	/**
+	 * Taken from the core media_sideload_image function and
+	 * modified to return the url instead of html.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_sideload_image( $file ) {
 		$data = new stdClass();
 
@@ -319,14 +321,14 @@ if ( ! function_exists( 'archetype_customize_sideload_image' ) ) {
 
 		return $data;
 	}
-}
+endif;
 
-/**
- * Check if the file extention is a valid image mime type.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_is_image_url' ) ) {
+if ( ! function_exists( 'archetype_customize_is_image_url' ) ) :
+	/**
+	 * Check if the file extention is a valid image mime type.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_is_image_url( $string = '' ) {
 		if ( is_string( $string ) ) {
 
@@ -337,49 +339,49 @@ if ( ! function_exists( 'archetype_customize_is_image_url' ) ) {
 
 		return false;
 	}
-}
+endif;
 
-/**
- * Adds the json mime type.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_json_mime' ) ) {
+if ( ! function_exists( 'archetype_customize_json_mime' ) ) :
+	/**
+	 * Adds the json mime type.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_json_mime( $mimes ) {
 		$mimes['json'] = 'application/json';
 		return $mimes;
 	}
-}
+endif;
 
-/**
- * Adds the svg mime type.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_customize_upload_mimes' ) ) {
+if ( ! function_exists( 'archetype_customize_upload_mimes' ) ) :
+	/**
+	 * Adds the svg mime type.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_customize_upload_mimes( $mimes ) {
 		$mimes['svg'] = 'image/svg+xml';
 		return $mimes;
 	}
-}
+endif;
 
-/**
- * Sanitizes an integer value.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_sanitize_integer' ) ) {
+if ( ! function_exists( 'archetype_sanitize_integer' ) ) :
+	/**
+	 * Sanitizes an integer value.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_sanitize_integer( $input ) {
 		return absint( $input );
 	}
-}
+endif;
 
-/**
- * Sanitizes an integer value or return empty.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_sanitize_number' ) ) {
+if ( ! function_exists( 'archetype_sanitize_number' ) ) :
+	/**
+	 * Sanitizes an integer value or return empty.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_sanitize_number( $input ) {
 		if ( is_numeric( $input ) ) {
 			return $input;
@@ -387,45 +389,45 @@ if ( ! function_exists( 'archetype_sanitize_number' ) ) {
 
 		return 0;
 	}
-}
+endif;
 
-/**
- * Sanitizes a checkbox value.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) {
+if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) :
+	/**
+	 * Sanitizes a checkbox value.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_sanitize_checkbox( $input ) {
-		if ( $input == 1 ) {
+		if ( 1 === $input ) {
 			return 1;
 		}
 
 		return '';
 	}
-}
+endif;
 
-/**
- * Sanitizes the import/export control value.
- *
- * This is to pass theme check and returns false.
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_sanitize_import_export' ) ) {
+if ( ! function_exists( 'archetype_sanitize_import_export' ) ) :
+	/**
+	 * Sanitizes the import/export control value.
+	 *
+	 * This is to pass theme check and returns false.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_sanitize_import_export( $input ) {
 		return false;
 	}
-}
+endif;
 
-/**
- * Sanitizes a hex color. Identical to core's sanitize_hex_color(), which is not available on the wp_head hook.
- *
- * Returns either '', a 3 or 6 digit hex color (with #), or null.
- * For sanitizing values without a #, see sanitize_hex_color_no_hash().
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_sanitize_hex_color' ) ) {
+if ( ! function_exists( 'archetype_sanitize_hex_color' ) ) :
+	/**
+	 * Sanitizes a hex color. Identical to core's sanitize_hex_color(), which is not available on the wp_head hook.
+	 *
+	 * Returns either '', a 3 or 6 digit hex color (with #), or null.
+	 * For sanitizing values without a #, see sanitize_hex_color_no_hash().
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_sanitize_hex_color( $color ) {
 		if ( '' === $color ) {
 			return '';
@@ -438,15 +440,15 @@ if ( ! function_exists( 'archetype_sanitize_hex_color' ) ) {
 
 		return null;
 	}
-}
+endif;
 
-/**
- * Sanitizes choices (selects / radios)
- * Checks that the input matches one of the available choices
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_sanitize_choices' ) ) {
+if ( ! function_exists( 'archetype_sanitize_choices' ) ) :
+	/**
+	 * Sanitizes choices (selects / radios)
+	 * Checks that the input matches one of the available choices
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_sanitize_choices( $input, $setting ) {
 		global $wp_customize;
 
@@ -458,16 +460,16 @@ if ( ! function_exists( 'archetype_sanitize_choices' ) ) {
 			return $setting->default;
 		}
 	}
-}
+endif;
 
-/**
- * Sanitizes the layout setting
- *
- * Ensures only array keys matching the original settings specified in add_control() are valid
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_sanitize_layout' ) ) {
+if ( ! function_exists( 'archetype_sanitize_layout' ) ) :
+	/**
+	 * Sanitizes the layout setting
+	 *
+	 * Ensures only array keys matching the original settings specified in add_control() are valid
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_sanitize_layout( $input ) {
 		$valid = array(
 			'right'  => 'Right',
@@ -480,20 +482,23 @@ if ( ! function_exists( 'archetype_sanitize_layout' ) ) {
 			return '';
 		}
 	}
-}
+endif;
 
-/**
- * Layout classes
- * Adds 'right-sidebar' and 'left-sidebar' classes to the body tag
- * @param	array $classes current body classes
- * @return array Modified body classes
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_layout_class' ) ) {
+if ( ! function_exists( 'archetype_layout_class' ) ) :
+	/**
+	 * Layout classes
+	 *
+	 * Adds 'right-sidebar' and 'left-sidebar' classes to the body tag
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param	array $classes current body classes
+	 * @return array Modified body classes
+	 */
 	function archetype_layout_class( $classes ) {
 		$layout = archetype_sanitize_layout( get_theme_mod( 'archetype_layout' ) );
 
-		if ( '' == $layout ) {
+		if ( '' === $layout ) {
 			$layout = 'right';
 		}
 
@@ -501,17 +506,20 @@ if ( ! function_exists( 'archetype_layout_class' ) ) {
 
 		return $classes;
 	}
-}
+endif;
 
-/**
- * Adjust a hex color brightness
- * Allows us to create hover styles for custom link colors
- * @param	strong $hex 	hex color e.g. #111111
- * @param	integer $steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten)
- * @return string brightened/darkened hex color
- * @since	1.0.0
- */
-if ( ! function_exists( 'archetype_adjust_color_brightness' ) ) {
+if ( ! function_exists( 'archetype_adjust_color_brightness' ) ) :
+	/**
+	 * Adjust a hex color brightness
+	 *
+	 * Allows us to create hover styles for custom link colors
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param	strong $hex 	hex color e.g. #111111
+	 * @param	integer $steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten)
+	 * @return string brightened/darkened hex color
+	 */
 	function archetype_adjust_color_brightness( $hex, $steps ) {
 		// Steps should be between -255 and 255. Negative = darker, positive = lighter
 		$steps = max( -255, min( 255, $steps ) );
@@ -539,4 +547,4 @@ if ( ! function_exists( 'archetype_adjust_color_brightness' ) ) {
 
 		return '#' . $r_hex . $g_hex . $b_hex;
 	}
-}
+endif;
