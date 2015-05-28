@@ -641,7 +641,7 @@ if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) :
 	/**
 	 * Display the Homepage Hero
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 */
 	function archetype_homepage_hero() {
 		if ( false == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_toggle', true ) ) ) {

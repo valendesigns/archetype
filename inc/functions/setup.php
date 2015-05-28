@@ -166,7 +166,7 @@ function archetype_widgets_init() {
 /**
  * Enqueue scripts and styles.
  *
- * @since	1.0.0
+ * @since 1.0.0
  */
 function archetype_scripts() {
 	global $archetype_version;

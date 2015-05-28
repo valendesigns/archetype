@@ -8,7 +8,7 @@
 if ( ! function_exists( 'archetype_footer_widgets' ) ) {
 	/**
 	 * Display the footer widget regions
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @return	void
 	 */
 	function archetype_footer_widgets() {
@@ -49,7 +49,7 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) {
 if ( ! function_exists( 'archetype_credit' ) ) {
 	/**
 	 * Display the theme credit
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @return void
 	 */
 	function archetype_credit() {

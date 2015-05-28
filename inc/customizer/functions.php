@@ -32,6 +32,11 @@ if ( ! function_exists( 'archetype_site_logo_svg' ) ) :
 	 * Filter the site logo and add the SVG version
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param string $html The logo html.
+	 * @param int $logo The logo ID.
+	 * @param array $size The logo sizes.
+	 * @return string The modified logo html.
 	 */
 	function archetype_site_logo_svg( $html, $logo, $size ) {
 		return str_replace( '</a>', '<span class="svg-site-logo"></span></a>', $html );
@@ -48,13 +53,13 @@ if ( ! function_exists( 'archetype_customize_js' ) ) :
 		global $archetype_version;
 		wp_enqueue_script( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
 
-		// Localize
+		// Localize.
 		wp_localize_script( 'archetype_customize', 'ArchetypeCustomizerl10n', array(
 			'emptyImport' => __( 'Please choose a file to import.', 'archetype' ),
 			'missingLogo' => __( 'The SVG will not display properly without adding a fallback first.', 'archetype' ),
 		));
 
-		// Config
+		// Config.
 		wp_localize_script( 'archetype_customize', 'ArchetypeCustomizerConfig', array(
 			'ajaxURL' 							=> admin_url( 'admin-ajax.php' ),
 			'customizerURL' 				=> admin_url( 'customize.php' ),
@@ -170,19 +175,19 @@ if ( ! function_exists( 'archetype_customize_import' ) ) :
 		$customize_error  = false;
 		$template         = get_option( 'template' );
 
-		// Check for function and require
+		// Check for function and require.
 		if ( ! function_exists( 'wp_handle_sideload' ) ) {
 			require_once( ABSPATH . 'wp-admin/includes/file.php' );
 		}
 
-		// Override the sideload defaults
+		// Override the sideload defaults.
 		$overrides = array(
 			'test_form'    => false,
 			'test_size'    => true,
-			'test_upload'  => true, 
+			'test_upload'  => true,
 		);
 
-		// move the temporary file into the uploads directory
+		// Move the temporary file into the uploads directory.
 		add_filter( 'upload_mimes', 'archetype_customize_json_mime' );
 		$results = wp_handle_sideload( $_FILES['customize-import-file'], $overrides );
 		remove_filter( 'upload_mimes', 'archetype_customize_json_mime' );
@@ -201,8 +206,8 @@ if ( ! function_exists( 'archetype_customize_import' ) ) :
 		$raw	= wp_remote_fopen( $results['url'] );
 		$data = maybe_unserialize( $raw );
 
-		// Remove the file
-		@unlink( $results['file'] );
+		// Remove the file.
+		unlink( $results['file'] );
 
 		// Data checks.
 		if ( 'array' != gettype( $data ) ) {
@@ -246,6 +251,9 @@ if ( ! function_exists( 'archetype_customize_import_images' ) ) :
 	 * Imports customizer images.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $mods The theme mods.
+	 * @return array The theme mods.
 	 */
 	function archetype_customize_import_images( $mods ) {
 		foreach ( $mods as $key => $val ) {
@@ -273,10 +281,12 @@ endif;
 
 if ( ! function_exists( 'archetype_customize_sideload_image' ) ) :
 	/**
-	 * Taken from the core media_sideload_image function and
-	 * modified to return the url instead of html.
+	 * Taken from the core `media_sideload_image` function and modified to return image data instead of html.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param string $file The image url.
+	 * @return array The image data.
 	 */
 	function archetype_customize_sideload_image( $file ) {
 		$data = new stdClass();
@@ -306,7 +316,7 @@ if ( ! function_exists( 'archetype_customize_sideload_image' ) ) :
 
 			// If error storing permanently, unlink.
 			if ( is_wp_error( $id ) ) {
-				@unlink( $file_array['tmp_name'] );
+				unlink( $file_array['tmp_name'] );
 				return $id;
 			}
 
@@ -328,6 +338,9 @@ if ( ! function_exists( 'archetype_customize_is_image_url' ) ) :
 	 * Check if the file extention is a valid image mime type.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param string $string The image url.
+	 * @return bool Whether or not the url is a valid image.
 	 */
 	function archetype_customize_is_image_url( $string = '' ) {
 		if ( is_string( $string ) ) {
@@ -346,6 +359,9 @@ if ( ! function_exists( 'archetype_customize_json_mime' ) ) :
 	 * Adds the json mime type.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $mimes The available mime types.
+	 * @return array The modified mime types.
 	 */
 	function archetype_customize_json_mime( $mimes ) {
 		$mimes['json'] = 'application/json';
@@ -358,6 +374,9 @@ if ( ! function_exists( 'archetype_customize_upload_mimes' ) ) :
 	 * Adds the svg mime type.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $mimes The available mime types.
+	 * @return array The modified mime types.
 	 */
 	function archetype_customize_upload_mimes( $mimes ) {
 		$mimes['svg'] = 'image/svg+xml';
@@ -370,6 +389,9 @@ if ( ! function_exists( 'archetype_sanitize_integer' ) ) :
 	 * Sanitizes an integer value.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param int $input The integer value.
+	 * @return int The sanitized integer value.
 	 */
 	function archetype_sanitize_integer( $input ) {
 		return absint( $input );
@@ -381,6 +403,9 @@ if ( ! function_exists( 'archetype_sanitize_number' ) ) :
 	 * Sanitizes an integer value or return empty.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param numeric $input The number value.
+	 * @return numeric The sanitized number value.
 	 */
 	function archetype_sanitize_number( $input ) {
 		if ( is_numeric( $input ) ) {
@@ -396,6 +421,9 @@ if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) :
 	 * Sanitizes a checkbox value.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param int $input The checkbox value.
+	 * @return int The sanitized checkbox value.
 	 */
 	function archetype_sanitize_checkbox( $input ) {
 		if ( 1 === $input ) {
@@ -413,8 +441,10 @@ if ( ! function_exists( 'archetype_sanitize_import_export' ) ) :
 	 * This is to pass theme check and returns false.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @return bool
 	 */
-	function archetype_sanitize_import_export( $input ) {
+	function archetype_sanitize_import_export() {
 		return false;
 	}
 endif;
@@ -427,6 +457,9 @@ if ( ! function_exists( 'archetype_sanitize_hex_color' ) ) :
 	 * For sanitizing values without a #, see sanitize_hex_color_no_hash().
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param string $color The hexidecimal color value.
+	 * @return string The sanitized hexidecimal color value.
 	 */
 	function archetype_sanitize_hex_color( $color ) {
 		if ( '' === $color ) {
@@ -445,9 +478,14 @@ endif;
 if ( ! function_exists( 'archetype_sanitize_choices' ) ) :
 	/**
 	 * Sanitizes choices (selects / radios)
+	 *
 	 * Checks that the input matches one of the available choices
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $input The choices.
+	 * @param object $setting The Customizer setting.
+	 * @return array The sanitized choices.
 	 */
 	function archetype_sanitize_choices( $input, $setting ) {
 		global $wp_customize;
@@ -469,6 +507,9 @@ if ( ! function_exists( 'archetype_sanitize_layout' ) ) :
 	 * Ensures only array keys matching the original settings specified in add_control() are valid
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $input The layout choices.
+	 * @return array The sanitized layout choices.
 	 */
 	function archetype_sanitize_layout( $input ) {
 		$valid = array(
@@ -492,8 +533,8 @@ if ( ! function_exists( 'archetype_layout_class' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param	array $classes current body classes
-	 * @return array Modified body classes
+	 * @param	array $classes current body classes.
+	 * @return array Modified body classes.
 	 */
 	function archetype_layout_class( $classes ) {
 		$layout = archetype_sanitize_layout( get_theme_mod( 'archetype_layout' ) );
@@ -516,27 +557,27 @@ if ( ! function_exists( 'archetype_adjust_color_brightness' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param	strong $hex 	hex color e.g. #111111
-	 * @param	integer $steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten)
-	 * @return string brightened/darkened hex color
+	 * @param string $hex hex color e.g. #111111.
+	 * @param integer $steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten).
+	 * @return string Brightened or darkened hex color.
 	 */
 	function archetype_adjust_color_brightness( $hex, $steps ) {
-		// Steps should be between -255 and 255. Negative = darker, positive = lighter
+		// Steps should be between -255 and 255. Negative = darker, positive = lighter.
 		$steps = max( -255, min( 255, $steps ) );
 
-		// Format the hex color string
+		// Format the hex color string.
 		$hex = str_replace( '#', '', $hex );
 
 		if ( 3 === strlen( $hex ) ) {
 			$hex	= str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
 		}
 
-		// Get decimal values
+		// Get decimal values.
 		$r = hexdec( substr( $hex, 0, 2 ) );
 		$g = hexdec( substr( $hex, 2, 2 ) );
 		$b = hexdec( substr( $hex, 4, 2 ) );
 
-		// Adjust number of steps and keep it inside 0 to 255
+		// Adjust number of steps and keep it inside 0 to 255.
 		$r = max( 0, min( 255, $r + $steps ) );
 		$g = max( 0, min( 255, $g + $steps ) );
 		$b = max( 0, min( 255, $b + $steps ) );

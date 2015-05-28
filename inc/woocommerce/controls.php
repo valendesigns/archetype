@@ -9,7 +9,7 @@
  * WooCommerce Theme Customizer settings.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- * @since	1.0.0
+ * @since 1.0.0
  */
 if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 	function archetype_woocommerce_customize_register( $wp_customize ) {

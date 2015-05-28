@@ -12,7 +12,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 	/**
 	 * Add postMessage support for site title and description for the Theme Customizer along with several other settings.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 *
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 */

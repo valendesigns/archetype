@@ -8,7 +8,7 @@
 if ( ! function_exists( 'archetype_display_comments' ) ) {
 	/**
 	 * Archetype display comments
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 */
 	function archetype_display_comments() {
 		// If comments are open or we have at least one comment, load up the comment template

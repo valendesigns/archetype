@@ -8,7 +8,7 @@
 /**
  * Check whether the Archetype Customizer settings ar enabled
  * @return boolean
- * @since	1.0.0
+ * @since 1.0.0
  */
 function is_archetype_customizer_enabled() {
 	return apply_filters( 'archetype_customizer_enabled', true );
@@ -52,7 +52,7 @@ function archetype_body_classes( $classes ) {
 	 * Take the blue pill, close this file and forget you saw the following code.
 	 * Or take the red pill, filter `archetype_make_me_cute` and see how deep the rabbit hole goes...
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 */
 	$cute = apply_filters( 'archetype_make_me_cute', false );
 	if ( true == $cute ) {

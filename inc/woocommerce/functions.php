@@ -424,7 +424,7 @@ function archetype_breadcrumbs_defaults( $args ) {
 /**
  * Product gallery thumnail columns
  *
- * @since	1.0.0
+ * @since 1.0.0
  *
  * @return integer number of columns
  */
