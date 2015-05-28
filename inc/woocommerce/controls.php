@@ -7,13 +7,14 @@
  * @since 1.0.0
  */
 
-/**
- * WooCommerce Theme Customizer settings.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
+if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
+	/**
+	 * WooCommerce Theme Customizer settings.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_woocommerce_customize_register( $wp_customize ) {
 
 		$wp_customize->add_panel( 'archetype_woocommerce', array(
@@ -28,7 +29,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 			'title'        => __( 'Notices', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the shop notices.', 'archetype' ),
 			'priority'     => 10,
-			'panel'        => 'archetype_woocommerce'
+			'panel'        => 'archetype_woocommerce',
 		) );
 
 		/**
@@ -83,7 +84,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 			'title'        => __( 'Breadcrumbs', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the breadcrumbs.', 'archetype' ),
 			'priority'     => 15,
-			'panel'        => 'archetype_woocommerce'
+			'panel'        => 'archetype_woocommerce',
 		) );
 
 		/**
@@ -109,7 +110,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 			'title'        => __( 'Products', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of your product archives.', 'archetype' ),
 			'priority'     => 20,
-			'panel'        => 'archetype_woocommerce'
+			'panel'        => 'archetype_woocommerce',
 		) );
 
 		/**
@@ -490,7 +491,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 		$wp_customize->add_section( 'archetype_product_categories' , array(
 			'title'        => __( 'Product Categories', 'archetype' ),
 			'priority'     => 20,
-			'panel'        => 'archetype_homepage'
+			'panel'        => 'archetype_homepage',
 		) );
 
 		/**
@@ -643,7 +644,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 		$wp_customize->add_section( 'archetype_recent_products' , array(
 			'title'        => __( 'Recent Products', 'archetype' ),
 			'priority'     => 25,
-			'panel'        => 'archetype_homepage'
+			'panel'        => 'archetype_homepage',
 		) );
 
 		/**
@@ -803,7 +804,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 			$wp_customize->add_section( 'archetype_featured_products' , array(
 				'title'        => __( 'Featured Products', 'archetype' ),
 				'priority'     => 30,
-				'panel'        => 'archetype_homepage'
+				'panel'        => 'archetype_homepage',
 			) );
 
 			/**
@@ -958,7 +959,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 		$wp_customize->add_section( 'archetype_top_rated_products' , array(
 			'title'        => __( 'Top Rated Products', 'archetype' ),
 			'priority'     => 35,
-			'panel'        => 'archetype_homepage'
+			'panel'        => 'archetype_homepage',
 		) );
 
 		/**
@@ -1111,7 +1112,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 		$wp_customize->add_section( 'archetype_on_sale_products' , array(
 			'title'        => __( 'On Sale Products', 'archetype' ),
 			'priority'     => 40,
-			'panel'        => 'archetype_homepage'
+			'panel'        => 'archetype_homepage',
 		) );
 
 		/**
@@ -1259,5 +1260,4 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) {
 		) ) );
 
 	}
-
-}
+endif;

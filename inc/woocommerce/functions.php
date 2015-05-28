@@ -2,88 +2,90 @@
 /**
  * General functions used to integrate this theme with WooCommerce.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage WooCommerce
+ * @since 1.0.0
  */
 
-/**
- * Check if viewing a WooCommerce page.
- *
- * @uses is_admin() check if WordPress admin.
- * @uses is_woocommerce_activated() check if WooCommerce is activated.
- * @uses is_woocommerce() check if displaying a WooCommerce template.
- * @uses is_cart() check if dislaying the WooCommerce cart.
- * @uses is_checkout() check if dislaying the WooCommerce checkout.
- *
- * @since 1.0.0
- *
- * @return bool
- */
-if ( ! function_exists( 'archetype_is_woocommerce' ) ) {
+if ( ! function_exists( 'archetype_is_woocommerce' ) ) :
+	/**
+	 * Check if viewing a WooCommerce page.
+	 *
+	 * @uses is_admin() check if WordPress admin.
+	 * @uses is_woocommerce_activated() check if WooCommerce is activated.
+	 * @uses is_woocommerce() check if displaying a WooCommerce template.
+	 * @uses is_cart() check if dislaying the WooCommerce cart.
+	 * @uses is_checkout() check if dislaying the WooCommerce checkout.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return bool
+	 */
 	function archetype_is_woocommerce() {
 		if ( ! is_admin() && is_woocommerce_activated() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
 			return true;
 		}
 		return false;
 	}
-}
+endif;
 
-/**
- * Adds breadcrumbs depending on the value set in the customizer.
- *
- * @uses woocommerce_breadcrumb() to create the breadcrumb markup.
- *
- * @since 1.0.0
- *
- * @return string
- */
-if ( ! function_exists( 'archetype_breadcrumb' ) ) {
+if ( ! function_exists( 'archetype_breadcrumb' ) ) :
+	/**
+	 * Adds breadcrumbs depending on the value set in the customizer.
+	 *
+	 * @uses woocommerce_breadcrumb() to create the breadcrumb markup.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
 	function archetype_breadcrumb() {
 		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
 			woocommerce_breadcrumb();
 		}
 	}
-}
+endif;
 
-/**
- * Product review arguments passed to the comments list.
- *
- * @see wp_list_comments()
- *
- * @since 1.0.0
- *
- * @param array $args A list of arguments.
- * @return array
- */
-if ( ! function_exists( 'archetype_product_review_list_args' ) ) {
+if ( ! function_exists( 'archetype_product_review_list_args' ) ) :
+	/**
+	 * Product review arguments passed to the comments list.
+	 *
+	 * @see wp_list_comments()
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  array $args A list of arguments.
+	 * @return array
+	 */
 	function archetype_product_review_list_args( $args ) {
 		return array( 'callback' => 'archetype_comment', 'max_depth' => 0 );
 	}
-}
+endif;
 
-/**
- * Before Content
- *
- * Wraps all WooCommerce content in wrappers which match the theme markup
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_before_content' ) ) {
+if ( ! function_exists( 'archetype_before_content' ) ) :
+	/**
+	 * Before Content
+	 *
+	 * Wraps all WooCommerce content in wrappers which match the theme markup
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_before_content() {
 		?>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 		<?php
 	}
-}
+endif;
 
-/**
- * After Content
- *
- * Closes the wrapping divs
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_after_content' ) ) {
+if ( ! function_exists( 'archetype_after_content' ) ) :
+	/**
+	 * After Content
+	 *
+	 * Closes the wrapping divs
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_after_content() {
 		?>
 			</main><!-- #main -->
@@ -91,96 +93,96 @@ if ( ! function_exists( 'archetype_after_content' ) ) {
 
 		<?php do_action( 'archetype_sidebar' );
 	}
-}
+endif;
 
-/**
- * Before product loop
- *
- * Inserts a wrapper for the product loop on product pages.
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_before_product_loop' ) ) {
+if ( ! function_exists( 'archetype_before_product_loop' ) ) :
+	/**
+	 * Before product loop
+	 *
+	 * Inserts a wrapper for the product loop on product pages.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_before_product_loop() {
 		if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
 			echo '<div class="columns-' . archetype_sanitize_integer( get_theme_mod( 'archetype_products_columns', '3' ) ) . '">';
 		}
 	}
-}
+endif;
 
-/**
- * After product loop
- *
- * Closes the product loop wrapper on product pages.
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_after_product_loop' ) ) {
+if ( ! function_exists( 'archetype_after_product_loop' ) ) :
+	/**
+	 * After product loop
+	 *
+	 * Closes the product loop wrapper on product pages.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_after_product_loop() {
 		if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
 			echo '</div>';
 		}
 	}
-}
+endif;
 
-/**
- * Before product loop item
- *
- * Inserts a wrapper for the product loop item.
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_before_product_loop_item' ) ) {
+if ( ! function_exists( 'archetype_before_product_loop_item' ) ) :
+	/**
+	 * Before product loop item
+	 *
+	 * Inserts a wrapper for the product loop item.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_before_product_loop_item() {
 		echo '<div class="product-item-content">';
 	}
-}
+endif;
 
-/**
- * After product loop item
- *
- * Closes the product loop item wrapper.
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_after_product_loop_item' ) ) {
+if ( ! function_exists( 'archetype_after_product_loop_item' ) ) :
+	/**
+	 * After product loop item
+	 *
+	 * Closes the product loop item wrapper.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_after_product_loop_item() {
 		echo '</div>';
 	}
-}
+endif;
 
-/**
- * Before product loop item buttons
- *
- * Inserts a wrapper for the product loop item buttons.
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_before_product_loop_item_buttons' ) ) {
+if ( ! function_exists( 'archetype_before_product_loop_item_buttons' ) ) :
+	/**
+	 * Before product loop item buttons
+	 *
+	 * Inserts a wrapper for the product loop item buttons.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_before_product_loop_item_buttons() {
 		echo '<div class="product-item-buttons">';
 	}
-}
+endif;
 
-/**
- * After product loop item buttons
- *
- * Closes the product loop item wrapper buttons.
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'archetype_after_product_loop_item_buttons' ) ) {
+if ( ! function_exists( 'archetype_after_product_loop_item_buttons' ) ) :
+	/**
+	 * After product loop item buttons
+	 *
+	 * Closes the product loop item wrapper buttons.
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_after_product_loop_item_buttons() {
 		echo '</div>';
 	}
-}
+endif;
 
 /**
  * Default loop columns on product archives
  *
  * @since 1.0.0
  *
- * @return integer products per row
+ * @return integer Products per row.
  */
 function archetype_loop_columns() {
 	$columns = 3;
@@ -201,8 +203,8 @@ function archetype_loop_columns() {
  *
  * @sine 1.0.0
  *
- * @param array $classes
- * @return array $classes modified array of classes
+ * @param  array $classes
+ * @return array $classes Modified array of classes.
  */
 function archetype_woocommerce_body_class( $classes ) {
 	if ( is_woocommerce_activated() ) {
@@ -294,8 +296,8 @@ function archetype_woocommerce_body_class( $classes ) {
  *
  * @sine 1.0.0
  *
- * @param array $classes
- * @return array $classes modified array of classes
+ * @param  array $classes
+ * @return array $classes Modified array of classes.
  */
 function archetype_woocommerce_post_class( $classes ) {
 	if ( is_product() ) {
@@ -320,15 +322,15 @@ function archetype_fix_thumbnail() {
 	}
 }
 
-/**
- * Replaces `get_search_form()` with Product Search.
- *
- * @since 1.0.0
- *
- * @param string $form The form markup.
- * @return string
- */
-if ( ! function_exists( 'archetype_product_search_form' ) ) {
+if ( ! function_exists( 'archetype_product_search_form' ) ) :
+	/**
+	 * Replaces `get_search_form()` with Product Search.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  string $form The form markup.
+	 * @return string
+	 */
 	function archetype_product_search_form( $form ) {
 		if ( archetype_is_woocommerce() ) {
 			$form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
@@ -342,19 +344,19 @@ if ( ! function_exists( 'archetype_product_search_form' ) ) {
 		}
 		return $form;
 	}
-}
+endif;
 
-/**
- * Cart Fragments
- *
- * Ensure cart contents update when products are added to the cart via AJAX
- *
- * @since 1.0.0
- *
- * @param array $fragments Fragments to refresh via AJAX
- * @return array Fragments to refresh via AJAX
- */
-if ( ! function_exists( 'archetype_cart_link_fragment' ) ) {
+if ( ! function_exists( 'archetype_cart_link_fragment' ) ) :
+	/**
+	 * Cart Fragments
+	 *
+	 * Ensure cart contents update when products are added to the cart via AJAX
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  array $fragments Fragments to refresh via AJAX.
+	 * @return array Fragments to refresh via AJAX.
+	 */
 	function archetype_cart_link_fragment( $fragments ) {
 		global $woocommerce;
 
@@ -366,7 +368,7 @@ if ( ! function_exists( 'archetype_cart_link_fragment' ) ) {
 
 		return $fragments;
 	}
-}
+endif;
 
 /**
  * WooCommerce specific scripts & stylesheets
@@ -385,8 +387,8 @@ function archetype_woocommerce_scripts() {
  *
  * @since 1.0.0
  *
- * @param array $args related products args
- * @return array $args related products args
+ * @param  array $args Related products args.
+ * @return array $args Modified related products args.
  */
 function archetype_related_products_args( $args ) {
 	$limit = archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_limit', '3' ) );
@@ -405,8 +407,8 @@ function archetype_related_products_args( $args ) {
  *
  * @since 1.0.0
  *
- * @param array $args default breadcrumb args
- * @return array $args default breadcrumb args
+ * @param  array $args Default breadcrumb args.
+ * @return array $args Modified breadcrumb args.
  */
 function archetype_breadcrumbs_defaults( $args ) {
 	$args = apply_filters( 'archetype_breadcrumbs_defaults', array(
@@ -426,7 +428,7 @@ function archetype_breadcrumbs_defaults( $args ) {
  *
  * @since 1.0.0
  *
- * @return integer number of columns
+ * @return integer Number of columns.
  */
 function archetype_thumbnail_columns() {
 	$product_page = get_theme_mod( 'archetype_product_full_width', apply_filters( 'archetype_default_product_full_width', false ) );
@@ -444,10 +446,12 @@ function archetype_thumbnail_columns() {
 	}
 
 	/**
- 	* Filter the number of image columns for each gallery row.
- 	*
- 	* Built-in support for 1, 2, 3, 4, 6, and 12 columns.
- 	*/
+	 * Filter the number of image columns for each gallery row.
+	 *
+	 * Built-in support for 1, 2, 3, 4, 6, and 12 columns.
+	 *
+	 * @param int $columns The number of columns.
+	 */
 	return intval( apply_filters( 'archetype_product_thumbnail_columns', $columns ) );
 }
 
@@ -456,7 +460,7 @@ function archetype_thumbnail_columns() {
  *
  * @since 1.0.0
  *
- * @return integer number of products
+ * @return integer Number of products.
  */
 function archetype_products_per_page() {
 	$products_per_page = archetype_sanitize_integer( get_theme_mod( 'archetype_products_per_page', apply_filters( 'archetype_default_products_per_page', '12' ) ) );
@@ -469,7 +473,7 @@ function archetype_products_per_page() {
  *
  * @since 1.0.0
  *
- * @param $extension main extension class name
+ * @param  $extension Main extension class name.
  * @return boolean
  */
 function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {

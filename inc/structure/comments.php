@@ -27,9 +27,9 @@ if ( ! function_exists( 'archetype_comment' ) ) {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param		object	$comment Comment to display.
-	 * @param		array		$args An array of arguments.
-	 * @param		int			$depth Depth of comment.
+	 * @param  object  $comment Comment to display.
+	 * @param  array   $args An array of arguments.
+	 * @param  int     $depth Depth of comment.
 	 */
 	function archetype_comment( $comment, $args, $depth ) {
 		// The first part of the selector used to identify the comment to respond below.

@@ -15,9 +15,9 @@ if ( ! function_exists( 'archetype_hide_title_post_meta' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param		bool		$hide Whether to hide the title or not.
-	 * @param		object	$post WP_Post object.
-	 * @return	bool
+	 * @param  bool   $hide Whether to hide the title or not.
+	 * @param  object $post WP_Post object.
+	 * @return bool
 	 */
 	function archetype_hide_title_post_meta( $hide, $post ) {
 		if ( get_post_meta( $post->ID, '_archetype_hide_title', true ) == 'on' ) {
@@ -35,9 +35,9 @@ if ( ! function_exists( 'archetype_hide_author_bio_post_meta' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param		bool		$hide Whether to hide the title or not.
-	 * @param		object	$post WP_Post object.
-	 * @return	bool
+	 * @param  bool   $hide Whether to hide the title or not.
+	 * @param  object $post WP_Post object.
+	 * @return bool
 	 */
 	function archetype_hide_author_bio_post_meta( $hide, $post ) {
 		if ( get_post_meta( $post->ID, '_archetype_hide_author_bio', true ) == 'on' ) {
@@ -53,7 +53,7 @@ if ( ! function_exists( 'archetype_link_has_title' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return	array		An array of post formats.
+	 * @return array An array of post formats.
 	 */
 	function archetype_link_has_title() {
 		/**

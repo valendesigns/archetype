@@ -16,7 +16,7 @@ if ( ! function_exists( 'archetype_homepage_content' ) ) {
 	 * @since 1.0.0
 	 */
 	function archetype_homepage_content() {
-		// Page content
+		// Page content.
 		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_toggle', true ) ) ) {
 			while ( have_posts() ) : the_post();
 

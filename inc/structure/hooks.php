@@ -1,6 +1,6 @@
 <?php
 /**
- * archetype hooks
+ * Archetype hooks
  *
  * @package Archetype
  * @subpackage Hooks
