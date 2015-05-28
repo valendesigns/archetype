@@ -6,7 +6,7 @@
  * @subpackage Welcome
  * @since 1.0.0
  */
- 
+
 ?>
 <h2 class="nav-tab-wrapper">
 	<a href="#getting_started" class="nav-tab nav-tab-active"><?php _e( 'Getting Started', 'archetype' ); ?></a>

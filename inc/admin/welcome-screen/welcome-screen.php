@@ -1,12 +1,18 @@
 <?php
 /**
+ * Welcome API.
+ *
+ * @package Archetype
+ * @subpackage Welcome
+ * @since 1.0.0
+ */
+
+/**
  * Welcome Screen Class
  *
  * Sets up the welcome screen page, hides the menu item
  * and contains the screen content.
  *
- * @package Archetype
- * @subpackage Welcome
  * @since 1.0.0
  */
 class Archetype_Welcome {
