@@ -27,10 +27,9 @@ if ( ! function_exists( 'archetype_comment' ) ) {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param object $comment Comment to display.
-	 * @param array $args An array of arguments.
-	 * @param int $depth Depth of comment.
-	 * @return string The comment markup.
+	 * @param		object	$comment Comment to display.
+	 * @param		array		$args An array of arguments.
+	 * @param		int			$depth Depth of comment.
 	 */
 	function archetype_comment( $comment, $args, $depth ) {
 		// The first part of the selector used to identify the comment to respond below.
@@ -65,7 +64,7 @@ if ( ! function_exists( 'archetype_comment' ) ) {
 		$rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 
 		// Schema.
-		$schema = array( 
+		$schema = array(
 			'itemprop' => 'comment',
 			'itemtype' => 'Comment',
 		);
@@ -73,7 +72,7 @@ if ( ! function_exists( 'archetype_comment' ) ) {
 		// Viewing a WooCommerce product.
 		if ( function_exists( 'is_product' ) && is_product() ) {
 			// Change schema to a rating.
-			$schema = array( 
+			$schema = array(
 				'itemprop' => 'review',
 				'itemtype' => 'Review',
 			);
@@ -105,8 +104,8 @@ if ( ! function_exists( 'archetype_comment' ) ) {
 						// Author.
 						printf( __( '<cite class="fn" itemprop="author">%s</cite>', 'archetype' ), get_comment_author_link() );
 
-						// Verified owner
-						if ( isset( $verified ) && true === $verified )	{
+						// Verified owner.
+						if ( isset( $verified ) && true === $verified ) {
 							echo '<em class="verified">(' . __( 'verified owner', 'archetype' ) . ')</em> ';
 						}
 						?>
@@ -117,7 +116,7 @@ if ( ! function_exists( 'archetype_comment' ) ) {
 					</div>
 
 					<a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>" class="comment-date">
-						<?php echo '<time itemprop="datePublished" datetime="' . get_comment_date( 'c' ) . '">' . human_time_diff( get_comment_time('U'), current_time('timestamp') ) . ' ago' . '</time>'; ?>
+						<?php echo '<time itemprop="datePublished" datetime="' . get_comment_date( 'c' ) . '">' . human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) . ' ago' . '</time>'; ?>
 					</a>
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>

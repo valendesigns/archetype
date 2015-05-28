@@ -33,10 +33,10 @@ if ( ! function_exists( 'archetype_site_logo_svg' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $html The logo html.
-	 * @param int $logo The logo ID.
-	 * @param array $size The logo sizes.
-	 * @return string The modified logo html.
+	 * @param		string	$html The logo html.
+	 * @param		int			$logo The logo ID.
+	 * @param		array		$size The logo sizes.
+	 * @return	string	The modified logo html.
 	 */
 	function archetype_site_logo_svg( $html, $logo, $size ) {
 		return str_replace( '</a>', '<span class="svg-site-logo"></span></a>', $html );
@@ -483,9 +483,9 @@ if ( ! function_exists( 'archetype_sanitize_choices' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $input The choices.
-	 * @param object $setting The Customizer setting.
-	 * @return array The sanitized choices.
+	 * @param		array		$input The choices.
+	 * @param		object	$setting The Customizer setting.
+	 * @return	array		The sanitized choices.
 	 */
 	function archetype_sanitize_choices( $input, $setting ) {
 		global $wp_customize;
@@ -508,8 +508,8 @@ if ( ! function_exists( 'archetype_sanitize_layout' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $input The layout choices.
-	 * @return array The sanitized layout choices.
+	 * @param		array		$input The layout choices.
+	 * @return	array		The sanitized layout choices.
 	 */
 	function archetype_sanitize_layout( $input ) {
 		$valid = array(
@@ -533,8 +533,8 @@ if ( ! function_exists( 'archetype_layout_class' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param	array $classes current body classes.
-	 * @return array Modified body classes.
+	 * @param		array		$classes current body classes.
+	 * @return	array		Modified body classes.
 	 */
 	function archetype_layout_class( $classes ) {
 		$layout = archetype_sanitize_layout( get_theme_mod( 'archetype_layout' ) );
@@ -557,9 +557,9 @@ if ( ! function_exists( 'archetype_adjust_color_brightness' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $hex Hexidecimal color e.g. #111111.
-	 * @param integer $steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten).
-	 * @return string Brightened or darkened hex color.
+	 * @param		string	$hex Hexidecimal color e.g. #111111.
+	 * @param		integer	$steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten).
+	 * @return	string	Brightened or darkened hex color.
 	 */
 	function archetype_adjust_color_brightness( $hex, $steps ) {
 		// Steps should be between -255 and 255. Negative = darker, positive = lighter.
