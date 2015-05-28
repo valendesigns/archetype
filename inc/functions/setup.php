@@ -1,8 +1,10 @@
 <?php
 /**
- * archetype setup functions
+ * Archetype setup functions
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Functions
+ * @since 1.0.0
  */
 
 /**
@@ -41,13 +43,13 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 		 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 		 */
 
-		// wp-content/languages/themes/archetype-it_IT.mo
+		// wp-content/languages/themes/archetype-it_IT.mo.
 		load_theme_textdomain( 'archetype', trailingslashit( WP_LANG_DIR ) . 'themes/' );
 
-		// wp-content/themes/child-theme-name/languages/it_IT.mo
+		// wp-content/themes/child-theme-name/languages/it_IT.mo.
 		load_theme_textdomain( 'archetype', get_stylesheet_directory() . '/languages' );
 
-		// wp-content/themes/archetype/languages/it_IT.mo
+		// wp-content/themes/archetype/languages/it_IT.mo.
 		load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );
 
 		// This theme uses wp_nav_menu() in two locations.
@@ -58,22 +60,22 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 		) );
 		
 		/*
- 		* Add default posts and comments RSS feed links to head.
- 		*/
+		 * Add default posts and comments RSS feed links to head.
+		 */
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
- 		* Enable support for Post Thumbnails on posts and pages.
- 		*
- 		* @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
- 		*/
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 */
 		add_theme_support( 'post-thumbnails' );
 		
 		/*
- 		* Enable support for Post Formats.
- 		*
- 		* @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Formats
- 		*/
+		 * Enable support for Post Formats.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Formats
+		 */
 		add_theme_support( 'post-formats', array( 
 			'aside',
 			'gallery',
@@ -87,9 +89,9 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 		) );
 		
 		/*
- 		* Switch default core markup to output valid HTML5 for search form, comment form, 
- 		* comments, galleries, captions and widgets.
- 		*/
+		 * Switch default core markup to output valid HTML5 for search form, comment form, 
+		 * comments, galleries, captions and widgets.
+		 */
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -106,10 +108,10 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 		) ) );
 
 		/*
- 		* Add support for the site logo functionality in JetPack
- 		*
- 		* @link http://jetpack.me/
- 		*/
+		 * Add support for the site logo functionality in JetPack
+		 *
+		 * @link http://jetpack.me/
+		 */
 		add_theme_support( 'site-logo', array( 'size' => 'full' ) );
 
 		// Declare WooCommerce support

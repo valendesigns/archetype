@@ -148,7 +148,7 @@ if ( ! function_exists( 'archetype_customize_export' ) ) :
 		header( 'Content-disposition: attachment; filename=' . $theme . '-customize.json' );
 		header( 'Content-Type: application/octet-stream; charset=' . $charset );
 
-		echo serialize( array( 
+		echo serialize( array(
 			'template' => $template,
 			'mods'     => $mods ? $mods : array(),
 		) );
@@ -557,7 +557,7 @@ if ( ! function_exists( 'archetype_adjust_color_brightness' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $hex hex color e.g. #111111.
+	 * @param string $hex Hexidecimal color e.g. #111111.
 	 * @param integer $steps factor by which to brighten/darken ranging from -255 (darken) to 255 (brighten).
 	 * @return string Brightened or darkened hex color.
 	 */

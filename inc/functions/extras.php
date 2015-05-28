@@ -2,13 +2,17 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Functions
+ * @since 1.0.0
  */
 
 /**
  * Check whether the Archetype Customizer settings ar enabled
- * @return boolean
+ *
  * @since 1.0.0
+ *
+ * @return boolean
  */
 function is_archetype_customizer_enabled() {
 	return apply_filters( 'archetype_customizer_enabled', true );
@@ -16,6 +20,8 @@ function is_archetype_customizer_enabled() {
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
+ *
+ * @since 1.0.0
  *
  * @param array $args Configuration arguments.
  * @return array
@@ -27,6 +33,8 @@ function archetype_page_menu_args( $args ) {
 
 /**
  * Adds custom classes to the array of body classes.
+ *
+ * @since 1.0.0
  *
  * @param array $classes Classes for the body element.
  * @return array
@@ -49,6 +57,7 @@ function archetype_body_classes( $classes ) {
 
 	/**
 	 * What is this?!
+	 *
 	 * Take the blue pill, close this file and forget you saw the following code.
 	 * Or take the red pill, filter `archetype_make_me_cute` and see how deep the rabbit hole goes...
 	 *
@@ -59,22 +68,22 @@ function archetype_body_classes( $classes ) {
 		$classes[] = 'archetype-cute';
 	}
 
-	// 4 out of 12 columns
+	// 4 out of 12 columns.
 	if ( 4 == get_theme_mod( 'archetype_columns', apply_filters( 'archetype_default_columns', '3' ) ) ) {
 		$classes[] = 'grid-alt';
 	}
-	
-	// Full width
+
+	// Full width.
 	if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_full_width', apply_filters( 'archetype_default_full_width', false ) ) ) ) {
 		$classes[] = 'is-full-width';
 	}
 
-	// Boxed
+	// Boxed.
 	if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
 		$classes[] = 'is-boxed';
 	}
 
-	// Padding
+	// Padding.
 	if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_padded', apply_filters( 'archetype_default_padded', true ) ) ) ) {
 		$classes[] = 'is-padded';
 	}
@@ -82,34 +91,39 @@ function archetype_body_classes( $classes ) {
 	return $classes;
 }
 
-/**
- * Query WooCommerce activation
- */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+if ( ! function_exists( 'is_woocommerce_activated' ) ) :
+	/**
+	 * Query WooCommerce activation
+	 *
+	 * @since 1.0.0
+	 */
 	function is_woocommerce_activated() {
 		return class_exists( 'woocommerce' ) ? true : false;
 	}
-}
+endif;
 
 /**
  * Schema type
- * @return string schema itemprop type
+ *
+ * @since 1.0.0
+ *
+ * @return string schema itemprop type.
  */
 function archetype_html_tag_schema() {
 	$schema  = 'http://schema.org/';
 	$type    = 'WebPage';
 
-	// Is single post
+	// Is single post.
 	if ( is_singular( 'post' ) ) {
 		$type = 'Article';
 	}
 
-	// Is author page
+	// Is author page.
 	elseif ( is_author() ) {
 		$type = 'ProfilePage';
 	}
 
-	// Is search results page
+	// Is search results page.
 	elseif ( is_search() ) {
 		$type = 'SearchResultsPage';
 	}
@@ -119,6 +133,8 @@ function archetype_html_tag_schema() {
 
 /**
  * Returns true if a blog has more than 1 category.
+ *
+ * @since 1.0.0
  *
  * @return bool
  */
@@ -150,6 +166,8 @@ function archetype_categorized_blog() {
 
 /**
  * Flush out the transients used in archetype_categorized_blog.
+ *
+ * @since 1.0.0
  */
 function archetype_category_transient_flusher() {
 	// Like, beat it. Dig?
@@ -158,15 +176,15 @@ function archetype_category_transient_flusher() {
 add_action( 'edit_category', 'archetype_category_transient_flusher' );
 add_action( 'save_post', 		'archetype_category_transient_flusher' );
 
-/**
- * Replaces `get_search_form()` with post only search.
- *
- * @since 1.0.0
- *
- * @param string $form The form markup.
- * @return string
- */
-if ( ! function_exists( 'archetype_post_search_form' ) ) {
+if ( ! function_exists( 'archetype_post_search_form' ) ) :
+	/**
+	 * Replaces `get_search_form()` with post only search.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $form The form markup.
+	 * @return string
+	 */
 	function archetype_post_search_form( $form ) {
 		if ( true === apply_filters( 'archetype_post_search_form',	true ) ) {
 			$form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
@@ -180,18 +198,18 @@ if ( ! function_exists( 'archetype_post_search_form' ) ) {
 		}
 		return $form;
 	}
-}
+endif;
 
-/**
- * Converts HEX to RGB
- *
- * @since 1.0.0
- *
- * @param string $hex The hexidecimal color code.
- * @param string $color Set to r, g, or b to return a specific color.
- * @return mixed An array of color values or a single color when $color is set. False when it can't be converted.
- */
-if ( ! function_exists( 'archetype_rgb_from_hex' ) ) {
+if ( ! function_exists( 'archetype_rgb_from_hex' ) ) :
+	/**
+	 * Converts HEX to RGB
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $hex The hexidecimal color code.
+	 * @param string $color Set to r, g, or b to return a specific color.
+	 * @return mixed An array of color values or a single color when $color is set. False when it can't be converted.
+	 */
 	function archetype_rgb_from_hex( $hex, $color = '' ) {
 
 		$hex = str_replace( '#', '', $hex );
@@ -207,16 +225,16 @@ if ( ! function_exists( 'archetype_rgb_from_hex' ) ) {
 		} else {
 			return false;
 		}
-		
+
 		$rgb = array();
 		$rgb[ 'r' ] = $r;
 		$rgb[ 'g' ] = $g;
 		$rgb[ 'b' ] = $b;
-		
+
 		if ( isset( $rgb[ $color ] ) ) {
 			return $rgb[ $color ];
 		}
 
 		return $rgb;
 	}
-}
+endif;

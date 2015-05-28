@@ -6,8 +6,8 @@
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 4.1.
  *
- * @package WordPress
- * @subpackage Archetype
+ * @package Archetype
+ * @subpackage Functions
  * @since 1.0.0
  */
 
@@ -44,7 +44,7 @@ function archetype_upgrade_notice() {
  */
 function archetype_customize() {
 	wp_die( archetype_back_compat_msg(), '', array(
-		'back_link' => true
+		'back_link' => true,
 	) );
 }
 add_action( 'load-customize.php', 'archetype_customize' );
@@ -68,5 +68,4 @@ add_action( 'template_redirect', 'archetype_preview' );
  */
 function archetype_back_compat_msg() {
 	return sprintf( __( 'Archetype requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'archetype' ), $GLOBALS['wp_version'] );
-	}
 }
