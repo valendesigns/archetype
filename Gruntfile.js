@@ -63,6 +63,11 @@ module.exports = function( grunt ) {
 					'style.css': 'style.scss'
 				} ]
 			},
+			welcome: {
+				files: [ {
+					'inc/admin/css/welcome.css': 'inc/admin/sass/welcome.scss'
+				} ]
+			},
 			customizer: {
 				files: [ {
 					'inc/customizer/css/customizer.css': 'inc/customizer/sass/customizer.scss'
@@ -97,6 +102,14 @@ module.exports = function( grunt ) {
 					'style.css'
 				]
 			},
+			welcome: {
+				expand: true,
+				ext: '-rtl.css',
+				src: [
+					'inc/admin/css/*.css',
+					'!inc/admin/css/*-rtl.css'
+				]
+			},
 			woocommerce: {
 				expand: true,
 				ext: '-rtl.css',
@@ -114,6 +127,15 @@ module.exports = function( grunt ) {
 				files: [ {
 					'style.min.css': 'style.css',
 					'style-rtl.min.css': 'style-rtl.css'
+				} ]
+			},
+			welcome: {
+				files: [ {
+					expand: true,
+					cwd: 'inc/admin/css/',
+					src: [ '*.css' ],
+					dest: 'inc/admin/css/',
+					ext: '.css'
 				} ]
 			},
 			customizer: {
@@ -142,6 +164,7 @@ module.exports = function( grunt ) {
 				files: [
 					'style.scss',
 					'sass/**/*.scss',
+					'inc/admin/sass/*.scss',
 					'inc/customizer/sass/*.scss',
 					'inc/woocommerce/sass/*.scss'
 				],
@@ -236,6 +259,7 @@ module.exports = function( grunt ) {
 					'!.DS_Store',
 					'!style.scss',
 					'!sass/**',
+					'!inc/admin/sass/*.scss',
 					'!inc/customizer/sass/*.scss',
 					'!inc/woocommerce/sass/*.scss',
 					'!tests/**',
