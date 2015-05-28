@@ -480,6 +480,10 @@ function archetype_products_per_page() {
  * @param  $extension The class name of the extension. Default is 'WC_Bookings'.
  * @return bool
  */
-function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
+function is_woocommerce_extension_activated( $extension = '' ) {
+	if ( empty( $extension ) ) {
+		$extension = 'WC_Bookings';
+	}
+
 	return class_exists( $extension, false ) ? true : false;
 }
