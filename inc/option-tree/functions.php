@@ -5,53 +5,53 @@
  * @package archetype
  */
 
-/**
- * Filter the visibility of the post title.
- *
- * @see archetype_hide_title()
- *
- * @since 1.0.0
- *
- * @param WP_Post $post WP_Post object.
- * @return bool
- */
-if ( ! function_exists( 'archetype_hide_title_post_meta' ) ) {
+if ( ! function_exists( 'archetype_hide_title_post_meta' ) ) :
+	/**
+	 * Filter the visibility of the post title.
+	 *
+	 * @see archetype_hide_title()
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param WP_Post $post WP_Post object.
+	 * @return bool
+	 */
 	function archetype_hide_title_post_meta( $hide, $post ) {
 		if ( get_post_meta( $post->ID, '_archetype_hide_title', true ) == 'on' ) {
 			$hide = true;
 		}
 		return $hide;
 	}
-}
+endif;
 
-/**
- * Filter the visibility of the author bio.
- *
- * @see archetype_hide_author_bio()
- *
- * @since 1.0.0
- *
- * @param bool $hide Whether the title has been hidden.
- * @param WP_Post $post WP_Post object.
- * @return bool
- */
-if ( ! function_exists( 'archetype_hide_author_bio_post_meta' ) ) {
+if ( ! function_exists( 'archetype_hide_author_bio_post_meta' ) ) :
+	/**
+	 * Filter the visibility of the author bio.
+	 *
+	 * @see archetype_hide_author_bio()
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool $hide Whether the title has been hidden.
+	 * @param WP_Post $post WP_Post object.
+	 * @return bool
+	 */
 	function archetype_hide_author_bio_post_meta( $hide, $post ) {
 		if ( get_post_meta( $post->ID, '_archetype_hide_author_bio', true ) == 'on' ) {
 			$hide = true;
 		}
 		return $hide;
 	}
-}
+endif;
 
-/**
- * Removes `link` from the array of post formats that do not have a title.
- *
- * @since 1.0.0
- *
- * @return array An array of post formats.
- */
-if ( ! function_exists( 'archetype_link_has_title' ) ) {
+if ( ! function_exists( 'archetype_link_has_title' ) ) :
+	/**
+	 * Removes `link` from the array of post formats that do not have a title.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array An array of post formats.
+	 */
 	function archetype_link_has_title() {
 		/**
 		 * Filter the array of post formats that do not have a title.
@@ -64,18 +64,18 @@ if ( ! function_exists( 'archetype_link_has_title' ) ) {
 
 		return $post_formats;
 	}
-}
+endif;
 
-/**
- * Retrieve the title and URL for the link post format.
- *
- * Must be used inside the loop.
- *
- * @since 1.0.0
- *
- * @return	string
- */
-if ( ! function_exists( 'archetype_post_format_title' ) ) {
+if ( ! function_exists( 'archetype_post_format_title' ) ) :
+	/**
+	 * Retrieve the title and URL for the link post format.
+	 *
+	 * Must be used inside the loop.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return	string
+	 */
 	function archetype_post_format_title() {
 		$title = '';
 		$link_url = get_post_meta( get_the_ID(), '_format_link_url', true );
@@ -89,7 +89,7 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) {
 			// Remove the `hide-title` class by filtering the `archetype_hide_title_post_formats` array.
 			add_filter( 'archetype_hide_title_post_formats', 'archetype_link_has_title' );
 
-		// Remove the filter so it does not alter other posts
+		// Remove the filter so it does not alter other posts.
 		} else {
 
 			remove_filter( 'archetype_hide_title_post_formats', 'archetype_link_has_title' );
@@ -98,23 +98,23 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) {
 
 		return $title;
 	}
-}
+endif;
 
-/**
- * Displays the audio
- *
- * Must be used inside the loop.
- *
- * @since 1.0.0
- *
- * @return	string
- */
-if ( ! function_exists( 'archetype_post_format_audio' ) ) {
+if ( ! function_exists( 'archetype_post_format_audio' ) ) :
+	/**
+	 * Displays the audio
+	 *
+	 * Must be used inside the loop.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return	string
+	 */
 	function archetype_post_format_audio() {
 		if ( has_post_format( 'audio' ) && $audio = get_post_meta( get_the_ID(), '_format_audio_embed', true ) ) {
 			?>
 			<div class="post-audio">
-				<?php 
+				<?php
 				remove_filter( 'the_content', 'wpautop' );
 				echo apply_filters( 'the_content', $audio );
 				add_filter( 'the_content', 'wpautop' );
@@ -123,23 +123,23 @@ if ( ! function_exists( 'archetype_post_format_audio' ) ) {
 			<?php
 		}
 	}
-}
+endif;
 
-/**
- * Displays the video
- *
- * Must be used inside the loop.
- *
- * @since 1.0.0
- *
- * @return	string
- */
-if ( ! function_exists( 'archetype_post_format_video' ) ) {
+if ( ! function_exists( 'archetype_post_format_video' ) ) :
+	/**
+	 * Displays the video
+	 *
+	 * Must be used inside the loop.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return	string
+	 */
 	function archetype_post_format_video() {
 		if ( has_post_format( 'video' ) && $video = get_post_meta( get_the_ID(), '_format_video_embed', true ) ) {
 			?>
 			<div class="post-video">
-				<?php 
+				<?php
 				remove_filter( 'the_content', 'wpautop' );
 				echo apply_filters( 'the_content', $video );
 				add_filter( 'the_content', 'wpautop' );
@@ -148,31 +148,31 @@ if ( ! function_exists( 'archetype_post_format_video' ) ) {
 			<?php
 		}
 	}
-}
+endif;
 
-/**
- * Returns an array of gallery images.
- *
- * @since 1.0.0
- *
- * @param int $post_id ID of the post.
- * @return	bool|array
- */
-if ( ! function_exists( 'archetype_post_format_gallery_images' ) ) {
+if ( ! function_exists( 'archetype_post_format_gallery_images' ) ) :
+	/**
+	 * Returns an array of gallery images.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $post_id ID of the post.
+	 * @return	bool|array
+	 */
 	function archetype_post_format_gallery_images( $post_id = 0 ) {
 		if ( $gallery = get_post_meta( $post_id, '_format_gallery', true ) ) {
 
-			// Search the string for the IDs
+			// Search the string for the IDs.
 			preg_match( '/ids=\'(.*?)\'/', $gallery, $matches );
 
-			// Turn the field value into an array of IDs
+			// Turn the field value into an array of IDs.
 			if ( isset( $matches[1] ) ) {
 
-				// Found the IDs in the shortcode
+				// Found the IDs in the shortcode.
 				$ids = explode( ',', $matches[1] );
 			} else {
 
-				// The string is only IDs
+				// The string is only IDs.
 				$ids = ! empty( $gallery ) && $gallery != '' ? explode( ',', $gallery ) : array();
 			}
 
@@ -182,24 +182,24 @@ if ( ! function_exists( 'archetype_post_format_gallery_images' ) ) {
 		}
 		return false;
 	}
-}
+endif;
 
-/**
- * Displays the gallery
- *
- * Must be used inside the loop.
- *
- * @since 1.0.0
- *
- * @return	string
- */
-if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
+if ( ! function_exists( 'archetype_post_format_gallery' ) ) :
+	/**
+	 * Displays the gallery
+	 *
+	 * Must be used inside the loop.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return	string
+	 */
 	function archetype_post_format_gallery() {
 		$post_id = get_the_ID();
 
 		if ( has_post_format( 'gallery' ) ) {
 
-			// Get the gallery images
+			// Get the gallery images.
 			$ids = archetype_post_format_gallery_images( $post_id );
 
 			if ( ! empty( $ids ) ) {
@@ -224,22 +224,22 @@ if ( ! function_exists( 'archetype_post_format_gallery' ) ) {
 				$content.= '</ul>';
 			}
 
-			// Display the gallery
+			// Display the gallery.
 			if ( ! empty( $content ) ) {
 				echo '<div class="post-gallery">' . $content . '</div><!-- .post-gallery -->';
 			}
 		}
 	}
-}
+endif;
 
-/**
- * Displays the quote
- *
- * @since 1.0.0
- *
- * @return	string
- */
-if ( ! function_exists( 'archetype_post_format_quote' ) ) {
+if ( ! function_exists( 'archetype_post_format_quote' ) ) :
+	/**
+	 * Displays the quote
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return	string
+	 */
 	function archetype_post_format_quote( $content ) {
 		if ( has_post_format( 'quote' ) ) {
 			$_content  = array();
@@ -249,7 +249,7 @@ if ( ! function_exists( 'archetype_post_format_quote' ) ) {
 			$title     = get_post_meta( $post_id, '_format_quote_source_title', true );
 			$date      = get_post_meta( $post_id, '_format_quote_source_date', true );
 
-			// Add the name & url
+			// Add the name & url.
 			if ( $name ) {
 				$open = $close = '';
 				if ( ! $title ) {
@@ -259,22 +259,22 @@ if ( ! function_exists( 'archetype_post_format_quote' ) ) {
 				$_content[] = $url ? sprintf( '%s<a href="%s" rel="nofollow" target="_blank">%s</a>%s', $open, esc_url( $url ), esc_html( $name ), $close ) : $open . esc_html( $name ) .$close;
 			}
 
-			// Add the comma
+			// Add the comma.
 			if ( $name && ( $title || $date ) ) {
 				$_content[] = ', ';
 			}
 
-			// Add the title
+			// Add the title.
 			if ( $title ) {
 				$_content[] = sprintf( '%s%s%s ', '<cite>', esc_html( $title ), '</cite>' );
 			}
 
-			// Add the date
+			// Add the date.
 			if ( $date ) {
 				$_content[] = esc_html( $date );
 			}
 
-			// Replace the content
+			// Replace the content.
 			if ( ! empty( $_content ) ) {
 				$cite = $url ? ' cite="' . esc_url( $url ) . '"' : '';
 				$content = '<figure>' .
@@ -285,4 +285,4 @@ if ( ! function_exists( 'archetype_post_format_quote' ) ) {
 		}
 		return $content;
 	}
-}
+endif;

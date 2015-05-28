@@ -36,20 +36,19 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function archetype_setup() {
-
 		/*
 		 * Load Localisation files.
 		 *
 		 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 		 */
 
-		// wp-content/languages/themes/archetype-it_IT.mo.
+		// Global languages path - wp-content/languages/themes/archetype-it_IT.mo.
 		load_theme_textdomain( 'archetype', trailingslashit( WP_LANG_DIR ) . 'themes/' );
 
-		// wp-content/themes/child-theme-name/languages/it_IT.mo.
+		// Child theme languages path - wp-content/themes/child-theme-name/languages/it_IT.mo.
 		load_theme_textdomain( 'archetype', get_stylesheet_directory() . '/languages' );
 
-		// wp-content/themes/archetype/languages/it_IT.mo.
+		// Parent theme languages path - wp-content/themes/archetype/languages/it_IT.mo.
 		load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );
 
 		// This theme uses wp_nav_menu() in two locations.
@@ -58,7 +57,7 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 			'secondary'  => __( 'Secondary Menu', 'archetype' ),
 			'handheld'   => __( 'Handheld Menu', 'archetype' ),
 		) );
-		
+
 		/*
 		 * Add default posts and comments RSS feed links to head.
 		 */
@@ -70,13 +69,13 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 		 */
 		add_theme_support( 'post-thumbnails' );
-		
+
 		/*
 		 * Enable support for Post Formats.
 		 *
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Formats
 		 */
-		add_theme_support( 'post-formats', array( 
+		add_theme_support( 'post-formats', array(
 			'aside',
 			'gallery',
 			'link',
@@ -87,16 +86,16 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 			'audio',
 			'chat',
 		) );
-		
+
 		/*
-		 * Switch default core markup to output valid HTML5 for search form, comment form, 
+		 * Switch default core markup to output valid HTML5 for search form, comment form,
 		 * comments, galleries, captions and widgets.
 		 */
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
 			'comment-list',
-			'gallery', 
+			'gallery',
 			'caption',
 			'widgets',
 		) );
@@ -114,14 +113,14 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 		 */
 		add_theme_support( 'site-logo', array( 'size' => 'full' ) );
 
-		// Declare WooCommerce support
+		// Declare WooCommerce support.
 		add_theme_support( 'woocommerce' );
 
-		// Declare support for title theme feature
+		// Declare support for title theme feature.
 		add_theme_support( 'title-tag' );
 
 	}
-endif; // archetype_setup
+endif;
 
 /**
  * Register widget area.
@@ -226,12 +225,11 @@ function archetype_post_nav_background() {
 			$prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'post-thumbnail' );
 		}
 		if ( isset( $prevthumb[0] ) ) {
-		$css .= '
+			$css .= '
 			.post-navigation .nav-previous { background-image: url(' . esc_url( $prevthumb[0] ) . '); }
 			.post-navigation .nav-previous .post-title, .post-navigation .nav-previous a:hover .post-title, .post-navigation .nav-previous .meta-nav { color: #fff; }
 			.post-navigation .nav-previous a:before { background-color: rgba(0, 0, 0, 0.4); }
-			.post-navigation .nav-previous a { padding-left: 1em; padding-right: 1em; }
-		';
+			.post-navigation .nav-previous a { padding-left: 1em; padding-right: 1em; }';
 		}
 	}
 
@@ -242,12 +240,11 @@ function archetype_post_nav_background() {
 			$nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'post-thumbnail' );
 		}
 		if ( isset( $nextthumb[0] ) ) {
-		$css .= '
+			$css .= '
 			.post-navigation .nav-next { background-image: url(' . esc_url( $nextthumb[0] ) . '); }
 			.post-navigation .nav-next .post-title, .post-navigation .nav-next a:hover .post-title, .post-navigation .nav-next .meta-nav { color: #fff; }
 			.post-navigation .nav-next a:before { background-color: rgba(0, 0, 0, 0.4); }
-			.post-navigation .nav-next a { padding-left: 1em; padding-right: 1em; }
-		';
+			.post-navigation .nav-next a { padding-left: 1em; padding-right: 1em; }';
 		}
 	}
 

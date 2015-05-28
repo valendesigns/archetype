@@ -2,7 +2,9 @@
 /**
  * archetype engine room
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Init
+ * @since 1.0.0
  */
 
 /**

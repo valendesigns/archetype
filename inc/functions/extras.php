@@ -50,7 +50,7 @@ function archetype_body_classes( $classes ) {
 		$classes[]	= 'no-wc-breadcrumb';
 	}
 
-	// Add full width 404
+	// Add full width 404.
 	if ( is_404() ) {
 		$classes[]	= 'archetype-full-width-content';
 	}
@@ -64,7 +64,7 @@ function archetype_body_classes( $classes ) {
 	 * @since 1.0.0
 	 */
 	$cute = apply_filters( 'archetype_make_me_cute', false );
-	if ( true == $cute ) {
+	if ( true === $cute ) {
 		$classes[] = 'archetype-cute';
 	}
 
@@ -107,7 +107,7 @@ endif;
  *
  * @since 1.0.0
  *
- * @return string schema itemprop type.
+ * @return string Schema itemprop type.
  */
 function archetype_html_tag_schema() {
 	$schema  = 'http://schema.org/';
@@ -116,15 +116,13 @@ function archetype_html_tag_schema() {
 	// Is single post.
 	if ( is_singular( 'post' ) ) {
 		$type = 'Article';
-	}
 
 	// Is author page.
-	elseif ( is_author() ) {
+	} elseif ( is_author() ) {
 		$type = 'ProfilePage';
-	}
 
 	// Is search results page.
-	elseif ( is_search() ) {
+	} elseif ( is_search() ) {
 		$type = 'SearchResultsPage';
 	}
 
@@ -227,9 +225,9 @@ if ( ! function_exists( 'archetype_rgb_from_hex' ) ) :
 		}
 
 		$rgb = array();
-		$rgb[ 'r' ] = $r;
-		$rgb[ 'g' ] = $g;
-		$rgb[ 'b' ] = $b;
+		$rgb['r'] = $r;
+		$rgb['g'] = $g;
+		$rgb['b'] = $b;
 
 		if ( isset( $rgb[ $color ] ) ) {
 			return $rgb[ $color ];
