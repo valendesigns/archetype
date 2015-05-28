@@ -2,7 +2,9 @@
 /**
  * Template functions used for pages.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Page
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'archetype_page_header' ) ) {
@@ -11,8 +13,9 @@ if ( ! function_exists( 'archetype_page_header' ) ) {
 	 * @since 1.0.0
 	 */
 	function archetype_page_header() {
-		if ( is_page_template( 'template-homepage.php' ) )
+		if ( is_page_template( 'template-homepage.php' ) ) {
 			return;
+		}
 		?>
 		<header class="<?php echo archetype_entry_header_class(); ?>">
 			<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>

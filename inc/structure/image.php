@@ -2,7 +2,9 @@
 /**
  * Template functions used for images.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Image
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'archetype_image_attachment' ) ) {
@@ -11,7 +13,8 @@ if ( ! function_exists( 'archetype_image_attachment' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_image_attachment() { ?>
+	function archetype_image_attachment() {
+		?>
 		<div class="post-thumbnail">
 			<?php
 				/**
@@ -36,7 +39,8 @@ if ( ! function_exists( 'archetype_image_header' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_image_header() { ?>
+	function archetype_image_header() {
+		?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
@@ -65,7 +69,7 @@ if ( ! function_exists( 'archetype_image_content' ) ) {
 			</div><!-- .entry-attachment -->
 
 			<?php the_content(); ?>
-		
+
 			<?php archetype_page_navigation(); ?>
 		</div><!-- .entry-content -->
 		<?php
@@ -83,8 +87,8 @@ if ( ! function_exists( 'archetype_image_meta' ) ) {
 	 * @since 1.0.0
 	 */
 	function archetype_image_meta() {
-	
+
 		archetype_post_meta();
-		
+
 	}
 }

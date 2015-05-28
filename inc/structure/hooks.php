@@ -2,7 +2,9 @@
 /**
  * archetype hooks
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Hooks
+ * @since 1.0.0
  */
 
 /**
@@ -14,8 +16,8 @@
  * @see archetype_header_widget_region()
  * @see archetype_get_sidebar()
  */
-add_action( 'after_setup_theme',        'archetype_setup'                    );
-add_action( 'widgets_init',             'archetype_widgets_init'             );
+add_action( 'after_setup_theme',        'archetype_setup',                10 );
+add_action( 'widgets_init',             'archetype_widgets_init',         10 );
 add_action( 'wp_enqueue_scripts',       'archetype_scripts',              10 );
 add_action( 'wp_enqueue_scripts',       'archetype_post_nav_background',  20 );
 add_action( 'archetype_before_content', 'archetype_header_widget_region', 10 );
@@ -62,7 +64,7 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
  * @see archetype_on_sale_products()
  * @see archetype_homepage_custom_content_alt()
  */
-add_action( 'homepage', 'archetype_homepage_hero',               0  );
+add_action( 'homepage', 'archetype_homepage_hero',                0 );
 add_action( 'homepage', 'archetype_homepage_content',            10 );
 add_action( 'homepage', 'archetype_homepage_custom_content',     20 );
 add_action( 'homepage', 'archetype_product_categories',          30 );
@@ -133,6 +135,6 @@ add_action( 'archetype_single_image_after',  'archetype_display_comments', 20 );
  * @see archetype_post_search_form()
  * @see archetype_page_menu_args()
  */
-add_filter( 'body_class',        'archetype_body_classes'        );
+add_filter( 'body_class',        'archetype_body_classes'     10 );
 add_filter( 'get_search_form',   'archetype_post_search_form', 0 );
-add_filter( 'wp_page_menu_args', 'archetype_page_menu_args'      );
+add_filter( 'wp_page_menu_args', 'archetype_page_menu_args'   10 );

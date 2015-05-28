@@ -2,12 +2,15 @@
 /**
  * Template functions used for the site header.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Header
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'archetype_header_widget_region' ) ) {
 	/**
 	 * Display header widget region
+	 *
 	 * @since 1.0.0
 	 */
 	function archetype_header_widget_region() {
@@ -22,17 +25,17 @@ if ( ! function_exists( 'archetype_header_widget_region' ) ) {
 if ( ! function_exists( 'archetype_site_branding' ) ) {
 	/**
 	 * Display Site Branding
+	 *
 	 * @since 1.0.0
-	 * @return void
 	 */
 	function archetype_site_branding() {
-		// Default branding markup
+		// Default branding markup.
 		$branding = '<div class="site-branding">
 			<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name', 'display' ) . '</a></h1>
 			<p class="site-description">' . get_bloginfo( 'description', 'display' ) . '</p>
 		</div>';
 
-		// Support Jetpack Site Logo
+		// Support Jetpack Site Logo.
 		if ( function_exists( 'jetpack_has_site_logo' ) ) {
 			jetpack_the_site_logo();
 
@@ -45,7 +48,7 @@ if ( ! function_exists( 'archetype_site_branding' ) ) {
 			}
 		}
 
-		// Display default
+		// Display default.
 		echo $branding;
 	}
 }
@@ -53,8 +56,8 @@ if ( ! function_exists( 'archetype_site_branding' ) ) {
 if ( ! function_exists( 'archetype_primary_navigation' ) ) {
 	/**
 	 * Display Primary Navigation
+	 *
 	 * @since 1.0.0
-	 * @return void
 	 */
 	function archetype_primary_navigation() {
 		?>
@@ -62,13 +65,14 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) {
 			<button class="menu-toggle"><?php echo esc_attr( apply_filters( 'archetype_menu_toggle_text', __( 'Navigation', 'archetype' ) ) ); ?></button>
 			<?php
 			do_action( 'archetype_primary_navigation' );
-			
+
 			wp_nav_menu(
 				array(
 					'theme_location'	=> 'primary',
 					'container_class' => 'primary-navigation',
 				)
 			);
+
 			wp_nav_menu(
 				array(
 					'theme_location'	=> 'handheld',
@@ -84,8 +88,8 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) {
 if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
 	/**
 	 * Display Secondary Navigation
+	 *
 	 * @since 1.0.0
-	 * @return void
 	 */
 	function archetype_secondary_navigation() {
 		?>
@@ -108,8 +112,8 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
 if ( ! function_exists( 'archetype_skip_links' ) ) {
 	/**
 	 * Skip links
+	 *
 	 * @since 1.0.0
-	 * @return void
 	 */
 	function archetype_skip_links() {
 		?>

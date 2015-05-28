@@ -2,7 +2,9 @@
 /**
  * Template functions used for navigation.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Navigation
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'archetype_posts_navigation' ) ) {
@@ -15,7 +17,7 @@ if ( ! function_exists( 'archetype_posts_navigation' ) ) {
 		// Previous/next page navigation.
 		the_posts_pagination( array(
 			'prev_text'					=> __( 'Previous page', 'archetype' ),
-			'next_text'					=> __( 'Next page', 'archetype' ),
+			'next_text'          => __( 'Next page', 'archetype' ),
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
 		) );
 	}
@@ -72,10 +74,10 @@ if ( ! function_exists( 'archetype_image_navigation' ) ) {
 	 * @since 1.0.0
 	 */
 	function archetype_image_navigation() {
-		$attachments = array_values( get_children( array( 
-			'post_parent'    => get_post()->post_parent, 
-			'post_status'    => 'inherit', 
-			'post_type'      => 'attachment', 
+		$attachments = array_values( get_children( array(
+			'post_parent'    => get_post()->post_parent,
+			'post_status'    => 'inherit',
+			'post_type'      => 'attachment',
 			'post_mime_type' => 'image',
 		) ) );
 		// Are there images to navigate through?

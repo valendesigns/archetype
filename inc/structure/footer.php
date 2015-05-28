@@ -2,14 +2,16 @@
 /**
  * Template functions used for the site footer.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Footer
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'archetype_footer_widgets' ) ) {
 	/**
 	 * Display the footer widget regions
+	 *
 	 * @since 1.0.0
-	 * @return	void
 	 */
 	function archetype_footer_widgets() {
 		if ( is_active_sidebar( 'footer-4' ) ) {
@@ -49,18 +51,18 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) {
 if ( ! function_exists( 'archetype_credit' ) ) {
 	/**
 	 * Display the theme credit
+	 *
 	 * @since 1.0.0
-	 * @return void
 	 */
 	function archetype_credit() {
 		?>
 		<div class="credit">
 			<?php
-			// Copyright text
+			// Copyright text.
 			$content = sprintf( '&copy; %s %s. ', date( 'Y' ), get_bloginfo( 'name' ) );
 			echo esc_html( apply_filters( 'archetype_copyright_text', $content ) );
 
-			// Credits
+			// Credits.
 			if ( true == get_theme_mod( 'archetype_footer_credit_toggle', true ) && apply_filters( 'archetype_credit_link', true ) ) {
 				printf( __( '%1$s theme by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" alt="Premium WordPress Themes by Valen Designs" title="Premium WordPress Themes by Valen Designs" rel="designer">Valen Designs</a>' );
 			}

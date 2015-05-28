@@ -2,7 +2,9 @@
 /**
  * Template functions used for posts.
  *
- * @package archetype
+ * @package Archetype
+ * @subpackage Post
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'archetype_post_format_media' ) ) {
@@ -56,8 +58,7 @@ if ( ! function_exists( 'archetype_post_header' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_post_header() { ?>
-		<?php
+	function archetype_post_header() {
 		if ( is_single() ) {
 			$title = the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>', false );
 		} else {
@@ -87,10 +88,10 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
 			<?php if ( $has_content ) { ?>
 			<div class="entry-body">
 				<?php
-				the_content( 
-					sprintf( 
+				the_content(
+					sprintf(
 						__( 'Continue reading %s', 'archetype' ),
-						'<span class="screen-reader-text">' . get_the_title() . '</span>'
+						'<span class="screen-reader-text">' . get_the_title() . '</span>',
 					)
 				); ?>
 			</div>
@@ -133,7 +134,7 @@ if ( ! function_exists( 'archetype_post_meta' ) ) {
 			 * Hook before the meta displays.
 			 */
 			do_action( 'archetype_post_meta' );
-			
+
 			$format = get_post_format();
 			if ( current_theme_supports( 'post-formats', $format ) ) {
 				printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
