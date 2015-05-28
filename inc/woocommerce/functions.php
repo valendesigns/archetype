@@ -319,10 +319,9 @@ if ( ! function_exists( 'archetype_woocommerce_placeholder_img_src' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param  $src The placeholder path.
 	 * @return string
 	 */
-	function archetype_woocommerce_placeholder_img_src( $src ) {
+	function archetype_woocommerce_placeholder_img_src() {
 		return get_template_directory_uri() . '/inc/woocommerce/images/placeholder.png';
 	}
 endif;
@@ -478,9 +477,9 @@ function archetype_products_per_page() {
  *
  * @since 1.0.0
  *
- * @param $extension Main extension class name.
+ * @param $extension Main extension class name. Default is 'WC_Bookings'.
  * @return bool
  */
 function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
-	return class_exists( $extension ) ? true : false;
+	return class_exists( $extension, false ) ? true : false;
 }
