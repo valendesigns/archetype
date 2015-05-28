@@ -2,7 +2,7 @@
 /**
  * The template for displaying Author bios
  *
- * @package archetype
+ * @package Archetype
  */
 
 ?>

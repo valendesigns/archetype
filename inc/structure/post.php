@@ -91,7 +91,7 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
 				the_content(
 					sprintf(
 						__( 'Continue reading %s', 'archetype' ),
-						'<span class="screen-reader-text">' . get_the_title() . '</span>',
+						'<span class="screen-reader-text">' . get_the_title() . '</span>'
 					)
 				); ?>
 			</div>

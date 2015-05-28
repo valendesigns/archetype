@@ -2,7 +2,7 @@
 /**
  * The template for displaying images.
  *
- * @package archetype
+ * @package Archetype
  */
 
 get_header(); ?>

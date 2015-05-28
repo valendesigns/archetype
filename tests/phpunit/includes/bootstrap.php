@@ -2,7 +2,7 @@
 /**
  * Bootstrap the WordPress unit testing environment.
  *
- * @package archetype
+ * @package Archetype
  */
 
 // Activates this theme in WordPress so it can be tested.

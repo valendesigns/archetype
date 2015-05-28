@@ -426,7 +426,7 @@ if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) :
 	 * @return int The sanitized checkbox value.
 	 */
 	function archetype_sanitize_checkbox( $input ) {
-		if ( 1 === $input ) {
+		if ( 1 == $input ) {
 			return 1;
 		}
 

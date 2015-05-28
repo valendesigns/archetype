@@ -88,7 +88,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 	 */
 	function archetype_add_integrations_customizer_css() {
 		if ( is_archetype_customizer_enabled() ) {
-			// Style comment
+			// Style comment.
 			$woocommerce_style = '/* WooCommerce Customizer Styles */';
 
 			// Text color.

@@ -2,7 +2,7 @@
 /**
  * The template part used for displaying single posts
  *
- * @package archetype
+ * @package Archetype
  */
 
 ?>

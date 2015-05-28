@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package archetype
+ * @package Archetype
  */
 
 get_header(); ?>
@@ -25,12 +25,14 @@ get_header(); ?>
 
 				<?php
 				/**
+				 * Default hooks
+				 *
 				 * @hooked archetype_display_comments - 10
 				 */
 				do_action( 'archetype_page_after' );
 				?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

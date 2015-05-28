@@ -2,7 +2,7 @@
 /**
  * The template part for displaying image attachements.
  *
- * @package archetype
+ * @package Archetype
  */
 
 ?>

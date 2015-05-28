@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package archetype
+ * @package Archetype
  */
 
 if ( is_page_template( 'template-homepage.php' ) && get_the_content() == '' ) {

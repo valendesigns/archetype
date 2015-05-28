@@ -8,13 +8,13 @@
  */
 
 if ( ! function_exists( 'archetype_cart_link' ) ) :
-/**
- * Cart Link
- *
- * Displayed a link to the cart including the number of items present and the cart total
- *
- * @since 1.0.0
- */
+	/**
+	 * Cart Link
+	 *
+	 * Displayed a link to the cart including the number of items present and the cart total
+	 *
+	 * @since 1.0.0
+	 */
 	function archetype_cart_link() {
 		?>
 		<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php _e( 'View your shopping cart', 'archetype' ); ?>">
@@ -33,7 +33,7 @@ if ( ! function_exists( 'archetype_header_cart' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_header_cart() {
-		if ( is_woocommerce_activated() ) { 
+		if ( is_woocommerce_activated() ) {
 			if ( is_cart() ) {
 				$class = 'current-menu-item';
 			} else {
@@ -102,20 +102,20 @@ if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) :
 		echo '<nav class="woocommerce-pagination" role="navigation">';
 			echo '<h2 class="screen-reader-text">Shop navigation</h2>';
 			echo '<div class="nav-links">';
-				echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
-					'base'               => esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
-					'format'             => '',
-					'add_args'           => '',
-					'current'            => max( 1, get_query_var( 'paged' ) ),
-					'total'              => $wp_query->max_num_pages,
-					'prev_text'          => '&larr;',
-					'next_text'          => '&rarr;',
-					'type'               => 'plain',
-					'end_size'           => 3,
-					'mid_size'           => 3,
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
-					'after_page_number'  => '',
-				) ) );
+			echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
+				'base'               => esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
+				'format'             => '',
+				'add_args'           => '',
+				'current'            => max( 1, get_query_var( 'paged' ) ),
+				'total'              => $wp_query->max_num_pages,
+				'prev_text'          => '&larr;',
+				'next_text'          => '&rarr;',
+				'type'               => 'plain',
+				'end_size'           => 3,
+				'mid_size'           => 3,
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
+				'after_page_number'  => '',
+			) ) );
 			echo '</div>';
 		echo '</nav>';
 	}

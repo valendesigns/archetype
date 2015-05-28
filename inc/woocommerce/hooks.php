@@ -79,7 +79,7 @@ add_action( 'woocommerce_after_shop_loop',        'archetype_woocommerce_paginat
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display',               15 );
 add_action( 'woocommerce_after_single_product_summary',    'archetype_upsell_display',                 15 );
 remove_action( 'woocommerce_before_shop_loop_item_title',  'woocommerce_show_product_loop_sale_flash', 10 );
-add_action( 'woocommerce_after_shop_loop_item_title',      'woocommerce_show_product_loop_sale_flash', 6  );
+add_action( 'woocommerce_after_shop_loop_item_title',      'woocommerce_show_product_loop_sale_flash',  6 );
 
 add_action( 'woocommerce_before_shop_loop_item_title',     'archetype_before_product_loop_item',       11 );
 add_action( 'woocommerce_after_shop_loop_item_title',      'archetype_after_product_loop_item',      9999 );
@@ -120,13 +120,13 @@ add_filter( 'loop_shop_per_page',                       'archetype_products_per_
 add_filter( 'loop_shop_columns',                        'archetype_loop_columns' );
 
 if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
-  add_filter( 'woocommerce_add_to_cart_fragments', 'archetype_cart_link_fragment' );
+	add_filter( 'woocommerce_add_to_cart_fragments', 'archetype_cart_link_fragment' );
 } else {
-  add_filter( 'add_to_cart_fragments', 'archetype_cart_link_fragment' );
+	add_filter( 'add_to_cart_fragments', 'archetype_cart_link_fragment' );
 }
 
 if ( ! class_exists( 'WC_Product_Reviews_Pro' ) ) {
-  add_filter( 'woocommerce_product_review_list_args', 'archetype_product_review_list_args' );
+	add_filter( 'woocommerce_product_review_list_args', 'archetype_product_review_list_args' );
 }
 
 

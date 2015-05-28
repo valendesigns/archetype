@@ -3,13 +3,13 @@
  * The template for displaying the homepage.
  *
  * This page template will display any functions hooked into the `homepage` action.
- * By default this includes a variety of product displays and the page content itself. 
+ * By default this includes a variety of product displays and the page content itself.
  * To change the order or toggle these components use the Homepage Control plugin.
  * https://wordpress.org/plugins/homepage-control/
  *
  * Template name: Homepage
  *
- * @package archetype
+ * @package Archetype
  */
 
 get_header(); ?>
@@ -19,6 +19,8 @@ get_header(); ?>
 
 			<?php
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_homepage_hero - 0
 			 * @hooked archetype_homepage_content - 10
 			 * @hooked archetype_homepage_custom_content - 20

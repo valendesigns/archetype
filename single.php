@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package archetype
+ * @package Archetype
  */
 
 get_header(); ?>
@@ -18,12 +18,14 @@ get_header(); ?>
 			get_template_part( 'content', 'single' );
 
 			/**
+			 * Default hooks
+			 *
 			 * @hooked archetype_post_navigation - 10
 			 */
 			do_action( 'archetype_single_post_after' );
 			?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

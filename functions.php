@@ -2,7 +2,7 @@
 /**
  * Archetype engine room
  *
- * @package archetype
+ * @package Archetype
  */
 
 /**

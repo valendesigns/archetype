@@ -2,7 +2,7 @@
 /**
  * Archetype theme tests.
  *
- * @package archetype
+ * @package Archetype
  * @group theme
  */
 class Archetype_Tests_Theme extends WP_UnitTestCase {

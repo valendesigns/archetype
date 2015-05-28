@@ -36,8 +36,6 @@ if ( ! function_exists( 'archetype_breadcrumb' ) ) :
 	 * @uses woocommerce_breadcrumb() to create the breadcrumb markup.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return string
 	 */
 	function archetype_breadcrumb() {
 		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
@@ -195,7 +193,7 @@ function archetype_loop_columns() {
 		$columns = archetype_sanitize_integer( get_theme_mod( 'archetype_related_products_columns', '3' ) );
 	}
 
-	return apply_filters( 'archetype_loop_columns', $columns ); // Products per row
+	return apply_filters( 'archetype_loop_columns', $columns ); // Products per row.
 }
 
 /**
@@ -203,7 +201,7 @@ function archetype_loop_columns() {
  *
  * @sine 1.0.0
  *
- * @param  array $classes
+ * @param  array $classes Array of body classes.
  * @return array $classes Modified array of classes.
  */
 function archetype_woocommerce_body_class( $classes ) {
@@ -244,7 +242,6 @@ function archetype_woocommerce_body_class( $classes ) {
 		if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_related_products_toggle', apply_filters( 'archetype_default_related_products_toggle', true ) ) ) ) {
 			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 		}
-
 	}
 
 	$image_only = false;
@@ -263,7 +260,7 @@ function archetype_woocommerce_body_class( $classes ) {
 	}
 
 	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_sale_toggle', apply_filters( 'archetype_default_products_sale_toggle', true ) ) ) ) {
-		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6	);
+		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
 	}
 
 	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_rating_toggle', apply_filters( 'archetype_default_products_rating_toggle', true ) ) ) ) {
@@ -283,7 +280,7 @@ function archetype_woocommerce_body_class( $classes ) {
 	} else {
 		$image_only = false;
 	}
-	
+
 	if ( true === $image_only ) {
 		$classes[] = 'archetype-products-image-only';
 	}
@@ -296,8 +293,8 @@ function archetype_woocommerce_body_class( $classes ) {
  *
  * @sine 1.0.0
  *
- * @param  array $classes
- * @return array $classes Modified array of classes.
+ * @param  array $classes Array of post classes.
+ * @return array $classes Modified array of post classes.
  */
 function archetype_woocommerce_post_class( $classes ) {
 	if ( is_product() ) {
@@ -311,12 +308,18 @@ function archetype_woocommerce_post_class( $classes ) {
  * Replaces the placeholder image.
  *
  * @since 1.0.0
- *
- * @return string
  */
 function archetype_fix_thumbnail() {
 	add_filter( 'woocommerce_placeholder_img_src', 'archetype_woocommerce_placeholder_img_src', 0 );
 
+	/**
+	 * Returns the category placeholder image path.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  $src The placeholder path.
+	 * @return string
+	 */
 	function archetype_woocommerce_placeholder_img_src( $src ) {
 		return get_template_directory_uri() . '/inc/woocommerce/images/placeholder.png';
 	}
@@ -428,7 +431,7 @@ function archetype_breadcrumbs_defaults( $args ) {
  *
  * @since 1.0.0
  *
- * @return integer Number of columns.
+ * @return int The number of columns.
  */
 function archetype_thumbnail_columns() {
 	$product_page = get_theme_mod( 'archetype_product_full_width', apply_filters( 'archetype_default_product_full_width', false ) );
@@ -473,7 +476,7 @@ function archetype_products_per_page() {
  *
  * @since 1.0.0
  *
- * @param  $extension Main extension class name.
+ * @param $extension Main extension class name.
  * @return boolean
  */
 function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {

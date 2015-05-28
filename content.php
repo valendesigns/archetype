@@ -2,7 +2,7 @@
 /**
  * The template used for displaying post content
  *
- * @package archetype
+ * @package Archetype
  */
 
 ?>
