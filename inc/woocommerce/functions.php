@@ -311,7 +311,9 @@ function archetype_woocommerce_post_class( $classes ) {
  */
 function archetype_fix_thumbnail() {
 	add_filter( 'woocommerce_placeholder_img_src', 'archetype_woocommerce_placeholder_img_src', 0 );
+}
 
+if ( ! function_exists( 'archetype_woocommerce_placeholder_img_src' ) ) :
 	/**
 	 * Returns the category placeholder image path.
 	 *
@@ -323,7 +325,7 @@ function archetype_fix_thumbnail() {
 	function archetype_woocommerce_placeholder_img_src( $src ) {
 		return get_template_directory_uri() . '/inc/woocommerce/images/placeholder.png';
 	}
-}
+endif;
 
 if ( ! function_exists( 'archetype_product_search_form' ) ) :
 	/**
@@ -463,7 +465,7 @@ function archetype_thumbnail_columns() {
  *
  * @since 1.0.0
  *
- * @return integer Number of products.
+ * @return int Number of products.
  */
 function archetype_products_per_page() {
 	$products_per_page = archetype_sanitize_integer( get_theme_mod( 'archetype_products_per_page', apply_filters( 'archetype_default_products_per_page', '12' ) ) );
@@ -477,7 +479,7 @@ function archetype_products_per_page() {
  * @since 1.0.0
  *
  * @param $extension Main extension class name.
- * @return boolean
+ * @return bool
  */
 function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
 	return class_exists( $extension ) ? true : false;

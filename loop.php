@@ -23,6 +23,8 @@ while ( have_posts() ) : the_post();
 endwhile;
 
 /**
+ * Default hooks
+ *
  * @hooked archetype_posts_navigation - 10
  */
 do_action( 'archetype_loop_after' );
