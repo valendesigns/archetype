@@ -29,7 +29,7 @@ class Archetype_Welcome {
 
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_intro' ), 				10 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_tabs' ), 				20 );
-		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_getting_started' ), 	30 );
+		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_get_started' ), 	30 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_addons' ), 				40 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_child_themes' ), 		50 );
 		add_action( 'archetype_welcome', array( $this, 'archetype_welcome_who' ), 				60 );
@@ -97,7 +97,7 @@ class Archetype_Welcome {
 			 * Default hooks.
 			 *
 			 * @hooked archetype_welcome_intro - 10
-			 * @hooked archetype_welcome_getting_started - 20
+			 * @hooked archetype_welcome_get_started - 20
 			 * @hooked archetype_welcome_addons - 30
 			 * @hooked archetype_welcome_who - 40
 			 */
@@ -132,11 +132,11 @@ class Archetype_Welcome {
 	}
 
 	/**
-	 * Welcome screen getting started section
+	 * Welcome screen get started section
 	 * @since 1.0.0
 	 */
-	public function archetype_welcome_getting_started() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php' );
+	public function archetype_welcome_get_started() {
+		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/get-started.php' );
 	}
 
 	/**

@@ -9,27 +9,40 @@
 
 ?>
 <h2 class="nav-tab-wrapper">
-	<a href="#getting_started" class="nav-tab nav-tab-active"><?php _e( 'Getting Started', 'archetype' ); ?></a>
-	<a href="#add_ons" class="nav-tab"><?php _e( 'Enhance Storefront', 'archetype' ); ?></a>
-	<a href="#child_themes" class="nav-tab"><?php _e( 'Storefront Child Themes', 'archetype' ); ?></a>
+	<a href="#get_started" class="nav-tab nav-tab-active"><?php _e( 'Get Started', 'archetype' ); ?></a>
+	<a href="#add_ons" class="nav-tab"><?php _e( 'Extend Archetype', 'archetype' ); ?></a>
+	<a href="#child_themes" class="nav-tab"><?php _e( 'Child Themes', 'archetype' ); ?></a>
 </h2>
 
 <script>
-jQuery( document ).ready( function() {
-	jQuery( 'div.panel' ).hide();
-	jQuery( 'div#getting_started' ).show();
+/**
+ * Script for tabbed navigation.
+ *
+ * @since 1.0.0
+ */
+( function( $ ) {
+	'use strict';
 
-	jQuery( '.nav-tab-wrapper a' ).click( function() {
+	$( document ).ready( function() {
+		var wrap = $( '.about-wrap' );
 
-		var tab = jQuery( this );
-		var	tabs_wrapper = tab.closest( '.about-wrap' );
+		// Hide all panels except the first
+		$( 'div.panel', wrap ).hide();
+		$( 'div#get_started', wrap ).show();
 
-		jQuery( '.nav-tab-wrapper a', tabs_wrapper ).removeClass( 'nav-tab-active' );
-		jQuery( 'div.panel', tabs_wrapper ).hide();
-		jQuery( 'div' + tab.attr( 'href' ), tabs_wrapper ).show();
-		tab.addClass( 'nav-tab-active' );
+		// Listen for the click event.
+		$( '.nav-tab-wrapper a', wrap ).click( function() {
 
-		return false;
-	});
-});
+			// Deactivate and hide all tabs & panels.
+			$( '.nav-tab-wrapper a', wrap ).removeClass( 'nav-tab-active' );
+			$( 'div.panel', wrap ).hide();
+
+			// Activate and show the selected tab and panel.
+			$( this ).addClass( 'nav-tab-active' );
+			$( 'div' + $( this ).attr( 'href' ), wrap ).show();
+
+			return false;
+		} );
+	} );
+} )( jQuery );
 </script>
