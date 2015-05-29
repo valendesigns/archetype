@@ -29,4 +29,4 @@ after_script:
 	- $DEV_LIB_PATH/travis.after_script.sh
 
 notifications:
-  slack: valendesigns:ru47SoI2VOQ0wH4l4TvNTwCr
+  slack: valendesigns:nF7EMxkx2ClGfYtlsi9414s6
