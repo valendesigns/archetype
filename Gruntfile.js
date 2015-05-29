@@ -252,7 +252,9 @@ module.exports = function( grunt ) {
 					'!.*',
 					'!.*/**',
 					'.htaccess',
-					'!Gruntfile.js',
+					'!.DS_Store',
+					'!dev-lib/**',
+					'!dist/**',
 					'!package.json',
 					'!node_modules/**',
 					'!npm-debug.log',
@@ -293,7 +295,11 @@ module.exports = function( grunt ) {
 				src: [ 'style-rtl.css' ]
 			},
 			deploy: {
-				src: [ 'dist/<%= pkg.name %>' ]
+				src: [
+					'dist/<%= pkg.name %>',
+					'languages/*.po',
+					'languages/*.mo'
+				]
 			}
 		},
 
