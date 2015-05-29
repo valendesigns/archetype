@@ -254,6 +254,7 @@ module.exports = function( grunt ) {
 					'.htaccess',
 					'!.DS_Store',
 					'!dev-lib/**',
+					'!dist/**',
 					'!package.json',
 					'!node_modules/**',
 					'!npm-debug.log',
