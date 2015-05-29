@@ -252,6 +252,7 @@ module.exports = function( grunt ) {
 					'!.*',
 					'!.*/**',
 					'.htaccess',
+					'!Gruntfile.js',
 					'!.DS_Store',
 					'!dev-lib/**',
 					'!dist/**',
