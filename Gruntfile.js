@@ -260,8 +260,6 @@ module.exports = function( grunt ) {
 					'!.DS_Store',
 					'!style.scss',
 					'!sass/**',
-					'!languages/*.po',
-					'!languages/*.mo',
 					'!inc/admin/sass/*.scss',
 					'!inc/customizer/sass/*.scss',
 					'!inc/woocommerce/sass/*.scss',
@@ -296,7 +294,11 @@ module.exports = function( grunt ) {
 				src: [ 'style-rtl.css' ]
 			},
 			deploy: {
-				src: [ 'dist/<%= pkg.name %>' ]
+				src: [
+					'dist/<%= pkg.name %>',
+					'languages/*.po',
+					'languages/*.mo'
+				]
 			}
 		},
 
