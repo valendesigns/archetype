@@ -15,7 +15,7 @@
  * @return boolean
  */
 function is_archetype_customizer_enabled() {
-	return apply_filters( 'archetype_customizer_enabled', true );
+	return (bool) apply_filters( 'archetype_customizer_enabled', true );
 }
 
 /**
