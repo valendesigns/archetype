@@ -98,7 +98,7 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) :
 	 * @since 1.0.0
 	 */
 	function is_woocommerce_activated() {
-		return class_exists( 'woocommerce' ) ? true : false;
+		return class_exists( 'woocommerce', false ) ? true : false;
 	}
 endif;
 
