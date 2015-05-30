@@ -625,6 +625,17 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			outline-color: ' . $footer_lower_link_color . ';
 		}';
 
+		// Account for a boxed layout.
+		if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
+			$style .= 'html {
+				background-color: transparent;
+			}';
+		} else {
+			$style .= 'html {
+				background-color: ' . $footer_lower_background_color . ';
+			}';
+		}
+
 		// Remove space after colons.
 		$style = str_replace( ': ', ':', $style );
 
