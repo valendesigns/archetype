@@ -228,84 +228,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
-		 * Add the typography section
-		 */
-		$wp_customize->add_section( 'archetype_typography' , array(
-			'title'        => __( 'Typography', 'archetype' ),
-			'priority'     => 31,
-			'panel'        => 'archetype_general',
-		) );
-
-		/**
-		 * Text Color
-		 */
-		$wp_customize->add_setting( 'archetype_text_color', array(
-			'default'            => apply_filters( 'archetype_default_text_color', '#555' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_text_color', array(
-			'label'        => __( 'Text color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_text_color',
-			'priority'     => 1,
-		) ) );
-
-		/**
-		 * Heading Color
-		 */
-		$wp_customize->add_setting( 'archetype_heading_color', array(
-			'default'            => apply_filters( 'archetype_default_heading_color', '#333' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_heading_color', array(
-			'label'        => __( 'Heading color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_heading_color',
-			'priority'     => 2,
-		) ) );
-
-		/**
-		 * Link Color
-		 */
-		$wp_customize->add_setting( 'archetype_link_color', array(
-			'default'            => apply_filters( 'archetype_default_link_color', '#ee543f' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color', array(
-			'label'        => __( 'Link color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_link_color',
-			'priority'     => 3,
-		) ) );
-
-		/**
-		 * Link Color Hover
-		 */
-		$wp_customize->add_setting( 'archetype_link_color_hover', array(
-			'default'            => apply_filters( 'archetype_default_link_color_hover', '#111' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color_hover', array(
-			'label'        => __( 'Link hover color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_link_color_hover',
-			'priority'     => 4,
-		) ) );
-
-		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_typography_text', array(
-			'section'      => 'archetype_typography',
-			'description'  => __( 'Sidebar links use text color for the default state, and link color for the hover state.', 'archetype' ),
-			'type'         => 'text',
-			'priority'     => 5,
-		) ) );
-
-		/**
 		 * Add the Header panel
 		 */
 		$wp_customize->add_panel( 'archetype_header' , array(
@@ -1104,6 +1026,84 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'description'  => __( 'Customize the look & feel of your content.', 'archetype' ),
 			'priority'     => 50,
 		) );
+
+		/**
+		 * Add the typography section
+		 */
+		$wp_customize->add_section( 'archetype_typography' , array(
+			'title'        => __( 'Typography', 'archetype' ),
+			'priority'     => 5,
+			'panel'        => 'archetype_content',
+		) );
+
+		/**
+		 * Text Color
+		 */
+		$wp_customize->add_setting( 'archetype_text_color', array(
+			'default'            => apply_filters( 'archetype_default_text_color', '#555' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_text_color', array(
+			'label'        => __( 'Text color', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_text_color',
+			'priority'     => 1,
+		) ) );
+
+		/**
+		 * Heading Color
+		 */
+		$wp_customize->add_setting( 'archetype_heading_color', array(
+			'default'            => apply_filters( 'archetype_default_heading_color', '#333' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_heading_color', array(
+			'label'        => __( 'Heading color', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_heading_color',
+			'priority'     => 2,
+		) ) );
+
+		/**
+		 * Link Color
+		 */
+		$wp_customize->add_setting( 'archetype_link_color', array(
+			'default'            => apply_filters( 'archetype_default_link_color', '#ee543f' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color', array(
+			'label'        => __( 'Link color', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_link_color',
+			'priority'     => 3,
+		) ) );
+
+		/**
+		 * Link Color Hover
+		 */
+		$wp_customize->add_setting( 'archetype_link_color_hover', array(
+			'default'            => apply_filters( 'archetype_default_link_color_hover', '#111' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color_hover', array(
+			'label'        => __( 'Link hover color', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_link_color_hover',
+			'priority'     => 4,
+		) ) );
+
+		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_typography_text', array(
+			'section'      => 'archetype_typography',
+			'description'  => __( 'Sidebar links use text color for the default state, and link color for the hover state.', 'archetype' ),
+			'type'         => 'text',
+			'priority'     => 5,
+		) ) );
 
 		/**
 		 * Add the Post section
