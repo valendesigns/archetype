@@ -1141,6 +1141,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 
 		$wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_post_radius', array(
 			'label'        => __( 'Post border radius', 'archetype' ),
+			'description'  => __( 'Adds border radius to various elements such as page titles, posts and comments.', 'archetype' ),
 			'section'      => 'archetype_post',
 			'settings'     => 'archetype_post_radius',
 			'priority'     => 5,
@@ -1156,6 +1157,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 
 		$wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_avatar_radius', array(
 			'label'        => __( 'Avatar border radius', 'archetype' ),
+			'description'  => __( 'Adds border radius to comment and author avatars.', 'archetype' ),
 			'section'      => 'archetype_post',
 			'settings'     => 'archetype_avatar_radius',
 			'priority'     => 6,
