@@ -9,7 +9,7 @@
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
+			$( '.site-title a, .footer-site-title' ).text( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
@@ -39,8 +39,10 @@
 		value.bind( function( to ) {
 			if ( true === to ) {
 				$( 'body' ).addClass( 'is-boxed' );
+				$( 'html' ).css( 'background-color', 'transparent' );
 			} else {
 				$( 'body' ).removeClass( 'is-boxed' );
+				$( 'html' ).css( 'background-color', $( '.site-info' ).css( 'background-color' ) );
 			}
 		} );
 	} );
@@ -386,6 +388,11 @@
 		value.bind( function( to ) {
 			// Background Color
 			$( '.site-info' ).css( 'background-color', to );
+			if ( $( 'body' ).hasClass( 'is-boxed' ) ) {
+				$( 'html' ).css( 'background-color', 'transparent' );
+			} else {
+				$( 'html' ).css( 'background-color', to );
+			}
 		} );
 	} );
 
