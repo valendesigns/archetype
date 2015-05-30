@@ -3,6 +3,7 @@
 	"requirePaddingNewLinesBeforeLineComments": null,
 	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
 	"excludeFiles": [
+		"**/vendor/**",
 		"**/*.min.js",
 		"**/node_modules/**"
 	]
