@@ -1204,8 +1204,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_post_shadow_toggle', array(
-			'label'        => __( 'Display the post shadow', 'archetype' ),
-			'description'  => __( 'Toggle the display of the post shadow.', 'archetype' ),
+			'label'        => __( 'Display the post box shadow', 'archetype' ),
+			'description'  => __( 'Toggle the display of the post box shadow.', 'archetype' ),
 			'section'      => 'archetype_post',
 			'settings'     => 'archetype_post_shadow_toggle',
 			'type'         => 'checkbox',
@@ -1221,7 +1221,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_post_shadow_color', array(
-			'label'        => __( 'Shadow color', 'archetype' ),
+			'label'        => __( 'Box shadow color', 'archetype' ),
 			'section'      => 'archetype_post',
 			'settings'     => 'archetype_post_shadow_color',
 			'priority'     => 25,
@@ -1365,8 +1365,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_search_shadow_toggle', array(
-			'label'        => __( 'Display the search shadow', 'archetype' ),
-			'description'  => __( 'Toggle the display of the search input shadow.', 'archetype' ),
+			'label'        => __( 'Display the search box shadow', 'archetype' ),
+			'description'  => __( 'Toggle the display of the search input box shadow.', 'archetype' ),
 			'section'      => 'archetype_search',
 			'settings'     => 'archetype_search_shadow_toggle',
 			'type'         => 'checkbox',
@@ -1383,7 +1383,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_search_shadow_color', array(
-			'label'        => __( 'Shadow color', 'archetype' ),
+			'label'        => __( 'Box shadow color', 'archetype' ),
 			'section'      => 'archetype_search',
 			'settings'     => 'archetype_search_shadow_color',
 			'priority'     => 20,
@@ -1497,7 +1497,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_shadow_color', array(
-			'label'        => __( 'Shadow color', 'archetype' ),
+			'label'        => __( 'Box shadow color', 'archetype' ),
 			'section'      => 'archetype_buttons',
 			'settings'     => 'archetype_button_shadow_color',
 			'priority'     => 25,
@@ -1564,7 +1564,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_button_shadow_hover_color', array(
-			'label'        => __( 'Shadow alt/hover color', 'archetype' ),
+			'label'        => __( 'Box shadow alt/hover color', 'archetype' ),
 			'section'      => 'archetype_buttons',
 			'settings'     => 'archetype_button_shadow_hover_color',
 			'priority'     => 45,
