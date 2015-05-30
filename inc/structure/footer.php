@@ -59,8 +59,8 @@ if ( ! function_exists( 'archetype_credit' ) ) {
 		<div class="credit">
 			<?php
 			// Copyright text.
-			$content = sprintf( '&copy; %s %s. ', date( 'Y' ), get_bloginfo( 'name' ) );
-			echo esc_html( apply_filters( 'archetype_copyright_text', $content ) );
+			$content = sprintf( '&copy; %s <span class="footer-site-title">%s</span>. ', date( 'Y' ), get_bloginfo( 'name' ) );
+			echo wp_kses_post( apply_filters( 'archetype_copyright_text', $content ) );
 
 			// Credits.
 			if ( true == get_theme_mod( 'archetype_footer_credit_toggle', true ) && apply_filters( 'archetype_credit_link', true ) ) {
