@@ -140,7 +140,7 @@ if ( ! function_exists( 'archetype_homepage_control_title' ) ) :
 	 * @return string The modified title.
 	 */
 	function archetype_homepage_control_title( $title, $id ) {
-		return trim( str_replace( array( __( 'Archetype', 'archetype' ), __( 'Homepage', 'archetype' ) ), '', $title ) );
+		return trim( str_replace( array( 'Archetype', 'Homepage' ), '', $title ) );
 	}
 endif;
 
