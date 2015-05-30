@@ -129,6 +129,21 @@ if ( ! function_exists( 'archetype_customize_get_logo_url' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'archetype_homepage_control_title' ) ) :
+	/**
+	 * Filter the Homepage Control title
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $title The control title.
+	 * @param string $id The action hook function ID.
+	 * @return string The modified title.
+	 */
+	function archetype_homepage_control_title( $title, $id ) {
+		return trim( str_replace( array( __( 'Archetype', 'archetype' ), __( 'Homepage', 'archetype' ) ), '', $title ) );
+	}
+endif;
+
 if ( ! function_exists( 'archetype_customize_export' ) ) :
 	/**
 	 * Exports customizer theme mods, active widgets & menus.
