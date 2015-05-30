@@ -144,15 +144,15 @@ if ( ! function_exists( 'archetype_featured_products' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'archetype_popular_products' ) ) :
+if ( ! function_exists( 'archetype_top_rated_products' ) ) :
 	/**
-	 * Display Popular Products
+	 * Display Top Rated Products
 	 *
 	 * Hooked into the `homepage` action in the homepage template at priority 60
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_popular_products() {
+	function archetype_top_rated_products() {
 
 		if ( is_woocommerce_activated() && true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_top_rated_products_toggle', true ) ) ) {
 
@@ -163,7 +163,7 @@ if ( ! function_exists( 'archetype_popular_products' ) ) :
 			$color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_top_rated_products_heading_color', apply_filters( 'archetype_default_top_rated_products_heading_color', '#333' ) ) );
 			$background  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_top_rated_products_background_color', apply_filters( 'archetype_default_top_rated_products_background_color', '#f1f1f1' ) ) );
 
-			$args = apply_filters( 'archetype_popular_products_args', array(
+			$args = apply_filters( 'archetype_top_rated_products_args', array(
 				'limit'   => $limit,
 				'columns' => $columns,
 				'title'   => $title,

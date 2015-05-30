@@ -101,13 +101,13 @@ add_action( 'archetype_secondary_navigation', 'archetype_header_cart' );
  * @see archetype_product_categories()
  * @see archetype_recent_products()
  * @see archetype_featured_products()
- * @see archetype_popular_products()
+ * @see archetype_top_rated_products()
  * @see archetype_on_sale_products()
  */
 add_action( 'homepage', 'archetype_product_categories', 30 );
 add_action( 'homepage', 'archetype_recent_products',    40 );
 add_action( 'homepage', 'archetype_featured_products',  50 );
-add_action( 'homepage', 'archetype_popular_products',   60 );
+add_action( 'homepage', 'archetype_top_rated_products', 60 );
 add_action( 'homepage', 'archetype_on_sale_products',   70 );
 
 
