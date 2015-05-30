@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_page_header' ) ) {
+if ( ! function_exists( 'archetype_page_header' ) ) :
 	/**
 	 * Display the post header with a link to the single post
 	 * @since 1.0.0
@@ -22,9 +22,9 @@ if ( ! function_exists( 'archetype_page_header' ) ) {
 		</header><!-- .entry-header -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_page_content' ) ) {
+if ( ! function_exists( 'archetype_page_content' ) ) :
 	/**
 	 * Display the post content with a link to the single post
 	 * @since 1.0.0
@@ -37,4 +37,4 @@ if ( ! function_exists( 'archetype_page_content' ) ) {
 		</div><!-- .entry-content -->
 		<?php
 	}
-}
+endif;

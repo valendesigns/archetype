@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_footer_widgets' ) ) {
+if ( ! function_exists( 'archetype_footer_widgets' ) ) :
 	/**
 	 * Display the footer widget regions
 	 *
@@ -46,9 +46,9 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) {
 
 		<?php endif;
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_credit' ) ) {
+if ( ! function_exists( 'archetype_credit' ) ) :
 	/**
 	 * Display the theme credit
 	 *
@@ -70,4 +70,4 @@ if ( ! function_exists( 'archetype_credit' ) ) {
 		</div><!-- .credit	-->
 		<?php
 	}
-}
+endif;

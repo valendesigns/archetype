@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_header_widget_region' ) ) {
+if ( ! function_exists( 'archetype_header_widget_region' ) ) :
 	/**
 	 * Display header widget region
 	 *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'archetype_header_widget_region' ) ) {
 		</aside>
 		<?php
 	}
-}
+endif;
 
 if ( ! function_exists( 'archetype_site_branding' ) ) {
 	/**
@@ -53,7 +53,7 @@ if ( ! function_exists( 'archetype_site_branding' ) ) {
 	}
 }
 
-if ( ! function_exists( 'archetype_primary_navigation' ) ) {
+if ( ! function_exists( 'archetype_primary_navigation' ) ) :
 	/**
 	 * Display Primary Navigation
 	 *
@@ -83,9 +83,9 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) {
 		</nav><!-- #site-navigation -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
+if ( ! function_exists( 'archetype_secondary_navigation' ) ) :
 	/**
 	 * Display Secondary Navigation
 	 *
@@ -107,9 +107,9 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) {
 		</nav><!-- #site-navigation -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_skip_links' ) ) {
+if ( ! function_exists( 'archetype_skip_links' ) ) :
 	/**
 	 * Skip links
 	 *
@@ -121,4 +121,4 @@ if ( ! function_exists( 'archetype_skip_links' ) ) {
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'archetype' ); ?></a>
 		<?php
 	}
-}
+endif;

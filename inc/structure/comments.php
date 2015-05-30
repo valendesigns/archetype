@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_display_comments' ) ) {
+if ( ! function_exists( 'archetype_display_comments' ) ) :
 	/**
 	 * Archetype display comments
 	 *
@@ -19,9 +19,9 @@ if ( ! function_exists( 'archetype_display_comments' ) ) {
 			comments_template();
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_comment' ) ) {
+if ( ! function_exists( 'archetype_comment' ) ) :
 	/**
 	 * Archetype comment template
 	 *
@@ -134,4 +134,4 @@ if ( ! function_exists( 'archetype_comment' ) ) {
 		</div>
 	<?php
 	}
-}
+endif;

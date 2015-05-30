@@ -822,7 +822,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'type'         => 'checkbox',
 			) );
 		}
-		
+
 		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_content_toggle_text', array(
 			'section'      => 'archetype_homepage_content',
 			'description'  => __( 'The content in this section is added through the WordPress editor on whichever page has been set to the front page.', 'archetype' ),

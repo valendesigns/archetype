@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_homepage_content' ) ) {
+if ( ! function_exists( 'archetype_homepage_content' ) ) :
 	/**
 	 * Display homepage content
 	 *
@@ -25,9 +25,9 @@ if ( ! function_exists( 'archetype_homepage_content' ) ) {
 			endwhile;
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_homepage_content_2' ) ) {
+if ( ! function_exists( 'archetype_homepage_content_2' ) ) :
 	/**
 	 * Display homepage content 2
 	 *
@@ -64,9 +64,9 @@ if ( ! function_exists( 'archetype_homepage_content_2' ) ) {
 			}
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_homepage_content_3' ) ) {
+if ( ! function_exists( 'archetype_homepage_content_3' ) ) :
 	/**
 	 * Display homepage custom content 2
 	 *
@@ -103,9 +103,9 @@ if ( ! function_exists( 'archetype_homepage_content_3' ) ) {
 			}
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_social_icons' ) ) {
+if ( ! function_exists( 'archetype_social_icons' ) ) :
 	/**
 	 * Display social icons
 	 *
@@ -124,9 +124,9 @@ if ( ! function_exists( 'archetype_social_icons' ) ) {
 			echo '</div>';
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_get_sidebar' ) ) {
+if ( ! function_exists( 'archetype_get_sidebar' ) ) :
 	/**
 	 * Display archetype sidebar
 	 *
@@ -137,9 +137,9 @@ if ( ! function_exists( 'archetype_get_sidebar' ) ) {
 	function archetype_get_sidebar() {
 		get_sidebar();
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_hide_title_post_formats' ) ) {
+if ( ! function_exists( 'archetype_hide_title_post_formats' ) ) :
 	/**
 	 * Returns an array of post formats that do not have a title.
 	 *
@@ -159,9 +159,9 @@ if ( ! function_exists( 'archetype_hide_title_post_formats' ) ) {
 
 		return $post_formats;
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_has_content' ) ) {
+if ( ! function_exists( 'archetype_has_content' ) ) :
 	/**
 	 * Check for the existence of post content.
 	 *
@@ -176,9 +176,9 @@ if ( ! function_exists( 'archetype_has_content' ) ) {
 		$post = get_post( $post );
 		return ( isset( $post->post_content ) && ! empty( $post->post_content ) );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_has_title' ) ) {
+if ( ! function_exists( 'archetype_has_title' ) ) :
 	/**
 	 * Check for the existence of a post title.
 	 *
@@ -193,9 +193,9 @@ if ( ! function_exists( 'archetype_has_title' ) ) {
 		$post = get_post( $post );
 		return ( isset( $post->post_title ) && ! empty( $post->post_title ) );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_hide_title' ) ) {
+if ( ! function_exists( 'archetype_hide_title' ) ) :
 	/**
 	 * Check for a hidden post title.
 	 *
@@ -210,9 +210,9 @@ if ( ! function_exists( 'archetype_hide_title' ) ) {
 		$post = get_post( $post );
 		return apply_filters( 'archetype_hide_title', false, $post );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_hide_author_bio' ) ) {
+if ( ! function_exists( 'archetype_hide_author_bio' ) ) :
 	/**
 	 * Check for a hidden author bio.
 	 *
@@ -227,9 +227,9 @@ if ( ! function_exists( 'archetype_hide_author_bio' ) ) {
 		$post = get_post( $post );
 		return apply_filters( 'archetype_hide_author_bio', false, $post );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_entry_header_class' ) ) {
+if ( ! function_exists( 'archetype_entry_header_class' ) ) :
 	/**
 	 * Setup the entry-header classes.
 	 *
@@ -262,4 +262,4 @@ if ( ! function_exists( 'archetype_entry_header_class' ) ) {
 		// Return a string of classes each separated by an empty space.
 		return implode( $classes, ' ' );
 	}
-}
+endif;
