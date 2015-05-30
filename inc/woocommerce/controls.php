@@ -77,6 +77,13 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 			'priority'     => 20,
 		) ) );
 
+		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_notice_info_text', array(
+			'description'   => __( 'Notices are displayed throughout your shop in three different contexts to your users. You can view the coupon info notice on the Checkout page to see one of them in action.', 'archetype' ),
+			'section'       => 'archetype_notices',
+			'type'          => 'text',
+			'priority'      => 25,
+		) ) );
+
 		/**
 		 * Breadcrumbs
 		 */
