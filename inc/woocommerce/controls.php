@@ -114,7 +114,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 * Products
 		 */
 		$wp_customize->add_section( 'archetype_products' , array(
-			'title'        => __( 'Products', 'archetype' ),
+			'title'        => __( 'Product Archives', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of your product archives.', 'archetype' ),
 			'priority'     => 20,
 			'panel'        => 'archetype_woocommerce',
@@ -325,7 +325,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 * Product
 		 */
 		$wp_customize->add_section( 'archetype_product' , array(
-			'title'        => __( 'Product', 'archetype' ),
+			'title'        => __( 'Single Product', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of a single product.', 'archetype' ),
 			'priority'     => 45,
 			'panel'        => 'archetype_woocommerce',
