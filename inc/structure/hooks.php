@@ -61,13 +61,13 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
  *
  * @see archetype_homepage_hero()
  * @see archetype_homepage_content()
- * @see archetype_homepage_custom_content()
- * @see archetype_homepage_custom_content_alt()
+ * @see archetype_homepage_content_2()
+ * @see archetype_homepage_content_3()
  */
-add_action( 'homepage', 'archetype_homepage_hero',                0 );
-add_action( 'homepage', 'archetype_homepage_content',            10 );
-add_action( 'homepage', 'archetype_homepage_custom_content',     20 );
-add_action( 'homepage', 'archetype_homepage_custom_content_alt', 80 );
+add_action( 'homepage', 'archetype_homepage_hero',       0 );
+add_action( 'homepage', 'archetype_homepage_content',   10 );
+add_action( 'homepage', 'archetype_homepage_content_2', 20 );
+add_action( 'homepage', 'archetype_homepage_content_3', 80 );
 
 /**
  * Posts

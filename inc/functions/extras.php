@@ -102,6 +102,17 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'is_homepage_control_activated' ) ) :
+	/**
+	 * Query Homepage Control activation
+	 *
+	 * @since 1.0.0
+	 */
+	function is_homepage_control_activated() {
+		return class_exists( 'Homepage_Control', false ) ? true : false;
+	}
+endif;
+
 /**
  * Schema type
  *

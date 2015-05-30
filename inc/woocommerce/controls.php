@@ -497,25 +497,28 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 */
 		$wp_customize->add_section( 'archetype_product_categories' , array(
 			'title'        => __( 'Product Categories', 'archetype' ),
+			'description'  => __( 'Customize the look & feel of the product categories component.', 'archetype' ),
 			'priority'     => 20,
 			'panel'        => 'archetype_homepage',
 		) );
 
-		/**
-		 * Toggle product categories
-		 */
-		$wp_customize->add_setting( 'archetype_product_categories_toggle', array(
-			'default'            => true,
-			'sanitize_callback'  => 'archetype_sanitize_checkbox',
-		) );
+		if ( ! is_homepage_control_activated() ) {
+			/**
+			 * Toggle product categories
+			 */
+			$wp_customize->add_setting( 'archetype_product_categories_toggle', array(
+				'default'            => true,
+				'sanitize_callback'  => 'archetype_sanitize_checkbox',
+			) );
 
-		$wp_customize->add_control( 'archetype_product_categories_toggle', array(
-			'label'        => __( 'Display product categories', 'archetype' ),
-			'description'  => __( 'Toggle the display of the product categories.', 'archetype' ),
-			'section'      => 'archetype_product_categories',
-			'settings'     => 'archetype_product_categories_toggle',
-			'type'         => 'checkbox',
-		) );
+			$wp_customize->add_control( 'archetype_product_categories_toggle', array(
+				'label'        => __( 'Display product categories', 'archetype' ),
+				'description'  => __( 'Toggle the display of the product categories.', 'archetype' ),
+				'section'      => 'archetype_product_categories',
+				'settings'     => 'archetype_product_categories_toggle',
+				'type'         => 'checkbox',
+			) );
+		}
 
 		/**
 		 * Product categories limit
@@ -650,25 +653,28 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 */
 		$wp_customize->add_section( 'archetype_recent_products' , array(
 			'title'        => __( 'Recent Products', 'archetype' ),
+			'description'  => __( 'Customize the look & feel of the recent products component.', 'archetype' ),
 			'priority'     => 25,
 			'panel'        => 'archetype_homepage',
 		) );
 
-		/**
-		 * Toggle recent products
-		 */
-		$wp_customize->add_setting( 'archetype_recent_products_toggle', array(
-			'default'            => true,
-			'sanitize_callback'  => 'archetype_sanitize_checkbox',
-		) );
+		if ( ! is_homepage_control_activated() ) {
+			/**
+			 * Toggle recent products
+			 */
+			$wp_customize->add_setting( 'archetype_recent_products_toggle', array(
+				'default'            => true,
+				'sanitize_callback'  => 'archetype_sanitize_checkbox',
+			) );
 
-		$wp_customize->add_control( 'archetype_recent_products_toggle', array(
-			'label'        => __( 'Display recent products', 'archetype' ),
-			'description'  => __( 'Toggle the display of the recent products.', 'archetype' ),
-			'section'      => 'archetype_recent_products',
-			'settings'     => 'archetype_recent_products_toggle',
-			'type'         => 'checkbox',
-		) );
+			$wp_customize->add_control( 'archetype_recent_products_toggle', array(
+				'label'        => __( 'Display recent products', 'archetype' ),
+				'description'  => __( 'Toggle the display of the recent products.', 'archetype' ),
+				'section'      => 'archetype_recent_products',
+				'settings'     => 'archetype_recent_products_toggle',
+				'type'         => 'checkbox',
+			) );
+		}
 
 		/**
 		 * Recent products limit
@@ -810,25 +816,28 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 			 */
 			$wp_customize->add_section( 'archetype_featured_products' , array(
 				'title'        => __( 'Featured Products', 'archetype' ),
+				'description'  => __( 'Customize the look & feel of the featured products component.', 'archetype' ),
 				'priority'     => 30,
 				'panel'        => 'archetype_homepage',
 			) );
 
-			/**
-			 * Toggle featured products
-			 */
-			$wp_customize->add_setting( 'archetype_featured_products_toggle', array(
-				'default'            => true,
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
+			if ( ! is_homepage_control_activated() ) {
+				/**
+				 * Toggle featured products
+				 */
+				$wp_customize->add_setting( 'archetype_featured_products_toggle', array(
+					'default'            => true,
+					'sanitize_callback'  => 'archetype_sanitize_checkbox',
+				) );
 
-			$wp_customize->add_control( 'archetype_featured_products_toggle', array(
-				'label'        => __( 'Display featured products', 'archetype' ),
-				'description'  => __( 'Toggle the display of the featured products.', 'archetype' ),
-				'section'      => 'archetype_featured_products',
-				'settings'     => 'archetype_featured_products_toggle',
-				'type'         => 'checkbox',
-			) );
+				$wp_customize->add_control( 'archetype_featured_products_toggle', array(
+					'label'        => __( 'Display featured products', 'archetype' ),
+					'description'  => __( 'Toggle the display of the featured products.', 'archetype' ),
+					'section'      => 'archetype_featured_products',
+					'settings'     => 'archetype_featured_products_toggle',
+					'type'         => 'checkbox',
+				) );
+			}
 
 			/**
 			 * Featured products limit
@@ -965,25 +974,28 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 */
 		$wp_customize->add_section( 'archetype_top_rated_products' , array(
 			'title'        => __( 'Top Rated Products', 'archetype' ),
+			'description'  => __( 'Customize the look & feel of the top rated products component.', 'archetype' ),
 			'priority'     => 35,
 			'panel'        => 'archetype_homepage',
 		) );
 
-		/**
-		 * Toggle top rated products
-		 */
-		$wp_customize->add_setting( 'archetype_top_rated_products_toggle', array(
-			'default'            => true,
-			'sanitize_callback'  => 'archetype_sanitize_checkbox',
-		) );
+		if ( ! is_homepage_control_activated() ) {
+			/**
+			 * Toggle top rated products
+			 */
+			$wp_customize->add_setting( 'archetype_top_rated_products_toggle', array(
+				'default'            => true,
+				'sanitize_callback'  => 'archetype_sanitize_checkbox',
+			) );
 
-		$wp_customize->add_control( 'archetype_top_rated_products_toggle', array(
-			'label'        => __( 'Display top rated products', 'archetype' ),
-			'description'  => __( 'Toggle the display of the top rated products.', 'archetype' ),
-			'section'      => 'archetype_top_rated_products',
-			'settings'     => 'archetype_top_rated_products_toggle',
-			'type'         => 'checkbox',
-		) );
+			$wp_customize->add_control( 'archetype_top_rated_products_toggle', array(
+				'label'        => __( 'Display top rated products', 'archetype' ),
+				'description'  => __( 'Toggle the display of the top rated products.', 'archetype' ),
+				'section'      => 'archetype_top_rated_products',
+				'settings'     => 'archetype_top_rated_products_toggle',
+				'type'         => 'checkbox',
+			) );
+		}
 
 		/**
 		 * Top rated products limit
@@ -1118,25 +1130,28 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 */
 		$wp_customize->add_section( 'archetype_on_sale_products' , array(
 			'title'        => __( 'On Sale Products', 'archetype' ),
+			'description'  => __( 'Customize the look & feel of the on sale products component.', 'archetype' ),
 			'priority'     => 40,
 			'panel'        => 'archetype_homepage',
 		) );
 
-		/**
-		 * Toggle on sale products
-		 */
-		$wp_customize->add_setting( 'archetype_on_sale_products_toggle', array(
-			'default'            => true,
-			'sanitize_callback'  => 'archetype_sanitize_checkbox',
-		) );
+		if ( ! is_homepage_control_activated() ) {
+			/**
+			 * Toggle on sale products
+			 */
+			$wp_customize->add_setting( 'archetype_on_sale_products_toggle', array(
+				'default'            => true,
+				'sanitize_callback'  => 'archetype_sanitize_checkbox',
+			) );
 
-		$wp_customize->add_control( 'archetype_on_sale_products_toggle', array(
-			'label'        => __( 'Display on sale products', 'archetype' ),
-			'description'  => __( 'Toggle the display of the on sale products.', 'archetype' ),
-			'section'      => 'archetype_on_sale_products',
-			'settings'     => 'archetype_on_sale_products_toggle',
-			'type'         => 'checkbox',
-		) );
+			$wp_customize->add_control( 'archetype_on_sale_products_toggle', array(
+				'label'        => __( 'Display on sale products', 'archetype' ),
+				'description'  => __( 'Toggle the display of the on sale products.', 'archetype' ),
+				'section'      => 'archetype_on_sale_products',
+				'settings'     => 'archetype_on_sale_products_toggle',
+				'type'         => 'checkbox',
+			) );
+		}
 
 		/**
 		 * On Sale products limit

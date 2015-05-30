@@ -256,22 +256,22 @@
 			$( '.archetype-homepage-hero' ).css( 'background-color', to );
 		} );
 	} );
-	wp.customize( 'archetype_homepage_custom_content_text_color', function( value ) {
+	wp.customize( 'archetype_homepage_content_2_text_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.archetype-homepage-custom-content' ).css( 'color', to );
 		} );
 	} );
-	wp.customize( 'archetype_homepage_custom_content_background_color', function( value ) {
+	wp.customize( 'archetype_homepage_content_2_background_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.archetype-homepage-custom-content' ).css( 'background-color', to );
 		} );
 	} );
-	wp.customize( 'archetype_homepage_custom_content_alt_text_color', function( value ) {
+	wp.customize( 'archetype_homepage_content_3_text_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.archetype-homepage-custom-content-alt' ).css( 'color', to );
 		} );
 	} );
-	wp.customize( 'archetype_homepage_custom_content_alt_background_color', function( value ) {
+	wp.customize( 'archetype_homepage_content_3_background_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.archetype-homepage-custom-content-alt' ).css( 'background-color', to );
 		} );

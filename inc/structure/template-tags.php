@@ -27,21 +27,21 @@ if ( ! function_exists( 'archetype_homepage_content' ) ) {
 	}
 }
 
-if ( ! function_exists( 'archetype_homepage_custom_content' ) ) {
+if ( ! function_exists( 'archetype_homepage_content_2' ) ) {
 	/**
-	 * Display homepage custom content
+	 * Display homepage content 2
 	 *
 	 * Hooked into the `homepage` action in the homepage template at priority 20
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_custom_content() {
-		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_custom_content_toggle', true ) ) ) {
+	function archetype_homepage_content_2() {
+		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_2_toggle', true ) ) ) {
 			// Customizer content.
-			$custom_content 					= wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content', '' ) ) );
-			$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_text_color', apply_filters( 'archetype_default_homepage_custom_content_text_color', '#555' ) ) );
-			$content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_background_color', apply_filters( 'archetype_default_homepage_custom_content_background_color', '#fff' ) ) );
-			$content_alignment				= esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alignment', 'left' ) );
+			$custom_content 					= wp_kses_post( trim( get_theme_mod( 'archetype_homepage_content_2', '' ) ) );
+			$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_2_text_color', apply_filters( 'archetype_default_homepage_content_2_text_color', '#555' ) ) );
+			$content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_2_background_color', apply_filters( 'archetype_default_homepage_content_2_background_color', '#fff' ) ) );
+			$content_alignment				= esc_attr( get_theme_mod( 'archetype_homepage_content_2_alignment', 'left' ) );
 
 			// CSS classes.
 			$classes = array();
@@ -66,21 +66,21 @@ if ( ! function_exists( 'archetype_homepage_custom_content' ) ) {
 	}
 }
 
-if ( ! function_exists( 'archetype_homepage_custom_content_alt' ) ) {
+if ( ! function_exists( 'archetype_homepage_content_3' ) ) {
 	/**
-	 * Display homepage custom content alt
+	 * Display homepage custom content 2
 	 *
 	 * Hooked into the `homepage` action in the homepage template at priority 80
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_custom_content_alt() {
-		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_custom_content_alt_toggle', true ) ) ) {
+	function archetype_homepage_content_3() {
+		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_3_toggle', true ) ) ) {
 			// Customizer content.
-			$custom_content            = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content_alt', '' ) ) );
-			$content_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_text_color', apply_filters( 'archetype_default_homepage_custom_content_alt_text_color', '#555' ) ) );
-			$content_background_color  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_background_color', apply_filters( 'archetype_default_homepage_custom_content_alt_background_color', '#fff' ) ) );
-			$content_alignment         = esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alt_alignment', 'left' ) );
+			$custom_content            = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_content_3', '' ) ) );
+			$content_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_3_text_color', apply_filters( 'archetype_default_homepage_content_3_text_color', '#555' ) ) );
+			$content_background_color  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_3_background_color', apply_filters( 'archetype_default_homepage_content_3_background_color', '#fff' ) ) );
+			$content_alignment         = esc_attr( get_theme_mod( 'archetype_homepage_content_3_alignment', 'left' ) );
 
 			// CSS classes.
 			$classes   = array();
