@@ -299,6 +299,7 @@ function archetype_woocommerce_body_class( $classes ) {
 function archetype_woocommerce_post_class( $classes ) {
 	global $is_upsell_loop, $woocommerce_loop;
 
+	// Only on product pages and for sub queries.
 	if ( is_product() && ! empty( $woocommerce_loop ) ) {
 		$columns_mod_id = $is_upsell_loop ? 'archetype_upsell_display_columns' : 'archetype_related_products_columns';
 		$classes[] = 'columns-' . archetype_sanitize_integer( get_theme_mod( $columns_mod_id, '3' ) );
