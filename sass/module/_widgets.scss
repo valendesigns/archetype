@@ -230,12 +230,18 @@
 			font-size: 1.387em;
 		}
 
-		a {
+		a,
+		.checkboxes label {
 			color: $color-body;
 			font-weight: 400;
+			cursor: pointer;
 
 			&:hover {
 				color: $color-link;
+			}
+			
+			&:focus {
+				outline: 1px dotted $color-body;
 			}
 		}
 	}

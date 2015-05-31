@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_homepage_content' ) ) {
+if ( ! function_exists( 'archetype_homepage_content' ) ) :
 	/**
 	 * Display homepage content
 	 *
@@ -16,323 +16,127 @@ if ( ! function_exists( 'archetype_homepage_content' ) ) {
 	 * @since 1.0.0
 	 */
 	function archetype_homepage_content() {
-		// Page content.
-		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_toggle', true ) ) ) {
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'content', 'page' );
-
-			endwhile;
+		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_toggle', true ) ) ) {
+			return false;
 		}
-	}
-}
 
-if ( ! function_exists( 'archetype_homepage_custom_content' ) ) {
+		// Customizer content.
+		$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_text_color', apply_filters( 'archetype_default_homepage_content_text_color', '#555' ) ) );
+		$content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_background_color', apply_filters( 'archetype_default_homepage_content_background_color', '#fff' ) ) );
+		$content_alignment				= esc_attr( get_theme_mod( 'archetype_homepage_content_alignment', 'left' ) );
+
+		// CSS classes.
+		$classes = array();
+		$classes[] = 'archetype-homepage-content';
+		$classes[] = 'archetype-homepage-content-1';
+		$classes[] = $content_alignment;
+		$classes[] = 'expand-full-width';
+
+		// CSS style attributes.
+		$styles = array();
+		$styles[] = "color: $content_text_color;";
+		$styles[] = "background-color: $content_background_color;";
+
+		// Page content.
+		while ( have_posts() ) : the_post();
+
+			if ( '' === get_the_content() ) {
+				return;
+			}
+
+			echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
+				echo '<div class="col-full">';
+					get_template_part( 'content', 'page' );
+				echo '</div>';
+			echo '</section>';
+
+		endwhile;
+	}
+endif;
+
+if ( ! function_exists( 'archetype_homepage_content_2' ) ) :
 	/**
-	 * Display homepage custom content
+	 * Display homepage content 2
 	 *
 	 * Hooked into the `homepage` action in the homepage template at priority 20
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_custom_content() {
-		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_custom_content_toggle', true ) ) ) {
-			// Customizer content.
-			$custom_content 					= wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content', '' ) ) );
-			$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_text_color', apply_filters( 'archetype_default_homepage_custom_content_text_color', '#555' ) ) );
-			$content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_background_color', apply_filters( 'archetype_default_homepage_custom_content_background_color', '#fff' ) ) );
-			$content_alignment				= esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alignment', 'left' ) );
+	function archetype_homepage_content_2() {
+		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_2_toggle', true ) ) ) {
+			return false;
+		}
 
-			// CSS classes.
-			$classes = array();
-			$classes[] = 'archetype-homepage-content';
-			$classes[] = 'archetype-homepage-custom-content';
-			$classes[] = $content_alignment;
-			$classes[] = 'expand-full-width';
+		// Customizer content.
+		$custom_content 					= wp_kses_post( trim( get_theme_mod( 'archetype_homepage_content_2', '' ) ) );
+		$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_2_text_color', apply_filters( 'archetype_default_homepage_content_2_text_color', '#555' ) ) );
+		$content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_2_background_color', apply_filters( 'archetype_default_homepage_content_2_background_color', '#fff' ) ) );
+		$content_alignment				= esc_attr( get_theme_mod( 'archetype_homepage_content_2_alignment', 'left' ) );
 
-			// CSS style attributes.
-			$styles = array();
-			$styles[] = "color: $content_text_color;";
-			$styles[] = "background-color: $content_background_color;";
+		// CSS classes.
+		$classes = array();
+		$classes[] = 'archetype-homepage-content';
+		$classes[] = 'archetype-homepage-content-2';
+		$classes[] = $content_alignment;
+		$classes[] = 'expand-full-width';
 
-			if ( '' !== $custom_content ) {
-				echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
-					echo '<div class="col-full">';
-						echo do_shortcode( wpautop( $custom_content ) );
-					echo '</div>';
-				echo '</section>';
-			}
+		// CSS style attributes.
+		$styles = array();
+		$styles[] = "color: $content_text_color;";
+		$styles[] = "background-color: $content_background_color;";
+
+		if ( '' !== $custom_content ) {
+			echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
+				echo '<div class="col-full">';
+					echo do_shortcode( wpautop( $custom_content ) );
+				echo '</div>';
+			echo '</section>';
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_homepage_custom_content_alt' ) ) {
+if ( ! function_exists( 'archetype_homepage_content_3' ) ) :
 	/**
-	 * Display homepage custom content alt
+	 * Display homepage content 3
 	 *
 	 * Hooked into the `homepage` action in the homepage template at priority 80
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_custom_content_alt() {
-		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_custom_content_alt_toggle', true ) ) ) {
-			// Customizer content.
-			$custom_content            = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_custom_content_alt', '' ) ) );
-			$content_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_text_color', apply_filters( 'archetype_default_homepage_custom_content_alt_text_color', '#555' ) ) );
-			$content_background_color  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_custom_content_alt_background_color', apply_filters( 'archetype_default_homepage_custom_content_alt_background_color', '#fff' ) ) );
-			$content_alignment         = esc_attr( get_theme_mod( 'archetype_homepage_custom_content_alt_alignment', 'left' ) );
+	function archetype_homepage_content_3() {
+		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_3_toggle', true ) ) ) {
+			return false;
+		}
 
-			// CSS classes.
-			$classes   = array();
-			$classes[] = 'archetype-homepage-content';
-			$classes[] = 'archetype-homepage-custom-content-alt';
-			$classes[] = $content_alignment;
-			$classes[] = 'expand-full-width';
+		// Customizer content.
+		$custom_content            = wp_kses_post( trim( get_theme_mod( 'archetype_homepage_content_3', '' ) ) );
+		$content_text_color        = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_3_text_color', apply_filters( 'archetype_default_homepage_content_3_text_color', '#555' ) ) );
+		$content_background_color  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_3_background_color', apply_filters( 'archetype_default_homepage_content_3_background_color', '#fff' ) ) );
+		$content_alignment         = esc_attr( get_theme_mod( 'archetype_homepage_content_3_alignment', 'left' ) );
 
-			// CSS style attributes.
-			$styles    = array();
-			$styles[]  = "color: $content_text_color;";
-			$styles[]  = "background-color: $content_background_color;";
+		// CSS classes.
+		$classes   = array();
+		$classes[] = 'archetype-homepage-content';
+		$classes[] = 'archetype-homepage-content-3';
+		$classes[] = $content_alignment;
+		$classes[] = 'expand-full-width';
 
-			if ( '' !== $custom_content ) {
-				echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
-					echo '<div class="col-full">';
-						echo do_shortcode( wpautop( $custom_content ) );
-					echo '</div>';
-				echo '</section>';
-			}
+		// CSS style attributes.
+		$styles    = array();
+		$styles[]  = "color: $content_text_color;";
+		$styles[]  = "background-color: $content_background_color;";
+
+		if ( '' !== $custom_content ) {
+			echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
+				echo '<div class="col-full">';
+					echo do_shortcode( wpautop( $custom_content ) );
+				echo '</div>';
+			echo '</section>';
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_product_categories' ) ) {
-	/**
-	 * Display Product Categories
-	 *
-	 * Hooked into the `homepage` action in the homepage template at priority 30
-	 *
-	 * @since 1.0.0
-	 */
-	function archetype_product_categories() {
-
-		if ( is_woocommerce_activated() && true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_categories_toggle', true ) ) ) {
-
-			$limit       = get_theme_mod( 'archetype_product_categories_limit', '3' );
-			$columns     = get_theme_mod( 'archetype_product_categories_columns', '3' );
-			$title       = sanitize_text_field( get_theme_mod( 'archetype_product_categories_heading_text', __( 'Product Categories', 'archetype' ) ) );
-			$alignment   = get_theme_mod( 'archetype_product_categories_heading_alignment', 'center' );
-			$color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_product_categories_heading_color', apply_filters( 'archetype_default_product_categories_heading_color', '#333' ) ) );
-			$background  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_product_categories_background_color', apply_filters( 'archetype_default_product_categories_background_color', '#e5e5e5' ) ) );
-
-			$args = apply_filters( 'archetype_product_categories_args', array(
-				'limit'             => $limit,
-				'columns'           => $columns,
-				'child_categories'  => 0,
-				'orderby'           => 'name',
-				'title'             => $title,
-			) );
-
-			$products = do_shortcode( '[product_categories number="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '" orderby="' . esc_attr( $args['orderby'] ) . '" parent="' . esc_attr( $args['child_categories'] ) . '"]' );
-
-			$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
-
-			if ( ! empty( $products ) && $empty !== $products ) {
-
-				echo '<section class="archetype-product-section archetype-product-categories expand-full-width" style="background-color: ' . $background . ';">';
-
-					echo '<div class="col-full">';
-						echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
-						echo $products;
-					echo '</div>';
-
-				echo '</section>';
-
-			}
-		}
-	}
-}
-
-if ( ! function_exists( 'archetype_recent_products' ) ) {
-	/**
-	 * Display Recent Products
-	 *
-	 * Hooked into the `homepage` action in the homepage template at priority 40
-	 *
-	 * @since 1.0.0
-	 */
-	function archetype_recent_products() {
-
-		if ( is_woocommerce_activated() && true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_recent_products_toggle', true ) ) ) {
-
-			$limit       = get_theme_mod( 'archetype_recent_products_limit', '4' );
-			$columns     = get_theme_mod( 'archetype_recent_products_columns', '4' );
-			$title       = sanitize_text_field( get_theme_mod( 'archetype_recent_products_heading_text', __( 'Recent Products', 'archetype' ) ) );
-			$alignment   = get_theme_mod( 'archetype_recent_products_heading_alignment', 'center' );
-			$color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_recent_products_heading_color', apply_filters( 'archetype_default_recent_products_heading_color', '#333' ) ) );
-			$background  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_recent_products_background_color', apply_filters( 'archetype_default_recent_products_background_color', '#f1f1f1' ) ) );
-
-			$args = apply_filters( 'archetype_recent_products_args', array(
-				'limit'   => $limit,
-				'columns' => $columns,
-				'title'   => $title,
-			) );
-
-			$products = do_shortcode( '[recent_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
-
-			$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
-
-			if ( ! empty( $products ) && $empty !== $products ) {
-
-				echo '<section class="archetype-product-section archetype-recent-products expand-full-width" style="background-color: ' . $background . ';">';
-
-					echo '<div class="col-full">';
-						echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
-						echo $products;
-					echo '</div>';
-
-				echo '</section>';
-
-			}
-		}
-	}
-}
-
-if ( ! function_exists( 'archetype_featured_products' ) ) {
-	/**
-	 * Display Featured Products
-	 *
-	 * Hooked into the `homepage` action in the homepage template at priority 50
-	 *
-	 * @since 1.0.0
-	 */
-	function archetype_featured_products() {
-
-		if ( is_woocommerce_activated() && true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_featured_products_toggle', true ) ) ) {
-
-			$limit       = get_theme_mod( 'archetype_featured_products_limit', '4' );
-			$columns     = get_theme_mod( 'archetype_featured_products_columns', '4' );
-			$title       = sanitize_text_field( get_theme_mod( 'archetype_featured_products_heading_text', __( 'Featured Products', 'archetype' ) ) );
-			$alignment   = get_theme_mod( 'archetype_featured_products_heading_alignment', 'center' );
-			$color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_featured_products_heading_color', apply_filters( 'archetype_default_featured_products_heading_color', '#333' ) ) );
-			$background  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_featured_products_background_color', apply_filters( 'archetype_default_featured_products_background_color', '#e5e5e5' ) ) );
-
-			$args = apply_filters( 'archetype_featured_products_args', array(
-				'limit'   => $limit,
-				'columns' => $columns,
-				'title'   => $title,
-			) );
-
-			$products = do_shortcode( '[featured_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
-
-			$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
-
-			if ( ! empty( $products ) && $empty !== $products ) {
-
-				echo '<section class="archetype-product-section archetype-featured-products expand-full-width" style="background-color: ' . $background . ';">';
-
-					echo '<div class="col-full">';
-						echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
-						echo $products;
-					echo '</div>';
-
-				echo '</section>';
-
-			}
-		}
-	}
-}
-
-if ( ! function_exists( 'archetype_popular_products' ) ) {
-	/**
-	 * Display Popular Products
-	 *
-	 * Hooked into the `homepage` action in the homepage template at priority 60
-	 *
-	 * @since 1.0.0
-	 */
-	function archetype_popular_products() {
-
-		if ( is_woocommerce_activated() && true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_top_rated_products_toggle', true ) ) ) {
-
-			$limit       = get_theme_mod( 'archetype_top_rated_products_limit', '4' );
-			$columns     = get_theme_mod( 'archetype_top_rated_products_columns', '4' );
-			$title       = sanitize_text_field( get_theme_mod( 'archetype_top_rated_products_heading_text', __( 'Top Rated Products', 'archetype' ) ) );
-			$alignment   = get_theme_mod( 'archetype_top_rated_products_heading_alignment', 'center' );
-			$color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_top_rated_products_heading_color', apply_filters( 'archetype_default_top_rated_products_heading_color', '#333' ) ) );
-			$background  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_top_rated_products_background_color', apply_filters( 'archetype_default_top_rated_products_background_color', '#f1f1f1' ) ) );
-
-			$args = apply_filters( 'archetype_popular_products_args', array(
-				'limit'   => $limit,
-				'columns' => $columns,
-				'title'   => $title,
-			) );
-
-			$products = do_shortcode( '[top_rated_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
-
-			$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
-
-			if ( ! empty( $products ) && $empty !== $products ) {
-
-				echo '<section class="archetype-product-section archetype-popular-products expand-full-width" style="background-color: ' . $background . ';">';
-
-					echo '<div class="col-full">';
-						echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
-						echo $products;
-					echo '</div>';
-
-				echo '</section>';
-
-			}
-		}
-	}
-}
-
-if ( ! function_exists( 'archetype_on_sale_products' ) ) {
-	/**
-	 * Display On Sale Products
-	 *
-	 * Hooked into the `homepage` action in the homepage template at priority 70
-	 *
-	 * @since 1.0.0
-	 */
-	function archetype_on_sale_products() {
-
-		if ( is_woocommerce_activated() && true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_on_sale_products_toggle', true ) ) ) {
-
-			$limit       = get_theme_mod( 'archetype_on_sale_products_limit', '4' );
-			$columns     = get_theme_mod( 'archetype_on_sale_products_columns', '4' );
-			$title       = sanitize_text_field( get_theme_mod( 'archetype_on_sale_products_heading_text', __( 'On Sale Products', 'archetype' ) ) );
-			$alignment   = get_theme_mod( 'archetype_on_sale_products_heading_alignment', 'center' );
-			$color       = archetype_sanitize_hex_color( get_theme_mod( 'archetype_on_sale_products_heading_color', apply_filters( 'archetype_default_on_sale_products_heading_color', '#333' ) ) );
-			$background  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_on_sale_products_background_color', apply_filters( 'archetype_default_top_rated_products_background_color', '#e5e5e5' ) ) );
-
-			$args = apply_filters( 'archetype_on_sale_products_args', array(
-				'limit'   => $limit,
-				'columns' => $columns,
-				'title'   => $title,
-			) );
-
-			$products = do_shortcode( '[sale_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
-
-			$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
-
-			if ( ! empty( $products ) && $empty !== $products ) {
-
-				echo '<section class="archetype-product-section archetype-on-sale-products expand-full-width" style="background-color: ' . $background . ';">';
-
-					echo '<div class="col-full">';
-						echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
-						echo $products;
-					echo '</div>';
-
-				echo '</section>';
-
-			}
-		}
-	}
-}
-
-if ( ! function_exists( 'archetype_social_icons' ) ) {
+if ( ! function_exists( 'archetype_social_icons' ) ) :
 	/**
 	 * Display social icons
 	 *
@@ -351,9 +155,9 @@ if ( ! function_exists( 'archetype_social_icons' ) ) {
 			echo '</div>';
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_get_sidebar' ) ) {
+if ( ! function_exists( 'archetype_get_sidebar' ) ) :
 	/**
 	 * Display archetype sidebar
 	 *
@@ -364,9 +168,9 @@ if ( ! function_exists( 'archetype_get_sidebar' ) ) {
 	function archetype_get_sidebar() {
 		get_sidebar();
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_hide_title_post_formats' ) ) {
+if ( ! function_exists( 'archetype_hide_title_post_formats' ) ) :
 	/**
 	 * Returns an array of post formats that do not have a title.
 	 *
@@ -386,9 +190,9 @@ if ( ! function_exists( 'archetype_hide_title_post_formats' ) ) {
 
 		return $post_formats;
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_has_content' ) ) {
+if ( ! function_exists( 'archetype_has_content' ) ) :
 	/**
 	 * Check for the existence of post content.
 	 *
@@ -403,9 +207,9 @@ if ( ! function_exists( 'archetype_has_content' ) ) {
 		$post = get_post( $post );
 		return ( isset( $post->post_content ) && ! empty( $post->post_content ) );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_has_title' ) ) {
+if ( ! function_exists( 'archetype_has_title' ) ) :
 	/**
 	 * Check for the existence of a post title.
 	 *
@@ -420,9 +224,9 @@ if ( ! function_exists( 'archetype_has_title' ) ) {
 		$post = get_post( $post );
 		return ( isset( $post->post_title ) && ! empty( $post->post_title ) );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_hide_title' ) ) {
+if ( ! function_exists( 'archetype_hide_title' ) ) :
 	/**
 	 * Check for a hidden post title.
 	 *
@@ -437,9 +241,9 @@ if ( ! function_exists( 'archetype_hide_title' ) ) {
 		$post = get_post( $post );
 		return apply_filters( 'archetype_hide_title', false, $post );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_hide_author_bio' ) ) {
+if ( ! function_exists( 'archetype_hide_author_bio' ) ) :
 	/**
 	 * Check for a hidden author bio.
 	 *
@@ -454,9 +258,9 @@ if ( ! function_exists( 'archetype_hide_author_bio' ) ) {
 		$post = get_post( $post );
 		return apply_filters( 'archetype_hide_author_bio', false, $post );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_entry_header_class' ) ) {
+if ( ! function_exists( 'archetype_entry_header_class' ) ) :
 	/**
 	 * Setup the entry-header classes.
 	 *
@@ -489,4 +293,4 @@ if ( ! function_exists( 'archetype_entry_header_class' ) ) {
 		// Return a string of classes each separated by an empty space.
 		return implode( $classes, ' ' );
 	}
-}
+endif;

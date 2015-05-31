@@ -19,3 +19,4 @@ add_action( 'after_setup_theme',                  'archetype_custom_header_setup
 add_filter( 'upload_mimes',                       'archetype_customize_upload_mimes', 10 );
 add_filter( 'jetpack_the_site_logo',              'archetype_site_logo_svg',          10, 3 );
 add_action( 'wp_ajax_archetype-get-logo-url',     'archetype_customize_get_logo_url', 10 );
+add_action( 'homepage_control_title',             'archetype_homepage_control_title', 10, 2 );

@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_posts_navigation' ) ) {
+if ( ! function_exists( 'archetype_posts_navigation' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
 	 *
@@ -21,9 +21,9 @@ if ( ! function_exists( 'archetype_posts_navigation' ) ) {
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'archetype' ) . ' </span>',
 		) );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_post_navigation' ) ) {
+if ( ! function_exists( 'archetype_post_navigation' ) ) :
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 *
@@ -46,9 +46,9 @@ if ( ! function_exists( 'archetype_post_navigation' ) ) {
 			) );
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_page_navigation' ) ) {
+if ( ! function_exists( 'archetype_page_navigation' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
 	 *
@@ -65,9 +65,9 @@ if ( ! function_exists( 'archetype_page_navigation' ) ) {
 			'separator'    => '<span class="screen-reader-text">, </span>',
 		) );
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_image_navigation' ) ) {
+if ( ! function_exists( 'archetype_image_navigation' ) ) :
 	/**
 	 * Display navigation to next/previous image when applicable.
 	 *
@@ -93,9 +93,9 @@ if ( ! function_exists( 'archetype_image_navigation' ) ) {
 		<?php
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_comment_navigation' ) ) {
+if ( ! function_exists( 'archetype_comment_navigation' ) ) :
 	/**
 	 * Display navigation to next/previous comments when applicable.
 	 *
@@ -120,4 +120,4 @@ if ( ! function_exists( 'archetype_comment_navigation' ) ) {
 		<?php
 		}
 	}
-}
+endif;

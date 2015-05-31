@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_image_attachment' ) ) {
+if ( ! function_exists( 'archetype_image_attachment' ) ) :
 	/**
 	 * Display the image attachment.
 	 *
@@ -31,9 +31,9 @@ if ( ! function_exists( 'archetype_image_attachment' ) ) {
 		</div><!-- .post-thumbnail -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_image_header' ) ) {
+if ( ! function_exists( 'archetype_image_header' ) ) :
 	/**
 	 * Display the image header
 	 *
@@ -46,9 +46,9 @@ if ( ! function_exists( 'archetype_image_header' ) ) {
 		</header><!-- .entry-header -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_image_content' ) ) {
+if ( ! function_exists( 'archetype_image_content' ) ) :
 	/**
 	 * Display the image
 	 *
@@ -74,9 +74,9 @@ if ( ! function_exists( 'archetype_image_content' ) ) {
 		</div><!-- .entry-content -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_image_meta' ) ) {
+if ( ! function_exists( 'archetype_image_meta' ) ) :
 	/**
 	 * Displays meta information for the date, original image etc.
 	 *
@@ -91,4 +91,4 @@ if ( ! function_exists( 'archetype_image_meta' ) ) {
 		archetype_post_meta();
 
 	}
-}
+endif;

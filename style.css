@@ -2458,11 +2458,14 @@ embed, iframe, object {
   font-size: .938em; }
   .widget-area .widget h1.widget-title {
     font-size: 1.387em; }
-  .widget-area .widget a {
+  .widget-area .widget a, .widget-area .widget .checkboxes label {
     color: #555;
-    font-weight: 400; }
-    .widget-area .widget a:hover {
+    font-weight: 400;
+    cursor: pointer; }
+    .widget-area .widget a:hover, .widget-area .widget .checkboxes label:hover {
       color: #ee543f; }
+    .widget-area .widget a:focus, .widget-area .widget .checkboxes label:focus {
+      outline: 1px dotted #555; }
 
 @media screen and (max-width: 568px) {
   .widget {
@@ -2531,7 +2534,7 @@ section + .archetype-homepage-hero {
 .archetype-homepage-content.right {
   text-align: right; }
 
-.archetype-homepage-content p:last-child {
+.archetype-homepage-content .hentry, .archetype-homepage-content p:last-child {
   margin-bottom: 0px; }
 
 @media screen and (max-width: 74em) {

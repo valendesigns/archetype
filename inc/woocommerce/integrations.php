@@ -373,6 +373,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 
 				#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
 					background-color: ' . $button_background_hover_color . ' !important;
+					color: ' . $button_text_hover_color . ' !important;
 				}
 
 				#wc-bookings-booking-form .block-picker li a {
@@ -445,7 +446,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 				.woocommerce-page #reviews .contribution-form-wrapper .form-contribution {
 					background: ' . $post_background_color . ';
 					box-shadow: ' . ( false == $post_shadow_toggle ? 'none' : '0px -1px 0px ' . $post_shadow_color . ' inset' ) . ';
-					border-radius: ' . $post_radius . 'px;
+					border-radius: 0 ' . $post_radius . 'px ' . $post_radius . 'px ' . $post_radius . 'px;
 				}
 
 				.woocommerce #reviews #comments ol.commentlist li,

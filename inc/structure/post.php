@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'archetype_post_format_media' ) ) {
+if ( ! function_exists( 'archetype_post_format_media' ) ) :
 	/**
 	 * Display an optional post thumbnail.
 	 *
@@ -50,9 +50,9 @@ if ( ! function_exists( 'archetype_post_format_media' ) ) {
 	
 		<?php } // End is_singular()
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_post_header' ) ) {
+if ( ! function_exists( 'archetype_post_header' ) ) :
 	/**
 	 * Display the post header with a link to the single post
 	 *
@@ -73,9 +73,9 @@ if ( ! function_exists( 'archetype_post_header' ) ) {
 		</header><!-- .entry-header -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_post_content' ) ) {
+if ( ! function_exists( 'archetype_post_content' ) ) :
 	/**
 	 * Display the post content with a link to the single post
 	 *
@@ -101,9 +101,9 @@ if ( ! function_exists( 'archetype_post_content' ) ) {
 		</div><!-- .entry-content -->
 		<?php
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_post_author_bio' ) ) {
+if ( ! function_exists( 'archetype_post_author_bio' ) ) :
 	/**
 	 * Display the post author bio
 	 *
@@ -114,9 +114,9 @@ if ( ! function_exists( 'archetype_post_author_bio' ) ) {
 			get_template_part( 'author-bio' );
 		}
 	}
-}
+endif;
 
-if ( ! function_exists( 'archetype_post_meta' ) ) {
+if ( ! function_exists( 'archetype_post_meta' ) ) :
 	/**
 	 * Displays meta information for the author, categories, tags etc.
 	 *
@@ -214,4 +214,4 @@ if ( ! function_exists( 'archetype_post_meta' ) ) {
 		</aside>
 		<?php
 	}
-}
+endif;
