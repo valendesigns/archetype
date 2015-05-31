@@ -157,7 +157,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		a:hover {
 			color: ' . $link_color_hover . ';
 		}';
-		
+
 		// Widget Link Color.
 		$link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_widget_link_color', apply_filters( 'archetype_default_widget_link_color', '#333' ) ) );
 
