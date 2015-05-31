@@ -157,6 +157,25 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		a:hover {
 			color: ' . $link_color_hover . ';
 		}';
+		
+		// Widget Link Color.
+		$link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_widget_link_color', apply_filters( 'archetype_default_widget_link_color', '#333' ) ) );
+
+		// Widget Link Color Hover.
+		$link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_widget_link_color_hover', apply_filters( 'archetype_default_widget_link_color_hover', '#ee543f' ) ) );
+
+		$style .= '
+		.widget-area .widget a,
+		.widget-area .widget .checkboxes label {
+			color: ' . $link_color . ';
+		}
+		.widget-area .widget a:hover,
+		.widget-area .widget .checkboxes label:hover {
+			color: ' . $link_color_hover . ';
+		}
+		.widget-area .widget a:focus {
+			outline: 1px dotted ' . $link_color . ';
+		}';
 
 		// Header Background Color.
 		$header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );

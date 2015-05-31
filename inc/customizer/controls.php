@@ -1089,89 +1089,11 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		/**
-		 * Add the typography section
-		 */
-		$wp_customize->add_section( 'archetype_typography' , array(
-			'title'        => __( 'Typography', 'archetype' ),
-			'priority'     => 5,
-			'panel'        => 'archetype_content',
-		) );
-
-		/**
-		 * Text Color
-		 */
-		$wp_customize->add_setting( 'archetype_text_color', array(
-			'default'            => apply_filters( 'archetype_default_text_color', '#555' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_text_color', array(
-			'label'        => __( 'Text color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_text_color',
-			'priority'     => 1,
-		) ) );
-
-		/**
-		 * Heading Color
-		 */
-		$wp_customize->add_setting( 'archetype_heading_color', array(
-			'default'            => apply_filters( 'archetype_default_heading_color', '#333' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_heading_color', array(
-			'label'        => __( 'Heading color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_heading_color',
-			'priority'     => 2,
-		) ) );
-
-		/**
-		 * Link Color
-		 */
-		$wp_customize->add_setting( 'archetype_link_color', array(
-			'default'            => apply_filters( 'archetype_default_link_color', '#ee543f' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color', array(
-			'label'        => __( 'Link color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_link_color',
-			'priority'     => 3,
-		) ) );
-
-		/**
-		 * Link Color Hover
-		 */
-		$wp_customize->add_setting( 'archetype_link_color_hover', array(
-			'default'            => apply_filters( 'archetype_default_link_color_hover', '#111' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color_hover', array(
-			'label'        => __( 'Link hover color', 'archetype' ),
-			'section'      => 'archetype_typography',
-			'settings'     => 'archetype_link_color_hover',
-			'priority'     => 4,
-		) ) );
-
-		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_typography_text', array(
-			'section'      => 'archetype_typography',
-			'description'  => __( 'Sidebar links use text color for the default state, and link color for the hover state.', 'archetype' ),
-			'type'         => 'text',
-			'priority'     => 5,
-		) ) );
-
-		/**
 		 * Add the Post section
 		 */
 		$wp_customize->add_section( 'archetype_post' , array(
 			'title'        => __( 'Post', 'archetype' ),
-			'priority'     => 10,
+			'priority'     => 5,
 			'panel'        => 'archetype_content',
 		) );
 
@@ -1289,76 +1211,111 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
-		 * Add the Forms section
+		 * Add the typography section
 		 */
-		$wp_customize->add_section( 'archetype_forms' , array(
-			'title'        => __( 'Form Inputs & Textareas', 'archetype' ),
-			'priority'     => 15,
+		$wp_customize->add_section( 'archetype_typography' , array(
+			'title'        => __( 'Typography', 'archetype' ),
+			'description'  => __( 'Customize the look & feel of your typography.', 'archetype' ),
+			'priority'     => 10,
 			'panel'        => 'archetype_content',
 		) );
 
 		/**
-		 * Form Text Color
+		 * Text Color
 		 */
-		$wp_customize->add_setting( 'archetype_form_text_color', array(
-			'default'            => apply_filters( 'archetype_default_form_text_color', '#555' ),
+		$wp_customize->add_setting( 'archetype_text_color', array(
+			'default'            => apply_filters( 'archetype_default_text_color', '#555' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 			'transport'          => 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_text_color', array(
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_text_color', array(
 			'label'        => __( 'Text color', 'archetype' ),
-			'section'      => 'archetype_forms',
-			'settings'     => 'archetype_form_text_color',
-			'priority'     => 10,
+			'description'  => __( 'The main text color on your website.', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_text_color',
+			'priority'     => 1,
 		) ) );
 
 		/**
-		 * Form Background Color
+		 * Heading Color
 		 */
-		$wp_customize->add_setting( 'archetype_form_background_color', array(
-			'default'            => apply_filters( 'archetype_default_form_background_color', '#e4e4e4' ),
+		$wp_customize->add_setting( 'archetype_heading_color', array(
+			'default'            => apply_filters( 'archetype_default_heading_color', '#333' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 			'transport'          => 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_background_color', array(
-			'label'        => __( 'Background color', 'archetype' ),
-			'section'      => 'archetype_forms',
-			'settings'     => 'archetype_form_background_color',
-			'priority'     => 15,
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_heading_color', array(
+			'label'        => __( 'Heading color', 'archetype' ),
+			'description'  => __( 'The heading text color for h1-h6.', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_heading_color',
+			'priority'     => 2,
 		) ) );
 
 		/**
-		 * Form Focus Text Color
+		 * Link Color
 		 */
-		$wp_customize->add_setting( 'archetype_form_text_focus_color', array(
-			'default'            => apply_filters( 'archetype_default_form_text_focus_color', '#3b3b3b' ),
+		$wp_customize->add_setting( 'archetype_link_color', array(
+			'default'            => apply_filters( 'archetype_default_link_color', '#ee543f' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_text_focus_color', array(
-			'label'        => __( 'Text focus color', 'archetype' ),
-			'section'      => 'archetype_forms',
-			'settings'     => 'archetype_form_text_focus_color',
-			'priority'     => 20,
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color', array(
+			'label'        => __( 'Link color', 'archetype' ),
+			'description'  => __( 'The global link color.', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_link_color',
+			'priority'     => 3,
 		) ) );
 
 		/**
-		 * Form Focus Background Color
+		 * Link Color Hover
 		 */
-		$wp_customize->add_setting( 'archetype_form_background_focus_color', array(
-			'default'            => apply_filters( 'archetype_default_form_background_focus_color', '#d7d7d7' ),
+		$wp_customize->add_setting( 'archetype_link_color_hover', array(
+			'default'            => apply_filters( 'archetype_default_link_color_hover', '#111' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_background_focus_color', array(
-			'label'        => __( 'Background focus color', 'archetype' ),
-			'section'      => 'archetype_forms',
-			'settings'     => 'archetype_form_background_focus_color',
-			'priority'     => 25,
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_link_color_hover', array(
+			'label'        => __( 'Link hover color', 'archetype' ),
+			'description'  => __( 'The global link hover color.', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_link_color_hover',
+			'priority'     => 4,
+		) ) );
+
+		/**
+		 * Widget Link Color
+		 */
+		$wp_customize->add_setting( 'archetype_widget_link_color', array(
+			'default'            => apply_filters( 'archetype_default_widget_link_color', '#333' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_widget_link_color', array(
+			'label'        => __( 'Widget link color', 'archetype' ),
+			'description'  => __( 'Overrides the global link color for sidebar widgets.', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_widget_link_color',
+			'priority'     => 5,
+		) ) );
+
+		/**
+		 * Widget Link Color Hover
+		 */
+		$wp_customize->add_setting( 'archetype_widget_link_color_hover', array(
+			'default'            => apply_filters( 'archetype_default_widget_link_color_hover', '#ee543f' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_widget_link_color_hover', array(
+			'label'        => __( 'Widget link hover color', 'archetype' ),
+			'description'  => __( 'Overrides the global link hover color for sidebar widgets.', 'archetype' ),
+			'section'      => 'archetype_typography',
+			'settings'     => 'archetype_widget_link_color_hover',
+			'priority'     => 6,
 		) ) );
 
 		/**
@@ -1366,7 +1323,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 */
 		$wp_customize->add_section( 'archetype_search' , array(
 			'title'        => __( 'Search Widget', 'archetype' ),
-			'priority'     => 20,
+			'priority'     => 15,
 			'panel'        => 'archetype_content',
 		) );
 
@@ -1448,6 +1405,79 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'section'      => 'archetype_search',
 			'settings'     => 'archetype_search_shadow_color',
 			'priority'     => 20,
+		) ) );
+
+		/**
+		 * Add the Forms section
+		 */
+		$wp_customize->add_section( 'archetype_forms' , array(
+			'title'        => __( 'Form Inputs & Textareas', 'archetype' ),
+			'priority'     => 20,
+			'panel'        => 'archetype_content',
+		) );
+
+		/**
+		 * Form Text Color
+		 */
+		$wp_customize->add_setting( 'archetype_form_text_color', array(
+			'default'            => apply_filters( 'archetype_default_form_text_color', '#555' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_text_color', array(
+			'label'        => __( 'Text color', 'archetype' ),
+			'section'      => 'archetype_forms',
+			'settings'     => 'archetype_form_text_color',
+			'priority'     => 10,
+		) ) );
+
+		/**
+		 * Form Background Color
+		 */
+		$wp_customize->add_setting( 'archetype_form_background_color', array(
+			'default'            => apply_filters( 'archetype_default_form_background_color', '#e4e4e4' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_background_color', array(
+			'label'        => __( 'Background color', 'archetype' ),
+			'section'      => 'archetype_forms',
+			'settings'     => 'archetype_form_background_color',
+			'priority'     => 15,
+		) ) );
+
+		/**
+		 * Form Focus Text Color
+		 */
+		$wp_customize->add_setting( 'archetype_form_text_focus_color', array(
+			'default'            => apply_filters( 'archetype_default_form_text_focus_color', '#3b3b3b' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_text_focus_color', array(
+			'label'        => __( 'Text focus color', 'archetype' ),
+			'section'      => 'archetype_forms',
+			'settings'     => 'archetype_form_text_focus_color',
+			'priority'     => 20,
+		) ) );
+
+		/**
+		 * Form Focus Background Color
+		 */
+		$wp_customize->add_setting( 'archetype_form_background_focus_color', array(
+			'default'            => apply_filters( 'archetype_default_form_background_focus_color', '#d7d7d7' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_form_background_focus_color', array(
+			'label'        => __( 'Background focus color', 'archetype' ),
+			'section'      => 'archetype_forms',
+			'settings'     => 'archetype_form_background_focus_color',
+			'priority'     => 25,
 		) ) );
 
 		/**
