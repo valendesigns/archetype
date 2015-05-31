@@ -16,7 +16,7 @@ if ( ! function_exists( 'archetype_homepage_content' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_homepage_content() {
-		if ( ! is_homepage_control_activated() && true !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_toggle', true ) ) ) {
+		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_toggle', true ) ) ) {
 			return false;
 		}
 
@@ -63,7 +63,7 @@ if ( ! function_exists( 'archetype_homepage_content_2' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_homepage_content_2() {
-		if ( ! is_homepage_control_activated() && true !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_2_toggle', true ) ) ) {
+		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_2_toggle', true ) ) ) {
 			return false;
 		}
 		
@@ -104,7 +104,7 @@ if ( ! function_exists( 'archetype_homepage_content_3' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_homepage_content_3() {
-		if ( ! is_homepage_control_activated() && true !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_3_toggle', true ) ) ) {
+		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_3_toggle', true ) ) ) {
 			return false;
 		}
 

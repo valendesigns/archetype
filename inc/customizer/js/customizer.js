@@ -116,6 +116,7 @@
 				'input[data-customize-setting-link=archetype_post_shadow_toggle]': '#customize-control-archetype_post_shadow_color',
 				'input[data-customize-setting-link=archetype_search_shadow_toggle]': '#customize-control-archetype_search_shadow_color',
 				'!input[data-customize-setting-link=archetype_button_2d]': '#customize-control-archetype_button_shadow_color, #customize-control-archetype_button_shadow_hover_color',
+				'input[data-customize-setting-link=archetype_upsell_display_toggle]': '#customize-control-archetype_upsell_display_limit, #customize-control-archetype_upsell_display_limit_text, #customize-control-archetype_upsell_display_columns, #customize-control-archetype_upsell_display_columns_text',
 				'input[data-customize-setting-link=archetype_related_products_toggle]': '#customize-control-archetype_related_products_limit, #customize-control-archetype_related_products_limit_text, #customize-control-archetype_related_products_columns, #customize-control-archetype_related_products_columns_text'
 			};
 			ArchetypeCustomizer._toggleEach( toggles );

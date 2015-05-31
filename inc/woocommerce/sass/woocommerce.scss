@@ -1575,6 +1575,29 @@ dl.variation {
 			ul.products {
 				li.product {
 					@include span(4 of 12);
+
+					&.columns-1 {
+						width: 100%;
+						margin-right: 0;
+						float: none;
+					}
+
+					&.columns-2 {
+						@include span(6 of 12);
+					}
+
+					&.columns-3 {
+						@include span(4 of 12);
+					}
+
+					&.columns-4 {
+						@include span(3 of 12);
+					}
+
+					&.columns-5 {
+						width: 16.9%;
+						margin-right: 3.8%;
+					}
 				}
 			}
 		}
@@ -1632,6 +1655,31 @@ dl.variation {
 		ul.products {
 			li.product {
 				@include span(4 of 12);
+
+				&.columns-1 {
+					width: 100%;
+					margin-right: 0;
+					float: none;
+				}
+
+				&.columns-2 {
+					width: 48%;
+					margin-right: 3.8%;
+				}
+
+				&.columns-3 {
+					@include span(3 of 9);
+				}
+
+				&.columns-4 {
+					width: 22.05%;
+					margin-right: 3.8%;
+				}
+
+				&.columns-5 {
+					width: 16.9%;
+					margin-right: 3.8%;
+				}
 			}
 		}
 	}

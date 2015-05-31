@@ -412,6 +412,103 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		) );
 
 		/**
+		 * Toggle product tabs
+		 */
+		$wp_customize->add_setting( 'archetype_product_tabs_toggle', array(
+			'default'            => apply_filters( 'archetype_default_product_tabs_toggle', true ),
+			'sanitize_callback'  => 'archetype_sanitize_checkbox',
+		) );
+
+		$wp_customize->add_control( 'archetype_product_tabs_toggle', array(
+			'label'        => __( 'Display product tabs', 'archetype' ),
+			'description'  => __( 'Toggle the display of the product tabs.', 'archetype' ),
+			'section'      => 'archetype_product',
+			'settings'     => 'archetype_product_tabs_toggle',
+			'type'         => 'checkbox',
+		) );
+
+		/**
+		 * Toggle upsell products
+		 */
+		$wp_customize->add_setting( 'archetype_upsell_display_toggle', array(
+			'default'            => apply_filters( 'archetype_default_upsell_display_toggle', true ),
+			'sanitize_callback'  => 'archetype_sanitize_checkbox',
+		) );
+
+		$wp_customize->add_control( 'archetype_upsell_display_toggle', array(
+			'label'        => __( 'Display upsell products', 'archetype' ),
+			'description'  => __( 'Toggle the display of the upsell products.', 'archetype' ),
+			'section'      => 'archetype_product',
+			'settings'     => 'archetype_upsell_display_toggle',
+			'type'         => 'checkbox',
+		) );
+
+		/**
+		 * Upsell products limit
+		 */
+		$wp_customize->add_setting( 'archetype_upsell_display_limit', array(
+			'default'            => '3',
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( 'archetype_upsell_display_limit', array(
+			'label'        => __( 'Upsell Limit', 'archetype' ),
+			'section'      => 'archetype_product',
+			'settings'     => 'archetype_upsell_display_limit',
+			'type'         => 'select',
+			'choices'      => array(
+				'1'           => '1',
+				'2'           => '2',
+				'3'           => '3',
+				'4'           => '4',
+				'5'           => '5',
+				'6'           => '6',
+				'7'           => '7',
+				'8'           => '8',
+				'9'           => '9',
+				'10'          => '10',
+				'11'          => '11',
+				'12'          => '12',
+			),
+		) );
+
+		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_upsell_display_limit_text', array(
+			'description'  => __( 'Choose the number of upsell products to display.', 'archetype' ),
+			'section'      => 'archetype_product',
+			'settings'     => 'archetype_upsell_display_limit',
+			'type'         => 'text',
+		) ) );
+
+		/**
+		 * Upsell products columns
+		 */
+		$wp_customize->add_setting( 'archetype_upsell_display_columns', array(
+			'default'            => '3',
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( 'archetype_upsell_display_columns', array(
+			'label'        => __( 'Upsell Columns', 'archetype' ),
+			'section'      => 'archetype_product',
+			'settings'     => 'archetype_upsell_display_columns',
+			'type'         => 'select',
+			'choices'      => array(
+				'1'           => '1',
+				'2'           => '2',
+				'3'           => '3',
+				'4'           => '4',
+				'5'           => '5',
+			),
+		) );
+
+		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_upsell_display_columns_text', array(
+			'description'  => __( 'Choose the number of columns to display.', 'archetype' ),
+			'section'      => 'archetype_product',
+			'settings'     => 'archetype_upsell_display_columns',
+			'type'         => 'text',
+		) ) );
+
+		/**
 		 * Toggle related products
 		 */
 		$wp_customize->add_setting( 'archetype_related_products_toggle', array(
@@ -436,7 +533,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( 'archetype_related_products_limit', array(
-			'label'        => __( 'Limit', 'archetype' ),
+			'label'        => __( 'Related Products Limit', 'archetype' ),
 			'section'      => 'archetype_product',
 			'settings'     => 'archetype_related_products_limit',
 			'type'         => 'select',
@@ -472,7 +569,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( 'archetype_related_products_columns', array(
-			'label'        => __( 'Columns', 'archetype' ),
+			'label'        => __( 'Related Products Columns', 'archetype' ),
 			'section'      => 'archetype_product',
 			'settings'     => 'archetype_related_products_columns',
 			'type'         => 'select',
