@@ -373,6 +373,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 
 				#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
 					background-color: ' . $button_background_hover_color . ' !important;
+					color: ' . $button_text_hover_color . ' !important;
 				}
 
 				#wc-bookings-booking-form .block-picker li a {

@@ -239,6 +239,10 @@ ul.products {
 			div {
 				overflow: hidden;
 
+				img {
+					margin-bottom: $spacing-v;
+				}
+
 				p:empty {
 					display: none;
 				}
