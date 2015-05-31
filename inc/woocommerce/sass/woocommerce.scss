@@ -235,6 +235,14 @@ ul.products {
 		.summary {
 			background: $color-post-bg;
 			border-radius: 0 0 $radius-post $radius-post;
+
+			div {
+				overflow: hidden;
+
+				p:empty {
+					display: none;
+				}
+			}
 		}
 
 		form.cart {
