@@ -256,6 +256,11 @@
 			$( '.archetype-homepage-hero' ).css( 'background-color', to );
 		} );
 	} );
+	wp.customize( 'archetype_homepage_hero_heading_text', function( value ) {
+		value.bind( function( to ) {
+			$( '.archetype-homepage-hero h1:first-child' ).text( to );
+		} );
+	} );
 	wp.customize( 'archetype_homepage_content_text_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.archetype-homepage-content-1' ).css( 'color', to );

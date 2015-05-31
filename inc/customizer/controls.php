@@ -737,6 +737,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_setting( 'archetype_homepage_hero_heading_text', array(
 			'default'            => __( 'Heading Text', 'archetype' ),
 			'sanitize_callback'  => 'sanitize_text_field',
+			'transport'          => 'postMessage',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_heading_text', array(
