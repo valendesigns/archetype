@@ -5,9 +5,6 @@
  * @package Archetype
  */
 
-if ( is_page_template( 'template-homepage.php' ) && get_the_content() == '' ) {
-	return;
-}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

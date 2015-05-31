@@ -823,9 +823,59 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			) );
 		}
 
+		/**
+		 * Alignment
+		 */
+		$wp_customize->add_setting( 'archetype_homepage_content_alignment', array(
+			'default'            => 'left',
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( 'archetype_homepage_content_alignment', array(
+			'label'        => __( 'Text alignment', 'archetype' ),
+			'section'      => 'archetype_homepage_content',
+			'settings'     => 'archetype_homepage_content_alignment',
+			'type'         => 'radio',
+			'choices'      => array(
+				'left'        => 'Left',
+				'center'      => 'Center',
+				'right'       => 'Right',
+			),
+		) );
+
+		/**
+		 * Content color
+		 */
+		$wp_customize->add_setting( 'archetype_homepage_content_text_color', array(
+			'default'            => apply_filters( 'archetype_default_homepage_content_text_color', '#555' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_content_text_color', array(
+			'label'        => __( 'Text color', 'archetype' ),
+			'section'      => 'archetype_homepage_content',
+			'settings'     => 'archetype_homepage_content_text_color',
+		) ) );
+
+		/**
+		 * Content background color
+		 */
+		$wp_customize->add_setting( 'archetype_homepage_content_background_color', array(
+			'default'            => apply_filters( 'archetype_default_homepage_content_background_color', '#fff' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_content_background_color', array(
+			'label'        => __( 'Background color', 'archetype' ),
+			'section'      => 'archetype_homepage_content',
+			'settings'     => 'archetype_homepage_content_background_color',
+		) ) );
+
 		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_content_toggle_text', array(
 			'section'      => 'archetype_homepage_content',
-			'description'  => __( 'The content in this section is added through the WordPress editor on whichever page has been set to the front page.', 'archetype' ),
+			'description'  => __( 'The content in this component is added through the WordPress editor, on whichever page has been set to the front page.', 'archetype' ),
 			'type'         => 'text',
 		) ) );
 
@@ -833,7 +883,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Content 2
 		 */
 		$wp_customize->add_section( 'archetype_homepage_content_2' , array(
-			'title'        => __( 'Content 2', 'archetype' ),
+			'title'        => __( 'Content (2)', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the second content component.', 'archetype' ),
 			'priority'     => 15,
 			'panel'        => 'archetype_homepage',
@@ -849,8 +899,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			) );
 
 			$wp_customize->add_control( 'archetype_homepage_content_2_toggle', array(
-				'label'        => __( 'Display content 2', 'archetype' ),
-				'description'  => __( 'Toggle the display of content 2.', 'archetype' ),
+				'label'        => __( 'Display content', 'archetype' ),
+				'description'  => __( 'Toggle the display of the content component.', 'archetype' ),
 				'section'      => 'archetype_homepage_content_2',
 				'settings'     => 'archetype_homepage_content_2_toggle',
 				'type'         => 'checkbox',
@@ -933,7 +983,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Content 3 section
 		 */
 		$wp_customize->add_section( 'archetype_homepage_content_3' , array(
-			'title'        => __( 'Content 3', 'archetype' ),
+			'title'        => __( 'Content (3)', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the third content component.', 'archetype' ),
 			'priority'     => 45,
 			'panel'        => 'archetype_homepage',
@@ -949,8 +999,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			) );
 
 			$wp_customize->add_control( 'archetype_homepage_content_3_toggle', array(
-				'label'        => __( 'Display content 3', 'archetype' ),
-				'description'  => __( 'Toggle the display of content 3.', 'archetype' ),
+				'label'        => __( 'Display content', 'archetype' ),
+				'description'  => __( 'Toggle the display of the content component.', 'archetype' ),
 				'section'      => 'archetype_homepage_content_3',
 				'settings'     => 'archetype_homepage_content_3_toggle',
 				'type'         => 'checkbox',
