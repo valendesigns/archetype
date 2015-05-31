@@ -22,7 +22,7 @@ if ( ! function_exists( 'archetype_header_widget_region' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'archetype_site_branding' ) ) {
+if ( ! function_exists( 'archetype_site_branding' ) ) :
 	/**
 	 * Display Site Branding
 	 *
@@ -51,7 +51,7 @@ if ( ! function_exists( 'archetype_site_branding' ) ) {
 		// Display default.
 		echo $branding;
 	}
-}
+endif;
 
 if ( ! function_exists( 'archetype_primary_navigation' ) ) :
 	/**

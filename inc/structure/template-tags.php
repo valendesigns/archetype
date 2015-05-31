@@ -97,7 +97,7 @@ endif;
 
 if ( ! function_exists( 'archetype_homepage_content_3' ) ) :
 	/**
-	 * Display homepage custom content 2
+	 * Display homepage content 3
 	 *
 	 * Hooked into the `homepage` action in the homepage template at priority 80
 	 *
