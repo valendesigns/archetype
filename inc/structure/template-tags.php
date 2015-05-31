@@ -66,7 +66,7 @@ if ( ! function_exists( 'archetype_homepage_content_2' ) ) :
 		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_2_toggle', true ) ) ) {
 			return false;
 		}
-		
+
 		// Customizer content.
 		$custom_content 					= wp_kses_post( trim( get_theme_mod( 'archetype_homepage_content_2', '' ) ) );
 		$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_2_text_color', apply_filters( 'archetype_default_homepage_content_2_text_color', '#555' ) ) );
