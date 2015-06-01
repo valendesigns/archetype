@@ -4,7 +4,7 @@ We're really excited that you are interested in contributing to Archetype. Befor
 
 ## Issue Reporting Guidelines
 
-- The issue list of this repo is **exclusively** for bug reports and feature requests. For simple questions, please use either [Gitter](https://gitter.im/valendesigns/archetype).
+- The issue list of this repo is **exclusively** for bug reports and feature requests. For simple questions, please use [Gitter](https://gitter.im/valendesigns/archetype).
 - Try to search for your issue, it may have already been answered or even fixed in the `wip` (Work in Progress) branch.
 - Check if the issue is reproducible with the latest stable version of Archetype. If you are using a pre-release, please indicate the specific version you are using.
 - It is **required** that you clearly describe the steps necessary to reproduce the issue you are running into. Issues without clear reproducible steps will be closed immediately.
@@ -27,9 +27,13 @@ We're really excited that you are interested in contributing to Archetype. Befor
 
 You will need [Node.js](http://nodejs.org), [Grunt](http://gruntjs.com), & [PHPUnit](https://phpunit.de/getting-started.html). To run the unit tests you must be developing within the WordPress Core. The following command will clone `trunk`.
 
+To clone the WordPress Core
+
 ``` bash
 $ git clone git://develop.git.wordpress.org/trunk/
 ```
+
+To install packages
 
 ``` bash
 # npm install -g grunt-cli
