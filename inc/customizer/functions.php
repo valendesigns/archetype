@@ -557,11 +557,7 @@ if ( ! function_exists( 'archetype_layout_class' ) ) :
 	 * @return array Modified body classes.
 	 */
 	function archetype_layout_class( $classes ) {
-		$layout = archetype_sanitize_layout( get_theme_mod( 'archetype_layout' ) );
-
-		if ( '' === $layout ) {
-			$layout = 'right';
-		}
+		$layout = archetype_sanitize_layout( get_theme_mod( 'archetype_layout', 'right' ) );
 
 		$classes[] = $layout . '-sidebar';
 

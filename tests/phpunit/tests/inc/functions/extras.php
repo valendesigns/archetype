@@ -72,7 +72,9 @@ class Tests_Extras extends WP_UnitTestCase {
 	 */
 	function test_archetype_body_classes() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->go_to( '/' );
+
+		$this->assertSame( array( 'home', 'blog', 'no-wc-breadcrumb', 'is-padded', 'right-sidebar' ), get_body_class() );
 
 	}
 
