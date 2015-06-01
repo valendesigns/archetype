@@ -15,7 +15,7 @@ $url 	.= '&archetype-customizer=true';
 ?>
 <div id="get_started" class="col two-col panel" style="margin-bottom: 1.618em; padding-top: 1.618em; overflow: hidden;">
 
-	<h2><?php _e( 'Using Archetype', 'archetype' ); ?> <div class="dashicons dashicons-lightbulb"></div></h2>
+	<h2><?php _e( 'Using Archetype', 'archetype' ); ?> <div class="dashicons dashicons-heart" style="margin-top: .25em;"></div></h2>
 	<p><?php _e( 'We\'ve purposely kept Archetype lean & mean so configuration is a breeze. Here are some common theme-setup tasks:', 'archetype' ); ?></p>
 
 	<div class="col-1">
