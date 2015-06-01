@@ -30,18 +30,37 @@ class Tests_Extras extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Check that the home link is added to `wp_page_menu_args`.
+	 * Check that the home link is added with the `wp_page_menu_args` filter.
 	 */
 	function test_archetype_page_menu_args() {
-
-		// Filter the args
-		add_filter( 'wp_page_menu_args', 'archetype_page_menu_args' );
 
 		// Expected value.
 		$expected = '<div class="menu"><ul><li ><a href="http://example.org/">Home</a></li></ul></div>' . "\n";
 
 		// Get the menu markup post filter.
 		$menu = wp_page_menu( array( 'echo' => false ) );
+
+		// Test that the values are equal.
+		$this->assertSame( $expected, $menu );
+
+	}
+
+	/**
+	 * Check that the home link is not added without the `wp_page_menu_args` filter.
+	 */
+	function test_archetype_page_menu_args_without_filter() {
+
+		// Expected value.
+		$expected = '<div class="menu"></div>' . "\n";
+
+		// Remove the filter
+		remove_filter( 'wp_page_menu_args', 'archetype_page_menu_args' );
+
+		// Get the menu markup without the filter.
+		$menu = wp_page_menu( array( 'echo' => false ) );
+
+		// Add the filter back
+		add_filter( 'wp_page_menu_args', 'archetype_page_menu_args' );
 
 		// Test that the values are equal.
 		$this->assertSame( $expected, $menu );
