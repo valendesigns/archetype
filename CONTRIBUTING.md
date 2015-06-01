@@ -76,4 +76,4 @@ To test:
 $ phpunit
 ```
 
-The default task (simply running `grunt`) will do the following: `jshint -> css -> uglify`. Travis CI will run the unit tests and perform sniffs against the WordPress Coding Standards whenever you push changes to your PR. Test are required to pass successfully for a merge to be considered.
+The default task (simply running `grunt`) will do the following: `jshint -> css -> uglify`. Travis CI will run the unit tests and perform sniffs against the WordPress Coding Standards whenever you push changes to your PR. Tests are required to pass successfully for a merge to be considered.
