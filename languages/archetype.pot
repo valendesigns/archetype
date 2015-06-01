@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-05-28 23:56:14+00:00\n"
+"POT-Creation-Date: 2015-06-01 07:07:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,449 +66,333 @@ msgid ""
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:12
-msgid "Enhance your site"
+msgid "Extend your functionality"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:15
-msgid ""
-"Below you will find a selection of free and commercial Storefront "
-"extensions that could help improve your online store."
+msgid "Browse Archetype's free and commercial extensions."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
-msgid "Make your site instantly recognisable by adding your logo"
+msgid "Make your site instantly recognizable by adding your logo"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
-#: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Free (Third Party)"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 msgid ""
-"Jetpack is probably a plugin you're already familiar with. Storefront fully "
+"Jetpack is probably a plugin you're already familiar with. Archetype fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:24
 #: inc/admin/welcome-screen/sections/add-ons.php:37
-#: inc/admin/welcome-screen/sections/add-ons.php:50
-#: inc/admin/welcome-screen/sections/add-ons.php:63
-#: inc/admin/welcome-screen/sections/add-ons.php:76
-#: inc/admin/welcome-screen/sections/add-ons.php:89
-#: inc/admin/welcome-screen/sections/add-ons.php:102
-#: inc/admin/welcome-screen/sections/add-ons.php:115
 msgid "Activated"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:26
-#: inc/admin/welcome-screen/sections/getting-started.php:42
 msgid "Install Jetpack"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:32
-msgid "Further customise your store with the Storefront Designer"
+msgid "Further customize your store with the Archetype Designer"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:32
-#: inc/admin/welcome-screen/sections/add-ons.php:45
-#: inc/admin/welcome-screen/sections/add-ons.php:97
 msgid "Premium"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:34
 msgid ""
-"Storefront Designer adds a bunch of additional appearance settings allowing "
-"you to further tweak and perfect your Storefront design by changing the "
-"header layout, button styles, typographical schemes/scales and more."
+"Archetype Designer adds a bunch of additional appearance settings allowing "
+"you to further tweak and perfect your Archetype design by changing the "
+"header layout, additional button styles, typographical schemes/scales and "
+"more."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:39
-msgid "Buy %sStorefront Designer%s now"
+msgid "Buy %sArchetype Designer%s now"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:45
-msgid "Highlight a product of your choosing with the Storefront Product Hero"
+#: inc/admin/welcome-screen/sections/child-themes.php:14
+msgid "Upgrade your look"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:47
+#: inc/admin/welcome-screen/sections/child-themes.php:17
 msgid ""
-"The Storefront Product Hero extension adds a parallax hero component to "
-"your homepage highlighting a specific product at your store. Use the "
-"shortcode to add attractive hero components to posts, pages or widgets."
+"Browse Archetype's beautiful child themes to add some curb appeal to your "
+"website."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:52
-msgid "Buy %sStorefront Product Hero%s now"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:58
-msgid "Have your visitors market your store for you with Storefront Product Sharing"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:58
-#: inc/admin/welcome-screen/sections/add-ons.php:71
-#: inc/admin/welcome-screen/sections/add-ons.php:84
-msgid "Free"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:60
-msgid ""
-"Storefront Product Sharing adds attractive social sharing icons for "
-"Facebook, Twitter, Pinterest and Email to your product pages. %sMore info "
-"&rarr;%s"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:65
-msgid "Install Storefront Product Sharing"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:71
-msgid "Add a site-wide call out to your footer with Storefront Footer Bar"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:73
-msgid ""
-"Storefront Footer Bar adds a full width widgetised region above the default "
-"Storefront footer widget area. %sMore info &rarr;%s"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:78
-msgid "Install Storefront Footer Bar"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:84
-msgid "Storefront Product Pagination"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:86
-msgid ""
-"Storefront Product Pagination adds unobtrusive links to next/previous "
-"products on your WooCommerce single product pages. %sMore info &rarr;%s"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:91
-msgid "Install Storefront Product Pagination"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:97
-msgid ""
-"Refine your shop archives and product pages with the Storefront WooCommerce "
-"Customiser"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:99
-msgid ""
-"The Storefront WooCommerce Customiser extension gives you further control "
-"over the look and feel of your shop. Change the product archive and single "
-"layouts, toggle various shop components and more."
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:104
-msgid "Buy %sStorefront WooCommerce Customiser%s now"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:110
-msgid "Add practical information to your pages with Storefront Top Bar"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:112
-msgid ""
-"Storefront Top Bar adds a widgetised content area at the top of your site "
-"and customise it's appearance in the Customizer. %sMore info &rarr;%s"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:117
-msgid "Install Storefront Top Bar"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/add-ons.php:125
-msgid ""
-"There are literally hundreds of awesome extensions available for you to "
-"use. Looking for Table Rate Shipping? Subscriptions? Product Add-ons? You "
-"can find these and more in the WooCommerce extension shop. %sGo shopping%s."
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/child-themes.php:16
-msgid "Get a whole new look"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/child-themes.php:19
-msgid ""
-"Below you will find a selection of Storefront child themes that will "
-"transform the look and feel of your site while retaining the rock solid "
-"Storefront foundation."
+#: inc/admin/welcome-screen/sections/child-themes.php:23
+#: inc/admin/welcome-screen/sections/child-themes.php:24
+#: inc/admin/welcome-screen/sections/child-themes.php:35
+#: inc/admin/welcome-screen/sections/child-themes.php:36
+msgid "Child Theme"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:25
-msgid "Boutique Child Theme"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/child-themes.php:26
-msgid "Boutique"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/child-themes.php:27
+#: inc/admin/welcome-screen/sections/child-themes.php:37
 msgid ""
-"Boutique is a simple, traditionally designed Storefront child theme, ideal "
-"for small stores or boutiques. Add your logo, create a unique color scheme "
-"and start selling!"
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:28
+msgid "Install %s now"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:30
 #: inc/admin/welcome-screen/sections/child-themes.php:42
-msgid "Install %s now"
+msgid "Read more %sabout Child Theme%s &rarr;"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:32
-msgid "Read more %sabout Boutique%s &rarr;"
+#: inc/admin/welcome-screen/sections/child-themes.php:40
+msgid "Buy %s now"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:37
-msgid "Deli Child Theme"
+#: inc/admin/welcome-screen/sections/get-started.php:16
+msgid "Using Archetype"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:38
-msgid "Deli"
+#: inc/admin/welcome-screen/sections/get-started.php:17
+msgid "To keep the simplicity alive, here's some common theme tasks."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:39
+#: inc/admin/welcome-screen/sections/get-started.php:20
+#: inc/woocommerce/controls.php:21
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:21
 msgid ""
-"Deli features a texturised, earthy design, perfect for stores selling "
-"natural, organic or hand made goods."
+"Looking to include a online store for your project? Then WooCommerce is "
+"your first stop."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:44
-msgid "Read more %sabout Deli%s &rarr;"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/getting-started.php:18
-msgid "Using Storefront"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/getting-started.php:19
-msgid ""
-"We've purposely kept Storefront lean & mean so configuration is a breeze. "
-"Here are some common theme-setup tasks:"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/getting-started.php:23
-#: inc/admin/welcome-screen/sections/getting-started.php:26
+#: inc/admin/welcome-screen/sections/get-started.php:23
+#: inc/admin/welcome-screen/sections/who.php:26
 msgid "Install WooCommerce"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:24
+#: inc/admin/welcome-screen/sections/get-started.php:26
+msgid "Jetpack"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:27
 msgid ""
-"Although Storefront works fine as a standard WordPress theme, it really "
-"shines when used for an online store. Install WooCommerce and start selling "
-"now."
+"Looking to add a custom logo? Install and activate %sJetpack%s. Archetype "
+"also supports the infinite scroll feature that comes with Jetpack."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:29
-msgid "Configure menu locations"
+#: inc/admin/welcome-screen/sections/get-started.php:29
+msgid "Install JetPack"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:30
+#: inc/admin/welcome-screen/sections/get-started.php:32
+msgid "Menu configuration"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:33
 msgid ""
-"Storefront includes three menu locations for primary, secondary and "
-"handheld navigation. The primary navigation is perfect for your key pages "
-"like the shop and product categories. The secondary navigation is better "
-"suited to lower traffic pages such as terms and conditions. The handheld "
-"navigation gives you complete control over what menu items to serve to "
-"handheld devices."
+"Archetype includes three menu options used for navigating your web site. "
+"The Primary menu is used for your more commonly visited pages. The "
+"Secondary menu is used for pages you expect to see less traffic. The "
+"Handheld menu is used to select the pages you wish users to see when "
+"visiting your site on a handheld device."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:31
-msgid "Configure menus"
+#: inc/admin/welcome-screen/sections/get-started.php:34
+msgid "Configure"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:33
-msgid "Create a color scheme"
+#: inc/admin/welcome-screen/sections/get-started.php:36
+msgid "Customizer"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:34
+#: inc/admin/welcome-screen/sections/get-started.php:37
 msgid ""
-"Using the WordPress Customizer you can tweak Storefront's appearance to "
-"match your brand."
+"Not a CSS or HTML guru? Not a Problem.  Archetype's customizer provides "
+"effortless tact to match the color scheme and layout to your brand. Point, "
+"click, and admire."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:35
-msgid "Open the Customizer"
+#: inc/admin/welcome-screen/sections/get-started.php:38
+msgid "Customize"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:38
-msgid "Add your logo"
+#: inc/admin/welcome-screen/sections/get-started.php:42
+msgid "OptionTree"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:39
+#: inc/admin/welcome-screen/sections/get-started.php:43
 msgid ""
-"Install and activate either %sJetpack%s or the to enable a custom logo "
-"option in the Customizer."
+"Install and activate %sOptionTree%s to add meta box functionality which "
+"extends the post formats on your blog for a more custom appearance. This "
+"integration also gives you the ability to hide post & page titles, as well "
+"as, author descriptions on a per-post basis."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:49
-msgid "Configure homepage template"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/getting-started.php:50
+#: inc/admin/welcome-screen/sections/get-started.php:44
 msgid ""
-"Storefront includes a homepage template that displays a selection of "
-"products from your store."
+"Since we built OptionTree too, you can rest easy knowing it will always be "
+"compatible with Archetype."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:51
+#: inc/admin/welcome-screen/sections/get-started.php:46
+msgid "Install OptionTree"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:49
+msgid "Homepage Control"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:50
+msgid "This is a fantastic tool for ordering content on the homepage of your site."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:51
 msgid ""
-"To set this up you will need to create a new page and assign the "
-"\"Homepage\" template to it. You can then set that as a static homepage in "
-"the %sReading%s settings."
+"Assign the \"Homepage\" template to a new or existing page. Then set that "
+"as a static homepage in the Reading settings."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:52
+#: inc/admin/welcome-screen/sections/get-started.php:52
 msgid ""
-"Once set up you can toggle and re-order the homepage components using the "
-"%sHomepage Control%s plugin."
+"Once Homepage Control is installed and activated, you can arrange content "
+"components in the order you see fit. This can be done from within the "
+"customizer."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:55
+#: inc/admin/welcome-screen/sections/get-started.php:55
 msgid "Install Homepage Control"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:58
-msgid "View documentation"
+#: inc/admin/welcome-screen/sections/get-started.php:58
+msgid "Subscribe & Connect"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:59
+#: inc/admin/welcome-screen/sections/get-started.php:59
 msgid ""
-"You can read detailed information on Storefronts features and how to "
-"develop on top of it in the documentation."
+"Help your visitors subscribe to your content, as well as share it across "
+"various social networks by adding subscribe icon links to the header and "
+"footer of your website."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:60
-msgid "View documentation &rarr;"
+#: inc/admin/welcome-screen/sections/get-started.php:62
+msgid "Install Subscribe & Connect"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/intro.php:16
-msgid ""
-"Awesome! You've decided to use Storefront to enrich your WooCommerce store "
-"design."
+msgid "Welcome to Archetype! You've made a great choice."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/intro.php:17
 msgid ""
-"Whether you're a store owner, WordPress developer, or both - we hope you "
-"enjoy Storefront's deep integration with WooCommerce core (including "
-"several popular WooCommerce extensions), plus the flexible design and "
-"extensible codebase that this theme provides."
+"If you're wanting to setup shop, then our integrated WooCommerce core will "
+"assist you in doing just that. With support for many popular WooCommerce "
+"extensions and a beautiful design, you're just a few clicks away from your "
+"own branded online store. Also, our point and click Customizer options, "
+"backed by an extremely extensible codebase, will leave you with nothing but "
+"an ear to ear grin."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/tabs.php:12
-msgid "Getting Started"
+msgid "Get Started"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/tabs.php:13
-msgid "Enhance Storefront"
+msgid "Extend Archetype"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/tabs.php:14
-msgid "Storefront Child Themes"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/who.php:12
-msgid "The Woo Team"
+msgid "Child Themes"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:13
-msgid "Who are WooThemes?"
+msgid "The Valen Team"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:14
-msgid ""
-"WooCommerce creators WooThemes is an international team of WordPress "
-"superstars building products for a passionate community of hundreds of "
-"thousands of users."
+msgid "Who is Valen?"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:15
-msgid "Visit WooThemes"
+msgid ""
+"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum "
+"dolore eu fugiat nulla pariatur, sunt in culpa qui officia deserunt mollit "
+"anim id est laborum."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:21
-msgid "WooCommerce logo"
+#: inc/admin/welcome-screen/sections/who.php:16
+msgid "Come Visit Us"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:22
-msgid "What is WooCommerce?"
+msgid "WooCommerce logo"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:23
-msgid ""
-"WooCommerce is the most popular WordPress eCommerce plugin. Packed full of "
-"intuitive features and surrounded by a thriving community - it's the "
-"perfect solution for building an online store with WordPress."
+msgid "What is WooCommerce?"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:24
-msgid "Download & Install WooCommerce"
+msgid ""
+"WooCommerce is the most popular WordPress eCommerce plugin, and was "
+"purchase by WordPress recently. It's packed full of intuitive features and "
+"surrounded by a thriving community."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:25
-msgid "View WooCommerce Documentation"
+#: inc/admin/welcome-screen/sections/who.php:27
+msgid "Documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:31
-msgid "Can I contribute to Storefront?"
+#: inc/admin/welcome-screen/sections/who.php:34
+msgid "Can I contribute to Archetype?"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:32
+#: inc/admin/welcome-screen/sections/who.php:35
 msgid "Can I Contribute?"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:33
+#: inc/admin/welcome-screen/sections/who.php:36
 msgid ""
 "Found a bug? Want to contribute a patch or create a new feature? GitHub is "
-"the place to go! Or would you like to translate Storefront in to your "
+"the place to go! Or would you like to translate Archetype into your "
 "language? Get involved at Transifex."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:34
-msgid "Storefront at GitHub"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/who.php:34
-msgid "Storefront at Transifex"
-msgstr ""
-
 #: inc/admin/welcome-screen/sections/who.php:38
-msgid "Can't find a feature?"
+msgid "Archetype at GitHub"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:39
-msgid ""
-"Please suggest and vote on ideas / feature requests at the %sStorefront "
-"Ideasboard%s. The most popular ideas will see prioritised development."
+msgid "Archetype at Transifex"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:41
-msgid "Are you enjoying Storefront?"
+#: inc/admin/welcome-screen/sections/who.php:44
+msgid "Are you enjoying Archetype?"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:42
+#: inc/admin/welcome-screen/sections/who.php:45
 msgid "Why not leave a review on %sWordPress.org%s? We'd really appreciate it! :-)"
 msgstr ""
 
 #: inc/admin/welcome-screen/welcome-screen.php:58
 msgid ""
-"Thanks for choosing Storefront! You can read hints and tips on how get the "
+"Thanks for choosing Archetype! You can read hints and tips on how get the "
 "most out of your new theme on the %swelcome screen%s."
 msgstr ""
 
 #: inc/admin/welcome-screen/welcome-screen.php:59
-msgid "Get started with Storefront"
+msgid "Get started with Archetype"
 msgstr ""
 
-#: inc/customizer/controls/export.php:28 inc/customizer/controls.php:1799
-#: inc/customizer/controls.php:1830
+#: inc/customizer/controls/export.php:28 inc/customizer/controls.php:1893
+#: inc/customizer/controls.php:1924
 msgid "Export"
 msgstr ""
 
@@ -520,8 +404,8 @@ msgstr ""
 msgid "Uploading..."
 msgstr ""
 
-#: inc/customizer/controls/import.php:36 inc/customizer/controls.php:1758
-#: inc/customizer/controls.php:1789
+#: inc/customizer/controls/import.php:36 inc/customizer/controls.php:1852
+#: inc/customizer/controls.php:1883
 msgid "Import"
 msgstr ""
 
@@ -541,7 +425,7 @@ msgstr ""
 msgid "Branding"
 msgstr ""
 
-#: inc/customizer/controls.php:55 inc/customizer/controls.php:632
+#: inc/customizer/controls.php:55 inc/customizer/controls.php:554
 msgid "Component Order"
 msgstr ""
 
@@ -597,7 +481,7 @@ msgid ""
 "will occupy."
 msgstr ""
 
-#: inc/customizer/controls.php:187 inc/customizer/controls.php:685
+#: inc/customizer/controls.php:187 inc/customizer/controls.php:603
 msgid "Full Width"
 msgstr ""
 
@@ -623,104 +507,88 @@ msgid ""
 "change on the homepage."
 msgstr ""
 
-#: inc/customizer/controls.php:234
-msgid "Typography"
-msgstr ""
-
-#: inc/customizer/controls.php:249 inc/customizer/controls.php:353
-#: inc/customizer/controls.php:517 inc/customizer/controls.php:982
-#: inc/customizer/controls.php:1079 inc/customizer/controls.php:1247
-#: inc/customizer/controls.php:1335 inc/customizer/controls.php:1453
-#: inc/customizer/controls.php:1614 inc/customizer/controls.php:1697
-msgid "Text color"
-msgstr ""
-
-#: inc/customizer/controls.php:265 inc/customizer/controls.php:1599
-#: inc/woocommerce/controls.php:622 inc/woocommerce/controls.php:775
-#: inc/woocommerce/controls.php:935 inc/woocommerce/controls.php:1090
-#: inc/woocommerce/controls.php:1243
-msgid "Heading color"
-msgstr ""
-
-#: inc/customizer/controls.php:280 inc/customizer/controls.php:369
-#: inc/customizer/controls.php:426 inc/customizer/controls.php:549
-#: inc/customizer/controls.php:1643 inc/customizer/controls.php:1726
-msgid "Link color"
-msgstr ""
-
-#: inc/customizer/controls.php:295 inc/customizer/controls.php:385
-#: inc/customizer/controls.php:442 inc/customizer/controls.php:565
-#: inc/customizer/controls.php:1657 inc/customizer/controls.php:1740
-msgid "Link hover color"
-msgstr ""
-
-#: inc/customizer/controls.php:303
-msgid ""
-"Sidebar links use text color for the default state, and link color for the "
-"hover state."
-msgstr ""
-
-#: inc/customizer/controls.php:312 inc/functions/setup.php:142
+#: inc/customizer/controls.php:234 inc/functions/setup.php:142
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/controls.php:313
+#: inc/customizer/controls.php:235
 msgid "Customize the look & feel of your header."
 msgstr ""
 
-#: inc/customizer/controls.php:321
+#: inc/customizer/controls.php:243
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer/controls.php:322
+#: inc/customizer/controls.php:244
 msgid ""
 "Customize the look & feel of your header. These controls do not change menu "
 "colors."
 msgstr ""
 
-#: inc/customizer/controls.php:337 inc/customizer/controls.php:410
-#: inc/customizer/controls.php:533 inc/customizer/controls.php:772
-#: inc/customizer/controls.php:997 inc/customizer/controls.php:1094
-#: inc/customizer/controls.php:1174 inc/customizer/controls.php:1263
-#: inc/customizer/controls.php:1351 inc/customizer/controls.php:1468
-#: inc/customizer/controls.php:1629 inc/customizer/controls.php:1712
-#: inc/woocommerce/controls.php:636 inc/woocommerce/controls.php:789
-#: inc/woocommerce/controls.php:949 inc/woocommerce/controls.php:1104
-#: inc/woocommerce/controls.php:1257
+#: inc/customizer/controls.php:259 inc/customizer/controls.php:332
+#: inc/customizer/controls.php:455 inc/customizer/controls.php:690
+#: inc/customizer/controls.php:872 inc/customizer/controls.php:978
+#: inc/customizer/controls.php:1078 inc/customizer/controls.php:1160
+#: inc/customizer/controls.php:1372 inc/customizer/controls.php:1446
+#: inc/customizer/controls.php:1562 inc/customizer/controls.php:1723
+#: inc/customizer/controls.php:1806 inc/woocommerce/controls.php:743
+#: inc/woocommerce/controls.php:899 inc/woocommerce/controls.php:1062
+#: inc/woocommerce/controls.php:1220 inc/woocommerce/controls.php:1376
 msgid "Background color"
 msgstr ""
 
-#: inc/customizer/controls.php:395 inc/functions/setup.php:56
+#: inc/customizer/controls.php:275 inc/customizer/controls.php:439
+#: inc/customizer/controls.php:857 inc/customizer/controls.php:963
+#: inc/customizer/controls.php:1063 inc/customizer/controls.php:1234
+#: inc/customizer/controls.php:1356 inc/customizer/controls.php:1430
+#: inc/customizer/controls.php:1547 inc/customizer/controls.php:1708
+#: inc/customizer/controls.php:1791
+msgid "Text color"
+msgstr ""
+
+#: inc/customizer/controls.php:291 inc/customizer/controls.php:348
+#: inc/customizer/controls.php:471 inc/customizer/controls.php:1267
+#: inc/customizer/controls.php:1737 inc/customizer/controls.php:1820
+msgid "Link color"
+msgstr ""
+
+#: inc/customizer/controls.php:307 inc/customizer/controls.php:364
+#: inc/customizer/controls.php:487 inc/customizer/controls.php:1283
+#: inc/customizer/controls.php:1751 inc/customizer/controls.php:1834
+msgid "Link hover color"
+msgstr ""
+
+#: inc/customizer/controls.php:317 inc/functions/setup.php:56
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/customizer/controls.php:397
+#: inc/customizer/controls.php:319
 msgid ""
 "The Primary Menu must be set to a menu location in order to preview style "
 "changes."
 msgstr ""
 
-#: inc/customizer/controls.php:458 inc/customizer/controls.php:581
+#: inc/customizer/controls.php:380 inc/customizer/controls.php:503
 msgid "Link hover background color"
 msgstr ""
 
-#: inc/customizer/controls.php:459 inc/customizer/controls.php:582
+#: inc/customizer/controls.php:381 inc/customizer/controls.php:504
 msgid "This setting does not effect top level links, only sub menus."
 msgstr ""
 
-#: inc/customizer/controls.php:475 inc/customizer/controls.php:598
+#: inc/customizer/controls.php:397 inc/customizer/controls.php:520
 msgid "Link active color"
 msgstr ""
 
-#: inc/customizer/controls.php:491 inc/customizer/controls.php:614
+#: inc/customizer/controls.php:413 inc/customizer/controls.php:536
 msgid "Link active background color"
 msgstr ""
 
-#: inc/customizer/controls.php:501 inc/functions/setup.php:57
+#: inc/customizer/controls.php:423 inc/functions/setup.php:57
 msgid "Secondary Menu"
 msgstr ""
 
-#: inc/customizer/controls.php:503
+#: inc/customizer/controls.php:425
 msgid ""
 "The Secondary Menu must be set to a menu location in order to preview style "
 "changes."
@@ -730,305 +598,371 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: inc/customizer/controls.php:625
+#: inc/customizer/controls.php:547
 msgid "Customize the look & feel of your homepage."
 msgstr ""
 
-#: inc/customizer/controls.php:638
+#: inc/customizer/controls.php:560
 msgid ""
 "You can toggle and re-order the homepage components using the %sHomepage "
 "Control%s plugin."
 msgstr ""
 
-#: inc/customizer/controls.php:647
+#: inc/customizer/controls.php:569
 msgid "Hero"
 msgstr ""
 
-#: inc/customizer/controls.php:649
+#: inc/customizer/controls.php:571
 msgid "Customize the look & feel of the hero component."
 msgstr ""
 
-#: inc/customizer/controls.php:668
+#: inc/customizer/controls.php:585
 msgid "Display hero component"
 msgstr ""
 
-#: inc/customizer/controls.php:669
+#: inc/customizer/controls.php:586
 msgid "Toggle the display of the hero component."
 msgstr ""
 
-#: inc/customizer/controls.php:686
+#: inc/customizer/controls.php:604
 msgid "Toggle the width of the hero component."
 msgstr ""
 
-#: inc/customizer/controls.php:702 inc/customizer/controls.php:961
-#: inc/customizer/controls.php:1058 inc/woocommerce/controls.php:306
+#: inc/customizer/controls.php:620 inc/customizer/controls.php:836
+#: inc/customizer/controls.php:942 inc/customizer/controls.php:1042
+#: inc/woocommerce/controls.php:313
 msgid "Text alignment"
 msgstr ""
 
-#: inc/customizer/controls.php:729
+#: inc/customizer/controls.php:647
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer/controls.php:745
+#: inc/customizer/controls.php:663
 msgid "Background image size"
 msgstr ""
 
-#: inc/customizer/controls.php:788
+#: inc/customizer/controls.php:706
 msgid "Heading text color"
 msgstr ""
 
-#: inc/customizer/controls.php:804
+#: inc/customizer/controls.php:722
 msgid "Body text color"
 msgstr ""
 
-#: inc/customizer/controls.php:820 inc/customizer/display.php:674
+#: inc/customizer/controls.php:738 inc/customizer/display.php:704
 msgid "Heading Text"
 msgstr ""
 
-#: inc/customizer/controls.php:825 inc/woocommerce/controls.php:587
-#: inc/woocommerce/controls.php:740 inc/woocommerce/controls.php:900
-#: inc/woocommerce/controls.php:1055 inc/woocommerce/controls.php:1208
+#: inc/customizer/controls.php:744 inc/woocommerce/controls.php:694
+#: inc/woocommerce/controls.php:850 inc/woocommerce/controls.php:1013
+#: inc/woocommerce/controls.php:1171 inc/woocommerce/controls.php:1327
 msgid "Heading text"
 msgstr ""
 
-#: inc/customizer/controls.php:836 inc/customizer/display.php:677
+#: inc/customizer/controls.php:755 inc/customizer/display.php:707
 msgid "Body Text"
 msgstr ""
 
-#: inc/customizer/controls.php:841
+#: inc/customizer/controls.php:760
 msgid "Body text"
 msgstr ""
 
-#: inc/customizer/controls.php:852 inc/customizer/display.php:680
+#: inc/customizer/controls.php:771 inc/customizer/display.php:710
 msgid "Call to Action"
 msgstr ""
 
-#: inc/customizer/controls.php:857
+#: inc/customizer/controls.php:776
 msgid "Button text"
 msgstr ""
 
-#: inc/customizer/controls.php:873
+#: inc/customizer/controls.php:792
 msgid "Button url"
 msgstr ""
 
-#: inc/customizer/controls.php:884 inc/customizer/controls.php:939
-#: inc/customizer/controls.php:1036 inc/customizer/controls.php:1103
+#: inc/customizer/controls.php:803 inc/customizer/controls.php:920
+#: inc/customizer/controls.php:1020 inc/customizer/controls.php:1087
 msgid "Content"
 msgstr ""
 
-#: inc/customizer/controls.php:898
+#: inc/customizer/controls.php:804
+msgid "Customize the look & feel of the content component."
+msgstr ""
+
+#: inc/customizer/controls.php:819
 msgid "Display page content"
 msgstr ""
 
-#: inc/customizer/controls.php:899
+#: inc/customizer/controls.php:820
+msgid "Toggle the display of page content."
+msgstr ""
+
+#: inc/customizer/controls.php:879
 msgid ""
-"Toggle the display of page content. This is the content that has been added "
-"via the WordPress editor for the front page."
+"The content in this component is added through the WordPress editor, on "
+"whichever page has been set to the front page."
 msgstr ""
 
-#: inc/customizer/controls.php:909
-msgid "Custom Content"
+#: inc/customizer/controls.php:887
+msgid "Content (2)"
 msgstr ""
 
-#: inc/customizer/controls.php:923
-msgid "Display custom content"
+#: inc/customizer/controls.php:888
+msgid "Customize the look & feel of the second content component."
 msgstr ""
 
-#: inc/customizer/controls.php:924
-msgid "Toggle the display of custom content."
+#: inc/customizer/controls.php:903 inc/customizer/controls.php:1003
+msgid "Display content"
 msgstr ""
 
-#: inc/customizer/controls.php:934
+#: inc/customizer/controls.php:904 inc/customizer/controls.php:1004
+msgid "Toggle the display of the content component."
+msgstr ""
+
+#: inc/customizer/controls.php:915
 msgid "This is some custom content!"
 msgstr ""
 
-#: inc/customizer/controls.php:947
+#: inc/customizer/controls.php:928
 msgid "Add custom content after the page content, HTML is allowed here."
 msgstr ""
 
-#: inc/customizer/controls.php:1006
-msgid "Custom Content Alt"
+#: inc/customizer/controls.php:987
+msgid "Content (3)"
 msgstr ""
 
-#: inc/customizer/controls.php:1020
-msgid "Display custom content alt"
+#: inc/customizer/controls.php:988
+msgid "Customize the look & feel of the third content component."
 msgstr ""
 
-#: inc/customizer/controls.php:1021
-msgid "Toggle the display of custom content alt."
-msgstr ""
-
-#: inc/customizer/controls.php:1031
+#: inc/customizer/controls.php:1015
 msgid "This is some custom content too!"
 msgstr ""
 
-#: inc/customizer/controls.php:1044
+#: inc/customizer/controls.php:1028
 msgid ""
 "Add custom content just before the footer on the homepage, HTML is allowed "
 "here."
 msgstr ""
 
-#: inc/customizer/controls.php:1104
+#: inc/customizer/controls.php:1088
 msgid "Customize the look & feel of your content."
 msgstr ""
 
-#: inc/customizer/controls.php:1112
+#: inc/customizer/controls.php:1096
 msgid "Post"
 msgstr ""
 
-#: inc/customizer/controls.php:1126
+#: inc/customizer/controls.php:1110
 msgid "Padded"
 msgstr ""
 
-#: inc/customizer/controls.php:1127
+#: inc/customizer/controls.php:1111
 msgid ""
 "Adds padding to various elements such as page titles, posts and comments. "
 "Useful when the post background is a different color than the website "
 "background."
 msgstr ""
 
-#: inc/customizer/controls.php:1143
+#: inc/customizer/controls.php:1127
 msgid "Post border radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1158
+#: inc/customizer/controls.php:1128
+msgid ""
+"Adds border radius to various elements such as page titles, posts and "
+"comments."
+msgstr ""
+
+#: inc/customizer/controls.php:1143
 msgid "Avatar border radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1190 inc/customizer/controls.php:1483
+#: inc/customizer/controls.php:1144
+msgid "Adds border radius to comment and author avatars."
+msgstr ""
+
+#: inc/customizer/controls.php:1176 inc/customizer/controls.php:1577
 msgid "Border color"
 msgstr ""
 
-#: inc/customizer/controls.php:1205
-msgid "Display the post shadow"
+#: inc/customizer/controls.php:1191
+msgid "Display the post box shadow"
 msgstr ""
 
-#: inc/customizer/controls.php:1206
-msgid "Toggle the display of the post shadow."
+#: inc/customizer/controls.php:1192
+msgid "Toggle the display of the post box shadow."
 msgstr ""
 
-#: inc/customizer/controls.php:1222 inc/customizer/controls.php:1384
-#: inc/customizer/controls.php:1498
-msgid "Shadow color"
+#: inc/customizer/controls.php:1208 inc/customizer/controls.php:1405
+#: inc/customizer/controls.php:1592
+msgid "Box shadow color"
 msgstr ""
 
-#: inc/customizer/controls.php:1232
-msgid "Form Inputs & Textareas"
+#: inc/customizer/controls.php:1218
+msgid "Typography"
 msgstr ""
 
-#: inc/customizer/controls.php:1279
-msgid "Text focus color"
+#: inc/customizer/controls.php:1219
+msgid "Customize the look & feel of your typography."
 msgstr ""
 
-#: inc/customizer/controls.php:1295
-msgid "Background focus color"
+#: inc/customizer/controls.php:1235
+msgid "The main text color on your website."
 msgstr ""
 
-#: inc/customizer/controls.php:1305
+#: inc/customizer/controls.php:1251 inc/customizer/controls.php:1693
+#: inc/woocommerce/controls.php:729 inc/woocommerce/controls.php:885
+#: inc/woocommerce/controls.php:1048 inc/woocommerce/controls.php:1206
+#: inc/woocommerce/controls.php:1362
+msgid "Heading color"
+msgstr ""
+
+#: inc/customizer/controls.php:1252
+msgid "The heading text color for h1-h6."
+msgstr ""
+
+#: inc/customizer/controls.php:1268
+msgid "The global link color."
+msgstr ""
+
+#: inc/customizer/controls.php:1284
+msgid "The global link hover color."
+msgstr ""
+
+#: inc/customizer/controls.php:1299
+msgid "Widget link color"
+msgstr ""
+
+#: inc/customizer/controls.php:1300
+msgid "Overrides the global link color for sidebar widgets."
+msgstr ""
+
+#: inc/customizer/controls.php:1315
+msgid "Widget link hover color"
+msgstr ""
+
+#: inc/customizer/controls.php:1316
+msgid "Overrides the global link hover color for sidebar widgets."
+msgstr ""
+
+#: inc/customizer/controls.php:1326
 msgid "Search Widget"
 msgstr ""
 
-#: inc/customizer/controls.php:1319
+#: inc/customizer/controls.php:1340
 msgid "Border radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1366
-msgid "Display the search shadow"
+#: inc/customizer/controls.php:1387
+msgid "Display the search box shadow"
 msgstr ""
 
-#: inc/customizer/controls.php:1367
-msgid "Toggle the display of the search input shadow."
+#: inc/customizer/controls.php:1388
+msgid "Toggle the display of the search input box shadow."
 msgstr ""
 
-#: inc/customizer/controls.php:1394
+#: inc/customizer/controls.php:1415
+msgid "Form Inputs & Textareas"
+msgstr ""
+
+#: inc/customizer/controls.php:1462
+msgid "Text focus color"
+msgstr ""
+
+#: inc/customizer/controls.php:1478
+msgid "Background focus color"
+msgstr ""
+
+#: inc/customizer/controls.php:1488
 msgid "Buttons"
 msgstr ""
 
-#: inc/customizer/controls.php:1408
+#: inc/customizer/controls.php:1502
 msgid "2D Buttons"
 msgstr ""
 
-#: inc/customizer/controls.php:1418
+#: inc/customizer/controls.php:1512
 msgid "Checking 2D will remove the shadow effect."
 msgstr ""
 
-#: inc/customizer/controls.php:1431
+#: inc/customizer/controls.php:1525
 msgid "Border Radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1440
+#: inc/customizer/controls.php:1534
 msgid ""
 "It's important to note that the default button colors are used in many "
 "places as an accent color."
 msgstr ""
 
-#: inc/customizer/controls.php:1507
+#: inc/customizer/controls.php:1601
 msgid ""
 "Adding the %s class to your buttons will inverse their styles. Which means "
 "the hover colors will become the default state, and vice versa."
 msgstr ""
 
-#: inc/customizer/controls.php:1520
+#: inc/customizer/controls.php:1614
 msgid "Text alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1535
+#: inc/customizer/controls.php:1629
 msgid "Background alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1550
+#: inc/customizer/controls.php:1644
 msgid "Border alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1565
-msgid "Shadow alt/hover color"
+#: inc/customizer/controls.php:1659
+msgid "Box shadow alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1575
+#: inc/customizer/controls.php:1669
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:1576
+#: inc/customizer/controls.php:1670
 msgid "Customize the look & feel of your footer."
 msgstr ""
 
-#: inc/customizer/controls.php:1584
+#: inc/customizer/controls.php:1678
 msgid "Upper Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:1666
+#: inc/customizer/controls.php:1760
 msgid "Lower Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:1680
+#: inc/customizer/controls.php:1774
 msgid "Display the footer credits"
 msgstr ""
 
-#: inc/customizer/controls.php:1681
+#: inc/customizer/controls.php:1775
 msgid "Toggle the display of the footer credits."
 msgstr ""
 
-#: inc/customizer/controls.php:1749
+#: inc/customizer/controls.php:1843
 msgid "Tools"
 msgstr ""
 
-#: inc/customizer/controls.php:1750
+#: inc/customizer/controls.php:1844
 msgid "Customizer tools for administering your website."
 msgstr ""
 
-#: inc/customizer/controls.php:1781
+#: inc/customizer/controls.php:1875
 msgid "You do not have the capability role to import customizer settings."
 msgstr ""
 
-#: inc/customizer/controls.php:1792
+#: inc/customizer/controls.php:1886
 msgid "Upload a file to import customization settings for this theme."
 msgstr ""
 
-#: inc/customizer/controls.php:1822
+#: inc/customizer/controls.php:1916
 msgid "You do not have the capability role to import or export customizer settings."
 msgstr ""
 
-#: inc/customizer/controls.php:1833
+#: inc/customizer/controls.php:1927
 msgid "Click the button below to export the customization settings for this theme."
 msgstr ""
 
@@ -1044,13 +978,13 @@ msgstr ""
 msgid "An unknown error occurred while setting your SVG logo."
 msgstr ""
 
-#: inc/customizer/functions.php:214 inc/customizer/functions.php:218
+#: inc/customizer/functions.php:234 inc/customizer/functions.php:238
 msgid ""
 "Error importing settings! Please check that you uploaded a customizer "
 "export file."
 msgstr ""
 
-#: inc/customizer/functions.php:222
+#: inc/customizer/functions.php:242
 msgid ""
 "Error importing settings! The settings you uploaded are not for the current "
 "theme."
@@ -1173,7 +1107,7 @@ msgid "Next page"
 msgstr ""
 
 #: inc/structure/navigation.php:21 inc/structure/navigation.php:64
-#: inc/structure/navigation.php:115 inc/woocommerce/template-tags.php:117
+#: inc/structure/navigation.php:115 inc/woocommerce/template-tags.php:356
 msgid "Page"
 msgstr ""
 
@@ -1225,35 +1159,6 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/structure/template-tags.php:122 inc/woocommerce/controls.php:492
-#: inc/woocommerce/controls.php:582
-msgid "Product Categories"
-msgstr ""
-
-#: inc/structure/template-tags.php:169 inc/woocommerce/controls.php:645
-#: inc/woocommerce/controls.php:735
-msgid "Recent Products"
-msgstr ""
-
-#: inc/structure/template-tags.php:214 inc/woocommerce/controls.php:805
-#: inc/woocommerce/controls.php:895
-msgid "Featured Products"
-msgstr ""
-
-#: inc/structure/template-tags.php:259 inc/woocommerce/controls.php:960
-#: inc/woocommerce/controls.php:1050
-msgid "Top Rated Products"
-msgstr ""
-
-#: inc/structure/template-tags.php:304 inc/woocommerce/controls.php:1113
-#: inc/woocommerce/controls.php:1203
-msgid "On Sale Products"
-msgstr ""
-
-#: inc/woocommerce/controls.php:21
-msgid "WooCommerce"
-msgstr ""
-
 #: inc/woocommerce/controls.php:29
 msgid "Notices"
 msgstr ""
@@ -1274,38 +1179,44 @@ msgstr ""
 msgid "Info color"
 msgstr ""
 
-#: inc/woocommerce/controls.php:84
+#: inc/woocommerce/controls.php:81
+msgid ""
+"Notices are displayed throughout your shop in three different contexts to "
+"your users. You can view the coupon info notice on the Checkout page to see "
+"one of them in action."
+msgstr ""
+
+#: inc/woocommerce/controls.php:91
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/woocommerce/controls.php:85
+#: inc/woocommerce/controls.php:92
 msgid "Customize the look & feel of the breadcrumbs."
 msgstr ""
 
-#: inc/woocommerce/controls.php:99
+#: inc/woocommerce/controls.php:106
 msgid "Display breadcrumbs"
 msgstr ""
 
-#: inc/woocommerce/controls.php:100
+#: inc/woocommerce/controls.php:107
 msgid "Toggle the display of the breadcumbs."
 msgstr ""
 
-#: inc/woocommerce/controls.php:110
-msgid "Products"
+#: inc/woocommerce/controls.php:117
+msgid "Product Archives"
 msgstr ""
 
-#: inc/woocommerce/controls.php:111
+#: inc/woocommerce/controls.php:118
 msgid "Customize the look & feel of your product archives."
 msgstr ""
 
-#: inc/woocommerce/controls.php:125
+#: inc/woocommerce/controls.php:132
 msgid "Products Per Page"
 msgstr ""
 
-#: inc/woocommerce/controls.php:172 inc/woocommerce/controls.php:468
-#: inc/woocommerce/controls.php:558 inc/woocommerce/controls.php:711
-#: inc/woocommerce/controls.php:871 inc/woocommerce/controls.php:1026
-#: inc/woocommerce/controls.php:1179
+#: inc/woocommerce/controls.php:179 inc/woocommerce/controls.php:665
+#: inc/woocommerce/controls.php:821 inc/woocommerce/controls.php:984
+#: inc/woocommerce/controls.php:1142 inc/woocommerce/controls.php:1298
 msgid "Columns"
 msgstr ""
 
@@ -1313,201 +1224,275 @@ msgstr ""
 msgid "Full width"
 msgstr ""
 
-#: inc/woocommerce/controls.php:195
+#: inc/woocommerce/controls.php:202
 msgid "Expand product archives the entire page width. This will remove the sidebar."
 msgstr ""
 
-#: inc/woocommerce/controls.php:210
+#: inc/woocommerce/controls.php:217
 msgid "Display image"
 msgstr ""
 
-#: inc/woocommerce/controls.php:211
+#: inc/woocommerce/controls.php:218
 msgid "Toggle the display of the product image."
 msgstr ""
 
-#: inc/woocommerce/controls.php:226
+#: inc/woocommerce/controls.php:233
 msgid "Display title"
 msgstr ""
 
-#: inc/woocommerce/controls.php:227
+#: inc/woocommerce/controls.php:234
 msgid "Toggle the display of the product title."
 msgstr ""
 
-#: inc/woocommerce/controls.php:242
+#: inc/woocommerce/controls.php:249
 msgid "Display sale banner"
 msgstr ""
 
-#: inc/woocommerce/controls.php:243
+#: inc/woocommerce/controls.php:250
 msgid "Toggle the display of the product sale banner."
 msgstr ""
 
-#: inc/woocommerce/controls.php:258
+#: inc/woocommerce/controls.php:265
 msgid "Display rating"
 msgstr ""
 
-#: inc/woocommerce/controls.php:259
+#: inc/woocommerce/controls.php:266
 msgid "Toggle the display of the product rating."
 msgstr ""
 
-#: inc/woocommerce/controls.php:274
+#: inc/woocommerce/controls.php:281
 msgid "Display price"
 msgstr ""
 
-#: inc/woocommerce/controls.php:275
+#: inc/woocommerce/controls.php:282
 msgid "Toggle the display of the product price."
 msgstr ""
 
-#: inc/woocommerce/controls.php:290
+#: inc/woocommerce/controls.php:297
 msgid "Display add to cart button"
 msgstr ""
 
-#: inc/woocommerce/controls.php:291
+#: inc/woocommerce/controls.php:298
 msgid "Toggle the display of the product add to cart button."
 msgstr ""
 
-#: inc/woocommerce/controls.php:321
-msgid "Product"
+#: inc/woocommerce/controls.php:328
+msgid "Single Product"
 msgstr ""
 
-#: inc/woocommerce/controls.php:322
+#: inc/woocommerce/controls.php:329
 msgid "Customize the look & feel of a single product."
 msgstr ""
 
-#: inc/woocommerce/controls.php:336
+#: inc/woocommerce/controls.php:343
 msgid "Full width product"
 msgstr ""
 
-#: inc/woocommerce/controls.php:337
+#: inc/woocommerce/controls.php:344
 msgid "Expand products the entire page width. This will remove the sidebar."
 msgstr ""
 
-#: inc/woocommerce/controls.php:352
+#: inc/woocommerce/controls.php:359
 msgid "Full width product gallery"
 msgstr ""
 
-#: inc/woocommerce/controls.php:353
+#: inc/woocommerce/controls.php:360
 msgid "Expand product galleries the entire content width."
 msgstr ""
 
-#: inc/woocommerce/controls.php:368
+#: inc/woocommerce/controls.php:375
 msgid "Display product gallery"
 msgstr ""
 
-#: inc/woocommerce/controls.php:369
+#: inc/woocommerce/controls.php:376
 msgid "Toggle the display of the product gallery."
 msgstr ""
 
-#: inc/woocommerce/controls.php:384
+#: inc/woocommerce/controls.php:391
 msgid "Display product meta"
 msgstr ""
 
-#: inc/woocommerce/controls.php:385
+#: inc/woocommerce/controls.php:392
 msgid "Toggle the display of the product meta. category/sku etc."
 msgstr ""
 
-#: inc/woocommerce/controls.php:400
+#: inc/woocommerce/controls.php:407 inc/woocommerce/controls.php:423
 msgid "Display product tabs"
 msgstr ""
 
-#: inc/woocommerce/controls.php:401
+#: inc/woocommerce/controls.php:408 inc/woocommerce/controls.php:424
 msgid "Toggle the display of the product tabs."
 msgstr ""
 
-#: inc/woocommerce/controls.php:416
-msgid "Display related products"
+#: inc/woocommerce/controls.php:439
+msgid "Display upsell products"
 msgstr ""
 
-#: inc/woocommerce/controls.php:417
-msgid "Toggle the display of the related products."
+#: inc/woocommerce/controls.php:440
+msgid "Toggle the display of the upsell products."
 msgstr ""
 
-#: inc/woocommerce/controls.php:432 inc/woocommerce/controls.php:522
-#: inc/woocommerce/controls.php:675 inc/woocommerce/controls.php:835
-#: inc/woocommerce/controls.php:990 inc/woocommerce/controls.php:1143
-msgid "Limit"
+#: inc/woocommerce/controls.php:455
+msgid "Upsell Limit"
 msgstr ""
 
-#: inc/woocommerce/controls.php:453
-msgid "Choose the number of related products to display."
+#: inc/woocommerce/controls.php:476
+msgid "Choose the number of upsell products to display."
 msgstr ""
 
-#: inc/woocommerce/controls.php:482 inc/woocommerce/controls.php:573
-#: inc/woocommerce/controls.php:726 inc/woocommerce/controls.php:886
-#: inc/woocommerce/controls.php:1041 inc/woocommerce/controls.php:1194
+#: inc/woocommerce/controls.php:491
+msgid "Upsell Columns"
+msgstr ""
+
+#: inc/woocommerce/controls.php:505 inc/woocommerce/controls.php:586
+#: inc/woocommerce/controls.php:680 inc/woocommerce/controls.php:836
+#: inc/woocommerce/controls.php:999 inc/woocommerce/controls.php:1157
+#: inc/woocommerce/controls.php:1313
 msgid "Choose the number of columns to display."
 msgstr ""
 
-#: inc/woocommerce/controls.php:506
+#: inc/woocommerce/controls.php:520
+msgid "Display related products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:521
+msgid "Toggle the display of the related products."
+msgstr ""
+
+#: inc/woocommerce/controls.php:536
+msgid "Related Products Limit"
+msgstr ""
+
+#: inc/woocommerce/controls.php:557
+msgid "Choose the number of related products to display."
+msgstr ""
+
+#: inc/woocommerce/controls.php:572
+msgid "Related Products Columns"
+msgstr ""
+
+#: inc/woocommerce/controls.php:596 inc/woocommerce/controls.php:689
+#: inc/woocommerce/template-tags.php:25
+msgid "Product Categories"
+msgstr ""
+
+#: inc/woocommerce/controls.php:597
+msgid "Customize the look & feel of the product categories component."
+msgstr ""
+
+#: inc/woocommerce/controls.php:612
 msgid "Display product categories"
 msgstr ""
 
-#: inc/woocommerce/controls.php:507
+#: inc/woocommerce/controls.php:613
 msgid "Toggle the display of the product categories."
 msgstr ""
 
-#: inc/woocommerce/controls.php:544
+#: inc/woocommerce/controls.php:629 inc/woocommerce/controls.php:785
+#: inc/woocommerce/controls.php:948 inc/woocommerce/controls.php:1106
+#: inc/woocommerce/controls.php:1262
+msgid "Limit"
+msgstr ""
+
+#: inc/woocommerce/controls.php:651
 msgid "Choose the number of product categories to display."
 msgstr ""
 
-#: inc/woocommerce/controls.php:602 inc/woocommerce/controls.php:755
-#: inc/woocommerce/controls.php:915 inc/woocommerce/controls.php:1070
-#: inc/woocommerce/controls.php:1223
+#: inc/woocommerce/controls.php:709 inc/woocommerce/controls.php:865
+#: inc/woocommerce/controls.php:1028 inc/woocommerce/controls.php:1186
+#: inc/woocommerce/controls.php:1342
 msgid "Heading alignment"
 msgstr ""
 
-#: inc/woocommerce/controls.php:659
+#: inc/woocommerce/controls.php:752 inc/woocommerce/controls.php:845
+#: inc/woocommerce/template-tags.php:72
+msgid "Recent Products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:753
+msgid "Customize the look & feel of the recent products component."
+msgstr ""
+
+#: inc/woocommerce/controls.php:768
 msgid "Display recent products"
 msgstr ""
 
-#: inc/woocommerce/controls.php:660
+#: inc/woocommerce/controls.php:769
 msgid "Toggle the display of the recent products."
 msgstr ""
 
-#: inc/woocommerce/controls.php:697
+#: inc/woocommerce/controls.php:807
 msgid "Choose the number of recent products to display."
 msgstr ""
 
-#: inc/woocommerce/controls.php:819
+#: inc/woocommerce/controls.php:915 inc/woocommerce/controls.php:1008
+#: inc/woocommerce/template-tags.php:117
+msgid "Featured Products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:916
+msgid "Customize the look & feel of the featured products component."
+msgstr ""
+
+#: inc/woocommerce/controls.php:931
 msgid "Display featured products"
 msgstr ""
 
-#: inc/woocommerce/controls.php:820
+#: inc/woocommerce/controls.php:932
 msgid "Toggle the display of the featured products."
 msgstr ""
 
-#: inc/woocommerce/controls.php:857
+#: inc/woocommerce/controls.php:970
 msgid "Choose the number of featured products to display."
 msgstr ""
 
-#: inc/woocommerce/controls.php:974
+#: inc/woocommerce/controls.php:1073 inc/woocommerce/controls.php:1166
+#: inc/woocommerce/template-tags.php:162
+msgid "Top Rated Products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:1074
+msgid "Customize the look & feel of the top rated products component."
+msgstr ""
+
+#: inc/woocommerce/controls.php:1089
 msgid "Display top rated products"
 msgstr ""
 
-#: inc/woocommerce/controls.php:975
+#: inc/woocommerce/controls.php:1090
 msgid "Toggle the display of the top rated products."
 msgstr ""
 
-#: inc/woocommerce/controls.php:1012
+#: inc/woocommerce/controls.php:1128
 msgid "Choose the number of top rated products to display."
 msgstr ""
 
-#: inc/woocommerce/controls.php:1127
+#: inc/woocommerce/controls.php:1229 inc/woocommerce/controls.php:1322
+#: inc/woocommerce/template-tags.php:207
+msgid "On Sale Products"
+msgstr ""
+
+#: inc/woocommerce/controls.php:1230
+msgid "Customize the look & feel of the on sale products component."
+msgstr ""
+
+#: inc/woocommerce/controls.php:1245
 msgid "Display on sale products"
 msgstr ""
 
-#: inc/woocommerce/controls.php:1128
+#: inc/woocommerce/controls.php:1246
 msgid "Toggle the display of the on sale products."
 msgstr ""
 
-#: inc/woocommerce/controls.php:1165
+#: inc/woocommerce/controls.php:1284
 msgid "Choose the number of on sale products to display."
 msgstr ""
 
-#: inc/woocommerce/template-tags.php:20
+#: inc/woocommerce/template-tags.php:247
 msgid "View your shopping cart"
 msgstr ""
 
-#: inc/woocommerce/template-tags.php:21
+#: inc/woocommerce/template-tags.php:248
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
@@ -1550,23 +1535,23 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/functions/extras.php:183 inc/functions/extras.php:184
-#: inc/woocommerce/functions.php:342 inc/woocommerce/functions.php:343
+#: inc/functions/extras.php:194 inc/functions/extras.php:195
+#: inc/woocommerce/functions.php:346 inc/woocommerce/functions.php:347
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: inc/functions/extras.php:184
+#: inc/functions/extras.php:195
 msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: inc/woocommerce/functions.php:343
+#: inc/woocommerce/functions.php:347
 msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: inc/functions/extras.php:186 inc/woocommerce/functions.php:345
+#: inc/functions/extras.php:197 inc/woocommerce/functions.php:349
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -1613,7 +1598,7 @@ msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr ""
 
-#: inc/woocommerce/functions.php:424
+#: inc/woocommerce/functions.php:428
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""

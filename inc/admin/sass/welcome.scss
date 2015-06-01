@@ -18,24 +18,6 @@
 				padding-left: 225px;
 			}
 
-			&.product-hero {
-				.content {
-					background: url(../welcome-screen/img/product-hero.png) top left no-repeat;
-				}
-			}
-
-			&.share {
-				.content {
-					background: url(../welcome-screen/img/share.png) top left no-repeat;
-				}
-			}
-
-			&.wc-customiser {
-				.content {
-					background: url(../welcome-screen/img/wc-customiser.png) top left no-repeat;
-				}
-			}
-
 			&.archetype-designer {
 				.content {
 					background: url(../welcome-screen/img/archetype-designer.png) top left no-repeat;
@@ -48,16 +30,9 @@
 				padding-bottom: 130px;
 			}
 
-			&.footer-bar {
+			&.todo-add-this {
 				.content {
-					background: url(../welcome-screen/img/footer-bar.png) bottom center no-repeat;
-				}
-			}
-
-			&.product-pagination {
-				.content {
-					padding-bottom: 155px;
-					background: url(../welcome-screen/img/product-pagination.png) bottom left no-repeat;
+					/* @todo */
 				}
 			}
 		}
@@ -99,27 +74,6 @@
 				margin-bottom: 0;
 			}
 		}
-
-		&.activated {
-			border-color: #7ad03a;
-			border-width: 2px;
-		}
-
-		.activated {
-			background: #7ad03a;
-			color: #fff;
-			font-size: 13px;
-			line-height: 26px;
-			height: 28px;
-			margin: 0;
-			padding: 0 10px 1px;
-			display: inline-block;
-			border-radius: 3px;
-
-			span {
-				line-height: 26px;
-			}
-		}
 	}
 
 	img {
@@ -139,27 +93,6 @@
     .archetype-add-ons {
 		.add-on {
 			&.image-vertical {
-				&.product-hero {
-					.content {
-						background-image: url(../welcome-screen/img/product-hero@2x.png);
-						background-size: 245px 345px;
-					}
-				}
-
-				&.share {
-					.content {
-						background-image: url(../welcome-screen/img/share@2x.png);
-						background-size: 245px 303px;
-					}
-				}
-
-				&.wc-customiser {
-					.content {
-						background-image: url(../welcome-screen/img/wc-customiser@2x.png);
-						background-size: 245px 303px;
-					}
-				}
-
 				&.archetype-designer {
 					.content {
 						background-image: url(../welcome-screen/img/archetype-designer@2x.png);
@@ -169,17 +102,9 @@
 			}
 
 			&.image-horizontal {
-				&.footer-bar {
+				&.todo-add-this {
 					.content {
-						background-image: url(../welcome-screen/img/footer-bar@2x.png);
-						background-size: 570px 120px;
-					}
-				}
-
-				&.product-pagination {
-					.content {
-						background-image: url(../welcome-screen/img/product-pagination@2x.png);
-						background-size: 570px 130px;
+						/* @todo */
 					}
 				}
 			}
@@ -223,6 +148,13 @@
 				left: 0;
 				background: #f1f1f1;
 			}
+		}
+	}
+
+	#get_started {
+		.col-1,
+		.col-2 {
+			margin-bottom: 1.5em;
 		}
 	}
 

@@ -55,8 +55,8 @@ class Archetype_Welcome {
 	public function archetype_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Thanks for choosing Storefront! You can read hints and tips on how get the most out of your new theme on the %swelcome screen%s.', 'archetype' ), '<a href="' . esc_url( admin_url( 'themes.php?page=storefront-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=storefront-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Storefront', 'archetype' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( 'Thanks for choosing Archetype! You can read hints and tips on how get the most out of your new theme on the %swelcome screen%s.', 'archetype' ), '<a href="' . esc_url( admin_url( 'themes.php?page=archetype-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=archetype-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Archetype', 'archetype' ); ?></a></p>
 			</div>
 		<?php
 	}
@@ -69,7 +69,7 @@ class Archetype_Welcome {
 	public function archetype_welcome_style() {
 		global $archetype_version;
 
-		wp_enqueue_style( 'storefront-welcome-screen', get_template_directory_uri() . '/inc/admin/css/welcome.css', $archetype_version );
+		wp_enqueue_style( 'archetype-welcome-screen', get_template_directory_uri() . '/inc/admin/css/welcome.css', $archetype_version );
 	}
 
 	/**
