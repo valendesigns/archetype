@@ -62,7 +62,8 @@ class Tests_Extras extends WP_UnitTestCase {
 	 */
 	function test_is_woocommerce_activated() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		// @todo Add this dependancy for testing WooCommerce.
+		$this->assertFalse( class_exists( 'woocommerce', false ) );
 
 	}
 
