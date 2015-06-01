@@ -20,7 +20,7 @@ class Archetype_Arbitrary_Control extends WP_Customize_Control {
 	 * @access public
 	 * @var string
 	 */
-	public $settings    = 'blogname';
+	public $settings = 'blogname';
 
 	/**
 	 * The description

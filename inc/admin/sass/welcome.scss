@@ -21,6 +21,10 @@
 			&.archetype-designer {
 				.content {
 					background: url(../welcome-screen/img/archetype-designer.png) top left no-repeat;
+
+					.rtl & {
+						background-position: top right;
+					}
 				}
 			}
 		}
@@ -96,7 +100,7 @@
 				&.archetype-designer {
 					.content {
 						background-image: url(../welcome-screen/img/archetype-designer@2x.png);
-						background-size: 245px 303px;
+						background-size: 170px 303px;
 					}
 				}
 			}
