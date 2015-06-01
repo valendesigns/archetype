@@ -11,7 +11,7 @@ $theme = wp_get_theme();
 ?>
 <div id="child_themes" class="archetype-add-ons panel" style="padding-top: 1.618em; clear: both;">
 
-	<h2><?php _e( 'Upgrade your look', 'archetype' ); ?> <div class="dashicons dashicons-admin-appearance"></div></h2>
+	<h2><?php _e( 'Upgrade your look', 'archetype' ); ?> <div class="dashicons dashicons-admin-appearance" style="margin-top: .25em;"></div></h2>
 
 	<p>
 		<?php _e( 'Browse Archetype\'s beautiful child themes to add some curb appeal to your website.', 'archetype' ); ?>
