@@ -5,20 +5,33 @@
  */
 
 .variations-table {
+	tr {
+		td {
+			background: none;
+			padding: 0;
+
+			&.label {
+				width: 5em;
+			}
+		}
+	}
+
 	.swatch-wrapper {
 		padding: 0;
 		border: 0;
-		opacity: 0.5;
 
 		.swatch-anchor {
 			border-radius: .236em;
+		}
+
+		&:hover {
+			opacity: .75;
 		}
 
 		&.selected,
 		&:hover {
 			padding: 0;
 			border: 0;
-			opacity: 1;
 		}
 	}
 }
