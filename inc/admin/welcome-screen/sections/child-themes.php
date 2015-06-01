@@ -8,15 +8,15 @@
  */
 
 ?>
-<div id="child_themes" class="storefront-add-ons panel" style="padding-top: 1.618em; clear: both;">
+<div id="child_themes" class="archetype-add-ons panel" style="padding-top: 1.618em; clear: both;">
 	<?php
 		$theme = wp_get_theme();
 	?>
 
-	<h2><?php _e( 'Get a whole new look', 'archetype' ); ?> <div class="dashicons dashicons-admin-appearance"></div></h2>
+	<h2><?php _e( 'Upgrade your look', 'archetype' ); ?> <div class="dashicons dashicons-admin-appearance"></div></h2>
 
 	<p>
-		<?php _e( 'Below you will find a selection of Storefront child themes that will transform the look and feel of your site while retaining the rock solid Storefront foundation.', 'archetype' ); ?>
+		<?php _e( 'Browse Archetype\'s beautiful child themes to add some curb appeal to your website.', 'archetype' ); ?>
 	</p>
 
 	<div class="feature-section col two-col">
@@ -24,7 +24,7 @@
 		<div class="col-1">
 			<img src="<?php echo esc_url( get_template_directory_uri() ) . '/inc/admin/welcome-screen/img/boutique.jpg'; ?>" alt="<?php _e( 'Boutique Child Theme', 'archetype' ); ?>" class="image-50" />
 			<h4><?php _e( 'Boutique', 'archetype' ); ?></h4>
-			<p><?php _e( 'Boutique is a simple, traditionally designed Storefront child theme, ideal for small stores or boutiques. Add your logo, create a unique color scheme and start selling!', 'archetype' ); ?></p>
+			<p><?php _e( 'Boutique is a simple, traditionally designed Archetype child theme, ideal for small stores or boutiques. Add your logo, create a unique color scheme and start selling!', 'archetype' ); ?></p>
 			<p style="margin-bottom: 2.618em;">
 				<?php if ( 'Boutique' != $theme['Name'] ) { ?>
 					<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=boutique' ), 'install-theme_boutique' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'archetype' ), '<span class="screen-reader-text">Boutique</span>' ); ?></a>
