@@ -5,7 +5,10 @@ $susy: (
 	gutters: .8,
 	math: fluid,
 	output: float,
-	gutter-position: after
+	gutter-position: after,
+	use-custom: (
+		box-sizing: false
+	)
 );
 
 
