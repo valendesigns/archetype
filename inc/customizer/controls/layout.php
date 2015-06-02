@@ -8,6 +8,7 @@
  */
 
 if ( ! class_exists( 'Archetype_Layout_Control' ) ) :
+
 	/**
 	 * Class to create a layout Customizer control.
 	 *
