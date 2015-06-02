@@ -38,4 +38,5 @@ if ( ! class_exists( 'Archetype_Layout_Control' ) ) :
 			<?php
 		}
 	}
-}
+
+endif;
