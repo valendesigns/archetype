@@ -297,9 +297,7 @@ module.exports = function( grunt ) {
 			},
 			deploy: {
 				src: [
-					'dist/<%= pkg.name %>',
-					'languages/*.po',
-					'languages/*.mo'
+					'dist/<%= pkg.name %>'
 				]
 			}
 		},
