@@ -313,31 +313,10 @@ if ( ! function_exists( 'archetype_woocommerce_pagination' ) ) :
 	 */
 	function archetype_woocommerce_pagination() {
 		global $wp_query;
-		$term = get_queried_object();
 
-		if ( is_product_category() ) {
-			$display_type = get_woocommerce_term_meta( $term->term_id, 'display_type', true );
-
-			switch ( $display_type ) {
-				case 'subcategories' :
-					$wp_query->max_num_pages = 0;
-				break;
-				case '' :
-					if ( 'subcategories' == get_option( 'woocommerce_category_archive_display' ) ) {
-						$wp_query->max_num_pages = 0;
-					}
-				break;
-			}
-		}
-
-		if ( is_shop() && 'subcategories' == get_option( 'woocommerce_shop_page_display' ) ) {
-			$wp_query->max_num_pages = 0;
-		}
-
-		if ( $wp_query->max_num_pages <= 1 ) {
+		if ( ! woocommerce_products_will_display() ) {
 			return;
 		}
-
 		?>
 		<nav class="woocommerce-pagination" role="navigation">
 			<h2 class="screen-reader-text">Shop navigation</h2>
