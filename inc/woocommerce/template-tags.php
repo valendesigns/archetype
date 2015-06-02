@@ -44,8 +44,14 @@ if ( ! function_exists( 'archetype_product_categories' ) ) :
 			echo '<section class="archetype-product-section archetype-product-categories expand-full-width" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_product_categories' );
+
 					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
 					echo $products;
+
+					do_action( 'archetype_homepage_after_product_categories' );
+
 				echo '</div>';
 
 			echo '</section>';
@@ -89,8 +95,14 @@ if ( ! function_exists( 'archetype_recent_products' ) ) :
 			echo '<section class="archetype-product-section archetype-recent-products expand-full-width" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_recent_products' );
+
 					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
 					echo $products;
+
+					do_action( 'archetype_homepage_after_recent_products' );
+
 				echo '</div>';
 
 			echo '</section>';
@@ -136,8 +148,14 @@ if ( ! function_exists( 'archetype_featured_products' ) ) :
 			echo '<section class="archetype-product-section archetype-featured-products expand-full-width" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_featured_products' );
+
 					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
 					echo $products;
+
+					do_action( 'archetype_homepage_after_featured_products' );
+
 				echo '</div>';
 
 			echo '</section>';
@@ -181,8 +199,14 @@ if ( ! function_exists( 'archetype_top_rated_products' ) ) :
 			echo '<section class="archetype-product-section archetype-popular-products expand-full-width" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_top_rated_products' );
+
 					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
 					echo $products;
+
+					do_action( 'archetype_homepage_after_top_rated_products' );
+
 				echo '</div>';
 
 			echo '</section>';
@@ -226,8 +250,14 @@ if ( ! function_exists( 'archetype_on_sale_products' ) ) :
 			echo '<section class="archetype-product-section archetype-on-sale-products expand-full-width" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_on_sale_products' );
+
 					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
 					echo $products;
+
+					do_action( 'archetype_homepage_after_on_sale_products' );
+
 				echo '</div>';
 
 			echo '</section>';

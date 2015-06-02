@@ -46,7 +46,13 @@ if ( ! function_exists( 'archetype_homepage_content' ) ) :
 
 			echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_content' );
+
 					get_template_part( 'content', 'page' );
+
+					do_action( 'archetype_homepage_after_content' );
+
 				echo '</div>';
 			echo '</section>';
 
@@ -88,7 +94,13 @@ if ( ! function_exists( 'archetype_homepage_content_2' ) ) :
 		if ( '' !== $custom_content ) {
 			echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_content_2' );
+
 					echo do_shortcode( wpautop( $custom_content ) );
+
+					do_action( 'archetype_homepage_after_content_2' );
+
 				echo '</div>';
 			echo '</section>';
 		}
@@ -129,7 +141,13 @@ if ( ! function_exists( 'archetype_homepage_content_3' ) ) :
 		if ( '' !== $custom_content ) {
 			echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
 				echo '<div class="col-full">';
+
+					do_action( 'archetype_homepage_before_content_3' );
+
 					echo do_shortcode( wpautop( $custom_content ) );
+
+					do_action( 'archetype_homepage_after_content_3' );
+
 				echo '</div>';
 			echo '</section>';
 		}
