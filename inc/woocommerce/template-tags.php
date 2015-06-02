@@ -122,6 +122,8 @@ if ( ! function_exists( 'archetype_featured_products' ) ) :
 		$args = apply_filters( 'archetype_featured_products_args', array(
 			'limit'   => $limit,
 			'columns' => $columns,
+			'orderby' => 'date',
+			'order'   => 'desc',
 			'title'   => $title,
 		) );
 
