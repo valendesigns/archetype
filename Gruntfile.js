@@ -68,11 +68,6 @@ module.exports = function( grunt ) {
 					'inc/admin/css/welcome.css': 'inc/admin/sass/welcome.scss'
 				} ]
 			},
-			customizer: {
-				files: [ {
-					'inc/customizer/css/customizer.css': 'inc/customizer/sass/customizer.scss'
-				} ]
-			},
 			woocommerce: {
 				files: [ {
 					expand: true,
@@ -138,15 +133,6 @@ module.exports = function( grunt ) {
 					ext: '.css'
 				} ]
 			},
-			customizer: {
-				files: [ {
-					expand: true,
-					cwd: 'inc/customizer/css/',
-					src: [ '*.css' ],
-					dest: 'inc/customizer/css/',
-					ext: '.css'
-				} ]
-			},
 			woocommerce: {
 				files: [ {
 					expand: true,
@@ -165,7 +151,6 @@ module.exports = function( grunt ) {
 					'style.scss',
 					'sass/**/*.scss',
 					'inc/admin/sass/*.scss',
-					'inc/customizer/sass/*.scss',
 					'inc/woocommerce/sass/*.scss'
 				],
 				tasks: [
@@ -263,7 +248,6 @@ module.exports = function( grunt ) {
 					'!style.scss',
 					'!sass/**',
 					'!inc/admin/sass/*.scss',
-					'!inc/customizer/sass/*.scss',
 					'!inc/woocommerce/sass/*.scss',
 					'!tests/**',
 					'!phpunit.xml.dist'

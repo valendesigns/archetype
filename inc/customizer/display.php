@@ -18,42 +18,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		$style = '/* Customizer Styles */';
 
-		$logo_svg = wp_get_attachment_image_src( get_theme_mod( 'archetype_site_logo_svg' ), 'full', false );
-
-		// We have a logo. Logo is go.
-		if ( isset( $logo_svg[0] ) && ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) ) {
-			$image = wp_get_attachment_image_src( jetpack_get_site_logo( 'id' ), 'full', false );
-
-			if ( count( $image ) >= 3 ) {
-				$style .= sprintf( '
-					.svg .site-logo,
-					.no-svg .svg-site-logo {
-						display: none;
-					}
-					.svg .svg-site-logo {
-						display: block;
-						background-image: url(%1$s);
-						background-repeat: no-repeat;
-						background-size: contain;
-						width: %2$spx;
-						height: %3$spx
-					}',
-					esc_url_raw( $logo_svg[0] ),
-					esc_attr( $image[1] ),
-					esc_attr( $image[2] )
-				);
-			}
-		}
-
-		// Site Logo.
-		if ( $logo_top_margin = archetype_sanitize_number( get_theme_mod( 'archetype_site_logo_margin_top' ) ) ) {
-			$style .= '
-			.site-logo-link .site-logo,
-			.svg .site-logo-link .svg-site-logo {
-				margin-top: ' . esc_attr( $logo_top_margin ) . 'em;
-			}';
-		}
-
 		// Boxed background color.
 		$boxed_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_boxed_background_color', apply_filters( 'archetype_default_boxed_background_color', '#f1f1f1' ) ) );
 

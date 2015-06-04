@@ -64,9 +64,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		require_once dirname( __FILE__ ) . '/controls/color.php';
 		require_once dirname( __FILE__ ) . '/controls/arbitrary.php';
 		require_once dirname( __FILE__ ) . '/controls/number.php';
-		require_once dirname( __FILE__ ) . '/controls/export.php';
 		require_once dirname( __FILE__ ) . '/controls/layout.php';
-		require_once dirname( __FILE__ ) . '/controls/import.php';
 
 		/**
 		 * Add customizer settings without reloading the environment.
@@ -77,44 +75,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 */
 		do_action( 'archetype_customize_register', $wp_customize );
 
-		if ( current_theme_supports( 'site-logo' ) && class_exists( 'Site_Logo', false ) ) {
-			// Add tagline description.
-			$wp_customize->get_section( 'title_tagline' )->description = __( 'Site Title & Tagline do not display when a logo is added.', 'archetype' );
-
-			// Add the setting for our svg logo.
-			$wp_customize->add_setting( 'archetype_site_logo_svg', array(
-				'capability'        => 'manage_options',
-				'sanitize_callback' => 'sanitize_text_field',
-				'transport'         => 'postMessage',
-			) );
-
-			// Add our image uploader.
-			$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_site_logo_svg', array(
-				'label'       => __( 'Logo SVG (Scalable Vector Graphics)', 'archetype' ),
-				'description' => __( 'You must add the logo above. The logo acts as a fallback for browsers that do not support SVG images.', 'archetype' ),
-				'section'     => 'title_tagline',
-				'settings'    => 'archetype_site_logo_svg',
-				'mime_type'   => 'image',
-				'priority'    => 40,
-			) ) );
-
-			/**
-			 * Logo Top Margin
-			 */
-			$wp_customize->add_setting( 'archetype_site_logo_margin_top', array(
-				'capability'        => 'manage_options',
-				'sanitize_callback' => 'archetype_sanitize_number',
-				'transport'         => 'postMessage',
-			) );
-
-			$wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_site_logo_margin_top', array(
-				'label'       => __( 'Logo Margin Top', 'archetype' ),
-				'description' => __( 'Margin top must be numeric, and an em value like .5 or 1', 'archetype' ),
-				'section'     => 'title_tagline',
-				'settings'    => 'archetype_site_logo_margin_top',
-				'priority'    => 50,
-			) ) );
-		} else {
+		if ( ! current_theme_supports( 'site-logo' ) && ! class_exists( 'Site_Logo', false ) ) {
 			$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_site_logo_info', array(
 				'section'     => 'title_tagline',
 				'description' => sprintf( __( 'Want to add your logo? Install %sJetpack%s!', 'archetype' ), '<a href="https://wordpress.org/plugins/jetpack/" target="_blank">', '</a>' ),
@@ -1834,98 +1795,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Link hover color', 'archetype' ),
 			'section'      => 'archetype_footer_lower',
 			'settings'     => 'archetype_footer_lower_link_hover_color',
-		) ) );
-
-		/**
-		 * Add the General panel
-		 */
-		$wp_customize->add_panel( 'archetype_tools' , array(
-			'title'        => __( 'Tools', 'archetype' ),
-			'description'  => __( 'Customizer tools for administering your website.', 'archetype' ),
-			'priority'     => 10000000,
-		) );
-
-		/**
-		 * Import Section
-		 */
-		$wp_customize->add_section( 'archetype_tools_import', array(
-			'title'        => __( 'Import', 'archetype' ),
-			'priority'     => 10,
-			'panel'        => 'archetype_tools',
-		) );
-
-		/**
-		 * Add an empty import setting.
-		 */
-		$wp_customize->add_setting( 'archetype_tools_import', array(
-			'capability'         => 'manage_options',
-			'default'            => '',
-			'sanitize_callback'  => 'archetype_sanitize_import_export',
-			'type'               => 'none',
-		) );
-
-		if ( ! current_user_can( 'manage_options' ) ) {
-			/**
-			 * Add the import Customizer control.
-			 */
-			$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_tools_import_text', array(
-				'section'     => 'archetype_tools_import',
-				'settings'    => 'archetype_tools_import',
-				'type'        => 'text',
-				'description' => __( 'You do not have the capability role to import customizer settings.', 'archetype' ),
-			) ) );
-		}
-
-		/**
-		 * Add the import Customizer control.
-		 */
-		$wp_customize->add_control( new Archetype_Import_Customizer_Control( $wp_customize, 'archetype_import_customizer', array(
-			'label'        => __( 'Import', 'archetype' ),
-			'section'      => 'archetype_tools_import',
-			'settings'     => 'archetype_tools_import',
-			'description'  => __( 'Upload a file to import customization settings for this theme.', 'archetype' ),
-		) ) );
-
-		/**
-		 * Export Section
-		 */
-		$wp_customize->add_section( 'archetype_tools_export', array(
-			'title'        => __( 'Export', 'archetype' ),
-			'priority'     => 15,
-			'panel'        => 'archetype_tools',
-		) );
-
-		/**
-		 * Add an empty export setting.
-		 */
-		$wp_customize->add_setting( 'archetype_tools_export', array(
-			'capability'         => 'manage_options',
-			'default'            => '',
-			'sanitize_callback'  => 'archetype_sanitize_import_export',
-			'type'               => 'none',
-		) );
-
-		if ( ! current_user_can( 'manage_options' ) ) {
-			/**
-			 * Add the import Customizer control.
-			 */
-			$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_tools_export_text', array(
-				'section'     => 'archetype_tools_export',
-				'settings'    => 'archetype_tools_export',
-				'type'        => 'text',
-				'description' => __( 'You do not have the capability role to import or export customizer settings.', 'archetype' ),
-			) ) );
-		}
-
-		/**
-		 * Add the export Customizer control.
-		 */
-		$wp_customize->add_control( new Archetype_Export_Customizer_Control( $wp_customize, 'archetype_export_customizer', array(
-			'label'        => __( 'Export', 'archetype' ),
-			'section'      => 'archetype_tools_export',
-			'settings'     => 'archetype_tools_export',
-			'description'  => __( 'Click the button below to export the customization settings for this theme.', 'archetype' ),
-			'priority'     => 3,
 		) ) );
 
 	}
