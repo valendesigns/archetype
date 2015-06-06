@@ -37,15 +37,22 @@
 	margin: 0;
 	padding: 0;
 
-	.cart-contents {
-		display: block;
+	a.cart-contents {
+		display: none;
 		height: 2.244em;
 		width: 2.244em;
 		position: absolute;
-		top: 0;
-		right: 0;
-		background-color: rgba(0,0,0,0.1);
+		top: 50%;
+		right: 2.869em;
+		margin-top: -1.122em;
+		background-color: $color-nav-handheld-bg;
+		color: $color-nav-handheld-link;
 		text-indent: -9999px;
+
+		&:hover {
+			color: $color-nav-handheld-link-hover;
+			background-color: $color-nav-handheld-link-hover-bg;
+		}
 
 		&:after {
 			content: "\f07a";
@@ -1399,12 +1406,15 @@ dl.variation {
 			padding: 1.214em 2em 1.214em .875em !important;
 			display: block;
 			position: relative;
-			background-color: transparent;
+			background-color: transparent !important;
 			height: auto;
 			width: auto;
 			text-align: right;
 			text-indent: 0;
 			top: 0;
+			right: 0;
+			margin-top: 0;
+			color: inherit !important;
 
 			&:after {
 				right: 0;

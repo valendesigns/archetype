@@ -81,6 +81,10 @@
 				}
 			};
 
+			// Fix position by moving the button & display both buttons
+			$( 'button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
+			$( 'a.cart-contents' ).css( 'display', 'block' );
+
 			// Add focus class to li
 			$( '.main-navigation, .secondary-navigation' ).find( 'a' ).on( 'focus.archetype blur.archetype', function() {
 				$( this ).parents().toggleClass( 'focus' );
