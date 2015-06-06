@@ -17,6 +17,13 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 	 */
 	function archetype_woocommerce_customize_register( $wp_customize ) {
 
+		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_nav_alt_styles_text', array(
+			'description'   => __( 'These controls also modify the look & feel of the WooCommerce cart dropdown.', 'archetype' ),
+			'section'       => 'archetype_nav_alt_styles',
+			'type'          => 'text',
+			'priority'      => 1,
+		) ) );
+
 		$wp_customize->add_panel( 'archetype_woocommerce', array(
 			'title'        => __( 'WooCommerce', 'archetype' ),
 			'priority'     => 75,
