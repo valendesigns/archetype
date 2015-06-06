@@ -1199,11 +1199,6 @@ fieldset {
 .main-navigation.toggled .handheld-navigation, .main-navigation.toggled .menu > ul:not(.nav-menu) {
   display: block; }
 
-.handheld-navigation {
-  background-color: #292e31; }
-  .handheld-navigation ul {
-    margin: 0 !important; }
-
 .main-navigation ul {
   margin-left: 0;
   list-style: none; }
@@ -1220,31 +1215,45 @@ fieldset {
     background-color: #24282a;
     color: #fff; }
 
-@media screen and (max-width: 767px) {
-  .handheld-navigation {
-    margin-left: -2.625em;
-    margin-right: -2.625em; }
+.handheld-navigation {
+  background-color: #292e31;
+  margin-left: -2.625em;
+  margin-right: -2.625em; }
+  .handheld-navigation ul {
+    margin: 0 !important;
+    /* Level 2 */ }
     .handheld-navigation ul li a {
+      color: #bbb;
       padding-left: 2.625em;
       padding-right: 2.625em; }
       .handheld-navigation ul li a:hover {
-        background-color: #2f3538; }
-    .handheld-navigation ul.sub-menu li a {
-      padding-left: 3.625em; }
-    .handheld-navigation ul.sub-menu .sub-menu li a {
-      padding-left: 4.625em; } }
+        background-color: #2f3538;
+        color: #fff; }
+    .handheld-navigation ul li.current-menu-item > a {
+      background-color: #24282a;
+      color: #fff; }
+    .handheld-navigation ul.sub-menu {
+      /* Level 3 */ }
+      .handheld-navigation ul.sub-menu li a {
+        padding-left: 3.625em; }
+      .handheld-navigation ul.sub-menu .sub-menu li a {
+        padding-left: 4.625em; }
 
 @media screen and (max-width: 568px) {
   .handheld-navigation {
     margin-left: -1.387em;
     margin-right: -1.387em; }
-    .handheld-navigation ul li a {
-      padding-left: 1.387em;
-      padding-right: 1.387em; }
-    .handheld-navigation ul.sub-menu li a {
-      padding-left: 2.387em; }
-    .handheld-navigation ul.sub-menu .sub-menu li a {
-      padding-left: 3.387em; } }
+    .handheld-navigation ul {
+      /* Level 2 */ }
+      .handheld-navigation ul li a {
+        padding-left: 1.387em;
+        padding-right: 1.387em; }
+      .handheld-navigation ul.sub-menu {
+        /* Level 3 */ }
+        .handheld-navigation ul.sub-menu li a {
+          padding-left: 2.387em; }
+        .handheld-navigation ul.sub-menu .sub-menu li a {
+          padding-left: 3.387em; } }
 
 @media screen and (min-width: 768px) {
   .menu-toggle, .handheld-navigation, .main-navigation.toggled .handheld-navigation {
