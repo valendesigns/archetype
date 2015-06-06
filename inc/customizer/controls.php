@@ -378,6 +378,111 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
+		 * Add the Handheld Menu Styles section
+		 */
+		$wp_customize->add_section( 'archetype_nav_handheld_styles' , array(
+			'title'        => __( 'Handheld Menu', 'archetype' ),
+			'priority'     => 40,
+			'description'  => __( 'The Handheld Menu must be set to a menu location in order to preview style changes, and your browser window must be below 768px for the menu to be visible.', 'archetype' ),
+			'panel'        => 'archetype_header',
+		) );
+
+		/**
+		 * Handheld Navigation Background Color
+		 */
+		$wp_customize->add_setting( 'archetype_nav_handheld_background_color', array(
+			'default'            => apply_filters( 'archetype_default_nav_background_color', '#292E31' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_background_color', array(
+			'label'        => __( 'Background color', 'archetype' ),
+			'section'      => 'archetype_nav_handheld_styles',
+			'settings'     => 'archetype_nav_handheld_background_color',
+			'priority'     => 10,
+		) ) );
+
+		/**
+		 * Handheld Navigation Link Color
+		 */
+		$wp_customize->add_setting( 'archetype_nav_handheld_link_color', array(
+			'default'            => apply_filters( 'archetype_default_nav_link_color', '#bbb' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_link_color', array(
+			'label'        => __( 'Link color', 'archetype' ),
+			'section'      => 'archetype_nav_handheld_styles',
+			'settings'     => 'archetype_nav_handheld_link_color',
+			'priority'     => 15,
+		) ) );
+
+		/**
+		 * Handheld Navigation Link Hover Color
+		 */
+		$wp_customize->add_setting( 'archetype_nav_handheld_link_hover_color', array(
+			'default'            => apply_filters( 'archetype_default_nav_link_hover_color', '#fff' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_link_hover_color', array(
+			'label'        => __( 'Link hover color', 'archetype' ),
+			'section'      => 'archetype_nav_handheld_styles',
+			'settings'     => 'archetype_nav_handheld_link_hover_color',
+			'priority'     => 20,
+		) ) );
+
+		/**
+		 * Handheld Navigation Link Hover Background Color
+		 */
+		$wp_customize->add_setting( 'archetype_nav_handheld_link_hover_background_color', array(
+			'default'            => apply_filters( 'archetype_default_nav_link_hover_background_color', '#2f3538' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_link_hover_background_color', array(
+			'label'        => __( 'Link hover background color', 'archetype' ),
+			'section'      => 'archetype_nav_handheld_styles',
+			'settings'     => 'archetype_nav_handheld_link_hover_background_color',
+			'priority'     => 25,
+		) ) );
+
+		/**
+		 * Handheld Navigation Link Active Color
+		 */
+		$wp_customize->add_setting( 'archetype_nav_handheld_link_active_color', array(
+			'default'            => apply_filters( 'archetype_default_nav_link_active_color', '#fff' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_link_active_color', array(
+			'label'        => __( 'Link active color', 'archetype' ),
+			'section'      => 'archetype_nav_handheld_styles',
+			'settings'     => 'archetype_nav_handheld_link_active_color',
+			'priority'     => 30,
+		) ) );
+
+		/**
+		 * Handheld Navigation Link Active Background Color
+		 */
+		$wp_customize->add_setting( 'archetype_nav_handheld_link_active_background_color', array(
+			'default'            => apply_filters( 'archetype_default_nav_link_active_background_color', '#24282A' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_nav_handheld_link_active_background_color', array(
+			'label'        => __( 'Link active background color', 'archetype' ),
+			'section'      => 'archetype_nav_handheld_styles',
+			'settings'     => 'archetype_nav_handheld_link_active_background_color',
+			'priority'     => 35,
+		) ) );
+
+		/**
 		 * Add the Secondary Menu Styles section
 		 */
 		$wp_customize->add_section( 'archetype_nav_alt_styles' , array(

@@ -241,6 +241,54 @@
 			$( '.secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a' ).css( 'background-color', to );
 		} );
 	} );
+	wp.customize( 'archetype_nav_handheld_background_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.handheld-navigation, .menu-toggle, a.cart-contents' ).css( 'background-color', to );
+		} );
+	} );
+	wp.customize( 'archetype_nav_handheld_link_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.handheld-navigation ul li:not(.current-menu-item) a, .menu-toggle, a.cart-contents' ).css( 'color', to ).on( 'mouseleave', function() {
+				$( this ).css( 'color', to );
+			} );
+		} );
+	} );
+	wp.customize( 'archetype_nav_handheld_link_hover_color', function( value ) {
+		value.bind( function( to ) {
+			var $link = $( '.handheld-navigation ul li:not(.current-menu-item) a, .menu-toggle, a.cart-contents' ),
+					color = $( '.menu-toggle' ).css( 'color' );
+			// Link Color Hover
+			$link.on( 'mouseenter', function() {
+				$( this ).css( 'color', to );
+			} ).on( 'mouseleave', function() {
+				$( this ).css( 'color', color );
+			} );
+		} );
+	} );
+	wp.customize( 'archetype_nav_handheld_link_hover_background_color', function( value ) {
+		value.bind( function( to ) {
+			var $link = $( '.handheld-navigation ul li:not(.current-menu-item) a, .menu-toggle, a.cart-contents' ),
+					color = $( '.menu-toggle' ).css( 'background-color' );
+			// Link Color Background Hover
+			$link.on( 'mouseenter', function() {
+				$( this ).css( 'background-color', to );
+			} ).on( 'mouseleave', function() {
+				$( this ).css( 'background-color', color );
+			} );
+		} );
+	} );
+	wp.customize( 'archetype_nav_handheld_link_active_color', function( value ) {
+		value.bind( function( to ) {
+			// Color
+			$( '.handheld-navigation ul li.current-menu-item > a' ).css( 'color', to );
+		} );
+	} );
+	wp.customize( 'archetype_nav_handheld_link_active_background_color', function( value ) {
+		value.bind( function( to ) {
+			// Background Color
+			$( '.handheld-navigation ul li.current-menu-item > a' ).css( 'background-color', to );
+		} );
+	} );
 	wp.customize( 'archetype_homepage_hero_heading_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.archetype-homepage-hero h1' ).css( 'color', to );

@@ -281,6 +281,52 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}
 		}';
 
+		// Handheld Navigation Background Color.
+		$nav_handheld_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_background_color', apply_filters( 'archetype_default_nav_handheld_background_color', '#2f3538' ) ) );
+
+		$style .= '
+		.handheld-navigation,
+		.menu-toggle,
+		#masthead .site-header-cart a.cart-contents {
+			background-color: ' . $nav_handheld_background_color . ';
+		}';
+
+		// Handheld Navigation Link Color.
+		$nav_handheld_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_color', apply_filters( 'archetype_default_nav_handheld_link_color', '#bbb' ) ) );
+
+		$style .= '
+		.handheld-navigation ul li a,
+		.menu-toggle,
+		#masthead .site-header-cart a.cart-contents {
+			color: ' . $nav_handheld_link_color . ';
+		}';
+
+		// Handheld Navigation Link Hover Color.
+		$nav_handheld_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_hover_color', apply_filters( 'archetype_default_nav_handheld_link_hover_color', '#fff' ) ) );
+
+		// Handheld Navigation Link Hover Background Color.
+		$nav_handheld_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_hover_background_color', apply_filters( 'archetype_default_nav_handheld_link_hover_background_color', '#2f3538' ) ) );
+
+		$style .= '
+		.handheld-navigation ul li a:hover,
+		.menu-toggle:hover,
+		#masthead .site-header-cart a.cart-contents:hover {
+			color: ' . $nav_handheld_link_color_hover . ';
+			background-color: ' . $nav_handheld_link_color_hover_bg . ';
+		}';
+
+		// Handheld Navigation Link Active Color.
+		$nav_handheld_link_color_active = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_active_color', apply_filters( 'archetype_default_nav_handheld_link_active_color', '#fff' ) ) );
+
+		// Handheld Navigation Link Active Background Color.
+		$nav_handheld_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_active_background_color', apply_filters( 'archetype_default_nav_handheld_link_active_background_color', '#24282A' ) ) );
+
+		$style .= '
+		.handheld-navigation ul li.current-menu-item > a {
+			color: ' . $nav_handheld_link_color_active . ';
+			background-color: ' . $nav_handheld_link_color_active_bg . ';
+		}';
+
 		// Post Background Color.
 		$post_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_post_background_color', apply_filters( 'archetype_default_post_background_color', '#fff' ) ) );
 
