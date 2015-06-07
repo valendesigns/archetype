@@ -17,10 +17,11 @@ env:
   - WP_VERSION=4.2 WP_MULTISITE=0
   - WP_VERSION=4.2 WP_MULTISITE=1
 
+before_install:
+  - git clone https://github.com/woothemes/woocommerce.git /tmp/wordpress/wp-content/plugins/woocommerce
+
 before_script:
   - export DEV_LIB_PATH=tools
-  - cd /tmp/wordpress/wp-content/plugins/
-  - git clone https://github.com/woothemes/woocommerce.git woocommerce
   - if [ ! -e "$DEV_LIB_PATH" ] && [ -L .travis.yml ]; then export DEV_LIB_PATH=$( dirname $( readlink .travis.yml ) ); fi
   - source $DEV_LIB_PATH/travis.before_script.sh
 
