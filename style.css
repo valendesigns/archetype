@@ -1174,7 +1174,8 @@ fieldset {
   color: #bbb;
   border: none;
   text-align: left;
-  border-radius: 0 !important; }
+  border-radius: 0 !important;
+  box-shadow: none !important; }
   .menu-toggle:hover {
     color: #fff;
     background-color: #2f3538; }
