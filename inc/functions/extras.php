@@ -118,7 +118,7 @@ endif;
  *
  * @since 1.0.0
  */
-function archetype_html_tag_schema() {
+function archetype_html_tag_schema( $echo = true ) {
 	$schema  = 'http://schema.org/';
 	$type    = 'WebPage';
 
@@ -130,7 +130,13 @@ function archetype_html_tag_schema() {
 		$type = 'SearchResultsPage';
 	}
 
-	echo 'itemscope="itemscope" itemtype="' . esc_attr( $schema ) . esc_attr( $type ) . '"';
+	$content = 'itemscope="itemscope" itemtype="' . esc_attr( $schema ) . esc_attr( $type ) . '"';
+
+	if ( $echo ) {
+		echo $content;
+	} else {
+		return $content;
+	}
 }
 
 /**

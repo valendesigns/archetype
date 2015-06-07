@@ -10,19 +10,26 @@ class Tests_Extras extends WP_UnitTestCase {
 	function setUp() {
 		parent::setUp();
 
-		set_current_screen( 'front' );
-
-		update_option( 'comments_per_page', 5 );
-		update_option( 'posts_per_page', 5 );
-
 		global $wp_rewrite;
-
 		$wp_rewrite->init();
-		$wp_rewrite->set_permalink_structure( '/%year%/%monthnum%/%day%/%postname%/' );
-
-		create_initial_taxonomies();
-
+		$wp_rewrite->set_permalink_structure( '/%year%/%monthnum%/%postname%/' );
 		$wp_rewrite->flush_rules();
+
+		// Create author #1
+		$this->author_id = $this->factory->user->create( array(
+			'role' => 'author',
+			'user_login' => 'test_author',
+			'description' => 'test_author',
+		) );
+
+		// Create a post for author #1
+		$this->post_id = $this->factory->post->create( array(
+			'post_author' => $this->author_id,
+			'post_status' => 'publish',
+			'post_content' => rand_str(),
+			'post_title' => rand_str(),
+			'post_type' => 'post'
+		) );
 	}
 
 	function tearDown() {
@@ -99,36 +106,23 @@ class Tests_Extras extends WP_UnitTestCase {
 
 		$this->assertFalse( in_array( 'group-blog', get_body_class() ) );
 
-		$post = array(
-			'post_author' => $this->factory->user->create( array(
-				'role' => 'author',
-				'user_login' => 'test_author',
-				'description' => 'test_author',
-			) ),
+		// Create author #2
+		$this->author_id_2 = $this->factory->user->create( array(
+			'role' => 'author',
+			'user_login' => 'test_author_2',
+			'description' => 'test_author_2',
+		) );
+
+		// Create a post for author #2
+		$this->post_id_2 = $this->factory->post->create( array(
+			'post_author' => $this->author_id_2,
 			'post_status' => 'publish',
 			'post_content' => rand_str(),
 			'post_title' => rand_str(),
 			'post_type' => 'post'
-		);
+		) );
 
-		// Create a post with author #1
-		$this->factory->post->create( $post );
-
-		$post = array(
-			'post_author' => $this->factory->user->create( array(
-				'role' => 'author',
-				'user_login' => 'test_author2',
-				'description' => 'test_author2',
-			) ),
-			'post_status' => 'publish',
-			'post_content' => rand_str(),
-			'post_title' => rand_str(),
-			'post_type' => 'post'
-		);
-
-		// Create a post with author #2
-		$this->post_id = $this->factory->post->create( $post );
-		$this->go_to( get_permalink( $this->post_id ) );
+		$this->go_to( get_permalink( $this->post_id_2 ) );
 
 		$this->assertTrue( in_array( 'group-blog', get_body_class() ) );
 
@@ -242,11 +236,44 @@ class Tests_Extras extends WP_UnitTestCase {
 
 
 	/**
-	 * Check that the Schema type is correct for the context.
+	 * Check that the Schema type is correct for the default context.
 	 */
-	function test_archetype_html_tag_schema() {
+	function test_archetype_html_tag_schema_default() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertSame( 'itemscope="itemscope" itemtype="http://schema.org/WebPage"', archetype_html_tag_schema( false ) );
+
+	}
+
+	/**
+	 * Check that the Schema type is correct for the post context.
+	 */
+	function test_archetype_html_tag_schema_post() {
+
+		$this->go_to( get_permalink( $this->post_id ) );
+
+		$this->assertSame( 'itemscope="itemscope" itemtype="http://schema.org/Article"', archetype_html_tag_schema( false ) );
+
+	}
+
+	/**
+	 * Check that the Schema type is correct for the author context.
+	 */
+	function test_archetype_html_tag_schema_author() {
+
+		$this->go_to( get_author_posts_url( $this->author_id ) );
+
+		$this->assertSame( 'itemscope="itemscope" itemtype="http://schema.org/ProfilePage"', archetype_html_tag_schema( false ) );
+
+	}
+
+	/**
+	 * Check that the Schema type is correct for the search context.
+	 */
+	function test_archetype_html_tag_schema_search() {
+
+		$this->go_to( '/?s=a' );
+
+		$this->assertSame( 'itemscope="itemscope" itemtype="http://schema.org/SearchResultsPage"', archetype_html_tag_schema( false ) );
 
 	}
 
