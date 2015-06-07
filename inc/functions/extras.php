@@ -117,6 +117,9 @@ endif;
  * Schema type
  *
  * @since 1.0.0
+ *
+ * @param bool $echo Whether to eco or return.
+ * @return string
  */
 function archetype_html_tag_schema( $echo = true ) {
 	$schema  = 'http://schema.org/';
