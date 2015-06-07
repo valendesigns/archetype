@@ -182,7 +182,7 @@ function archetype_category_transient_flusher() {
 	delete_transient( 'archetype_categories' );
 }
 add_action( 'edit_category', 'archetype_category_transient_flusher' );
-add_action( 'save_post', 		'archetype_category_transient_flusher' );
+add_action( 'save_post',     'archetype_category_transient_flusher' );
 
 if ( ! function_exists( 'archetype_post_search_form' ) ) :
 	/**

@@ -282,16 +282,23 @@ class Tests_Extras extends WP_UnitTestCase {
 	 */
 	function test_archetype_categorized_blog() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertFalse( archetype_categorized_blog() );
 
-	}
+		$c1 = $this->factory->category->create( array(
+			'name' => 'Test Category 1',
+			'slug' => 'test_category_1',
+		) );
 
-	/**
-	 * Check that the transients is flushed.
-	 */
-	function test_archetype_category_transient_flusher() {
+		$c2 = $this->factory->category->create( array(
+			'name' => 'Test Category 2',
+			'slug' => 'test_category_2',
+		) );
+		
+		wp_set_object_terms( $this->post_id, array( $c1, $c2 ), 'category' );
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		archetype_category_transient_flusher();
+
+		$this->assertTrue( archetype_categorized_blog() );
 
 	}
 
