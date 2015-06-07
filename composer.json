@@ -1,6 +1,5 @@
 {
 	"require-dev": {
-		"satooshi/php-coveralls": "dev-master",
-		"woothemes/woocommerce": "dev-master"
+		"satooshi/php-coveralls": "dev-master"
 	}
 }
