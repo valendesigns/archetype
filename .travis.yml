@@ -2,14 +2,21 @@ sudo: false
 
 language:
   - php
-  - node_js
 
-php:
-  - 5.2
-  - 5.4
+include:
+  - php: 5.2
+  - php: 5.3
+  - php: 5.4
+  - php: 5.5
+  - php: 5.6
+  - php: hhvm
+  - php: nightly
 
-node_js:
-  - 0.10
+allow_failures:
+  - php: hhvm
+  - php: nightly
+
+fast_finish: true
 
 env:
   - WP_VERSION=latest WP_MULTISITE=0
