@@ -4,7 +4,11 @@
 	colors="true"
 	convertErrorsToExceptions="true"
 	convertNoticesToExceptions="true"
-	convertWarningsToExceptions="true">
+	convertWarningsToExceptions="true"
+	>
+	<php>
+		<const name="WP_TEST_ACTIVATED_THEME" value="archetype" />
+	</php>
 	<testsuites>
 		<testsuite>
 			<directory suffix=".php">tests/phpunit/tests</directory>

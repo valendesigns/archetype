@@ -23,10 +23,12 @@ if ( ! file_exists( $_tests_dir . '/includes/' ) ) {
 require_once $_tests_dir . '/includes/functions.php';
 
 // Activate the theme.
-$GLOBALS['wp_tests_options'] = array(
-	'stylesheet' => 'archetype',
-	'template' => 'archetype'
-);
+if ( defined( 'WP_TEST_ACTIVATED_THEME' ) ) {
+	$GLOBALS['wp_tests_options'] = array(
+		'stylesheet' => WP_TEST_ACTIVATED_THEME,
+		'template' => WP_TEST_ACTIVATED_THEME
+	);
+}
 
 /**
  * Set the current user.
