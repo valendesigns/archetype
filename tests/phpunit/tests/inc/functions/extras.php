@@ -73,8 +73,18 @@ class Tests_Extras extends WP_UnitTestCase {
 	function test_archetype_body_classes() {
 
 		$this->go_to( '/' );
+		$classes = get_body_class();
 
-		$this->assertSame( array( 'home', 'blog', 'no-wc-breadcrumb', 'is-padded', 'right-sidebar' ), get_body_class() );
+		$this->assertFalse( in_array( 'group-blog', $classes ) );
+		$this->assertFalse( in_array( 'no-wc-breadcrumb', $classes ) );
+		$this->assertFalse( in_array( 'archetype-full-width-content', $classes ) );
+		$this->assertFalse( in_array( 'archetype-cute', $classes ) );
+		$this->assertFalse( in_array( 'grid-alt', $classes ) );
+		$this->assertFalse( in_array( 'is-full-width', $classes ) );
+		$this->assertFalse( in_array( 'is-boxed', $classes ) );
+		$this->assertTrue( in_array( 'is-padded', $classes ) );
+		$this->assertTrue( in_array( 'right-sidebar', $classes ) );
+		$this->assertTrue( in_array( 'woocommerce-active', $classes ) );
 
 	}
 
@@ -83,8 +93,7 @@ class Tests_Extras extends WP_UnitTestCase {
 	 */
 	function test_is_woocommerce_activated() {
 
-		// @todo Add this dependancy for testing WooCommerce.
-		$this->assertFalse( class_exists( 'woocommerce', false ) );
+		$this->assertTrue( is_woocommerce_activated() );
 
 	}
 

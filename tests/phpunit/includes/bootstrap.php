@@ -20,15 +20,39 @@ if ( ! file_exists( $_tests_dir . '/includes/' ) ) {
 	}
 }
 
+// Require functions
 require_once $_tests_dir . '/includes/functions.php';
+
+// Activate the plugins.
+if ( defined( 'WP_TEST_ACTIVATED_PLUGINS' ) ) {
+	$GLOBALS['wp_tests_options']['active_plugins'] = explode( ',', WP_TEST_ACTIVATED_PLUGINS );
+}
 
 // Activate the theme.
 if ( defined( 'WP_TEST_ACTIVATED_THEME' ) ) {
-	$GLOBALS['wp_tests_options'] = array(
-		'stylesheet' => WP_TEST_ACTIVATED_THEME,
-		'template' => WP_TEST_ACTIVATED_THEME
-	);
+	$GLOBALS['wp_tests_options']['stylesheet'] = WP_TEST_ACTIVATED_THEME;
+	$GLOBALS['wp_tests_options']['template'] = WP_TEST_ACTIVATED_THEME;
 }
+
+/**
+ * Install WooCommerce
+ *
+ * @since 1.0.0
+ */
+function archetype_tests_install_wc() {
+
+	// clean existing install first
+	define( 'WP_UNINSTALL_PLUGIN', true );
+	include( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
+
+	WC_Install::install();
+
+	// reload capabilities after install, see https://core.trac.wordpress.org/ticket/28374
+	$GLOBALS['wp_roles']->reinit();
+
+	echo "Installing WooCommerce..." . PHP_EOL;
+}
+tests_add_filter( 'setup_theme', 'archetype_tests_install_wc' );
 
 /**
  * Set the current user.
@@ -51,4 +75,5 @@ function archetype_tests_filesystem_method() {
 }
 tests_add_filter( 'filesystem_method', 'archetype_tests_filesystem_method', 1, 10 );
 
+// Require bootstrap
 require $_tests_dir . '/includes/bootstrap.php';
