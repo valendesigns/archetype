@@ -239,7 +239,6 @@ module.exports = function( grunt ) {
 					'.htaccess',
 					'!Gruntfile.js',
 					'!.DS_Store',
-					'!dev-lib/**',
 					'!dist/**',
 					'!package.json',
 					'!node_modules/**',
@@ -250,6 +249,7 @@ module.exports = function( grunt ) {
 					'!inc/admin/sass/*.scss',
 					'!inc/woocommerce/sass/*.scss',
 					'!tests/**',
+					'!tools/**',
 					'!phpunit.xml.dist'
 				],
 				dest: 'dist/<%= pkg.name %>',
