@@ -197,7 +197,7 @@ if ( ! function_exists( 'archetype_post_search_form' ) ) :
 	 * @return string
 	 */
 	function archetype_post_search_form( $form ) {
-		if ( true === apply_filters( 'archetype_post_search_form',	true ) ) {
+		if ( true === apply_filters( 'archetype_post_search_form', true ) ) {
 			$form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
 				<label>
 					<span class="screen-reader-text">' . _x( 'Search for:', 'label', 'archetype' ) . '</span>
