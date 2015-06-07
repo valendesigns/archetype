@@ -1,14 +1,6 @@
 {
 	"require-dev": {
-		"satooshi/php-coveralls": "dev-master"
-	},
-	"repositories":[
-		{
-			"type": "composer",
-			"url": "http://wpackagist.org"
-		}
-  ],
-	"require": {
-		"wpackagist-plugin/woocommerce": "dev-trunk"
+		"satooshi/php-coveralls": "dev-master",
+		"woothemes/woocommerce": "dev-master"
 	}
 }
