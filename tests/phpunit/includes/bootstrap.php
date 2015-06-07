@@ -55,17 +55,6 @@ function archetype_tests_install_wc() {
 tests_add_filter( 'setup_theme', 'archetype_tests_install_wc' );
 
 /**
- * Set the current user.
- *
- * @since 1.0.0
- */
-function archetype_tests_set_current_user() {
-	$user = wp_get_current_user();
-	$user->set_role( 'administrator' );
-}
-tests_add_filter( 'set_current_user', 'archetype_tests_set_current_user', 1, 10 );
-
-/**
  * Sets the filesystem method.
  *
  * @since 1.0.0
