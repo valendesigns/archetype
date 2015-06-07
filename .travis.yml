@@ -30,7 +30,6 @@ matrix:
   allow_failures:
     - php: hhvm
     - php: nightly
-  fast_finish: true
 
 before_install:
   - git clone https://github.com/woothemes/woocommerce.git /tmp/wordpress/wp-content/plugins/woocommerce
