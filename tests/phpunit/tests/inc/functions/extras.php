@@ -7,6 +7,31 @@
  */
 class Tests_Extras extends WP_UnitTestCase {
 
+	function setUp() {
+		parent::setUp();
+
+		set_current_screen( 'front' );
+
+		update_option( 'comments_per_page', 5 );
+		update_option( 'posts_per_page', 5 );
+
+		global $wp_rewrite;
+
+		$wp_rewrite->init();
+		$wp_rewrite->set_permalink_structure( '/%year%/%monthnum%/%day%/%postname%/' );
+
+		create_initial_taxonomies();
+
+		$wp_rewrite->flush_rules();
+	}
+
+	function tearDown() {
+		global $wp_rewrite;
+		$wp_rewrite->init();
+
+		parent::tearDown();
+	}
+
 	/**
 	 * Check that the Customizer is enabled and the filter works.
 	 */
@@ -68,34 +93,153 @@ class Tests_Extras extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Check that Archetype custom classes are added to the body.
+	 * Check 'group-blog' body class
 	 */
-	function test_archetype_body_classes() {
+	function test_archetype_body_classes_is_multi_author() {
 
-		$this->go_to( '/' );
-		$classes = get_body_class();
+		$this->assertFalse( in_array( 'group-blog', get_body_class() ) );
 
-		$this->assertFalse( in_array( 'group-blog', $classes ) );
-		$this->assertFalse( in_array( 'no-wc-breadcrumb', $classes ) );
-		$this->assertFalse( in_array( 'archetype-full-width-content', $classes ) );
-		$this->assertFalse( in_array( 'archetype-cute', $classes ) );
-		$this->assertFalse( in_array( 'grid-alt', $classes ) );
-		$this->assertFalse( in_array( 'is-full-width', $classes ) );
-		$this->assertFalse( in_array( 'is-boxed', $classes ) );
-		$this->assertTrue( in_array( 'is-padded', $classes ) );
-		$this->assertTrue( in_array( 'right-sidebar', $classes ) );
-		$this->assertTrue( in_array( 'woocommerce-active', $classes ) );
+		$post = array(
+			'post_author' => $this->factory->user->create( array(
+				'role' => 'author',
+				'user_login' => 'test_author',
+				'description' => 'test_author',
+			) ),
+			'post_status' => 'publish',
+			'post_content' => rand_str(),
+			'post_title' => rand_str(),
+			'post_type' => 'post'
+		);
+
+		// Create a post with author #1
+		$this->factory->post->create( $post );
+
+		$post = array(
+			'post_author' => $this->factory->user->create( array(
+				'role' => 'author',
+				'user_login' => 'test_author2',
+				'description' => 'test_author2',
+			) ),
+			'post_status' => 'publish',
+			'post_content' => rand_str(),
+			'post_title' => rand_str(),
+			'post_type' => 'post'
+		);
+
+		// Create a post with author #2
+		$this->post_id = $this->factory->post->create( $post );
+		$this->go_to( get_permalink( $this->post_id ) );
+
+		$this->assertTrue( in_array( 'group-blog', get_body_class() ) );
 
 	}
 
 	/**
-	 * Check that WooCommerce is or is not activated.
+	 * Check 'no-wc-breadcrumb' body class
+	 */
+	function test_archetype_body_classes_wc_breadcrumb() {
+
+		$this->assertFalse( in_array( 'no-wc-breadcrumb', get_body_class() ) );
+
+		set_theme_mod( 'archetype_breadcrumb_toggle', false );
+		$this->assertTrue( in_array( 'no-wc-breadcrumb', get_body_class() ) );
+
+	}
+
+	/**
+	 * Check 'archetype-full-width-content' body class
+	 */
+	function test_archetype_body_classes_is_404_full_width() {
+
+		$this->assertFalse( in_array( 'archetype-full-width-content', get_body_class() ) );
+
+		$this->go_to( '/' . rand_str() );
+		$this->assertTrue( in_array( 'archetype-full-width-content', get_body_class() ) );
+
+	}
+
+	/**
+	 * Check 'archetype-cute' body class
+	 */
+	function test_archetype_body_classes_make_me_cute() {
+
+		$this->assertFalse( in_array( 'archetype-cute', get_body_class() ) );
+
+		add_filter( 'archetype_make_me_cute', '__return_true' );
+		$this->assertTrue( in_array( 'archetype-cute', get_body_class() ) );
+
+	}
+
+	/**
+	 * Check 'grid-alt' body class
+	 */
+	function test_archetype_body_classes_grid_alt() {
+
+		set_theme_mod( 'archetype_columns', '3' );
+		$this->assertFalse( in_array( 'grid-alt', get_body_class() ) );
+
+		set_theme_mod( 'archetype_columns', '4' );
+		$this->assertTrue( in_array( 'grid-alt', get_body_class() ) );
+
+	}
+
+	/**
+	 * Check 'is-full-width' body class
+	 */
+	function test_archetype_body_classes_is_full_width() {
+
+		set_theme_mod( 'archetype_full_width', false );
+		$this->assertFalse( in_array( 'is-full-width', get_body_class() ) );
+
+		set_theme_mod( 'archetype_full_width', true );
+		$this->assertTrue( in_array( 'is-full-width', get_body_class() ) );
+
+	}
+
+	/**
+	 * Check 'is-boxed' body class
+	 */
+	function test_archetype_body_classes_is_boxed() {
+
+		set_theme_mod( 'archetype_boxed', false );
+		$this->assertFalse( in_array( 'is-boxed', get_body_class() ) );
+
+		set_theme_mod( 'archetype_boxed', true );
+		$this->assertTrue( in_array( 'is-boxed', get_body_class() ) );
+
+	}
+
+	/**
+	 * Check 'is-boxed' body class
+	 */
+	function test_archetype_body_classes_is_padded() {
+
+		set_theme_mod( 'archetype_padded', false );
+		$this->assertFalse( in_array( 'is-padded', get_body_class() ) );
+
+		set_theme_mod( 'archetype_padded', true );
+		$this->assertTrue( in_array( 'is-padded', get_body_class() ) );
+
+	}
+
+	/**
+	 * Check that WooCommerce is activated.
 	 */
 	function test_is_woocommerce_activated() {
 
 		$this->assertTrue( is_woocommerce_activated() );
 
 	}
+
+	/**
+	 * Check that Homepage Control is not activated.
+	 */
+	function test_is_homepage_control_activated() {
+
+		$this->assertFalse( is_homepage_control_activated() );
+
+	}
+
 
 	/**
 	 * Check that the Schema type is correct for the context.
