@@ -307,7 +307,11 @@ class Tests_Extras extends WP_UnitTestCase {
 	 */
 	function test_archetype_post_search_form() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		add_filter( 'archetype_post_search_form', '__return_false' );
+		$this->assertNotContains( '<input type="hidden" name="post_type" value="post" />', archetype_post_search_form( '' ) );
+		add_filter( 'archetype_post_search_form', '__return_true' );
+
+		$this->assertContains( '<input type="hidden" name="post_type" value="post" />', archetype_post_search_form( '' ) );
 
 	}
 
