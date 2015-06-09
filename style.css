@@ -1780,7 +1780,8 @@ fieldset {
   padding: 2.625em;
   padding-bottom: 0; }
 .format-quote .entry-content {
-  padding: 2.625em; }
+  padding: 2.625em;
+  padding-top: 0; }
 
 .format-quote .entry-header {
   background-color: #ed543f; }
@@ -1878,7 +1879,8 @@ fieldset {
     padding: 1.387em;
     padding-bottom: 0; }
   .format-quote .entry-content {
-    padding: 1.387em; }
+    padding: 1.387em;
+    padding-top: 0; }
   .format-chat .entry-content {
     padding-left: 1.387em;
     padding-right: 1.387em; }
@@ -1892,7 +1894,8 @@ fieldset {
     padding: 2.125em;
     padding-bottom: 0; }
   .format-quote .entry-content {
-    padding: 2.125em; }
+    padding: 2.125em;
+    padding-top: 0; }
   .format-chat .entry-content {
     padding-left: 2.125em;
     padding-right: 2.125em; }
