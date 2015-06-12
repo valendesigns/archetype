@@ -50,9 +50,13 @@
 }
 
 .my-account-collections {
+	.collection-visibility select {
+		margin-bottom: 5px;
+	}
 	.button {
 		padding: .571em 1.143em;
 		font-size: .875em;
+		text-align: center;
 	}
 }
 
