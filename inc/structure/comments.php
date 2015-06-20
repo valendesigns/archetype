@@ -15,7 +15,7 @@ if ( ! function_exists( 'archetype_display_comments' ) ) :
 	 */
 	function archetype_display_comments() {
 		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || '0' != get_comments_number() ) {
+		if ( post_type_supports( get_post_type(), 'comments' ) && comments_open() || '0' != get_comments_number() ) {
 			comments_template();
 		}
 	}

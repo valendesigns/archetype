@@ -99,6 +99,13 @@ add_action( 'archetype_single_post_after', 'archetype_post_navigation',   10 );
 add_action( 'archetype_single_post_after', 'archetype_display_comments',  10 );
 
 /**
+ * Archive
+ *
+ * @see archetype_archive_header()
+ */
+add_action( 'archetype_archive_before', 'archetype_archive_header', 10 );
+
+/**
  * Pages
  *
  * @see archetype_page_header()

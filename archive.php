@@ -12,23 +12,26 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php 
+		if ( have_posts() ) :
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php the_archive_title(); ?>
-				</h1>
+			/**
+			 * Default hooks
+			 *
+			 * @hooked archetype_archive_header - 10
+			 */
+			do_action( 'archetype_archive_before' );
 
-				<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
-			</header><!-- .page-header -->
+			get_template_part( 'loop' );
 
-			<?php get_template_part( 'loop' ); ?>
+			do_action( 'archetype_archive_after' );
 
-		<?php else : ?>
+		else :
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			get_template_part( 'content', 'none' );
 
-		<?php endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
