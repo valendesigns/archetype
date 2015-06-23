@@ -50,9 +50,12 @@ function archetype_body_classes( $classes ) {
 		$classes[]	= 'no-wc-breadcrumb';
 	}
 
-	// Add full width 404.
-	if ( is_404() ) {
-		$classes[]	= 'archetype-full-width-content';
+	/** This filter is documented in sidebar.php */
+	$id = apply_filters( 'archetype_sidebar_widget_region_id', 'sidebar-1' );
+
+	// Add full width on 404 or inactive sidebar.
+	if ( is_404() || ! is_active_sidebar( $id ) ) {
+		$classes[] = 'archetype-full-width-content';
 	}
 
 	/**
