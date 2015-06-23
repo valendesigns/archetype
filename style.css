@@ -2444,10 +2444,6 @@ embed, iframe, object {
   clear: both;
   content: "";
   display: table; }
-.header-widget-region .widget {
-  margin: 0;
-  padding: 1em 0;
-  font-size: .938em; }
 
 .widget_search form, .widget_product_search form, .error-404-search form {
   position: relative;
