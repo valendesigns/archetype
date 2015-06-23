@@ -19,9 +19,31 @@
 		<whitelist processUncoveredFilesFromWhitelist="false">
 			<directory suffix=".php">.</directory>
 			<exclude>
+				<directory suffix=".php">node_modules</directory>
+				<directory suffix=".php">404.php</directory>
+				<directory suffix=".php">archive.php</directory>
+				<directory suffix=".php">author-bio.php</directory>
+				<directory suffix=".php">comments.php</directory>
+				<directory suffix=".php">content-image-attachment.php</directory>
+				<directory suffix=".php">content-none.php</directory>
+				<directory suffix=".php">content-page.php</directory>
+				<directory suffix=".php">content-single.php</directory>
+				<directory suffix=".php">content.php</directory>
+				<directory suffix=".php">footer.php</directory>
+				<directory suffix=".php">functions.php</directory>
+				<directory suffix=".php">header.php</directory>
+				<directory suffix=".php">image.php</directory>
+				<directory suffix=".php">index.php</directory>
+				<directory suffix=".php">loop.php</directory>
+				<directory suffix=".php">page.php</directory>
+				<directory suffix=".php">search.php</directory>
+				<directory suffix=".php">sidebar.php</directory>
+				<directory suffix=".php">single.php</directory>
+				<directory suffix=".php">template-fullwidth.php</directory>
+				<directory suffix=".php">template-homepage.php</directory>
+				<directory suffix=".php">tests</directory>
 				<directory suffix=".php">tools</directory>
 				<directory suffix=".php">vendor</directory>
-				<directory suffix=".php">tests</directory>
 			</exclude>
 		</whitelist>
 	</filter>
