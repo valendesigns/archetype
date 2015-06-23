@@ -68,7 +68,8 @@ body {
 	@include clearfix;
 }
 
-.no-wc-breadcrumb:not(.page-template-template-homepage) {
+.no-wc-breadcrumb:not(.page-template-template-homepage),
+.home.archetype-has-header-widgets {
 	.site-header {
 		margin-bottom: 2.625em;
 	}

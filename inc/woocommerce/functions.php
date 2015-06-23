@@ -39,7 +39,10 @@ if ( ! function_exists( 'archetype_breadcrumb' ) ) :
 	 */
 	function archetype_breadcrumb() {
 		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
+			ob_start();
 			woocommerce_breadcrumb();
+			$contents = ob_get_clean();
+			echo ! empty( $contents ) ? '<div class="col-full">' . $contents . '</div>' : '';
 		}
 	}
 endif;

@@ -19,10 +19,10 @@ add_filter( 'archetype_customize_register', 'archetype_woocommerce_customize_reg
 /**
  * Layout
  *
+ * @see archetype_breadcrumb()
  * @see archetype_before_content()
  * @see archetype_after_content()
- * @see woocommerce_breadcrumb()
- * @see storefront_shop_messages()
+ * @see archetype_shop_messages()
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb',              20, 0 );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper',     10 );
@@ -31,10 +31,10 @@ remove_action( 'woocommerce_sidebar',             'woocommerce_get_sidebar',    
 remove_action( 'woocommerce_after_shop_loop',     'woocommerce_pagination',                 10 );
 remove_action( 'woocommerce_before_shop_loop',    'woocommerce_result_count',               20 );
 remove_action( 'woocommerce_before_shop_loop',    'woocommerce_catalog_ordering',           30 );
+add_action( 'archetype_before_content',           'archetype_breadcrumb',                    0 );
 add_action( 'woocommerce_before_main_content',    'archetype_before_content',               10 );
 add_action( 'woocommerce_after_main_content',     'archetype_after_content',                10 );
-add_action( 'storefront_content_top',             'archetype_shop_messages',                1 );
-add_filter( 'archetype_content_top',              'archetype_breadcrumb',                   10 );
+add_action( 'archetype_content_top',              'archetype_shop_messages',                 1 );
 
 
 /**

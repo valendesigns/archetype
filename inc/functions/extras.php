@@ -58,6 +58,11 @@ function archetype_body_classes( $classes ) {
 		$classes[] = 'archetype-full-width-content';
 	}
 
+	// Add class when header widgets are active.
+	if ( is_active_sidebar( 'header-1' ) ) {
+		$classes[] = 'archetype-has-header-widgets';
+	}
+
 	/**
 	 * What is this?!
 	 *
