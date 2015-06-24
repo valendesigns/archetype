@@ -1293,7 +1293,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_setting( 'archetype_text_color', array(
 			'default'            => apply_filters( 'archetype_default_text_color', '#555' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_text_color', array(
