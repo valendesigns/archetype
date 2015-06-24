@@ -53,7 +53,7 @@ function archetype_register_meta_boxes() {
 	}
 
 	// Post & page meta boxes.
-	$my_meta_box = apply_filters( 'archetype_register_meta_boxes', array(
+	$meta_box = apply_filters( 'archetype_register_meta_boxes', array(
 		'id'          => 'archetype_meta_box',
 		'title'       => __( 'Archetype Meta', 'archetype' ),
 		'desc'        => '',
@@ -64,6 +64,6 @@ function archetype_register_meta_boxes() {
 	) );
 
 	// Register the meta boxes.
-	ot_register_meta_box( $my_meta_box );
+	ot_register_meta_box( $meta_box );
 
 }
