@@ -219,11 +219,12 @@ if ( ! function_exists( 'archetype_has_content' ) ) :
 	 * @since 1.0.0
 	 *
 	 * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
+	 * @param string      $key  Optional. WP_Post object key. Default is 'post_content'.
 	 * @return bool
 	 */
-	function archetype_has_content( $post = 0 ) {
+	function archetype_has_content( $post = 0, $key = 'post_content' ) {
 		$post = get_post( $post );
-		return ( isset( $post->post_content ) && ! empty( $post->post_content ) );
+		return ( isset( $post->$key ) && ! empty( $post->$key ) );
 	}
 endif;
 
