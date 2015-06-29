@@ -69,7 +69,7 @@ class Archetype_Welcome {
 	public function archetype_welcome_style() {
 		global $archetype_version;
 
-		wp_enqueue_style( 'archetype-welcome-screen', get_template_directory_uri() . ( is_rtl() ? '/inc/admin/css/welcome-rtl.css' : '/inc/admin/css/welcome.css' ), $archetype_version );
+		wp_enqueue_style( 'archetype-welcome-screen', get_template_directory_uri() . ( is_rtl() ? '/inc/admin/css/welcome-rtl.css' : '/inc/admin/css/welcome.css' ), null, $archetype_version );
 	}
 
 	/**
