@@ -850,18 +850,6 @@ a {
     clear: both;
     content: "";
     display: table; }
-  .content-area {
-    width: 74.0384615385%;
-    float: left;
-    margin-right: 3.8461538462%; }
-    .grid-alt .content-area {
-      width: 65.3846153846%;
-      float: left;
-      margin-right: 3.8461538462%; }
-  .widget-area {
-    width: 22.1153846154%;
-    float: right;
-    margin-right: 0; }
   .right-sidebar .content-area {
     width: 74.0384615385%;
     float: left;

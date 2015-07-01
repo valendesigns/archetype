@@ -63,18 +63,6 @@
 		@include clearfix;
 	}
 
-	.content-area {
-		@include span(9 of 12);
-
-		.grid-alt & {
-			@include span(8 of 12);
-		}
-	}
-
-	.widget-area {
-		@include span(last 3 of 12);
-	}
-
 	.right-sidebar {
 		.content-area {
 			@include span(9 of 12);
