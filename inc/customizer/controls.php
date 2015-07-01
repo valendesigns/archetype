@@ -747,7 +747,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Background Color
 		 */
 		$wp_customize->add_setting( 'archetype_homepage_hero_background_color', array(
-			'default'            => apply_filters( 'archetype_default_header_background_color', '#353b3f' ),
+			'default'            => apply_filters( 'archetype_default_homepage_hero_background_color', '#353b3f' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 			'transport'          => 'postMessage',
 		) );
