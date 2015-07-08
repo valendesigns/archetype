@@ -63,7 +63,7 @@ if ( ! function_exists( 'archetype_sanitize_integer' ) ) :
 	 * @since 1.0.0
 	 *
 	 * @param int $number Number value to sanitize.
-	 * @param WP_Customize_Setting $setting Setting instance.
+	 * @param WP_Customize_Setting $setting Setting instance. Default is 'null' to avoid PHP warnings.
 	 * @return int The sanitized absolute number value.
 	 */
 	function archetype_sanitize_integer( $number, $setting = null ) {
@@ -88,7 +88,7 @@ if ( ! function_exists( 'archetype_sanitize_number' ) ) :
 	 * @since 1.0.0
 	 *
 	 * @param int                  $number Number value to sanitize.
-	 * @param WP_Customize_Setting $setting Setting instance.
+	 * @param WP_Customize_Setting $setting Setting instance. Default is 'null' to avoid PHP warnings.
 	 * @return int The sanitized number value.
 	 */
 	function archetype_sanitize_number( $number, $setting = null ) {
