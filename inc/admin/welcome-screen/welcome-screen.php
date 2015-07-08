@@ -78,7 +78,7 @@ class Archetype_Welcome {
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_register_menu() {
-		add_theme_page( 'Archetype', 'Archetype', 'read', 'archetype-welcome', array( $this, 'archetype_welcome_screen' ) );
+		add_theme_page( 'Archetype', 'Archetype', 'activate_plugins', 'archetype-welcome', array( $this, 'archetype_welcome_screen' ) );
 	}
 
 	/**
