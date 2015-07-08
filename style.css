@@ -1328,7 +1328,7 @@ fieldset {
         background-color: #2f3538; }
     .main-navigation a {
       padding: 0 1em 2.244em; }
-    .main-navigation ul li.current_page_parent > a, .main-navigation ul li.current-menu-ancestor > a {
+    .main-navigation ul li.current-menu-item > a, .main-navigation ul li.current_page_parent > a, .main-navigation ul li.current-menu-ancestor > a {
       background-color: #24282a;
       color: #fff; }
   /**
@@ -1357,6 +1357,8 @@ fieldset {
     .secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a {
       color: #fff;
       background-color: #3b4146; }
+    .secondary-navigation ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li.current_page_parent > a, .secondary-navigation ul.menu li.current-menu-ancestor > a {
+      color: #fff; }
     .secondary-navigation ul.menu > li > a {
       background: none; }
     .secondary-navigation .menu {

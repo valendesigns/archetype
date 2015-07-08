@@ -353,6 +353,7 @@
 
 		ul {
 			li {
+				&.current-menu-item,
 				&.current_page_parent,
 				&.current-menu-ancestor {
 					> a {
@@ -419,6 +420,14 @@
 							color: $color-nav-alt-link-active;
 							background-color: $color-nav-alt-link-active-bg;
 						}
+					}
+				}
+
+				&.current-menu-item,
+				&.current_page_parent,
+				&.current-menu-ancestor {
+					> a {
+						color: $color-nav-alt-link-active;
 					}
 				}
 			}

@@ -197,7 +197,7 @@
 	wp.customize( 'archetype_nav_alt_link_active_color', function( value ) {
 		value.bind( function( to ) {
 			// Color
-			$( '.secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a' ).css( 'color', to );
+			$( '.secondary-navigation ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li.current_page_parent > a, .secondary-navigation ul.menu li.current-menu-ancestor > a' ).css( 'color', to );
 		} );
 	} );
 	wp.customize( 'archetype_nav_alt_link_active_background_color', function( value ) {
