@@ -24,13 +24,16 @@ body {
 body,
 button,
 input,
-select,
 textarea {
 	color: $color-body;
 	font-family: $font-base;
 	line-height: 1.500;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+select {
+	font-family: initial !important;
 }
 
 h1,
