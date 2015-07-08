@@ -9,33 +9,6 @@
 class Tests_Template_Tags extends WP_UnitTestCase {
 
 	/**
-	 * Displays the homepage content
-	 */
-	function test_archetype_homepage_content() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
-	 * Displays the homepage content 2
-	 */
-	function test_archetype_homepage_content_2() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
-	 * Displays the homepage content 3
-	 */
-	function test_archetype_homepage_content_3() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
 	 * Displays the social icons
 	 */
 	function test_archetype_social_icons() {

@@ -602,7 +602,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		$wp_customize->add_section( 'archetype_product_categories' , array(
 			'title'        => __( 'Product Categories', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the product categories component.', 'archetype' ),
-			'priority'     => 20,
+			'priority'     => 25,
 			'panel'        => 'archetype_homepage',
 		) );
 
@@ -758,7 +758,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		$wp_customize->add_section( 'archetype_recent_products' , array(
 			'title'        => __( 'Recent Products', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the recent products component.', 'archetype' ),
-			'priority'     => 25,
+			'priority'     => 30,
 			'panel'        => 'archetype_homepage',
 		) );
 
@@ -921,7 +921,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 			$wp_customize->add_section( 'archetype_featured_products' , array(
 				'title'        => __( 'Featured Products', 'archetype' ),
 				'description'  => __( 'Customize the look & feel of the featured products component.', 'archetype' ),
-				'priority'     => 30,
+				'priority'     => 35,
 				'panel'        => 'archetype_homepage',
 			) );
 
@@ -1079,7 +1079,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		$wp_customize->add_section( 'archetype_top_rated_products' , array(
 			'title'        => __( 'Top Rated Products', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the top rated products component.', 'archetype' ),
-			'priority'     => 35,
+			'priority'     => 40,
 			'panel'        => 'archetype_homepage',
 		) );
 
@@ -1235,7 +1235,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		$wp_customize->add_section( 'archetype_on_sale_products' , array(
 			'title'        => __( 'On Sale Products', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of the on sale products component.', 'archetype' ),
-			'priority'     => 40,
+			'priority'     => 45,
 			'panel'        => 'archetype_homepage',
 		) );
 

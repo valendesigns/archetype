@@ -24,7 +24,6 @@ add_action( 'wp_enqueue_scripts',       'archetype_post_nav_background',  20 );
 add_action( 'archetype_before_content', 'archetype_header_widget_region', 10 );
 add_action( 'archetype_sidebar',        'archetype_get_sidebar',          10 );
 
-
 /**
  * Header
  *
@@ -37,7 +36,6 @@ add_action( 'archetype_before_header', 'archetype_skip_links',           0 );
 add_action( 'archetype_inside_header', 'archetype_social_icons',         10 );
 add_action( 'archetype_header',        'archetype_site_branding',        10 );
 add_action( 'archetype_header',        'archetype_secondary_navigation', 20 );
-
 
 /**
  * Navigation
@@ -59,15 +57,11 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
 /**
  * Homepage
  *
+ * @see archetype_homepage_content_components()
  * @see archetype_homepage_hero()
- * @see archetype_homepage_content()
- * @see archetype_homepage_content_2()
- * @see archetype_homepage_content_3()
  */
-add_action( 'homepage', 'archetype_homepage_hero',       0 );
-add_action( 'homepage', 'archetype_homepage_content',   10 );
-add_action( 'homepage', 'archetype_homepage_content_2', 20 );
-add_action( 'homepage', 'archetype_homepage_content_3', 80 );
+add_action( 'init',     'archetype_homepage_content_components', 0 );
+add_action( 'homepage', 'archetype_homepage_hero',               0 );
 
 /**
  * Posts

@@ -26,6 +26,7 @@ require get_template_directory() . '/inc/structure/header.php';
 require get_template_directory() . '/inc/structure/footer.php';
 require get_template_directory() . '/inc/structure/comments.php';
 require get_template_directory() . '/inc/structure/navigation.php';
+require get_template_directory() . '/inc/structure/homepage.php';
 require get_template_directory() . '/inc/structure/template-tags.php';
 require get_template_directory() . '/inc/structure/chat.php';
 

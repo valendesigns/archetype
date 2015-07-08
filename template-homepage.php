@@ -22,7 +22,7 @@ get_header(); ?>
 			 * Default hooks
 			 *
 			 * @hooked archetype_homepage_hero - 0
-			 * @hooked archetype_homepage_content - 10
+			 * @hooked archetype_homepage_content_1 - 10
 			 * @hooked archetype_homepage_content_2 - 20
 			 * @hooked archetype_product_categories - 30
 			 * @hooked archetype_recent_products - 40
