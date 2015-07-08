@@ -219,6 +219,29 @@ if ( ! function_exists( 'archetype_post_search_form' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'archetype_do_shortcode_func' ) ) :
+	/**
+	 * Call a shortcode function by tag name.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param string $tag     The shortcode tag.
+	 * @param array  $atts    The attributes to pass to the shortcode function. Optional.
+	 * @param array  $content The shortcode's content. Default is null (none).
+	 *
+	 * @return string|bool False on failure, the result of the shortcode on success.
+	 */
+	function archetype_do_shortcode_func( $tag, array $atts = array(), $content = null ) {
+		global $shortcode_tags;
+
+		if ( ! isset( $shortcode_tags[ $tag ] ) ) {
+			return false;
+		}
+
+		return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+	}
+endif;
+
 if ( ! function_exists( 'archetype_rgb_from_hex' ) ) :
 	/**
 	 * Converts HEX to RGB

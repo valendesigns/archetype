@@ -35,7 +35,12 @@ if ( ! function_exists( 'archetype_product_categories' ) ) :
 			'title'             => $title,
 		) );
 
-		$products = do_shortcode( '[product_categories number="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '" orderby="' . esc_attr( $args['orderby'] ) . '" parent="' . esc_attr( $args['child_categories'] ) . '"]' );
+		$products = archetype_do_shortcode_func( 'product_categories', array(
+			'number' 	=> intval( $args['limit'] ),
+			'columns'	=> intval( $args['columns'] ),
+			'orderby'	=> esc_attr( $args['orderby'] ),
+			'parent'	=> esc_attr( $args['child_categories'] ),
+		) );
 
 		$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
@@ -86,7 +91,10 @@ if ( ! function_exists( 'archetype_recent_products' ) ) :
 			'title'   => $title,
 		) );
 
-		$products = do_shortcode( '[recent_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+		$products = archetype_do_shortcode_func( 'recent_products', array(
+			'per_page' => intval( $args['limit'] ),
+			'columns'	 => intval( $args['columns'] ),
+		) );
 
 		$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
@@ -139,7 +147,12 @@ if ( ! function_exists( 'archetype_featured_products' ) ) :
 			'title'   => $title,
 		) );
 
-		$products = do_shortcode( '[featured_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+		$products = archetype_do_shortcode_func( 'featured_products', array(
+			'per_page' => intval( $args['limit'] ),
+			'columns'  => intval( $args['columns'] ),
+			'orderby'	 => esc_attr( $args['orderby'] ),
+			'order'	   => esc_attr( $args['order'] ),
+		) );
 
 		$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
@@ -190,7 +203,10 @@ if ( ! function_exists( 'archetype_top_rated_products' ) ) :
 			'title'   => $title,
 		) );
 
-		$products = do_shortcode( '[top_rated_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+		$products = archetype_do_shortcode_func( 'top_rated_products', array(
+			'per_page' => intval( $args['limit'] ),
+			'columns'	 => intval( $args['columns'] ),
+		) );
 
 		$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
@@ -241,7 +257,10 @@ if ( ! function_exists( 'archetype_on_sale_products' ) ) :
 			'title'   => $title,
 		) );
 
-		$products = do_shortcode( '[sale_products per_page="' . intval( $args['limit'] ) . '" columns="' . intval( $args['columns'] ) . '"]' );
+		$products = archetype_do_shortcode_func( 'sale_products', array(
+			'per_page' => intval( $args['limit'] ),
+			'columns'	 => intval( $args['columns'] ),
+		) );
 
 		$empty = '<div class="woocommerce columns-' . intval( $args['columns'] ) . '"></div>';
 
@@ -441,7 +460,7 @@ function archetype_sorting_wrapper_close() {
  */
 function archetype_shop_messages() {
 	if ( ! is_checkout() ) {
-		$messages = wp_kses_post( do_shortcode( '[woocommerce_messages]' ) );
+		$messages = wp_kses_post( archetype_do_shortcode_func( 'woocommerce_messages' ) );
 		if ( ! empty( $messages ) && '<div class="woocommerce"></div>' !== $messages ) {
 			echo $messages;
 		} 
