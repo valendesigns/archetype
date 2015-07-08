@@ -864,8 +864,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 
 		// Loop to create content sections
 		for ( $id = 1; $id <= apply_filters( 'archetype_homepage_content_components', 3 ); $id++ ) {
-			$multiplier = 2 < $id ? 5 : 0;
-			$priority = ( $id + $multiplier ) * 10;
+			$modifier = 2 < $id ? 5 : 0;
+			$priority = ( $id + $modifier ) * 10;
 			/**
 			 * Content
 			 */
