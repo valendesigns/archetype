@@ -390,7 +390,7 @@ function archetype_woocommerce_scripts() {
 	global $archetype_version;
 
 	$rtl = is_rtl() ? '-rtl' : '';
-	wp_enqueue_style( 'archetype-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce' . $rtl . '.css', $archetype_version );
+	wp_enqueue_style( 'archetype-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce' . $rtl . '.css', array( 'archetype-style' ), $archetype_version );
 }
 
 /**
