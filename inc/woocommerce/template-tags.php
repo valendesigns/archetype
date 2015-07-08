@@ -47,7 +47,7 @@ if ( ! function_exists( 'archetype_product_categories' ) ) :
 
 					do_action( 'archetype_homepage_before_product_categories' );
 
-					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
+					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . wp_kses_post( $args['title'] ) . '</h2>' : '';
 					echo $products;
 
 					do_action( 'archetype_homepage_after_product_categories' );
@@ -98,7 +98,7 @@ if ( ! function_exists( 'archetype_recent_products' ) ) :
 
 					do_action( 'archetype_homepage_before_recent_products' );
 
-					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
+					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . wp_kses_post( $args['title'] ) . '</h2>' : '';
 					echo $products;
 
 					do_action( 'archetype_homepage_after_recent_products' );
@@ -151,7 +151,7 @@ if ( ! function_exists( 'archetype_featured_products' ) ) :
 
 					do_action( 'archetype_homepage_before_featured_products' );
 
-					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
+					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . wp_kses_post( $args['title'] ) . '</h2>' : '';
 					echo $products;
 
 					do_action( 'archetype_homepage_after_featured_products' );
@@ -202,7 +202,7 @@ if ( ! function_exists( 'archetype_top_rated_products' ) ) :
 
 					do_action( 'archetype_homepage_before_top_rated_products' );
 
-					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
+					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . wp_kses_post( $args['title'] ) . '</h2>' : '';
 					echo $products;
 
 					do_action( 'archetype_homepage_after_top_rated_products' );
@@ -253,7 +253,7 @@ if ( ! function_exists( 'archetype_on_sale_products' ) ) :
 
 					do_action( 'archetype_homepage_before_on_sale_products' );
 
-					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . esc_attr( $args['title'] ) . '</h2>' : '';
+					echo ! empty( $args['title'] ) ? '<h2 class="section-title" style="text-align: '. $alignment . '; color: ' . $color. ';">' . wp_kses_post( $args['title'] ) . '</h2>' : '';
 					echo $products;
 
 					do_action( 'archetype_homepage_after_on_sale_products' );
