@@ -706,7 +706,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 */
 		$wp_customize->add_setting( 'archetype_homepage_hero_background_image', array(
 			'default'            => '',
-			'sanitize_callback'  => 'sanitize_text_field',
+			'sanitize_callback'  => 'archetype_sanitize_image',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_homepage_hero_background_image', array(
@@ -819,7 +819,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 */
 		$wp_customize->add_setting( 'archetype_homepage_hero_text', array(
 			'default'            => __( 'Body Text', 'archetype' ),
-			'sanitize_callback'  => 'wp_kses_post',
+			'sanitize_callback'  => 'archetype_sanitize_html',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_hero_text', array(

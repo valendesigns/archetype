@@ -55,28 +55,47 @@ if ( ! function_exists( 'archetype_sanitize_integer' ) ) :
 	/**
 	 * Sanitizes an integer value.
 	 *
+	 * Sanitization callback for 'number' type text inputs. This callback sanitizes `$number`
+	 * as an absolute integer (whole number, zero or greater).
+	 *
+	 * @see absint() https://developer.wordpress.org/reference/functions/absint/
+	 *
 	 * @since 1.0.0
 	 *
-	 * @param int $input The integer value.
-	 * @return int The sanitized integer value.
+	 * @param int $number Number value to sanitize.
+	 * @param WP_Customize_Setting $setting Setting instance.
+	 * @return int The sanitized absolute number value.
 	 */
-	function archetype_sanitize_integer( $input ) {
-		return absint( $input );
+	function archetype_sanitize_integer( $number, $setting = null ) {
+		// Ensure $number is an absolute integer (whole number, zero or greater).
+		$number = absint( $number );
+
+		// If the input is an absolute integer, return it; otherwise, return the default
+		if ( $number ) {
+			return $number;
+		} else if ( isset( $setting->default ) ) {
+			return $setting->default;
+		}
+
+		return 0;
 	}
 endif;
 
 if ( ! function_exists( 'archetype_sanitize_number' ) ) :
 	/**
-	 * Sanitizes an integer value or return empty.
+	 * Sanitizes a numeric value.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param numeric $input The number value.
-	 * @return numeric The sanitized number value.
+	 * @param int                  $number Number value to sanitize.
+	 * @param WP_Customize_Setting $setting Setting instance.
+	 * @return int The sanitized number value.
 	 */
-	function archetype_sanitize_number( $input ) {
-		if ( is_numeric( $input ) ) {
-			return $input;
+	function archetype_sanitize_number( $number, $setting = null ) {
+		if ( is_numeric( $number ) ) {
+			return $number;
+		} else if ( isset( $setting->default ) ) {
+			return $setting->default;
 		}
 
 		return 0;
@@ -85,15 +104,89 @@ endif;
 
 if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) :
 	/**
-	 * Sanitizes a checkbox value.
+	 * Checkbox sanitization callback.
+	 *
+	 * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+	 * as a boolean value, either TRUE or FALSE.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param int $input The checkbox value.
+	 * @param int $checked The checkbox value.
 	 * @return bool Whether the checkbox is checked.
 	 */
-	function archetype_sanitize_checkbox( $input ) {
-		return ( ( isset( $input ) && true == $input ) ? true : false );
+	function archetype_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+endif;
+
+if ( ! function_exists( 'archetype_sanitize_image' ) ) :
+	/**
+	 * Image sanitization callback.
+	 *
+	 * Checks the image's file extension and mime type against a whitelist. If they're allowed,
+	 * send back the filename, otherwise, return the setting default.
+	 *
+	 * @see wp_check_filetype() https://developer.wordpress.org/reference/functions/wp_check_filetype/
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param string               $image   Image filename.
+	 * @param WP_Customize_Setting $setting Setting instance.
+	 * @return string The image filename if the extension is allowed; otherwise, the setting default.
+	 */
+	function archetype_sanitize_image( $image, $setting ) {
+		// Array of valid image file types that are included in wp_get_mime_types().
+		$mimes = array(
+			'jpg|jpeg|jpe' => 'image/jpeg',
+			'gif'          => 'image/gif',
+			'png'          => 'image/png',
+			'bmp'          => 'image/bmp',
+			'tif|tiff'     => 'image/tiff',
+			'ico'          => 'image/x-icon',
+		);
+		// Return an array with file extension and mime_type.
+		$file = wp_check_filetype( $image, $mimes );
+
+		// If $image has a valid mime_type, return $image; otherwise, return the default.
+		return ( $file['ext'] ? $image : $setting->default );
+	}
+endif;
+
+if ( ! function_exists( 'archetype_sanitize_url' ) ) :
+	/**
+	 * URL sanitization callback.
+	 *
+	 * Sanitization callback for 'url' type text inputs. This callback sanitizes `$url` as a valid URL.
+	 *
+	 * @see esc_url_raw() https://developer.wordpress.org/reference/functions/esc_url_raw/
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $url URL to sanitize.
+	 * @return string Sanitized URL.
+	 */
+	function archetype_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+endif;
+
+if ( ! function_exists( 'archetype_sanitize_html' ) ) :
+	/**
+	 * HTML sanitization callback.
+	 *
+	 * Sanitization callback for 'html' type text inputs. This callback sanitizes `$html`
+	 * for HTML allowable in posts.
+	 *
+	 * @see wp_filter_post_kses() https://developer.wordpress.org/reference/functions/wp_filter_post_kses/
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $html HTML to sanitize.
+	 * @return string Sanitized HTML.
+	 */
+	function archetype_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
 	}
 endif;
 
