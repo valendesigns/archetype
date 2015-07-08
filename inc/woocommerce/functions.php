@@ -38,7 +38,7 @@ if ( ! function_exists( 'archetype_breadcrumb' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_breadcrumb() {
-		if ( true == archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
 			ob_start();
 			woocommerce_breadcrumb();
 			$contents = ob_get_clean();
@@ -213,72 +213,72 @@ function archetype_woocommerce_body_class( $classes ) {
 	}
 
 	if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
-		if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_full_width', apply_filters( 'archetype_default_products_full_width', false ) ) ) ) {
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_full_width', apply_filters( 'archetype_default_products_full_width', false ) ) ) ) {
 			$classes[] = 'archetype-full-width-content';
 			remove_action( 'archetype_sidebar', 'archetype_get_sidebar' );
 		}
 	}
 
 	if ( is_product() ) {
-		if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_full_width', apply_filters( 'archetype_default_product_full_width', false ) ) ) ) {
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_full_width', apply_filters( 'archetype_default_product_full_width', false ) ) ) ) {
 			$classes[] = 'archetype-full-width-content';
 			remove_action( 'archetype_sidebar', 'archetype_get_sidebar' );
 		}
 
-		if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_gallery_full_width', apply_filters( 'archetype_default_product_gallery_full_width', false ) ) ) ) {
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_gallery_full_width', apply_filters( 'archetype_default_product_gallery_full_width', false ) ) ) ) {
 			$classes[] = 'archetype-full-width-product-gallery';
 		}
 
-		if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_gallery_toggle', apply_filters( 'archetype_default_product_gallery_toggle', true ) ) ) ) {
+		if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_gallery_toggle', apply_filters( 'archetype_default_product_gallery_toggle', true ) ) ) ) {
 			$classes[] = 'archetype-full-width-product-summary';
 			remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 		}
 
-		if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_meta_toggle', apply_filters( 'archetype_default_product_meta_toggle', true ) ) ) ) {
+		if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_meta_toggle', apply_filters( 'archetype_default_product_meta_toggle', true ) ) ) ) {
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 		}
 
-		if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_tabs_toggle', apply_filters( 'archetype_default_product_tabs_toggle', true ) ) ) ) {
+		if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_tabs_toggle', apply_filters( 'archetype_default_product_tabs_toggle', true ) ) ) ) {
 			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 		}
 
-		if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_related_products_toggle', apply_filters( 'archetype_default_related_products_toggle', true ) ) ) ) {
+		if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_related_products_toggle', apply_filters( 'archetype_default_related_products_toggle', true ) ) ) ) {
 			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 		}
 	}
 
 	$image_only = false;
 
-	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_image_toggle', apply_filters( 'archetype_default_products_image_toggle', true ) ) ) ) {
+	if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_image_toggle', apply_filters( 'archetype_default_products_image_toggle', true ) ) ) ) {
 		remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 		$classes[] = 'archetype-products-no-image';
 	} else {
 		$image_only = true;
 	}
 
-	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_title_toggle', apply_filters( 'archetype_default_products_title_toggle', true ) ) ) ) {
+	if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_title_toggle', apply_filters( 'archetype_default_products_title_toggle', true ) ) ) ) {
 		$classes[] = 'archetype-hide-products-title';
 	} else {
 		$image_only = false;
 	}
 
-	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_sale_toggle', apply_filters( 'archetype_default_products_sale_toggle', true ) ) ) ) {
+	if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_sale_toggle', apply_filters( 'archetype_default_products_sale_toggle', true ) ) ) ) {
 		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6 );
 	}
 
-	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_rating_toggle', apply_filters( 'archetype_default_products_rating_toggle', true ) ) ) ) {
+	if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_rating_toggle', apply_filters( 'archetype_default_products_rating_toggle', true ) ) ) ) {
 		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 	} else {
 		$image_only = false;
 	}
 
-	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_price_toggle', apply_filters( 'archetype_default_products_price_toggle', true ) ) ) ) {
+	if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_price_toggle', apply_filters( 'archetype_default_products_price_toggle', true ) ) ) ) {
 		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 	} else {
 		$image_only = false;
 	}
 
-	if ( 1 !== archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_add_to_cart_toggle', apply_filters( 'archetype_default_products_add_to_cart_toggle', true ) ) ) ) {
+	if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_add_to_cart_toggle', apply_filters( 'archetype_default_products_add_to_cart_toggle', true ) ) ) ) {
 		remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 	} else {
 		$image_only = false;

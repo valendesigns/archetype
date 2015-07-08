@@ -395,7 +395,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		#respond,
 		.hentry,
 		.post-navigation {
-			box-shadow: ' . ( false == $post_shadow_toggle ? 'none' : '0px -1px 0px ' . $post_shadow_color. ' inset' ) . ';
+			box-shadow: ' . ( false === $post_shadow_toggle ? 'none' : '0px -1px 0px ' . $post_shadow_color. ' inset' ) . ';
 		}';
 
 		// Form Text Color.
@@ -449,7 +449,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		.widget_product_search form input[type=search],
 		.error-404-search form input[type=search] {
 			background-color: ' . $search_background_color . ';
-			box-shadow: ' . ( false == $search_shadow_toggle ? 'none' : '0px -1px 0px ' . $search_shadow_color. ' inset' ) . ';
+			box-shadow: ' . ( false === $search_shadow_toggle ? 'none' : '0px -1px 0px ' . $search_shadow_color. ' inset' ) . ';
 			color: ' . $search_text_color . ';
 		}
 		.widget_search form input[type=search]:focus,
@@ -499,13 +499,13 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			background-color: ' . $button_background_color . ';
 			border-color: ' . $button_border_color . ';
 			color: ' . $button_text_color . ';
-			' . ( $button_2d ? 'box-shadow: none !important;' : 'box-shadow: 0 -2px 0 ' . $button_shadow_color . ' inset;' ) . '
+			' . ( true === $button_2d ? 'box-shadow: none !important;' : 'box-shadow: 0 -2px 0 ' . $button_shadow_color . ' inset;' ) . '
 		}
 		button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover, button.cta, button.alt, input[type="button"].cta, input[type="button"].alt, input[type="reset"].cta, input[type="reset"].alt, input[type="submit"].cta, input[type="submit"].alt, .button.cta, .button.alt, .added_to_cart.cta, .added_to_cart.alt {
 			background-color: ' . $button_background_hover_color . ';
 			border-color: ' . $button_border_hover_color . ';
 			color: ' . $button_text_hover_color . ';
-			' . ( $button_2d ? 'box-shadow: none !important;' : 'box-shadow: 0 -2px 0 ' . $button_shadow_hover_color . ' inset;' ) . '
+			' . ( true === $button_2d ? 'box-shadow: none !important;' : 'box-shadow: 0 -2px 0 ' . $button_shadow_hover_color . ' inset;' ) . '
 		}
 		.mejs-controls .mejs-time-rail .mejs-time-current {
 			background: ' . $button_background_color . ' !important;
@@ -662,7 +662,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		}';
 
 		// Account for a boxed layout.
-		if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
 			$style .= 'html {
 				background-color: transparent;
 			}';
@@ -691,12 +691,12 @@ if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_homepage_hero() {
-		if ( false == archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_toggle', true ) ) ) {
+		if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_toggle', true ) ) ) {
 			return false;
 		}
 
 		// Layout.
-		$layout 							= archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '';
+		$layout 							= true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '';
 
 		// Alignment.
 		$alignment						= esc_attr( get_theme_mod( 'archetype_homepage_hero_alignment', 'center' ) );

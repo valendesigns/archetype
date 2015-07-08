@@ -46,7 +46,7 @@ function archetype_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-wc-breadcrumb when WooCommerce isn't activated or has been filtered off.
-	if ( ! function_exists( 'woocommerce_breadcrumb' ) || false == archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
+	if ( ! function_exists( 'woocommerce_breadcrumb' ) || false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
 		$classes[]	= 'no-wc-breadcrumb';
 	}
 
@@ -82,17 +82,17 @@ function archetype_body_classes( $classes ) {
 	}
 
 	// Full width.
-	if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_full_width', apply_filters( 'archetype_default_full_width', false ) ) ) ) {
+	if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_full_width', apply_filters( 'archetype_default_full_width', false ) ) ) ) {
 		$classes[] = 'is-full-width';
 	}
 
 	// Boxed.
-	if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
+	if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
 		$classes[] = 'is-boxed';
 	}
 
 	// Padding.
-	if ( 1 === archetype_sanitize_checkbox( get_theme_mod( 'archetype_padded', apply_filters( 'archetype_default_padded', true ) ) ) ) {
+	if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_padded', apply_filters( 'archetype_default_padded', true ) ) ) ) {
 		$classes[] = 'is-padded';
 	}
 

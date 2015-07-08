@@ -90,14 +90,10 @@ if ( ! function_exists( 'archetype_sanitize_checkbox' ) ) :
 	 * @since 1.0.0
 	 *
 	 * @param int $input The checkbox value.
-	 * @return int The sanitized checkbox value.
+	 * @return bool Whether the checkbox is checked.
 	 */
 	function archetype_sanitize_checkbox( $input ) {
-		if ( 1 == $input ) {
-			return 1;
-		}
-
-		return '';
+		return ( ( isset( $input ) && true == $input ) ? true : false );
 	}
 endif;
 
@@ -140,15 +136,14 @@ if ( ! function_exists( 'archetype_sanitize_choices' ) ) :
 	 * @return array  The sanitized choices.
 	 */
 	function archetype_sanitize_choices( $input, $setting ) {
-		global $wp_customize;
+		// Ensure input is a slug.
+		$input = sanitize_key( $input );
 
-		$control = $wp_customize->get_control( $setting->id );
+		// Get list of choices from the control associated with the setting.
+		$choices = $setting->manager->get_control( $setting->id )->choices;
 
-		if ( array_key_exists( $input, $control->choices ) ) {
-			return $input;
-		} else {
-			return $setting->default;
-		}
+		// If the input is a valid key, return it; otherwise, return the default.
+		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 	}
 endif;
 

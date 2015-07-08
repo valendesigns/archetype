@@ -33,7 +33,7 @@ if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
 	 * @param int $id The component ID. Default is '1'.
 	 */
 	function archetype_homepage_content_component( $id = 1 ) {
-		if ( ! is_homepage_control_activated() && true != archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_' . $id . '_toggle', true ) ) ) {
+		if ( ! is_homepage_control_activated() && false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_' . $id . '_toggle', true ) ) ) {
 			return false;
 		}
 
