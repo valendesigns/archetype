@@ -62,7 +62,7 @@ if ( ! function_exists( 'archetype_sanitize_integer' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param int $number Number value to sanitize.
+	 * @param int                  $number Number value to sanitize.
 	 * @param WP_Customize_Setting $setting Setting instance. Default is 'null' to avoid PHP warnings.
 	 * @return int The sanitized absolute number value.
 	 */
@@ -70,7 +70,7 @@ if ( ! function_exists( 'archetype_sanitize_integer' ) ) :
 		// Ensure $number is an absolute integer (whole number, zero or greater).
 		$number = absint( $number );
 
-		// If the input is an absolute integer, return it; otherwise, return the default
+		// If the input is an absolute integer, return it; otherwise, return the default.
 		if ( $number ) {
 			return $number;
 		} else if ( isset( $setting->default ) ) {

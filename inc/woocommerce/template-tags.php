@@ -463,6 +463,6 @@ function archetype_shop_messages() {
 		$messages = wp_kses_post( archetype_do_shortcode_func( 'woocommerce_messages' ) );
 		if ( ! empty( $messages ) && '<div class="woocommerce"></div>' !== $messages ) {
 			echo $messages;
-		} 
+		}
 	}
 }

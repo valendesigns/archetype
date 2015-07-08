@@ -696,7 +696,7 @@ if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) :
 		}
 
 		// Layout.
-		$layout 							= true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '';
+		$layout 							= ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '' );
 
 		// Alignment.
 		$alignment						= esc_attr( get_theme_mod( 'archetype_homepage_hero_alignment', 'center' ) );

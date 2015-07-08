@@ -862,7 +862,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'type'         => 'text',
 		) ) );
 
-		// Loop to create content sections
+		// Loop to create content sections.
 		for ( $id = 1; $id <= apply_filters( 'archetype_homepage_content_components', 3 ); $id++ ) {
 			$modifier = 2 < $id ? 5 : 0;
 			$priority = ( $id + $modifier ) * 10;
@@ -884,7 +884,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 					'default'            => true,
 					'sanitize_callback'  => 'archetype_sanitize_checkbox',
 				) );
-	
+
 				$wp_customize->add_control( 'archetype_homepage_content_' . $id . '_toggle', array(
 					'label'        => __( 'Display content', 'archetype' ),
 					'description'  => __( 'Toggle the display of this content component.', 'archetype' ),
@@ -906,7 +906,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'label'        => __( 'Content page', 'archetype' ),
 				'description'  => __( 'Choose which page the content is pulled from.', 'archetype' ),
 				'section'      => 'archetype_homepage_content_' . $id,
-				'settings'     => 'archetype_homepage_content_' . $id ,
+				'settings'     => 'archetype_homepage_content_' . $id,
 				'type'         => 'dropdown-pages',
 			) ) );
 
