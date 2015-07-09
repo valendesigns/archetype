@@ -250,7 +250,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		$nav_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_active_background_color', apply_filters( 'archetype_default_nav_link_active_background_color', '#24282a' ) ) );
 
 		if ( ( '#fff' !== $nav_link_color_active && '#ffffff' !== $nav_link_color_active ) || '#24282a' !== $nav_link_color_active_bg ) {
-		$style .= '
+			$style .= '
 			.main-navigation ul li.current-menu-item > a {
 				color: ' . $nav_link_color_active . ';
 				background-color: ' . $nav_link_color_active_bg . ';

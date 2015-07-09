@@ -210,7 +210,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'type'         => 'checkbox',
 		) );
 
-
 		/**
 		 * Add the Header panel
 		 */

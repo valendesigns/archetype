@@ -22,7 +22,7 @@ if ( ! function_exists( 'archetype_homepage_content_components' ) ) :
 		 * It is important to note that when adding additional components you must create a new function.
 		 * The function name must be `archetype_homepage_content_x` where `x` is the component number.
 		 * There is already support for 1-3, though if you added 2 more section you would need to create
-		 * `archetype_homepage_content_4` & `archetype_homepage_content_5`. The function must contain the 
+		 * `archetype_homepage_content_4` & `archetype_homepage_content_5`. The function must contain the
 		 * `archetype_homepage_content_component` function which is passed the component number.
 		 *
 		 * Example:
