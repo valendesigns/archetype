@@ -267,7 +267,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_setting( 'archetype_header_link_color', array(
 			'default'            => apply_filters( 'archetype_default_header_link_color', '#aaa' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_link_color', array(
@@ -283,7 +282,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_setting( 'archetype_header_link_color_hover', array(
 			'default'            => apply_filters( 'archetype_default_header_link_color_hover', '#ee543f' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_header_link_color_hover', array(

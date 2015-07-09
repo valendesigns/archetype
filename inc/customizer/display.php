@@ -177,6 +177,8 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}';
 		}
 
+		$header_links = false;
+
 		// Header Link Color.
 		$header_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_link_color', apply_filters( 'archetype_default_header_link_color', '#aaa' ) ) );
 
@@ -185,6 +187,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			.site-header a {
 				color: ' . $header_link_color . ';
 			}';
+			$header_links = true;
 		}
 
 		// Header Link Color Hover.
@@ -195,6 +198,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			.site-header a:hover {
 				color: ' . $header_link_color_hover . ';
 			}';
+			$header_links = true;
 		}
 
 		// Navigation Background Color.
@@ -213,7 +217,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		// Navigation Link Color.
 		$nav_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_color', apply_filters( 'archetype_default_nav_link_color', '#bbb' ) ) );
 
-		if ( '#bbb' !== $nav_link_color && '#bbbbbb' !== $nav_link_color ) {
+		if ( $header_links || '#bbb' !== $nav_link_color && '#bbbbbb' !== $nav_link_color ) {
 			$style .= '
 			.main-navigation ul li a {
 				color: ' . $nav_link_color . ';
@@ -223,7 +227,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		// Navigation Link Hover Color.
 		$nav_link_color_hover = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_link_hover_color', apply_filters( 'archetype_default_nav_link_hover_color', '#fff' ) ) );
 
-		if ( '#fff' !== $nav_link_color_hover && '#ffffff' !== $nav_link_color_hover ) {
+		if ( $header_links || '#fff' !== $nav_link_color_hover && '#ffffff' !== $nav_link_color_hover ) {
 			$style .= '
 			.main-navigation ul li a:hover {
 				color: ' . $nav_link_color_hover . ';
@@ -296,14 +300,14 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		$nav_alt_style = '';
 
-		if ( '#ddd' !== $nav_alt_link_color && '#dddddd' !== $nav_alt_link_color ) {
+		if ( $header_links || '#ddd' !== $nav_alt_link_color && '#dddddd' !== $nav_alt_link_color ) {
 			$nav_alt_style .= '
 			.secondary-navigation ul.menu li a {
 				color: ' . $nav_alt_link_color . ';
 			}';
 		}
 
-		if ( '#fff' !== $nav_alt_link_color_hover && '#ffffff' !== $nav_alt_link_color_hover ) {
+		if ( $header_links || '#fff' !== $nav_alt_link_color_hover && '#ffffff' !== $nav_alt_link_color_hover ) {
 			$nav_alt_style .= '
 			.secondary-navigation ul.menu li a:hover {
 				color: ' . $nav_alt_link_color_hover . ';
@@ -317,7 +321,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}';
 		}
 
-		if ( '#464e54' !== $nav_alt_link_color_hover_bg ) {
+		if ( $header_links || '#464e54' !== $nav_alt_link_color_hover_bg ) {
 			$nav_alt_style .= '
 			.secondary-navigation ul.menu li ul a:hover,
 			.secondary-navigation ul.menu li ul li:hover > a {
@@ -325,7 +329,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}';
 		}
 
-		if ( ( '#fff' !== $nav_alt_link_color_active && '#ffffff' !== $nav_alt_link_color_active ) || '#3b4146' !== $nav_alt_link_color_active_bg ) {
+		if ( $header_links || ( '#fff' !== $nav_alt_link_color_active && '#ffffff' !== $nav_alt_link_color_active ) || '#3b4146' !== $nav_alt_link_color_active_bg ) {
 			$nav_alt_style .= '
 			.secondary-navigation ul.menu li li.current-menu-item > a,
 			.secondary-navigation ul.menu li li.current_page_parent > a,
@@ -356,7 +360,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		// Handheld Navigation Link Color.
 		$nav_handheld_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_color', apply_filters( 'archetype_default_nav_handheld_link_color', '#bbb' ) ) );
 
-		if ( '#bbb' !== $nav_handheld_link_color && '#bbbbbb' !== $nav_handheld_link_color ) {
+		if ( $header_links || '#bbb' !== $nav_handheld_link_color && '#bbbbbb' !== $nav_handheld_link_color ) {
 			$style .= '
 			.handheld-navigation ul li a,
 			.menu-toggle,
@@ -371,7 +375,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		// Handheld Navigation Link Hover Background Color.
 		$nav_handheld_link_color_hover_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_hover_background_color', apply_filters( 'archetype_default_nav_handheld_link_hover_background_color', '#2f3538' ) ) );
 
-		if ( ( '#fff' !== $nav_handheld_link_color_hover && '#ffffff' !== $nav_handheld_link_color_hover ) || '#2f3538' !== $nav_handheld_link_color_hover_bg ) {
+		if ( $header_links || ( '#fff' !== $nav_handheld_link_color_hover && '#ffffff' !== $nav_handheld_link_color_hover ) || '#2f3538' !== $nav_handheld_link_color_hover_bg ) {
 			$style .= '
 			.handheld-navigation ul li a:hover,
 			.menu-toggle:hover,
@@ -387,7 +391,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		// Handheld Navigation Link Active Background Color.
 		$nav_handheld_link_color_active_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_nav_handheld_link_active_background_color', apply_filters( 'archetype_default_nav_handheld_link_active_background_color', '#24282a' ) ) );
 
-		if ( ( '#fff' !== $nav_handheld_link_color_active && '#ffffff' !== $nav_handheld_link_color_active ) || '#24282a' !== $nav_handheld_link_color_active_bg ) {
+		if ( $header_links || ( '#fff' !== $nav_handheld_link_color_active && '#ffffff' !== $nav_handheld_link_color_active ) || '#24282a' !== $nav_handheld_link_color_active_bg ) {
 			$style .= '
 			.handheld-navigation ul li.current-menu-item > a {
 				color: ' . $nav_handheld_link_color_active . ';

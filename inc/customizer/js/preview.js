@@ -74,22 +74,6 @@
 			$( '.site-header' ).css( 'color', to );
 		} );
 	} );
-	wp.customize( 'archetype_header_link_color', function( value ) {
-		value.bind( function( to ) {
-			// Link Color
-			$( '.site-header a:not(.menu *)' ).css( 'color', to ).on( 'mouseleave', function() {
-				$( this ).css( 'color', to );
-			} );
-		} );
-	} );
-	wp.customize( 'archetype_header_link_color_hover', function( value ) {
-		value.bind( function( to ) {
-			// Link Color Hover
-			$( '.site-header a:not(.menu *)' ).on( 'mouseenter', function() {
-				$( this ).css( 'color', to );
-			} );
-		} );
-	} );
 	wp.customize( 'archetype_nav_background_color', function( value ) {
 		value.bind( function( to ) {
 			// Background Color

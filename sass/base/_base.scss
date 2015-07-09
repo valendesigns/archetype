@@ -27,7 +27,7 @@ body {
 	position: relative;
 	z-index: 999;
 	
-	a:not(.menu *) {
+	a {
 		color: $color-header-link;
 
 		&:hover {

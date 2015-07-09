@@ -379,9 +379,9 @@ body {
   background-size: cover;
   position: relative;
   z-index: 999; }
-  .site-header a:not(.menu *) {
+  .site-header a {
     color: #aaa; }
-    .site-header a:not(.menu *):hover {
+    .site-header a:hover {
       color: #ee543f; }
   .site-header .site-logo-anchor, .site-header .site-logo-link {
     display: inline-block; }
