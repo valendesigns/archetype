@@ -285,7 +285,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Primary Navigation Background Color
 		 */
 		$wp_customize->add_setting( 'archetype_nav_background_color', array(
-			'default'            => apply_filters( 'archetype_default_nav_background_color', '#292E31' ),
+			'default'            => apply_filters( 'archetype_default_nav_background_color', '#292e31' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 		) );
 
@@ -365,7 +365,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Primary Navigation Link Active Background Color
 		 */
 		$wp_customize->add_setting( 'archetype_nav_link_active_background_color', array(
-			'default'            => apply_filters( 'archetype_default_nav_link_active_background_color', '#24282A' ),
+			'default'            => apply_filters( 'archetype_default_nav_link_active_background_color', '#24282a' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 			'transport'          => 'postMessage',
 		) );
@@ -391,7 +391,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Handheld Navigation Background Color
 		 */
 		$wp_customize->add_setting( 'archetype_nav_handheld_background_color', array(
-			'default'            => apply_filters( 'archetype_default_nav_background_color', '#292E31' ),
+			'default'            => apply_filters( 'archetype_default_nav_background_color', '#292e31' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 		) );
 
@@ -470,7 +470,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Handheld Navigation Link Active Background Color
 		 */
 		$wp_customize->add_setting( 'archetype_nav_handheld_link_active_background_color', array(
-			'default'            => apply_filters( 'archetype_default_nav_link_active_background_color', '#24282A' ),
+			'default'            => apply_filters( 'archetype_default_nav_link_active_background_color', '#24282a' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 			'transport'          => 'postMessage',
 		) );
@@ -706,7 +706,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 */
 		$wp_customize->add_setting( 'archetype_homepage_hero_background_image', array(
 			'default'            => '',
-			'sanitize_callback'  => 'archetype_sanitize_image',
+			'sanitize_callback'  => 'archetype_sanitize_integer',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_homepage_hero_background_image', array(
@@ -1565,7 +1565,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Footer heading color
 		 */
 		$wp_customize->add_setting( 'archetype_footer_heading_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_heading_color', '#eee' ),
+			'default'            => apply_filters( 'archetype_default_footer_heading_color', '#f1f1f1' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 			'transport'          => 'postMessage',
 		) );
@@ -1610,7 +1610,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Footer link color
 		 */
 		$wp_customize->add_setting( 'archetype_footer_link_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_link_color', '#ee543f' ),
+			'default'            => apply_filters( 'archetype_default_footer_link_color', '#aaa' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 		) );
 
@@ -1693,7 +1693,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Lower footer link color
 		 */
 		$wp_customize->add_setting( 'archetype_footer_lower_link_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_lower_link_color', '#ee543f' ),
+			'default'            => apply_filters( 'archetype_default_footer_lower_link_color', '#aaa' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 		) );
 

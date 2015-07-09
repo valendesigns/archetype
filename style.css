@@ -497,13 +497,13 @@ body {
   background-color: #353b3f;
   color: #888; }
   .site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
-    color: #eee; }
+    color: #f1f1f1; }
   .site-footer a:not(.button) {
-    color: #ee543f; }
+    color: #aaa; }
     .site-footer a:not(.button):hover {
       color: #fff; }
     .site-footer a:not(.button):focus {
-      outline: 1px dotted #ee543f; }
+      outline: 1px dotted #aaa; }
   .site-footer p:last-child {
     margin-bottom: 0; }
 
@@ -514,11 +514,11 @@ body {
   .site-info .credit {
     text-align: center; }
   .site-info a:not(.button) {
-    color: #ee543f; }
+    color: #aaa; }
     .site-info a:not(.button):hover {
       color: #fff; }
     .site-info a:not(.button):focus {
-      outline: 1px dotted #ee543f; }
+      outline: 1px dotted #aaa; }
   .site-info .subscribe-and-connect-connect {
     text-align: center;
     margin-bottom: 1em; }

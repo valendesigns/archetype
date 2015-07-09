@@ -132,10 +132,10 @@ if ( ! function_exists( 'archetype_sanitize_image' ) ) :
 	 * @since  1.0.0
 	 *
 	 * @param string               $image   Image filename.
-	 * @param WP_Customize_Setting $setting Setting instance.
+	 * @param WP_Customize_Setting $setting Setting instance. Default is 'null' to avoid PHP warnings.
 	 * @return string The image filename if the extension is allowed; otherwise, the setting default.
 	 */
-	function archetype_sanitize_image( $image, $setting ) {
+	function archetype_sanitize_image( $image, $setting = null ) {
 		// Array of valid image file types that are included in wp_get_mime_types().
 		$mimes = array(
 			'jpg|jpeg|jpe' => 'image/jpeg',
@@ -149,7 +149,13 @@ if ( ! function_exists( 'archetype_sanitize_image' ) ) :
 		$file = wp_check_filetype( $image, $mimes );
 
 		// If $image has a valid mime_type, return $image; otherwise, return the default.
-		return ( $file['ext'] ? $image : $setting->default );
+		if ( $file['ext'] ) {
+			return $image;
+		} else if ( isset( $setting->default ) ) {
+			return $setting->default;
+		}
+
+		return '';
 	}
 endif;
 

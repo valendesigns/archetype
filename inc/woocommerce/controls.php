@@ -73,7 +73,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 * Notice Info Color
 		 */
 		$wp_customize->add_setting( 'archetype_notice_info_color', array(
-			'default'            => apply_filters( 'archetype_default_notice_info_color', '#3D9CD2' ),
+			'default'            => apply_filters( 'archetype_default_notice_info_color', '#3d9cd2' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
 		) );
 
