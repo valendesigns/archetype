@@ -627,7 +627,7 @@ table {
 
 @media screen and (max-width: 767px) {
   .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link {
-    margin-right: 5.313em; } }
+    margin-right: 3.8461538462%; } }
 
 @media screen and (min-width: 768px) {
   #navigation {
