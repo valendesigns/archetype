@@ -189,6 +189,29 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
+		 * Emoji
+		 */
+		$wp_customize->add_section( 'archetype_emoji' , array(
+			'title'        => __( 'Emoji', 'archetype' ),
+			'priority'     => 30,
+			'panel'        => 'archetype_general',
+		) );
+
+		$wp_customize->add_setting( 'archetype_no_emoji', array(
+			'default'            => (bool) apply_filters( 'archetype_default_no_emoji', false ),
+			'sanitize_callback'  => 'archetype_sanitize_checkbox',
+		) );
+
+		$wp_customize->add_control( 'archetype_no_emoji', array(
+			'label'        => __( 'No Emoji\'s', 'archetype' ),
+			'description'  => __( 'Check this option to remove the Emoji resources from the document head.', 'archetype' ),
+			'section'      => 'archetype_emoji',
+			'settings'     => 'archetype_no_emoji',
+			'type'         => 'checkbox',
+		) );
+
+
+		/**
 		 * Add the Header panel
 		 */
 		$wp_customize->add_panel( 'archetype_header' , array(

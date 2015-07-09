@@ -31,6 +31,22 @@ if ( ! function_exists( 'archetype_customize_preview_js' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'archetype_emojis' ) ) :
+	/**
+	 * Removes Emoji Support.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_emojis() {
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_no_emoji', apply_filters( 'archetype_default_no_emoji', false ) ) ) ) {
+			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+			remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+			remove_action( 'wp_print_styles', 'print_emoji_styles' );
+			remove_action( 'admin_print_styles', 'print_emoji_styles' );
+		}
+	}
+endif;
+
 if ( ! function_exists( 'archetype_homepage_control_title' ) ) :
 	/**
 	 * Filter the Homepage Control title
