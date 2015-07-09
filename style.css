@@ -483,6 +483,8 @@ body {
   .subscribe-and-connect-connect .icons li {
     margin: 0 0 0 .5em !important;
     display: inline-block; }
+    .site-footer .subscribe-and-connect-connect .icons li {
+      margin: 0 .5em 0 0 !important; }
 
 /**
  * Main content area
