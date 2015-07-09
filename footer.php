@@ -24,7 +24,7 @@
 			 *
 			 * @hooked archetype_footer_widgets - 10
 			 */
-			do_action( 'archetype_footer' ); ?>
+			do_action( 'archetype_footer_widgets' ); ?>
 
 		</div><!-- .col-full -->
 

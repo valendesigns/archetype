@@ -83,7 +83,7 @@ if ( ! function_exists( 'archetype_after_content' ) ) :
 	/**
 	 * After Content
 	 *
-	 * Closes the wrapping divs
+	 * Closes the wrapping divs & adds the sidebar.
 	 *
 	 * @since 1.0.0
 	 */
