@@ -16,7 +16,28 @@ if ( ! function_exists( 'archetype_homepage_content_components' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_homepage_content_components() {
-		for ( $id = 1; $id <= apply_filters( 'archetype_homepage_content_components', 3 ); $id++ ) {
+		/**
+		 * Filter the number of component sections displayed in the Customizer.
+		 *
+		 * It is important to note that when adding additional components you must create a new function.
+		 * The function name must be `archetype_homepage_content_x` where `x` is the component number.
+		 * There is already support for 1-3, though if you added 2 more section you would need to create
+		 * `archetype_homepage_content_4` & `archetype_homepage_content_5`. The function must contain the 
+		 * `archetype_homepage_content_component` function which is passed the component number.
+		 *
+		 * Example:
+		 *
+		 * function archetype_homepage_content_4() {
+		 *   archetype_homepage_content_component( 4 );
+		 * }
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param int $components The number of components. The default is '3'.
+		 */
+		$components = apply_filters( 'archetype_homepage_content_components', 3 );
+
+		for ( $id = 1; $id <= absint( $components ); $id++ ) {
 			$modifier = 2 < $id ? 5 : 0;
 			$priority = ( $id + $modifier ) * 10;
 			add_action( 'homepage', 'archetype_homepage_content_' . $id, $priority );

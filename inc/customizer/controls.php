@@ -862,8 +862,11 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'type'         => 'text',
 		) ) );
 
+		/** This filter is documented in inc/structure/homepage.php */
+		$components = apply_filters( 'archetype_homepage_content_components', 3 );
+
 		// Loop to create content sections.
-		for ( $id = 1; $id <= apply_filters( 'archetype_homepage_content_components', 3 ); $id++ ) {
+		for ( $id = 1; $id <= absint( $components ); $id++ ) {
 			$modifier = 2 < $id ? 5 : 0;
 			$priority = ( $id + $modifier ) * 10;
 			/**
