@@ -1357,6 +1357,10 @@ dl.variation {
 	margin-top: -2.625em;
 }
 
+#order_review {
+	border: 1px solid $color-post-border;
+}
+	
 @media screen and (min-width: 768px) {
 	p.stars {
 		font-size: 1em;
@@ -1962,10 +1966,6 @@ dl.variation {
 	#order_review_heading {
 		margin-bottom: 0;
 		padding-bottom: .618em;
-	}
-
-	#order_review {
-		border: 1px solid $color-post-border;
 	}
 
 	// Payment forms in account
