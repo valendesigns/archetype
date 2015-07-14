@@ -36,12 +36,12 @@
 		},
 
 		/**
- 		* Initialize the mobile menu functionality.
- 		*
- 		* @since 1.0.0
- 		*
- 		* @return void
- 		*/
+		 * Initialize the mobile menu functionality.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return void
+		 */
 		navigationInit: function() {
 			var container, button, menu;
 
@@ -109,12 +109,12 @@
 		},
 
 		/**
- 		* Fix tab destination after 'Skip to content' link has been clicked.
- 		*
- 		* @since 1.0.0
- 		*
- 		* @return void
- 		*/
+		 * Fix tab destination after 'Skip to content' link has been clicked.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return void
+		 */
 		skipLinkFocusFix: function() {
 			var isWebkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 				isOpera = navigator.userAgent.toLowerCase().indexOf( 'opera' ) > -1,
@@ -138,12 +138,12 @@
 		},
 
 		/**
- 		* WooCommerce star rating
- 		*
- 		* @since 1.0.0
- 		*
- 		* @return void
- 		*/
+		 * WooCommerce star rating
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return void
+		 */
 		wooCommerceStarRating: function() {
 			var $stars = '#respond p.stars a';
 
@@ -164,12 +164,12 @@
 		},
 
 		/**
- 		* Initialize Slider
- 		*
- 		* @since 1.0.0
- 		*
- 		* @return void
- 		*/
+		 * Initialize Slider
+		 *
+		 * @since 1.0.0
+		 *
+		 * @return void
+		 */
 		sliderInit: function() {
 			if ( 'function' === typeof jQuery.fn.bxSlider ) {
 				var _slider;
