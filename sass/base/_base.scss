@@ -35,19 +35,15 @@ body {
 		}
 	}
 
+	.site-branding,
 	.site-logo-anchor,
 	.site-logo-link {
 		display: inline-block;
+		margin: 1.618em 0;
 
 		img {
 			width: auto;
 		}
-	}
-
-	.site-branding,
-	.site-logo-anchor,
-	.site-logo-link {
-		margin: 1.618em 0;
 	}
 
 	.widget {

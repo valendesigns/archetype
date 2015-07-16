@@ -383,12 +383,11 @@ body {
     color: #aaa; }
     .site-header a:hover {
       color: #ee543f; }
-  .site-header .site-logo-anchor, .site-header .site-logo-link {
-    display: inline-block; }
-    .site-header .site-logo-anchor img, .site-header .site-logo-link img {
-      width: auto; }
   .site-header .site-branding, .site-header .site-logo-anchor, .site-header .site-logo-link {
+    display: inline-block;
     margin: 1.618em 0; }
+    .site-header .site-branding img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
+      width: auto; }
   .site-header .widget {
     margin-bottom: 0; }
   .site-header .subscribe-and-connect-connect {
