@@ -82,7 +82,7 @@
 			};
 
 			// Fix position by moving the button & display both buttons
-			$( 'button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
+			$( 'button.menu-toggle' ).appendTo( '#masthead > .col-full' ).css( 'display', 'block' );
 			$( 'a.cart-contents' ).css( 'display', 'block' );
 
 			// Add focus class to li
