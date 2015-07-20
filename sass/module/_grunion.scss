@@ -1,0 +1,54 @@
+.contact-form {
+	div {
+		margin-bottom: $spacing-v;
+	}
+
+	.clear-form {
+		clear: both;
+		margin-bottom: 0 !important;
+	}
+
+	input[type='text'],
+	input[type='email'] {
+		width: 100%;
+	}
+
+	label { 
+		span {
+    	font-size: 0;
+    	color: transparent;
+
+			&:after {
+				color: red;
+				content: "*";
+				font-size: initial;
+				margin-left: .25em;
+			}
+		}
+	}
+	
+	textarea {
+		.textwidget & {
+			max-height: 7.5em;
+		}
+	}
+}
+
+div[id^="conact-form-"] {
+	blockquote {
+	
+	}
+}
+
+.form-errors .form-error-message {
+	color: red;
+}
+
+#jetpack-check-feedback-spam {
+	margin: 1px 8px 0px 0px;
+}
+
+.jetpack-check-feedback-spam-spinner {
+	display: inline-block;
+	margin-top: 7px;
+}

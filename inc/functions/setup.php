@@ -176,6 +176,7 @@ function archetype_scripts() {
 
 	// We have our own.
 	wp_dequeue_style( 'subscribe-and-connect' );
+	wp_deregister_style( 'grunion.css' );
 
 	wp_enqueue_style( 'archetype-style', get_template_directory_uri() . ( is_rtl() ? '/style-rtl.min.css' : '/style.min.css' ), '', $archetype_version );
 

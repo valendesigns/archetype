@@ -727,7 +727,9 @@ dfn, cite, em, i {
 blockquote {
   padding: 0 1.5em;
   border-left: 3px solid rgba(0, 0, 0, 0.05);
-  font-style: italic; }
+  font-style: italic;
+  margin-left: 0;
+  margin-right: 0; }
 
 address {
   margin: 0 0 1.5em; }
@@ -2624,6 +2626,34 @@ section + .archetype-homepage-hero {
 
 .infinite-loader {
   margin: 0 0 2.625em 50%; }
+
+.contact-form div {
+  margin-bottom: 1.5em; }
+.contact-form .clear-form {
+  clear: both;
+  margin-bottom: 0 !important; }
+.contact-form input[type='text'], .contact-form input[type='email'] {
+  width: 100%; }
+.contact-form label span {
+  font-size: 0;
+  color: transparent; }
+  .contact-form label span:after {
+    color: red;
+    content: "*";
+    font-size: initial;
+    margin-left: .25em; }
+.textwidget .contact-form textarea {
+  max-height: 7.5em; }
+
+.form-errors .form-error-message {
+  color: red; }
+
+#jetpack-check-feedback-spam {
+  margin: 1px 8px 0px 0px; }
+
+.jetpack-check-feedback-spam-spinner {
+  display: inline-block;
+  margin-top: 7px; }
 
 /**
  * bxSlider
