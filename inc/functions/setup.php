@@ -197,6 +197,18 @@ function archetype_scripts() {
 }
 
 /**
+ * Denqueue Subscribe & Connecrt styles in the footer.
+ *
+ * @since 1.0.0
+ */
+function archetype_dequeue_footer_scripts() {
+	if ( class_exists( 'Subscribe_And_Connect' ) ) {
+		global $subscribe_and_connect;
+		remove_action( 'wp_footer', array( $subscribe_and_connect->context, 'maybe_load_theme_stylesheets' ), 10 );
+	}
+}
+
+/**
  * Add featured image as background image to post navigation elements.
  *
  * @since 1.0.0

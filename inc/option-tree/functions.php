@@ -103,6 +103,22 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'archetype_post_format_the_content' ) ) :
+	/**
+	 * Displays the audio
+	 *
+	 * Must be used inside the loop.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_post_format_the_content( $content ) {
+		$content = $GLOBALS['wp_embed']->run_shortcode( $content );
+		$content = $GLOBALS['wp_embed']->autoembed( $content );
+
+		return $content;
+	}
+endif;
+
 if ( ! function_exists( 'archetype_post_format_audio' ) ) :
 	/**
 	 * Displays the audio
@@ -115,11 +131,7 @@ if ( ! function_exists( 'archetype_post_format_audio' ) ) :
 		if ( has_post_format( 'audio' ) && $audio = get_post_meta( get_the_ID(), '_format_audio_embed', true ) ) {
 			?>
 			<div class="post-audio">
-				<?php
-				remove_filter( 'the_content', 'wpautop' );
-				echo apply_filters( 'the_content', $audio );
-				add_filter( 'the_content', 'wpautop' );
-				?>
+				<?php echo archetype_post_format_the_content( $audio ); ?>
 			</div><!-- .post-audio -->
 			<?php
 		}
@@ -138,11 +150,7 @@ if ( ! function_exists( 'archetype_post_format_video' ) ) :
 		if ( has_post_format( 'video' ) && $video = get_post_meta( get_the_ID(), '_format_video_embed', true ) ) {
 			?>
 			<div class="post-video">
-				<?php
-				remove_filter( 'the_content', 'wpautop' );
-				echo apply_filters( 'the_content', $video );
-				add_filter( 'the_content', 'wpautop' );
-				?>
+				<?php echo archetype_post_format_the_content( $video ); ?>
 			</div><!-- .post-video -->
 			<?php
 		}

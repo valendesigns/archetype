@@ -50,9 +50,10 @@ add_action( 'archetype_navigation', 'archetype_primary_navigation', 10 );
  * @see archetype_footer_widgets()
  * @see archetype_credit()
  */
-add_action( 'archetype_footer_widgets',   'archetype_footer_widgets', 10 );
-add_action( 'archetype_site_info_footer', 'archetype_social_icons',   10 );
-add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
+add_action( 'archetype_footer_widgets',   'archetype_footer_widgets',         10 );
+add_action( 'archetype_site_info_footer', 'archetype_social_icons',           10 );
+add_action( 'archetype_site_info_footer', 'archetype_credit',                 20 );
+add_action( 'wp_footer',                  'archetype_dequeue_footer_scripts',  0 );
 
 /**
  * Homepage
@@ -74,6 +75,7 @@ add_action( 'homepage', 'archetype_homepage_hero',               0 );
  * @see archetype_post_format_media()
  * @see archetype_post_header()
  * @see archetype_post_content()
+ * @see archetype_post_social_icons()
  * @see archetype_post_author_bio()
  * @see archetype_post_meta()
  * @see archetype_post_navigation()
@@ -87,6 +89,7 @@ add_action( 'archetype_loop_after',        'archetype_posts_navigation',  10 );
 add_action( 'archetype_single_post',       'archetype_post_format_media', 10 );
 add_action( 'archetype_single_post',       'archetype_post_header',       20 );
 add_action( 'archetype_single_post',       'archetype_post_content',      30 );
+add_filter( 'archetype_single_post',       'archetype_post_social_icons', 35 );
 add_action( 'archetype_single_post',       'archetype_post_author_bio',   40 );
 add_action( 'archetype_single_post',       'archetype_post_meta',         50 );
 add_action( 'archetype_single_post_after', 'archetype_post_navigation',   10 );
@@ -138,3 +141,4 @@ add_action( 'archetype_single_image_after',  'archetype_display_comments', 20 );
 add_filter( 'body_class',        'archetype_body_classes',    10 );
 add_filter( 'get_search_form',   'archetype_post_search_form', 0 );
 add_filter( 'wp_page_menu_args', 'archetype_page_menu_args',  10 );
+add_filter( 'the_content',       'archetype_subscribe_and_connect_content_filter', 0 );

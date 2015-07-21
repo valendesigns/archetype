@@ -19,11 +19,63 @@ if ( ! function_exists( 'archetype_social_icons' ) ) :
 	 */
 	function archetype_social_icons() {
 		if ( class_exists( 'Subscribe_And_Connect' ) ) {
-			echo '<div class="subscribe-and-connect-connect">';
+			global $subscribe_and_connect;
+			$settings = $subscribe_and_connect->get_settings();
+			$theme = isset( $settings['display']['theme'] ) ? $settings['display']['theme'] : 'none';
+			$classes = array( 'subscribe-and-connect-connect' );
+			$classes[] = 'theme-' . $theme;
+			if ( in_array( $theme, array( 'boxed', 'rounded', 'circular' ) ) ) {
+				$classes[] = 'has-background-color';
+				$classes[] = 'has-large-icons';
+			}
+			echo '<div class="' . esc_attr( implode( ' ', $classes ) ) . '">';
 				echo '<div class="col-full">';
 					subscribe_and_connect_connect();
 				echo '</div>';
 			echo '</div>';
+		}
+	}
+endif;
+
+if ( ! function_exists( 'archetype_post_social_icons' ) ) :
+	/**
+	 * Return HTML markup for the "subscribe" and "connect" sections, below the given content.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $content The post content.
+	 * @return string HTML markup.
+	 */
+	function archetype_post_social_icons() {
+		/**
+		 * Filter which post types Subscribe & Connect should be displayed on.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $post_types The allowed post types.
+		 */
+		$post_types = apply_filters( 'archetype_subscribe_and_connect_content_post_types', array( 'post' ) );
+
+		// Display Subscribe & Connect
+		if ( is_singular( $post_types ) ) {
+			global $subscribe_and_connect;
+			$settings = $subscribe_and_connect->get_settings();
+			if ( 'the_content' === $settings['display']['auto_integration'] ) {
+				$theme = isset( $settings['display']['theme'] ) ? $settings['display']['theme'] : 'none';
+				$classes = array( 'subscribe-and-connect-connect' );
+				$classes[] = 'theme-' . $theme;
+				if ( in_array( $theme, array( 'boxed', 'rounded', 'circular' ) ) ) {
+					$classes[] = 'has-background-color';
+					$classes[] = 'has-large-icons';
+				}
+				$html = '<div class="' . esc_attr( implode( ' ', $classes ) ) . '">' . "\n";
+				$html .= subscribe_and_connect_get_welcome_text();
+				$html .= subscribe_and_connect_get_subscribe();
+				$html .= subscribe_and_connect_get_connect();
+				$html .= '</div>' . "\n";
+
+				echo $html;
+			}
 		}
 	}
 endif;
