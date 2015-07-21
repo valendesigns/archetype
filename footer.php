@@ -14,21 +14,25 @@
 
 	<?php do_action( 'archetype_before_footer' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" role="contentinfo">
 		
-		<div class="col-full">
+		<div class="<?php archetype_site_footer_classes(); ?>" style="<?php archetype_site_footer_styles(); ?>">
 
-			<?php
-			/**
-			 * Default hooks
-			 *
-			 * @hooked archetype_footer_widgets - 10
-			 */
-			do_action( 'archetype_footer_widgets' ); ?>
+			<div class="col-full">
 
-		</div><!-- .col-full -->
+				<?php
+				/**
+				 * Default hooks
+				 *
+				 * @hooked archetype_footer_widgets - 10
+				 */
+				do_action( 'archetype_footer_widgets' ); ?>
 
-		<div class="site-info">
+			</div><!-- .col-full -->
+
+		</div><!-- .site-footer -->
+
+		<div class="<?php archetype_site_info_classes(); ?>" style="<?php archetype_site_info_styles(); ?>">
 
 			<div class="col-full">
 
