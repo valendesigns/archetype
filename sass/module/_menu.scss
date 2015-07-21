@@ -188,6 +188,11 @@
 
 	.primary-navigation {
 		display: block;
+
+		.focus,
+		a:focus {
+			z-index: 100;
+		}
 	}
 	
 	.secondary-navigation .menu-secondary-container {

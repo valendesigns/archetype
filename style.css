@@ -1257,6 +1257,8 @@ fieldset {
     display: none !important; }
   .primary-navigation {
     display: block; }
+    .primary-navigation .focus, .primary-navigation a:focus {
+      z-index: 100; }
   .secondary-navigation .menu-secondary-container {
     display: block; }
   .main-navigation, .secondary-navigation {
