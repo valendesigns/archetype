@@ -105,12 +105,14 @@ add_action( 'archetype_archive_before', 'archetype_archive_header', 10 );
 /**
  * Pages
  *
+ * @see archetype_page_media()
  * @see archetype_page_header()
  * @see archetype_page_content()
  * @see archetype_display_comments()
  */
-add_action( 'archetype_page',       'archetype_page_header',      10 );
-add_action( 'archetype_page',       'archetype_page_content',     20 );
+add_action( 'archetype_page',       'archetype_page_media',       10 );
+add_action( 'archetype_page',       'archetype_page_header',      20 );
+add_action( 'archetype_page',       'archetype_page_content',     30 );
 add_action( 'archetype_page_after', 'archetype_display_comments', 10 );
 
 /**

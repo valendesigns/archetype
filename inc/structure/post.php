@@ -31,14 +31,14 @@ if ( ! function_exists( 'archetype_post_format_media' ) ) :
 
 		if ( is_singular() ) {
 		?>
-	
+
 		<div class="post-thumbnail">
 			<?php
 				the_post_thumbnail();
 				echo $caption;
 			?>
 		</div><!-- .post-thumbnail -->
-	
+
 		<?php } else { ?>
 
 		<div class="post-thumbnail">

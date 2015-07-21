@@ -12,8 +12,9 @@
 	/**
 	 * Default hooks
 	 *
-	 * @hooked archetype_page_header - 10
-	 * @hooked archetype_page_content - 20
+	 * @hooked archetype_page_media() - 10
+	 * @hooked archetype_page_header - 20
+	 * @hooked archetype_page_content - 30
 	 */
 	do_action( 'archetype_page' );
 	?>
