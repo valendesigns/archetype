@@ -131,7 +131,7 @@ if ( ! function_exists( 'archetype_site_footer_styles' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $styles Array of inline CSS styles
+	 * @param array $styles Array of inline CSS styles.
 	 */
 	function archetype_site_footer_styles( $styles = array() ) {
 		/**
@@ -139,7 +139,7 @@ if ( ! function_exists( 'archetype_site_footer_styles' ) ) :
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param array $styles Array of inline CSS styles
+		 * @param array $styles Array of inline CSS styles.
 		 */
 		$styles = apply_filters( 'archetype_site_footer_styles', $styles );
 
@@ -178,7 +178,7 @@ if ( ! function_exists( 'archetype_site_info_styles' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $styles Array of inline CSS styles
+	 * @param array $styles Array of inline CSS styles.
 	 */
 	function archetype_site_info_styles( $styles = array() ) {
 		/**
@@ -186,7 +186,7 @@ if ( ! function_exists( 'archetype_site_info_styles' ) ) :
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param array $styles Array of inline CSS styles
+		 * @param array $styles Array of inline CSS styles.
 		 */
 		$styles = apply_filters( 'archetype_site_info_styles', $styles );
 
