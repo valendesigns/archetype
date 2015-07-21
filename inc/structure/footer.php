@@ -105,6 +105,8 @@ if ( ! function_exists( 'archetype_site_footer_classes' ) ) :
 	 * Build the site footer classes.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $classes Array of additional CSS classes.
 	 */
 	function archetype_site_footer_classes( $classes = array() ) {
 		// CSS classes.
@@ -128,6 +130,8 @@ if ( ! function_exists( 'archetype_site_footer_styles' ) ) :
 	 * Build the site footer styles.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $styles Array of inline CSS styles
 	 */
 	function archetype_site_footer_styles( $styles = array() ) {
 		/**
@@ -148,6 +152,8 @@ if ( ! function_exists( 'archetype_site_info_classes' ) ) :
 	 * Build the site info classes.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $classes Array of additional CSS classes.
 	 */
 	function archetype_site_info_classes( $classes = array() ) {
 		// CSS classes.
@@ -171,6 +177,8 @@ if ( ! function_exists( 'archetype_site_info_styles' ) ) :
 	 * Build the site info styles.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $styles Array of inline CSS styles
 	 */
 	function archetype_site_info_styles( $styles = array() ) {
 		/**
