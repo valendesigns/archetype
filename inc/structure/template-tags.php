@@ -19,11 +19,13 @@ if ( ! function_exists( 'archetype_social_icons' ) ) :
 	 */
 	function archetype_social_icons() {
 		if ( class_exists( 'Subscribe_And_Connect' ) ) {
-			echo '<div class="' . archetype_social_icons_classes() . '">';
-				echo '<div class="col-full">';
-					subscribe_and_connect_connect();
-				echo '</div>';
-			echo '</div>';
+			?>
+			<div class="<?php echo archetype_social_icons_classes(); ?>">
+				<div class="col-full">
+					<?php echo subscribe_and_connect_connect(); ?>
+				</div>
+			</div>
+			<?php
 		}
 	}
 endif;
@@ -35,18 +37,21 @@ if ( ! function_exists( 'archetype_social_icons_post' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_social_icons_post() {
-		if ( is_singular( 'post' ) ) {
+		if ( is_singular( 'post' ) && class_exists( 'Subscribe_And_Connect' ) ) {
 			global $subscribe_and_connect;
 			$settings = $subscribe_and_connect->get_settings();
 
+			// Display is on.
 			if ( 'the_content' === $settings['display']['auto_integration'] ) {
-				$html = '<div class="' . archetype_social_icons_classes( $settings ) . '">' . "\n";
-				$html .= subscribe_and_connect_get_welcome_text();
-				$html .= subscribe_and_connect_get_subscribe();
-				$html .= subscribe_and_connect_get_connect();
-				$html .= '</div>' . "\n";
-
-				echo $html;
+				?>
+				<div class="<?php echo archetype_social_icons_classes( $settings ); ?>">
+					<?php
+					echo subscribe_and_connect_get_welcome_text();
+					echo subscribe_and_connect_get_subscribe();
+					echo subscribe_and_connect_get_connect();
+					?>
+				</div>
+				<?php
 			}
 		}
 	}
