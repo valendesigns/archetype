@@ -893,7 +893,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			 * Content
 			 */
 			$wp_customize->add_section( 'archetype_homepage_content_' . $id, array(
-				'title'        => __( 'Content (' . $id . ')', 'archetype' ),
+				'title'        => sprintf( __( 'Content (%s)', 'archetype' ), $id ),
 				'description'  => __( 'Customize the look & feel of this content component.', 'archetype' ),
 				'priority'     => $priority,
 				'panel'        => 'archetype_homepage',
