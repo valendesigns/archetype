@@ -19,16 +19,7 @@ if ( ! function_exists( 'archetype_social_icons' ) ) :
 	 */
 	function archetype_social_icons() {
 		if ( class_exists( 'Subscribe_And_Connect' ) ) {
-			global $subscribe_and_connect;
-			$settings = $subscribe_and_connect->get_settings();
-			$theme = isset( $settings['display']['theme'] ) ? $settings['display']['theme'] : 'none';
-			$classes = array( 'subscribe-and-connect-connect' );
-			$classes[] = 'theme-' . $theme;
-			if ( in_array( $theme, array( 'boxed', 'rounded', 'circular' ) ) ) {
-				$classes[] = 'has-background-color';
-				$classes[] = 'has-large-icons';
-			}
-			echo '<div class="' . esc_attr( implode( ' ', $classes ) ) . '">';
+			echo '<div class="' . archetype_social_icons_classes() . '">';
 				echo '<div class="col-full">';
 					subscribe_and_connect_connect();
 				echo '</div>';
@@ -37,38 +28,19 @@ if ( ! function_exists( 'archetype_social_icons' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'archetype_post_social_icons' ) ) :
+if ( ! function_exists( 'archetype_social_icons_post' ) ) :
 	/**
-	 * Return HTML markup for the "subscribe" and "connect" sections, below the given content.
+	 * Displays HTML markup for the "subscribe" and "connect" sections, below the given content.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @param string $content The post content.
-	 * @return string HTML markup.
 	 */
-	function archetype_post_social_icons() {
-		/**
-		 * Filter which post types Subscribe & Connect should be displayed on.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $post_types The allowed post types.
-		 */
-		$post_types = apply_filters( 'archetype_subscribe_and_connect_content_post_types', array( 'post' ) );
-
-		// Display Subscribe & Connect
-		if ( is_singular( $post_types ) ) {
+	function archetype_social_icons_post() {
+		if ( is_singular( 'post' ) ) {
 			global $subscribe_and_connect;
 			$settings = $subscribe_and_connect->get_settings();
+
 			if ( 'the_content' === $settings['display']['auto_integration'] ) {
-				$theme = isset( $settings['display']['theme'] ) ? $settings['display']['theme'] : 'none';
-				$classes = array( 'subscribe-and-connect-connect' );
-				$classes[] = 'theme-' . $theme;
-				if ( in_array( $theme, array( 'boxed', 'rounded', 'circular' ) ) ) {
-					$classes[] = 'has-background-color';
-					$classes[] = 'has-large-icons';
-				}
-				$html = '<div class="' . esc_attr( implode( ' ', $classes ) ) . '">' . "\n";
+				$html = '<div class="' . archetype_social_icons_classes( $settings ) . '">' . "\n";
 				$html .= subscribe_and_connect_get_welcome_text();
 				$html .= subscribe_and_connect_get_subscribe();
 				$html .= subscribe_and_connect_get_connect();
@@ -77,6 +49,49 @@ if ( ! function_exists( 'archetype_post_social_icons' ) ) :
 				echo $html;
 			}
 		}
+	}
+endif;
+
+if ( ! function_exists( 'archetype_social_icons_classes' ) ) :
+	/**
+	 * Return the social icon container classes.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $settings The Subscribe & Connect settings.
+	 * @return string
+	 */
+	function archetype_social_icons_classes( $settings = array() ) {
+		if ( class_exists( 'Subscribe_And_Connect' ) ) {
+			if ( empty( $settings ) ) {
+				global $subscribe_and_connect;
+				$settings = $subscribe_and_connect->get_settings();
+			}
+
+			$theme = isset( $settings['display']['theme'] ) ? $settings['display']['theme'] : 'none';
+
+			$classes = array();
+			$classes[] = 'subscribe-and-connect-connect';
+			$classes[] = 'theme-' . $theme;
+
+			if ( in_array( $theme, array( 'boxed', 'rounded', 'circular' ) ) ) {
+				$classes[] = 'has-background-color';
+				$classes[] = 'has-large-icons';
+			}
+
+			return esc_attr( implode( ' ', $classes ) );
+		}
+	}
+endif;
+
+if ( ! function_exists( 'archetype_subscribe_and_connect' ) ) :
+	/**
+	 * Remove the Subscribe & Connect content filter.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_subscribe_and_connect() {
+		remove_filter( 'the_content', 'subscribe_and_connect_content_filter' );
 	}
 endif;
 

@@ -75,7 +75,7 @@ add_action( 'homepage', 'archetype_homepage_hero',               0 );
  * @see archetype_post_format_media()
  * @see archetype_post_header()
  * @see archetype_post_content()
- * @see archetype_post_social_icons()
+ * @see archetype_social_icons_post()
  * @see archetype_post_author_bio()
  * @see archetype_post_meta()
  * @see archetype_post_navigation()
@@ -89,7 +89,7 @@ add_action( 'archetype_loop_after',        'archetype_posts_navigation',  10 );
 add_action( 'archetype_single_post',       'archetype_post_format_media', 10 );
 add_action( 'archetype_single_post',       'archetype_post_header',       20 );
 add_action( 'archetype_single_post',       'archetype_post_content',      30 );
-add_filter( 'archetype_single_post',       'archetype_post_social_icons', 35 );
+add_filter( 'archetype_single_post',       'archetype_social_icons_post', 35 );
 add_action( 'archetype_single_post',       'archetype_post_author_bio',   40 );
 add_action( 'archetype_single_post',       'archetype_post_meta',         50 );
 add_action( 'archetype_single_post_after', 'archetype_post_navigation',   10 );
@@ -138,7 +138,7 @@ add_action( 'archetype_single_image_after',  'archetype_display_comments', 20 );
  * @see archetype_post_search_form()
  * @see archetype_page_menu_args()
  */
-add_filter( 'body_class',        'archetype_body_classes',    10 );
-add_filter( 'get_search_form',   'archetype_post_search_form', 0 );
-add_filter( 'wp_page_menu_args', 'archetype_page_menu_args',  10 );
-add_filter( 'the_content',       'archetype_subscribe_and_connect_content_filter', 0 );
+add_filter( 'wp_head',           'archetype_subscribe_and_connect',  0 );
+add_filter( 'body_class',        'archetype_body_classes',          10 );
+add_filter( 'get_search_form',   'archetype_post_search_form',       0 );
+add_filter( 'wp_page_menu_args', 'archetype_page_menu_args',        10 );

@@ -215,19 +215,3 @@ if ( ! function_exists( 'archetype_post_meta' ) ) :
 		<?php
 	}
 endif;
-
-if ( ! function_exists( 'archetype_subscribe_and_connect_content_filter' ) ) :
-	/**
-	 * Replace the Subscribe & Connect content filter.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $content The post content.
-	 * @return string HTML markup.
-	 */
-	function archetype_subscribe_and_connect_content_filter( $content ) {
-		remove_filter( 'the_content', 'subscribe_and_connect_content_filter' );
-
-		return $content;
-	}
-endif;

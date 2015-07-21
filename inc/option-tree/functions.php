@@ -110,6 +110,8 @@ if ( ! function_exists( 'archetype_post_format_the_content' ) ) :
 	 * Must be used inside the loop.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param string $content The post content.
 	 */
 	function archetype_post_format_the_content( $content ) {
 		$content = $GLOBALS['wp_embed']->run_shortcode( $content );
