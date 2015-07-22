@@ -1677,6 +1677,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'section'      => 'archetype_footer_lower',
 			'settings'     => 'archetype_footer_credit_toggle',
 			'type'         => 'checkbox',
+			'priority'     => 10,
 		) ) );
 
 		/**
@@ -1692,6 +1693,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Text color', 'archetype' ),
 			'section'      => 'archetype_footer_lower',
 			'settings'     => 'archetype_footer_lower_text_color',
+			'priority'     => 15,
 		) ) );
 
 		/**
@@ -1706,6 +1708,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Link color', 'archetype' ),
 			'section'      => 'archetype_footer_lower',
 			'settings'     => 'archetype_footer_lower_link_color',
+			'priority'     => 20,
 		) ) );
 
 		/**
@@ -1720,6 +1723,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Link hover color', 'archetype' ),
 			'section'      => 'archetype_footer_lower',
 			'settings'     => 'archetype_footer_lower_link_hover_color',
+			'priority'     => 25,
 		) ) );
 
 		/**
@@ -1735,6 +1739,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Background color', 'archetype' ),
 			'section'      => 'archetype_footer_lower',
 			'settings'     => 'archetype_footer_lower_background_color',
+			'priority'     => 30,
 		) ) );
 
 	}
