@@ -847,7 +847,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 endif;
 
-if ( ! function_exists( 'archetype_homepage_hero_toggle' ) ) :
+if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 	/**
 	 * Display the Homepage Hero

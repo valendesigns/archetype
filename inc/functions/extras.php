@@ -121,6 +121,17 @@ if ( ! function_exists( 'is_homepage_control_activated' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'is_subscribe_and_connect_activated' ) ) :
+	/**
+	 * Query Subscribe & Connect activation
+	 *
+	 * @since 1.0.0
+	 */
+	function is_subscribe_and_connect_activated() {
+		return class_exists( 'Subscribe_And_Connect', false ) ? true : false;
+	}
+endif;
+
 /**
  * Schema type
  *

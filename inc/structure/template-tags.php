@@ -18,7 +18,7 @@ if ( ! function_exists( 'archetype_social_icons' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_social_icons() {
-		if ( class_exists( 'Subscribe_And_Connect' ) ) {
+		if ( is_subscribe_and_connect_activated() ) {
 			?>
 			<div class="<?php echo archetype_social_icons_classes(); ?>">
 				<div class="col-full">
@@ -37,7 +37,7 @@ if ( ! function_exists( 'archetype_social_icons_post' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_social_icons_post() {
-		if ( is_singular( 'post' ) && class_exists( 'Subscribe_And_Connect' ) ) {
+		if ( is_singular( 'post' ) && is_subscribe_and_connect_activated() ) {
 			global $subscribe_and_connect;
 			$settings = $subscribe_and_connect->get_settings();
 
@@ -67,7 +67,7 @@ if ( ! function_exists( 'archetype_social_icons_classes' ) ) :
 	 * @return string
 	 */
 	function archetype_social_icons_classes( $settings = array() ) {
-		if ( class_exists( 'Subscribe_And_Connect' ) ) {
+		if ( is_subscribe_and_connect_activated() ) {
 			if ( empty( $settings ) ) {
 				global $subscribe_and_connect;
 				$settings = $subscribe_and_connect->get_settings();
