@@ -19,7 +19,7 @@ if ( ! function_exists( 'archetype_social_icons' ) ) :
 	 */
 	function archetype_social_icons() {
 		if ( is_subscribe_and_connect_activated() ) {
-			$context = 'archetype_site_info_footer' === current_filter() ? 'footer' : 'header';
+			$context = ( 'archetype_site_info_footer' === current_filter() ? 'footer' : 'header' );
 			?>
 			<div class="<?php echo archetype_social_icons_classes( $context ); ?>">
 				<div class="col-full">
