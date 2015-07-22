@@ -19,8 +19,9 @@ if ( ! function_exists( 'archetype_social_icons' ) ) :
 	 */
 	function archetype_social_icons() {
 		if ( is_subscribe_and_connect_activated() ) {
+			$context = 'archetype_site_info_footer' === current_filter() ? 'footer' : 'header';
 			?>
-			<div class="<?php echo archetype_social_icons_classes(); ?>">
+			<div class="<?php echo archetype_social_icons_classes( $context ); ?>">
 				<div class="col-full">
 					<?php echo subscribe_and_connect_connect(); ?>
 				</div>
@@ -44,7 +45,7 @@ if ( ! function_exists( 'archetype_social_icons_post' ) ) :
 			// Display is on.
 			if ( 'the_content' === $settings['display']['auto_integration'] ) {
 				?>
-				<div class="<?php echo archetype_social_icons_classes( $settings ); ?>">
+				<div class="<?php echo archetype_social_icons_classes( 'the_content', $settings ); ?>">
 					<?php
 					echo subscribe_and_connect_get_welcome_text();
 					echo subscribe_and_connect_get_subscribe();
@@ -63,17 +64,29 @@ if ( ! function_exists( 'archetype_social_icons_classes' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $settings The Subscribe & Connect settings.
+	 * @param string $context The placement context. The default is 'header'.
+	 * @param array  $settings The Subscribe & Connect settings.
 	 * @return string
 	 */
-	function archetype_social_icons_classes( $settings = array() ) {
+	function archetype_social_icons_classes( $context = 'header', $settings = array() ) {
 		if ( is_subscribe_and_connect_activated() ) {
 			if ( empty( $settings ) ) {
 				global $subscribe_and_connect;
 				$settings = $subscribe_and_connect->get_settings();
 			}
 
+			// Get the theme.
 			$theme = isset( $settings['display']['theme'] ) ? $settings['display']['theme'] : 'none';
+
+			/**
+			 * Filter the theme for the social icons.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param string $theme The current icon theme.
+			 * @param string $context The placement context.
+			 */
+			$theme = apply_filters( 'archetype_social_icons_theme', $theme, $context );
 
 			$classes = array();
 			$classes[] = 'subscribe-and-connect-connect';
@@ -83,6 +96,17 @@ if ( ! function_exists( 'archetype_social_icons_classes' ) ) :
 				$classes[] = 'has-background-color';
 				$classes[] = 'has-large-icons';
 			}
+
+			/**
+			 * Filter the classes for the social icons container.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param array  $classes The classes array.
+			 * @param string $theme The current icon theme.
+			 * @param string $context The placement context.
+			 */
+			$classes = apply_filters( 'archetype_social_icons_classes', $classes, $theme, $context );
 
 			return esc_attr( implode( ' ', $classes ) );
 		}
