@@ -1612,21 +1612,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
-		 * Footer Background
-		 */
-		$wp_customize->add_setting( 'archetype_footer_background_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_background_color', '#353b3f' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_background_color', array(
-			'label'        => __( 'Background color', 'archetype' ),
-			'section'      => 'archetype_footer_upper',
-			'settings'     => 'archetype_footer_background_color',
-		) ) );
-
-		/**
 		 * Footer link color
 		 */
 		$wp_customize->add_setting( 'archetype_footer_link_color', array(
@@ -1652,6 +1637,21 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Link hover color', 'archetype' ),
 			'section'      => 'archetype_footer_upper',
 			'settings'     => 'archetype_footer_link_hover_color',
+		) ) );
+
+		/**
+		 * Footer Background
+		 */
+		$wp_customize->add_setting( 'archetype_footer_background_color', array(
+			'default'            => apply_filters( 'archetype_default_footer_background_color', '#353b3f' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_background_color', array(
+			'label'        => __( 'Background color', 'archetype' ),
+			'section'      => 'archetype_footer_upper',
+			'settings'     => 'archetype_footer_background_color',
 		) ) );
 
 		/**
@@ -1695,21 +1695,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
-		 * Lower footer Background
-		 */
-		$wp_customize->add_setting( 'archetype_footer_lower_background_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_lower_background_color', '#292e31' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_lower_background_color', array(
-			'label'        => __( 'Background color', 'archetype' ),
-			'section'      => 'archetype_footer_lower',
-			'settings'     => 'archetype_footer_lower_background_color',
-		) ) );
-
-		/**
 		 * Lower footer link color
 		 */
 		$wp_customize->add_setting( 'archetype_footer_lower_link_color', array(
@@ -1735,6 +1720,21 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Link hover color', 'archetype' ),
 			'section'      => 'archetype_footer_lower',
 			'settings'     => 'archetype_footer_lower_link_hover_color',
+		) ) );
+
+		/**
+		 * Lower footer Background
+		 */
+		$wp_customize->add_setting( 'archetype_footer_lower_background_color', array(
+			'default'            => apply_filters( 'archetype_default_footer_lower_background_color', '#292e31' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+			'transport'          => 'postMessage',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_lower_background_color', array(
+			'label'        => __( 'Background color', 'archetype' ),
+			'section'      => 'archetype_footer_lower',
+			'settings'     => 'archetype_footer_lower_background_color',
 		) ) );
 
 	}
