@@ -135,6 +135,16 @@ body {
 	color: $color-footer-lower;
 	padding: 2.625em 0;
 
+	.site-logo-link {
+		display: block;
+		margin-bottom: 1em;
+
+		.site-logo,
+		.svg-site-logo {
+			margin: 0 auto;
+		}
+	}
+
 	.credit {
 		text-align: center;
 	}
@@ -315,6 +325,13 @@ table {
 	}
 
 	.site-info {
+		.site-logo-link {
+		  .site-logo,
+			.svg-site-logo {
+				margin: 0;
+			}
+		}
+
 		.credit {
 			float: right;
 			text-align: left;
