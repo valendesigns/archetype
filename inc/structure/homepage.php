@@ -82,7 +82,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 			<?php do_action( 'archetype_homepage_hero_overlay_before' ); ?>
 
-			<div class="archetype-homepage-hero">
+			<div class="archetype-homepage-hero-overlay">
 
 				<?php do_action( 'archetype_homepage_hero_column_before' ); ?>
 
