@@ -86,7 +86,11 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 				<div class="archetype-homepage-hero-content">
 
+					<?php do_action( 'archetype_homepage_hero_title_before' ); ?>
+
 					<h1 style="color: <?php echo esc_attr( $heading_text_color ); ?>"><?php echo esc_html( $heading_text ); ?></h1>
+
+					<?php do_action( 'archetype_homepage_hero_title_after' ); ?>
 
 					<?php do_action( 'archetype_homepage_hero_body_before' ); ?>
 
@@ -217,18 +221,21 @@ if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
 			 * @param int   $id The component ID.
 			 */
 			$styles = apply_filters( 'aarchetype_homepage_content_component_styles', $styles, $id );
+			?>
+			<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( ' ', $styles ) ); ?>">
 
-			echo '<section class="' . implode( ' ', $classes ) . '" style="' . implode( ' ', $styles ) . '">';
-				echo '<div class="col-full">';
+				<div class="col-full">
 
-					do_action( 'archetype_homepage_before_content_' . $id );
+					<?php do_action( 'archetype_homepage_before_content_' . $id ); ?>
 
-					echo apply_filters( 'the_content', $page_data->post_content );
+					<?php echo apply_filters( 'the_content', $page_data->post_content ); ?>
 
-					do_action( 'archetype_homepage_after_content_' . $id );
+					<?php do_action( 'archetype_homepage_after_content_' . $id ); ?>
 
-				echo '</div>';
-			echo '</section>';
+				</div><!-- .col-full -->
+
+			</section><!-- .archetype-homepage-content -->
+			<?php
 		}
 	}
 endif;
