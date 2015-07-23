@@ -343,9 +343,7 @@ table {
 	}
 
 	.site-info {
-		.site-logo-link {
-			float: left;
-
+		.site-logo-link  {
 		  .site-logo,
 			.svg-site-logo {
 				margin: 0;
@@ -353,8 +351,7 @@ table {
 		}
 
 		.credit {
-			float: right;
-			text-align: left;
+			text-align: right;
 		}
 	}
 }

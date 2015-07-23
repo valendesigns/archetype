@@ -40,6 +40,24 @@
 			clear: both;
 		}
 	}
+	
+	.site-info {
+		.site-logo-link {
+			display: block;
+			@include span(4 of 12);
+			clear: both;
+
+			img {
+				height: auto;
+				max-width: 100%;
+				max-height: none;
+			}
+		}
+
+		.credit {
+			@include span(last 8 of 12);
+		}
+	}
 
 	.site-branding {
 		.site-description {
