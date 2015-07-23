@@ -7,6 +7,127 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'archetype_homepage_hero' ) ) :
+
+	/**
+	 * Display the Homepage Hero
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_homepage_hero() {
+		if ( false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_toggle', true ) ) ) {
+			return false;
+		}
+
+		// Layout.
+		$layout              = ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '' );
+
+		// Alignment.
+		$alignment           = esc_attr( get_theme_mod( 'archetype_homepage_hero_alignment', 'center' ) );
+
+		// Background image.
+		$background_img_src  = wp_get_attachment_image_src( archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_hero_background_image', '' ) ), 'full' );
+		$background_img      = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
+
+		// Background image size.
+		$background_img_size = esc_attr( get_theme_mod( 'archetype_homepage_hero_background_image_size', 'auto' ) );
+
+		// Background color.
+		$background_color    = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_background_color', apply_filters( 'archetype_default_homepage_hero_background_color', '#353b3f' ) ) );
+
+		// Heading color.
+		$heading_text_color  = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_heading_color', apply_filters( 'archetype_default_homepage_hero_heading_color', '#fff' ) ) );
+
+		// Body color.
+		$body_text_color     = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_hero_text_color', apply_filters( 'archetype_default_homepage_hero_text_color', '#888' ) ) );
+
+		// Heading text.
+		$heading_text        = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_heading_text', __( 'Heading Text', 'archetype' ) ) );
+
+		// Body Text.
+		$body_text           = wp_kses_post( get_theme_mod( 'archetype_homepage_hero_text', __( 'Body Text', 'archetype' ) ) );
+
+		// Button text.
+		$button_text         = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_text', __( 'Call to Action', 'archetype' ) ) );
+
+		// Button URL.
+		$button_url          = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_url', home_url() ) );
+
+		// Display buttons. 
+		$has_buttons         = (bool) $button_text && $button_url;
+
+		// CSS classes.
+		$classes = array( 'archetype-homepage-hero' );
+		$classes[] = $alignment;
+		$classes[] = $layout;
+
+		// CSS style attributes.
+		$styles = array();
+		$styles[] = "color: $body_text_color;";
+		$styles[] = "background-color: $background_color;";
+		$styles[] = "background-image: url($background_img);";
+		$styles[] = "background-size: $background_img_size;";
+		$styles[] = 'background-repeat: no-repeat;';
+
+		/**
+		 * Filter the buttons display.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param bool $has_buttons Whether to display the buttons.
+		 */
+		$has_buttons = apply_filters( 'archetype_homepage_hero_has_buttons', $has_buttons );
+		?>
+		<section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
+
+			<div class="col-full">
+
+				<?php do_action( 'archetype_homepage_hero_content_before' ); ?>
+
+				<div class="archetype-homepage-hero-content">
+
+					<h1 style="color: <?php echo esc_attr( $heading_text_color ); ?>"><?php echo esc_html( $heading_text ); ?></h1>
+
+					<?php do_action( 'archetype_homepage_hero_body_before' ); ?>
+
+					<div class="archetype-homepage-hero-body">
+
+						<?php echo wpautop( $body_text ); ?>
+
+						<?php do_action( 'archetype_homepage_hero_body' ); ?>
+
+						<?php if ( $has_buttons ) { ?>
+
+							<?php do_action( 'archetype_homepage_hero_buttons_before' ); ?>
+
+							<div class="archetype-homepage-hero-buttons">
+
+								<a href="<?php echo esc_attr( $button_url ); ?>" class="button"><?php echo esc_html( $button_text ); ?></a>
+
+								<?php do_action( 'archetype_homepage_hero_buttons' ); ?>
+
+							</div><!-- .archetype-homepage-hero-buttons -->
+
+							<?php do_action( 'archetype_homepage_hero_buttons_after' ); ?>
+
+						<?php } ?>
+
+					</div><!-- .archetype-homepage-hero-body -->
+
+					<?php do_action( 'archetype_homepage_hero_body_after' ); ?>
+
+				</div><!-- .archetype-homepage-hero-content -->
+
+				<?php do_action( 'archetype_homepage_hero_content_after' ); ?>
+
+			</div>
+
+		</section>
+		<?php
+	}
+
+endif;
+
 if ( ! function_exists( 'archetype_homepage_content_components' ) ) :
 	/**
 	 * Adds the homepage content components.

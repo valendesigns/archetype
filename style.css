@@ -2489,6 +2489,9 @@ section + .archetype-homepage-hero {
 .archetype-homepage-hero.right {
   text-align: right; }
 
+.archetype-homepage-hero-buttons .button {
+  margin: .25em; }
+
 @media screen and (max-width: 74em) {
   .archetype-homepage-hero .col-full {
     padding: 5.25em 2.625em; } }
