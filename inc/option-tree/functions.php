@@ -114,10 +114,9 @@ if ( ! function_exists( 'archetype_post_format_the_content' ) ) :
 	 * @param string $content The post content.
 	 */
 	function archetype_post_format_the_content( $content ) {
-		$content = $GLOBALS['wp_embed']->run_shortcode( $content );
 		$content = $GLOBALS['wp_embed']->autoembed( $content );
 
-		return $content;
+		return do_shortcode( $content );
 	}
 endif;
 
