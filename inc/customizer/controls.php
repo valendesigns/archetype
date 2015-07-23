@@ -36,8 +36,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_section( 'header_image' )->panel         = 'archetype_header';
 
 		// Change navigation panel or section.
-		if ( 'menus' === $wp_customize->get_section( 'menu_locations' )->panel ) {
-			$wp_customize->get_panel( 'menus' )->priority             = 40;
+		if ( 'nav_menus' === $wp_customize->get_section( 'menu_locations' )->panel ) {
+			$wp_customize->get_panel( 'nav_menus' )->priority          = 40;
 		} else {
 			$wp_customize->get_section( 'nav' )->title                = __( 'Menus Locations', 'archetype' );
 			$wp_customize->get_section( 'nav' )->panel                = 'archetype_header';
