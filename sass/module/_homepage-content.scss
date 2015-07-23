@@ -2,15 +2,6 @@
 	text-align: center;
 }
 
-.archetype-homepage-content .col-full {
-	padding: 2.625em 0;
-}
-
-.is-full-width .archetype-homepage-content .col-full {
-	padding-left: 2.625em;
-	padding-right: 2.625em;
-}
-
 .archetype-homepage-content.left {
 	text-align: left;
 }
@@ -24,20 +15,56 @@
 	margin-bottom: 0px;
 }
 
-@media screen and (max-width: 74em) {
-	.archetype-homepage-content .col-full {
-		padding: 2.625em;
+.archetype-homepage-content {
+	padding-top: 2.625em;
+	padding-bottom: 2.625em;
+
+	&.expand-full-width {
+		padding-left: 2.625em;
+		padding-right: 2.625em;
 	}
 }
 
-@media screen and (max-width: 568px) {
-	.archetype-homepage-content .col-full {
-		padding: 1.387em;
+@media screen and (min-width: 71.25em) {
+	.archetype-homepage-content {
+		padding-top: 2.625em !important;
+		padding-bottom: 2.625em !important;
+
+		&.expand-full-width {
+			padding-left: 2.625em !important;
+			padding-right: 2.625em !important;
+		}
 	}
 }
+
+/**
+ * Phone
+ */
+ 
+@media screen and (max-width: 568px) {
+	.archetype-homepage-content {
+		padding-top: 1.387em;
+		padding-bottom: 1.387em;
+
+		&.expand-full-width {
+			padding-left: 1.387em;
+			padding-right: 1.387em;
+		}
+	}
+}
+
+/**
+ * Tablet
+ */
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-	.archetype-homepage-content .col-full {
-		padding: 2.125em;
+	.archetype-homepage-content {
+		padding-top: 2.125em;
+		padding-bottom: 2.125em;
+
+		&.expand-full-width {
+			padding-left: 2.125em;
+			padding-right: 2.125em;
+		}
 	}
 }

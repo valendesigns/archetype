@@ -880,15 +880,15 @@ a {
   .col-full {
     margin-left: 2.625em;
     margin-right: 2.625em; }
+    .col-full .col-full {
+      margin-left: 0;
+      margin-right: 0; }
     .col-full .expand-full-width {
       position: relative;
       margin-left: -2.625em;
-      margin-right: -2.625em; }
-      .col-full .expand-full-width .col-full {
-        margin-left: 0;
-        margin-right: 0; } }
+      margin-right: -2.625em; } }
 
-@media screen and (min-width: 74.001em) {
+@media screen and (min-width: 74em) {
   .is-full-width .col-full {
     max-width: 100%;
     margin-left: auto;
@@ -898,6 +898,8 @@ a {
       content: " ";
       display: block;
       clear: both; }
+    .is-full-width .col-full .col-full {
+      padding: 0; }
   .col-full .expand-full-width {
     margin-left: -46em;
     margin-right: -46em; }
@@ -2472,16 +2474,8 @@ embed, iframe, object {
 section + .archetype-homepage-hero {
   margin-top: 0; }
 
-.archetype-homepage-hero .col-full {
+.archetype-homepage-hero-content {
   padding: 5.25em 0; }
-
-.is-full-width .archetype-homepage-hero .col-full {
-  padding-left: 2.625em;
-  padding-right: 2.625em; }
-
-.archetype-homepage-hero.fixed {
-  margin-left: 0;
-  margin-right: 0; }
 
 .archetype-homepage-hero.left {
   text-align: left; }
@@ -2492,28 +2486,31 @@ section + .archetype-homepage-hero {
 .archetype-homepage-hero-buttons .button {
   margin: .25em; }
 
-@media screen and (max-width: 74em) {
-  .archetype-homepage-hero .col-full {
-    padding: 5.25em 2.625em; } }
+.archetype-homepage-hero.expand-full-width {
+  padding: 0 2.625em; }
 
+@media screen and (min-width: 71.25em) {
+  .archetype-homepage-hero.expand-full-width {
+    padding: 0 2.625em !important; } }
+
+/**
+ * Phone
+ */
 @media screen and (max-width: 568px) {
-  .archetype-homepage-hero .col-full {
-    padding: 2.75em 1.387em; } }
+  .archetype-homepage-hero.expand-full-width {
+    padding: 0 1.387em; }
+  .archetype-homepage-hero-content {
+    padding: 2.75em 0; } }
 
+/**
+ * Tablet
+ */
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .is-full-width .archetype-homepage-hero .col-full {
-    padding-left: 2.125em;
-    padding-right: 2.125em; } }
+  .archetype-homepage-hero.expand-full-width {
+    padding: 0 2.125em; } }
 
 .archetype-homepage-content {
   text-align: center; }
-
-.archetype-homepage-content .col-full {
-  padding: 2.625em 0; }
-
-.is-full-width .archetype-homepage-content .col-full {
-  padding-left: 2.625em;
-  padding-right: 2.625em; }
 
 .archetype-homepage-content.left {
   text-align: left; }
@@ -2524,17 +2521,42 @@ section + .archetype-homepage-hero {
 .archetype-homepage-content .hentry, .archetype-homepage-content p:last-child {
   margin-bottom: 0px; }
 
-@media screen and (max-width: 74em) {
-  .archetype-homepage-content .col-full {
-    padding: 2.625em; } }
+.archetype-homepage-content {
+  padding-top: 2.625em;
+  padding-bottom: 2.625em; }
+  .archetype-homepage-content.expand-full-width {
+    padding-left: 2.625em;
+    padding-right: 2.625em; }
 
+@media screen and (min-width: 71.25em) {
+  .archetype-homepage-content {
+    padding-top: 2.625em !important;
+    padding-bottom: 2.625em !important; }
+    .archetype-homepage-content.expand-full-width {
+      padding-left: 2.625em !important;
+      padding-right: 2.625em !important; } }
+
+/**
+ * Phone
+ */
 @media screen and (max-width: 568px) {
-  .archetype-homepage-content .col-full {
-    padding: 1.387em; } }
+  .archetype-homepage-content {
+    padding-top: 1.387em;
+    padding-bottom: 1.387em; }
+    .archetype-homepage-content.expand-full-width {
+      padding-left: 1.387em;
+      padding-right: 1.387em; } }
 
+/**
+ * Tablet
+ */
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .archetype-homepage-content .col-full {
-    padding: 2.125em; } }
+  .archetype-homepage-content {
+    padding-top: 2.125em;
+    padding-bottom: 2.125em; }
+    .archetype-homepage-content.expand-full-width {
+      padding-left: 2.125em;
+      padding-right: 2.125em; } }
 
 /**
  * Subscribe & Connect

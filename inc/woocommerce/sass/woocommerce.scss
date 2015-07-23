@@ -1328,7 +1328,13 @@ dl.variation {
  * Homepage
  */
 .archetype-product-section {
-	padding: 2.625em;
+	padding-top: 2.625em;
+	padding-bottom: 2.625em;
+
+	&.expand-full-width {
+		padding-left: 2.625em;
+		padding-right: 2.625em;
+	}
 
 	.section-title {
 		text-align: center;
@@ -2067,7 +2073,13 @@ dl.variation {
 	}
 
 	.archetype-product-section {
-		padding: 1.387em;
+		padding-top: 1.387em;
+		padding-bottom: 1.387em;
+
+		&.expand-full-width {
+			padding-left: 1.3875em;
+			padding-right: 1.387em;
+		}
 
 		&:last-child {
 			margin-bottom: -1.387em;
@@ -2113,7 +2125,13 @@ dl.variation {
 
 @media screen and (min-width: 71.25em) {
 	.archetype-product-section {
-		padding: 2.625em !important;
+		padding-top: 2.625em !important;
+		padding-bottom: 2.625em !important;
+
+		&.expand-full-width {
+			padding-left: 2.625em !important;
+			padding-right: 2.625em !important;
+		}
 	}
 }
 
@@ -2144,7 +2162,13 @@ dl.variation {
 	}
 
 	.archetype-product-section {
-		padding: 2.125em;
+		padding-top: 2.125em;
+		padding-bottom: 2.1257em;
+
+		&.expand-full-width {
+			padding-left: 2.125em;
+			padding-right: 2.125em;
+		}
 
 		&:last-child {
 			margin-bottom: -2.125em;

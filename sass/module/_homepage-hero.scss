@@ -7,18 +7,8 @@ section + .archetype-homepage-hero {
 	margin-top: 0;
 }
 
-.archetype-homepage-hero .col-full {
+.archetype-homepage-hero-content {
 	padding: 5.250em 0;
-}
-
-.is-full-width .archetype-homepage-hero .col-full {
-	padding-left: 2.625em;
-	padding-right: 2.625em;
-}
-
-.archetype-homepage-hero.fixed {
-	margin-left: 0;
-	margin-right: 0;
 }
 
 .archetype-homepage-hero.left {
@@ -35,21 +25,35 @@ section + .archetype-homepage-hero {
 	}
 }
 
-@media screen and (max-width: 74em) {
-	.archetype-homepage-hero .col-full {
-		padding: 5.250em 2.625em;
+.archetype-homepage-hero.expand-full-width {
+	padding: 0 2.625em;
+}
+
+@media screen and (min-width: 71.25em) {
+	.archetype-homepage-hero.expand-full-width {
+		padding: 0 2.625em !important;
 	}
 }
 
+/**
+ * Phone
+ */
+ 
 @media screen and (max-width: 568px) {
-	.archetype-homepage-hero .col-full {
-		padding: 2.750em 1.387em;
+	.archetype-homepage-hero.expand-full-width {
+		padding: 0 1.387em;
+	}
+	.archetype-homepage-hero-content {
+		padding: 2.750em 0;
 	}
 }
+
+/**
+ * Tablet
+ */
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-	.is-full-width .archetype-homepage-hero .col-full {
-		padding-left: 2.125em;
-		padding-right: 2.125em;
+	.archetype-homepage-hero.expand-full-width {
+		padding: 0 2.125em;
 	}
 }
