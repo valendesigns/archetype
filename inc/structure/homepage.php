@@ -53,7 +53,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		// Button URL.
 		$button_url          = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_url', home_url() ) );
 
-		// Display buttons. 
+		// Display buttons.
 		$has_buttons         = (bool) $button_text && $button_url;
 
 		// CSS classes.
