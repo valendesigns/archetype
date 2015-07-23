@@ -80,51 +80,63 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		?>
 		<section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
 
-			<div class="col-full">
+			<?php do_action( 'archetype_homepage_hero_overlay_before' ); ?>
 
-				<?php do_action( 'archetype_homepage_hero_content_before' ); ?>
+			<div class="archetype-homepage-hero">
 
-				<div class="archetype-homepage-hero-content">
+				<?php do_action( 'archetype_homepage_hero_column_before' ); ?>
 
-					<?php do_action( 'archetype_homepage_hero_title_before' ); ?>
+				<div class="col-full">
 
-					<h1 style="color: <?php echo esc_attr( $heading_text_color ); ?>"><?php echo esc_html( $heading_text ); ?></h1>
+					<?php do_action( 'archetype_homepage_hero_content_before' ); ?>
 
-					<?php do_action( 'archetype_homepage_hero_title_after' ); ?>
+					<div class="archetype-homepage-hero-content">
 
-					<?php do_action( 'archetype_homepage_hero_body_before' ); ?>
+						<?php do_action( 'archetype_homepage_hero_title_before' ); ?>
 
-					<div class="archetype-homepage-hero-body">
+						<h1 style="color: <?php echo esc_attr( $heading_text_color ); ?>"><?php echo esc_html( $heading_text ); ?></h1>
 
-						<?php echo wpautop( $body_text ); ?>
+						<?php do_action( 'archetype_homepage_hero_title_after' ); ?>
 
-						<?php do_action( 'archetype_homepage_hero_body' ); ?>
+						<?php do_action( 'archetype_homepage_hero_body_before' ); ?>
 
-						<?php if ( $has_buttons ) { ?>
+						<div class="archetype-homepage-hero-body">
 
-							<?php do_action( 'archetype_homepage_hero_buttons_before' ); ?>
+							<?php echo wpautop( $body_text ); ?>
 
-							<div class="archetype-homepage-hero-buttons">
+							<?php do_action( 'archetype_homepage_hero_body' ); ?>
 
-								<a href="<?php echo esc_attr( $button_url ); ?>" class="button"><?php echo esc_html( $button_text ); ?></a>
+							<?php if ( $has_buttons ) { ?>
 
-								<?php do_action( 'archetype_homepage_hero_buttons' ); ?>
+								<?php do_action( 'archetype_homepage_hero_buttons_before' ); ?>
 
-							</div><!-- .archetype-homepage-hero-buttons -->
+								<div class="archetype-homepage-hero-buttons">
 
-							<?php do_action( 'archetype_homepage_hero_buttons_after' ); ?>
+									<a href="<?php echo esc_attr( $button_url ); ?>" class="button"><?php echo esc_html( $button_text ); ?></a>
 
-						<?php } ?>
+									<?php do_action( 'archetype_homepage_hero_buttons' ); ?>
 
-					</div><!-- .archetype-homepage-hero-body -->
+								</div><!-- .archetype-homepage-hero-buttons -->
 
-					<?php do_action( 'archetype_homepage_hero_body_after' ); ?>
+								<?php do_action( 'archetype_homepage_hero_buttons_after' ); ?>
 
-				</div><!-- .archetype-homepage-hero-content -->
+							<?php } ?>
 
-				<?php do_action( 'archetype_homepage_hero_content_after' ); ?>
+						</div><!-- .archetype-homepage-hero-body -->
 
-			</div>
+						<?php do_action( 'archetype_homepage_hero_body_after' ); ?>
+
+					</div><!-- .archetype-homepage-hero-content -->
+
+					<?php do_action( 'archetype_homepage_hero_content_after' ); ?>
+
+				</div><!-- .col-full -->
+
+				<?php do_action( 'archetype_homepage_hero_column_after' ); ?>
+
+			</div><!-- .archetype-homepage-hero-overlay -->
+
+			<?php do_action( 'archetype_homepage_hero_overlay_after' ); ?>
 
 		</section>
 		<?php
