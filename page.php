@@ -10,7 +10,7 @@
  * @package Archetype
  */
 
-get_header(); ?>
+do_action( 'archetype_get_header' ); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -37,5 +37,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php do_action( 'archetype_sidebar' ); ?>
-<?php get_footer(); ?>
+<?php do_action( 'archetype_get_sidebar' ); ?>
+<?php do_action( 'archetype_get_footer' ); ?>

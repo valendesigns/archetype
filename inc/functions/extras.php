@@ -8,6 +8,24 @@
  */
 
 /**
+ * Load header template.
+ *
+ * @since 1.0.0
+ */
+function archetype_get_header() {
+	get_header();
+}
+
+/**
+ * Load footer template.
+ *
+ * @since 1.0.0
+ */
+function archetype_get_footer() {
+	get_footer();
+}
+
+/**
  * Check whether the Archetype Customizer settings ar enabled
  *
  * @since 1.0.0

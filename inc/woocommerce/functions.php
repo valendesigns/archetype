@@ -92,7 +92,7 @@ if ( ! function_exists( 'archetype_after_content' ) ) :
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php do_action( 'archetype_sidebar' );
+		<?php do_action( 'archetype_get_sidebar' );
 	}
 endif;
 
@@ -215,14 +215,14 @@ function archetype_woocommerce_body_class( $classes ) {
 	if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
 		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_products_full_width', apply_filters( 'archetype_default_products_full_width', false ) ) ) ) {
 			$classes[] = 'archetype-full-width-content';
-			remove_action( 'archetype_sidebar', 'archetype_get_sidebar' );
+			remove_action( 'archetype_get_sidebar', 'archetype_get_sidebar' );
 		}
 	}
 
 	if ( is_product() ) {
 		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_full_width', apply_filters( 'archetype_default_product_full_width', false ) ) ) ) {
 			$classes[] = 'archetype-full-width-content';
-			remove_action( 'archetype_sidebar', 'archetype_get_sidebar' );
+			remove_action( 'archetype_get_sidebar', 'archetype_get_sidebar' );
 		}
 
 		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_product_gallery_full_width', apply_filters( 'archetype_default_product_gallery_full_width', false ) ) ) ) {
