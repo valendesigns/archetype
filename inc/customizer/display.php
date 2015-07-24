@@ -451,9 +451,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			.hentry .entry-meta {
 				border-top-color: ' . $post_border_color. ';
 			}
-			.format-quote .author-info + .entry-meta {
-				border-color: ' . $post_border_color. ';
-			}
 			.post-navigation div + div {
 				box-shadow: 0px 1px 0px ' . $post_border_color. ' inset;
 			}';
@@ -657,8 +654,10 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		if ( '#d94834' !== $button_border_color ) {
 			$button_style .= '
-			.format-quote .author-info, .format-quote .entry-meta {
-				border-color: ' . $button_border_color . ';
+			.format-quote .entry-content + .subscribe-and-connect-connect,
+			.format-quote .entry-content + .author-info,
+			.format-quote .entry-content + .entry-meta {
+				border-top-color: ' . $button_border_color . ';
 			}';
 		}
 

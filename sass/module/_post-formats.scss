@@ -119,13 +119,10 @@
 		}
 	}
 
-	.author-info,
-	.entry-meta {
-		border-color: $color-button-border;
-	}
-
-	.author-info + .entry-meta {
-		border-color: $color-post-border;
+	.entry-content + .subscribe-and-connect-connect,
+	.entry-content + .author-info,
+	.entry-content + .entry-meta {
+		border-top-color: $color-button-border;
 	}
 }
 

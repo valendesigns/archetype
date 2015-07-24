@@ -1765,10 +1765,8 @@ fieldset {
       top: -.1em; }
       .rtl .format-quote .entry-content blockquote:before {
         content: "\f10d"; }
-.format-quote .author-info, .format-quote .entry-meta {
-  border-color: #d94834; }
-.format-quote .author-info + .entry-meta {
-  border-color: #e5e5e5; }
+.format-quote .entry-content + .subscribe-and-connect-connect, .format-quote .entry-content + .author-info, .format-quote .entry-content + .entry-meta {
+  border-top-color: #d94834; }
 
 .format-chat .entry-content {
   padding-left: 2.625em;
