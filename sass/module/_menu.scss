@@ -377,12 +377,21 @@
 	/**
 	 * Secondary Navigation
 	 */
+	.secondary-navigation-wrap {
+		background-color: $color-nav-alt-bg;
+		@include clearfix;
+	}
+
 	.secondary-navigation {
 		color: $color-nav-alt;
 		margin: 1.618em 0;
 		width: auto;
 		clear: none;
 		line-height: 1;
+		
+		.secondary-navigation-wrap & {
+			margin: 0;
+		}
 		
 		ul.menu {
 			li {

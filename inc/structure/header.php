@@ -61,26 +61,30 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) :
 	 */
 	function archetype_primary_navigation() {
 		?>
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Navigation', 'archetype' ); ?>">
-			<button class="menu-toggle"><span class="screen-reader-text"><?php echo esc_attr( apply_filters( 'archetype_menu_toggle_text', __( 'Navigation', 'archetype' ) ) ); ?></span></button>
-			<?php
-			do_action( 'archetype_primary_navigation' );
+		<div id="navigation">
+			<div class="col-full">
+				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Navigation', 'archetype' ); ?>">
+					<button class="menu-toggle"><span class="screen-reader-text"><?php echo esc_attr( apply_filters( 'archetype_menu_toggle_text', __( 'Navigation', 'archetype' ) ) ); ?></span></button>
+					<?php
+					do_action( 'archetype_primary_navigation' );
 
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'primary',
-					'container_class' => 'primary-navigation',
-				)
-			);
+					wp_nav_menu(
+						array(
+							'theme_location'	=> 'primary',
+							'container_class' => 'primary-navigation',
+						)
+					);
 
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'handheld',
-					'container_class' => 'handheld-navigation',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+					wp_nav_menu(
+						array(
+							'theme_location'	=> 'handheld',
+							'container_class' => 'handheld-navigation',
+						)
+					);
+					?>
+				</nav><!-- #site-navigation -->
+			</div><!-- .col-full -->
+		</div><!-- #navigation -->
 		<?php
 	}
 endif;

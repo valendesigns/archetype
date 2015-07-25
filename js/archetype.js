@@ -85,6 +85,12 @@
 			$( 'button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
 			$( 'a.cart-contents' ).css( 'display', 'block' );
 
+			// Fix header button positions inside wrapper
+			if ( $( '.secondary-navigation-wrap' ).length ) {
+				$( '.secondary-navigation-wrap button.menu-toggle' ).appendTo( '.site-header > .col-full' );
+				$( '.secondary-navigation-wrap .site-header-cart' ).clone().appendTo( '.site-header > .col-full' );
+			}
+
 			// Add focus class to li
 			$( '.main-navigation, .secondary-navigation' ).find( 'a' ).on( 'focus.archetype blur.archetype', function() {
 				$( this ).parents().toggleClass( 'focus' );

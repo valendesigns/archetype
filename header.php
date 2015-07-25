@@ -51,19 +51,15 @@
 			do_action( 'archetype_header' ); ?>
 
 		</div>
-		<div id="navigation">
-			<div class="col-full">
+		
+		<?php
+		/**
+		 * Default hooks
+		 *
+		 * @hooked archetype_primary_navigation - 10
+		 */
+		do_action( 'archetype_inside_header_after' ); ?>
 
-			<?php
-			/**
-			 * Default hooks
-			 *
-			 * @hooked archetype_primary_navigation - 10
-			 */
-			do_action( 'archetype_navigation' ); ?>
-
-			</div>
-		</div>
 	</header><!-- #masthead -->
 
 	<?php

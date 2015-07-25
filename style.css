@@ -761,6 +761,11 @@ a {
     width: 65.3846153846%;
     float: right;
     margin-right: 0; }
+  .site-header .secondary-navigation-wrap .secondary-navigation {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
   .site-header .main-navigation {
     width: 100%;
     float: left;
@@ -1290,12 +1295,20 @@ fieldset {
   /**
 	 * Secondary Navigation
 	 */
+  .secondary-navigation-wrap {
+    background-color: #41484d; }
+    .secondary-navigation-wrap::after {
+      clear: both;
+      content: "";
+      display: table; }
   .secondary-navigation {
     color: #888;
     margin: 1.618em 0;
     width: auto;
     clear: none;
     line-height: 1; }
+    .secondary-navigation-wrap .secondary-navigation {
+      margin: 0; }
     .secondary-navigation ul.menu li a {
       color: #ddd; }
       .secondary-navigation ul.menu li a:hover {

@@ -46,7 +46,7 @@ add_action( 'archetype_header',        'archetype_secondary_navigation', 20 );
  *
  * @see archetype_primary_navigation()
  */
-add_action( 'archetype_navigation', 'archetype_primary_navigation', 10 );
+add_action( 'archetype_inside_header_after', 'archetype_primary_navigation', 10 );
 
 /**
  * Footer

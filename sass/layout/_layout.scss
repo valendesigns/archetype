@@ -35,6 +35,12 @@
 			@include span(last 8 of 12);
 		}
 
+		.secondary-navigation-wrap {
+			.secondary-navigation {
+				@include span(full);
+			}
+		}
+
 		.main-navigation {
 			@include span(full);
 			clear: both;
