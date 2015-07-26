@@ -186,17 +186,14 @@
 		display: none !important;
 	}
 
-	.primary-navigation {
+	.primary-navigation,
+	.secondary-navigation .menu-secondary-container {
 		display: block;
 
 		.focus,
 		a:focus {
-			z-index: 100;
+			z-index: 999999;
 		}
-	}
-	
-	.secondary-navigation .menu-secondary-container {
-		display: block;
 	}
 
 	.main-navigation,

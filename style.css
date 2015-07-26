@@ -1206,12 +1206,10 @@ fieldset {
 @media screen and (min-width: 768px) {
   .menu-toggle, .handheld-navigation, .main-navigation.toggled .handheld-navigation {
     display: none !important; }
-  .primary-navigation {
+  .primary-navigation, .secondary-navigation .menu-secondary-container {
     display: block; }
-    .primary-navigation .focus, .primary-navigation a:focus {
-      z-index: 100; }
-  .secondary-navigation .menu-secondary-container {
-    display: block; }
+    .primary-navigation .focus, .primary-navigation a:focus, .secondary-navigation .menu-secondary-container .focus, .secondary-navigation .menu-secondary-container a:focus {
+      z-index: 999999; }
   .main-navigation, .secondary-navigation {
     clear: both;
     display: block;
