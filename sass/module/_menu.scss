@@ -436,6 +436,10 @@
 				&.current_page_item {
 					> a {
 						color: $color-nav-alt-link-active;
+
+						.secondary-navigation-wrap & {
+							background-color: $color-nav-alt-link-active-bg;
+						}
 					}
 				}
 

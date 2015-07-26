@@ -1325,6 +1325,8 @@ fieldset {
         background-color: #464e54; }
     .secondary-navigation ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li.current_page_parent > a, .secondary-navigation ul.menu li.current-menu-ancestor > a, .secondary-navigation ul.menu li.current_page_item > a {
       color: #fff; }
+      .secondary-navigation-wrap .secondary-navigation ul.menu li.current-menu-item > a, .secondary-navigation-wrap .secondary-navigation ul.menu li.current_page_parent > a, .secondary-navigation-wrap .secondary-navigation ul.menu li.current-menu-ancestor > a, .secondary-navigation-wrap .secondary-navigation ul.menu li.current_page_item > a {
+        background-color: #3b4146; }
     .secondary-navigation ul.menu li li.current-menu-item > a, .secondary-navigation ul.menu li li.current_page_parent > a, .secondary-navigation ul.menu li li.current-menu-ancestor > a, .secondary-navigation ul.menu li li.current_page_item > a {
       color: #fff;
       background-color: #3b4146; }
