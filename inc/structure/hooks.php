@@ -51,11 +51,17 @@ add_action( 'archetype_inside_header_after', 'archetype_primary_navigation', 10 
 /**
  * Footer
  *
+ * @see archetype_site_footer()
+ * @see archetype_social_icons()
+ * @see archetype_site_info()
  * @see archetype_footer_widgets()
  * @see archetype_credit()
+ * @see archetype_dequeue_footer_scripts()
  */
+add_action( 'archetype_footer',           'archetype_site_footer',            10 );
+add_action( 'archetype_footer',           'archetype_social_icons',           20 );
+add_action( 'archetype_footer',           'archetype_site_info',              30 );
 add_action( 'archetype_footer_widgets',   'archetype_footer_widgets',         10 );
-add_action( 'archetype_between_footers',  'archetype_social_icons',           10 );
 add_action( 'archetype_site_info_footer', 'archetype_credit',                 20 );
 add_action( 'wp_footer',                  'archetype_dequeue_footer_scripts',  0 );
 

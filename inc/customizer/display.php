@@ -755,16 +755,16 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 		$footer_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_link_hover_color', apply_filters( 'archetype_default_footer_link_hover_color', '#fff' ) ) );
 
 		// Lower footer text.
-		$footer_lower_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_text_color', apply_filters( 'archetype_default_footer_lower_text_color', '#888' ) ) );
+		$footer_lower_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_info_text_color', apply_filters( 'archetype_default_footer_info_text_color', '#888' ) ) );
 
 		// Lower footer background.
-		$footer_lower_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_background_color', apply_filters( 'archetype_default_footer_lower_background_color', '#292e31' ) ) );
+		$footer_lower_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_info_background_color', apply_filters( 'archetype_default_footer_info_background_color', '#292e31' ) ) );
 
 		// Lower footer link.
-		$footer_lower_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_link_color', apply_filters( 'archetype_default_footer_lower_link_color', '#ee543f' ) ) );
+		$footer_lower_link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_info_link_color', apply_filters( 'archetype_default_footer_info_link_color', '#aaa' ) ) );
 
 		// Lower footer link hover.
-		$footer_lower_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_lower_link_hover_color', apply_filters( 'archetype_default_footer_lower_link_hover_color', '#fff' ) ) );
+		$footer_lower_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_info_link_hover_color', apply_filters( 'archetype_default_footer_info_link_hover_color', '#fff' ) ) );
 
 		if ( '#353b3f' !== $footer_background_color || ( '#888' !== $footer_text_color && '#888888' !== $footer_text_color ) ) {
 			$style .= '.site-footer {

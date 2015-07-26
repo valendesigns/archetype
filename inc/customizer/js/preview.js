@@ -346,7 +346,7 @@
 			$( '.site-footer' ).css( 'background-color', to );
 		} );
 	} );
-	wp.customize( 'archetype_footer_lower_text_color', function( value ) {
+	wp.customize( 'archetype_footer_info_text_color', function( value ) {
 		value.bind( function( to ) {
 			// Text Color
 			$( '.site-info' ).css( 'color', to );
@@ -357,7 +357,7 @@
 			} );
 		} );
 	} );
-	wp.customize( 'archetype_footer_lower_background_color', function( value ) {
+	wp.customize( 'archetype_footer_info_background_color', function( value ) {
 		value.bind( function( to ) {
 			// Background Color
 			$( '.site-info' ).css( 'background-color', to );

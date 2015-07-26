@@ -7,6 +7,60 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'archetype_site_footer' ) ) :
+	/**
+	 * Build the site footer with widgets.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_site_footer() {
+		?>
+		<div class="<?php archetype_site_footer_classes(); ?>" style="<?php archetype_site_footer_styles(); ?>">
+
+			<div class="col-full">
+
+				<?php
+				/**
+				 * Default hooks
+				 *
+				 * @hooked archetype_footer_widgets - 10
+				 */
+				do_action( 'archetype_footer_widgets' ); ?>
+
+			</div><!-- .col-full -->
+
+		</div><!-- .site-footer -->
+		<?php
+	}
+endif;
+
+if ( ! function_exists( 'archetype_site_info' ) ) :
+	/**
+	 * Build the site info footer with credits.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_site_info() {
+		?>
+		<div class="<?php archetype_site_info_classes(); ?>" style="<?php archetype_site_info_styles(); ?>">
+
+			<div class="col-full">
+
+				<?php
+				/**
+				 * Default hooks
+				 *
+				 * @hooked archetype_credit - 20
+				 */
+				do_action( 'archetype_site_info_footer' ); ?>
+
+			</div><!-- .col-full -->
+
+		</div><!-- .site-info -->
+		<?php
+	}
+endif;
+
 if ( ! function_exists( 'archetype_footer_widgets' ) ) :
 	/**
 	 * Display the footer widget regions
@@ -91,7 +145,7 @@ if ( ! function_exists( 'archetype_credit' ) ) :
 			echo wp_kses_post( apply_filters( 'archetype_copyright_text', $content ) );
 
 			// Credits.
-			if ( true == get_theme_mod( 'archetype_footer_credit_toggle', true ) && apply_filters( 'archetype_credit_link', true ) ) {
+			if ( true == get_theme_mod( 'archetype_footer_info_credits_toggle', true ) && apply_filters( 'archetype_credit_link', true ) ) {
 				printf( __( '%1$s theme by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" alt="Premium WordPress Themes by Valen Designs" title="Premium WordPress Themes by Valen Designs" rel="designer">Valen Designs</a>' );
 			}
 			?>
