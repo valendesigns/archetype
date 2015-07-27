@@ -162,11 +162,11 @@ module.exports = function( grunt ) {
 			},
 			js: {
 				files: [
-					// main js
+					// Main JS.
 					'js/*js',
 					'!js/*.min.js',
 
-					// customizer js
+					// Customizer JS.
 					'inc/customizer/js/*js',
 					'!inc/customizer/js/*.min.js'
 				],
@@ -189,7 +189,7 @@ module.exports = function( grunt ) {
 				options: {
 					potFilename: '<%= pkg.name %>.pot',
 					exclude: [
-						'dist/<%= pkg.name %>/.*' // Exclude deploy directory
+						'dist/<%= pkg.name %>/.*' // Exclude deploy directory.
 					],
 					processPot: function( pot ) {
 						pot.headers['project-id-version'];
@@ -222,14 +222,14 @@ module.exports = function( grunt ) {
 			},
 			files: {
 				src:	[
-					'**/*.php', // Include all files
-					'!node_modules/**' // Exclude node_modules/
+					'**/*.php', // Include all files.
+					'!node_modules/**' // Exclude node_modules/.
 				],
 				expand: true
 			}
 		},
 
-		// Creates deploy-able theme
+		// Creates deploy-able theme.
 		copy: {
 			deploy: {
 				src: [
@@ -262,7 +262,7 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// Compress distribution package into a ZIP
+		// Compress distribution package into a ZIP.
 		compress: {
 			deploy: {
 				options: {
@@ -278,7 +278,7 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// Clean up
+		// Clean up.
 		clean: {
 			core: {
 				src: [ 'style-rtl.css' ]
@@ -290,21 +290,21 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// Shell actions for transifex client
+		// Shell actions for transifex client.
 		shell: {
 			options: {
 				stdout: true,
 				stderr: true
 			},
 			txpush: {
-				command: 'tx push -s' // push the resources
+				command: 'tx push -s' // Push the resources.
 			},
 			txpull: {
-				command: 'tx pull -a -f' // pull the .po files
+				command: 'tx pull -a -f' // Pull the .po files.
 			}
 		},
 
-		// Convert .po to .mo
+		// Convert .po to .mo.
 		potomo: {
 			options: {
 				poDel: false
@@ -325,7 +325,7 @@ module.exports = function( grunt ) {
 
 	});
 
-	// Load tasks
+	// Load tasks.
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-sass' );
@@ -340,7 +340,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-shell' );
 	grunt.loadNpmTasks( 'grunt-potomo' );
 
-	// Register tasks
+	// Register tasks.
 	grunt.registerTask( 'default', [
 		'jshint',
 		'css',

@@ -4,7 +4,6 @@
 ( function( $ ) {
 	'use strict';
 
-	/* FLUIDMEDIA CLASS DEFINITION */
 	var selectors = [
 		'[data-spy=fluidmedia]',
 		'iframe[src*="player.vimeo.com"]',
@@ -22,11 +21,13 @@
 	Fluidmedia = function( element ) {
 		this.$element = $( element );
 		this.process();
-	};
+	},
+	old = $.fn.fluidmedia;
 
 	Fluidmedia.prototype.process = function() {
+		var height, width, tag, aspectRatio;
 
-		var tag = this.$element.prop( 'tagName' ).toLowerCase();
+		tag = this.$element.prop( 'tagName' ).toLowerCase();
 
 		if ( 'embed' === tag && this.$element.parent( 'object' ).length ) {
 			return;
@@ -38,23 +39,20 @@
 
 		this.$element.wrap( '<div class="fluid-media"></div>' );
 
-		var height = this.$element.attr( 'height' ),
-			width = this.$element.attr( 'width' );
+		height = this.$element.attr( 'height' );
+		width = this.$element.attr( 'width' );
 
 		if ( 'undefined' !== typeof height && 'undefined' !== typeof width ) {
 			if ( -1 !== this.$element.attr( 'src' ).indexOf( 'slideshare.net' ) ) {
 				height = height - 31;
 			}
-			var aspectRatio = height / width;
+			aspectRatio = height / width;
 			this.$element.parent( '.fluid-media' ).css( 'padding-bottom', ( aspectRatio * 100 ) + '%' );
 		}
 
 		this.$element.removeAttr( 'height' ).removeAttr( 'width' );
 
 	};
-
-	/* FLUIDMEDIA PLUGIN DEFINITION */
-	var old = $.fn.fluidmedia;
 
 	$.fn.fluidmedia = function( option ) {
 		return this.each( function() {
@@ -71,13 +69,11 @@
 
 	$.fn.fluidmedia.Constructor = Fluidmedia;
 
-	/* FLUIDMEDIA NO CONFLICT */
 	$.fn.fluidmedia.noConflict = function() {
 		$.fn.fluidmedia = old;
 		return this;
 	};
 
-	/* FLUIDMEDIA DATA-API */
 	$( document ).on( 'ready.fluidmedia.data-api', function() {
 		$( selectors.join( ',' ) ).each( function() {
 			var $spy = $( this ),

@@ -177,9 +177,8 @@
 		 * @return void
 		 */
 		sliderInit: function() {
+			var _slider;
 			if ( 'function' === typeof jQuery.fn.bxSlider ) {
-				var _slider;
-
 				_slider = $( '.bxslider' ).bxSlider( {
 					adaptiveHeight: true,
 					mode: 'fade',
