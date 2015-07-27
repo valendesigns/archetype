@@ -2,6 +2,7 @@
 	"preset": "wordpress",
 	"requirePaddingNewLinesBeforeLineComments": null,
 	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+	"requireCapitalizedComments": { "allExcept": ["jshint", "global"] },
 	"excludeFiles": [
 		"**/vendor/**",
 		"**/*.min.js",
