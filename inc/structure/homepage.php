@@ -57,7 +57,9 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		$has_buttons         = (bool) $button_text && $button_url;
 
 		// CSS classes.
-		$classes = array( 'archetype-homepage-hero' );
+		$classes = array();
+		$classes[] = 'archetype-hero';
+		$classes[] = 'archetype-homepage-hero';
 		$classes[] = $alignment;
 		$classes[] = $layout;
 
@@ -82,7 +84,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 			<?php do_action( 'archetype_homepage_hero_overlay_before' ); ?>
 
-			<div class="archetype-homepage-hero-overlay">
+			<div class="archetype-hero-overlay">
 
 				<?php do_action( 'archetype_homepage_hero_column_before' ); ?>
 
@@ -90,7 +92,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 					<?php do_action( 'archetype_homepage_hero_content_before' ); ?>
 
-					<div class="archetype-homepage-hero-content">
+					<div class="archetype-hero-content">
 
 						<?php do_action( 'archetype_homepage_hero_title_before' ); ?>
 
@@ -100,7 +102,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 						<?php do_action( 'archetype_homepage_hero_body_before' ); ?>
 
-						<div class="archetype-homepage-hero-body">
+						<div class="archetype-hero-body">
 
 							<?php echo wpautop( $body_text ); ?>
 
@@ -110,23 +112,23 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 								<?php do_action( 'archetype_homepage_hero_buttons_before' ); ?>
 
-								<div class="archetype-homepage-hero-buttons">
+								<div class="archetype-hero-buttons">
 
 									<a href="<?php echo esc_attr( $button_url ); ?>" class="button"><?php echo esc_html( $button_text ); ?></a>
 
 									<?php do_action( 'archetype_homepage_hero_buttons' ); ?>
 
-								</div><!-- .archetype-homepage-hero-buttons -->
+								</div><!-- .archetype-hero-buttons -->
 
 								<?php do_action( 'archetype_homepage_hero_buttons_after' ); ?>
 
 							<?php } ?>
 
-						</div><!-- .archetype-homepage-hero-body -->
+						</div><!-- .archetype-hero-body -->
 
 						<?php do_action( 'archetype_homepage_hero_body_after' ); ?>
 
-					</div><!-- .archetype-homepage-hero-content -->
+					</div><!-- .archetype-hero-content -->
 
 					<?php do_action( 'archetype_homepage_hero_content_after' ); ?>
 
@@ -134,7 +136,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 				<?php do_action( 'archetype_homepage_hero_column_after' ); ?>
 
-			</div><!-- .archetype-homepage-hero-overlay -->
+			</div><!-- .archetype-hero-overlay -->
 
 			<?php do_action( 'archetype_homepage_hero_overlay_after' ); ?>
 

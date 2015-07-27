@@ -236,7 +236,7 @@
 	} );
 	wp.customize( 'archetype_homepage_hero_text_color', function( value ) {
 		value.bind( function( to ) {
-			$( '.archetype-homepage-hero-body' ).css( 'color', to );
+			$( '.archetype-homepage-hero .archetype-hero-body' ).css( 'color', to );
 		} );
 	} );
 	wp.customize( 'archetype_homepage_hero_background_color', function( value ) {

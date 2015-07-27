@@ -2496,37 +2496,37 @@ embed, iframe, object {
   .widget h3.widget-title {
     font-size: 1.5em; } }
 
-.archetype-homepage-hero {
+.archetype-hero {
   text-align: center;
   background-position: 50% 0; }
 
-section + .archetype-homepage-hero {
+section + .archetype-hero {
   margin-top: 0; }
 
-.archetype-homepage-hero-content {
+.archetype-hero-content {
   padding: 5.25em 0; }
 
-.archetype-homepage-hero.left {
+.archetype-hero.left {
   text-align: left; }
 
-.archetype-homepage-hero.right {
+.archetype-hero.right {
   text-align: right; }
 
-.archetype-homepage-hero-buttons .button {
+.archetype-hero-buttons .button {
   margin: .25em; }
 
-.archetype-homepage-hero.expand-full-width {
+.archetype-hero.expand-full-width {
   padding: 0 2.625em; }
 
-.archetype-homepage-hero.expand-full-width {
+.archetype-hero.expand-full-width {
   padding: 0 2.625em; }
 
 @media screen and (min-width: 71.25em) {
-  .archetype-homepage-hero.expand-full-width {
+  .archetype-hero.expand-full-width {
     padding: 0 2.625em !important; } }
 
 @media screen and (max-width: 74em) {
-  .expand-full-width .archetype-homepage-hero-overlay {
+  .expand-full-width .archetype-hero-overlay {
     position: relative;
     margin: 0 -2.625em;
     padding: 0 2.625em; } }
@@ -2535,11 +2535,11 @@ section + .archetype-homepage-hero {
  * Phone
  */
 @media screen and (max-width: 568px) {
-  .archetype-homepage-hero.expand-full-width {
+  .archetype-hero.expand-full-width {
     padding: 0 1.387em; }
-  .archetype-homepage-hero-content {
+  .archetype-hero-content {
     padding: 2.75em 0; }
-  .expand-full-width .archetype-homepage-hero-overlay {
+  .expand-full-width .archetype-hero-overlay {
     margin: 0 -1.387em;
     padding: 0 1.387em; } }
 
@@ -2547,9 +2547,9 @@ section + .archetype-homepage-hero {
  * Tablet
  */
 @media screen and (min-width: 768px) and (max-width: 74em) {
-  .archetype-homepage-hero.expand-full-width {
+  .archetype-hero.expand-full-width {
     padding: 0 2.125em; }
-  .expand-full-width .archetype-homepage-hero-overlay {
+  .expand-full-width .archetype-hero-overlay {
     margin: 0 -2.125em;
     padding: 0 2.125em; } }
 
