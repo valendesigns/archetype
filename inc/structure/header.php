@@ -60,8 +60,16 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_primary_navigation() {
+		/**
+		 * Filter the classes added to the navigation wrapper.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $classes Array of CSS classes.
+		 */
+		$classes = apply_filters( 'archetype_primary_navigation_classes', array() );
 		?>
-		<div id="navigation">
+		<div id="navigation" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 			<div class="col-full">
 				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Navigation', 'archetype' ); ?>">
 					<button class="menu-toggle"><span class="screen-reader-text"><?php echo esc_attr( apply_filters( 'archetype_menu_toggle_text', __( 'Navigation', 'archetype' ) ) ); ?></span></button>
