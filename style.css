@@ -1209,7 +1209,7 @@ fieldset {
   .primary-navigation, .secondary-navigation .menu-secondary-container {
     display: block; }
     .primary-navigation .focus, .primary-navigation a:focus, .secondary-navigation .menu-secondary-container .focus, .secondary-navigation .menu-secondary-container a:focus {
-      z-index: 999999; }
+      z-index: 999; }
   .main-navigation, .secondary-navigation {
     clear: both;
     display: block;
@@ -1241,7 +1241,7 @@ fieldset {
         float: left;
         position: absolute;
         top: 100%;
-        z-index: 99999;
+        z-index: 999;
         display: none; }
         .main-navigation ul ul li, .secondary-navigation ul ul li {
           float: none; }

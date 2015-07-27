@@ -192,7 +192,7 @@
 
 		.focus,
 		a:focus {
-			z-index: 999999;
+			z-index: 999;
 		}
 	}
 
@@ -253,7 +253,7 @@
 				float: left;
 				position: absolute;
 				top: 100%;
-				z-index: 99999;
+				z-index: 999;
 				display: none; // display: none; is required to make dropdowns work on touch devices
 
 				li {
