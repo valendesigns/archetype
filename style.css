@@ -2486,11 +2486,15 @@ embed, iframe, object {
   .widget {
     margin-bottom: 1.387em; }
     .widget h3.widget-title {
-      font-size: 1.5em; } }
+      font-size: 1.5em; }
+  .footer-widgets {
+    padding: 2.775em 0 1.387em 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .widget {
-    margin-bottom: 2.125em; } }
+    margin-bottom: 2.125em; }
+  .footer-widgets {
+    padding: 4.25em 0 2.125em 0; } }
 
 @media screen and (min-width: 74em) {
   .widget h3.widget-title {
@@ -2617,8 +2621,11 @@ section + .archetype-hero {
     list-style: none;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden;
     height: 1.5em; }
+    .subscribe-and-connect-connect .icons::after {
+      clear: both;
+      content: "";
+      display: table; }
     .subscribe-and-connect-connect .icons li {
       display: inline-block;
       overflow: hidden;
@@ -2797,13 +2804,9 @@ section + .archetype-hero {
   .subscribe-and-connect-connect {
     margin-top: 0 !important; }
     .site-header .subscribe-and-connect-connect .icons {
-      float: right; }
-      .site-header .subscribe-and-connect-connect .icons li {
-        float: left; }
+      text-align: right; }
     #colophon .subscribe-and-connect-connect .icons {
-      float: left; }
-      #colophon .subscribe-and-connect-connect .icons li {
-        float: left; } }
+      text-align: left; } }
 
 /**
  * Infinite Scroll

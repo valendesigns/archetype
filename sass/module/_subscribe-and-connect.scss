@@ -12,8 +12,8 @@
 		list-style: none;
 		margin: 0 !important;
 		padding: 0 !important;
-		overflow: hidden;
 		height: 1.5em;
+		@include clearfix;
 
 		li {
 			display: inline-block;
@@ -321,21 +321,13 @@
 
 		.site-header & {
 			.icons {
-				float: right;
-
-				li {
-					float: left;
-				}
+				text-align: right;
 			}
 		}
 
 		#colophon & {
 			.icons {
-				float: left;
-
-				li {
-					float: left;
-				}
+				text-align: left;
 			}
 		}
 	}

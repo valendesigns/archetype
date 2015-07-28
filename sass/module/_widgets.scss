@@ -140,7 +140,7 @@
 }
 
 .footer-widgets {
-	padding: 5.250em 0 2.625em 0;
+	padding: 5.25em 0 2.625em 0;
 }
 
 .widget_recent_entries,
@@ -249,11 +249,18 @@
 			font-size: 1.5em;
 		}
 	}
+
+	.footer-widgets {
+		padding: 2.775em 0 1.387em 0;
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
 	.widget {
 		margin-bottom: 2.125em;
+	}
+	.footer-widgets {
+		padding: 4.25em 0 2.125em 0;
 	}
 }
 
