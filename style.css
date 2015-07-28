@@ -1011,7 +1011,11 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
     opacity: 0.5; }
   button.small, input[type="button"].small, input[type="reset"].small, input[type="submit"].small, .button.small, .added_to_cart.small {
     padding: .357em .714em;
-    font-size: .875em; }
+    font-size: .875em;
+    font-weight: 300; }
+  button.large, input[type="button"].large, input[type="reset"].large, input[type="submit"].large, .button.large, .added_to_cart.large {
+    padding: .875em 1.5em;
+    font-size: 1.25em; }
   button.disabled, input[type="button"].disabled, input[type="reset"].disabled, input[type="submit"].disabled, .button.disabled, .added_to_cart.disabled {
     opacity: 0.5 !important; }
     button.disabled:hover, input[type="button"].disabled:hover, input[type="reset"].disabled:hover, input[type="submit"].disabled:hover, .button.disabled:hover, .added_to_cart.disabled:hover {
