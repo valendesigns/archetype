@@ -1808,6 +1808,13 @@ dl.variation {
 	}
 
 	/**
+ 	 * Account
+ 	 */
+	.woocommerce-account:not(.logged-in) .hentry {
+		@include span(isolate 8 at 3);
+	}
+
+	/**
  	 * Cart
  	 */
 	.page-template-template-fullwidth-php {
@@ -2001,6 +2008,18 @@ dl.variation {
 			.form-row-last {
 				@include span(last 3 of 6);
 			}
+
+			&.addresses {
+				@include span(full);
+		
+				.col-1 {
+					@include span(6 of 12);
+				}
+		
+				.col-2 {
+					@include span(last 6 of 12);
+				}
+			}
 		}
 
 		#order_review_heading,
@@ -2038,6 +2057,12 @@ dl.variation {
 	.page-template-template-fullwidth-php {
 		.form-row-first {
 			@include span(6 of 12);
+		}
+		
+		.lost_reset_password {
+			.form-row-first {
+				@include span(full);
+			}
 		}
 
 		.form-row-last {
@@ -2132,6 +2157,12 @@ dl.variation {
 			padding-left: 2.625em !important;
 			padding-right: 2.625em !important;
 		}
+	}
+}
+
+@media screen and (min-width: 74em) {
+	.woocommerce-account:not(.logged-in) .hentry {
+		@include span(isolate 6 at 4);
 	}
 }
 

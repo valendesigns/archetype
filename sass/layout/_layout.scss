@@ -165,7 +165,7 @@
 	}
 	
 	.error-404 {
-		@include span(isolate 50% at 25%);
+		@include span(isolate 8 at 3);
 	}
 
 	/**
@@ -245,6 +245,10 @@
 				margin-right: -2.625em;
 			}
 		}
+	}
+
+	.error-404 {
+		@include span(isolate 6 at 4);
 	}
 }
 

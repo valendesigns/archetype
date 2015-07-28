@@ -867,9 +867,9 @@ a {
     margin-left: 0;
     margin-right: 0; }
   .error-404 {
-    width: 50%;
+    width: 65.3846153846%;
     float: left;
-    margin-left: 25%;
+    margin-left: 17.3076923077%;
     margin-right: -100%; }
   /**
 	 * Footer widgets
@@ -929,7 +929,12 @@ a {
     margin-right: -46em; }
     .is-boxed .col-full .expand-full-width, .is-full-width .col-full .expand-full-width {
       margin-left: -2.625em;
-      margin-right: -2.625em; } }
+      margin-right: -2.625em; }
+  .error-404 {
+    width: 48.0769230769%;
+    float: left;
+    margin-left: 25.9615384615%;
+    margin-right: -100%; } }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .col-full {
