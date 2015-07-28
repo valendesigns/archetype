@@ -26,14 +26,6 @@ section + .archetype-hero {
 	position: relative;
 }
 
-.archetype-hero.left {
-	text-align: left;
-}
-
-.archetype-hero.right {
-	text-align: right;
-}
-
 .archetype-hero-buttons {
 	.button {
 		margin: .25em;
@@ -65,6 +57,14 @@ section + .archetype-hero {
 }
 
 @media screen and (min-width: 768px) {
+	.archetype-hero.left {
+		text-align: left;
+	}
+
+	.archetype-hero.right {
+		text-align: right;
+	}
+
 	.archetype-hero-has-grid {
 		.archetype-hero-media {
 			margin-top: 0;

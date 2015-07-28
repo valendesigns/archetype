@@ -2512,10 +2512,6 @@ section + .archetype-hero {
 
 .archetype-hero-content, .archetype-hero-media {
   visibility: hidden; }
-  .archetype-hero-content::after, .archetype-hero-media::after {
-    clear: both;
-    content: "";
-    display: table; }
   .no-js .archetype-hero-content, .no-js .archetype-hero-media {
     visibility: visible; }
 
@@ -2523,12 +2519,6 @@ section + .archetype-hero {
   margin-bottom: -5.25em;
   margin-top: 2.625em;
   position: relative; }
-
-.archetype-hero.left {
-  text-align: left; }
-
-.archetype-hero.right {
-  text-align: right; }
 
 .archetype-hero-buttons .button {
   margin: .25em; }
@@ -2549,6 +2539,10 @@ section + .archetype-hero {
     padding: 0 2.625em; } }
 
 @media screen and (min-width: 768px) {
+  .archetype-hero.left {
+    text-align: left; }
+  .archetype-hero.right {
+    text-align: right; }
   .archetype-hero-has-grid .archetype-hero-media {
     margin-top: 0; } }
 
