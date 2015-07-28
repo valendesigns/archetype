@@ -72,6 +72,24 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		$styles[] = 'background-repeat: no-repeat;';
 
 		/**
+		 * Filter the CSS classes added to the homepage hero section tag.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $classes Array of CSS classes.
+		 */
+		$classes = apply_filters( 'archetype_homepage_hero_classes', $classes );
+
+		/**
+		 * Filter the inline CSS styles added to the homepage hero section tag.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $styles Array of inline CSS styles.
+		 */
+		$styles = apply_filters( 'archetype_homepage_hero_styles', $styles );
+
+		/**
 		 * Filter the buttons display.
 		 *
 		 * @since 1.0.0
@@ -234,7 +252,7 @@ if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
 			 * @param array $styles Array of inline CSS styles.
 			 * @param int   $id The component ID.
 			 */
-			$styles = apply_filters( 'aarchetype_homepage_content_component_styles', $styles, $id );
+			$styles = apply_filters( 'archetype_homepage_content_component_styles', $styles, $id );
 			?>
 			<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( ' ', $styles ) ); ?>">
 

@@ -760,7 +760,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_hero_background_image_divider', array(
 			'section'      => 'archetype_homepage_hero',
 			'type'         => 'divider',
-			'priority'     => 26,
+			'priority'     => 29,
 		) ) );
 
 		/**
