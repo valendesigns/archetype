@@ -760,7 +760,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_hero_background_image_divider', array(
 			'section'      => 'archetype_homepage_hero',
 			'type'         => 'divider',
-			'priority'     => 29,
+			'priority'     => 26,
 		) ) );
 
 		/**
@@ -830,7 +830,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Heading text', 'archetype' ),
 			'section'      => 'archetype_homepage_hero',
 			'settings'     => 'archetype_homepage_hero_heading_text',
-			'priority'     => 45,
+			'priority'     => 50,
 			'type'         => 'text',
 		) ) );
 
@@ -846,7 +846,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Body text', 'archetype' ),
 			'section'      => 'archetype_homepage_hero',
 			'settings'     => 'archetype_homepage_hero_text',
-			'priority'     => 50,
+			'priority'     => 55,
 			'type'         => 'textarea',
 		) ) );
 
@@ -862,7 +862,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Button text', 'archetype' ),
 			'section'      => 'archetype_homepage_hero',
 			'settings'     => 'archetype_homepage_hero_button_text',
-			'priority'     => 55,
+			'priority'     => 60,
 			'type'         => 'text',
 		) ) );
 
@@ -878,7 +878,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Button url', 'archetype' ),
 			'section'      => 'archetype_homepage_hero',
 			'settings'     => 'archetype_homepage_hero_button_url',
-			'priority'     => 60,
+			'priority'     => 65,
 			'type'         => 'text',
 		) ) );
 
