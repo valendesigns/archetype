@@ -1273,7 +1273,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Background color', 'archetype' ),
 			'section'      => 'archetype_search',
 			'settings'     => 'archetype_search_background_color',
-			'priority'     => 10,
+			'priority'     => 15,
 		) ) );
 
 		/**
@@ -1290,7 +1290,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'section'      => 'archetype_search',
 			'settings'     => 'archetype_search_shadow_toggle',
 			'type'         => 'checkbox',
-			'priority'     => 15,
+			'priority'     => 20,
 		) ) );
 
 		/**
@@ -1306,7 +1306,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'label'        => __( 'Box shadow color', 'archetype' ),
 			'section'      => 'archetype_search',
 			'settings'     => 'archetype_search_shadow_color',
-			'priority'     => 20,
+			'priority'     => 25,
 		) ) );
 
 		/**
