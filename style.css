@@ -594,7 +594,7 @@ body, button, input, textarea {
   -moz-osx-font-smoothing: grayscale; }
 
 select {
-  font-family: initial !important; }
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
