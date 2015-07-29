@@ -1423,7 +1423,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_button_radius', array(
-			'label'        => __( 'Border Radius', 'archetype' ),
+			'label'        => __( 'Border radius', 'archetype' ),
 			'section'      => 'archetype_buttons',
 			'settings'     => 'archetype_button_radius',
 			'priority'     => 3,
