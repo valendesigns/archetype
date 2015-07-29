@@ -2519,9 +2519,9 @@ section + .archetype-hero {
 .archetype-hero .col-full {
   padding: 5.25em 0; }
 
-.archetype-hero-content, .archetype-hero-media {
+.archetype-hero-has-grid .archetype-hero-content, .archetype-hero-has-grid .archetype-hero-media {
   visibility: hidden; }
-  .no-js .archetype-hero-content, .no-js .archetype-hero-media {
+  .no-js .archetype-hero-has-grid .archetype-hero-content, .no-js .archetype-hero-has-grid .archetype-hero-media {
     visibility: visible; }
 
 .archetype-hero-media {

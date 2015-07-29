@@ -11,12 +11,14 @@ section + .archetype-hero {
 	padding: 5.250em 0;
 }
 
-.archetype-hero-content,
-.archetype-hero-media {
-	visibility: hidden;
+.archetype-hero-has-grid {
+	.archetype-hero-content,
+	.archetype-hero-media {
+		visibility: hidden;
 
-	.no-js & {
-		visibility: visible;
+		.no-js & {
+			visibility: visible;
+		}
 	}
 }
 
