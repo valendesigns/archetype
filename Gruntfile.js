@@ -259,6 +259,7 @@ module.exports = function( grunt ) {
 					'!inc/woocommerce/sass/**',
 					'!tests/**',
 					'!tools/**',
+					'!phpcs.ruleset.xml',
 					'!phpunit.xml.dist'
 				],
 				dest: 'dist/<%= pkg.name %>',
