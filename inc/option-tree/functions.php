@@ -202,14 +202,14 @@ if ( ! function_exists( 'archetype_filter_post_format_gallery' ) ) :
 	 */
 	function archetype_filter_post_format_gallery( $settings ) {
 		$settings['fields'][] = array(
-      'id'      => '_format_gallery_embed',
-      'label'   => '',
-      'desc'    => sprintf( __( 'Embed images from services like Photobucket, Instagram, or Flickr. You can find a list of supported oEmbed sites in the %1$s. Alternatively, you could use the built-in %2$s shortcode. Which is what the "Create Gallery" button above does, only dynamically.', 'archetype' ), '<a href="http://codex.wordpress.org/Embeds" target="_blank">' . __( 'Wordpress Codex', 'archetype' ) .'</a>', '<code>[gallery]</code>' ),
-      'std'     => '',
-      'type'    => 'textarea'
-    );
-    
-    return $settings;
+			'id'      => '_format_gallery_embed',
+			'label'   => '',
+			'desc'    => sprintf( __( 'Embed images from services like Photobucket, Instagram, or Flickr. You can find a list of supported oEmbed sites in the %1$s. Alternatively, you could use the built-in %2$s shortcode. Which is what the "Create Gallery" button above does, only dynamically.', 'archetype' ), '<a href="http://codex.wordpress.org/Embeds" target="_blank">' . __( 'Wordpress Codex', 'archetype' ) .'</a>', '<code>[gallery]</code>' ),
+			'std'     => '',
+			'type'    => 'textarea'
+		);
+
+		return $settings;
 	}
 endif;
 
