@@ -65,7 +65,7 @@
 			// Fix position by moving the button & display both buttons
 			$( 'button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
 			$( 'a.cart-contents' ).css( 'display', 'block' );
-			
+
 			// Listen for button click.
 			$( 'button.menu-toggle' ).on( 'click', function() {
 				var $that = $( this );
