@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-07-30 01:55:31+00:00\n"
+"POT-Creation-Date: 2015-07-30 04:58:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -911,6 +911,18 @@ msgstr ""
 
 #: inc/functions/setup.php:192 inc/structure/navigation.php:40
 msgid "Next"
+msgstr ""
+
+#: inc/option-tree/functions.php:207
+msgid ""
+"Embed images from services like Photobucket, Instagram, or Flickr. You can "
+"find a list of supported oEmbed sites in the %1$s. Alternatively, you could "
+"use the built-in %2$s shortcode. Which is what the \"Create Gallery\" "
+"button above does, only dynamically."
+msgstr ""
+
+#: inc/option-tree/functions.php:207
+msgid "Wordpress Codex"
 msgstr ""
 
 #: inc/option-tree/meta-boxes.php:33
