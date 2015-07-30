@@ -43,47 +43,43 @@
 		 * @return void
 		 */
 		navigationInit: function() {
-			var container, button, menu;
+			var $container = $( '#site-navigation' ),
+				$menu = $( '.handheld-navigation ul' );
 
-			container = document.getElementById( 'site-navigation' );
-			if ( ! container ) {
+			if ( 0 === $container.length ) {
 				return;
 			}
 
-			button = container.getElementsByTagName( 'button' )[0];
-			if ( 'undefined' === typeof button ) {
+			if ( 0 === $( 'button.menu-toggle' ).length ) {
 				return;
 			}
-
-			menu = container.getElementsByTagName( 'ul' )[0];
 
 			// Hide menu toggle button if menu is empty and return early.
-			if ( 'undefined' === typeof menu ) {
-				button.style.display = 'none';
+			if ( 0 === $menu.length ) {
+				$( 'button.menu-toggle' ).hide();
 				return;
 			}
 
-			menu.setAttribute( 'aria-expanded', 'false' );
-
-			if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-				menu.className += ' nav-menu';
-			}
-
-			button.onclick = function() {
-				if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-					container.className = container.className.replace( ' toggled', '' );
-					button.setAttribute( 'aria-expanded', 'false' );
-					menu.setAttribute( 'aria-expanded', 'false' );
-				} else {
-					container.className += ' toggled';
-					button.setAttribute( 'aria-expanded', 'true' );
-					menu.setAttribute( 'aria-expanded', 'true' );
-				}
-			};
+			$menu.attr( 'aria-expanded', 'false' );
 
 			// Fix position by moving the button & display both buttons
 			$( 'button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
 			$( 'a.cart-contents' ).css( 'display', 'block' );
+			
+			// Listen for button click.
+			$( 'button.menu-toggle' ).on( 'click', function() {
+				var $that = $( this );
+
+				if ( $container.is( '.toggled' ) ) {
+					$container.removeClass( 'toggled' );
+					$that.attr( 'aria-expanded', 'false' );
+					$menu.attr( 'aria-expanded', 'false' );
+				} else {
+					$container.addClass( 'toggled' );
+					$that.attr( 'aria-expanded', 'true' );
+					$menu.attr( 'aria-expanded', 'true' );
+				}
+			} );
 
 			// Fix header button positions inside wrapper
 			if ( $( '.secondary-navigation-wrap' ).length ) {
