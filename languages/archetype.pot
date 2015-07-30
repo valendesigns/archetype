@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-07-21 00:15:22+00:00\n"
+"POT-Creation-Date: 2015-07-30 01:55:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -498,36 +498,36 @@ msgid ""
 msgstr ""
 
 #: inc/customizer/controls.php:242 inc/customizer/controls.php:313
-#: inc/customizer/controls.php:419 inc/customizer/controls.php:541
+#: inc/customizer/controls.php:436 inc/customizer/controls.php:542
 #: inc/customizer/controls.php:776 inc/customizer/controls.php:979
 #: inc/customizer/controls.php:1062 inc/customizer/controls.php:1273
 #: inc/customizer/controls.php:1347 inc/customizer/controls.php:1463
-#: inc/customizer/controls.php:1624 inc/customizer/controls.php:1707
+#: inc/customizer/controls.php:1652 inc/customizer/controls.php:1739
 #: inc/woocommerce/controls.php:750 inc/woocommerce/controls.php:906
 #: inc/woocommerce/controls.php:1069 inc/woocommerce/controls.php:1227
 #: inc/woocommerce/controls.php:1383
 msgid "Background color"
 msgstr ""
 
-#: inc/customizer/controls.php:258 inc/customizer/controls.php:525
+#: inc/customizer/controls.php:258 inc/customizer/controls.php:420
 #: inc/customizer/controls.php:965 inc/customizer/controls.php:1135
 #: inc/customizer/controls.php:1257 inc/customizer/controls.php:1331
 #: inc/customizer/controls.php:1448 inc/customizer/controls.php:1609
-#: inc/customizer/controls.php:1692
+#: inc/customizer/controls.php:1693
 msgid "Text color"
 msgstr ""
 
 #: inc/customizer/controls.php:273 inc/customizer/controls.php:329
-#: inc/customizer/controls.php:435 inc/customizer/controls.php:557
-#: inc/customizer/controls.php:1168 inc/customizer/controls.php:1638
-#: inc/customizer/controls.php:1721
+#: inc/customizer/controls.php:452 inc/customizer/controls.php:558
+#: inc/customizer/controls.php:1168 inc/customizer/controls.php:1623
+#: inc/customizer/controls.php:1708
 msgid "Link color"
 msgstr ""
 
 #: inc/customizer/controls.php:288 inc/customizer/controls.php:345
-#: inc/customizer/controls.php:451 inc/customizer/controls.php:573
-#: inc/customizer/controls.php:1184 inc/customizer/controls.php:1652
-#: inc/customizer/controls.php:1735
+#: inc/customizer/controls.php:468 inc/customizer/controls.php:574
+#: inc/customizer/controls.php:1184 inc/customizer/controls.php:1637
+#: inc/customizer/controls.php:1723
 msgid "Link hover color"
 msgstr ""
 
@@ -541,44 +541,44 @@ msgid ""
 "changes."
 msgstr ""
 
-#: inc/customizer/controls.php:361 inc/customizer/controls.php:467
-#: inc/customizer/controls.php:589
+#: inc/customizer/controls.php:361 inc/customizer/controls.php:484
+#: inc/customizer/controls.php:590
 msgid "Link hover background color"
 msgstr ""
 
-#: inc/customizer/controls.php:362 inc/customizer/controls.php:590
+#: inc/customizer/controls.php:362 inc/customizer/controls.php:485
 msgid "This setting does not effect top level links, only sub menus."
 msgstr ""
 
-#: inc/customizer/controls.php:378 inc/customizer/controls.php:483
+#: inc/customizer/controls.php:378 inc/customizer/controls.php:501
 #: inc/customizer/controls.php:606
 msgid "Link active color"
 msgstr ""
 
-#: inc/customizer/controls.php:394 inc/customizer/controls.php:499
+#: inc/customizer/controls.php:394 inc/customizer/controls.php:517
 #: inc/customizer/controls.php:622
 msgid "Link active background color"
 msgstr ""
 
-#: inc/customizer/controls.php:404 inc/functions/setup.php:58
-msgid "Handheld Menu"
+#: inc/customizer/controls.php:404 inc/functions/setup.php:57
+msgid "Secondary Menu"
 msgstr ""
 
 #: inc/customizer/controls.php:406
 msgid ""
+"The Secondary Menu must be set to a menu location in order to preview style "
+"changes."
+msgstr ""
+
+#: inc/customizer/controls.php:527 inc/functions/setup.php:58
+msgid "Handheld Menu"
+msgstr ""
+
+#: inc/customizer/controls.php:529
+msgid ""
 "The Handheld Menu must be set to a menu location in order to preview style "
 "changes, and your browser window must be below 768px for the menu to be "
 "visible."
-msgstr ""
-
-#: inc/customizer/controls.php:509 inc/functions/setup.php:57
-msgid "Secondary Menu"
-msgstr ""
-
-#: inc/customizer/controls.php:511
-msgid ""
-"The Secondary Menu must be set to a menu location in order to preview style "
-"changes."
 msgstr ""
 
 #. Template Name of the plugin/theme
@@ -636,7 +636,7 @@ msgstr ""
 msgid "Body text color"
 msgstr ""
 
-#: inc/customizer/controls.php:824 inc/customizer/display.php:885
+#: inc/customizer/controls.php:824 inc/structure/homepage.php:45
 msgid "Heading Text"
 msgstr ""
 
@@ -646,7 +646,7 @@ msgstr ""
 msgid "Heading text"
 msgstr ""
 
-#: inc/customizer/controls.php:841 inc/customizer/display.php:888
+#: inc/customizer/controls.php:841 inc/structure/homepage.php:48
 msgid "Body Text"
 msgstr ""
 
@@ -654,7 +654,7 @@ msgstr ""
 msgid "Body text"
 msgstr ""
 
-#: inc/customizer/controls.php:857 inc/customizer/display.php:891
+#: inc/customizer/controls.php:857 inc/structure/homepage.php:51
 msgid "Call to Action"
 msgstr ""
 
@@ -799,7 +799,7 @@ msgstr ""
 msgid "Search Widget"
 msgstr ""
 
-#: inc/customizer/controls.php:1241
+#: inc/customizer/controls.php:1241 inc/customizer/controls.php:1426
 msgid "Border radius"
 msgstr ""
 
@@ -833,10 +833,6 @@ msgstr ""
 
 #: inc/customizer/controls.php:1413
 msgid "Checking 2D will remove the shadow effect."
-msgstr ""
-
-#: inc/customizer/controls.php:1426
-msgid "Border Radius"
 msgstr ""
 
 #: inc/customizer/controls.php:1435
@@ -876,11 +872,11 @@ msgid "Customize the look & feel of your footer."
 msgstr ""
 
 #: inc/customizer/controls.php:1579
-msgid "Upper Footer"
+msgid "Widgets"
 msgstr ""
 
 #: inc/customizer/controls.php:1661
-msgid "Lower Footer"
+msgid "Site Info"
 msgstr ""
 
 #: inc/customizer/controls.php:1675
@@ -909,11 +905,11 @@ msgstr ""
 msgid "Widgetized Footer Region %d."
 msgstr ""
 
-#: inc/functions/setup.php:188 inc/structure/navigation.php:43
+#: inc/functions/setup.php:191 inc/structure/navigation.php:43
 msgid "Previous"
 msgstr ""
 
-#: inc/functions/setup.php:189 inc/structure/navigation.php:40
+#: inc/functions/setup.php:192 inc/structure/navigation.php:40
 msgid "Next"
 msgstr ""
 
@@ -971,27 +967,27 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/structure/footer.php:67
+#: inc/structure/footer.php:149
 msgid "%1$s theme by %2$s."
 msgstr ""
 
-#: inc/structure/header.php:64
+#: inc/structure/header.php:74
 msgid "Primary Navigation"
 msgstr ""
 
-#: inc/structure/header.php:65
+#: inc/structure/header.php:75
 msgid "Navigation"
 msgstr ""
 
-#: inc/structure/header.php:96
+#: inc/structure/header.php:108
 msgid "Secondary Navigation"
 msgstr ""
 
-#: inc/structure/header.php:120
+#: inc/structure/header.php:132
 msgid "Skip to navigation"
 msgstr ""
 
-#: inc/structure/header.php:121
+#: inc/structure/header.php:133
 msgid "Skip to content"
 msgstr ""
 
@@ -1436,13 +1432,13 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/functions/extras.php:211 inc/functions/extras.php:212
+#: inc/functions/extras.php:240 inc/functions/extras.php:241
 #: inc/woocommerce/functions.php:349 inc/woocommerce/functions.php:350
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: inc/functions/extras.php:212
+#: inc/functions/extras.php:241
 msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
@@ -1452,7 +1448,7 @@ msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: inc/functions/extras.php:214 inc/woocommerce/functions.php:352
+#: inc/functions/extras.php:243 inc/woocommerce/functions.php:352
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
