@@ -43,5 +43,6 @@ add_filter( 'the_content',                 'archetype_post_format_quote' );
 /**
  * Filters
  */
-add_filter( 'archetype_hide_title',      'archetype_hide_title_post_meta', 10, 2 );
-add_filter( 'archetype_hide_author_bio', 'archetype_hide_author_bio_post_meta', 10, 2 );
+add_filter( 'ot_meta_box_post_format_gallery', 'archetype_filter_post_format_gallery', 10, 2 );
+add_filter( 'archetype_hide_title',            'archetype_hide_title_post_meta', 10, 2 );
+add_filter( 'archetype_hide_author_bio',       'archetype_hide_author_bio_post_meta', 10, 2 );

@@ -192,6 +192,27 @@ if ( ! function_exists( 'archetype_post_format_gallery_images' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'archetype_filter_post_format_gallery' ) ) :
+	/**
+	 * Filter the metaboxes added to the gallery post format.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $settings The metabox settings.
+	 */
+	function archetype_filter_post_format_gallery( $settings ) {
+		$settings['fields'][] = array(
+      'id'      => '_format_gallery_embed',
+      'label'   => '',
+      'desc'    => sprintf( __( 'Embed images from services like Photobucket, Instagram, or Flickr. You can find a list of supported oEmbed sites in the %1$s. Alternatively, you could use the built-in %2$s shortcode. Which is what the "Create Gallery" button above does, only dynamically.', 'option-tree' ), '<a href="http://codex.wordpress.org/Embeds" target="_blank">' . __( 'Wordpress Codex', 'archetype' ) .'</a>', '<code>[gallery]</code>' ),
+      'std'     => '',
+      'type'    => 'textarea'
+    );
+    
+    return $settings;
+	}
+endif;
+
 if ( ! function_exists( 'archetype_post_format_gallery' ) ) :
 	/**
 	 * Displays the gallery
@@ -205,29 +226,37 @@ if ( ! function_exists( 'archetype_post_format_gallery' ) ) :
 
 		if ( has_post_format( 'gallery' ) ) {
 
-			// Get the gallery images.
-			$ids = archetype_post_format_gallery_images( $post_id );
+			// Embeded gallery.
+			if ( $gallery = get_post_meta( get_the_ID(), '_format_gallery_embed', true ) ) {
 
-			if ( ! empty( $ids ) ) {
-				$content = '<ul class="bxslider">';
-				foreach ( $ids as $image_id ) {
-					$attachments = get_posts( array(
-						'post_type'      => 'attachment',
-						'posts_per_page' => 1,
-						'include'        => $image_id,
-					) );
-					if ( $attachments ) {
-						foreach ( $attachments as $attachment ) {
-							$caption = ! empty( $attachment->post_excerpt ) ? '<div class="caption"><span class="caption-body">' . wpautop( $attachment->post_excerpt ) . '</span></div>' : '';
-							if ( ! is_single() ) {
-								$content .= sprintf( '<li><a href="%s" rel="bookmark"><img src="%s" alt="%s" />%s</a></li>', esc_url( get_permalink() ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
-							} else {
-								$content .= sprintf( '<li><a href="%s" rel="lightbox[gallery-main]" title="%s"><img src="%s" alt="%s" />%s</a></li>', esc_url( $attachment->guid ), esc_attr( $attachment->post_excerpt ), esc_url( $attachment->guid ), esc_attr( $attachment->post_title ), $caption );
+				$content = archetype_post_format_the_content( $gallery );
+
+			} else {
+
+				// Get the gallery images.
+				$ids = archetype_post_format_gallery_images( $post_id );
+
+				if ( ! empty( $ids ) ) {
+					$content = '<ul class="bxslider">';
+					foreach ( $ids as $image_id ) {
+						$attachments = get_posts( array(
+							'post_type'      => 'attachment',
+							'posts_per_page' => 1,
+							'include'        => $image_id,
+						) );
+						if ( $attachments ) {
+							foreach ( $attachments as $attachment ) {
+								$caption = ! empty( $attachment->post_excerpt ) ? '<div class="caption"><span class="caption-body">' . wpautop( $attachment->post_excerpt ) . '</span></div>' : '';
+								if ( ! is_single() ) {
+									$content .= sprintf( '<li><a href="%s" rel="bookmark"><img src="%s" alt="%s" />%s</a></li>', esc_url( get_permalink() ), esc_url( wp_get_attachment_url( $attachment->ID ) ), esc_attr( $attachment->post_title ), $caption );
+								} else {
+									$content .= sprintf( '<li><a href="%s" rel="lightbox[gallery-main]" title="%s"><img src="%s" alt="%s" />%s</a></li>', esc_url( wp_get_attachment_url( $attachment->ID ) ), esc_attr( $attachment->post_excerpt ), esc_url( wp_get_attachment_url( $attachment->ID ) ), esc_attr( $attachment->post_title ), $caption );
+								}
 							}
 						}
 					}
+					$content .= '</ul>';
 				}
-				$content .= '</ul>';
 			}
 
 			// Display the gallery.
