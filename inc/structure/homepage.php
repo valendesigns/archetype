@@ -67,9 +67,12 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		$styles = array();
 		$styles[] = "color: $body_text_color;";
 		$styles[] = "background-color: $background_color;";
-		$styles[] = "background-image: url($background_img);";
-		$styles[] = "background-size: $background_img_size;";
-		$styles[] = 'background-repeat: no-repeat;';
+		if ( ! empty( $background_img ) ) {
+			$styles[] = "background-image: url($background_img);";
+			$styles[] = "background-size: $background_img_size;";
+			$styles[] = 'background-repeat: no-repeat;';
+			$styles[] = 'background-position: center;';
+		}
 
 		/**
 		 * Filter the CSS classes added to the homepage hero section tag.
