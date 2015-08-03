@@ -10,7 +10,11 @@ class Tests_Extras extends WP_UnitTestCase {
 	function setUp() {
 		parent::setUp();
 
-		global $wp_rewrite;
+		global $wp_rewrite, $sidebars_widgets;
+
+		unset( $GLOBALS['_wp_sidebars_widgets'] ); // clear out cache set by wp_get_sidebars_widgets()
+		$sidebars_widgets = wp_get_sidebars_widgets();
+
 		$wp_rewrite->init();
 		$wp_rewrite->set_permalink_structure( '/%year%/%monthnum%/%postname%/' );
 		$wp_rewrite->flush_rules();
@@ -37,6 +41,34 @@ class Tests_Extras extends WP_UnitTestCase {
 		$wp_rewrite->init();
 
 		parent::tearDown();
+	}
+
+	/**
+	 * Check that the the header is loaded.
+	 */
+	function test_archetype_get_header() {
+
+		ob_start();
+		archetype_get_header();
+		$buffer = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( 1, did_action( 'archetype_header' ) );
+
+	}
+
+	/**
+	 * Check that the the footer is loaded.
+	 */
+	function test_archetype_get_footer() {
+
+		ob_start();
+		archetype_get_footer();
+		$buffer = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( 1, did_action( 'archetype_footer' ) );
+
 	}
 
 	/**
@@ -204,7 +236,7 @@ class Tests_Extras extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Check 'is-boxed' body class
+	 * Check 'is-padded' body class
 	 */
 	function test_archetype_body_classes_is_padded() {
 
@@ -214,6 +246,23 @@ class Tests_Extras extends WP_UnitTestCase {
 		set_theme_mod( 'archetype_padded', true );
 		$this->assertTrue( in_array( 'is-padded', get_body_class() ) );
 
+	}
+
+	/**
+	 * Check 'archetype-has-header-widgets' body class
+	 */
+	function test_archetype_body_classes_has_header_widgets() {
+		global $_wp_sidebars_widgets;
+
+		$cache = $_wp_sidebars_widgets;
+
+		$_wp_sidebars_widgets['header-1'] = $_wp_sidebars_widgets['sidebar-1'];
+		unset( $_wp_sidebars_widgets['sidebar-1'] );
+
+		$this->assertTrue( is_active_sidebar( 'header-1' ) );
+		$this->assertTrue( in_array( 'archetype-has-header-widgets', get_body_class() ) );
+
+		$_wp_sidebars_widgets = $cache;
 	}
 
 	/**
@@ -234,6 +283,14 @@ class Tests_Extras extends WP_UnitTestCase {
 
 	}
 
+	/**
+	 * Check that Subscribe & Connect is not activated.
+	 */
+	function test_is_subscribe_and_connect_activated() {
+
+		$this->assertFalse( is_subscribe_and_connect_activated() );
+
+	}
 
 	/**
 	 * Check that the Schema type is correct for the default context.
@@ -241,6 +298,20 @@ class Tests_Extras extends WP_UnitTestCase {
 	function test_archetype_html_tag_schema_default() {
 
 		$this->assertSame( 'itemscope="itemscope" itemtype="http://schema.org/WebPage"', archetype_html_tag_schema( false ) );
+
+	}
+	
+	/**
+	 * Check that the Schema type is correct for the default context during echo.
+	 */
+	function test_archetype_html_tag_schema_default_echo() {
+
+		ob_start();
+		archetype_html_tag_schema( true );
+		$buffer = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertSame( 'itemscope="itemscope" itemtype="http://schema.org/WebPage"', $buffer );
 
 	}
 
@@ -331,6 +402,12 @@ class Tests_Extras extends WP_UnitTestCase {
 
 		// Test that the values are equal for a random shade of red.
 		$this->assertSame( array( 'r'=> 237, 'g' => 72, 'b' => 73 ), archetype_rgb_from_hex( '#ed4849' ) );
+
+		// Test that the return value is false.
+		$this->assertFalse( archetype_rgb_from_hex( '#00' ) );
+
+		// Test that the return value for red is 255.
+		$this->assertSame( 255, archetype_rgb_from_hex( '#fff', 'r' ) );
 
 	}
 
