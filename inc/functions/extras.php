@@ -76,8 +76,18 @@ function archetype_body_classes( $classes ) {
 		$classes[] = 'archetype-full-width-content';
 	}
 
-	// Add class when header widgets are active.
-	if ( is_active_sidebar( 'header-1' ) ) {
+	/** This filter is documented in inc/functions/setup.php */
+	$header_widget_regions = apply_filters( 'archetype_header_widget_regions', 4 );
+	$header_widgets = false;
+
+	for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
+		if ( is_active_sidebar( 'header-' . $i ) ) {
+			$header_widgets = true;
+		}
+	}
+
+	// Active header widgets.
+	if ( true === $header_widgets ) {
 		$classes[] = 'archetype-has-header-widgets';
 	}
 

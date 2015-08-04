@@ -5,6 +5,12 @@
 .widget {
 	margin: 0 0 2.625em;
 
+	&:last-child {
+		.dynamic-widget-region & {
+			margin-bottom: 0;
+		}
+	}
+
 	select {
 		max-width: 100%;
 	}
@@ -129,6 +135,7 @@
 }
 
 .widget-area,
+.header-widgets,
 .footer-widgets {
 	#wp-calendar {
 		th,
@@ -137,6 +144,10 @@
 			text-align: center;
 		}
 	}
+}
+
+.header-widgets {
+	padding: 2.625em 0;
 }
 
 .footer-widgets {
@@ -250,6 +261,10 @@
 		}
 	}
 
+	.header-widgets {
+		padding: 1.387em 0;
+	}
+
 	.footer-widgets {
 		padding: 2.775em 0 1.387em 0;
 	}
@@ -259,6 +274,11 @@
 	.widget {
 		margin-bottom: 2.125em;
 	}
+
+	.header-widgets {
+		padding: 2.125em 0;
+	}
+
 	.footer-widgets {
 		padding: 4.25em 0 2.125em 0;
 	}

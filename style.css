@@ -398,8 +398,11 @@ body {
   content: "";
   display: table; }
 
-.no-wc-breadcrumb:not(.page-template-template-homepage) .site-header, .home.archetype-has-header-widgets .site-header {
+.no-wc-breadcrumb:not(.page-template-template-homepage) .site-header {
   margin-bottom: 2.625em; }
+
+.archetype-has-header-widgets .site-header {
+  margin-bottom: 0 !important; }
 
 .header-widget-region {
   position: relative;
@@ -1049,31 +1052,31 @@ a {
     margin-left: 17.3076923077%;
     margin-right: -100%; }
   /**
-	 * Footer widgets
+	 * Dynamic widget regions
 	 */
-  .footer-widgets::after {
+  .dynamic-widget-regions::after {
     clear: both;
     content: "";
     display: table; }
-  .footer-widgets.col-2 .block {
+  .dynamic-widget-regions.col-2 .dynamic-widget-region {
     width: 48.0769230769%;
     float: left;
     margin-right: 3.8461538462%; }
-    .footer-widgets.col-2 .block.footer-widget-2 {
+    .dynamic-widget-regions.col-2 .dynamic-widget-region.last {
       float: right;
       margin-right: 0; }
-  .footer-widgets.col-3 .block {
+  .dynamic-widget-regions.col-3 .dynamic-widget-region {
     width: 30.7692307692%;
     float: left;
     margin-right: 3.8461538462%; }
-    .footer-widgets.col-3 .block.footer-widget-3 {
+    .dynamic-widget-regions.col-3 .dynamic-widget-region.last {
       float: right;
       margin-right: 0; }
-  .footer-widgets.col-4 .block {
+  .dynamic-widget-regions.col-4 .dynamic-widget-region {
     width: 22.1153846154%;
     float: left;
     margin-right: 3.8461538462%; }
-    .footer-widgets.col-4 .block.footer-widget-4 {
+    .dynamic-widget-regions.col-4 .dynamic-widget-region.last {
       float: right;
       margin-right: 0; } }
 
@@ -1203,6 +1206,8 @@ label {
   display: block;
   font-weight: 700;
   margin-bottom: .875em; }
+  .search-form label {
+    margin-bottom: 0; }
 
 input + label, .post-password-form label, label.inline {
   display: inline; }
@@ -2509,6 +2514,8 @@ embed, iframe, object {
  */
 .widget {
   margin: 0 0 2.625em; }
+  .dynamic-widget-region .widget:last-child {
+    margin-bottom: 0; }
   .widget select {
     max-width: 100%; }
   .widget .widget-search .search-submit {
@@ -2583,9 +2590,12 @@ embed, iframe, object {
     margin-top: .618em;
     margin-left: 1.618em; }
 
-.widget-area #wp-calendar th, .widget-area #wp-calendar td, .footer-widgets #wp-calendar th, .footer-widgets #wp-calendar td {
+.widget-area #wp-calendar th, .widget-area #wp-calendar td, .header-widgets #wp-calendar th, .header-widgets #wp-calendar td, .footer-widgets #wp-calendar th, .footer-widgets #wp-calendar td {
   padding: .236em;
   text-align: center; }
+
+.header-widgets {
+  padding: 2.625em 0; }
 
 .footer-widgets {
   padding: 5.25em 0 2.625em 0; }
@@ -2630,12 +2640,16 @@ embed, iframe, object {
     margin-bottom: 1.387em; }
     .widget h3.widget-title {
       font-size: 1.5em; }
+  .header-widgets {
+    padding: 1.387em 0; }
   .footer-widgets {
     padding: 2.775em 0 1.387em 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
   .widget {
     margin-bottom: 2.125em; }
+  .header-widgets {
+    padding: 2.125em 0; }
   .footer-widgets {
     padding: 4.25em 0 2.125em 0; } }
 

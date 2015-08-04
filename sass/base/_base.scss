@@ -59,10 +59,15 @@ body {
 	@include clearfix;
 }
 
-.no-wc-breadcrumb:not(.page-template-template-homepage),
-.home.archetype-has-header-widgets {
+.no-wc-breadcrumb:not(.page-template-template-homepage) {
 	.site-header {
 		margin-bottom: 2.625em;
+	}
+}
+
+.archetype-has-header-widgets {
+	.site-header {
+		margin-bottom: 0 !important;
 	}
 }
 

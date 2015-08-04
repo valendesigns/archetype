@@ -164,36 +164,36 @@
 	}
 
 	/**
-	 * Footer widgets
+	 * Dynamic widget regions
 	 */
-	.footer-widgets {
+	.dynamic-widget-regions {
 		@include clearfix;
 
 		&.col-2 {
-			.block {
+			.dynamic-widget-region {
 				@include span(6 of 12);
 
-				&.footer-widget-2 {
+				&.last {
 					@include last;
 				}
 			}
 		}
 
 		&.col-3 {
-			.block {
+			.dynamic-widget-region {
 				@include span(4 of 12);
 
-				&.footer-widget-3 {
+				&.last {
 					@include last;
 				}
 			}
 		}
 
 		&.col-4 {
-			.block {
+			.dynamic-widget-region {
 				@include span(3 of 12);
 
-				&.footer-widget-4 {
+				&.last {
 					@include last;
 				}
 			}

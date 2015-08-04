@@ -68,21 +68,21 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_footer_widgets() {
-		if ( is_active_sidebar( 'footer-4' ) ) {
-			$widget_columns = apply_filters( 'archetype_footer_widget_regions', 4 );
-		} elseif ( is_active_sidebar( 'footer-3' ) ) {
-			$widget_columns = apply_filters( 'archetype_footer_widget_regions', 3 );
-		} elseif ( is_active_sidebar( 'footer-2' ) ) {
-			$widget_columns = apply_filters( 'archetype_footer_widget_regions', 2 );
-		} elseif ( is_active_sidebar( 'footer-1' ) ) {
-			$widget_columns = apply_filters( 'archetype_footer_widget_regions', 1 );
-		} else {
-			$widget_columns = apply_filters( 'archetype_footer_widget_regions', 0 );
+		/** This filter is documented in inc/functions/setup.php */
+		$footer_widget_regions = apply_filters( 'archetype_footer_widget_regions', 4 );
+		$widget_columns = 0;
+
+		for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
+			if ( is_active_sidebar( 'footer-' . $i ) ) {
+				$widget_columns++;
+				$last = $i;
+			}
 		}
 
 		// CSS classes.
 		$classes = array();
 		$classes[] = 'footer-widgets';
+		$classes[] = 'dynamic-widget-regions';
 		$classes[] = 'col-' . intval( $widget_columns );
 
 		// CSS style attributes.
@@ -110,21 +110,21 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) :
 
 		if ( $widget_columns > 0 ) : ?>
 
-			<aside class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
+			<div class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
 
-				<?php $i = 0; while ( $i < $widget_columns ) : $i++; ?>
+				<?php $i = 0; while ( $i < $footer_widget_regions ) : $i++; ?>
 
 					<?php if ( is_active_sidebar( 'footer-' . $i ) ) : ?>
 
-						<section class="block footer-widget-<?php echo intval( $i ); ?>">
+						<div class="footer-widget-area-<?php echo intval( $i ); ?> <?php echo $i === $last ? 'dynamic-widget-region last' : 'dynamic-widget-region'; ?>">
 							<?php dynamic_sidebar( 'footer-' . intval( $i ) ); ?>
-						</section>
+						</div>
 
 					<?php endif; ?>
 
 				<?php endwhile; ?>
 
-			</aside><!-- .footer-widgets	-->
+			</div><!-- .footer-widgets	-->
 
 		<?php endif;
 	}

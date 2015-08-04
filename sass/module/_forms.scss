@@ -160,6 +160,10 @@ label {
 	display: block;
 	font-weight: 700;
 	margin-bottom: .875em;
+
+	.search-form & {
+		margin-bottom: 0;
+	}
 }
 
 input + label,
