@@ -42,18 +42,11 @@ section + .archetype-hero {
 	}
 }
 
-@media screen and (min-width: 71.25em) {
-	.archetype-hero.expand-full-width {
-		padding: 0 2.625em !important;
-	}
-}
-
 @media screen and (max-width: 74em) {
 	.archetype-hero.expand-full-width {
 		.archetype-hero-overlay {
 			position: relative;
 			margin: 0 -2.625em;
-			padding: 0 2.625em;
 		}
 	}
 }

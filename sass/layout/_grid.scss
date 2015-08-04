@@ -6,10 +6,6 @@
 	.col-full {
 		@include clearfix;
 		@include container(71.25em);
-
-		.col-full {
-			max-width: 100%;
-		}
 	}
 
 	@for $n from 1 through 12 {

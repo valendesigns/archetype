@@ -752,8 +752,6 @@ a {
       content: " ";
       display: block;
       clear: both; }
-    .col-full .col-full {
-      max-width: 100%; }
   .cols-1 {
     width: 4.8076923077%;
     float: left;
@@ -2671,15 +2669,10 @@ section + .archetype-hero {
   .archetype-hero.expand-full-width .archetype-hero-overlay {
     padding: 0 2.625em; }
 
-@media screen and (min-width: 71.25em) {
-  .archetype-hero.expand-full-width {
-    padding: 0 2.625em !important; } }
-
 @media screen and (max-width: 74em) {
   .archetype-hero.expand-full-width .archetype-hero-overlay {
     position: relative;
-    margin: 0 -2.625em;
-    padding: 0 2.625em; } }
+    margin: 0 -2.625em; } }
 
 @media screen and (min-width: 768px) {
   .archetype-hero.left {
@@ -2737,14 +2730,6 @@ section + .archetype-hero {
   .archetype-homepage-content.expand-full-width {
     padding-left: 2.625em;
     padding-right: 2.625em; }
-
-@media screen and (min-width: 71.25em) {
-  .archetype-homepage-content {
-    padding-top: 2.625em !important;
-    padding-bottom: 2.625em !important; }
-    .archetype-homepage-content.expand-full-width {
-      padding-left: 2.625em !important;
-      padding-right: 2.625em !important; } }
 
 /**
  * Phone
