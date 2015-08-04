@@ -36,12 +36,13 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_section( 'header_image' )->panel         = 'archetype_header';
 
 		// Change navigation panel or section.
-		if ( 'nav_menus' === $wp_customize->get_section( 'menu_locations' )->panel ) {
+		$menu_43 = $wp_customize->get_section( 'menu_locations' );
+		if ( is_object( $menu_43 ) && 'nav_menus' === $menu_43->panel ) {
 			$wp_customize->get_panel( 'nav_menus' )->priority          = 40;
 		} else {
-			$wp_customize->get_section( 'nav' )->title                = __( 'Menus Locations', 'archetype' );
-			$wp_customize->get_section( 'nav' )->panel                = 'archetype_header';
-			$wp_customize->get_section( 'nav' )->priority             = 25;
+			$wp_customize->get_section( 'nav' )->title                 = __( 'Menus Locations', 'archetype' );
+			$wp_customize->get_section( 'nav' )->panel                 = 'archetype_header';
+			$wp_customize->get_section( 'nav' )->priority              = 25;
 		}
 
 		// Change the title of the Site Title & Tagline.
