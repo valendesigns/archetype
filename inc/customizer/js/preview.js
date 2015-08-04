@@ -299,9 +299,13 @@
 	} );
 	wp.customize( 'archetype_form_background_focus_color', function( value ) {
 		value.bind( function( to ) {
-			// Background Color
-			$( 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .input-text' ).not( '.widget_search *, .widget_product_search *, .error-404-search *' ).on( 'focus', function() {
+			var $el = $( 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .input-text' ).not( '.widget_search *, .widget_product_search *, .error-404-search *' ),
+					color = $el.css( 'background-color' );
+
+			$el.on( 'focusin', function() {
 				$( this ).css( 'background-color', to );
+			} ).on( 'focusout', function() {
+				$( this ).css( 'background-color', color );
 			} );
 		} );
 	} );
