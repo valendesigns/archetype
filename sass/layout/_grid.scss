@@ -45,10 +45,12 @@
 	.col-full {
 		.is-full-width & {
 			@include container(full);
-			padding: 0 2.625em;
+			padding-left: 2.625em;
+			padding-right: 2.625em;
 
 			.col-full {
-				padding: 0;
+				padding-left: 0;
+				padding-right: 0;
 			}
 		}
 

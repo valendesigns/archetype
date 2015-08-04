@@ -893,13 +893,15 @@ a {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2.625em; }
+    padding-left: 2.625em;
+    padding-right: 2.625em; }
     .is-full-width .col-full:after {
       content: " ";
       display: block;
       clear: both; }
     .is-full-width .col-full .col-full {
-      padding: 0; }
+      padding-left: 0;
+      padding-right: 0; }
   .col-full .expand-full-width {
     margin-left: -46em;
     margin-right: -46em; }
