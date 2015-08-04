@@ -2674,6 +2674,11 @@ section + .archetype-hero {
     position: relative;
     margin: 0 -2.625em; } }
 
+@media screen and (min-width: 74em) {
+  .is-boxed .archetype-hero.expand-full-width .archetype-hero-overlay, .is-full-width .archetype-hero.expand-full-width .archetype-hero-overlay {
+    margin: 0 -2.625em;
+    padding: 0 2.625em; } }
+
 @media screen and (min-width: 768px) {
   .archetype-hero.left {
     text-align: left; }
