@@ -78,11 +78,6 @@
 		margin-bottom: 1em;
 	}
 
-	.col-full {
-		@include clearfix;
-		@include container(71.25em);
-	}
-
 	.site-content {
 		@include clearfix;
 	}
@@ -206,72 +201,8 @@
 	}
 }
 
-@media screen and (max-width: 74em) {
-	.col-full {
-		margin-left: 2.625em;
-		margin-right: 2.625em;
-		
-		.col-full {
-			margin-left: 0;
-			margin-right: 0;
-		}
-			
-		.expand-full-width {
-			position: relative;
-			margin-left: -2.625em;
-			margin-right: -2.625em;
-		}
-	}
-}
-
 @media screen and (min-width: 74em) {
-	.col-full {
-		.is-full-width & {
-			@include container(full);
-			padding: 0 2.625em;
-
-			.col-full {
-				padding: 0;
-			}
-		}
-
-		.expand-full-width {
-			margin-left: -46em;
-			margin-right: -46em;
-
-			.is-boxed &,
-			.is-full-width & {
-				margin-left: -2.625em;
-				margin-right: -2.625em;
-			}
-		}
-	}
-
 	.error-404 {
 		@include span(isolate 6 at 4);
-	}
-}
-
-@media screen and (min-width: 768px) and (max-width: 74em) {
-	.col-full {
-		margin-left: 2.125em;
-		margin-right: 2.125em;
-
-		.expand-full-width {
-			margin-left: -2.125em;
-			margin-right: -2.125em;
-		}
-	}
-}
-
-@media screen and (max-width: 568px) {
-	.col-full {
-		margin-left: 1.387em;
-		margin-right: 1.387em;
-
-		.expand-full-width {
-			margin-left: -1.387em;
-			margin-right: -1.387em;
-		}
 	}
 }
