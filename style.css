@@ -2308,6 +2308,8 @@ embed, iframe, object {
     width: 100%; }
   #respond .form-submit, #respond form {
     margin-bottom: 0; }
+  #respond .form-submit + .comment-subscription-form {
+    margin-top: 1.5em; }
 
 @media screen and (max-width: 568px) {
   #comments p.no-comments {
