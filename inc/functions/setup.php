@@ -137,7 +137,7 @@ function archetype_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
-	
+
 	/**
 	 * Filter the number of registered header widget regions.
 	 *
