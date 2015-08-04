@@ -19,6 +19,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Constructor
+	 *
 	 * Sets up the welcome screen
 	 */
 	public function __construct() {
@@ -38,7 +39,8 @@ class Archetype_Welcome {
 
 	/**
 	 * Adds an admin notice upon successful activation.
-	 * @since 1.0.3
+	 *
+	 * @since 1.0.0
 	 */
 	public function archetype_activation_admin_notice() {
 		global $pagenow;
@@ -50,7 +52,8 @@ class Archetype_Welcome {
 
 	/**
 	 * Display an admin notice linking to the welcome screen
-	 * @since 1.0.3
+	 *
+	 * @since 1.0.0
 	 */
 	public function archetype_welcome_admin_notice() {
 		?>
@@ -63,8 +66,10 @@ class Archetype_Welcome {
 
 	/**
 	 * Load welcome screen css
-	 * @return void
-	 * @since  1.4.4
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param string $hook_suffix The current hook suffix.
 	 */
 	public function archetype_welcome_style( $hook_suffix ) {
 		global $archetype_version;
@@ -76,7 +81,9 @@ class Archetype_Welcome {
 
 	/**
 	 * Creates the dashboard page
-	 * @see  add_theme_page()
+	 *
+	 * @see add_theme_page()
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_register_menu() {
@@ -85,6 +92,7 @@ class Archetype_Welcome {
 
 	/**
 	 * The welcome screen
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_screen() {
@@ -111,6 +119,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen intro
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_intro() {
@@ -119,6 +128,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen intro
+	 *
 	 * @since 1.4.4
 	 */
 	public function archetype_welcome_tabs() {
@@ -127,6 +137,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen about section
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_who() {
@@ -135,6 +146,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen get started section
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_get_started() {
@@ -143,6 +155,7 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen add ons
+	 *
 	 * @since 1.0.0
 	 */
 	public function archetype_welcome_addons() {
@@ -151,7 +164,8 @@ class Archetype_Welcome {
 
 	/**
 	 * Welcome screen child themes
-	 * @since 1.4.4
+	 *
+	 * @since 1.0.0
 	 */
 	public function archetype_welcome_child_themes() {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/child-themes.php' );
