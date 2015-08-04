@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Archetype 1.0.0\n"
 "Report-Msgid-Bugs-To: Valen Designs <support@valendesigns.com>\n"
-"POT-Creation-Date: 2015-07-30 04:58:17+00:00\n"
+"POT-Creation-Date: 2015-08-04 10:23:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: Valen Designs <support@valendesigns.com>\n"
 "X-Generator: grunt-wp-i18n 0.5.1\n"
 
-#: inc/customizer/controls.php:133
+#: inc/customizer/controls.php:136
 msgid "3"
 msgstr ""
 
-#: inc/customizer/controls.php:134
+#: inc/customizer/controls.php:137
 msgid "4"
 msgstr ""
 
@@ -73,47 +73,47 @@ msgstr ""
 msgid "Browse Archetype's free and commercial extensions."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:19
+#: inc/admin/welcome-screen/sections/add-ons.php:20
 msgid "Make your site instantly recognizable by adding your logo"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:19
+#: inc/admin/welcome-screen/sections/add-ons.php:20
 msgid "Free (Third Party)"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:21
+#: inc/admin/welcome-screen/sections/add-ons.php:22
 msgid ""
 "Jetpack is probably a plugin you're already familiar with. Archetype fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:24
-#: inc/admin/welcome-screen/sections/add-ons.php:37
+#: inc/admin/welcome-screen/sections/add-ons.php:25
+#: inc/admin/welcome-screen/sections/add-ons.php:38
 msgid "Activated"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:26
+#: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Install Jetpack"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:32
-msgid "Further customize your store with the Archetype Designer"
+#: inc/admin/welcome-screen/sections/add-ons.php:33
+msgid "Further customize your site with the Archetype Developer"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:32
+#: inc/admin/welcome-screen/sections/add-ons.php:33
 msgid "Premium"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:34
+#: inc/admin/welcome-screen/sections/add-ons.php:35
 msgid ""
-"Archetype Designer adds a bunch of additional appearance settings allowing "
-"you to further tweak and perfect your Archetype design by changing the "
+"Archetype Developer adds additional appearance & functional settings which "
+"allowing you to further tweak and perfect your web site by changing the "
 "header layout, additional button styles, typographical schemes/scales and "
 "more."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/add-ons.php:39
+#: inc/admin/welcome-screen/sections/add-ons.php:40
 msgid "Buy %sArchetype Designer%s now"
 msgstr ""
 
@@ -158,45 +158,56 @@ msgstr ""
 msgid "Using Archetype"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:17
-msgid "To keep the simplicity alive, here's some common theme tasks."
+#: inc/admin/welcome-screen/sections/get-started.php:18
+msgid "Customizer"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:19
+msgid ""
+"Not a web developement guru? Not a Problem.  Archetype's Customizer "
+"integration allows you to effortlessly match the color scheme and layout of "
+"your brand. Point, click, and admire."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/get-started.php:20
+msgid "Customize"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:22
 #: inc/woocommerce/controls.php:28
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:21
-msgid ""
-"Looking to include a online store for your project? Then WooCommerce is "
-"your first stop."
-msgstr ""
-
 #: inc/admin/welcome-screen/sections/get-started.php:23
-#: inc/admin/welcome-screen/sections/who.php:26
-msgid "Install WooCommerce"
+msgid ""
+"Looking to include a online store? Then WooCommerce is your first stop. "
+"It's the most popular WordPress eCommerce plugin, which is packed full of "
+"intuitive features and a thriving community."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/get-started.php:26
+msgid "Install WooCommerce"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:29
 msgid "Jetpack"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:27
+#: inc/admin/welcome-screen/sections/get-started.php:30
 msgid ""
 "Looking to add a custom logo? Install and activate %sJetpack%s. Archetype "
 "also supports the infinite scroll feature that comes with Jetpack."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:29
+#: inc/admin/welcome-screen/sections/get-started.php:32
 msgid "Install JetPack"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:32
+#: inc/admin/welcome-screen/sections/get-started.php:35
 msgid "Menu configuration"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:33
+#: inc/admin/welcome-screen/sections/get-started.php:36
 msgid ""
 "Archetype includes three menu options used for navigating your web site. "
 "The Primary menu is used for your more commonly visited pages. The "
@@ -205,30 +216,15 @@ msgid ""
 "visiting your site on a handheld device."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:34
+#: inc/admin/welcome-screen/sections/get-started.php:37
 msgid "Configure"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:36
-msgid "Customizer"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/get-started.php:37
-msgid ""
-"Not a CSS or HTML guru? Not a Problem.  Archetype's customizer provides "
-"effortless tact to match the color scheme and layout to your brand. Point, "
-"click, and admire."
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/get-started.php:38
-msgid "Customize"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/get-started.php:42
+#: inc/admin/welcome-screen/sections/get-started.php:41
 msgid "OptionTree"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:43
+#: inc/admin/welcome-screen/sections/get-started.php:42
 msgid ""
 "Install and activate %sOptionTree%s to add meta box functionality which "
 "extends the post formats on your blog for a more custom appearance. This "
@@ -236,54 +232,69 @@ msgid ""
 "as, author descriptions on a per-post basis."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:44
+#: inc/admin/welcome-screen/sections/get-started.php:43
 msgid ""
 "Since we built OptionTree too, you can rest easy knowing it will always be "
 "compatible with Archetype."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:46
+#: inc/admin/welcome-screen/sections/get-started.php:45
 msgid "Install OptionTree"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:49
+#: inc/admin/welcome-screen/sections/get-started.php:48
 msgid "Homepage Control"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:50
+#: inc/admin/welcome-screen/sections/get-started.php:49
 msgid "This is a fantastic tool for ordering content on the homepage of your site."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:50
+msgid ""
+"Assign the \"Homepage\" template to a new or existing page. Then set that "
+"page as the static front page."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/get-started.php:51
 msgid ""
-"Assign the \"Homepage\" template to a new or existing page. Then set that "
-"as a static homepage in the Reading settings."
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/get-started.php:52
-msgid ""
 "Once Homepage Control is installed and activated, you can arrange content "
-"components in the order you see fit. This can be done from within the "
+"components in the order you see fit. This is done from within the "
 "customizer."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:55
+#: inc/admin/welcome-screen/sections/get-started.php:54
 msgid "Install Homepage Control"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:58
+#: inc/admin/welcome-screen/sections/get-started.php:57
 msgid "Subscribe & Connect"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:59
+#: inc/admin/welcome-screen/sections/get-started.php:58
 msgid ""
 "Help your visitors subscribe to your content, as well as share it across "
 "various social networks by adding subscribe icon links to the header and "
 "footer of your website."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/get-started.php:62
+#: inc/admin/welcome-screen/sections/get-started.php:61
 msgid "Install Subscribe & Connect"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:64
+msgid "Easy Google Fonts"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:65
+msgid ""
+"Integrates Google fonts into the Customizer and allows you to fine tune "
+"your typography even more. All you will need is a Google fonts API key to "
+"get it set up."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/get-started.php:68
+msgid "Install Easy Google Fonts"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/intro.php:16
@@ -312,82 +323,63 @@ msgstr ""
 msgid "Child Themes"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:13
+#: inc/admin/welcome-screen/sections/who.php:12
 msgid "The Valen Team"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:14
+#: inc/admin/welcome-screen/sections/who.php:13
 msgid "Who is Valen?"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:15
+#: inc/admin/welcome-screen/sections/who.php:14
 msgid ""
 "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum "
 "dolore eu fugiat nulla pariatur, sunt in culpa qui officia deserunt mollit "
 "anim id est laborum."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:16
+#: inc/admin/welcome-screen/sections/who.php:15
 msgid "Come Visit Us"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:22
-msgid "WooCommerce logo"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/who.php:23
-msgid "What is WooCommerce?"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/who.php:24
-msgid ""
-"WooCommerce is the most popular WordPress eCommerce plugin, and was "
-"purchase by WordPress recently. It's packed full of intuitive features and "
-"surrounded by a thriving community."
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/who.php:27
-msgid "Documentation"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/who.php:34
+#: inc/admin/welcome-screen/sections/who.php:19
 msgid "Can I contribute to Archetype?"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:35
+#: inc/admin/welcome-screen/sections/who.php:20
 msgid "Can I Contribute?"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:36
+#: inc/admin/welcome-screen/sections/who.php:21
 msgid ""
 "Found a bug? Want to contribute a patch or create a new feature? GitHub is "
 "the place to go! Or would you like to translate Archetype into your "
 "language? Get involved at Transifex."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:38
+#: inc/admin/welcome-screen/sections/who.php:23
 msgid "Archetype at GitHub"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:39
+#: inc/admin/welcome-screen/sections/who.php:24
 msgid "Archetype at Transifex"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:44
+#: inc/admin/welcome-screen/sections/who.php:29
 msgid "Are you enjoying Archetype?"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/who.php:45
+#: inc/admin/welcome-screen/sections/who.php:30
 msgid "Why not leave a review on %sWordPress.org%s? We'd really appreciate it! :-)"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:58
+#: inc/admin/welcome-screen/welcome-screen.php:61
 msgid ""
 "Thanks for choosing Archetype! You can read hints and tips on how get the "
 "most out of your new theme on the %swelcome screen%s."
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:59
+#: inc/admin/welcome-screen/welcome-screen.php:62
 msgid "Get started with Archetype"
 msgstr ""
 
@@ -399,182 +391,182 @@ msgstr ""
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer/controls.php:42
+#: inc/customizer/controls.php:43
 msgid "Menus Locations"
 msgstr ""
 
-#: inc/customizer/controls.php:48
+#: inc/customizer/controls.php:49
 msgid "Branding"
 msgstr ""
 
-#: inc/customizer/controls.php:55 inc/customizer/controls.php:640
+#: inc/customizer/controls.php:57 inc/customizer/controls.php:643
 msgid "Component Order"
 msgstr ""
 
-#: inc/customizer/controls.php:81
+#: inc/customizer/controls.php:84
 msgid "Want to add your logo? Install %sJetpack%s!"
 msgstr ""
 
-#: inc/customizer/controls.php:91
+#: inc/customizer/controls.php:94
 msgid "General"
 msgstr ""
 
-#: inc/customizer/controls.php:92
+#: inc/customizer/controls.php:95
 msgid "Customize the look & feel of your website."
 msgstr ""
 
-#: inc/customizer/controls.php:100
+#: inc/customizer/controls.php:103
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/controls.php:111
+#: inc/customizer/controls.php:114
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer/controls.php:126
+#: inc/customizer/controls.php:129
 msgid "Sidebar Columns"
 msgstr ""
 
-#: inc/customizer/controls.php:127
+#: inc/customizer/controls.php:130
 msgid ""
 "Choose the number of columns, out of a 12 column grid, that the sidebar "
 "will occupy."
 msgstr ""
 
-#: inc/customizer/controls.php:148 inc/customizer/controls.php:689
+#: inc/customizer/controls.php:151 inc/customizer/controls.php:692
 msgid "Full Width"
 msgstr ""
 
-#: inc/customizer/controls.php:149
+#: inc/customizer/controls.php:152
 msgid "Expand the sites width to fill all of the browser window space."
 msgstr ""
 
-#: inc/customizer/controls.php:166
+#: inc/customizer/controls.php:169
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/controls.php:167
+#: inc/customizer/controls.php:170
 msgid "Adds a wrapper to the content of the site which creates a boxed look."
 msgstr ""
 
-#: inc/customizer/controls.php:184
+#: inc/customizer/controls.php:187
 msgid "Boxed background color"
 msgstr ""
 
-#: inc/customizer/controls.php:185
+#: inc/customizer/controls.php:188
 msgid ""
 "Changes the background color of the boxed content wrapper. Does not affect "
 "change on the homepage."
 msgstr ""
 
-#: inc/customizer/controls.php:195
+#: inc/customizer/controls.php:198
 msgid "Emoji"
 msgstr ""
 
-#: inc/customizer/controls.php:206
+#: inc/customizer/controls.php:209
 msgid "No Emoji's"
 msgstr ""
 
-#: inc/customizer/controls.php:207
+#: inc/customizer/controls.php:210
 msgid "Check this option to remove the Emoji resources from the document head."
 msgstr ""
 
-#: inc/customizer/controls.php:217 inc/functions/setup.php:142
+#: inc/customizer/controls.php:220
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/controls.php:218
+#: inc/customizer/controls.php:221
 msgid "Customize the look & feel of your header."
 msgstr ""
 
-#: inc/customizer/controls.php:226
+#: inc/customizer/controls.php:229
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer/controls.php:227
+#: inc/customizer/controls.php:230
 msgid ""
 "Customize the look & feel of your header. These controls do not change menu "
 "colors."
 msgstr ""
 
-#: inc/customizer/controls.php:242 inc/customizer/controls.php:313
-#: inc/customizer/controls.php:436 inc/customizer/controls.php:542
-#: inc/customizer/controls.php:776 inc/customizer/controls.php:979
-#: inc/customizer/controls.php:1062 inc/customizer/controls.php:1273
-#: inc/customizer/controls.php:1347 inc/customizer/controls.php:1463
-#: inc/customizer/controls.php:1652 inc/customizer/controls.php:1739
+#: inc/customizer/controls.php:245 inc/customizer/controls.php:316
+#: inc/customizer/controls.php:439 inc/customizer/controls.php:545
+#: inc/customizer/controls.php:779 inc/customizer/controls.php:982
+#: inc/customizer/controls.php:1065 inc/customizer/controls.php:1276
+#: inc/customizer/controls.php:1350 inc/customizer/controls.php:1466
+#: inc/customizer/controls.php:1655 inc/customizer/controls.php:1742
 #: inc/woocommerce/controls.php:750 inc/woocommerce/controls.php:906
 #: inc/woocommerce/controls.php:1069 inc/woocommerce/controls.php:1227
 #: inc/woocommerce/controls.php:1383
 msgid "Background color"
 msgstr ""
 
-#: inc/customizer/controls.php:258 inc/customizer/controls.php:420
-#: inc/customizer/controls.php:965 inc/customizer/controls.php:1135
-#: inc/customizer/controls.php:1257 inc/customizer/controls.php:1331
-#: inc/customizer/controls.php:1448 inc/customizer/controls.php:1609
-#: inc/customizer/controls.php:1693
+#: inc/customizer/controls.php:261 inc/customizer/controls.php:423
+#: inc/customizer/controls.php:968 inc/customizer/controls.php:1138
+#: inc/customizer/controls.php:1260 inc/customizer/controls.php:1334
+#: inc/customizer/controls.php:1451 inc/customizer/controls.php:1612
+#: inc/customizer/controls.php:1696
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer/controls.php:273 inc/customizer/controls.php:329
-#: inc/customizer/controls.php:452 inc/customizer/controls.php:558
-#: inc/customizer/controls.php:1168 inc/customizer/controls.php:1623
-#: inc/customizer/controls.php:1708
+#: inc/customizer/controls.php:276 inc/customizer/controls.php:332
+#: inc/customizer/controls.php:455 inc/customizer/controls.php:561
+#: inc/customizer/controls.php:1171 inc/customizer/controls.php:1626
+#: inc/customizer/controls.php:1711
 msgid "Link color"
 msgstr ""
 
-#: inc/customizer/controls.php:288 inc/customizer/controls.php:345
-#: inc/customizer/controls.php:468 inc/customizer/controls.php:574
-#: inc/customizer/controls.php:1184 inc/customizer/controls.php:1637
-#: inc/customizer/controls.php:1723
+#: inc/customizer/controls.php:291 inc/customizer/controls.php:348
+#: inc/customizer/controls.php:471 inc/customizer/controls.php:577
+#: inc/customizer/controls.php:1187 inc/customizer/controls.php:1640
+#: inc/customizer/controls.php:1726
 msgid "Link hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:298 inc/functions/setup.php:56
+#: inc/customizer/controls.php:301 inc/functions/setup.php:56
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/customizer/controls.php:300
+#: inc/customizer/controls.php:303
 msgid ""
 "The Primary Menu must be set to a menu location in order to preview style "
 "changes."
 msgstr ""
 
-#: inc/customizer/controls.php:361 inc/customizer/controls.php:484
-#: inc/customizer/controls.php:590
+#: inc/customizer/controls.php:364 inc/customizer/controls.php:487
+#: inc/customizer/controls.php:593
 msgid "Link hover background color"
 msgstr ""
 
-#: inc/customizer/controls.php:362 inc/customizer/controls.php:485
+#: inc/customizer/controls.php:365 inc/customizer/controls.php:488
 msgid "This setting does not effect top level links, only sub menus."
 msgstr ""
 
-#: inc/customizer/controls.php:378 inc/customizer/controls.php:501
-#: inc/customizer/controls.php:606
+#: inc/customizer/controls.php:381 inc/customizer/controls.php:504
+#: inc/customizer/controls.php:609
 msgid "Link active color"
 msgstr ""
 
-#: inc/customizer/controls.php:394 inc/customizer/controls.php:517
-#: inc/customizer/controls.php:622
+#: inc/customizer/controls.php:397 inc/customizer/controls.php:520
+#: inc/customizer/controls.php:625
 msgid "Link active background color"
 msgstr ""
 
-#: inc/customizer/controls.php:404 inc/functions/setup.php:57
+#: inc/customizer/controls.php:407 inc/functions/setup.php:57
 msgid "Secondary Menu"
 msgstr ""
 
-#: inc/customizer/controls.php:406
+#: inc/customizer/controls.php:409
 msgid ""
 "The Secondary Menu must be set to a menu location in order to preview style "
 "changes."
 msgstr ""
 
-#: inc/customizer/controls.php:527 inc/functions/setup.php:58
+#: inc/customizer/controls.php:530 inc/functions/setup.php:58
 msgid "Handheld Menu"
 msgstr ""
 
-#: inc/customizer/controls.php:529
+#: inc/customizer/controls.php:532
 msgid ""
 "The Handheld Menu must be set to a menu location in order to preview style "
 "changes, and your browser window must be below 768px for the menu to be "
@@ -585,305 +577,305 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: inc/customizer/controls.php:633
+#: inc/customizer/controls.php:636
 msgid "Customize the look & feel of your homepage."
 msgstr ""
 
-#: inc/customizer/controls.php:646
+#: inc/customizer/controls.php:649
 msgid ""
 "You can toggle and re-order the homepage components using the %sHomepage "
 "Control%s plugin."
 msgstr ""
 
-#: inc/customizer/controls.php:655
+#: inc/customizer/controls.php:658
 msgid "Hero"
 msgstr ""
 
-#: inc/customizer/controls.php:657
+#: inc/customizer/controls.php:660
 msgid "Customize the look & feel of the hero component."
 msgstr ""
 
-#: inc/customizer/controls.php:671
+#: inc/customizer/controls.php:674
 msgid "Display hero component"
 msgstr ""
 
-#: inc/customizer/controls.php:672
+#: inc/customizer/controls.php:675
 msgid "Toggle the display of the hero component."
 msgstr ""
 
-#: inc/customizer/controls.php:690
+#: inc/customizer/controls.php:693
 msgid "Toggle the width of the hero component."
 msgstr ""
 
-#: inc/customizer/controls.php:706 inc/customizer/controls.php:945
+#: inc/customizer/controls.php:709 inc/customizer/controls.php:948
 #: inc/woocommerce/controls.php:320
 msgid "Text alignment"
 msgstr ""
 
-#: inc/customizer/controls.php:733
+#: inc/customizer/controls.php:736
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer/controls.php:749
+#: inc/customizer/controls.php:752
 msgid "Background image size"
 msgstr ""
 
-#: inc/customizer/controls.php:792
+#: inc/customizer/controls.php:795
 msgid "Heading text color"
 msgstr ""
 
-#: inc/customizer/controls.php:808
+#: inc/customizer/controls.php:811
 msgid "Body text color"
 msgstr ""
 
-#: inc/customizer/controls.php:824 inc/structure/homepage.php:45
+#: inc/customizer/controls.php:827 inc/structure/homepage.php:45
 msgid "Heading Text"
 msgstr ""
 
-#: inc/customizer/controls.php:830 inc/woocommerce/controls.php:701
+#: inc/customizer/controls.php:833 inc/woocommerce/controls.php:701
 #: inc/woocommerce/controls.php:857 inc/woocommerce/controls.php:1020
 #: inc/woocommerce/controls.php:1178 inc/woocommerce/controls.php:1334
 msgid "Heading text"
 msgstr ""
 
-#: inc/customizer/controls.php:841 inc/structure/homepage.php:48
+#: inc/customizer/controls.php:844 inc/structure/homepage.php:48
 msgid "Body Text"
 msgstr ""
 
-#: inc/customizer/controls.php:846
+#: inc/customizer/controls.php:849
 msgid "Body text"
 msgstr ""
 
-#: inc/customizer/controls.php:857 inc/structure/homepage.php:51
+#: inc/customizer/controls.php:860 inc/structure/homepage.php:51
 msgid "Call to Action"
 msgstr ""
 
-#: inc/customizer/controls.php:862
+#: inc/customizer/controls.php:865
 msgid "Button text"
 msgstr ""
 
-#: inc/customizer/controls.php:878
+#: inc/customizer/controls.php:881
 msgid "Button url"
 msgstr ""
 
-#: inc/customizer/controls.php:896
+#: inc/customizer/controls.php:899
 msgid "Content (%s)"
 msgstr ""
 
-#: inc/customizer/controls.php:897
+#: inc/customizer/controls.php:900
 msgid "Customize the look & feel of this content component."
 msgstr ""
 
-#: inc/customizer/controls.php:912
+#: inc/customizer/controls.php:915
 msgid "Display content"
 msgstr ""
 
-#: inc/customizer/controls.php:913
+#: inc/customizer/controls.php:916
 msgid "Toggle the display of this content component."
 msgstr ""
 
-#: inc/customizer/controls.php:929
+#: inc/customizer/controls.php:932
 msgid "Content page"
 msgstr ""
 
-#: inc/customizer/controls.php:930
+#: inc/customizer/controls.php:933
 msgid "Choose which page the content is pulled from."
 msgstr ""
 
-#: inc/customizer/controls.php:989
+#: inc/customizer/controls.php:992
 msgid "Content"
 msgstr ""
 
-#: inc/customizer/controls.php:990
+#: inc/customizer/controls.php:993
 msgid "Customize the look & feel of your content."
 msgstr ""
 
-#: inc/customizer/controls.php:998
+#: inc/customizer/controls.php:1001
 msgid "Post"
 msgstr ""
 
-#: inc/customizer/controls.php:1012
+#: inc/customizer/controls.php:1015
 msgid "Padded"
 msgstr ""
 
-#: inc/customizer/controls.php:1013
+#: inc/customizer/controls.php:1016
 msgid ""
 "Adds padding to various elements such as page titles, posts and comments. "
 "Useful when the post background is a different color than the website "
 "background."
 msgstr ""
 
-#: inc/customizer/controls.php:1029
+#: inc/customizer/controls.php:1032
 msgid "Post border radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1030
+#: inc/customizer/controls.php:1033
 msgid ""
 "Adds border radius to various elements such as page titles, posts and "
 "comments."
 msgstr ""
 
-#: inc/customizer/controls.php:1045
+#: inc/customizer/controls.php:1048
 msgid "Avatar border radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1046
+#: inc/customizer/controls.php:1049
 msgid "Adds border radius to comment and author avatars."
 msgstr ""
 
-#: inc/customizer/controls.php:1078 inc/customizer/controls.php:1478
+#: inc/customizer/controls.php:1081 inc/customizer/controls.php:1481
 msgid "Border color"
 msgstr ""
 
-#: inc/customizer/controls.php:1093
+#: inc/customizer/controls.php:1096
 msgid "Display the post box shadow"
 msgstr ""
 
-#: inc/customizer/controls.php:1094
+#: inc/customizer/controls.php:1097
 msgid "Toggle the display of the post box shadow."
 msgstr ""
 
-#: inc/customizer/controls.php:1110 inc/customizer/controls.php:1306
-#: inc/customizer/controls.php:1493
+#: inc/customizer/controls.php:1113 inc/customizer/controls.php:1309
+#: inc/customizer/controls.php:1496
 msgid "Box shadow color"
 msgstr ""
 
-#: inc/customizer/controls.php:1120
+#: inc/customizer/controls.php:1123
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/controls.php:1121
+#: inc/customizer/controls.php:1124
 msgid "Customize the look & feel of your typography."
 msgstr ""
 
-#: inc/customizer/controls.php:1136
+#: inc/customizer/controls.php:1139
 msgid "The main text color on your website."
 msgstr ""
 
-#: inc/customizer/controls.php:1152 inc/customizer/controls.php:1594
+#: inc/customizer/controls.php:1155 inc/customizer/controls.php:1597
 #: inc/woocommerce/controls.php:736 inc/woocommerce/controls.php:892
 #: inc/woocommerce/controls.php:1055 inc/woocommerce/controls.php:1213
 #: inc/woocommerce/controls.php:1369
 msgid "Heading color"
 msgstr ""
 
-#: inc/customizer/controls.php:1153
+#: inc/customizer/controls.php:1156
 msgid "The heading text color for h1-h6."
 msgstr ""
 
-#: inc/customizer/controls.php:1169
+#: inc/customizer/controls.php:1172
 msgid "The global link color."
 msgstr ""
 
-#: inc/customizer/controls.php:1185
+#: inc/customizer/controls.php:1188
 msgid "The global link hover color."
 msgstr ""
 
-#: inc/customizer/controls.php:1200
+#: inc/customizer/controls.php:1203
 msgid "Widget link color"
 msgstr ""
 
-#: inc/customizer/controls.php:1201
+#: inc/customizer/controls.php:1204
 msgid "Overrides the global link color for sidebar widgets."
 msgstr ""
 
-#: inc/customizer/controls.php:1216
+#: inc/customizer/controls.php:1219
 msgid "Widget link hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1217
+#: inc/customizer/controls.php:1220
 msgid "Overrides the global link hover color for sidebar widgets."
 msgstr ""
 
-#: inc/customizer/controls.php:1227
+#: inc/customizer/controls.php:1230
 msgid "Search Widget"
 msgstr ""
 
-#: inc/customizer/controls.php:1241 inc/customizer/controls.php:1426
+#: inc/customizer/controls.php:1244 inc/customizer/controls.php:1429
 msgid "Border radius"
 msgstr ""
 
-#: inc/customizer/controls.php:1288
+#: inc/customizer/controls.php:1291
 msgid "Display the search box shadow"
 msgstr ""
 
-#: inc/customizer/controls.php:1289
+#: inc/customizer/controls.php:1292
 msgid "Toggle the display of the search input box shadow."
 msgstr ""
 
-#: inc/customizer/controls.php:1316
+#: inc/customizer/controls.php:1319
 msgid "Form Inputs & Textareas"
 msgstr ""
 
-#: inc/customizer/controls.php:1363
+#: inc/customizer/controls.php:1366
 msgid "Text focus color"
 msgstr ""
 
-#: inc/customizer/controls.php:1379
+#: inc/customizer/controls.php:1382
 msgid "Background focus color"
 msgstr ""
 
-#: inc/customizer/controls.php:1389
+#: inc/customizer/controls.php:1392
 msgid "Buttons"
 msgstr ""
 
-#: inc/customizer/controls.php:1403
+#: inc/customizer/controls.php:1406
 msgid "2D Buttons"
 msgstr ""
 
-#: inc/customizer/controls.php:1413
+#: inc/customizer/controls.php:1416
 msgid "Checking 2D will remove the shadow effect."
 msgstr ""
 
-#: inc/customizer/controls.php:1435
+#: inc/customizer/controls.php:1438
 msgid ""
 "It's important to note that the default button colors are used in many "
 "places as an accent color."
 msgstr ""
 
-#: inc/customizer/controls.php:1502
+#: inc/customizer/controls.php:1505
 msgid ""
 "Adding the %s class to your buttons will inverse their styles. Which means "
 "the hover colors will become the default state, and vice versa."
 msgstr ""
 
-#: inc/customizer/controls.php:1515
+#: inc/customizer/controls.php:1518
 msgid "Text alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1530
+#: inc/customizer/controls.php:1533
 msgid "Background alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1545
+#: inc/customizer/controls.php:1548
 msgid "Border alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1560
+#: inc/customizer/controls.php:1563
 msgid "Box shadow alt/hover color"
 msgstr ""
 
-#: inc/customizer/controls.php:1570
+#: inc/customizer/controls.php:1573
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/controls.php:1571
+#: inc/customizer/controls.php:1574
 msgid "Customize the look & feel of your footer."
 msgstr ""
 
-#: inc/customizer/controls.php:1579
+#: inc/customizer/controls.php:1582
 msgid "Widgets"
 msgstr ""
 
-#: inc/customizer/controls.php:1661
+#: inc/customizer/controls.php:1664
 msgid "Site Info"
 msgstr ""
 
-#: inc/customizer/controls.php:1675
+#: inc/customizer/controls.php:1678
 msgid "Display the footer credits"
 msgstr ""
 
-#: inc/customizer/controls.php:1676
+#: inc/customizer/controls.php:1679
 msgid "Toggle the display of the footer credits."
 msgstr ""
 
@@ -897,19 +889,27 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: inc/functions/setup.php:155
+#: inc/functions/setup.php:154
+msgid "Header %d"
+msgstr ""
+
+#: inc/functions/setup.php:156
+msgid "Widgetized Header Region %d."
+msgstr ""
+
+#: inc/functions/setup.php:178
 msgid "Footer %d"
 msgstr ""
 
-#: inc/functions/setup.php:157
+#: inc/functions/setup.php:180
 msgid "Widgetized Footer Region %d."
 msgstr ""
 
-#: inc/functions/setup.php:191 inc/structure/navigation.php:43
+#: inc/functions/setup.php:214 inc/structure/navigation.php:43
 msgid "Previous"
 msgstr ""
 
-#: inc/functions/setup.php:192 inc/structure/navigation.php:40
+#: inc/functions/setup.php:215 inc/structure/navigation.php:40
 msgid "Next"
 msgstr ""
 
@@ -983,23 +983,23 @@ msgstr ""
 msgid "%1$s theme by %2$s."
 msgstr ""
 
-#: inc/structure/header.php:74
+#: inc/structure/header.php:86
 msgid "Primary Navigation"
 msgstr ""
 
-#: inc/structure/header.php:75
+#: inc/structure/header.php:87
 msgid "Navigation"
 msgstr ""
 
-#: inc/structure/header.php:108
+#: inc/structure/header.php:120
 msgid "Secondary Navigation"
 msgstr ""
 
-#: inc/structure/header.php:132
+#: inc/structure/header.php:144
 msgid "Skip to navigation"
 msgstr ""
 
-#: inc/structure/header.php:133
+#: inc/structure/header.php:145
 msgid "Skip to content"
 msgstr ""
 
@@ -1444,13 +1444,13 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/functions/extras.php:240 inc/functions/extras.php:241
+#: inc/functions/extras.php:250 inc/functions/extras.php:251
 #: inc/woocommerce/functions.php:349 inc/woocommerce/functions.php:350
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: inc/functions/extras.php:241
+#: inc/functions/extras.php:251
 msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
@@ -1460,7 +1460,7 @@ msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: inc/functions/extras.php:243 inc/woocommerce/functions.php:352
+#: inc/functions/extras.php:253 inc/woocommerce/functions.php:352
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
