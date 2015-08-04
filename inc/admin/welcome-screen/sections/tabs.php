@@ -9,9 +9,9 @@
 
 ?>
 <h2 class="nav-tab-wrapper">
-	<a href="#get_started" class="nav-tab nav-tab-active"><?php _e( 'Get Started', 'archetype' ); ?></a>
-	<a href="#add_ons" class="nav-tab"><?php _e( 'Extend Archetype', 'archetype' ); ?></a>
-	<a href="#child_themes" class="nav-tab"><?php _e( 'Child Themes', 'archetype' ); ?></a>
+	<a href="#get_started" class="nav-tab nav-tab-active"><?php esc_html_e( 'Get Started', 'archetype' ); ?></a>
+	<a href="#add_ons" class="nav-tab"><?php esc_html_e( 'Extend Archetype', 'archetype' ); ?></a>
+	<a href="#child_themes" class="nav-tab"><?php esc_html_e( 'Child Themes', 'archetype' ); ?></a>
 </h2>
 
 <script>

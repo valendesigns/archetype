@@ -56,7 +56,7 @@ class Archetype_Welcome {
 		?>
 			<div class="updated notice is-dismissible">
 				<p><?php echo sprintf( esc_html__( 'Thanks for choosing Archetype! You can read hints and tips on how get the most out of your new theme on the %swelcome screen%s.', 'archetype' ), '<a href="' . esc_url( admin_url( 'themes.php?page=archetype-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=archetype-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Archetype', 'archetype' ); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=archetype-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with Archetype', 'archetype' ); ?></a></p>
 			</div>
 		<?php
 	}
@@ -66,10 +66,12 @@ class Archetype_Welcome {
 	 * @return void
 	 * @since  1.4.4
 	 */
-	public function archetype_welcome_style() {
+	public function archetype_welcome_style( $hook_suffix ) {
 		global $archetype_version;
 
-		wp_enqueue_style( 'archetype-welcome-screen', get_template_directory_uri() . ( is_rtl() ? '/inc/admin/css/welcome-rtl.css' : '/inc/admin/css/welcome.css' ), null, $archetype_version );
+		if ( 'appearance_page_archetype-welcome' == $hook_suffix ) {
+			wp_enqueue_style( 'archetype-welcome-screen', get_template_directory_uri() . ( is_rtl() ? '/inc/admin/css/welcome-rtl.css' : '/inc/admin/css/welcome.css' ), null, $archetype_version );
+		}
 	}
 
 	/**
