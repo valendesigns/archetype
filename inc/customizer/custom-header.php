@@ -20,10 +20,10 @@
 function archetype_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'archetype_custom_header_args', array(
 		'default-image' => '',
-		'header-text' 	=> false,
-		'width' 				=> 1920,
-		'height'				=> 240,
-		'flex-width'		=> true,
-		'flex-height' 	=> true,
+		'header-text'   => false,
+		'width'         => 1920,
+		'height'        => 240,
+		'flex-width'    => true,
+		'flex-height'   => true,
 	) ) );
 }

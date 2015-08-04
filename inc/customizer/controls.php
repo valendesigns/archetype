@@ -50,9 +50,11 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_section( 'title_tagline' )->panel        = 'archetype_header';
 
 		// Change the Homepage Control panel, priority, & title.
-		$wp_customize->get_section( 'homepage_control' )->panel     = 'archetype_homepage';
-		$wp_customize->get_section( 'homepage_control' )->priority  = 1;
-		$wp_customize->get_section( 'homepage_control' )->title     = __( 'Component Order', 'archetype' );
+		if ( true === is_homepage_control_activated() ) {
+			$wp_customize->get_section( 'homepage_control' )->panel     = 'archetype_homepage';
+			$wp_customize->get_section( 'homepage_control' )->priority  = 1;
+			$wp_customize->get_section( 'homepage_control' )->title     = __( 'Component Order', 'archetype' );
+		}
 
 		// Change the Static Front Page panel, & priority.
 		$wp_customize->get_section( 'static_front_page' )->panel    = 'archetype_general';
