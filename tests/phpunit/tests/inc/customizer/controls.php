@@ -75,6 +75,10 @@ class Tests_Archetype_Controls extends WP_UnitTestCase {
 			$this->assertInternalType( 'object', $this->wp_customize->get_control( 'archetype_site_logo_info' ) );
 		}
 
+		if ( false === is_homepage_control_activated() ) {
+			$this->assertInternalType( 'object', $this->wp_customize->get_section( 'archetype_homepage_control' ) );
+		}
+
 	}
 
 }

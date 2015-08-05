@@ -638,7 +638,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'active_callback'  => 'is_front_page',
 		) );
 
-		if ( ! class_exists( 'Homepage_Control', false ) ) {
+		if ( false === is_homepage_control_activated() ) {
 			$wp_customize->add_section( 'archetype_homepage_control' , array(
 				'title'         => __( 'Component Order', 'archetype' ),
 				'priority'      => 1,
@@ -661,7 +661,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'panel'        => 'archetype_homepage',
 		) );
 
-		if ( ! is_homepage_control_activated() ) {
+		if ( false === is_homepage_control_activated() ) {
 			/**
 			 * Active
 			 */
@@ -902,7 +902,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'panel'        => 'archetype_homepage',
 			) );
 
-			if ( ! is_homepage_control_activated() ) {
+			if ( false === is_homepage_control_activated() ) {
 				/**
 				 * Toggle custom content
 				 */
