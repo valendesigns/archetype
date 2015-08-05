@@ -61,8 +61,19 @@ class Tests_Archetype_Controls extends WP_UnitTestCase {
 		do_action( 'customize_register', $this->wp_customize );
 		archetype_customize_register( $this->wp_customize );
 
-		$this->assertEquals( 'General', $this->wp_customize->get_panel( 'archetype_general' )->title );
-		$this->assertEquals( 'archetype_homepage', $this->wp_customize->get_section( 'homepage_control' )->panel );
+		$this->assertInternalType( 'object', $this->wp_customize->get_panel( 'archetype_general' ) );
+		$this->assertInternalType( 'object', $this->wp_customize->get_section( 'homepage_control' ) );
+
+		$menu_locations = $this->wp_customize->get_section( 'menu_locations' );
+		if ( is_object( $menu_locations ) ) {
+			$this->assertInternalType( 'null', $this->wp_customize->get_section( 'nav' ) );
+		} else {
+			$this->assertInternalType( 'object', $this->wp_customize->get_section( 'nav' ) );
+		}
+
+		if ( ! class_exists( 'Site_Logo', false ) ) {
+			$this->assertInternalType( 'object', $this->wp_customize->get_control( 'archetype_site_logo_info' ) );
+		}
 
 	}
 

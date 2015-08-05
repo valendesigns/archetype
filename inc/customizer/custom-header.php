@@ -16,7 +16,6 @@
  * @uses archetype_admin_header_image()
  *
  * @since 1.0.0
- * @codeCoverageIgnore
  */
 function archetype_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'archetype_custom_header_args', array(
