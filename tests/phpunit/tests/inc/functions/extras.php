@@ -395,7 +395,7 @@ class Tests_Extras extends WP_UnitTestCase {
 		$caption = archetype_do_shortcode_func( 'caption', array( 'width' => '200', 'caption' => 'The caption text' ), '<img src="http://sample.org/fake-image.jpg" />' );
 
 		// Check for the right output.
-		if ( current_theme_supports( 'html5', 'caption' ) ) {
+		if ( current_theme_supports( 'html5', array( 'caption' ) ) ) {
 			$expected = '<figcaption class="wp-caption-text">The caption text</figcaption>';
 		} else {
 			$expected = '<p class="wp-caption-text">The caption text</p>';

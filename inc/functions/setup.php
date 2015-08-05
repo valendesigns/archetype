@@ -82,15 +82,14 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 
 		/*
 		 * Switch default core markup to output valid HTML5 for search form, comment form,
-		 * comments, galleries, captions and widgets.
+		 * comments, galleries, captions.
 		 */
 		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
 			'comment-list',
+			'comment-form',
+			'search-form',
 			'gallery',
-			'caption',
-			'widgets',
+			'caption'
 		) );
 
 		// Setup the WordPress core custom background feature.
@@ -103,7 +102,9 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 		add_theme_support( 'woocommerce' );
 
 		// Declare support for title theme feature.
-		add_theme_support( 'title-tag' );
+		if ( 0 === did_action( 'wp_loaded' ) ) {
+			add_theme_support( 'title-tag' );
+		}
 
 	}
 endif;

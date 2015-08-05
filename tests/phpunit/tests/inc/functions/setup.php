@@ -41,7 +41,12 @@ class Tests_Setup extends WP_UnitTestCase {
 	 */
 	function test_archetype_setup() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		archetype_setup();
+		$this->assertTrue( current_theme_supports( 'automatic-feed-links' ) );
+		$this->assertTrue( current_theme_supports( 'post-thumbnails' ) );
+		$this->assertTrue( current_theme_supports( 'post-formats' ) );
+		$this->assertTrue( current_theme_supports( 'custom-background' ) );
+		$this->assertTrue( current_theme_supports( 'woocommerce' ) );
 
 	}
 
