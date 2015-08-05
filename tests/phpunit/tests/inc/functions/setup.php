@@ -18,15 +18,6 @@ class Tests_Setup extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Check that the current version of WordPress is compatible with Archetype.
-	 */
-	function test_archetype_back_compat() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
 	 * Check that 'Archetype' equals the current theme name.
 	 */
 	function test_archetype_theme_name() {
@@ -70,6 +61,17 @@ class Tests_Setup extends WP_UnitTestCase {
 
 		$this->markTestIncomplete( 'This test has not been implemented.' );
 
+	}
+
+	/**
+	 * Check that Subscribe & Connect styles are dequeued from the footer.
+	 */
+	function test_archetype_dequeue_footer_scripts() {
+		global $subscribe_and_connect;
+		
+		$this->assertEquals( 10, has_action( 'wp_footer', array( $subscribe_and_connect->context, 'maybe_load_theme_stylesheets' ) ) );
+		do_action( 'wp_footer' );
+		$this->assertFalse( has_action( 'wp_footer', array( $subscribe_and_connect->context, 'maybe_load_theme_stylesheets' ) ) );
 	}
 
 	/**

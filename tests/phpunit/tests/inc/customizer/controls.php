@@ -62,6 +62,8 @@ class Tests_Archetype_Controls extends WP_UnitTestCase {
 		archetype_customize_register( $this->wp_customize );
 
 		$this->assertEquals( 'General', $this->wp_customize->get_panel( 'archetype_general' )->title );
+		$this->assertEquals( 'archetype_homepage', $this->wp_customize->get_section( 'homepage_control' )->panel );
+
 	}
 
 }

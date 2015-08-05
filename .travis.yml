@@ -26,6 +26,8 @@ env:
 
 before_install:
   - git clone https://github.com/woothemes/woocommerce.git /tmp/wordpress/wp-content/plugins/woocommerce
+  - git clone https://github.com/woothemes/subscribe-and-connect /tmp/wordpress/wp-content/plugins/subscribe-and-connect
+  - git clone https://github.com/woothemes/homepage-control /tmp/wordpress/wp-content/plugins/homepage-control
 
 before_script:
   - export DEV_LIB_PATH=tools

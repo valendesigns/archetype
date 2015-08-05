@@ -275,20 +275,20 @@ class Tests_Extras extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Check that Homepage Control is not activated.
+	 * Check that Homepage Control is activated.
 	 */
 	function test_is_homepage_control_activated() {
 
-		$this->assertFalse( is_homepage_control_activated() );
+		$this->assertTrue( is_homepage_control_activated() );
 
 	}
 
 	/**
-	 * Check that Subscribe & Connect is not activated.
+	 * Check that Subscribe & Connect is activated.
 	 */
 	function test_is_subscribe_and_connect_activated() {
 
-		$this->assertFalse( is_subscribe_and_connect_activated() );
+		$this->assertTrue( is_subscribe_and_connect_activated() );
 
 	}
 
