@@ -42,8 +42,6 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_theme' );
  */
 function _manually_load_plugins() {
 	if ( defined( 'WP_TEST_ACTIVATED_PLUGINS' ) ) {
-		global $_plugins_dir;
-
 		$active_plugins = get_option( 'active_plugins', array() );
 		$force_plugins = explode( ',', WP_TEST_ACTIVATED_PLUGINS );
 		foreach( $force_plugins as $plugin ) {
@@ -61,8 +59,6 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugins' );
  * @since 1.0.0
  */
 function archetype_tests_install_wc() {
-	global $_plugins_dir;
-
 	// clean existing install first
 	define( 'WP_UNINSTALL_PLUGIN', true );
 	require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
