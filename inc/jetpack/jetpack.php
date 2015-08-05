@@ -20,7 +20,7 @@ if ( ! function_exists( 'archetype_jetpack_setup' ) ) :
 		 * @link http://jetpack.me/support/site-logo/
 		 */
 		add_theme_support( 'site-logo', array(
-			'size'      => 'full'
+			'size'      => 'full',
 		) );
 
 		/*
