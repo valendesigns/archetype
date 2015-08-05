@@ -21,18 +21,39 @@ if ( ! file_exists( $_tests_dir . '/includes/' ) ) {
 }
 
 // Require functions
-require_once $_tests_dir . '/includes/functions.php';
+require_once( $_tests_dir . '/includes/functions.php' );
 
-// Activate the plugins.
-if ( defined( 'WP_TEST_ACTIVATED_PLUGINS' ) ) {
-	$GLOBALS['wp_tests_options']['active_plugins'] = explode( ',', WP_TEST_ACTIVATED_PLUGINS );
+/**
+ * Activate the theme
+ *
+ * @since 1.0.0
+ */
+function _manually_load_theme() {
+	if ( defined( 'WP_TEST_ACTIVATED_THEME' ) ) {
+		switch_theme( WP_TEST_ACTIVATED_THEME );
+	}
 }
+tests_add_filter( 'muplugins_loaded', '_manually_load_theme' );
 
-// Activate the theme.
-if ( defined( 'WP_TEST_ACTIVATED_THEME' ) ) {
-	$GLOBALS['wp_tests_options']['stylesheet'] = WP_TEST_ACTIVATED_THEME;
-	$GLOBALS['wp_tests_options']['template'] = WP_TEST_ACTIVATED_THEME;
+/**
+ * Activate the plugins
+ *
+ * @since 1.0.0
+ */
+function _manually_load_plugins() {
+	if ( defined( 'WP_TEST_ACTIVATED_PLUGINS' ) ) {
+		global $_plugins_dir;
+
+		$active_plugins = get_option( 'active_plugins', array() );
+		$force_plugins = explode( ',', WP_TEST_ACTIVATED_PLUGINS );
+		foreach( $force_plugins as $plugin ) {
+			require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/' . $plugin );
+			$active_plugins[] = $plugin;
+		}
+		update_option( 'active_plugins', $active_plugins );
+	}
 }
+tests_add_filter( 'muplugins_loaded', '_manually_load_plugins' );
 
 /**
  * Install WooCommerce
@@ -40,10 +61,11 @@ if ( defined( 'WP_TEST_ACTIVATED_THEME' ) ) {
  * @since 1.0.0
  */
 function archetype_tests_install_wc() {
+	global $_plugins_dir;
 
 	// clean existing install first
 	define( 'WP_UNINSTALL_PLUGIN', true );
-	include( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
+	require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
 
 	WC_Install::install();
 
@@ -65,4 +87,4 @@ function archetype_tests_filesystem_method() {
 tests_add_filter( 'filesystem_method', 'archetype_tests_filesystem_method', 1, 10 );
 
 // Require bootstrap
-require $_tests_dir . '/includes/bootstrap.php';
+require_once( $_tests_dir . '/includes/bootstrap.php' );
