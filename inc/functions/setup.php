@@ -216,7 +216,7 @@ function archetype_scripts() {
 }
 
 /**
- * Denqueue Subscribe & Connecrt styles in the footer.
+ * Denqueue Subscribe & Connect styles in the footer.
  *
  * @since 1.0.0
  */
