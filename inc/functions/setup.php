@@ -89,7 +89,7 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 			'comment-form',
 			'search-form',
 			'gallery',
-			'caption'
+			'caption',
 		) );
 
 		// Setup the WordPress core custom background feature.
