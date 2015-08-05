@@ -35,7 +35,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_section( 'header_image' )->priority      = 15;
 		$wp_customize->get_section( 'header_image' )->panel         = 'archetype_header';
 
-		// @codeCoverageIgnoreStart
 		// Change navigation panel or section.
 		$menu_locations = $wp_customize->get_section( 'menu_locations' );
 		if ( is_object( $menu_locations ) && 'nav_menus' === $menu_locations->panel ) {
@@ -87,7 +86,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'priority'    => 40,
 			) ) );
 		}
-		// @codeCoverageIgnoreEnd
 
 		/**
 		 * Add the General panel
