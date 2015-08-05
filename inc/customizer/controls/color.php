@@ -13,6 +13,7 @@ if ( class_exists( 'WP_Customize_Color_Control' ) ) :
 	 * Extends the Customize Color Control class.
 	 *
 	 * @since 1.0.0
+	 * @codeCoverageIgnore
 	 */
 	class Archetype_Color_Control extends WP_Customize_Color_Control {
 

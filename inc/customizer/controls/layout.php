@@ -13,6 +13,7 @@ if ( ! class_exists( 'Archetype_Layout_Control' ) ) :
 	 * Class to create a layout Customizer control.
 	 *
 	 * @since 1.0.0
+	 * @codeCoverageIgnore
 	 */
 	class Archetype_Layout_Control extends WP_Customize_Control {
 

@@ -385,6 +385,29 @@ class Tests_Extras extends WP_UnitTestCase {
 		$this->assertContains( '<input type="hidden" name="post_type" value="post" />', archetype_post_search_form( '' ) );
 
 	}
+	
+	/**
+	 * Check proper return values.
+	 */
+	function test_archetype_do_shortcode_func() {
+
+		// Run the function.
+		$caption = archetype_do_shortcode_func( 'caption', array( 'width' => '200', 'caption' => 'The caption text' ), '<img src="http://sample.org/fake-image.jpg" />' );
+
+		// Check for the right output.
+		if ( current_theme_supports( 'html5', 'caption' ) ) {
+			$expected = '<figcaption class="wp-caption-text">The caption text</figcaption>';
+		} else {
+			$expected = '<p class="wp-caption-text">The caption text</p>';
+		}
+
+		// Returns the shortcode as expected.
+		$this->assertContains( $expected, $caption );
+
+		// Returns `false` when the shortcode is invalid.
+		$this->assertFalse( archetype_do_shortcode_func( 'invalid' ) );
+
+	}
 
 	/**
 	 * Check that HEX is converted to RGB.

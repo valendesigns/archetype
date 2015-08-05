@@ -11,6 +11,7 @@
  * Class to create a custom arbitrary html control for text block, headings, and dividers.
  *
  * @since 1.0.0
+ * @codeCoverageIgnore
  */
 class Archetype_Arbitrary_Control extends WP_Customize_Control {
 	/**

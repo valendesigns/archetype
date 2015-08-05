@@ -11,6 +11,7 @@
  * Class to create an input[type=number] Customizer control.
  *
  * @since 1.0.0
+ * @codeCoverageIgnore
  */
 class Archetype_Number_Customizer_Control extends WP_Customize_Control {
 	/**

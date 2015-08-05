@@ -38,7 +38,7 @@ function archetype_upgrade_notice() {
 }
 
 /**
- * Prevent the Customizer from being loaded on WordPress versions prior to 4.1.
+ * Prevent the Customizer from being loaded on WordPress versions prior to 4.3.
  *
  * @since 1.0.0
  */
@@ -50,7 +50,7 @@ function archetype_customize() {
 add_action( 'load-customize.php', 'archetype_customize' );
 
 /**
- * Prevent the Theme Preview from being loaded on WordPress versions prior to 4.1.
+ * Prevent the Theme Preview from being loaded on WordPress versions prior to 4.3.
  *
  * @since 1.0.0
  */
@@ -62,10 +62,10 @@ function archetype_preview() {
 add_action( 'template_redirect', 'archetype_preview' );
 
 /**
- * Prevent the Theme Preview from being loaded on WordPress versions prior to 4.1.
+ * Prevent the Theme Preview from being loaded on WordPress versions prior to 4.3.
  *
  * @since 1.0.0
  */
 function archetype_back_compat_msg() {
-	return sprintf( __( 'Archetype requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'archetype' ), $GLOBALS['wp_version'] );
+	return sprintf( __( 'Archetype requires at least WordPress version 4.3. You are running version %s. Please upgrade and try again.', 'archetype' ), $GLOBALS['wp_version'] );
 }

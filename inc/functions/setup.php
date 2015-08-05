@@ -15,7 +15,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
- * Archetype only works in WordPress 4.1 or later.
+ * Archetype only works in WordPress 4.3 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.3', '<' ) ) {
 	require get_template_directory() . '/inc/functions/back-compat.php';

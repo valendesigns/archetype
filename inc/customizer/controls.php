@@ -35,9 +35,10 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_section( 'header_image' )->priority      = 15;
 		$wp_customize->get_section( 'header_image' )->panel         = 'archetype_header';
 
+		// @codeCoverageIgnoreStart
 		// Change navigation panel or section.
-		$menu_43 = $wp_customize->get_section( 'menu_locations' );
-		if ( is_object( $menu_43 ) && 'nav_menus' === $menu_43->panel ) {
+		$menu_locations = $wp_customize->get_section( 'menu_locations' );
+		if ( is_object( $menu_locations ) && 'nav_menus' === $menu_locations->panel ) {
 			$wp_customize->get_panel( 'nav_menus' )->priority          = 40;
 		} else {
 			$wp_customize->get_section( 'nav' )->title                 = __( 'Menus Locations', 'archetype' );
@@ -86,6 +87,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'priority'    => 40,
 			) ) );
 		}
+		// @codeCoverageIgnoreEnd
 
 		/**
 		 * Add the General panel

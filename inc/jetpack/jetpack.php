@@ -1,14 +1,19 @@
 <?php
 /**
  * Jetpack Compatibility File
- * See: http://jetpack.me/
+ *
+ * @link http://jetpack.me/
  *
  * @package Archetype
  */
 
 /**
  * Add theme support for Infinite Scroll.
- * See: http://jetpack.me/support/infinite-scroll/
+ *
+ * @link http://jetpack.me/support/infinite-scroll/
+ *
+ * @since 1.0.0
+ * @codeCoverageIgnore
  */
 function archetype_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
