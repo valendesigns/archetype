@@ -54,9 +54,20 @@ class Tests_Setup extends WP_UnitTestCase {
 	 * Check that widgets are registed.
 	 */
 	function test_archetype_widgets_init() {
+		archetype_widgets_init();
+		global $wp_registered_sidebars;
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertInternalType( 'array', $wp_registered_sidebars['sidebar-1'] );
 
+		$header_widget_regions = apply_filters( 'archetype_header_widget_regions', 4 );
+		for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
+			$this->assertInternalType( 'array', $wp_registered_sidebars[ 'header-' . $i ] );
+		}
+
+		$footer_widget_regions = apply_filters( 'archetype_footer_widget_regions', 4 );
+		for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
+			$this->assertInternalType( 'array', $wp_registered_sidebars[ 'footer-' . $i ] );
+		}
 	}
 
 	/**
