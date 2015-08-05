@@ -2,9 +2,9 @@
 /**
  * Archetype back compat functionality
  *
- * Prevents Archetype from running on WordPress versions prior to 4.1,
+ * Prevents Archetype from running on WordPress versions prior to 4.3,
  * since this theme is not meant to be backward compatible beyond that and
- * relies on many newer functions and markup changes introduced in 4.1.
+ * relies on many newer functions and markup changes introduced in 4.3.
  *
  * @package Archetype
  * @subpackage Functions
@@ -29,7 +29,7 @@ add_action( 'after_switch_theme', 'archetype_switch_theme' );
  * Add message for unsuccessful theme switch.
  *
  * Prints an update nag after an unsuccessful attempt to switch to
- * Archetype on WordPress versions prior to 4.1.
+ * Archetype on WordPress versions prior to 4.3.
  *
  * @since 1.0.0
  */
