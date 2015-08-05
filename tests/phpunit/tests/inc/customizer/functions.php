@@ -79,7 +79,13 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_sanitize_number() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$setting = new stdClass();
+		$setting->default = '10';
+
+		$this->assertEquals( 0, archetype_sanitize_number( 'help' ) );
+		$this->assertEquals( 10, archetype_sanitize_number( 'help', $setting ) );
+		$this->assertEquals( -1, archetype_sanitize_number( '-1' ) );
+		$this->assertEquals( 1, archetype_sanitize_number( '1' ) );
 
 	}
 
