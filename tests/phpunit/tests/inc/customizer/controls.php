@@ -1,12 +1,12 @@
 <?php
 /**
- * Test Archetype controls.
+ * Test Customizer controls.
  *
  * @package Archetype
  * @group customizer
  */
 
-class Tests_Archetype_Controls extends WP_UnitTestCase {
+class Tests_Customizer_Controls extends WP_UnitTestCase {
 
 	/**
 	 * Instance of WP_Customize_Manager which is reset for each test.

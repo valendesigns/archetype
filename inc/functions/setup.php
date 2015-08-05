@@ -99,13 +99,6 @@ if ( ! function_exists( 'archetype_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
-		/*
-		 * Add support for the site logo functionality in JetPack
-		 *
-		 * @link http://jetpack.me/
-		 */
-		add_theme_support( 'site-logo', array( 'size' => 'full' ) );
-
 		// Declare WooCommerce support.
 		add_theme_support( 'woocommerce' );
 

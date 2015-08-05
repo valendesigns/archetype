@@ -13,7 +13,8 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_customize_js() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		archetype_customize_js();
+		$this->assertTrue( wp_script_is( 'archetype_customize' ) );
 
 	}
 
@@ -22,7 +23,28 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_customize_preview_js() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		archetype_customize_preview_js();
+		$this->assertTrue( wp_script_is( 'archetype_customize_preview' ) );
+
+	}
+
+	/**
+	 * Check that emoji's are removed.
+	 */
+	function test_archetype_emojis() {
+
+		$this->assertEquals( 7, has_action( 'wp_head', 'print_emoji_detection_script' ) );
+		$this->assertEquals( 10, has_action( 'admin_print_scripts', 'print_emoji_detection_script' ) );
+		$this->assertEquals( 10, has_action( 'wp_print_styles', 'print_emoji_styles' ) );
+		$this->assertEquals( 10, has_action( 'admin_print_styles', 'print_emoji_styles' ) );
+
+		add_filter( 'archetype_default_no_emoji', '__return_true' );
+		archetype_emojis();
+
+		$this->assertFalse( has_action( 'wp_head', 'print_emoji_detection_script' ) );
+		$this->assertFalse( has_action( 'admin_print_scripts', 'print_emoji_detection_script' ) );
+		$this->assertFalse( has_action( 'wp_print_styles', 'print_emoji_styles' ) );
+		$this->assertFalse( has_action( 'admin_print_styles', 'print_emoji_styles' ) );
 
 	}
 
@@ -31,7 +53,7 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_homepage_control_title() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertEquals( 'Content (1)', archetype_homepage_control_title( 'Archetype Homepage Content 1', 'archetype_homepage_content_1' ) );
 
 	}
 
@@ -40,7 +62,15 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_sanitize_integer() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$setting = new stdClass();
+		$setting->default = 1;
+
+		$this->assertEquals( false, archetype_sanitize_integer( 'help' ) );
+		$this->assertEquals( 1, archetype_sanitize_integer( 'help', $setting ) );
+		$this->assertEquals( 1, archetype_sanitize_integer( '-1' ) );
+		$this->assertEquals( 1, archetype_sanitize_integer( -1 ) );
+		$this->assertEquals( 1, archetype_sanitize_integer( '1' ) );
+		$this->assertEquals( 1, archetype_sanitize_integer( 1 ) );
 
 	}
 

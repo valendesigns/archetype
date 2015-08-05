@@ -1,12 +1,12 @@
 <?php
 /**
- * Test Custom Header functions.
+ * Test Customizer custom header.
  *
  * @package Archetype
  * @group customizer
  */
 
-class Tests_Custom_Header_Functions extends WP_UnitTestCase {
+class Tests_Customizer_Custom_Header extends WP_UnitTestCase {
 
 	/**
 	 * Check that the WordPress core custom header feature is setup.
