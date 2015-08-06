@@ -55,8 +55,11 @@ body {
 	}
 }
 
-#masthead > .col-full {
-	@include clearfix;
+#masthead,
+#masthead-clone {
+	> .col-full {
+		@include clearfix;
+	}
 }
 
 .no-wc-breadcrumb:not(.page-template-template-homepage) {

@@ -43,31 +43,31 @@
 		 * @return void
 		 */
 		navigationInit: function() {
-			var $container = $( '#site-navigation' ),
-				$menu = $( '.handheld-navigation ul' );
+			var $container = $( '#masthead #site-navigation' ),
+				$menu = $( '#masthead .handheld-navigation ul' );
 
 			if ( 0 === $container.length ) {
 				return;
 			}
 
-			if ( 0 === $( 'button.menu-toggle' ).length ) {
+			if ( 0 === $( '#masthead button.menu-toggle' ).length ) {
 				return;
 			}
 
 			// Hide menu toggle button if menu is empty and return early.
 			if ( 0 === $menu.length ) {
-				$( 'button.menu-toggle' ).hide();
+				$( '#masthead button.menu-toggle' ).hide();
 				return;
 			}
 
 			$menu.attr( 'aria-expanded', 'false' );
 
 			// Fix position by moving the button & display both buttons
-			$( 'button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
+			$( '#masthead button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
 			$( 'a.cart-contents' ).css( 'display', 'block' );
 
 			// Listen for button click.
-			$( 'button.menu-toggle' ).on( 'click', function() {
+			$( '#masthead button.menu-toggle' ).on( 'click', function() {
 				var $that = $( this );
 
 				if ( $container.is( '.toggled' ) ) {
@@ -82,9 +82,9 @@
 			} );
 
 			// Fix header button positions inside wrapper
-			if ( $( '.secondary-navigation-wrap' ).length ) {
-				$( '.secondary-navigation-wrap button.menu-toggle' ).appendTo( '.site-header > .col-full' );
-				$( '.secondary-navigation-wrap .site-header-cart' ).clone().appendTo( '.site-header > .col-full' );
+			if ( $( '#masthead .secondary-navigation-wrap' ).length ) {
+				$( '#masthead .secondary-navigation-wrap button.menu-toggle' ).appendTo( '.site-header > .col-full' );
+				$( '#masthead .secondary-navigation-wrap .site-header-cart' ).clone().appendTo( '.site-header > .col-full' );
 			}
 
 			// Add focus class to li

@@ -179,6 +179,12 @@
 	}
 }
 
+@media screen and (max-width: 767px) {
+	#masthead-clone .main-navigation.toggled .handheld-navigation {
+		display: block !important;
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.menu-toggle,
 	.handheld-navigation,
