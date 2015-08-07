@@ -197,7 +197,7 @@ function archetype_scripts() {
 
 	wp_enqueue_script( 'archetype', get_template_directory_uri() . '/js/archetype.min.js', array( 'jquery', 'archetype-bxslider' ), $archetype_version, true );
 
-	wp_localize_script( 'archetype', '_archetype', array(
+	wp_localize_script( 'archetype', 'Archetypel10n', array(
 		'prev' => __( 'Previous', 'archetype' ),
 		'next' => __( 'Next', 'archetype' ),
 	) );

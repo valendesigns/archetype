@@ -1,4 +1,4 @@
-/* global _archetype */
+/* global Archetypel10n */
 
 /**
  * Script for initializing globally-used functions and libs.
@@ -8,7 +8,7 @@
 ( function( $ ) {
 	'use strict';
 
-	var archetype = {
+	var Archetype = {
 
 		cache: {},
 
@@ -63,7 +63,9 @@
 			$menu.attr( 'aria-expanded', 'false' );
 
 			// Fix position by moving the button & display both buttons
-			$( '#masthead button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
+			if ( 0 === $( '#masthead .secondary-navigation button.menu-toggle' ).length ) {
+				$( '#masthead button.menu-toggle' ).appendTo( '.secondary-navigation' ).css( 'display', 'block' );
+			}
 			$( 'a.cart-contents' ).css( 'display', 'block' );
 
 			// Listen for button click.
@@ -179,8 +181,8 @@
 					adaptiveHeight: true,
 					mode: 'fade',
 					pager: false,
-					nextText: _archetype.next,
-					prevText: _archetype.prev
+					nextText: Archetypel10n.next,
+					prevText: Archetypel10n.prev
 				} );
 
 				$( window ).on( 'orientationchange', function() {
@@ -193,6 +195,6 @@
 
 	};
 
-	archetype.init();
+	Archetype.init();
 
 } )( jQuery );
