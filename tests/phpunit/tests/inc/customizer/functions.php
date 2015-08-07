@@ -94,7 +94,47 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_sanitize_checkbox() {
 
+		// Falsey.
+		$this->assertFalse( archetype_sanitize_checkbox( '' ) );
+		$this->assertFalse( archetype_sanitize_checkbox( '0' ) );
+		$this->assertFalse( archetype_sanitize_checkbox( 0 ) );
+		$this->assertFalse( archetype_sanitize_checkbox( false ) );
+
+		// True.
+		$this->assertTrue( archetype_sanitize_checkbox( 'any-value' ) );
+		$this->assertTrue( archetype_sanitize_checkbox( 'false' ) );
+		$this->assertTrue( archetype_sanitize_checkbox( '1' ) );
+		$this->assertTrue( archetype_sanitize_checkbox( 1 ) );
+		$this->assertTrue( archetype_sanitize_checkbox( 'true' ) );
+		$this->assertTrue( archetype_sanitize_checkbox( true ) );
+
+	}
+	
+	/**
+	 * Sanitizes an image value.
+	 */
+	function test_archetype_sanitize_image() {
+
 		$this->markTestIncomplete( 'This test has not been implemented.' );
+
+	}
+
+	/**
+	 * Sanitizes a URL value.
+	 */
+	function test_archetype_sanitize_url() {
+
+		$this->assertEquals( 'http://sample.org/image.jpg', archetype_sanitize_url( 'sample.org/image.jpg' ) );
+		$this->assertEquals( '//sample.org/image.jpg', archetype_sanitize_url( '//sample.org/image.jpg' ) );
+
+	}
+
+	/**
+	 * Sanitizes an HTML value.
+	 */
+	function test_archetype_sanitize_html() {
+
+		$this->assertEquals( 'Hello', archetype_sanitize_html( '<script>Hello</script>' ) );
 
 	}
 
@@ -103,7 +143,11 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_sanitize_hex_color() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertEquals( '#000', archetype_sanitize_hex_color( '#000' ) );
+		$this->assertEquals( '#000000', archetype_sanitize_hex_color( '#000000' ) );
+		$this->assertEquals( '', archetype_sanitize_hex_color( '#0000' ) );
+		$this->assertEquals( '', archetype_sanitize_hex_color( '' ) );
+		$this->assertEquals( null, archetype_sanitize_hex_color( 'undefined' ) );
 
 	}
 
@@ -121,7 +165,8 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_sanitize_layout() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertEquals( 'left', archetype_sanitize_layout( 'left' ) );
+		$this->assertEquals( '', archetype_sanitize_layout( 'wrong' ) );
 
 	}
 
@@ -130,7 +175,7 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_layout_class() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertEquals( array( 'right-sidebar' ), archetype_layout_class( array() ) );
 
 	}
 
@@ -139,7 +184,7 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	 */
 	function test_archetype_adjust_color_brightness() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		$this->assertEquals( '#616161', archetype_adjust_color_brightness( '#666', -5 ) );
 
 	}
 
