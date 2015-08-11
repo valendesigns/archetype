@@ -161,7 +161,7 @@ add_action( 'archetype_single_image_after',  'archetype_display_comments', 20 );
  */
 add_filter( 'the_content',         'archetype_chat_content', 10 );
 add_filter( 'archetype_chat_text', 'wpautop',                10 );
-		
+
 /**
  * Extras
  *
