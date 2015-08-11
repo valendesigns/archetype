@@ -81,6 +81,8 @@ class Tests_Setup extends WP_UnitTestCase {
 
 	/**
 	 * Check that Subscribe & Connect styles are dequeued from the footer.
+	 *
+	 * @todo Move to social.php & rename to test_archetype_dequeue_subscribe_and_connect
 	 */
 	function test_archetype_dequeue_footer_scripts() {
 		global $subscribe_and_connect;

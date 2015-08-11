@@ -1,56 +1,13 @@
 <?php
 /**
- * Chat API classes.
+ * Archetype chat functions.
  *
  * @package Archetype
- * @subpackage Chat_API
+ * @subpackage Chat
  * @since 1.0.0
  */
 
-/**
- * Archetype Chat API Class.
- *
- * This class calls various action hooks that load the Archetype Chat API.
- *
- * @since 1.0.0
- */
-class Archetype_Chat_API {
-
-	/**
-	 * Class Constructor
-	 *
-	 * @uses Archetype_Chat_API::setup_actions() Setup the actions
-	 *
-	 * @access public
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	public function __construct() {
-		$this->setup_actions();
-	}
-
-	/**
-	 * Setup the default filters and actions
-	 *
-	 * @uses add_action() To add various actions
-	 * @uses add_filter() To add various filters
-	 *
-	 * @access private
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	private function setup_actions() {
-
-		// Filter the content of chat posts.
-		add_filter( 'the_content', array( $this, 'filter_the_content' ) );
-
-		// Auto-add paragraphs to the chat text.
-		add_filter( 'archetype_chat_text', 'wpautop' );
-
-	}
-
+if ( ! function_exists( 'archetype_chat_content' ) ) :
 	/**
 	 * This function filters the post content when viewing a post with the "chat" post format.
 	 * It formats the content with structured HTML markup to make it easy for theme developers
@@ -69,7 +26,7 @@ class Archetype_Chat_API {
 	 * @param string $content The content of the post.
 	 * @return string $chat_content The formatted content of the post.
 	 */
-	public function filter_the_content( $content ) {
+	function archetype_chat_content( $content ) {
 		// If this is not a 'chat' post, return the content.
 		if ( ! has_post_format( 'chat' ) ) {
 			return $content;
@@ -231,11 +188,4 @@ class Archetype_Chat_API {
 		// Return the chat content and apply filters for developers.
 		return apply_filters( 'archetype_chat_content', $chat_content );
 	}
-}
-
-/**
- * Setup Archetype Chat API
- *
- * @since 1.0.0
- */
-new Archetype_Chat_API();
+endif;

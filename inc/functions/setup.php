@@ -210,18 +210,6 @@ function archetype_scripts() {
 }
 
 /**
- * Denqueue Subscribe & Connect styles in the footer.
- *
- * @since 1.0.0
- */
-function archetype_dequeue_footer_scripts() {
-	if ( is_subscribe_and_connect_activated() ) {
-		global $subscribe_and_connect;
-		remove_action( 'wp_footer', array( $subscribe_and_connect->context, 'maybe_load_theme_stylesheets' ), 10 );
-	}
-}
-
-/**
  * Add featured image as background image to post navigation elements.
  *
  * @since 1.0.0
@@ -275,4 +263,95 @@ function archetype_post_nav_background() {
 	}
 
 	wp_add_inline_style( 'archetype-style', $css );
+}
+
+/**
+ * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Configuration arguments.
+ * @return array
+ */
+function archetype_page_menu_args( $args ) {
+	$args['show_home'] = true;
+	return $args;
+}
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function archetype_body_classes( $classes ) {
+	// Adds a class of group-blog to blogs with more than 1 published author.
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
+
+	// Adds a class of no-wc-breadcrumb when WooCommerce isn't activated or has been filtered off.
+	if ( ! function_exists( 'woocommerce_breadcrumb' ) || false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
+		$classes[]	= 'no-wc-breadcrumb';
+	}
+
+	/** This filter is documented in sidebar.php */
+	$id = apply_filters( 'archetype_sidebar_widget_region_id', 'sidebar-1' );
+
+	// Add full width on 404 or inactive sidebar.
+	if ( is_404() || ! is_active_sidebar( $id ) ) {
+		$classes[] = 'archetype-full-width-content';
+	}
+
+	/** This filter is documented in inc/functions/setup.php */
+	$header_widget_regions = apply_filters( 'archetype_header_widget_regions', 4 );
+	$header_widgets = false;
+
+	for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
+		if ( is_active_sidebar( 'header-' . $i ) ) {
+			$header_widgets = true;
+		}
+	}
+
+	// Active header widgets.
+	if ( true === $header_widgets ) {
+		$classes[] = 'archetype-has-header-widgets';
+	}
+
+	/**
+	 * What is this?!
+	 *
+	 * Take the blue pill, close this file and forget you saw the following code.
+	 * Or take the red pill, filter `archetype_make_me_cute` and see how deep the rabbit hole goes...
+	 *
+	 * @since 1.0.0
+	 */
+	$cute = apply_filters( 'archetype_make_me_cute', false );
+	if ( true === $cute ) {
+		$classes[] = 'archetype-cute';
+	}
+
+	// 4 out of 12 columns.
+	if ( 4 == get_theme_mod( 'archetype_columns', apply_filters( 'archetype_default_columns', '3' ) ) ) {
+		$classes[] = 'grid-alt';
+	}
+
+	// Full width.
+	if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_full_width', apply_filters( 'archetype_default_full_width', false ) ) ) ) {
+		$classes[] = 'is-full-width';
+	}
+
+	// Boxed.
+	if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_boxed', apply_filters( 'archetype_default_boxed', false ) ) ) ) {
+		$classes[] = 'is-boxed';
+	}
+
+	// Padding.
+	if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_padded', apply_filters( 'archetype_default_padded', true ) ) ) ) {
+		$classes[] = 'is-padded';
+	}
+
+	return $classes;
 }
