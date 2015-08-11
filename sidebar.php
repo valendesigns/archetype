@@ -20,5 +20,6 @@ if ( ! is_active_sidebar( $id ) ) {
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
+	<?php do_action( 'archetype_sidebar' ); ?>
 	<?php dynamic_sidebar( $id ); ?>
 </aside><!-- #secondary -->

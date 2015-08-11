@@ -9,74 +9,45 @@
 class Tests_Template_Tags extends WP_UnitTestCase {
 
 	/**
-	 * Displays the social icons
+	 * Check that the the header is loaded.
 	 */
-	function test_archetype_social_icons() {
+	function test_archetype_get_header() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		ob_start();
+		archetype_get_header();
+		$buffer = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( 1, did_action( 'archetype_header' ) );
 
 	}
 
 	/**
-	 * Displays the archetype sidebar
+	 * Check that the the sidebar is loaded.
 	 */
 	function test_archetype_get_sidebar() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		ob_start();
+		archetype_get_sidebar();
+		$buffer = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( 1, did_action( 'archetype_sidebar' ) );
 
 	}
 
 	/**
-	 * Returns an array of post formats that do not have a title.
+	 * Check that the the footer is loaded.
 	 */
-	function test_archetype_hide_title_post_formats() {
+	function test_archetype_get_footer() {
 
-		$this->markTestIncomplete( 'This test has not been implemented.' );
+		ob_start();
+		archetype_get_footer();
+		$buffer = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( 1, did_action( 'archetype_footer' ) );
 
 	}
 
-	/**
-	 * Check for the existence of post content.
-	 */
-	function test_archetype_has_content() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
-	 * Check for the existence of a post title.
-	 */
-	function test_archetype_has_title() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
-	 * Check for a hidden post title.
-	 */
-	function test_archetype_hide_title() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
-	 * Check for a hidden author bio.
-	 */
-	function test_archetype_hide_author_bio() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
-	 * Check the setup of the entry-header classes.
-	 */
-	function test_archetype_entry_header_class() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
 }

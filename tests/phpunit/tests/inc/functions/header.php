@@ -9,7 +9,7 @@
 class Tests_Header extends WP_UnitTestCase {
 
 	/**
-	 * Displays the header widget regions
+	 * Displays the header widget region
 	 */
 	function test_archetype_header_widget_region() {
 
@@ -48,6 +48,33 @@ class Tests_Header extends WP_UnitTestCase {
 	 * Displays the Skip links
 	 */
 	function test_archetype_skip_links() {
+
+		$this->markTestIncomplete( 'This test has not been implemented.' );
+
+	}
+
+	/**
+	 * Displays the header widgets
+	 */
+	function test_archetype_header_widgets() {
+
+		$this->markTestIncomplete( 'This test has not been implemented.' );
+
+	}
+
+	/**
+	 * Builds the site header classes array
+	 */
+	function test_archetype_site_header_classes() {
+
+		$this->markTestIncomplete( 'This test has not been implemented.' );
+
+	}
+
+	/**
+	 * Builds the site header styles array
+	 */
+	function test_archetype_site_header_styles() {
 
 		$this->markTestIncomplete( 'This test has not been implemented.' );
 

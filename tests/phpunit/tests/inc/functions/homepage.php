@@ -9,6 +9,15 @@
 class Tests_Homepage extends WP_UnitTestCase {
 
 	/**
+	 * Displays Homepage Hero.
+	 */
+	function test_archetype_homepage_hero() {
+
+		$this->markTestIncomplete( 'This test has not been implemented.' );
+
+	}
+
+	/**
 	 * Adds the homepage content components.
 	 */
 	function test_archetype_homepage_content_components() {

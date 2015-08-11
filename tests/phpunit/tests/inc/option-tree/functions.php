@@ -72,6 +72,15 @@ class Tests_Option_Tree_Functions extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Filters the metaboxes for the gallery post format.
+	 */
+	function test_archetype_filter_post_format_gallery() {
+
+		$this->markTestIncomplete( 'This test has not been implemented.' );
+
+	}
+
+	/**
 	 * Displays the gallery
 	 */
 	function test_archetype_post_format_gallery() {

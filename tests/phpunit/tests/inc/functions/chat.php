@@ -11,7 +11,7 @@ class Tests_Chat_Format extends WP_UnitTestCase {
 	/**
 	 * Check the output filter for various chat formats
 	 */
-	function test_archetype_chat_format() {
+	function test_archetype_chat_content() {
 
 		$this->markTestIncomplete( 'This test has not been implemented.' );
 

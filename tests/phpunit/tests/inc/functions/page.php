@@ -9,6 +9,15 @@
 class Tests_Page extends WP_UnitTestCase {
 
 	/**
+	 * Displays an optional featured image
+	 */
+	function test_archetype_page_media() {
+
+		$this->markTestIncomplete( 'This test has not been implemented.' );
+
+	}
+
+	/**
 	 * Displays the the post header with a link to the single post
 	 */
 	function test_archetype_page_header() {
