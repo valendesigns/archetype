@@ -35,20 +35,50 @@ if ( ! function_exists( 'archetype_chat_content' ) ) :
 		// Set the global variable of speaker IDs to a new, empty array for this chat.
 		$_post_format_chat_ids = array();
 
-		// Allow the separator regex (separator for header/text) to be filtered.
-		$header_regex = apply_filters( 'archetype_chat_header_regex', '/:\s/', get_the_ID() );
+		// Set the post ID.
+		$post_id = get_the_ID();
 
-		// Allow the date separator regex (separator for date/author) to be filtered.
-		$date_regex = apply_filters( 'archetype_chat_date_regex', '/\[(.*?)\]\s/', get_the_ID() );
-
-		/*
-		 * Set how many responses are displayed in archive view.
-		 * You can filter this to another number or to -1 or 0 to display all chat responses.
+		/**
+		 * Filter the regular expression for the 'header: text' separator.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $header_regex The regex separator for 'header: text'. Default is '/:\s/'.
+		 * @param int    $post_id      The post ID.
 		 */
-		$chat_excerpt_responses = apply_filters( 'archetype_chat_excerpt_responses', 5, get_the_ID() );
+		$header_regex = apply_filters( 'archetype_chat_header_regex', '/:\s/', $post_id );
 
-		// Filter the chat more text.
-		$chat_more_text = apply_filters( 'archetype_chat_more_text', __( 'Continue reading', 'archetype' ), get_the_ID() );
+		/**
+		 * Filter the regular expression for the '[date] author' separator.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $date_regex The regex separator for '[date] author'. Default is '/\[(.*?)\]\s/'.
+		 * @param int    $post_id    The post ID.
+		 */
+		$date_regex = apply_filters( 'archetype_chat_date_regex', '/\[(.*?)\]\s/', $post_id );
+
+		/**
+		 * Filter the number of chat responses that are displayed in the archive view.
+		 *
+		 * You can filter this to a specific number, or to -1 or 0 to display all chat responses.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param int $chat_excerpt_responses The number of chat responses. Default is '5'.
+		 * @param int $post_id                The post ID.
+		 */
+		$chat_excerpt_responses = apply_filters( 'archetype_chat_excerpt_responses', 5, $post_id );
+
+		/**
+		 * Filter the read more text for chats.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $chat_more_text The more text. Default is 'Continue reading'.
+		 * @param int    $post_id        The post ID.
+		 */
+		$chat_more_text = apply_filters( 'archetype_chat_more_text', __( 'Continue reading', 'archetype' ), $post_id );
 
 		// Set response count.
 		$chat_excerpt_response_count = 0;
@@ -125,11 +155,33 @@ if ( ! function_exists( 'archetype_chat_content' ) ) :
 				 */
 				$speaker_id = absint( array_search( $_chat_author, $_post_format_chat_ids ) ) + 1;
 
-				// Filter the chat author by $speaker_id.
-				$chat_author = '<cite class="fn">' . apply_filters( 'archetype_chat_author', $get_chat_author, $speaker_id ) . '</cite>';
+				/**
+				 * Filter the chat author.
+				 *
+				 * @since 1.0.0
+				 *
+				 * @param string $chat_text  The chat author.
+				 * @param int    $post_id    The post ID.
+				 * @param int    $speaker_id The speaker ID.
+				 */
+				$chat_author = apply_filters( 'archetype_chat_author', $get_chat_author, $post_id, $speaker_id );
 
-				// Filter the chat text by $speaker_id.
-				$chat_text = str_replace( array( "\r", "\n", "\t" ), '', apply_filters( 'archetype_chat_text', $get_chat_text, $speaker_id ) );
+				// Add markup around the chat author.
+				$chat_author = '<cite class="fn">' . $chat_author . '</cite>';
+
+				/**
+				 * Filter the chat text.
+				 *
+				 * @since 1.0.0
+				 *
+				 * @param string $chat_text  The chat text.
+				 * @param int    $post_id    The post ID.
+				 * @param int    $speaker_id The speaker ID.
+				 */
+				$chat_text = apply_filters( 'archetype_chat_text', $get_chat_text, $post_id, $speaker_id );
+
+				// Remove line breaks.
+				$chat_text = str_replace( array( "\r", "\n", "\t" ), '', $chat_text );
 
 				// Close the chat row.
 				$chat_content .= ! $chat_start ? "</div>\n\t\t" . '</li><!-- .chat-row -->' : '';
@@ -160,15 +212,25 @@ if ( ! function_exists( 'archetype_chat_content' ) ) :
 					// Add text found at the beginning of the post back to the content.
 					$content .= $chat_row;
 				} else {
-					// Filter the chat text by previous $speaker_id & add the chat text.
-					$chat_content .= str_replace( array( "\r", "\n", "\t" ), '', apply_filters( 'archetype_chat_text', $chat_row, $speaker_id ) );
+					/**
+					 * Filter the chat text.
+					 *
+					 * @since 1.0.0
+					 *
+					 * @param string $chat_text  The chat text.
+					 * @param int    $post_id    The post ID.
+					 * @param int    $speaker_id The speaker ID.
+					 */
+					$chat_text = apply_filters( 'archetype_chat_text', $chat_row, $post_id, $speaker_id );
+
+					$chat_content .= str_replace( array( "\r", "\n", "\t" ), '', $chat_text );
 				}
 			}
 		}
 
 		if ( ! empty( $chat_content ) ) {
 			// Open the chat transcript and give it a unique ID based on the post ID.
-			$chat_content = $content . "\t" . '<ol id="chat-transcript-' . esc_attr( get_the_ID() ) . '" class="chat-transcript">' . $chat_content;
+			$chat_content = $content . "\t" . '<ol id="chat-transcript-' . esc_attr( $post_id ) . '" class="chat-transcript">' . $chat_content;
 
 			// Close the chat row.
 			$chat_content .= "</div>\n\t\t" . '</li><!-- .chat-response -->';
@@ -178,14 +240,21 @@ if ( ! function_exists( 'archetype_chat_content' ) ) :
 
 			if ( ! is_singular() && $chat_excerpt_response_count >= $chat_excerpt_responses && $chat_excerpt_responses > 0 ) {
 
-				$chat_content .= "\n\t\t" . '<p><a href="' . get_permalink( get_the_ID() ) . '" class="more-link">' . $chat_more_text . '</a></p>';
+				$chat_content .= "\n\t\t" . '<p><a href="' . get_permalink( $post_id ) . '" class="more-link">' . $chat_more_text . '</a></p>';
 
 			}
 		} else {
 			$chat_content = $original_content;
 		}
 
-		// Return the chat content and apply filters for developers.
-		return apply_filters( 'archetype_chat_content', $chat_content );
+		/**
+		 * Filter the chat content.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $chat_content The chat content.
+		 * @param int    $post_id      The post ID.
+		 */
+		return apply_filters( 'archetype_chat_content', $chat_content, $post_id );
 	}
 endif;
