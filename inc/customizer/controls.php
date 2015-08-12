@@ -64,10 +64,13 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		/**
 		 * Custom controls
 		 */
-		require_once dirname( __FILE__ ) . '/controls/color.php';
 		require_once dirname( __FILE__ ) . '/controls/arbitrary.php';
+		require_once dirname( __FILE__ ) . '/controls/color.php';
 		require_once dirname( __FILE__ ) . '/controls/number.php';
-		require_once dirname( __FILE__ ) . '/controls/layout.php';
+		require_once dirname( __FILE__ ) . '/controls/radio.php';
+
+		// Set the path to the customizer images directory.
+		$customizer_images = get_template_directory_uri() . '/inc/customizer/controls/img/';
 
 		/**
 		 * Add customizer settings without reloading the environment.
@@ -107,14 +110,20 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 
 		$wp_customize->add_setting( 'archetype_layout', array(
 			'default'            => 'right',
-			'sanitize_callback'  => 'archetype_sanitize_layout',
+			'sanitize_callback'  => 'archetype_sanitize_choices',
 		) );
 
-		$wp_customize->add_control( new Archetype_Layout_Control( $wp_customize, 'archetype_layout', array(
+		$wp_customize->add_control( new Archetype_Radio_Image_Control( $wp_customize, 'archetype_layout', array(
 			'label'        => __( 'Sidebar Position', 'archetype' ),
 			'section'      => 'archetype_layout',
 			'settings'     => 'archetype_layout',
 			'priority'     => 5,
+			'columns'      => 3,
+			'choices'      => array(
+				'left'        => esc_url_raw( $customizer_images . ( is_rtl() ? '2cr' : '2cl' ) . '.png' ),
+				'right'       => esc_url_raw( $customizer_images . ( is_rtl() ? '2cl' : '2cr' ) . '.png' ),
+				'none'        => esc_url_raw( $customizer_images . '1c.png' ),
+			),
 		) ) );
 
 		/**

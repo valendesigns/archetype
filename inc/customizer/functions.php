@@ -275,8 +275,9 @@ if ( ! function_exists( 'archetype_sanitize_layout' ) ) :
 	 */
 	function archetype_sanitize_layout( $input ) {
 		$valid = array(
-			'right'  => 'Right',
-			'left'   => 'Left',
+			'left'  => 'left',
+			'right' => 'right',
+			'none'  => 'none',
 		);
 
 		if ( array_key_exists( $input, $valid ) ) {
@@ -291,7 +292,8 @@ if ( ! function_exists( 'archetype_layout_class' ) ) :
 	/**
 	 * Layout classes
 	 *
-	 * Adds 'right-sidebar' and 'left-sidebar' classes to the body tag
+	 * Adds the 'right-sidebar', 'left-sidebar', or 'full-width' class to the body tag,
+	 * which is based on what the user has chosen in the Customizer.
 	 *
 	 * @since 1.0.0
 	 *
@@ -301,7 +303,12 @@ if ( ! function_exists( 'archetype_layout_class' ) ) :
 	function archetype_layout_class( $classes ) {
 		$layout = archetype_sanitize_layout( get_theme_mod( 'archetype_layout', 'right' ) );
 
-		$classes[] = $layout . '-sidebar';
+		if ( 'none' === $layout ) {
+			$classes[] = 'archetype-full-width-content';
+			remove_action( 'archetype_get_sidebar', 'archetype_get_sidebar', 10 );
+		} else {
+			$classes[] = $layout . '-sidebar';
+		}
 
 		return $classes;
 	}
