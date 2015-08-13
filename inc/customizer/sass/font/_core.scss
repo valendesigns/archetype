@@ -1,0 +1,10 @@
+// Base class
+
+.#{$ai-css-prefix} {
+  display: inline-block;
+  font: normal normal normal #{$ai-font-size-base}/#{$ai-line-height-base} #{$ai-font-family};
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

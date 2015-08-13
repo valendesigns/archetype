@@ -1,0 +1,12 @@
+// Font path
+
+@font-face {
+  font-family: #{$ai-font-family};
+  src: url('#{$ai-font-path}/icons.eot?v=#{$ai-version}');
+  src: url('#{$ai-font-path}/icons.eot?#iefix&v=#{$ai-version}') format('embedded-opentype'),
+    url('#{$ai-font-path}/icons.woff?v=#{$ai-version}') format('woff'),
+    url('#{$ai-font-path}/icons.ttf?v=#{$ai-version}') format('truetype'),
+    url('#{$ai-font-path}/icons.svg?v=#{$ai-version}#archetype-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

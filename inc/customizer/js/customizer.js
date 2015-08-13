@@ -10,7 +10,7 @@
 
 	var ArchetypeCustomizer = {
 		init: function() {
-			ArchetypeCustomizer._imageRadioInit();
+			ArchetypeCustomizer._radioButtonsInit();
 			ArchetypeCustomizer._toggleInit();
 		},
 		_cacheSelectors: function() {
@@ -18,12 +18,12 @@
 
 			$body      = $( 'body', _frame );
 		},
-		_imageRadioInit: function() {
+		_radioButtonsInit: function() {
 			if ( ! $.fn.buttonset ) {
 				return;
 			}
 
-			$( '.radio-image' ).each( function() {
+			$( '.radio-buttons' ).each( function() {
 				var self = this;
 
 				// Create the button set.
