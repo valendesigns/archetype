@@ -7,6 +7,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'archetype_customize_css' ) ) :
+	/**
+	 * Loads Customizer CSS for custom controls.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_customize_css() {
+		global $archetype_version;
+		wp_enqueue_style( 'archetype-customize', get_template_directory_uri() . '/inc/customizer/css/' . ( is_rtl() ? 'customizer-rtl.css' : 'customizer.css' ), '', $archetype_version );
+	}
+endif;
+
 if ( ! function_exists( 'archetype_customize_js' ) ) :
 	/**
 	 * Loads the Customizer import and export scripts.
@@ -15,7 +27,7 @@ if ( ! function_exists( 'archetype_customize_js' ) ) :
 	 */
 	function archetype_customize_js() {
 		global $archetype_version;
-		wp_enqueue_script( 'archetype_customize', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
+		wp_enqueue_script( 'archetype-customize', get_template_directory_uri() . '/inc/customizer/js/customizer.min.js', array( 'jquery' ), $archetype_version, true );
 	}
 endif;
 
@@ -27,7 +39,7 @@ if ( ! function_exists( 'archetype_customize_preview_js' ) ) :
 	 */
 	function archetype_customize_preview_js() {
 		global $archetype_version;
-		wp_enqueue_script( 'archetype_customize_preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
+		wp_enqueue_script( 'archetype-customize-preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
 	}
 endif;
 

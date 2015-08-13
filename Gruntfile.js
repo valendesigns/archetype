@@ -63,6 +63,11 @@ module.exports = function( grunt ) {
 					'style.css': 'style.scss'
 				} ]
 			},
+			customizer: {
+				files: [ {
+					'inc/customizer/css/customizer.css': 'inc/customizer/sass/customizer.scss'
+				} ]
+			},
 			welcome: {
 				files: [ {
 					'inc/admin/css/welcome.css': 'inc/admin/sass/welcome.scss'
@@ -97,6 +102,14 @@ module.exports = function( grunt ) {
 					'style.css'
 				]
 			},
+			customizer: {
+				expand: true,
+				ext: '-rtl.css',
+				src: [
+					'inc/customizer/css/*.css',
+					'!inc/customizer/css/*-rtl.css'
+				]
+			},
 			welcome: {
 				expand: true,
 				ext: '-rtl.css',
@@ -122,6 +135,15 @@ module.exports = function( grunt ) {
 				files: [ {
 					'style.min.css': 'style.css',
 					'style-rtl.min.css': 'style-rtl.css'
+				} ]
+			},
+			customizer: {
+				files: [ {
+					expand: true,
+					cwd: 'inc/customizer/css/',
+					src: [ '*.css' ],
+					dest: 'inc/customizer/css/',
+					ext: '.css'
 				} ]
 			},
 			welcome: {
@@ -151,6 +173,7 @@ module.exports = function( grunt ) {
 					'style.scss',
 					'sass/**/*.scss',
 					'inc/admin/sass/*.scss',
+					'inc/customizer/sass/*.scss',
 					'inc/woocommerce/sass/*.scss'
 				],
 				tasks: [

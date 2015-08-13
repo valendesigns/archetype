@@ -10,12 +10,34 @@
 
 	var ArchetypeCustomizer = {
 		init: function() {
+			ArchetypeCustomizer._imageRadioInit();
 			ArchetypeCustomizer._toggleInit();
 		},
 		_cacheSelectors: function() {
 			var _frame = $( 'iframe' ).contents();
 
 			$body      = $( 'body', _frame );
+		},
+		_imageRadioInit: function() {
+			if ( ! $.fn.buttonset ) {
+				return;
+			}
+
+			$( '.radio-image' ).each( function() {
+				var self = this;
+
+				// Create the button set.
+				$( self ).buttonset();
+
+				// Adds keyboard navigation.
+				$( 'label', self ).on( 'keydown', function( event ) {
+					if ( 13 === event.which ) {
+						event.preventDefault();
+						$( event.target ).click();
+						$( self ).buttonset( 'refresh' );
+					}
+				} );
+			} );
 		},
 		_toggleInit: function() {
 			var toggles = {

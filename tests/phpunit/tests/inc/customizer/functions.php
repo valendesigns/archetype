@@ -14,7 +14,7 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	function test_archetype_customize_js() {
 
 		archetype_customize_js();
-		$this->assertTrue( wp_script_is( 'archetype_customize' ) );
+		$this->assertTrue( wp_script_is( 'archetype-customize' ) );
 
 	}
 
@@ -24,7 +24,7 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	function test_archetype_customize_preview_js() {
 
 		archetype_customize_preview_js();
-		$this->assertTrue( wp_script_is( 'archetype_customize_preview' ) );
+		$this->assertTrue( wp_script_is( 'archetype-customize-preview' ) );
 
 	}
 

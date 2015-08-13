@@ -14,6 +14,7 @@ if ( ! function_exists( 'archetype_setup_customizer_hooks' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_setup_customizer_hooks() {
+		add_action( 'customize_controls_enqueue_scripts', 'archetype_customize_css',          10 );
 		add_action( 'customize_controls_enqueue_scripts', 'archetype_customize_js',           10 );
 		add_action( 'customize_preview_init',             'archetype_customize_preview_js',   10 );
 		add_action( 'customize_register',                 'archetype_customize_register',     21 );

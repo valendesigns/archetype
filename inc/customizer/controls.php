@@ -65,7 +65,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 * Custom controls
 		 */
 		require_once dirname( __FILE__ ) . '/controls/arbitrary.php';
-		require_once dirname( __FILE__ ) . '/controls/color.php';
 		require_once dirname( __FILE__ ) . '/controls/number.php';
 		require_once dirname( __FILE__ ) . '/controls/radio.php';
 
