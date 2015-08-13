@@ -150,7 +150,7 @@ class Archetype_Radio_Icon_Control extends WP_Customize_Control {
 				<?php
 				// Close the row.
 				if ( 0 < $this->columns && $this->columns === $count ) {
-					echo '</div>'; 
+					echo '</div>';
 					$count = 0;
 				}
 				?>
