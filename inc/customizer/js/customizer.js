@@ -6,17 +6,10 @@
 ( function( $ ) {
 	'use strict';
 
-	var $body;
-
 	var ArchetypeCustomizer = {
 		init: function() {
 			ArchetypeCustomizer._radioButtonsInit();
 			ArchetypeCustomizer._toggleInit();
-		},
-		_cacheSelectors: function() {
-			var _frame = $( 'iframe' ).contents();
-
-			$body      = $( 'body', _frame );
 		},
 		_radioButtonsInit: function() {
 			if ( ! $.fn.buttonset ) {
