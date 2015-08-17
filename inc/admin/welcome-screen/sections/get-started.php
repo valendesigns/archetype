@@ -26,15 +26,16 @@ $url 	.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcom
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=woocommerce' ), 'install-plugin_woocommerce' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install WooCommerce', 'archetype' ); ?></a></p>
 			<?php } ?>
 
-			<h4><?php esc_html_e( 'Jetpack', 'archetype' ); ?></h4>
-			<p><?php echo sprintf( esc_html__( 'Looking to add a custom logo? Install and activate %sJetpack%s. Archetype also supports the infinite scroll feature that comes with Jetpack.', 'archetype' ), '<a href="https://wordpress.org/plugins/jetpack/">', '</a>' ); ?></p>
-			<?php if ( ! class_exists( 'Jetpack' ) ) { ?>
-				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=jetpack' ), 'install-plugin_jetpack' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install JetPack', 'archetype' ); ?></a></p>
-			<?php } ?>
-
 			<h4><?php esc_html_e( 'Menu configuration' ,'archetype' ); ?></h4>
 			<p><?php esc_html_e( 'Archetype includes three menu options used for navigating your web site. The Primary menu is used for your more commonly visited pages. The Secondary menu is used for pages you expect to see less traffic. The Handheld menu is used to select the pages you wish users to see when visiting your site on a handheld device.', 'archetype' ); ?></p>
 			<p><a href="<?php echo esc_url( $url ); ?>" class="button"><?php esc_html_e( 'Configure', 'archetype' ); ?></a></p>
+
+			<h4><?php esc_html_e( 'Subscribe & Connect', 'archetype' ); ?></h4>
+			<p><?php esc_html_e( 'Help your visitors subscribe to your content, as well as share it across various social networks by adding subscribe icon links to the header and footer of your website.', 'archetype' ); ?></p>
+
+			<?php if ( ! is_plugin_active( 'subscribe-and-connect/subscribe-and-connect.php' ) ) { ?>
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=subscribe-and-connect' ), 'install-plugin_subscribe-and-connect' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Subscribe & Connect', 'archetype' ); ?></a></p>
+			<?php } ?>
 		</div>
 
 		<div class="col">
@@ -50,13 +51,6 @@ $url 	.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcom
 			<p><?php esc_html_e( 'For example, with our built-in Component Order control you can arrange homepage content components in the order you see fit, which is done from within the customizer.', 'archetype' ); ?></p>
 			<p><?php esc_html_e( 'To order homepage components, just assign the "Homepage" template to a new or existing page. Then set that page as the static front page and use the Customizer to re-order the components.', 'archetype' ); ?></p>
 
-			<h4><?php esc_html_e( 'Subscribe & Connect', 'archetype' ); ?></h4>
-			<p><?php esc_html_e( 'Help your visitors subscribe to your content, as well as share it across various social networks by adding subscribe icon links to the header and footer of your website.', 'archetype' ); ?></p>
-
-			<?php if ( ! is_plugin_active( 'subscribe-and-connect/subscribe-and-connect.php' ) ) { ?>
-				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=subscribe-and-connect' ), 'install-plugin_subscribe-and-connect' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Subscribe & Connect', 'archetype' ); ?></a></p>
-			<?php } ?>
-			
 			<h4><?php esc_html_e( 'Easy Google Fonts', 'archetype' ); ?></h4>
 			<p><?php esc_html_e( 'Integrates Google fonts into the Customizer and allows you to fine tune your typography even more. All you will need is a Google fonts API key to get it set up.', 'archetype' ); ?></p>
 

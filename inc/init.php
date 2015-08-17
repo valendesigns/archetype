@@ -68,6 +68,11 @@ require get_template_directory() . '/inc/option-tree/functions.php';
 require get_template_directory() . '/inc/jetpack/jetpack.php';
 
 /**
+ * Load Third Party files.
+ */
+require get_template_directory() . '/inc/third-party/site-logo.php';
+
+/**
  * Load WooCommerce compatibility files.
  */
 if ( is_woocommerce_activated() ) {
