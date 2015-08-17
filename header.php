@@ -29,7 +29,7 @@
 	 */
 	do_action( 'archetype_before_header' ); ?>
 
-	<header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
+	<header id="masthead" class="site-header" role="banner">
 
 		<?php
 		/**

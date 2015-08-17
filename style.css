@@ -374,9 +374,6 @@ body {
 .site-header {
   background-color: #353b3f;
   color: #888;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
   z-index: 999; }
   .site-header .col-full {

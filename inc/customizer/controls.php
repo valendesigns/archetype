@@ -250,6 +250,56 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
+		 * Header Background repeat
+		 */
+		$wp_customize->add_setting( 'archetype_header_background_repeat', array(
+			'default'            => apply_filters( 'archetype_default_header_background_repeat', 'no-repeat' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( new Archetype_Background_Repeat_Control( $wp_customize, 'archetype_header_background_repeat', array(
+			'label'        => __( 'Background Repeat', 'archetype' ),
+			'section'      => 'header_image',
+			'settings'     => 'archetype_header_background_repeat',
+			'priority'     => 20,
+		) ) );
+
+		/**
+		 * Header Background position
+		 */
+		$wp_customize->add_setting( 'archetype_header_background_position', array(
+			'default'            => apply_filters( 'archetype_default_header_background_position', 'center' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( new Archetype_Background_Position_Control( $wp_customize, 'archetype_header_background_position', array(
+			'label'        => __( 'Background Position', 'archetype' ),
+			'section'      => 'header_image',
+			'settings'     => 'archetype_header_background_position',
+			'priority'     => 25,
+		) ) );
+
+		/**
+		 * Header Background size
+		 */
+		$wp_customize->add_setting( 'archetype_header_background_size', array(
+			'default'            => apply_filters( 'archetype_default_header_background_size', 'cover' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( 'archetype_header_background_size', array(
+			'label'        => __( 'Background Size', 'archetype' ),
+			'section'      => 'header_image',
+			'settings'     => 'archetype_header_background_size',
+			'priority'     => 30,
+			'type'         => 'select',
+			'choices'      => array(
+				'auto'        => 'Auto',
+				'cover'       => 'Cover',
+			),
+		) );
+
+		/**
 		 * Add the Header colors section
 		 */
 		$wp_customize->add_section( 'archetype_header_colors' , array(
@@ -260,7 +310,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		/**
-		 * Header Background
+		 * Header Background color
 		 */
 		$wp_customize->add_setting( 'archetype_header_background_color', array(
 			'default'            => apply_filters( 'archetype_default_header_background_color', '#353b3f' ),

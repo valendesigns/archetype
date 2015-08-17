@@ -157,6 +157,23 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}';
 		}
 
+		// Header background image.
+		if ( get_header_image() != '' ) {
+			$header_background_repeat = esc_attr( get_theme_mod( 'archetype_header_background_repeat', apply_filters( 'archetype_default_header_background_repeat', 'no-repeat' ) ) );
+
+			$header_background_position = esc_attr( get_theme_mod( 'archetype_header_background_position', apply_filters( 'archetype_default_header_background_position', 'center' ) ) );
+
+			$header_background_size = esc_attr( get_theme_mod( 'archetype_header_background_size', apply_filters( 'archetype_default_header_background_size', 'cover' ) ) );
+
+			$style .= '
+			.site-header {
+				background-image: url(' . esc_url( get_header_image() ) . ');
+				background-position: ' . str_replace( '-', ' ', $header_background_position ) . ';
+				background-repeat: ' . $header_background_repeat . ';
+				background-size: ' . $header_background_size . ';
+			}';
+		}
+		
 		// Header Background Color.
 		$header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );
 

@@ -11,10 +11,6 @@
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses archetype_header_style()
- * @uses archetype_admin_header_style()
- * @uses archetype_admin_header_image()
- *
  * @since 1.0.0
  */
 function archetype_custom_header_setup() {
