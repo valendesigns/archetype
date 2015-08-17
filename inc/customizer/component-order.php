@@ -19,7 +19,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 	 * @since 1.0.0
 	 */
 	final class Archetype_Component_Order {
-	
+
 		/**
 		 * The single class instance.
 		 *
@@ -161,11 +161,13 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 * Add section, setting and load custom customizer control.
 		 *
 		 * @since 1.0.0
+		 *
+		 * @param object $wp_customize The customizer object.
 		 */
 		public function customize_register( $wp_customize ) {
 			require_once dirname( __FILE__ ) . '/controls/component-order.php';
 
-			foreach( (array) $this->get_controls() as $key => $section ) {
+			foreach ( (array) $this->get_controls() as $key => $section ) {
 				if ( isset( $section['id'] ) && ! is_object( $wp_customize->get_section( $section['id'] ) ) ) {
 					$wp_customize->add_section( $section['id'], array(
 						'title'       => ( isset( $section['title'] ) ? $section['title'] : __( 'Component Order', 'archetype' ) ),
@@ -175,13 +177,13 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 				}
 
 				if ( ! empty( $section['controls'] ) ) {
-					foreach( (array) $section['controls'] as $key => $control ) {
+					foreach ( (array) $section['controls'] as $key => $control ) {
 						$wp_customize->add_setting( $control['id'], array(
 							'default'           => $this->get_control_default( $control['hook'], $control['id'] ),
 							'sanitize_callback'	=> array( $this, 'sanitize_components' ),
 							'capability'        => 'edit_theme_options',
 						) );
-	
+
 						$wp_customize->add_control( new Archetype_Component_Order_Customizer_Control( $wp_customize, $control['id'], array(
 							'label'       => ( isset( $control['label'] ) ? $control['label'] : '' ),
 							'description' => $control['description'],
@@ -200,6 +202,8 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 * Add CSS in <head> for styles handled by the theme customizer
 		 *
 		 * @since 1.0.0
+		 *
+		 * @param string $style The customizer CSS styles.
 		 */
 		function customize_css( $style ) {
 			// Header layout.
@@ -233,11 +237,11 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 				return;
 			}
 
-			// Loop over the sections
-			foreach( (array) $this->get_controls() as $key => $sections ) {
+			// Loop over the sections.
+			foreach ( (array) $this->get_controls() as $key => $sections ) {
 
-				// Loop over the controls in each section
-				foreach( (array) $sections['controls'] as $key => $control ) {
+				// Loop over the controls in each section.
+				foreach ( (array) $sections['controls'] as $key => $control ) {
 
 					// Toggle override. Bail when toggle is set but doesn't match the value.
 					if ( ! empty( $control['toggle'] ) ) {
@@ -248,7 +252,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 					}
 
 					$component_order = get_theme_mod( $control['id'] );
-	
+
 					if ( ! empty( $component_order ) ) {
 						$components = explode( ',', $component_order );
 
@@ -297,8 +301,8 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 * @return array  The sanitized choices.
 		 */
 		public function sanitize_components( $input, $setting ) {
-			foreach( (array) $this->get_controls() as $key => $sections ) {
-				foreach( (array) $sections['controls'] as $key => $control ) {
+			foreach ( (array) $this->get_controls() as $key => $sections ) {
+				foreach ( (array) $sections['controls'] as $key => $control ) {
 					if ( $control['id'] === $setting->id ) {
 						$hook = $control['hook'];
 					}
@@ -325,6 +329,8 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 *
 		 * @since 1.0.0
 		 *
+		 * @param string $hook The place where the component is hooked. Default empty.
+		 * @param string $id The component ID. Default empty.
 		 * @return array $hook An array of hooked functions.
 		 */
 		private function get_control_choices( $hook = '', $id = '' ) {
@@ -340,7 +346,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 			if ( isset( $filters[ $hook ] ) && 0 < count( $filters[ $hook ] ) ) {
 				/*
 				 * We need to fake that the secondary nav exists in some headers, even though it has
-				 * been hooked somewhere else. In some cases we'll need to remove this array, as well. 
+				 * been hooked somewhere else. In some cases we'll need to remove this array, as well.
 				 * This exists to keep both solutions DRY.
 				 */
 				$secondary_navigation = array(
@@ -387,13 +393,15 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		}
 
 		/**
-		 * Format a given key into a title.
-		 * @access  private
-		 * @since   2.0.0
-		 * @return  string A formatted title. If no formatting is possible, return the key.
+		 * Format a given ID into a title.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $id The component ID.
+		 * @return string A formatted title. If no formatting is possible, return the ID.
 		 */
-		private function format_title( $key ) {
-			$title = $key;
+		private function format_title( $id ) {
+			$title = $id;
 
 			$title = preg_replace( '/archetype_(homepage_)?/', '', $title );
 			$title = str_replace( '_', ' ', $title );
@@ -407,6 +415,9 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 * Format an array of components as a comma separated list.
 		 *
 		 * @since 1.0.0
+		 *
+		 * @param string $hook The place where the component is hooked. Default empty.
+		 * @param string $id The component ID. Default empty.
 		 * @return string A list of components separated by a comma.
 		 */
 		private function get_control_default( $hook = '', $id = '' ) {
@@ -497,7 +508,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 					),
 				),
 			) );
-	
+
 			return $controls;
 		}
 

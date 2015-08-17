@@ -66,37 +66,35 @@ class Archetype_Component_Order_Customizer_Control extends WP_Customize_Control 
 		// Create toggle params.
 		list( $toggle_id, $toggle_value ) = explode( ':' , $this->toggle );
 
-		// Check if we should hide this control
+		// Check if we should hide this control.
 		if ( ! empty( $this->toggle ) && get_theme_mod( $toggle_id ) !== $toggle_value ) {
 			$display = false;
 		}
 		?>
 		<label style="display:<?php echo false === $display ? 'none': 'inline'; ?>">
-			<?php
-				if ( ! empty( $this->label ) ) : ?>
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<?php endif;
-				if ( ! empty( $this->description ) ) : ?>
-					<span class="description customize-control-description"><?php echo $this->description ; ?></span>
-				<?php endif;
-			?>
+			<?php if ( ! empty( $this->label ) ) : ?>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php endif;?>
+			<?php if ( ! empty( $this->description ) ) : ?>
+				<span class="description customize-control-description"><?php echo $this->description ; ?></span>
+			<?php endif; ?>
 			<ul class="component-order" data-id="<?php echo esc_attr( $toggle_id ); ?>" data-value="<?php echo esc_attr( $toggle_value ); ?>">
 				<?php foreach ( $components as $id => $title ) : ?>
 					<?php
-						// Nothing to display.
-						if ( empty( $title ) ) {
-							continue;
-						}
+					// Nothing to display.
+					if ( empty( $title ) ) {
+						continue;
+					}
 
-						// All toggle buttons start as visible.
-						$show_toggle = true;
+					// All toggle buttons start as visible.
+					$show_toggle = true;
 
-						// Hiding this components will break the markup or have some other unknown side effect.
-						if ( in_array( $id, $hide_toggles ) ) {
-							$show_toggle = false;
-						}
+					// Hiding this components will break the markup or have some other unknown side effect.
+					if ( in_array( $id, $hide_toggles ) ) {
+						$show_toggle = false;
+					}
 
-						$class = in_array( $id, $disabled ) ? 'disabled' : '';
+					$class = in_array( $id, $disabled ) ? 'disabled' : '';
 					?>
 					<li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
 						<?php if ( $show_toggle ) { ?><button class="component-visibility" type="button" tabindex="0"><span class="screen-reader-text"><?php esc_html_e( 'Toggle Component', 'archetype' ); ?></span></button><?php } ?>
@@ -176,7 +174,7 @@ class Archetype_Component_Order_Customizer_Control extends WP_Customize_Control 
 			}
 		}
 
-		// Disable new components
+		// Disable new components.
 		if ( 0 < count( $components ) ) {
 			foreach ( $components as $key => $component ) {
 				$disabled_components[] = $key;

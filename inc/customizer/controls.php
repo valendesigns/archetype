@@ -222,7 +222,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'description'  => __( 'Customize the look & feel of your header.', 'archetype' ),
 			'priority'     => 35,
 		) );
-		
+
 		/**
 		 * Add the Header layout section
 		 */
