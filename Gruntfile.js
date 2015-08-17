@@ -215,7 +215,8 @@ module.exports = function( grunt ) {
 						'dist/<%= pkg.name %>/.*', // Exclude deploy directory.
 						'node_modules/.*', // Exclude node_modules/.
 						'tests/.*', // Exclude tests directory.
-						'tools/.*' // Exclude tools directory.
+						'tools/.*', // Exclude tools directory.
+						'inc/vendor/.*' // Exclude vendor directory.
 					],
 					processPot: function( pot ) {
 						pot.headers['project-id-version'];
@@ -251,7 +252,8 @@ module.exports = function( grunt ) {
 					'**/*.php', // Include all files.
 					'!node_modules/**', // Exclude node_modules/.
 					'!tests/**', // Exclude tests directory.
-					'!tools/**' // Exclude tools directory.
+					'!tools/**', // Exclude tools directory.
+					'!inc/vendor/**' // Exclude vendor directory.
 				],
 				expand: true
 			}
