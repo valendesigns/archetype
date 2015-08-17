@@ -1,6 +1,6 @@
 <?php
 /**
- * Arbitrary control classes.
+ * Component Order class.
  *
  * @package Archetype
  * @subpackage Customize
