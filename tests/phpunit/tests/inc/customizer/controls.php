@@ -62,7 +62,6 @@ class Tests_Customizer_Controls extends WP_UnitTestCase {
 		archetype_customize_register( $this->wp_customize );
 
 		$this->assertInternalType( 'object', $this->wp_customize->get_panel( 'archetype_general' ) );
-		$this->assertInternalType( 'object', $this->wp_customize->get_section( 'homepage_control' ) );
 
 		$menu_locations = $this->wp_customize->get_section( 'menu_locations' );
 		if ( is_object( $menu_locations ) ) {
@@ -73,10 +72,6 @@ class Tests_Customizer_Controls extends WP_UnitTestCase {
 
 		if ( ! class_exists( 'Site_Logo', false ) ) {
 			$this->assertInternalType( 'object', $this->wp_customize->get_control( 'archetype_site_logo_info' ) );
-		}
-
-		if ( false === is_homepage_control_activated() ) {
-			$this->assertInternalType( 'object', $this->wp_customize->get_section( 'archetype_homepage_control' ) );
 		}
 
 	}

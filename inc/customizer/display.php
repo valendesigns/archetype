@@ -833,6 +833,15 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}';
 		}
 
+		/**
+		 * Filter the styles added with the customizer.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $style Customize CSS styles.
+		 */
+		$style = apply_filters( 'archetype_add_customize_css', $style );
+
 		// Remove space after colons.
 		$style = str_replace( ': ', ':', $style );
 

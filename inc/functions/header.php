@@ -7,6 +7,30 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'archetype_site_header' ) ) :
+	/**
+	 * Display site header
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_site_header() {
+		?>
+		<div class="col-full">
+
+			<?php
+			/**
+			 * Default hooks
+			 *
+			 * @hooked archetype_site_branding - 10
+			 * @hooked archetype_secondary_navigation - 20
+			 */
+			do_action( 'archetype_site_header' ); ?>
+
+		</div><!-- .col-full -->
+		<?php
+	}
+endif;
+
 if ( ! function_exists( 'archetype_header_widget_region' ) ) :
 	/**
 	 * Display header widget region
@@ -116,6 +140,12 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_secondary_navigation() {
+		$current = current_filter();
+
+		// The markup changes for alternative headers.
+		if ( 'archetype_header' === $current ) {
+			echo '<div class="secondary-navigation-wrap"><div class="col-full">';
+		}
 		?>
 		<nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'archetype' ); ?>">
 			<?php
@@ -130,6 +160,9 @@ if ( ! function_exists( 'archetype_secondary_navigation' ) ) :
 			?>
 		</nav><!-- #site-navigation -->
 		<?php
+		if ( 'archetype_header' === $current ) {
+			echo '</div></div>';
+		}
 	}
 endif;
 

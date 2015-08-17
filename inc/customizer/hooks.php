@@ -21,7 +21,6 @@ if ( ! function_exists( 'archetype_setup_customizer_hooks' ) ) :
 		add_filter( 'body_class',                         'archetype_layout_class',           10 );
 		add_action( 'wp_enqueue_scripts',                 'archetype_add_customize_css',      130 );
 		add_action( 'after_setup_theme',                  'archetype_custom_header_setup',    10 );
-		add_action( 'homepage_control_title',             'archetype_homepage_control_title', 10, 2 );
 		add_action( 'init',                               'archetype_emojis',                 10 );
 	}
 endif;

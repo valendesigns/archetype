@@ -44,6 +44,7 @@ if ( is_archetype_customizer_enabled() ) {
 	require get_template_directory() . '/inc/customizer/controls.php';
 	require get_template_directory() . '/inc/customizer/display.php';
 	require get_template_directory() . '/inc/customizer/functions.php';
+	require get_template_directory() . '/inc/customizer/component-order.php';
 	require get_template_directory() . '/inc/customizer/custom-header.php';
 }
 

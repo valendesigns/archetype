@@ -45,14 +45,10 @@ $url 	.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcom
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=option-tree' ), 'install-plugin_option-tree' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install OptionTree', 'archetype' ); ?></a></p>
 			<?php } ?>
 
-			<h4><?php esc_html_e( 'Homepage Control', 'archetype' ); ?></h4>
-			<p><?php esc_html_e( 'This is a fantastic tool for ordering content on the homepage of your site.', 'archetype' ); ?></p>
+			<h4><?php esc_html_e( 'Component Order', 'archetype' ); ?></h4>
+			<p><?php esc_html_e( 'This is a fantastic tool for ordering components in the header, homepage, and footer of your site.', 'archetype' ); ?></p>
 			<p><?php esc_html_e( 'Assign the "Homepage" template to a new or existing page. Then set that page as the static front page.', 'archetype' ); ?></p>
-			<p><?php esc_html_e( 'Once Homepage Control is installed and activated, you can arrange content components in the order you see fit. This is done from within the customizer.', 'archetype' ); ?></p>
-
-			<?php if ( ! class_exists( 'Homepage_Control' ) ) { ?>
-				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=homepage-control' ), 'install-plugin_homepage-control' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Homepage Control', 'archetype' ); ?></a></p>
-			<?php } ?>
+			<p><?php esc_html_e( 'With Component Control you can arrange content components in the order you see fit. This is done from within the customizer.', 'archetype' ); ?></p>
 
 			<h4><?php esc_html_e( 'Subscribe & Connect', 'archetype' ); ?></h4>
 			<p><?php esc_html_e( 'Help your visitors subscribe to your content, as well as share it across various social networks by adding subscribe icon links to the header and footer of your website.', 'archetype' ); ?></p>

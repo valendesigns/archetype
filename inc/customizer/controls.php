@@ -50,13 +50,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->get_section( 'title_tagline' )->priority     = 10;
 		$wp_customize->get_section( 'title_tagline' )->panel        = 'archetype_header';
 
-		// Change the Homepage Control panel, priority, & title.
-		if ( true === is_homepage_control_activated() ) {
-			$wp_customize->get_section( 'homepage_control' )->panel     = 'archetype_homepage';
-			$wp_customize->get_section( 'homepage_control' )->priority  = 1;
-			$wp_customize->get_section( 'homepage_control' )->title     = __( 'Component Order', 'archetype' );
-		}
-
 		// Change the Static Front Page panel, & priority.
 		$wp_customize->get_section( 'static_front_page' )->panel    = 'archetype_general';
 		$wp_customize->get_section( 'static_front_page' )->priority = 1;
@@ -229,6 +222,32 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'description'  => __( 'Customize the look & feel of your header.', 'archetype' ),
 			'priority'     => 35,
 		) );
+		
+		/**
+		 * Add the Header layout section
+		 */
+		$wp_customize->add_section( 'archetype_header_layout' , array(
+			'title'        => __( 'Layout', 'archetype' ),
+			'description'  => __( 'Customize the look & feel of your header layout.', 'archetype' ),
+			'priority'     => 1,
+			'panel'        => 'archetype_header',
+		) );
+
+		$wp_customize->add_setting( 'archetype_header_layout', array(
+			'default'            => 'version-1',
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( new Archetype_Radio_Image_Control( $wp_customize, 'archetype_header_layout', array(
+			'label'        => __( 'Layout', 'archetype' ),
+			'section'      => 'archetype_header_layout',
+			'settings'     => 'archetype_header_layout',
+			'priority'     => 5,
+			'choices'      => array(
+				'version-1'   => esc_url_raw( $customizer_images . 'header/version-1.png' ),
+				'version-2'   => esc_url_raw( $customizer_images . 'header/version-2.png' ),
+			),
+		) ) );
 
 		/**
 		 * Add the Header colors section
@@ -646,19 +665,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'active_callback'  => 'is_front_page',
 		) );
 
-		if ( false === is_homepage_control_activated() ) {
-			$wp_customize->add_section( 'archetype_homepage_control' , array(
-				'title'         => __( 'Component Order', 'archetype' ),
-				'priority'      => 1,
-				'panel'         => 'archetype_homepage',
-			) );
-			$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_homepage_control', array(
-				'section'       => 'archetype_homepage_control',
-				'description'   => sprintf( esc_html__( 'You can toggle and re-order the homepage components using the %sHomepage Control%s plugin.', 'archetype' ), '<a href="https://wordpress.org/plugins/homepage-control/" target="_blank">', '</a>' ),
-				'type'          => 'text',
-			) ) );
-		}
-
 		/**
 		 * Add the Hero section
 		 */
@@ -668,25 +674,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'description'  => __( 'Customize the look & feel of the hero component.', 'archetype' ),
 			'panel'        => 'archetype_homepage',
 		) );
-
-		if ( false === is_homepage_control_activated() ) {
-			/**
-			 * Active
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_hero_toggle', array(
-				'default'            => true,
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( 'archetype_homepage_hero_toggle', array(
-				'label'        => __( 'Display hero component', 'archetype' ),
-				'description'  => __( 'Toggle the display of the hero component.', 'archetype' ),
-				'section'      => 'archetype_homepage_hero',
-				'settings'     => 'archetype_homepage_hero_toggle',
-				'priority'     => 5,
-				'type'         => 'checkbox',
-			) );
-		}
 
 		/**
 		 * Layout
@@ -909,24 +896,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'priority'     => $priority,
 				'panel'        => 'archetype_homepage',
 			) );
-
-			if ( false === is_homepage_control_activated() ) {
-				/**
-				 * Toggle custom content
-				 */
-				$wp_customize->add_setting( 'archetype_homepage_content_' . $id . '_toggle', array(
-					'default'            => true,
-					'sanitize_callback'  => 'archetype_sanitize_checkbox',
-				) );
-
-				$wp_customize->add_control( 'archetype_homepage_content_' . $id . '_toggle', array(
-					'label'        => __( 'Display content', 'archetype' ),
-					'description'  => __( 'Toggle the display of this content component.', 'archetype' ),
-					'section'      => 'archetype_homepage_content_' . $id,
-					'settings'     => 'archetype_homepage_content_' . $id . '_toggle',
-					'type'         => 'checkbox',
-				) );
-			}
 
 			/**
 			 * Content page

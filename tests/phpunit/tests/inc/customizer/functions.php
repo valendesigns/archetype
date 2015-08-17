@@ -49,15 +49,6 @@ class Tests_Customizer_Functions extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Filter the Homepage Control title
-	 */
-	function test_archetype_homepage_control_title() {
-
-		$this->assertEquals( 'Content (1)', archetype_homepage_control_title( 'Archetype Homepage Content 1', 'archetype_homepage_content_1' ) );
-
-	}
-
-	/**
 	 * Sanitizes an integer value.
 	 */
 	function test_archetype_sanitize_integer() {

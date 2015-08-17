@@ -214,10 +214,6 @@ if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
 	 * @param int $id The component ID. Default is '1'.
 	 */
 	function archetype_homepage_content_component( $id = 1 ) {
-		if ( ! is_homepage_control_activated() && false === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_content_' . $id . '_toggle', true ) ) ) {
-			return false;
-		}
-
 		// Customizer content.
 		$content_page 					  = archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_content_' . $id, ( 1 === $id ? get_option( 'page_on_front' ) : 0 ) ) );
 		$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_' . $id . '_text_color', apply_filters( 'archetype_default_homepage_content_' . $id . '_text_color', '#555' ) ) );

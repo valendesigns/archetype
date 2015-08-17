@@ -8,9 +8,79 @@
 
 	var ArchetypeCustomizer = {
 		init: function() {
+			ArchetypeCustomizer.componentOrder();
+			ArchetypeCustomizer.componentToggle();
 			ArchetypeCustomizer._radioButtonsInit();
 			ArchetypeCustomizer._toggleInit();
 		},
+
+		componentOrder: function() {
+			$( '.component-order' ).each( function() {
+				var self = this,
+					input = $( self ).next( '.component-order-input' );
+
+				$( self ).sortable( {
+					axis: 'y'
+				} );
+
+				$( self ).disableSelection();
+
+				$( self ).bind( 'sortstop', function ( event ) {
+					ArchetypeCustomizer.componentSort( event.target, input );
+				} );
+
+				$( '.ui-sortable-handle', self ).bind( 'click', function( event ) {
+					event.preventDefault();
+				} );
+
+				$( '.component-visibility', self ).bind( 'click', function () {
+					$( this ).parent( 'li' ).toggleClass( 'disabled' );
+					ArchetypeCustomizer.componentSort( self, input );
+				} );
+			} );
+		},
+
+		componentSort: function( element, input ) {
+			var components = [];
+
+			$( element ).find( 'li' ).each( function () {
+				if ( $( this ).hasClass( 'disabled' ) ) {
+					components.push( '[disabled]' + $( this ).attr( 'id' ) );
+				} else {
+					components.push( $( this ).attr( 'id' ) );
+				}
+			} );
+
+			components = components.join( ',' );
+
+			input.attr( 'value', components ).trigger( 'change' );
+		},
+
+		componentToggle: function() {
+			var controls = {
+				'header': 'archetype_header_layout'
+			};
+
+			$.each( controls, function( id, control ) {
+				wp.customize( control, function( value ) {
+					value.bind( function( to ) {
+						$( '.component-order' ).each( function() {
+							var self = this,
+								data = $( self ).data();
+	
+							if ( control === data.id ) {
+								if ( ~data.value.indexOf( to ) ) {
+									$( self ).parent( 'label' ).show();
+								} else {
+									$( self ).parent( 'label' ).hide();
+								}
+							}
+						} );
+					} );
+				} );
+			} );
+		},
+
 		_radioButtonsInit: function() {
 			if ( ! $.fn.buttonset ) {
 				return;

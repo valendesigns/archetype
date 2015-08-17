@@ -36,29 +36,10 @@
 		 * Default hooks
 		 *
 		 * @hooked archetype_social_icons - 10
+		 * @hooked archetype_site_header - 20
+		 * @hooked archetype_primary_navigation - 30
 		 */
-		do_action( 'archetype_inside_header' ); ?>
-
-		<div class="col-full">
-
-			<?php
-			/**
-			 * Default hooks
-			 *
-			 * @hooked archetype_site_branding - 10
-			 * @hooked archetype_secondary_navigation - 20
-			 */
-			do_action( 'archetype_header' ); ?>
-
-		</div>
-		
-		<?php
-		/**
-		 * Default hooks
-		 *
-		 * @hooked archetype_primary_navigation - 10
-		 */
-		do_action( 'archetype_inside_header_after' ); ?>
+		do_action( 'archetype_header' ); ?>
 
 	</header><!-- #masthead -->
 

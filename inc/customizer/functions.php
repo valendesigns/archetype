@@ -39,7 +39,7 @@ if ( ! function_exists( 'archetype_customize_preview_js' ) ) :
 	 */
 	function archetype_customize_preview_js() {
 		global $archetype_version;
-		wp_enqueue_script( 'archetype-customize-preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'customize-preview' ), $archetype_version, true );
+		wp_enqueue_script( 'archetype-customize-preview', get_template_directory_uri() . '/inc/customizer/js/preview.min.js', array( 'jquery', 'customize-preview' ), $archetype_version, true );
 	}
 endif;
 
@@ -56,26 +56,6 @@ if ( ! function_exists( 'archetype_emojis' ) ) :
 			remove_action( 'wp_print_styles', 'print_emoji_styles' );
 			remove_action( 'admin_print_styles', 'print_emoji_styles' );
 		}
-	}
-endif;
-
-if ( ! function_exists( 'archetype_homepage_control_title' ) ) :
-	/**
-	 * Filter the Homepage Control title
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $title The control title.
-	 * @param string $id The action hook function ID.
-	 * @return string The modified title.
-	 */
-	function archetype_homepage_control_title( $title, $id ) {
-		$title = trim( str_replace( array( 'Archetype', 'Homepage' ), '', $title ) );
-		if ( strpos( $title, 'Content ' ) !== false ) {
-			$title = str_replace( 'Content ', 'Content (', $title );
-			$title .= ')';
-		}
-		return $title;
 	}
 endif;
 
@@ -260,7 +240,7 @@ if ( ! function_exists( 'archetype_sanitize_choices' ) ) :
 	 *
 	 * @param  array  $input The choices.
 	 * @param  object $setting The Customizer setting.
-	 * @return array  The sanitized choices.
+	 * @return array  The sanitized choice.
 	 */
 	function archetype_sanitize_choices( $input, $setting ) {
 		// Ensure input is a slug.

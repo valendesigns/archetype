@@ -169,3 +169,72 @@ $susy: (
 		}
 	}
 }
+
+/**
+ * Component Order Control
+ */
+
+.customize-control-component-order {
+	margin-bottom: 0;
+}
+
+ul.component-order {
+	margin: 24px 0;
+	overflow-y: auto;
+}
+
+ul.component-order li {
+	padding: 12px 15px 13px 15px;
+	background: #fafafa;
+	color: #222;
+	font-size: 1em;
+	font-weight: 600;
+	border: 1px solid #e5e5e5;
+	cursor: move;
+	line-height: 1.4;
+	margin-bottom: 12px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+ul.component-order li:hover {
+	border-color: #999;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+ul.component-order li .component-visibility {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: relative;
+	font-size: 0;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	float: left;
+	margin-right: 12px;
+	border-radius: 2px;
+}
+
+ul.component-order li .component-visibility:focus {
+	-webkit-box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, .8);
+	box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, .8);
+}
+
+ul.component-order li .component-visibility:before {
+	-webkit-font-smoothing: antialiased;
+	font: normal 14px/1 'dashicons';
+	content: "\f147";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	line-height: 16px;
+	text-align: center;
+}
+
+ul.component-order li.disabled .component-visibility:before {
+	content: "";
+}

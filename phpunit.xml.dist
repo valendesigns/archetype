@@ -7,7 +7,7 @@
 	convertWarningsToExceptions="true"
 	>
 	<php>
-		<const name="WP_TEST_ACTIVATED_PLUGINS" value="woocommerce/woocommerce.php,subscribe-and-connect/subscribe-and-connect.php,homepage-control/homepage-control.php" />
+		<const name="WP_TEST_ACTIVATED_PLUGINS" value="woocommerce/woocommerce.php,subscribe-and-connect/subscribe-and-connect.php" />
 		<const name="WP_TEST_ACTIVATED_THEME" value="archetype" />
 	</php>
 	<testsuites>
