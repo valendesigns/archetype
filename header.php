@@ -43,6 +43,8 @@
 
 	</header><!-- #masthead -->
 
+	<?php do_action( 'archetype_after_header' ); ?>
+
 	<?php
 	/**
 	 * Default hooks
