@@ -173,7 +173,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 				background-size: ' . $header_background_size . ';
 			}';
 		}
-		
+
 		// Header Background Color.
 		$header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );
 
