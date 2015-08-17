@@ -69,11 +69,6 @@ class Tests_Customizer_Controls extends WP_UnitTestCase {
 		} else {
 			$this->assertInternalType( 'object', $this->wp_customize->get_section( 'nav' ) );
 		}
-
-		if ( ! class_exists( 'Site_Logo', false ) ) {
-			$this->assertInternalType( 'object', $this->wp_customize->get_control( 'archetype_site_logo_info' ) );
-		}
-
 	}
 
 }

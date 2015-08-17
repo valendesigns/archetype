@@ -73,15 +73,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		 */
 		do_action( 'archetype_customize_register', $wp_customize );
 
-		if ( current_theme_supports( 'site-logo' ) && ! class_exists( 'Site_Logo', false ) ) {
-			$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_site_logo_info', array(
-				'section'     => 'title_tagline',
-				'description' => sprintf( __( 'Want to add your logo? Install %sJetpack%s!', 'archetype' ), '<a href="https://wordpress.org/plugins/jetpack/" target="_blank">', '</a>' ),
-				'type'        => 'text',
-				'priority'    => 40,
-			) ) );
-		}
-
 		/**
 		 * Add the General panel
 		 */
