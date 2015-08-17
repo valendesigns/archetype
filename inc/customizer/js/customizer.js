@@ -25,7 +25,7 @@
 
 				$( self ).disableSelection();
 
-				$( self ).bind( 'sortstop', function ( event ) {
+				$( self ).bind( 'sortstop', function( event ) {
 					ArchetypeCustomizer.componentSort( event.target, input );
 				} );
 
@@ -33,7 +33,7 @@
 					event.preventDefault();
 				} );
 
-				$( '.component-visibility', self ).bind( 'click', function () {
+				$( '.component-visibility', self ).bind( 'click', function() {
 					$( this ).parent( 'li' ).toggleClass( 'disabled' );
 					ArchetypeCustomizer.componentSort( self, input );
 				} );
@@ -43,7 +43,7 @@
 		componentSort: function( element, input ) {
 			var components = [];
 
-			$( element ).find( 'li' ).each( function () {
+			$( element ).find( 'li' ).each( function() {
 				if ( $( this ).hasClass( 'disabled' ) ) {
 					components.push( '[disabled]' + $( this ).attr( 'id' ) );
 				} else {
@@ -67,7 +67,7 @@
 						$( '.component-order' ).each( function() {
 							var self = this,
 								data = $( self ).data();
-	
+
 							if ( control === data.id ) {
 								if ( ~data.value.indexOf( to ) ) {
 									$( self ).parent( 'label' ).show();
