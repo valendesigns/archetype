@@ -68,9 +68,9 @@ require get_template_directory() . '/inc/option-tree/functions.php';
 require get_template_directory() . '/inc/jetpack/jetpack.php';
 
 /**
- * Load Third Party files.
+ * Load third party vendor plugins.
  */
-require get_template_directory() . '/inc/third-party/site-logo.php';
+require get_template_directory() . '/inc/vendor/site-logo.php';
 
 /**
  * Load WooCommerce compatibility files.
