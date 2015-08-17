@@ -68,7 +68,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 * @since 1.0.0
 		 */
 		public function __clone() {
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'archetype-developer' ), '1.0.0' );
+			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'archetype' ), '1.0.0' );
 		}
 
 		/**
@@ -77,7 +77,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 * @since 1.0.0
 		 */
 		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'archetype-developer' ), '1.0.0' );
+			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'archetype' ), '1.0.0' );
 		}
 
 		/**

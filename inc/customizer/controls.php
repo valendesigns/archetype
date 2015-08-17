@@ -239,7 +239,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		$wp_customize->add_control( new Archetype_Radio_Image_Control( $wp_customize, 'archetype_header_layout', array(
-			'label'        => __( 'Layout', 'archetype' ),
+			'label'        => __( 'Header Versions', 'archetype' ),
 			'section'      => 'archetype_header_layout',
 			'settings'     => 'archetype_header_layout',
 			'priority'     => 5,
