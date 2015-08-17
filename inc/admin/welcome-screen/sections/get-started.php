@@ -46,9 +46,9 @@ $url 	.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcom
 			<?php } ?>
 
 			<h4><?php esc_html_e( 'Component Order', 'archetype' ); ?></h4>
-			<p><?php esc_html_e( 'This is a fantastic tool for ordering components in the header, homepage, and footer of your site.', 'archetype' ); ?></p>
-			<p><?php esc_html_e( 'Assign the "Homepage" template to a new or existing page. Then set that page as the static front page.', 'archetype' ); ?></p>
-			<p><?php esc_html_e( 'With Component Control you can arrange content components in the order you see fit. This is done from within the customizer.', 'archetype' ); ?></p>
+			<p><?php esc_html_e( 'This indispensable tool was created to order components in the header, homepage, and footer of your site and is extendable to any hook that could be ordered visually.', 'archetype' ); ?></p>
+			<p><?php esc_html_e( 'For example, with our built-in Component Order control you can arrange homepage content components in the order you see fit, which is done from within the customizer.', 'archetype' ); ?></p>
+			<p><?php esc_html_e( 'To order homepage components, just assign the "Homepage" template to a new or existing page. Then set that page as the static front page and use the Customizer to re-order the components.', 'archetype' ); ?></p>
 
 			<h4><?php esc_html_e( 'Subscribe & Connect', 'archetype' ); ?></h4>
 			<p><?php esc_html_e( 'Help your visitors subscribe to your content, as well as share it across various social networks by adding subscribe icon links to the header and footer of your website.', 'archetype' ); ?></p>
