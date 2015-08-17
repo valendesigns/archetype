@@ -2677,6 +2677,10 @@ section + .archetype-hero {
   margin-bottom: -5.25em;
   margin-top: 2.625em;
   position: relative; }
+  .archetype-hero-media img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
 
 .archetype-hero-buttons .button {
   margin: .25em; }

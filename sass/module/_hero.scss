@@ -26,6 +26,12 @@ section + .archetype-hero {
 	margin-bottom: -5.250em;
 	margin-top: 2.625em;
 	position: relative;
+
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 .archetype-hero-buttons {
