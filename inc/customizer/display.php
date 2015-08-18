@@ -174,6 +174,23 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}';
 		}
 
+		// Header padding.
+		$header_padding_top = archetype_sanitize_number( get_theme_mod( 'archetype_site_header_padding_top' ) );
+		$header_padding_bottom = archetype_sanitize_number( get_theme_mod( 'archetype_site_header_padding_bottom' ) );
+		if ( $header_padding_top || $header_padding_bottom ) {
+			$attrs = '';
+			if ( $header_padding_top ) {
+				$attrs .= 'padding-top: ' . esc_attr( $header_padding_top ) . 'em;';
+			}
+			if ( $header_padding_bottom ) {
+				$attrs .= 'padding-bottom: ' . esc_attr( $header_padding_bottom ) . 'em;';
+			}
+			$style .= '
+			.site-header > .col-full {
+				' . $attrs . '
+			}';
+		}
+
 		// Header Background Color.
 		$header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );
 

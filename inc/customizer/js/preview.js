@@ -249,15 +249,6 @@
 			$( '.archetype-homepage-hero h1:first-child' ).text( to );
 		} );
 	} );
-	wp.customize( 'archetype_post_background_color', function( value ) {
-		value.bind( function( to ) {
-			// Background Color
-			$( 'article + .author-info, #comments p.no-comments, #comments .commentlist .comment-content, #respond, .page-header, .hentry, .pagination, .image-navigation, .comment-navigation, .woocommerce-pagination, .post-navigation, ul.products li.product, .single-product div.product .images .thumbnails, .single-product div.product .summary, .woocommerce-breadcrumb, .woocommerce-tabs ul.tabs, .woocommerce-tabs ul.tabs li a, .woocommerce-tabs #tab-description, .woocommerce-tabs #tab-additional_information, .woocommerce #reviews .product-rating, .woocommerce-page #reviews .product-rating, .woocommerce #reviews .contribution-form-wrapper .form-contribution, .woocommerce-page #reviews .contribution-form-wrapper .form-contribution, .woocommerce #reviews #comments ol.commentlist li, .woocommerce-page #reviews #comments ol.commentlist li, .woocommerce #reviews .contribution-flag-form, .woocommerce-page #reviews .contribution-flag-form, .woocommerce #reviews .contribution-type-selector > a.active, .woocommerce-page #reviews .contribution-type-selector > a.active, #wl-wrapper ul.wl-tabs, #wl-wrapper ul.wl-tabs > li > a, .wl-list-pop, .woocommerce .photography-products .tools, .woocommerce-page .photography-products .tools' ).css( 'background-color', to );
-
-			// Color
-			$( '.sticky-post, .page-links a, .page-links a > span, .type-product .onsale' ).css( 'color', to );
-		} );
-	} );
 	wp.customize( 'archetype_post_border_color', function( value ) {
 		value.bind( function( to ) {
 			// Border Bottom Color

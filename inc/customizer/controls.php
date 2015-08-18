@@ -224,6 +224,9 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'panel'        => 'archetype_header',
 		) );
 
+		/**
+		 * Header layout
+		 */
 		$wp_customize->add_setting( 'archetype_header_layout', array(
 			'default'            => 'version-1',
 			'sanitize_callback'  => 'archetype_sanitize_choices',
@@ -238,6 +241,54 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 				'version-1'   => esc_url_raw( $customizer_images . 'header/version-1.png' ),
 				'version-2'   => esc_url_raw( $customizer_images . 'header/version-2.png' ),
 			),
+		) ) );
+
+		/**
+		 * Site header padding title
+		 */
+		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_site_header_padding_title', array(
+			'section'      => 'archetype_header_layout',
+			'type'         => 'heading',
+			'label'        => __( 'Site Header Padding', 'archetype' ),
+			'priority'     => 15,
+		) ) );
+
+		/**
+		 * Site header padding text
+		 */
+		$wp_customize->add_control( new Archetype_Arbitrary_Control( $wp_customize, 'archetype_site_header_padding_text', array(
+			'section'      => 'archetype_header_layout',
+			'type'         => 'text',
+			'description' => __( 'Padding top & bottom will only add padding to the inside of the Site Header component, which contains the logo. The value must be numeric like .5 or 1 and will have em automatically added to the end.', 'archetype' ),
+			'priority'     => 20,
+		) ) );
+
+		/**
+		 * Site header padding top
+		 */
+		$wp_customize->add_setting( 'archetype_site_header_padding_top', array(
+			'sanitize_callback' => 'archetype_sanitize_number',
+		) );
+
+		$wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_site_header_padding_top', array(
+			'label'       => __( 'Top', 'archetype' ),
+			'section'     => 'archetype_header_layout',
+			'settings'    => 'archetype_site_header_padding_top',
+			'priority'    => 25,
+		) ) );
+
+		/**
+		 * Site header padding bottom
+		 */
+		$wp_customize->add_setting( 'archetype_site_header_padding_bottom', array(
+			'sanitize_callback' => 'archetype_sanitize_number',
+		) );
+
+		$wp_customize->add_control( new Archetype_Number_Customizer_Control( $wp_customize, 'archetype_site_header_padding_bottom', array(
+			'label'       => __( 'Bottom', 'archetype' ),
+			'section'     => 'archetype_header_layout',
+			'settings'    => 'archetype_site_header_padding_bottom',
+			'priority'    => 30,
 		) ) );
 
 		/**
@@ -1076,7 +1127,6 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		$wp_customize->add_setting( 'archetype_post_background_color', array(
 			'default'            => apply_filters( 'archetype_default_post_background_color', '#fff' ),
 			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_post_background_color', array(
