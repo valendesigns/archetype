@@ -14,6 +14,7 @@
 add_action( 'wp_enqueue_scripts',           'archetype_woocommerce_scripts', 20 );
 add_filter( 'woocommerce_enqueue_styles',   '__return_empty_array' );
 add_filter( 'archetype_customize_register', 'archetype_woocommerce_customize_register' );
+add_action( 'admin_enqueue_scripts',        'archetype_woocommerce_remove_styles', 11 );
 
 
 /**

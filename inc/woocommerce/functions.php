@@ -394,6 +394,18 @@ function archetype_woocommerce_scripts() {
 }
 
 /**
+ * WooCommerce dequeue stylesheets
+ *
+ * @since 1.0.0
+ */
+function archetype_woocommerce_remove_styles() {
+	if ( is_customize_preview() ) {
+		wp_dequeue_style( 'wp-jquery-ui-dialog' );
+	}
+}
+
+
+/**
  * Related Products Args
  *
  * @since 1.0.0
