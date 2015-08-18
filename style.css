@@ -2674,9 +2674,10 @@ section + .archetype-hero {
     visibility: visible; }
 
 .archetype-hero-media {
-  margin-bottom: -5.25em;
   margin-top: 2.625em;
   position: relative; }
+  .archetype-hero-position-media .archetype-hero-media {
+    margin-bottom: -5.25em; }
   .archetype-hero-media img {
     display: block;
     margin-left: auto;
@@ -2720,8 +2721,9 @@ section + .archetype-hero {
   .archetype-hero .col-full {
     padding: 2.75em 0; }
   .archetype-hero-media {
-    margin-bottom: -2.75em;
-    margin-top: 1.387em; } }
+    margin-top: 1.387em; }
+    .archetype-hero-position-media .archetype-hero-media {
+      margin-bottom: -2.75em; } }
 
 /**
  * Tablet
@@ -2735,8 +2737,9 @@ section + .archetype-hero {
   .archetype-hero .col-full {
     padding: 4.25em 0; }
   .archetype-hero-media {
-    margin-bottom: -4.25em;
-    margin-top: 2.125em; } }
+    margin-top: 2.125em; }
+    .archetype-hero-position-media .archetype-hero-media {
+      margin-bottom: -4.25em; } }
 
 .archetype-homepage-content {
   text-align: center; }
