@@ -14,6 +14,40 @@ $susy: (
 @import 'font/core';
 @import 'font/icons';
 
+/**
+ * Import/Export Control
+ */
+
+.customize-import-form {
+	position: absolute;
+	left: -999em;
+}
+
+.customize-import-file {
+	background: #eee;
+	width: 100%;
+	margin: 10px 0;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.customize-import-images {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.customize-import-uploading {
+	background: #eee;
+	display: none;
+	margin: 10px 0;
+	padding: 10px;
+	font-size: 12px;
+}
+
+/**
+ * Arbitrary Control
+ */
+
 .customize-control-heading {
 	margin-bottom: 0;
 }

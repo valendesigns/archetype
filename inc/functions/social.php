@@ -103,6 +103,19 @@ if ( ! function_exists( 'archetype_social_icons_classes' ) ) :
 			// Get the theme.
 			$theme = isset( $settings['display']['theme'] ) ? $settings['display']['theme'] : 'none';
 
+			// Header override.
+			$header_theme_override = archetype_sanitize_checkbox( get_theme_mod( 'archetype_header_subscribe_and_connect_theme_override', apply_filters( 'archetype_default_header_subscribe_and_connect_theme_override', false ) ) );
+
+			// Footer override.
+			$footer_theme_override = archetype_sanitize_checkbox( get_theme_mod( 'archetype_footer_subscribe_and_connect_theme_override', apply_filters( 'archetype_default_footer_subscribe_and_connect_theme_override', false ) ) );
+
+			// Set the custom theme.
+			if ( 'header' === $context && true === $header_theme_override ) {
+				$theme = esc_attr( get_theme_mod( 'archetype_header_subscribe_and_connect_theme', apply_filters( 'archetype_default_header_subscribe_and_connect_theme', 'none' ) ) );
+			} else if ( 'footer' === $context && true === $footer_theme_override ) {
+				$theme = esc_attr( get_theme_mod( 'archetype_footer_subscribe_and_connect_theme', apply_filters( 'archetype_default_footer_subscribe_and_connect_theme', 'none' ) ) );
+			}
+
 			/**
 			 * Filter the theme for the social icons.
 			 *

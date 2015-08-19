@@ -59,6 +59,64 @@ body {
 	}
 }
 
+@media screen and ( min-width: 600px ) and ( max-width: 767px ) {
+	.site-header.was-pinned > .col-full {
+		visibility: hidden;
+	}
+
+	.site-header.pinned {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	}
+
+	.site-header.pinned > div:not(.col-full) {
+		display: none;
+	}
+
+	.site-header.pinned #navigation {
+		display: block;
+	}
+}
+
+.admin-bar .site-header.pinned {
+	top: 46px;
+}
+
+@media screen and ( max-width: 600px ) {
+	.admin-bar .site-header.pinned {
+		top: 0px;
+	}
+}
+
+#navigation.was-pinned {
+	visibility: hidden;
+}
+
+#navigation.pinned {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+#navigation.pinned,
+#navigation.pinned ul.menu ul,
+.site-header.pinned {
+	background-color: rgba(41, 46, 49, 0.95);
+}
+
+.admin-bar #navigation.pinned {
+	top: 32px;
+}
+
+@media screen and ( max-width: 782px ) {
+	.admin-bar #navigation.pinned {
+		top: 46px;
+	}
+}
+
 .no-wc-breadcrumb:not(.page-template-template-homepage) {
 	.site-header {
 		margin-bottom: 2.625em;

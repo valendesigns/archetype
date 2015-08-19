@@ -53,6 +53,12 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		// Button URL.
 		$button_url          = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_url', home_url() ) );
 
+		// Image ID.
+		$image_id            = archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_hero_image', 0 ) );
+
+		// Image grid.
+		$image_grid          = archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_hero_image_columns', apply_filters( 'archetype_default_homepage_hero_image_columns', '12' ) ) );
+
 		// Display buttons.
 		$has_buttons         = (bool) $button_text && $button_url;
 
@@ -62,6 +68,22 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		$classes[] = 'archetype-homepage-hero';
 		$classes[] = $alignment;
 		$classes[] = $layout;
+
+		if ( 0 !== $image_id && 12 !== $image_grid ) {
+			$classes[] = 'archetype-hero-has-grid';
+		}
+
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_image_transition_toggle', apply_filters( 'archetype_default_homepage_hero_image_transition_toggle', true ) ) ) ) {
+			$classes[] = 'archetype-hero-add-transition';
+		}
+
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_image_position_toggle', apply_filters( 'archetype_default_homepage_hero_image_position_toggle', false ) ) ) ) {
+			$classes[] = 'archetype-hero-position-media';
+		}
+
+		if ( 'left' === esc_attr( get_theme_mod( 'archetype_homepage_hero_image_alignment', apply_filters( 'archetype_default_homepage_hero_image_alignment', 'right' ) ) ) ) {
+			$classes[] = 'archetype-hero-transition-reverse';
+		}
 
 		// CSS style attributes.
 		$styles = array();
@@ -167,6 +189,49 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 endif;
 
+if ( ! function_exists( 'archetype_homepage_hero_media' ) ) :
+	/**
+	 * Display the hero media.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_homepage_hero_media() {
+		// Image.
+		$image_id = archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_hero_image', 0 ) );
+
+		if ( 0 !== $image_id ) {
+			$image_src = wp_get_attachment_image_src( $image_id, 'full' );
+
+			if ( isset( $image_src[0] ) ) {
+				echo '<div class="archetype-hero-media"><img src="' . esc_url( $image_src[0] . ( is_customize_preview() ? '?v=' . rand() : '' ) ) . '" /></div>';
+			}
+		}
+	}
+endif;
+
+if ( ! function_exists( 'archetype_homepage_hero_add_button' ) ) :
+	/**
+	 * Display the second hero button.
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_homepage_hero_add_button() {
+		// Button text.
+		$button_text = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_2_text', apply_filters( 'archetype_default_homepage_hero_button_2_text', '' ) ) );
+
+		// Button URL.
+		$button_url  = sanitize_text_field( get_theme_mod( 'archetype_homepage_hero_button_2_url', apply_filters( 'archetype_default_homepage_hero_button_2_url', '' ) ) );
+
+		// Button class.
+		$button_alt  = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_button_2_alt_toggle', apply_filters( 'archetype_default_homepage_hero_button_2_alt_toggle', true ) ) );
+
+		if ( $button_text && $button_url ) {
+			$class = ( true === $button_alt ? 'button alt' : 'button' );
+			echo '<a href="' . esc_attr( $button_url ) . '" class="' . $class . '">' . esc_html( $button_text ) . '</a>';
+		}
+	}
+endif;
+
 if ( ! function_exists( 'archetype_homepage_content_components' ) ) :
 	/**
 	 * Adds the homepage content components.
@@ -215,10 +280,20 @@ if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
 	 */
 	function archetype_homepage_content_component( $id = 1 ) {
 		// Customizer content.
-		$content_page 					  = archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_content_' . $id, ( 1 === $id ? get_option( 'page_on_front' ) : 0 ) ) );
-		$content_text_color 			= archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_' . $id . '_text_color', apply_filters( 'archetype_default_homepage_content_' . $id . '_text_color', '#555' ) ) );
+		$content_page = archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_content_' . $id, ( 1 === $id ? get_option( 'page_on_front' ) : 0 ) ) );
+
+		$content_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_' . $id . '_text_color', apply_filters( 'archetype_default_homepage_content_' . $id . '_text_color', '#555' ) ) );
+
 		$content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_' . $id . '_background_color', apply_filters( 'archetype_default_homepage_content_' . $id . '_background_color', '#fff' ) ) );
-		$content_alignment				= esc_attr( get_theme_mod( 'archetype_homepage_content_' . $id . '_alignment', 'left' ) );
+
+		$content_alignment = esc_attr( get_theme_mod( 'archetype_homepage_content_' . $id . '_alignment', 'left' ) );
+
+		// Background image.
+		$background_img_src = wp_get_attachment_image_src( archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_content_' . $id . '_background_image', '' ) ), 'full' );
+		$background_img = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
+
+		// Background image size.
+		$background_img_size = esc_attr( get_theme_mod( 'archetype_homepage_content_' . $id . '_background_image_size', 'auto' ) );
 
 		// CSS classes.
 		$classes = array();
@@ -231,6 +306,13 @@ if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
 		$styles = array();
 		$styles[] = "color: $content_text_color;";
 		$styles[] = "background-color: $content_background_color;";
+
+		if ( ! empty( $background_img ) ) {
+			$styles[] = "background-image: url($background_img);";
+			$styles[] = "background-size: $background_img_size;";
+			$styles[] = 'background-repeat: no-repeat;';
+			$styles[] = 'background-position: center;';
+		}
 
 		if ( 0 !== $content_page && $page_data = get_page( $content_page ) ) {
 			/**
