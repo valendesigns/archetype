@@ -22,7 +22,7 @@
 			$( document ).on( 'click', 'input[name=customize-import-button]', ArchetypeCustomizer.importMods );
 			$( document ).on( 'click', 'input[name=customize-export-button]', ArchetypeCustomizer.exportMods );
 		},
-		
+
 		cacheSelectors: function() {
 			var _frame = $( 'iframe' ).contents();
 
