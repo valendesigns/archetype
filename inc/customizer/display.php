@@ -157,10 +157,6 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			}';
 		}
 
-
-
-
-
 		// Site Header padding.
 		$header_padding_top = archetype_sanitize_number( get_theme_mod( 'archetype_site_header_padding_top' ) );
 		$header_padding_bottom = archetype_sanitize_number( get_theme_mod( 'archetype_site_header_padding_bottom' ) );
@@ -253,7 +249,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		// Header Background Color.
 		$header_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_header_background_color', apply_filters( 'archetype_default_header_background_color', '#353b3f' ) ) );
-		
+
 		// Handheld Navigation pinned.
 		$nav_handheld_pinned = archetype_sanitize_checkbox( get_theme_mod( 'archetype_nav_handheld_pinned', apply_filters( 'archetype_default_nav_handheld_pinned', true ) ) );
 
@@ -1200,7 +1196,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		// Lower footer link hover.
 		$footer_lower_link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_info_link_hover_color', apply_filters( 'archetype_default_footer_info_link_hover_color', '#fff' ) ) );
-		
+
 		// Footer Subscribe & Connect background Color.
 		$footer_subscribe_and_connect_bg = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_subscribe_and_connect_background_color', apply_filters( 'archetype_default_footer_subscribe_and_connect_background_color', '#24282a' ) ) );
 
