@@ -207,7 +207,28 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 		 */
 		function customize_css( $style ) {
 			// Header layout.
-			$header_layout = get_theme_mod( 'archetype_header_layout', 'version-1' );
+			$header_layout   = get_theme_mod( 'archetype_header_layout', 'version-1' );
+			$component_order = get_theme_mod( 'archetype_header_layout_' . absint( ltrim( $header_layout, 'version-' ) ) );
+			$social_icons    = null;
+			$secondary_nav   = null;
+			$site_header     = null;
+			$primary_nav     = null;
+
+			if ( ! empty( $component_order ) ) {
+				$components = explode( ',', $component_order );
+				foreach ( $components as $key => $component ) {
+					$component = str_replace( '[disabled]', '', $component );
+					if ( 'archetype_social_icons' === $component ) {
+						$social_icons = $key;
+					} else if ( 'archetype_secondary_navigation' === $component ) {
+						$secondary_nav = $key;
+					} else if ( 'archetype_site_header' === $component ) {
+						$site_header = $key;
+					} else if ( 'archetype_primary_navigation' === $component ) {
+						$primary_nav = $key;
+					}
+				}
+			}
 
 			if ( 'version-2' === $header_layout ) {
 				$style .= '
@@ -221,6 +242,49 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 						display: none;
 					}
 				}';
+			}
+
+			if ( ! is_null( $social_icons ) ) {
+				// After site header
+				if ( $social_icons > $site_header ) {
+					$style .= '
+					.site-header .subscribe-and-connect-connect {
+						border-top: 1px solid rgba(0,0,0,0.1);
+						border-bottom: none;
+					}';
+				}
+
+				// Before secondary nav after site header
+				if ( ! is_null( $secondary_nav ) && $social_icons + 1 === $secondary_nav && $social_icons > $site_header ) {
+					$style .= '
+					@media screen and (max-width: 767px) {
+						.site-header .subscribe-and-connect-connect {
+							border-top: 1px solid rgba(0,0,0,0.1);
+							border-bottom: none;
+						}
+					}';
+				}
+
+				// After secondary nav before site header
+				if ( ! is_null( $secondary_nav ) && $social_icons - 1 === $secondary_nav && $social_icons < $site_header ) {
+					$style .= '
+					@media screen and (min-width: 768px) {
+						.site-header .subscribe-and-connect-connect {
+							border-top: 1px solid rgba(0,0,0,0.1);
+							border-bottom: none;
+						}
+					}';
+				}
+
+				// Nav after before site header or Nav before after site header
+				if ( ( $social_icons + 1 === $primary_nav && $social_icons < $site_header ) || ( $social_icons - 1 === $primary_nav && $social_icons > $site_header ) ) {
+					$style .= '
+					@media screen and (min-width: 768px) {
+						.site-header .subscribe-and-connect-connect {
+							border-color: transparent;
+						}
+					}';
+				}
 			}
 
 			return $style;
