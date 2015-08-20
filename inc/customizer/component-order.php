@@ -245,7 +245,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 			}
 
 			if ( ! is_null( $social_icons ) ) {
-				// After site header
+				// After site header.
 				if ( $social_icons > $site_header ) {
 					$style .= '
 					.site-header .subscribe-and-connect-connect {
@@ -254,7 +254,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 					}';
 				}
 
-				// Before secondary nav after site header
+				// Before secondary nav after site header.
 				if ( ! is_null( $secondary_nav ) && $social_icons + 1 === $secondary_nav && $social_icons > $site_header ) {
 					$style .= '
 					@media screen and (max-width: 767px) {
@@ -265,7 +265,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 					}';
 				}
 
-				// After secondary nav before site header
+				// After secondary nav before site header.
 				if ( ! is_null( $secondary_nav ) && $social_icons - 1 === $secondary_nav && $social_icons < $site_header ) {
 					$style .= '
 					@media screen and (min-width: 768px) {
@@ -276,7 +276,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 					}';
 				}
 
-				// Nav after before site header or Nav before after site header
+				// Nav after before site header or Nav before after site header.
 				if ( ( $social_icons + 1 === $primary_nav && $social_icons < $site_header ) || ( $social_icons - 1 === $primary_nav && $social_icons > $site_header ) ) {
 					$style .= '
 					@media screen and (min-width: 768px) {
