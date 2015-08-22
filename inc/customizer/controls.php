@@ -78,7 +78,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		/**
 		 * Add the General panel
 		 */
-		$wp_customize->add_panel( 'archetype_general' , array(
+		$wp_customize->add_panel( 'archetype_general', array(
 			'title'        => __( 'General', 'archetype' ),
 			'description'  => __( 'Customize the look & feel of your website.', 'archetype' ),
 			'priority'     => 1,
@@ -87,7 +87,7 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		/**
 		 * Layout
 		 */
-		$wp_customize->add_section( 'archetype_layout' , array(
+		$wp_customize->add_section( 'archetype_layout', array(
 			'title'        => __( 'Layout', 'archetype' ),
 			'priority'     => 21,
 			'panel'        => 'archetype_general',
@@ -98,17 +98,11 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			'sanitize_callback'  => 'archetype_sanitize_choices',
 		) );
 
-		$wp_customize->add_control( new Archetype_Radio_Image_Control( $wp_customize, 'archetype_layout', array(
+		$wp_customize->add_control( new Archetype_Sidebar_Layout_Control( $wp_customize, 'archetype_layout', array(
 			'label'        => __( 'Sidebar Position', 'archetype' ),
 			'section'      => 'archetype_layout',
 			'settings'     => 'archetype_layout',
 			'priority'     => 5,
-			'columns'      => 3,
-			'choices'      => array(
-				'left'        => esc_url_raw( $customizer_images . ( is_rtl() ? '2cr' : '2cl' ) . '.png' ),
-				'right'       => esc_url_raw( $customizer_images . ( is_rtl() ? '2cl' : '2cr' ) . '.png' ),
-				'none'        => esc_url_raw( $customizer_images . '1c.png' ),
-			),
 		) ) );
 
 		/**
