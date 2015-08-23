@@ -669,6 +669,238 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 					}';
 				}
 			}
+			
+			// Archive thumbnail filter.
+			$thumbnail_filter = esc_attr( get_theme_mod( 'archetype_products_filter', apply_filters( 'archetype_default_products_filter', '' ) ) );
+
+			// Archive thumbnail filter background.
+			$thumbnail_filter_background = archetype_sanitize_hex_color( get_theme_mod( 'archetype_products_filter_background', apply_filters( 'archetype_default_products_filter_background', '#ffffff' ) ) );
+
+			if ( '' !== $thumbnail_filter ) {
+				$woocommerce_style .= '
+				.has-product-thumbnail-filter .product.has-post-thumbnail > a {
+					overflow: hidden;
+				}
+				.has-product-thumbnail-filter .product.has-post-thumbnail > a .product-thumbnail {
+					position: relative;
+					float: left;
+					overflow: hidden;
+					max-height: 100%;
+					max-width: 100%;
+				}
+				.has-product-thumbnail-filter .product.has-post-thumbnail > a .product-thumbnail img {
+					position: relative;
+					display: block;
+				}';
+			}
+
+			if ( 'lily' === $thumbnail_filter ) {
+				$woocommerce_style .= '
+				.has-product-lily-filter .product.has-post-thumbnail > a .product-thumbnail {
+					background-color: ' . $thumbnail_filter_background . ';
+					-webkit-transform: translateZ(0);
+					transform: translateZ(0);
+				}
+				.has-product-lily-filter .product.has-post-thumbnail > a .product-thumbnail img {
+					max-width: none;
+					width: -webkit-calc(100% + 50px);
+					width: calc(100% + 50px);
+					opacity: 0.7;
+					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+					transition: opacity 0.35s, transform 0.35s;
+					-webkit-transform: translate3d(-40px, 0, 0);
+					transform: translate3d(-40px, 0, 0);
+				}
+				.has-product-lily-filter .product.has-post-thumbnail > a:hover .product-thumbnail img {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}';
+			}
+
+			if ( 'sadie' === $thumbnail_filter ) {
+				list( $r, $g, $b ) = sscanf( $thumbnail_filter_background, '#%02x%02x%02x' );
+				$woocommerce_style .= '
+				.has-product-sadie-filter .product.has-post-thumbnail > a .product-thumbnail:before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: -webkit-linear-gradient(top, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0' ) . ' 0%, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0.5' ) . ' 75%);
+					background: linear-gradient(to bottom, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0' ) . ' 0%, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0.5' ) . ' 75%);
+					content: \'\';
+					opacity: 0;
+					z-index: 10;
+					-webkit-transform: translate3d(0, 50%, 0);
+					transform: translate3d(0, 50%, 0);
+					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+					transition: opacity 0.35s, transform 0.35s;
+				}
+				.has-product-sadie-filter .product.has-post-thumbnail > a:hover .product-thumbnail:before {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}';
+			}
+
+			if ( 'honey' === $thumbnail_filter ) {
+				$woocommerce_style .= '
+				.has-product-honey-filter .product.has-post-thumbnail > a .product-thumbnail {
+					background-color: ' . $thumbnail_filter_background . ';
+				}
+				.has-product-honey-filter .product.has-post-thumbnail > a .product-thumbnail img {
+					opacity: 0.9;
+					-webkit-transition: opacity 0.35s;
+					transition: opacity 0.35s;
+				}
+				.has-product-honey-filter .product.has-post-thumbnail > a:hover .product-thumbnail img {
+					opacity: 0.5;
+				}';
+			}
+
+			if ( 'ruby' === $thumbnail_filter ) {
+				$woocommerce_style .= '
+				.has-product-ruby-filter .product.has-post-thumbnail > a .product-thumbnail {
+					background-color: ' . $thumbnail_filter_background . ';
+				}
+				.has-product-ruby-filter .product.has-post-thumbnail > a .product-thumbnail img {
+					opacity: 0.7;
+					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+					transition: opacity 0.35s, transform 0.35s;
+					-webkit-transform: scale(1.15);
+					transform: scale(1.15);
+				}
+				.has-product-ruby-filter .product.has-post-thumbnail > a:hover .product-thumbnail img {
+					opacity: 0.5;
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}';
+			}
+
+			if ( 'layla' === $thumbnail_filter ) {
+				list( $r, $g, $b ) = sscanf( $thumbnail_filter_background, '#%02x%02x%02x' );
+				$woocommerce_style .= '
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail {
+					background: -webkit-linear-gradient(45deg, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0.75' ) . ' 0%, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0' ) . ' 100%);
+					background: linear-gradient(45deg, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0.75' ) . ' 0%, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0' ) . ' 100%);
+				}
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail:before,
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail:after {
+					position: absolute;
+					content: \'\';
+					opacity: 0;
+					z-index: 10;
+				}
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail:before {
+					top: 50px;
+					right: 30px;
+					bottom: 50px;
+					left: 30px;
+					border-top: 1px solid rgba(255, 255, 255, 0.75);
+					border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+					-webkit-transform: scale(0, 1);
+					transform: scale(0, 1);
+					-webkit-transform-origin: 0 0;
+					transform-origin: 0 0;
+				}
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail:after {
+					top: 30px;
+					right: 50px;
+					bottom: 30px;
+					left: 50px;
+					border-right: 1px solid rgba(255, 255, 255, 0.75);
+					border-left: 1px solid rgba(255, 255, 255, 0.75);
+					-webkit-transform: scale(1, 0);
+					transform: scale(1, 0);
+					-webkit-transform-origin: 100% 0;
+					transform-origin: 100% 0; }
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail img {
+					opacity: 0.7;
+				}
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail img,
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail:before,
+				.has-product-layla-filter .product.has-post-thumbnail > a .product-thumbnail:after {
+					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+					transition: opacity 0.35s, transform 0.35s;
+				}
+				.has-product-layla-filter .product.has-post-thumbnail > a:hover .product-thumbnail img {
+					opacity: 0.85;
+				}
+				.has-product-layla-filter .product.has-post-thumbnail > a:hover .product-thumbnail:before,
+				.has-product-layla-filter .product.has-post-thumbnail > a:hover .product-thumbnail:after {
+					opacity: 1;
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+				.has-product-layla-filter .product.has-post-thumbnail > a:hover .product-thumbnail:after {
+					-webkit-transition-delay: 0.15s;
+					transition-delay: 0.15s;
+				}';
+			}
+
+			if ( 'roxy' === $thumbnail_filter ) {
+				list( $r, $g, $b ) = sscanf( $thumbnail_filter_background, '#%02x%02x%02x' );
+				$woocommerce_style .= '
+				.has-product-roxy-filter .product.has-post-thumbnail > a .product-thumbnail {
+					background: -webkit-linear-gradient(45deg, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0' ) . ' 0%, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0.75' ) . ' 100%);
+					background: linear-gradient(45deg, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0' ) . ' 0%, ' . sprintf( 'rgba(%s,%s,%s,%s)', $r, $g, $b, '0.75' ) . ' 100%);
+				}
+				.has-product-roxy-filter .product.has-post-thumbnail > a .product-thumbnail:before {
+					position: absolute;
+					top: 30px;
+					right: 30px;
+					bottom: 30px;
+					left: 30px;
+					border: 1px solid rgba(255, 255, 255, 0.75);
+					content: \'\';
+					opacity: 0;
+					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+					transition: opacity 0.35s, transform 0.35s;
+					-webkit-transform: translate3d(-20px, 0, 0);
+					transform: translate3d(-20px, 0, 0);
+					z-index: 10;
+				}
+				.has-product-roxy-filter .product.has-post-thumbnail > a .product-thumbnail img {
+					opacity: 0.8;
+					max-width: none;
+					width: -webkit-calc(100% + 60px);
+					width: calc(100% + 60px);
+					-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+					transition: opacity 0.35s, transform 0.35s;
+					-webkit-transform: translate3d(-50px, 0, 0);
+					transform: translate3d(-50px, 0, 0);
+				}
+				.has-product-roxy-filter .product.has-post-thumbnail > a:hover .product-thumbnail:before {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}
+				.has-product-roxy-filter .product.has-post-thumbnail > a:hover .product-thumbnail img {
+					opacity: 0.7;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}';
+			}
+
+			if ( 'julia' === $thumbnail_filter ) {
+				$woocommerce_style .= '
+				.has-product-julia-filter .product.has-post-thumbnail > a .product-thumbnail {
+					background-color: ' . $thumbnail_filter_background . ';
+				}
+				.has-product-julia-filter .product.has-post-thumbnail > a .product-thumbnail img {
+					opacity: 0.8;
+					-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+					transition: opacity 0.5s, transform 0.5s;
+					-webkit-backface-visibility: hidden;
+					backface-visibility: hidden;
+				}
+				.has-product-julia-filter .product.has-post-thumbnail > a:hover .product-thumbnail img {
+					opacity: 0.4;
+					-webkit-transform: scale3d(1.1, 1.1, 1);
+					transform: scale3d(1.1, 1.1, 1);
+				}';
+			}
 
 			// Remove space after colons.
 			$woocommerce_style = str_replace( ': ', ':', $woocommerce_style );

@@ -197,20 +197,38 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		) );
 
 		/**
-		 * Full width products
+		 * Sidebar layout
 		 */
-		$wp_customize->add_setting( 'archetype_products_full_width', array(
-			'default'            => apply_filters( 'archetype_default_products_full_width', false ),
-			'sanitize_callback'  => 'archetype_sanitize_checkbox',
+		$wp_customize->add_setting( 'archetype_products_sidebar_layout', array(
+			'default'            => apply_filters( 'archetype_default_products_sidebar_layout', 'right' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
 		) );
 
-		$wp_customize->add_control( 'archetype_products_full_width', array(
-			'label'        => __( 'Full width', 'archetype' ),
-			'description'  => __( 'Expand product archives the entire page width. This will remove the sidebar.', 'archetype' ),
+		$wp_customize->add_control( new Archetype_Sidebar_Layout_Control( $wp_customize, 'archetype_products_sidebar_layout', array(
+			'label'        => __( 'Sidebar position', 'archetype' ),
 			'section'      => 'archetype_products',
-			'settings'     => 'archetype_products_full_width',
-			'type'         => 'checkbox',
+			'settings'     => 'archetype_products_sidebar_layout',
+		) ) );
+
+		/**
+		 * Sidebar columns
+		 */
+		$wp_customize->add_setting( 'archetype_products_sidebar_columns', array(
+			'default'            => apply_filters( 'archetype_default_products_sidebar_columns', '3' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
 		) );
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_products_sidebar_columns', array(
+			'label'        => __( 'Sidebar columns', 'archetype' ),
+			'description'  => __( 'Choose the number of columns, out of a 12 column grid, that the sidebar will occupy.', 'archetype' ),
+			'section'      => 'archetype_products',
+			'settings'     => 'archetype_products_sidebar_columns',
+			'type'         => 'select',
+			'choices'      => array(
+				'3'           => __( '3', 'archetype' ),
+				'4'           => __( '4', 'archetype' ),
+			),
+		) ) );
 
 		/**
 		 * Products image
@@ -309,6 +327,45 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		) );
 
 		/**
+		 * Products filter
+		 */
+		$wp_customize->add_setting( 'archetype_products_filter', array(
+			'default'            => apply_filters( 'archetype_default_products_filter', '' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
+		) );
+
+		$wp_customize->add_control( 'archetype_products_filter', array(
+			'label'        => __( 'Thumbnail filter', 'archetype' ),
+			'section'      => 'archetype_products',
+			'settings'     => 'archetype_products_filter',
+			'type'         => 'select',
+			'choices'      => array(
+				''            => 'none',
+				'lily'        => 'Lily',
+				'sadie'       => 'Sadie',
+				'honey'       => 'Honey',
+				'ruby'        => 'Ruby',
+				'layla'       => 'Layla',
+				'roxy'        => 'Roxy',
+				'julia'       => 'Julia',
+			),
+		) );
+
+		/**
+		 * Products filter background
+		 */
+		$wp_customize->add_setting( 'archetype_products_filter_background', array(
+			'default'            => apply_filters( 'archetype_default_products_filter_background', '#ffffff' ),
+			'sanitize_callback'  => 'archetype_sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_products_filter_background', array(
+			'label'        => __( 'Thumbnail filter background', 'archetype' ),
+			'section'      => 'archetype_products',
+			'settings'     => 'archetype_products_filter_background',
+		) ) );
+
+		/**
 		 * Alignment
 		 */
 		$wp_customize->add_setting( 'archetype_products_alignment', array(
@@ -339,20 +396,38 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		) );
 
 		/**
-		 * Full width product page
+		 * Sidebar layout
 		 */
-		$wp_customize->add_setting( 'archetype_product_full_width', array(
-			'default'            => apply_filters( 'archetype_default_product_full_width', false ),
-			'sanitize_callback'  => 'archetype_sanitize_checkbox',
+		$wp_customize->add_setting( 'archetype_product_sidebar_layout', array(
+			'default'            => apply_filters( 'archetype_default_product_sidebar_layout', 'right' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
 		) );
 
-		$wp_customize->add_control( 'archetype_product_full_width', array(
-			'label'        => __( 'Full width product', 'archetype' ),
-			'description'  => __( 'Expand products the entire page width. This will remove the sidebar.', 'archetype' ),
+		$wp_customize->add_control( new Archetype_Sidebar_Layout_Control( $wp_customize, 'archetype_product_sidebar_layout', array(
+			'label'        => __( 'Sidebar position', 'archetype' ),
 			'section'      => 'archetype_product',
-			'settings'     => 'archetype_product_full_width',
-			'type'         => 'checkbox',
+			'settings'     => 'archetype_product_sidebar_layout',
+		) ) );
+
+		/**
+		 * Sidebar columns
+		 */
+		$wp_customize->add_setting( 'archetype_product_sidebar_columns', array(
+			'default'            => apply_filters( 'archetype_default_product_sidebar_columns', '3' ),
+			'sanitize_callback'  => 'archetype_sanitize_choices',
 		) );
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_product_sidebar_columns', array(
+			'label'        => __( 'Sidebar columns', 'archetype' ),
+			'description'  => __( 'Choose the number of columns, out of a 12 column grid, that the sidebar will occupy.', 'archetype' ),
+			'section'      => 'archetype_product',
+			'settings'     => 'archetype_product_sidebar_columns',
+			'type'         => 'select',
+			'choices'      => array(
+				'3'           => __( '3', 'archetype' ),
+				'4'           => __( '4', 'archetype' ),
+			),
+		) ) );
 
 		/**
 		 * Full width product gallery

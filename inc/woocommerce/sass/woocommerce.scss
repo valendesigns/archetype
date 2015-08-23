@@ -141,6 +141,19 @@ ul.products {
 			box-shadow: none !important;
 		}
 
+		a:focus{
+			outline: none;
+		}
+
+		&.product-category {
+			padding-top: 0;
+
+			img {
+				display: block;
+				margin: 0 auto 2.625em;
+			}
+		}
+
 		.woocommerce-cart & {
 			padding-bottom: 0;
 			box-shadow: none;
@@ -176,12 +189,15 @@ ul.products {
 			font-size: .875em;
 		}
 
-		img {
-			display: block;
+		.product-thumbnail {
 			margin: 0 auto 2.625em;
-			
+
 			.archetype-products-image-only & {
 				margin-bottom: 0 !important;
+			}
+
+			img {
+				display: block;
 			}
 		}
 
