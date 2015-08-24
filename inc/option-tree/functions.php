@@ -118,7 +118,7 @@ if ( ! function_exists( 'archetype_slider_body_classes' ) ) :
 		if ( ! is_null( $slider_post_id ) ) {
 			$type = get_post_meta( $slider_post_id, '_archetype_slider', true );
 			$slider = get_post_meta( $slider_post_id, '_archetype_' . $type, true );
-			if ( ! empty( $slider ) ) {
+			if ( ! empty( $slider ) && ( 'revolution_slider' === $type && class_exists( 'RevSlider', false ) ) || ( 'layer_slider' === $type && class_exists( 'LS_Sliders', false ) ) ) {
 				$classes[] = 'archetype-has-header-slider';
 			}
 		}

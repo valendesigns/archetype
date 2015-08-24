@@ -97,6 +97,7 @@ function archetype_register_meta_boxes() {
 				'desc'       => '',
 				'std'        => '',
 				'choices'    => $choices,
+				'condition'  => '_archetype_slider:is(layer_slider)',
 			);
 
 			$types[] = array(
@@ -132,6 +133,7 @@ function archetype_register_meta_boxes() {
 				'desc'       => '',
 				'std'        => '',
 				'choices'    => $choices,
+				'condition'  => '_archetype_slider:is(revolution_slider)',
 			);
 
 			$types[] = array(
