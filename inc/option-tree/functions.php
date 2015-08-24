@@ -168,8 +168,6 @@ if ( ! function_exists( 'archetype_display_slider' ) ) :
 	 * Must be used inside the loop.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return string
 	 */
 	function archetype_display_slider() {
 		global $slider_post_id;

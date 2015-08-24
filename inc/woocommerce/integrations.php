@@ -669,7 +669,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 					}';
 				}
 			}
-			
+
 			// Archive thumbnail filter.
 			$thumbnail_filter = esc_attr( get_theme_mod( 'archetype_products_filter', apply_filters( 'archetype_default_products_filter', '' ) ) );
 

@@ -118,7 +118,7 @@ function archetype_register_meta_boxes() {
 		);
 
 		if ( ! empty( $sliders ) ) {
-			foreach( $sliders as $slider ) {
+			foreach ( $sliders as $slider ) {
 				$choices[] = array(
 					'value' => $slider->getAlias(),
 					'label' => $slider->getTitle(),
