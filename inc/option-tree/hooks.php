@@ -46,3 +46,10 @@ add_filter( 'the_content',                 'archetype_post_format_quote' );
 add_filter( 'ot_meta_box_post_format_gallery', 'archetype_filter_post_format_gallery', 10, 2 );
 add_filter( 'archetype_hide_title',            'archetype_hide_title_post_meta', 10, 2 );
 add_filter( 'archetype_hide_author_bio',       'archetype_hide_author_bio_post_meta', 10, 2 );
+
+/**
+ * Slider
+ */
+add_action( 'get_header',             'archetype_slider_post_id',      99 );
+add_filter( 'body_class',             'archetype_slider_body_classes', 10 );
+add_action( 'archetype_after_header', 'archetype_display_slider',       0 );

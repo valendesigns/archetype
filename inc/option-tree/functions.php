@@ -103,6 +103,98 @@ if ( ! function_exists( 'archetype_post_format_title' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'archetype_slider_body_classes' ) ) :
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $classes Classes for the body element.
+	 * @return array
+	 */
+	function archetype_slider_body_classes( $classes ) {
+		global $slider_post_id;
+
+		if ( ! is_null( $slider_post_id ) ) {
+			$type = get_post_meta( $slider_post_id, '_archetype_slider', true );
+			$slider = get_post_meta( $slider_post_id, '_archetype_' . $type, true );
+			if ( ! empty( $slider ) ) {
+				$classes[] = 'archetype-has-header-slider';
+			}
+		}
+
+		return $classes;
+	}
+endif;
+
+if ( ! function_exists( 'archetype_slider_post_id' ) ) :
+	/**
+	 * Set the global slider post ID.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	function archetype_slider_post_id() {
+		global $post, $slider_post_id;
+
+		$home_id = get_option( 'page_on_front' );
+		$blog_id = get_option( 'page_for_posts' );
+
+		if ( is_front_page() && $home_id ) {
+			$post_id = $home_id;
+		} else if ( is_home() && $blog_id ) {
+			$post_id = $blog_id;
+		} else if ( is_shop() ) {
+			$post_id = get_option( 'woocommerce_shop_page_id' );
+		}
+
+		if ( ! is_singular() && ! isset( $post_id ) ) {
+			return null;
+		}
+
+		if ( ! isset( $post_id ) ) {
+			$post_id = $post->ID;
+		}
+
+		$slider_post_id = $post_id;
+	}
+endif;
+
+if ( ! function_exists( 'archetype_display_slider' ) ) :
+	/**
+	 * Display the post slider.
+	 *
+	 * Must be used inside the loop.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	function archetype_display_slider() {
+		global $slider_post_id;
+
+		if ( ! is_null( $slider_post_id ) ) {
+			$type = get_post_meta( $slider_post_id, '_archetype_slider', true );
+			$slider = get_post_meta( $slider_post_id, '_archetype_' . $type, true );
+
+			// Display the slider.
+			if ( ! empty( $slider ) ) {
+
+				if ( 'revolution_slider' === $type && class_exists( 'RevSlider', false ) ) {
+					echo '<div class="header-slider-region">' . archetype_do_shortcode_func( 'rev_slider', array( 'alias' => $slider ) ) . '</div>';
+				} else if ( 'layer_slider' === $type && class_exists( 'LS_Sliders', false ) ) {
+					global $wpdb;
+					$table = $wpdb->prefix.LS_DB_TABLE;
+					$result = $wpdb->get_row( $wpdb->prepare( "SELECT slug FROM $table WHERE id = %d LIMIT 1", $slider ), ARRAY_A );
+					$id = ! empty( $result['slug'] ) ? $result['slug'] : $slider;
+					echo '<div class="header-slider-region">' . archetype_do_shortcode_func( 'layerslider', array( 'id' => $id ) ) . '</div>';
+				}
+			}
+		}
+	}
+endif;
+
 if ( ! function_exists( 'archetype_post_format_the_content' ) ) :
 	/**
 	 * Displays the audio
