@@ -175,7 +175,7 @@
 		margin-bottom: 0;
 	}
 
-	.form-submit + .comment-subscription-form {
+	.form-submit ~ .comment-subscription-form {
 		margin-top: $spacing-v;
 	}
 }
