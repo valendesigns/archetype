@@ -146,7 +146,7 @@ if ( ! function_exists( 'archetype_credit' ) ) :
 
 			// Credits.
 			if ( true == get_theme_mod( 'archetype_footer_info_credits_toggle', true ) && apply_filters( 'archetype_credit_link', true ) ) {
-				printf( __( '%1$s theme by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" alt="Premium WordPress Themes by Valen Designs" title="Premium WordPress Themes by Valen Designs">Valen Designs</a>' );
+				printf( __( '%1$s theme by %2$s.', 'archetype' ), 'Archetype', '<a href="http://valendesigns.com" title="Premium WordPress Themes by Valen Designs">Valen Designs</a>' );
 			}
 			?>
 		</div><!-- .credit	-->
