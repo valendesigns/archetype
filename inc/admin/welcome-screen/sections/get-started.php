@@ -45,7 +45,7 @@ $url 	.= '&return=' . urlencode( admin_url() . 'themes.php?page=archetype-welcom
 			<?php } ?>
 
 			<h4><?php esc_html_e( 'Jetpack', 'archetype' ); ?></h4>
-			<p><?php echo esc_html__( 'Archetype supports the Contact Form, Infinite Scroll, Custom CSS, and Site Logo features which come with Jetpack. However, the Site Logo feature is actually bundled in the Core of Archetype as a fall back, because it\'s just to important to rely on Jetpack for.' ); ?></p>
+			<p><?php echo esc_html__( 'Archetype supports the Contact Form, Infinite Scroll, Custom CSS, and Site Logo features which come with Jetpack. However, the Site Logo feature is actually bundled in the Core of Archetype as a fall back, because it\'s just to important to rely on Jetpack for.', 'archetype' ); ?></p>
 			<p><?php echo esc_html__( 'We will also test and add to this list of supported features in the future when they are requested.', 'archetype' ); ?></p>
 
 			<?php if ( ! class_exists( 'Jetpack' ) ) { ?>
