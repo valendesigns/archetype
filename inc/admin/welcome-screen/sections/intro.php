@@ -14,7 +14,8 @@ global $archetype_version;
 		<h1 style="margin-right: 0;"><?php echo '<strong>Archetype</strong> <sup style="font-weight: bold; font-size: 50%; padding: 5px 10px; color: #666; background: #fff;">' . esc_attr( $archetype_version ) . '</sup>'; ?></h1>
 
 		<p style="font-size: 1.2em;"><?php esc_html_e( 'Welcome to Archetype! You\'ve made a great choice.', 'archetype' ); ?></p>
-		<p><?php esc_html_e( 'If you\'re wanting to setup shop, then our integrated WooCommerce core will assist you in doing just that. With support for many popular WooCommerce extensions and a beautiful design, you\'re just a few clicks away from your own branded online store. Also, our point and click Customizer options, backed by an extremely extensible codebase, will leave you with nothing but an ear to ear grin.', 'archetype' ); ?>
+		<p><?php esc_html_e( 'Archetype is more than just a beautiful blog! If you\'re wanting to setup shop, then our integrated WooCommerce core will assist you in doing just that. With support for many popular WooCommerce extensions and a beautiful design, you\'re just a few clicks away from your own branded online store.', 'archetype' ); ?></p>
+		<p><?php esc_html_e( 'Also, our point and click Customizer options and extremely extensible codebase, will leave you with nothing but an ear to ear grin.', 'archetype' ); ?></p>
 	</div>
 
 	<div class="col screenshot-image">
