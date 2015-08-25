@@ -145,7 +145,7 @@ if ( ! function_exists( 'archetype_slider_post_id' ) ) :
 			$post_id = $home_id;
 		} else if ( is_home() && $blog_id ) {
 			$post_id = $blog_id;
-		} else if ( is_shop() ) {
+		} else if ( function_exists( 'is_shop' ) && is_shop() ) {
 			$post_id = get_option( 'woocommerce_shop_page_id' );
 		}
 
