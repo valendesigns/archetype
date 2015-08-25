@@ -199,5 +199,4 @@ class Archetype_Component_Order_Customizer_Control extends WP_Customize_Control 
 		}
 		return false;
 	}
-
 }

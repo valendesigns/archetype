@@ -592,7 +592,6 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 
 			return $components;
 		}
-
 	}
 
 endif;
