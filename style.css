@@ -2494,6 +2494,8 @@ embed, iframe, object {
     margin-bottom: 0; }
   #respond .form-submit ~ .comment-subscription-form {
     margin-top: 1.5em; }
+  #respond .comment-subscription-form + .comment-subscription-form {
+    margin-top: 0; }
 
 @media screen and (max-width: 568px) {
   #comments p.no-comments {

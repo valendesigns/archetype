@@ -178,6 +178,10 @@
 	.form-submit ~ .comment-subscription-form {
 		margin-top: $spacing-v;
 	}
+
+	.comment-subscription-form + .comment-subscription-form {
+		margin-top: 0;
+	}
 }
 
 @media screen and (max-width: 568px) {
