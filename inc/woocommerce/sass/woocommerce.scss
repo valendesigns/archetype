@@ -1348,7 +1348,7 @@ dl.variation {
 	padding-top: 2.625em;
 	padding-bottom: 2.625em;
 
-	&.expand-full-width {
+	&.expand-column {
 		padding-left: 2.625em;
 		padding-right: 2.625em;
 	}
@@ -1361,10 +1361,6 @@ dl.variation {
 	.products {
 		margin-bottom: 0;
 	}
-}
-
-.archetype-hero + .archetype-product-section {
-	margin-top: -2.625em;
 }
 
 #order_review {
@@ -2118,7 +2114,7 @@ dl.variation {
 		padding-top: 1.387em;
 		padding-bottom: 1.387em;
 
-		&.expand-full-width {
+		&.expand-column {
 			padding-left: 1.3875em;
 			padding-right: 1.387em;
 		}
@@ -2201,7 +2197,7 @@ dl.variation {
 		padding-top: 2.125em;
 		padding-bottom: 2.1257em;
 
-		&.expand-full-width {
+		&.expand-column {
 			padding-left: 2.125em;
 			padding-right: 2.125em;
 		}

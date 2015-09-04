@@ -20,7 +20,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 		}
 
 		// Layout.
-		$layout              = ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-full-width' : '' );
+		$layout              = ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_hero_layout', true ) ) ? 'expand-column' : '' );
 
 		// Alignment.
 		$alignment           = esc_attr( get_theme_mod( 'archetype_homepage_hero_alignment', 'center' ) );
@@ -232,7 +232,7 @@ if ( ! function_exists( 'archetype_homepage_hero_add_button' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'archetype_homepage_content_components' ) ) :
+if ( ! function_exists( 'archetype_homepage_widgets_components' ) ) :
 	/**
 	 * Adds the homepage content components.
 	 *
@@ -240,37 +240,37 @@ if ( ! function_exists( 'archetype_homepage_content_components' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_content_components() {
+	function archetype_homepage_widgets_components() {
 		/**
 		 * Filter the number of component sections displayed in the Customizer.
 		 *
 		 * It is important to note that when adding additional components you must create a new function.
-		 * The function name must be `archetype_homepage_content_x` where `x` is the component number.
+		 * The function name must be `archetype_homepage_widgets_x` where `x` is the component number.
 		 * There is already support for 1-3, though if you added 2 more section you would need to create
-		 * `archetype_homepage_content_4` & `archetype_homepage_content_5`. The function must contain the
-		 * `archetype_homepage_content_component` function which is passed the component number.
+		 * `archetype_homepage_widgets_4` & `archetype_homepage_widgets_5`. The function must contain the
+		 * `archetype_homepage_widgets_component` function which is passed the component number.
 		 *
 		 * Example:
 		 *
-		 * function archetype_homepage_content_4() {
-		 *   archetype_homepage_content_component( 4 );
+		 * function archetype_homepage_widgets_4() {
+		 *   archetype_homepage_widgets_component( 4 );
 		 * }
 		 *
 		 * @since 1.0.0
 		 *
 		 * @param int $components The number of components. The default is '3'.
 		 */
-		$components = apply_filters( 'archetype_homepage_content_components', 3 );
+		$components = apply_filters( 'archetype_homepage_widgets_components', 3 );
 
 		for ( $id = 1; $id <= absint( $components ); $id++ ) {
 			$modifier = 2 < $id ? 5 : 0;
 			$priority = ( $id + $modifier ) * 10;
-			add_action( 'homepage', 'archetype_homepage_content_' . $id, $priority );
+			add_action( 'homepage', 'archetype_homepage_widgets_' . $id, $priority );
 		}
 	}
 endif;
 
-if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
+if ( ! function_exists( 'archetype_homepage_widgets_component' ) ) :
 	/**
 	 * Displays the homepage content component by ID.
 	 *
@@ -278,82 +278,90 @@ if ( ! function_exists( 'archetype_homepage_content_component' ) ) :
 	 *
 	 * @param int $id The component ID. Default is '1'.
 	 */
-	function archetype_homepage_content_component( $id = 1 ) {
-		// Customizer content.
-		$content_page = archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_content_' . $id, ( 1 === $id ? get_option( 'page_on_front' ) : 0 ) ) );
+	function archetype_homepage_widgets_component( $id = 1 ) {
+		$sidebar_id = 'homepage-' . $id;
 
-		$content_text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_' . $id . '_text_color', apply_filters( 'archetype_default_homepage_content_' . $id . '_text_color', '#555' ) ) );
+		if ( ! is_active_sidebar( $sidebar_id ) ) {
+			return;
+		}
 
-		$content_background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_content_' . $id . '_background_color', apply_filters( 'archetype_default_homepage_content_' . $id . '_background_color', '#fff' ) ) );
+		$full_width = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_full_width_toggle', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_full_width_toggle', false ) ) );
 
-		$content_alignment = esc_attr( get_theme_mod( 'archetype_homepage_content_' . $id . '_alignment', 'left' ) );
+		$columns = esc_attr( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_columns', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_columns', 'widget-cols-4' ) ) );
 
-		// Background image.
-		$background_img_src = wp_get_attachment_image_src( archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_content_' . $id . '_background_image', '' ) ), 'full' );
-		$background_img = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
+		$gutters = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_gutters_toggle', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_gutters_toggle', true ) ) );
 
-		// Background image size.
-		$background_img_size = esc_attr( get_theme_mod( 'archetype_homepage_content_' . $id . '_background_image_size', 'auto' ) );
+		$container_padding = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_padding_toggle', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_padding_toggle', true ) ) );
+
+		$container_inner_padding = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_inner_padding_toggle', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_inner_padding_toggle', false ) ) );
+
+		$heading_border = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_heading_border_toggle', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_heading_border_toggle', true ) ) );
+
+		$bottom_margin = archetype_sanitize_checkbox( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_bottom_margin_toggle', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_bottom_margin_toggle', true ) ) );
+
+		$alignment = esc_attr( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_alignment', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_alignment', 'left' ) ) );
 
 		// CSS classes.
-		$classes = array();
-		$classes[] = 'archetype-homepage-content';
-		$classes[] = 'archetype-homepage-content-' . $id;
-		$classes[] = $content_alignment;
-		$classes[] = 'expand-full-width';
+		$classes   = array();
+		$classes[] = 'archetype-widgets-section';
+		$classes[] = 'archetype-homepage-widgets-' . $id;
+		$classes[] = $alignment;
+		$classes[] = 'expand-column';
 
-		// CSS style attributes.
-		$styles = array();
-		$styles[] = "color: $content_text_color;";
-		$styles[] = "background-color: $content_background_color;";
-
-		if ( ! empty( $background_img ) ) {
-			$styles[] = "background-image: url($background_img);";
-			$styles[] = "background-size: $background_img_size;";
-			$styles[] = 'background-repeat: no-repeat;';
-			$styles[] = 'background-position: center;';
+		if ( true === $full_width ) {
+			$classes[] = 'full-width-column';
 		}
 
-		if ( 0 !== $content_page && $page_data = get_page( $content_page ) ) {
-			/**
-			 * Filter the CSS classes added to the section tag.
-			 *
-			 * @since 1.0.0
-			 *
-			 * @param array $classes Array of CSS classes.
-			 * @param int   $id The component ID.
-			 */
-			$classes = apply_filters( 'archetype_homepage_content_component_classes', $classes, $id );
+		$classes[] = $columns;
 
-			/**
-			 * Filter the inline CSS styles added to the section tag.
-			 *
-			 * @since 1.0.0
-			 *
-			 * @param array $styles Array of inline CSS styles.
-			 * @param int   $id The component ID.
-			 */
-			$styles = apply_filters( 'archetype_homepage_content_component_styles', $styles, $id );
-			?>
-			<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( ' ', $styles ) ); ?>">
-
-				<div class="col-full">
-
-					<?php do_action( 'archetype_homepage_before_content_' . $id ); ?>
-
-					<?php echo apply_filters( 'the_content', $page_data->post_content ); ?>
-
-					<?php do_action( 'archetype_homepage_after_content_' . $id ); ?>
-
-				</div><!-- .col-full -->
-
-			</section><!-- .archetype-homepage-content -->
-			<?php
+		if ( false === $gutters ) {
+			$classes[] = 'no-gutters';
 		}
+
+		if ( true === $container_padding ) {
+			$classes[] = 'add-padding';
+		}
+
+		if ( true === $container_inner_padding ) {
+			$classes[] = 'add-inner-padding';
+		}
+
+		if ( false === $heading_border ) {
+			$classes[] = 'no-heading-border';
+		}
+
+		if ( true === $bottom_margin ) {
+			$classes[] = 'add-bottom-margin';
+		}
+
+		/**
+		 * Filter the CSS classes added to the section tag.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $classes Array of CSS classes.
+		 * @param int   $id The component ID.
+		 */
+		$classes = apply_filters( 'archetype_homepage_widgets_component_classes', $classes, $id );
+		?>
+		<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+
+			<div class="col-full">
+
+				<?php do_action( 'archetype_homepage_before_content_' . $id ); ?>
+
+				<?php dynamic_sidebar( $sidebar_id ); ?>
+
+				<?php do_action( 'archetype_homepage_after_content_' . $id ); ?>
+
+			</div><!-- .col-full -->
+
+		</section><!-- .archetype-homepage-content -->
+		<?php
 	}
 endif;
 
-if ( ! function_exists( 'archetype_homepage_content_1' ) ) :
+if ( ! function_exists( 'archetype_homepage_widgets_1' ) ) :
 	/**
 	 * Displays homepage content 1.
 	 *
@@ -361,12 +369,12 @@ if ( ! function_exists( 'archetype_homepage_content_1' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_content_1() {
-		archetype_homepage_content_component( 1 );
+	function archetype_homepage_widgets_1() {
+		archetype_homepage_widgets_component( 1 );
 	}
 endif;
 
-if ( ! function_exists( 'archetype_homepage_content_2' ) ) :
+if ( ! function_exists( 'archetype_homepage_widgets_2' ) ) :
 	/**
 	 * Displays homepage content 2.
 	 *
@@ -374,12 +382,12 @@ if ( ! function_exists( 'archetype_homepage_content_2' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_content_2() {
-		archetype_homepage_content_component( 2 );
+	function archetype_homepage_widgets_2() {
+		archetype_homepage_widgets_component( 2 );
 	}
 endif;
 
-if ( ! function_exists( 'archetype_homepage_content_3' ) ) :
+if ( ! function_exists( 'archetype_homepage_widgets_3' ) ) :
 	/**
 	 * Displays homepage content 3.
 	 *
@@ -387,7 +395,7 @@ if ( ! function_exists( 'archetype_homepage_content_3' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	function archetype_homepage_content_3() {
-		archetype_homepage_content_component( 3 );
+	function archetype_homepage_widgets_3() {
+		archetype_homepage_widgets_component( 3 );
 	}
 endif;

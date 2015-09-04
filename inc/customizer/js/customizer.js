@@ -14,6 +14,7 @@
 
 	var ArchetypeCustomizer = {
 		init: function() {
+			ArchetypeCustomizer.autoFocus();
 			ArchetypeCustomizer.siteLogo();
 			ArchetypeCustomizer.componentOrder();
 			ArchetypeCustomizer.componentToggle();
@@ -32,6 +33,16 @@
 			$svg       = $( '.svg-site-logo', _frame );
 			$branding  = $( '.site-branding', _frame ),
 			size       = $logo.attr( 'data-size', _frame );
+		},
+
+		autoFocus: function() {
+			$( '.archetype-autofocus' ).on( 'click', function() {
+				var section = wp.customize.section( $( this ).data( 'id' ) );
+				if ( section ) {
+					section.focus();
+					wp.customize.previewer.previewUrl.set( wp.customize.settings.url.home );
+				}
+			} );
 		},
 
 		siteLogo: function() {

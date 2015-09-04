@@ -1170,6 +1170,99 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			$style .= $button_style;
 		}
 
+		/** This filter is documented in inc/structure/homepage.php */
+		$components = apply_filters( 'archetype_homepage_widgets_components', 3 );
+
+		// Loop to create content sections.
+		for ( $id = 1; $id <= absint( $components ); $id++ ) {
+
+			// Heading color.
+			$heading_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_heading_color', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_heading_color', '#333' ) ) );
+
+			// Text color.
+			$text_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_text_color', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_text_color', '#555' ) ) );
+
+			// Link color.
+			$link_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_link_color', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_link_color', '#ee543f' ) ) );
+
+			// Link hover color.
+			$link_hover_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_link_color_hover', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_link_color_hover', '#111' ) ) );
+
+			// Background color.
+			$background_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_background_color', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_color', '#f1f1f1' ) ) );
+
+			// Background image.
+			$background_img_src = wp_get_attachment_image_src( archetype_sanitize_integer( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_background_image', '' ) ), 'full' );
+			$background_img = isset( $background_img_src[0] ) ? $background_img_src[0] : '';
+
+			// Background image repeat.
+			$background_img_repeat = esc_attr( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_background_image_repeat', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_image_repeat', 'no-repeat' ) ) );
+
+			// Background image position.
+			$background_img_position = esc_attr( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_background_image_position', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_image_position', 'center' ) ) );
+
+			// Background image size.
+			$background_img_size = esc_attr( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_background_image_size', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_image_size', 'auto' ) ) );
+			if ( is_numeric( $background_img_size ) ) {
+				$background_img_size .= '%'; 
+			}
+
+			// CSS style attributes.
+			$attrs = '';
+			$title_attrs = '';
+
+			if ( '#333' !== $heading_color && '#333333' !== $heading_color ) {
+				$title_attrs .= "color: $heading_color;";
+			}
+
+			if ( '#555' !== $text_color && '#555555' !== $text_color ) {
+				$attrs .= "color: $text_color;";
+				$title_attrs .= "border-color: $text_color;";
+			}
+
+			if ( '#f1f1f1' !== $background_color ) {
+				$attrs .= "background-color: $background_color;";
+			}
+
+			if ( ! empty( $background_img ) ) {
+				$attrs .= "background-image: url($background_img);";
+				$attrs .= "background-repeat: $background_img_repeat;";
+				$attrs .= "background-position: $background_img_position;";
+				$attrs .= "background-size: $background_img_size;";
+			}
+
+			if ( ! empty( $attrs ) ) {
+				$style .= '
+				.archetype-homepage-widgets-' . $id . ' {
+					' . $attrs . '
+				}';
+			}
+
+			if ( ! empty( $title_attrs ) ) {
+				$style .= '
+				.archetype-homepage-widgets-' . $id . ' .widget h3.widget-title {
+					' . $title_attrs . '
+				}';
+			}
+
+			if ( '#ee543f' !== $link_color ) {
+				$style .= '
+				.archetype-homepage-widgets-' . $id . ' a:not(.button) {
+					color: ' . $link_color . ';
+				}
+				.archetype-homepage-widgets-' . $id . ' a:not(.button):focus {
+					outline-color: ' . $link_color . ';
+				}';
+			}
+
+			if ( '#111' !== $link_hover_color && '#111111' !== $link_hover_color ) {
+				$style .= '
+				.archetype-homepage-widgets-' . $id . ' a:not(.button):hover {
+					color: ' . $link_hover_color . ';
+				}';
+			}
+		}
+		
 		// Footer heading.
 		$footer_heading_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_heading_color', apply_filters( 'archetype_default_footer_heading_color', '#f1f1f1' ) ) );
 
@@ -1205,7 +1298,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		if ( '#24282a' !== $footer_subscribe_and_connect_bg ) {
 			$style .= '
-			#colophon .subscribe-and-connect-connect {
+			.widget h3.widget-title {
 				background-color: ' . $footer_subscribe_and_connect_bg . ';
 			}';
 		}

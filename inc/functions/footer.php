@@ -68,35 +68,25 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_footer_widgets() {
-		/** This filter is documented in inc/functions/setup.php */
-		$footer_widget_regions = apply_filters( 'archetype_footer_widget_regions', 4 );
-		$widget_columns = 0;
-
-		for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
-			if ( is_active_sidebar( 'footer-' . $i ) ) {
-				$widget_columns++;
-				$last = $i;
-			}
+		if ( ! is_active_sidebar( 'footer-1' ) ) {
+			return;
 		}
 
 		// CSS classes.
 		$classes = array();
 		$classes[] = 'footer-widgets';
-		$classes[] = 'dynamic-widget-regions';
-		$classes[] = 'col-' . intval( $widget_columns );
 
 		// CSS style attributes.
 		$styles = array();
 
 		/**
-		 * Filter the CSS classes added to the aside tag.
+		 * Filter the CSS classes added to the section tag.
 		 *
 		 * @since 1.0.0
 		 *
 		 * @param array $classes Array of CSS classes.
-		 * @param int   $widget_columns The number of widget columns.
 		 */
-		$classes = apply_filters( 'archetype_footer_widget_regions_classes', $classes, $widget_columns );
+		$classes = apply_filters( 'archetype_footer_widgets_classes', $classes );
 
 		/**
 		 * Filter the inline CSS styles added to the section tag.
@@ -104,29 +94,14 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) :
 		 * @since 1.0.0
 		 *
 		 * @param array $styles Array of inline CSS styles.
-		 * @param int   $widget_columns The number of widget columns.
 		 */
-		$styles = apply_filters( 'archetype_footer_widget_regions_styles', $styles, $widget_columns );
+		$styles = apply_filters( 'archetype_footer_widgets_styles', $styles );
 
-		if ( $widget_columns > 0 ) : ?>
-
-			<div class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
-
-				<?php $i = 0; while ( $i < $footer_widget_regions ) : $i++; ?>
-
-					<?php if ( is_active_sidebar( 'footer-' . $i ) ) : ?>
-
-						<div class="footer-widget-area-<?php echo intval( $i ); ?> <?php echo $i === $last ? 'dynamic-widget-region last' : 'dynamic-widget-region'; ?>">
-							<?php dynamic_sidebar( 'footer-' . intval( $i ) ); ?>
-						</div>
-
-					<?php endif; ?>
-
-				<?php endwhile; ?>
-
-			</div><!-- .footer-widgets	-->
-
-		<?php endif;
+		?>
+		<section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
+			<?php dynamic_sidebar( 'footer-1' ); ?>
+		</section><!-- .footer-widgets	-->
+		<?php
 	}
 endif;
 

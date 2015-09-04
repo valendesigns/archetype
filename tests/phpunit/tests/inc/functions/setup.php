@@ -78,16 +78,8 @@ class Tests_Setup extends WP_UnitTestCase {
 		global $wp_registered_sidebars;
 
 		$this->assertInternalType( 'array', $wp_registered_sidebars['sidebar-1'] );
-
-		$header_widget_regions = apply_filters( 'archetype_header_widget_regions', 4 );
-		for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
-			$this->assertInternalType( 'array', $wp_registered_sidebars[ 'header-' . $i ] );
-		}
-
-		$footer_widget_regions = apply_filters( 'archetype_footer_widget_regions', 4 );
-		for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
-			$this->assertInternalType( 'array', $wp_registered_sidebars[ 'footer-' . $i ] );
-		}
+		$this->assertInternalType( 'array', $wp_registered_sidebars['header-1'] );
+		$this->assertInternalType( 'array', $wp_registered_sidebars['footer-1'] );
 	}
 
 	/**

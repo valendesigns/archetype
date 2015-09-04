@@ -162,43 +162,6 @@
 	.error-404 {
 		@include span(isolate 8 at 3);
 	}
-
-	/**
-	 * Dynamic widget regions
-	 */
-	.dynamic-widget-regions {
-		@include clearfix;
-
-		&.col-2 {
-			.dynamic-widget-region {
-				@include span(6 of 12);
-
-				&.last {
-					@include last;
-				}
-			}
-		}
-
-		&.col-3 {
-			.dynamic-widget-region {
-				@include span(4 of 12);
-
-				&.last {
-					@include last;
-				}
-			}
-		}
-
-		&.col-4 {
-			.dynamic-widget-region {
-				@include span(3 of 12);
-
-				&.last {
-					@include last;
-				}
-			}
-		}
-	}
 }
 
 @media screen and (min-width: 74em) {

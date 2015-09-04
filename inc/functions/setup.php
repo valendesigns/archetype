@@ -125,53 +125,45 @@ function archetype_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	/**
-	 * Filter the number of registered header widget regions.
-	 *
-	 * There is built-in support for up to 4 widget regions.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param int $header_widget_regions The number of widget regions. Default is '4'.
-	 */
-	$header_widget_regions = apply_filters( 'archetype_header_widget_regions', 4 );
+	$header_cols =  esc_attr( get_theme_mod( 'archetype_header_widgets_columns', 'cols-3' ) );
+	register_sidebar( array(
+		'name'           => __( 'Header', 'archetype' ),
+		'id'             => 'header-1',
+		'description'    => __( 'Widgetized Header Region.', 'archetype' ),
+		'before_widget'  => '<aside id="%1$s" class="widget ' . $header_cols . ' %2$s">',
+		'after_widget'   => '</aside>',
+		'before_title'   => '<h3 class="widget-title">',
+		'after_title'    => '</h3>',
+		)
+	);
 
-	for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
+	/** This filter is documented in inc/structure/homepage.php */
+	$content_components = apply_filters( 'archetype_homepage_widgets_components', 3 );
+
+	for ( $i = 1; $i <= absint( $content_components ); $i++ ) {
 		register_sidebar( array(
-			'name'           => sprintf( __( 'Header %d', 'archetype' ), $i ),
-			'id'             => sprintf( 'header-%d', $i ),
-			'description'    => sprintf( __( 'Widgetized Header Region %d.', 'archetype' ), $i ),
-			'before_widget'  => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'   => '</section>',
+			'name'           => sprintf( __( 'Homepage %d', 'archetype' ), $i ),
+			'id'             => sprintf( 'homepage-%d', $i ),
+			'description'    => sprintf( __( 'Widgetized Homepage Content Region %d.', 'archetype' ), $i ),
+			'before_widget'  => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'   => '</aside>',
 			'before_title'   => '<h3 class="widget-title">',
 			'after_title'    => '</h3>',
 			)
 		);
 	}
 
-	/**
-	 * Filter the number of registered footer widget regions.
-	 *
-	 * There is built-in support for up to 4 widget regions.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param int $footer_widget_regions The number of widget regions. Default is '4'.
-	 */
-	$footer_widget_regions = apply_filters( 'archetype_footer_widget_regions', 4 );
-
-	for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
-		register_sidebar( array(
-			'name'           => sprintf( __( 'Footer %d', 'archetype' ), $i ),
-			'id'             => sprintf( 'footer-%d', $i ),
-			'description'    => sprintf( __( 'Widgetized Footer Region %d.', 'archetype' ), $i ),
-			'before_widget'  => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'   => '</section>',
-			'before_title'   => '<h3 class="widget-title">',
-			'after_title'    => '</h3>',
-			)
-		);
-	}
+	$footer_cols =  esc_attr( get_theme_mod( 'archetype_footer_widgets_columns', 'cols-3' ) );
+	register_sidebar( array(
+		'name'           => __( 'Footer', 'archetype' ),
+		'id'             => 'footer-1',
+		'description'    => __( 'Widgetized Footer Region.', 'archetype' ),
+		'before_widget'  => '<aside id="%1$s" class="widget ' . $footer_cols . ' %2$s">',
+		'after_widget'   => '</aside>',
+		'before_title'   => '<h3 class="widget-title">',
+		'after_title'    => '</h3>',
+		)
+	);
 }
 
 /**
@@ -305,18 +297,8 @@ function archetype_body_classes( $classes ) {
 		$classes[] = 'archetype-full-width-content';
 	}
 
-	/** This filter is documented in inc/functions/setup.php */
-	$header_widget_regions = apply_filters( 'archetype_header_widget_regions', 4 );
-	$header_widgets = false;
-
-	for ( $i = 1; $i <= intval( $header_widget_regions ); $i++ ) {
-		if ( is_active_sidebar( 'header-' . $i ) ) {
-			$header_widgets = true;
-		}
-	}
-
 	// Active header widgets.
-	if ( true === $header_widgets ) {
+	if ( is_active_sidebar( 'header-1' ) ) {
 		$classes[] = 'archetype-has-header-widgets';
 	}
 

@@ -11,6 +11,10 @@ section + .archetype-hero {
 	padding: 5.250em 0;
 }
 
+.archetype-hero-overlay {
+	margin: 0 -2.625em;
+}
+
 .archetype-hero-has-grid {
 	.archetype-hero-content,
 	.archetype-hero-media {
@@ -43,7 +47,7 @@ section + .archetype-hero {
 	}
 }
 
-.archetype-hero.expand-full-width {
+.archetype-hero.expand-column {
 	padding: 0 2.625em;
 
 	.archetype-hero-overlay {
@@ -52,7 +56,7 @@ section + .archetype-hero {
 }
 
 @media screen and (max-width: 74em) {
-	.archetype-hero.expand-full-width {
+	.archetype-hero.expand-column {
 		.archetype-hero-overlay {
 			position: relative;
 			margin: 0 -2.625em;
@@ -61,7 +65,7 @@ section + .archetype-hero {
 }
 
 @media screen and (min-width: 74em) {
-	.archetype-hero.expand-full-width {
+	.archetype-hero.expand-column {
 		.archetype-hero-overlay {
 			.is-boxed &,
 			.is-full-width & {
@@ -93,7 +97,7 @@ section + .archetype-hero {
  */
  
 @media screen and (max-width: 568px) {
-	.archetype-hero.expand-full-width {
+	.archetype-hero.expand-column {
 		padding: 0 1.387em;
 
 		.archetype-hero-overlay {
@@ -120,7 +124,7 @@ section + .archetype-hero {
  */
 
 @media screen and (min-width: 768px) and (max-width: 74em) {
-	.archetype-hero.expand-full-width {
+	.archetype-hero.expand-column {
 		padding: 0 2.125em;
 
 		.archetype-hero-overlay {

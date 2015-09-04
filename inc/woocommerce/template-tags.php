@@ -42,7 +42,7 @@ if ( ! function_exists( 'archetype_product_categories' ) ) :
 
 		if ( ! empty( $products ) && $empty !== $products ) {
 
-			echo '<section class="archetype-product-section archetype-product-categories expand-full-width" style="background-color: ' . $background . ';">';
+			echo '<section class="archetype-product-section archetype-product-categories expand-column" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
 
@@ -92,7 +92,7 @@ if ( ! function_exists( 'archetype_recent_products' ) ) :
 
 		if ( ! empty( $products ) && $empty !== $products ) {
 
-			echo '<section class="archetype-product-section archetype-recent-products expand-full-width" style="background-color: ' . $background . ';">';
+			echo '<section class="archetype-product-section archetype-recent-products expand-column" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
 
@@ -146,7 +146,7 @@ if ( ! function_exists( 'archetype_featured_products' ) ) :
 
 		if ( ! empty( $products ) && $empty !== $products ) {
 
-			echo '<section class="archetype-product-section archetype-featured-products expand-full-width" style="background-color: ' . $background . ';">';
+			echo '<section class="archetype-product-section archetype-featured-products expand-column" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
 
@@ -196,7 +196,7 @@ if ( ! function_exists( 'archetype_top_rated_products' ) ) :
 
 		if ( ! empty( $products ) && $empty !== $products ) {
 
-			echo '<section class="archetype-product-section archetype-popular-products expand-full-width" style="background-color: ' . $background . ';">';
+			echo '<section class="archetype-product-section archetype-popular-products expand-column" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
 
@@ -246,7 +246,7 @@ if ( ! function_exists( 'archetype_on_sale_products' ) ) :
 
 		if ( ! empty( $products ) && $empty !== $products ) {
 
-			echo '<section class="archetype-product-section archetype-on-sale-products expand-full-width" style="background-color: ' . $background . ';">';
+			echo '<section class="archetype-product-section archetype-on-sale-products expand-column" style="background-color: ' . $background . ';">';
 
 				echo '<div class="col-full">';
 

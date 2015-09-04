@@ -3,7 +3,7 @@
  */
 
 .widget {
-	margin: 0 0 2.625em;
+	margin-bottom: 2.625em;
 
 	&:last-child {
 		.dynamic-widget-region & {
@@ -25,7 +25,8 @@
 		padding: 0 0 1em;
 		margin-bottom: 1em;
 
-		.footer-widgets & {
+		.footer-widgets &,
+		.no-heading-border & {
 			border-bottom: 0;
 			margin-bottom: 0;
 		}
@@ -59,10 +60,6 @@
 			}
 		}
 	}
-}
-
-.header-widget-region {
-	@include clearfix;
 }
 
 .widget_search,
@@ -137,6 +134,8 @@
 .widget-area,
 .header-widgets,
 .footer-widgets {
+	@include clearfix;
+
 	#wp-calendar {
 		th,
 		td {
@@ -147,7 +146,7 @@
 }
 
 .header-widgets {
-	padding: 2.625em 0;
+	padding: 2.625em 0 0 0;
 }
 
 .footer-widgets {
@@ -252,6 +251,36 @@
 	}
 }
 
+.archetype-widgets-section {
+	text-align: center;
+	@include clearfix;
+}
+
+.archetype-widgets-section.left {
+	text-align: left;
+}
+
+.archetype-widgets-section.right {
+	text-align: right;
+}
+
+.archetype-widgets-section .hentry,
+.archetype-widgets-section p:last-child {
+	margin-bottom: 0px;
+}
+
+.archetype-widgets-section {
+	.widget {
+		margin-bottom: 0;
+	}
+
+	&.add-bottom-margin {
+		.widget {
+			margin-bottom: 2.625em;
+		}
+	}
+}
+
 @media screen and (max-width: 568px) {
 	.widget {
 		margin-bottom: 1.387em;
@@ -262,11 +291,23 @@
 	}
 
 	.header-widgets {
-		padding: 1.387em 0;
+		padding: 1.387em 0 0 0;
 	}
 
 	.footer-widgets {
 		padding: 2.775em 0 1.387em 0;
+	}
+
+	.archetype-widgets-section {
+		.widget {
+			margin-bottom: 0;
+		}
+
+		&.add-bottom-margin {
+			.widget {
+				margin-bottom: 1.387em;
+			}
+		}
 	}
 }
 
@@ -276,11 +317,23 @@
 	}
 
 	.header-widgets {
-		padding: 2.125em 0;
+		padding: 2.125em 0 0 0;
 	}
 
 	.footer-widgets {
 		padding: 4.25em 0 2.125em 0;
+	}
+
+	.archetype-widgets-section {
+		.widget {
+			margin-bottom: 0;
+		}
+
+		&.add-bottom-margin {
+			.widget {
+				margin-bottom: 2.125em;
+			}
+		}
 	}
 }
 

@@ -2,9 +2,32 @@
  * Grid system
  */
 
+.col-full {
+	position: relative;
+	@include clearfix;
+}
+	
+.full-width-column {
+	> .col-full {
+		max-width: 100vw !important;
+	}
+}
+
+.add-padding {
+	> .col-full {
+		padding: 2.625em;
+	}
+}
+
+.add-inner-padding {
+	> .col-full {
+		padding-left: 5.250em;
+		padding-right: 5.250em;
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.col-full {
-		@include clearfix;
 		@include container(71.25em);
 	}
 
@@ -12,13 +35,165 @@
 		.cols-#{$n} {
 			@include span($n of 12);
 
+			&.no-gutters {
+				@include span($n of 12 inside no-gutters);
+				margin-right: 0;
+			}
+
 			&.last {
 				@include last;
 			}
 		}
+	}
 
-		.cols-#{$n}.no-gutters {
-			@include span($n of 12 wide no-gutters);
+	.widget-cols-8-4 {
+		.widget {
+			&:nth-child(2n+1) {
+				@include span(8 of 12);
+				clear: right;
+			}
+			&:nth-child(2n) {
+				@include span(last 4 of 12);
+			}
+		}
+		&.no-gutters {
+			.widget {
+				margin-right: 0;
+				&:nth-child(2n+1) {
+					@include span(8 of 12 inside no-gutters);
+				}
+				&:nth-child(2n) {
+					@include span(last 4 of 12 inside no-gutters);
+				}
+			}
+		}
+	}
+
+	.widget-cols-4-8 {
+		.widget {
+			&:nth-child(2n+1) {
+				@include span(4 of 12);
+				clear: right;
+			}
+			&:nth-child(2n) {
+				@include span(last 8 of 12);
+			}
+		}
+		&.no-gutters {
+			.widget {
+				margin-right: 0;
+				&:nth-child(2n+1) {
+					@include span(4 of 12 inside no-gutters);
+				}
+				&:nth-child(2n) {
+					@include span(last 8 of 12 inside no-gutters);
+				}
+			}
+		}
+	}
+
+	.widget-cols-9-3 {
+		.widget {
+			&:nth-child(2n+1) {
+				@include span(9 of 12);
+				clear: right;
+			}
+			&:nth-child(2n) {
+				@include span(last 3 of 12);
+			}
+		}
+		&.no-gutters {
+			.widget {
+				margin-right: 0;
+				&:nth-child(2n+1) {
+					@include span(9 of 12 inside no-gutters);
+				}
+				&:nth-child(2n) {
+					@include span(last 3 of 12 inside no-gutters);
+				}
+			}
+		}
+	}
+
+	.widget-cols-3-9 {
+		.widget {
+			&:nth-child(2n+1) {
+				@include span(3 of 12);
+				clear: right;
+			}
+			&:nth-child(2n) {
+				@include span(last 9 of 12);
+			}
+		}
+		&.no-gutters {
+			.widget {
+				margin-right: 0;
+				&:nth-child(2n+1) {
+					@include span(3 of 12 inside no-gutters);
+				}
+				&:nth-child(2n) {
+					@include span(last 9 of 12 inside no-gutters);
+				}
+			}
+		}
+	}
+
+	.widget-cols-6 {
+		.widget {
+			&:nth-child(2n+1) {
+				@include span(6 of 12);
+				clear: right;
+			}
+			&:nth-child(2n) {
+				@include span(last 6 of 12);
+			}
+		}
+		&.no-gutters {
+			.widget {
+				margin-right: 0;
+				&:nth-child(2n+1) {
+					@include span(6 of 12 inside no-gutters);
+				}
+				&:nth-child(2n) {
+					@include span(last 6 of 12 inside no-gutters);
+				}
+			}
+		}
+	}
+
+	.widget-cols-4 {
+		.widget {
+			@include span(4 of 12);
+			&:nth-child(3n+1) {
+				clear: right;
+			}
+			&:nth-child(3n) {
+				@include last;
+			}
+		}
+		&.no-gutters {
+			.widget {
+				@include span(4 of 12 inside no-gutters);
+				margin-right: 0;
+			}
+		}
+	}
+
+	.widget-cols-3 {
+		.widget {
+			@include span(3 of 12);
+			&:nth-child(4n+1) {
+				clear: right;
+			}
+			&:nth-child(4n) {
+				@include last;
+			}
+		}
+		&.no-gutters {
+			.widget {
+				@include span(3 of 12 inside no-gutters);
+				margin-right: 0;
+			}
 		}
 	}
 }
@@ -33,7 +208,7 @@
 			margin-right: 0;
 		}
 			
-		.expand-full-width {
+		.expand-column {
 			position: relative;
 			margin-left: -2.625em;
 			margin-right: -2.625em;
@@ -54,9 +229,9 @@
 			}
 		}
 
-		.expand-full-width {
-			margin-left: -46em;
-			margin-right: -46em;
+		.expand-column {
+			margin-left: -25em;
+			margin-right: -25em;
 
 			.is-boxed &,
 			.is-full-width & {
@@ -65,16 +240,23 @@
 			}
 		}
 	}
-}
 
-@media screen and (min-width: 768px) and (max-width: 74em) {
-	.col-full {
-		margin-left: 2.125em;
-		margin-right: 2.125em;
+	.add-padding {
+		> .col-full {
+			padding: 2.625em 0;
+		}
 
-		.expand-full-width {
-			margin-left: -2.125em;
-			margin-right: -2.125em;
+		&.full-width-column {
+			> .col-full {
+				padding: 2.625em;
+			}
+		}
+	}
+
+	.add-inner-padding {
+		> .col-full {
+			padding-left: 5.250em;
+			padding-right: 5.250em;
 		}
 	}
 }
@@ -84,9 +266,47 @@
 		margin-left: 1.387em;
 		margin-right: 1.387em;
 
-		.expand-full-width {
+		.expand-column {
 			margin-left: -1.387em;
 			margin-right: -1.387em;
+		}
+	}
+
+	.add-padding {
+		> .col-full {
+			padding: 1.387em;
+		}
+	}
+
+	.add-inner-padding {
+		> .col-full {
+			padding-left: 2.775em;
+			padding-right: 2.775em;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 74em) {
+	.col-full {
+		margin-left: 2.125em;
+		margin-right: 2.125em;
+
+		.expand-column {
+			margin-left: -2.125em;
+			margin-right: -2.125em;
+		}
+	}
+
+	.add-padding {
+		> .col-full {
+			padding: 2.125em;
+		}
+	}
+
+	.add-inner-padding {
+		> .col-full {
+			padding-left: 4.250em;
+			padding-right: 4.250em;
 		}
 	}
 }
