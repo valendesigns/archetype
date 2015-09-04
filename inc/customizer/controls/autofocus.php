@@ -31,6 +31,6 @@ class Archetype_Autofocus_Control extends WP_Customize_Control {
 			return;
 		}
 
-		echo '<span class="button archetype-autofocus" data-id="' . esc_attr( $this->data_id ) . '">' . esc_attr__( 'Customize Widgets', 'archetype' ) . '</span>';		
+		echo '<span class="button archetype-autofocus" data-id="' . esc_attr( $this->data_id ) . '">' . esc_attr__( 'Customize Widgets', 'archetype' ) . '</span>';
 	}
 }

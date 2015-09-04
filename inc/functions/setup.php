@@ -125,7 +125,7 @@ function archetype_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	$header_cols =  esc_attr( get_theme_mod( 'archetype_header_widgets_columns', 'cols-3' ) );
+	$header_cols = esc_attr( get_theme_mod( 'archetype_header_widgets_columns', 'cols-3' ) );
 	register_sidebar( array(
 		'name'           => __( 'Header', 'archetype' ),
 		'id'             => 'header-1',
@@ -153,7 +153,7 @@ function archetype_widgets_init() {
 		);
 	}
 
-	$footer_cols =  esc_attr( get_theme_mod( 'archetype_footer_widgets_columns', 'cols-3' ) );
+	$footer_cols = esc_attr( get_theme_mod( 'archetype_footer_widgets_columns', 'cols-3' ) );
 	register_sidebar( array(
 		'name'           => __( 'Footer', 'archetype' ),
 		'id'             => 'footer-1',

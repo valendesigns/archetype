@@ -1204,7 +1204,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			// Background image size.
 			$background_img_size = esc_attr( get_theme_mod( 'archetype_homepage_widgets_' . $id . '_background_image_size', apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_image_size', 'auto' ) ) );
 			if ( is_numeric( $background_img_size ) ) {
-				$background_img_size .= '%'; 
+				$background_img_size .= '%';
 			}
 
 			// CSS style attributes.
@@ -1262,7 +1262,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 				}';
 			}
 		}
-		
+
 		// Footer heading.
 		$footer_heading_color = archetype_sanitize_hex_color( get_theme_mod( 'archetype_footer_heading_color', apply_filters( 'archetype_default_footer_heading_color', '#f1f1f1' ) ) );
 

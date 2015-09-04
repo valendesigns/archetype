@@ -1348,8 +1348,8 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 			 * Section
 			 */
 			$wp_customize->add_section( 'archetype_homepage_widgets_' . $id, array(
-				'title'        => sprintf( __( 'Content (%s)', 'archetype' ), $id ),
-				'description'  => __( 'Customize the look & feel of this content component.', 'archetype' ),
+				'title'        => sprintf( __( 'Widgets (%s)', 'archetype' ), $id ),
+				'description'  => __( 'Customize the look & feel of this homepage widgets area.', 'archetype' ),
 				'priority'     => $priority,
 				'panel'        => 'archetype_homepage',
 			) );
