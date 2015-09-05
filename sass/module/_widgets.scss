@@ -132,8 +132,7 @@
 }
 
 .widget-area,
-.header-widgets,
-.footer-widgets {
+.archetype-widgets-section {
 	@include clearfix;
 
 	#wp-calendar {
@@ -145,12 +144,8 @@
 	}
 }
 
-.header-widgets {
-	padding: 2.625em 0 0 0;
-}
-
 .footer-widgets {
-	padding: 5.25em 0 2.625em 0;
+	padding-top: 2.625em;
 }
 
 .widget_recent_entries,

@@ -15,7 +15,13 @@
 
 .add-padding {
 	> .col-full {
-		padding: 2.625em;
+		padding: 2.625em 0;
+	}
+
+	&.expand-column {
+		> .col-full {
+			padding: 2.625em;
+		}
 	}
 }
 
@@ -242,8 +248,10 @@
 	}
 
 	.add-padding {
-		> .col-full {
-			padding: 2.625em 0;
+		&.expand-column {
+			> .col-full {
+				padding: 2.625em 0;
+			}
 		}
 
 		&.full-width-column {
@@ -274,7 +282,13 @@
 
 	.add-padding {
 		> .col-full {
-			padding: 1.387em;
+			padding: 1.387em 0;
+		}
+
+		&.expand-column {
+			> .col-full {
+				padding: 1.387em;
+			}
 		}
 	}
 
@@ -299,7 +313,13 @@
 
 	.add-padding {
 		> .col-full {
-			padding: 2.125em;
+			padding: 2.125em 0;
+		}
+
+		&.expand-column {
+			> .col-full {
+				padding: 2.125em;
+			}
 		}
 	}
 

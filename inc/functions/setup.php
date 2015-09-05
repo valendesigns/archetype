@@ -125,12 +125,11 @@ function archetype_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	$header_cols = esc_attr( get_theme_mod( 'archetype_header_widgets_columns', 'cols-3' ) );
 	register_sidebar( array(
 		'name'           => __( 'Header', 'archetype' ),
 		'id'             => 'header-1',
 		'description'    => __( 'Widgetized Header Region.', 'archetype' ),
-		'before_widget'  => '<aside id="%1$s" class="widget ' . $header_cols . ' %2$s">',
+		'before_widget'  => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'   => '</aside>',
 		'before_title'   => '<h3 class="widget-title">',
 		'after_title'    => '</h3>',
@@ -138,13 +137,13 @@ function archetype_widgets_init() {
 	);
 
 	/** This filter is documented in inc/structure/homepage.php */
-	$content_components = apply_filters( 'archetype_homepage_widgets_components', 3 );
+	$widgets = apply_filters( 'archetype_homepage_widgets', 5 );
 
-	for ( $i = 1; $i <= absint( $content_components ); $i++ ) {
+	for ( $id = 1; $id <= absint( $widgets ); $id++ ) {
 		register_sidebar( array(
-			'name'           => sprintf( __( 'Homepage %d', 'archetype' ), $i ),
-			'id'             => sprintf( 'homepage-%d', $i ),
-			'description'    => sprintf( __( 'Widgetized Homepage Content Region %d.', 'archetype' ), $i ),
+			'name'           => sprintf( __( 'Homepage %d', 'archetype' ), $id ),
+			'id'             => sprintf( 'homepage-%d', $id ),
+			'description'    => sprintf( __( 'Widgetized Homepage Content Region %d.', 'archetype' ), $id ),
 			'before_widget'  => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'   => '</aside>',
 			'before_title'   => '<h3 class="widget-title">',
@@ -153,12 +152,11 @@ function archetype_widgets_init() {
 		);
 	}
 
-	$footer_cols = esc_attr( get_theme_mod( 'archetype_footer_widgets_columns', 'cols-3' ) );
 	register_sidebar( array(
 		'name'           => __( 'Footer', 'archetype' ),
 		'id'             => 'footer-1',
 		'description'    => __( 'Widgetized Footer Region.', 'archetype' ),
-		'before_widget'  => '<aside id="%1$s" class="widget ' . $footer_cols . ' %2$s">',
+		'before_widget'  => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'   => '</aside>',
 		'before_title'   => '<h3 class="widget-title">',
 		'after_title'    => '</h3>',

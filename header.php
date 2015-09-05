@@ -54,7 +54,7 @@
 	do_action( 'archetype_before_content' ); ?>
 
 	<div id="content" class="site-content" tabindex="-1">
-		<div class="col-full">
+		<?php echo ! is_page_template( 'template-homepage.php' ) ? '<div class="col-full">' : ''; ?>
 
 		<?php
 		/**

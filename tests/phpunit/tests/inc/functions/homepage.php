@@ -20,7 +20,7 @@ class Tests_Homepage extends WP_UnitTestCase {
 	/**
 	 * Adds the homepage content components.
 	 */
-	function test_archetype_homepage_widgets_components() {
+	function test_archetype_homepage_widgets() {
 
 		$this->markTestIncomplete( 'This test has not been implemented.' );
 
@@ -29,7 +29,7 @@ class Tests_Homepage extends WP_UnitTestCase {
 	/**
 	 * Displays the homepage content component by ID.
 	 */
-	function test_archetype_homepage_widgets_component() {
+	function test_archetype_homepage_widgets_area() {
 
 		$this->markTestIncomplete( 'This test has not been implemented.' );
 

@@ -28,6 +28,8 @@ do_action( 'archetype_get_header' ); ?>
 			 * @hooked archetype_top_rated_products - 60
 			 * @hooked archetype_on_sale_products - 70
 			 * @hooked archetype_homepage_widgets_3 - 80
+			 * @hooked archetype_homepage_widgets_4 - 90
+			 * @hooked archetype_homepage_widgets_5 - 100
 			 */
 			do_action( 'homepage' ); ?>
 

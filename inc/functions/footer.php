@@ -15,19 +15,15 @@ if ( ! function_exists( 'archetype_site_footer' ) ) :
 	 */
 	function archetype_site_footer() {
 		?>
-		<div class="<?php archetype_site_footer_classes(); ?>" style="<?php archetype_site_footer_styles(); ?>">
+		<div class="site-footer">
 
-			<div class="col-full">
-
-				<?php
-				/**
-				 * Default hooks
-				 *
-				 * @hooked archetype_footer_widgets - 10
-				 */
-				do_action( 'archetype_footer_widgets' ); ?>
-
-			</div><!-- .col-full -->
+			<?php
+			/**
+			 * Default hooks
+			 *
+			 * @hooked archetype_footer_widgets - 10
+			 */
+			do_action( 'archetype_footer_widgets' ); ?>
 
 		</div><!-- .site-footer -->
 		<?php
@@ -72,35 +68,26 @@ if ( ! function_exists( 'archetype_footer_widgets' ) ) :
 			return;
 		}
 
-		// CSS classes.
-		$classes = array();
-		$classes[] = 'footer-widgets';
-
-		// CSS style attributes.
-		$styles = array();
-
-		/**
-		 * Filter the CSS classes added to the section tag.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $classes Array of CSS classes.
-		 */
-		$classes = apply_filters( 'archetype_footer_widgets_classes', $classes );
-
-		/**
-		 * Filter the inline CSS styles added to the section tag.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $styles Array of inline CSS styles.
-		 */
-		$styles = apply_filters( 'archetype_footer_widgets_styles', $styles );
-
+		$classes = archetype_widgets_classes( array(
+			'mod_base'              => 'footer_widgets',
+			'class_name'            => 'footer-widgets',
+			'columns'               => 'widget-cols-3',
+			'expand'                => false,
+		) );
 		?>
-		<section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
-			<?php dynamic_sidebar( 'footer-1' ); ?>
-		</section><!-- .footer-widgets	-->
+		<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+
+			<div class="col-full">
+
+				<?php do_action( 'archetype_before_footer_widgets' ); ?>
+
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+
+				<?php do_action( 'archetype_after_footer_widgets' ); ?>
+
+			</div><!-- .col-full -->
+
+		</section><!-- .footer-widgets -->
 		<?php
 	}
 endif;
@@ -126,53 +113,6 @@ if ( ! function_exists( 'archetype_credit' ) ) :
 			?>
 		</div><!-- .credit	-->
 		<?php
-	}
-endif;
-
-if ( ! function_exists( 'archetype_site_footer_classes' ) ) :
-	/**
-	 * Build the site footer classes.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $classes Array of additional CSS classes.
-	 */
-	function archetype_site_footer_classes( $classes = array() ) {
-		// CSS classes.
-		$classes[] = 'site-footer';
-
-		/**
-		 * Filter the CSS classes added to the site footer.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $classes Array of CSS classes.
-		 */
-		$classes = apply_filters( 'archetype_site_footer_classes', $classes );
-
-		echo esc_attr( implode( ' ', $classes ) );
-	}
-endif;
-
-if ( ! function_exists( 'archetype_site_footer_styles' ) ) :
-	/**
-	 * Build the site footer styles.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $styles Array of inline CSS styles.
-	 */
-	function archetype_site_footer_styles( $styles = array() ) {
-		/**
-		 * Filter the CSS styles added to the site footer.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $styles Array of inline CSS styles.
-		 */
-		$styles = apply_filters( 'archetype_site_footer_styles', $styles );
-
-		echo esc_attr( implode( ' ', $styles ) );
 	}
 endif;
 

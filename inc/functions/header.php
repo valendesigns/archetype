@@ -39,19 +39,15 @@ if ( ! function_exists( 'archetype_header_widget_region' ) ) :
 	 */
 	function archetype_header_widget_region() {
 		?>
-		<div class="<?php archetype_site_header_classes(); ?>" style="<?php archetype_site_header_styles(); ?>">
+		<div class="header-widget-region">
 
-			<div class="col-full">
-
-				<?php
-				/**
-				 * Default hooks
-				 *
-				 * @hooked archetype_header_widgets - 10
-				 */
-				do_action( 'archetype_header_widgets' ); ?>
-
-			</div><!-- .col-full -->
+			<?php
+			/**
+			 * Default hooks
+			 *
+			 * @hooked archetype_header_widgets - 10
+			 */
+			do_action( 'archetype_header_widgets' ); ?>
 
 		</div><!-- .header-widget-region -->
 		<?php
@@ -191,82 +187,25 @@ if ( ! function_exists( 'archetype_header_widgets' ) ) :
 			return;
 		}
 
-		// CSS classes.
-		$classes = array();
-		$classes[] = 'header-widgets';
-
-		// CSS style attributes.
-		$styles = array();
-
-		/**
-		 * Filter the CSS classes added to the section tag.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $classes Array of CSS classes.
-		 */
-		$classes = apply_filters( 'archetype_header_widgets_classes', $classes );
-
-		/**
-		 * Filter the inline CSS styles added to the section tag.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $styles Array of inline CSS styles.
-		 */
-		$styles = apply_filters( 'archetype_header_widgets_styles', $styles );
-
+		$classes = archetype_widgets_classes( array(
+			'mod_base'              => 'header_widgets',
+			'class_name'            => 'header-widgets',
+			'expand'                => false,
+		) );
 		?>
-		<section class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( ' ', $styles ); ?>">
-			<?php dynamic_sidebar( 'header-1' ); ?>
-		</section><!-- .header-widgets	-->
+		<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+
+			<div class="col-full">
+
+				<?php do_action( 'archetype_before_header_widgets' ); ?>
+
+				<?php dynamic_sidebar( 'header-1' ); ?>
+
+				<?php do_action( 'archetype_after_header_widgets' ); ?>
+
+			</div><!-- .col-full -->
+
+		</section><!-- .header-widgets -->
 		<?php
-	}
-endif;
-
-if ( ! function_exists( 'archetype_site_header_classes' ) ) :
-	/**
-	 * Build the site header classes.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $classes Array of additional CSS classes.
-	 */
-	function archetype_site_header_classes( $classes = array() ) {
-		// CSS classes.
-		$classes[] = 'header-widget-region';
-
-		/**
-		 * Filter the CSS classes added to the site header.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $classes Array of CSS classes.
-		 */
-		$classes = apply_filters( 'archetype_site_header_classes', $classes );
-
-		echo esc_attr( implode( ' ', $classes ) );
-	}
-endif;
-
-if ( ! function_exists( 'archetype_site_header_styles' ) ) :
-	/**
-	 * Build the site header styles.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $styles Array of inline CSS styles.
-	 */
-	function archetype_site_header_styles( $styles = array() ) {
-		/**
-		 * Filter the CSS styles added to the site header.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $styles Array of inline CSS styles.
-		 */
-		$styles = apply_filters( 'archetype_site_header_styles', $styles );
-
-		echo esc_attr( implode( ' ', $styles ) );
 	}
 endif;

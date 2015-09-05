@@ -918,6 +918,17 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) ) );
 
 		/**
+		 * Add the Header Widgets section
+		 */
+		archetype_widgets_controls( $wp_customize, array(
+			'title'                 => __( 'Widgets', 'archetype' ),
+			'priority'              => 45,
+			'panel'                 => 'archetype_header',
+			'mod_base'              => 'header_widgets',
+			'sidebar_id'            => 'header-1',
+		) );
+
+		/**
 		 * Add the Homepage panel
 		 */
 		$wp_customize->add_panel( 'archetype_homepage' , array(
@@ -1337,308 +1348,19 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		/** This filter is documented in inc/structure/homepage.php */
-		$components = apply_filters( 'archetype_homepage_widgets_components', 3 );
+		$widgets = apply_filters( 'archetype_homepage_widgets', 5 );
 
-		// Loop to create content sections.
-		for ( $id = 1; $id <= absint( $components ); $id++ ) {
+		// Loop over the homepage widgets.
+		for ( $id = 1; $id <= absint( $widgets ); $id++ ) {
 			$modifier = 2 < $id ? 5 : 0;
-			$priority = ( $id + $modifier ) * 10;
-
-			/**
-			 * Section
-			 */
-			$wp_customize->add_section( 'archetype_homepage_widgets_' . $id, array(
-				'title'        => sprintf( __( 'Widgets (%s)', 'archetype' ), $id ),
-				'description'  => __( 'Customize the look & feel of this homepage widgets area.', 'archetype' ),
-				'priority'     => $priority,
-				'panel'        => 'archetype_homepage',
-			) );
-
-			/**
-			 * Full width toggle
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_full_width_toggle', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_full_width_toggle', false ),
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_full_width_toggle', array(
-				'label'        => __( 'Full Width', 'archetype' ),
-				'description'  => __( 'Expand the column width to fill all of the browser window space.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_full_width_toggle',
-				'type'         => 'checkbox',
-			) ) );
-
-			/**
-			 * Widgets button (no setting required, control does not save)
-			 */
-			$wp_customize->add_control( new Archetype_Autofocus_Control( $wp_customize, 'archetype_homepage_widgets_' . $id, array(
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_full_width_toggle',
-				'data_id'      => 'sidebar-widgets-homepage-' . $id,
-				'priority'     => 1,
-			) ) );
-
-			/**
-			 * Columns
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_columns', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_columns', 'widget-cols-4' ),
-				'sanitize_callback'  => 'archetype_sanitize_choices',
-			) );
-
-			$wp_customize->add_control( 'archetype_homepage_widgets_' . $id . '_columns', array(
-				'label'        => __( 'Columns', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_columns',
-				'type'         => 'select',
-				'choices'      => array(
-					'widget-cols-3'   => '4 Columns 3-3-3-3',
-					'widget-cols-4'   => '3 Columns 4-4-4',
-					'widget-cols-6'   => '2 Columns 6-6',
-					'widget-cols-9-3' => '2 Columns 9-3',
-					'widget-cols-3-9' => '2 Columns 3-9',
-					'widget-cols-8-4' => '2 Columns 8-4',
-					'widget-cols-4-8' => '2 Columns 4-8',
-					'widget-cols-12'  => '1 Column',
-				),
-			) );
-
-			/**
-			 * Gutters toggle
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_gutters_toggle', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_gutters_toggle', true ),
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_gutters_toggle', array(
-				'label'        => __( 'Column Gutters', 'archetype' ),
-				'description'  => __( 'Toggle the display of column gutters.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_gutters_toggle',
-				'type'         => 'checkbox',
-			) ) );
-
-			/**
-			 * Padding toggle
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_padding_toggle', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_padding_toggle', true ),
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_padding_toggle', array(
-				'label'        => __( 'Container Padding', 'archetype' ),
-				'description'  => __( 'Toggle the display of padding around the columns container.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_padding_toggle',
-				'type'         => 'checkbox',
-			) ) );
-
-			/**
-			 * Inner padding toggle
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_inner_padding_toggle', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_inner_padding_toggle', false ),
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_inner_padding_toggle', array(
-				'label'        => __( 'Container Inner Padding', 'archetype' ),
-				'description'  => __( 'Toggle the display of double left & right padding inside the columns container.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_inner_padding_toggle',
-				'type'         => 'checkbox',
-			) ) );
-
-			/**
-			 * Heading border toggle
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_heading_border_toggle', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_heading_border_toggle', true ),
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_heading_border_toggle', array(
-				'label'        => __( 'Widget Heading Border', 'archetype' ),
-				'description'  => __( 'Toggle the display of heading borders for all widgets.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_heading_border_toggle',
-				'type'         => 'checkbox',
-			) ) );
-
-			/**
-			 * Bottom margin toggle
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_bottom_margin_toggle', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_bottom_margin_toggle', true ),
-				'sanitize_callback'  => 'archetype_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_bottom_margin_toggle', array(
-				'label'        => __( 'Widget Bottom Margin', 'archetype' ),
-				'description'  => __( 'Toggle the display of bottom margins for all widgets.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_bottom_margin_toggle',
-				'type'         => 'checkbox',
-			) ) );
-
-			/**
-			 * Alignment
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_alignment', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_alignment', 'left' ),
-				'sanitize_callback'  => 'archetype_sanitize_choices',
-			) );
-
-			$wp_customize->add_control( 'archetype_homepage_widgets_' . $id . '_alignment', array(
-				'label'        => __( 'Text alignment', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_alignment',
-				'type'         => 'radio',
-				'choices'      => array(
-					'left'        => 'Left',
-					'center'      => 'Center',
-					'right'       => 'Right',
-				),
-			) );
-
-			/**
-			 * Heading color
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_heading_color', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_heading_color', '#333' ),
-				'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_heading_color', array(
-				'label'        => __( 'Heading color', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_heading_color',
-			) ) );
-
-			/**
-			 * Text color
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_text_color', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_text_color', '#555' ),
-				'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_text_color', array(
-				'label'        => __( 'Text color', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_text_color',
-			) ) );
-
-			/**
-			 * Link Color
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_link_color', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_link_color', '#ee543f' ),
-				'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_link_color', array(
-				'label'        => __( 'Link color', 'archetype' ),
-				'description'  => __( 'The link color.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_link_color',
-			) ) );
-
-			/**
-			 * Link Color Hover
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_link_color_hover', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_link_color_hover', '#111' ),
-				'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_link_color_hover', array(
-				'label'        => __( 'Link hover color', 'archetype' ),
-				'description'  => __( 'The link hover color.', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_link_color_hover',
-			) ) );
-
-			/**
-			 * Content background color
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_background_color', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_color', '#f1f1f1' ),
-				'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_background_color', array(
-				'label'        => __( 'Background color', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_background_color',
-			) ) );
-
-			/**
-			 * Background image
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_background_image', array(
-				'default'            => '',
-				'sanitize_callback'  => 'archetype_sanitize_integer',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_background_image', array(
-				'label'        => __( 'Background image', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_background_image',
-				'mime_type'    => 'image',
-			) ) );
-
-			/**
-			 * Background repeat
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_background_image_repeat', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_image_repeat', 'no-repeat' ),
-				'sanitize_callback'  => 'archetype_sanitize_choices',
-			) );
-
-			$wp_customize->add_control( new Archetype_Background_Repeat_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_background_image_repeat', array(
-				'label'        => __( 'Background Repeat', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_background_image_repeat',
-			) ) );
-
-			/**
-			 * Background position
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_background_image_position', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_image_position', 'center' ),
-				'sanitize_callback'  => 'archetype_sanitize_choices',
-			) );
-
-			$wp_customize->add_control( new Archetype_Background_Position_Control( $wp_customize, 'archetype_homepage_widgets_' . $id . '_background_image_position', array(
-				'label'        => __( 'Background Position', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_background_image_position',
-			) ) );
-
-			/**
-			 * Background size
-			 */
-			$wp_customize->add_setting( 'archetype_homepage_widgets_' . $id . '_background_image_size', array(
-				'default'            => apply_filters( 'archetype_default_homepage_widgets_' . $id . '_background_image_size', 'auto' ),
-				'sanitize_callback'  => 'archetype_sanitize_choices',
-			) );
-
-			$wp_customize->add_control( 'archetype_homepage_widgets_' . $id . '_background_image_size', array(
-				'label'        => __( 'Background image size', 'archetype' ),
-				'section'      => 'archetype_homepage_widgets_' . $id,
-				'settings'     => 'archetype_homepage_widgets_' . $id . '_background_image_size',
-				'type'         => 'select',
-				'choices'      => array(
-					'auto'        => 'Auto',
-					'cover'       => 'Cover',
-					'50'          => '50%',
-				),
-			) );
+			$args = array(
+				'title'      => sprintf( __( 'Widgets (%s)', 'archetype' ), $id ),
+				'priority'   => ( $id + $modifier ) * 10,
+				'panel'      => 'archetype_homepage',
+				'mod_base'   => 'homepage_widgets_' . $id,
+				'sidebar_id' => 'homepage-' . $id,
+			);
+			archetype_widgets_controls( $wp_customize, $args );
 		}
 
 		/**
@@ -2481,119 +2203,20 @@ if ( ! function_exists( 'archetype_customize_register' ) ) :
 		) );
 
 		/**
-		 * Footer widgets section
+		 * Add the Footer widgets section
 		 */
-		$wp_customize->add_section( 'archetype_footer_widgets' , array(
-			'title'        => __( 'Widgets', 'archetype' ),
-			'priority'     => 10,
-			'panel'        => 'archetype_footer',
-		) );
-
-		/**
-		 * Footer heading color
-		 */
-		$wp_customize->add_setting( 'archetype_footer_heading_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_heading_color', '#f1f1f1' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_heading_color', array(
-			'label'        => __( 'Heading color', 'archetype' ),
-			'section'      => 'archetype_footer_widgets',
-			'settings'     => 'archetype_footer_heading_color',
-		) ) );
-
-		/**
-		 * Footer text color
-		 */
-		$wp_customize->add_setting( 'archetype_footer_text_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_text_color', '#888' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_text_color', array(
-			'label'        => __( 'Text color', 'archetype' ),
-			'section'      => 'archetype_footer_widgets',
-			'settings'     => 'archetype_footer_text_color',
-		) ) );
-
-		/**
-		 * Footer link color
-		 */
-		$wp_customize->add_setting( 'archetype_footer_link_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_link_color', '#aaa' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_link_color', array(
-			'label'        => __( 'Link color', 'archetype' ),
-			'section'      => 'archetype_footer_widgets',
-			'settings'     => 'archetype_footer_link_color',
-		) ) );
-
-		/**
-		 * Footer link hover color
-		 */
-		$wp_customize->add_setting( 'archetype_footer_link_hover_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_link_hover_color', '#fff' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_link_hover_color', array(
-			'label'        => __( 'Link hover color', 'archetype' ),
-			'section'      => 'archetype_footer_widgets',
-			'settings'     => 'archetype_footer_link_hover_color',
-		) ) );
-
-		/**
-		 * Footer Background
-		 */
-		$wp_customize->add_setting( 'archetype_footer_background_color', array(
-			'default'            => apply_filters( 'archetype_default_footer_background_color', '#353b3f' ),
-			'sanitize_callback'  => 'archetype_sanitize_hex_color',
-			'transport'          => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'archetype_footer_background_color', array(
-			'label'        => __( 'Background color', 'archetype' ),
-			'section'      => 'archetype_footer_widgets',
-			'settings'     => 'archetype_footer_background_color',
-		) ) );
-
-		/**
-		 * Footer widgets background image
-		 */
-		$wp_customize->add_setting( 'archetype_footer_background_image', array(
-			'default'            => '',
-			'sanitize_callback'  => 'archetype_sanitize_integer',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'archetype_footer_background_image', array(
-			'label'        => __( 'Background image', 'archetype' ),
-			'section'      => 'archetype_footer_widgets',
-			'settings'     => 'archetype_footer_background_image',
-			'mime_type'    => 'image',
-		) ) );
-
-		/**
-		 * Footer widgets background size
-		 */
-		$wp_customize->add_setting( 'archetype_footer_background_image_size', array(
-			'default'            => apply_filters( 'archetype_default_footer_background_image_size', 'auto' ),
-			'sanitize_callback'  => 'archetype_sanitize_choices',
-		) );
-
-		$wp_customize->add_control( 'archetype_footer_background_image_size', array(
-			'label'        => __( 'Background image size', 'archetype' ),
-			'section'      => 'archetype_footer_widgets',
-			'settings'     => 'archetype_footer_background_image_size',
-			'type'         => 'select',
-			'choices'      => array(
-				'auto'        => __( 'Auto', 'archetype' ),
-				'cover'       => __( 'Cover', 'archetype' ),
-			),
+		archetype_widgets_controls( $wp_customize, array(
+			'title'                 => __( 'Widgets', 'archetype' ),
+			'priority'              => 10,
+			'panel'                 => 'archetype_footer',
+			'mod_base'              => 'footer_widgets',
+			'sidebar_id'            => 'footer-1',
+			'heading_border_toggle' => false,
+			'heading_color'         => '#f1f1f1',
+			'text_color'            => '#888',
+			'link_color'            => '#aaa',
+			'link_color_hover'      => '#fff',
+			'background_color'      => '#353b3f',
 		) );
 
 		if ( class_exists( 'Subscribe_And_Connect', false ) ) {

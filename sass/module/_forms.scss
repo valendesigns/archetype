@@ -38,6 +38,8 @@ input[type="submit"],
 	-webkit-font-smoothing: antialiased;
 	border-radius: $radius-button;
 	box-shadow: 0 -2px 0 $color-button-shadow inset;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
 
 	&.cta,
 	&.alt {

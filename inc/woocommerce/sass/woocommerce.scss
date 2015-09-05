@@ -1348,11 +1348,6 @@ dl.variation {
 	padding-top: 2.625em;
 	padding-bottom: 2.625em;
 
-	&.expand-column {
-		padding-left: 2.625em;
-		padding-right: 2.625em;
-	}
-
 	.section-title {
 		text-align: center;
 		margin-bottom: $spacing-v;
@@ -2113,15 +2108,6 @@ dl.variation {
 	.archetype-product-section {
 		padding-top: 1.387em;
 		padding-bottom: 1.387em;
-
-		&.expand-column {
-			padding-left: 1.3875em;
-			padding-right: 1.387em;
-		}
-
-		&:last-child {
-			margin-bottom: -1.387em;
-		}
 	}
 
 	.single-product.is-padded div.product .summary,
@@ -2196,11 +2182,6 @@ dl.variation {
 	.archetype-product-section {
 		padding-top: 2.125em;
 		padding-bottom: 2.1257em;
-
-		&.expand-column {
-			padding-left: 2.125em;
-			padding-right: 2.125em;
-		}
 	}
 
 	.single-product.is-padded div.product .summary,

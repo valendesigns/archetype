@@ -41,6 +41,7 @@ require get_template_directory() . '/inc/functions/extras.php';
  */
 if ( is_archetype_customizer_enabled() ) {
 	require get_template_directory() . '/inc/customizer/hooks.php';
+	require get_template_directory() . '/inc/customizer/widgets.php';
 	require get_template_directory() . '/inc/customizer/controls.php';
 	require get_template_directory() . '/inc/customizer/display.php';
 	require get_template_directory() . '/inc/customizer/functions.php';

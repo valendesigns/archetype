@@ -81,11 +81,11 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
 /**
  * Homepage
  *
- * @see archetype_homepage_widgets_components()
+ * @see archetype_homepage_widgets()
  * @see archetype_homepage_hero()
  */
-add_action( 'init',     'archetype_homepage_widgets_components', 0 );
-add_action( 'homepage', 'archetype_homepage_hero',               0 );
+add_action( 'init',     'archetype_homepage_widgets', 0 );
+add_action( 'homepage', 'archetype_homepage_hero',    0 );
 
 /**
  * Posts

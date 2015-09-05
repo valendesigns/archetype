@@ -221,6 +221,8 @@ img {
 a {
 	color: $color-link;
 	text-decoration: none;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
 	
 	&:hover {
 		color: $color-link-hover;
