@@ -191,8 +191,8 @@ if ( ! function_exists( 'archetype_widgets_display' ) ) :
 			list( $x, $y ) = $positions;
 
 			if ( is_numeric( $get_background_image_size ) ) {
-				if ( $x === 'left' || $x === 'right' ) {
-					$new_x = $x === 'left' ? 'right' : 'left';
+				if ( 'left' === $x || 'right' === $x ) {
+					$new_x = ( $x === 'left' ? 'right' : 'left' );
 					$style .= "
 					.$class_name {
 							background-position: $x $y;
@@ -270,7 +270,7 @@ if ( ! function_exists( 'archetype_widgets_controls' ) ) :
 	 * @since 1.0.0
 	 *
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-	 * @param array $args An array of arguments that override the defaults.
+	 * @param array                $args An array of arguments that override the defaults.
 	 */
 	function archetype_widgets_controls( $wp_customize, $args = array() ) {
 		if ( false === $wp_customize instanceof WP_Customize_Manager ) {
