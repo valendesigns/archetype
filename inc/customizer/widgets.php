@@ -192,7 +192,7 @@ if ( ! function_exists( 'archetype_widgets_display' ) ) :
 
 			if ( is_numeric( $get_background_image_size ) ) {
 				if ( 'left' === $x || 'right' === $x ) {
-					$new_x = ( $x === 'left' ? 'right' : 'left' );
+					$new_x = ( 'left' === $x ? 'right' : 'left' );
 					$style .= "
 					.$class_name {
 							background-position: $x $y;
