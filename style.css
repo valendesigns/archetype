@@ -2902,10 +2902,11 @@ embed, iframe, object {
 .archetype-widgets-section .hentry, .archetype-widgets-section p:last-child {
   margin-bottom: 0px; }
 
-.archetype-widgets-section .widget {
-  margin-bottom: 0; }
-.archetype-widgets-section.add-bottom-margin .widget {
-  margin-bottom: 2.625em; }
+@media screen and (min-width: 768px) {
+  .archetype-widgets-section .widget {
+    margin-bottom: 0; }
+  .archetype-widgets-section.add-bottom-margin .widget {
+    margin-bottom: 2.625em; } }
 
 @media screen and (max-width: 568px) {
   .widget {

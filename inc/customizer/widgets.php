@@ -199,15 +199,10 @@ if ( ! function_exists( 'archetype_widgets_display' ) ) :
 							background-size: cover;
 							background-repeat: no-repeat;
 					}
-					@media screen and (min-width: 768px) and (max-width: 74em) {
+					@media screen and (min-width: 768px) {
 						.$class_name {
 							background-position: $new_x 50vw $y;
-						}
-					}
-					@media screen and (min-width: 74em) {
-						.$class_name {
-							background-position: $x $y;
-							background-size: 50%;
+							background-size: auto;
 						}
 					}";
 				}

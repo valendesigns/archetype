@@ -264,14 +264,16 @@
 	margin-bottom: 0px;
 }
 
-.archetype-widgets-section {
-	.widget {
-		margin-bottom: 0;
-	}
-
-	&.add-bottom-margin {
+@media screen and (min-width: 768px) {
+	.archetype-widgets-section {
 		.widget {
-			margin-bottom: 2.625em;
+			margin-bottom: 0;
+		}
+
+		&.add-bottom-margin {
+			.widget {
+				margin-bottom: 2.625em;
+			}
 		}
 	}
 }
