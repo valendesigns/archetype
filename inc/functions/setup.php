@@ -335,3 +335,32 @@ function archetype_body_classes( $classes ) {
 
 	return $classes;
 }
+
+/**
+ * Adds the container `.col-full` in `header.php` and `footer.php`.
+ *
+ * @since 1.0.0
+ *
+ * @param bool $end End (close) the `div` markup. Default is `false`.
+ */
+function archetype_container_column( $end = false ) {
+	/**
+	 * Filter the container column markup.
+	 *
+	 * Adds the container `.col-full` in `header.php` and `footer.php` to build the 
+	 * grid sytem. When this is set to `false` the container will be ommited and allow
+	 * the page to override the grid and use its own instead.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool $return Display the container column. Default is `true`.
+	 */
+	$display = apply_filters( 'archetype_container_column', true );
+
+	if ( true === $display ) {
+		echo ( true === $end ) ? '</div>' : '<div class="col-full">';
+	}
+
+	return;
+}
+

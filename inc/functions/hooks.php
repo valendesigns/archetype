@@ -83,9 +83,11 @@ add_action( 'archetype_site_info_footer', 'archetype_credit',         20 );
  *
  * @see archetype_homepage_widgets()
  * @see archetype_homepage_hero()
+ * @see archetype_homepage_column()
  */
-add_action( 'init',     'archetype_homepage_widgets', 0 );
-add_action( 'homepage', 'archetype_homepage_hero',    0 );
+add_action( 'init',                       'archetype_homepage_widgets',   0 );
+add_action( 'homepage',                   'archetype_homepage_hero',      0 );
+add_filter( 'archetype_container_column', 'archetype_homepage_column',  100 );
 
 /**
  * Posts

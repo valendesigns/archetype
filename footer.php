@@ -9,7 +9,8 @@
 
 ?>
 
-		<?php echo ! is_page_template( 'template-homepage.php' ) ? '</div><!-- .col-full -->' : ''; ?>
+		<?php archetype_container_column( true ); ?>
+
 	</div><!-- #content -->
 
 	<?php do_action( 'archetype_before_footer' ); ?>

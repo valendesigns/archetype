@@ -54,7 +54,8 @@
 	do_action( 'archetype_before_content' ); ?>
 
 	<div id="content" class="site-content" tabindex="-1">
-		<?php echo ! is_page_template( 'template-homepage.php' ) ? '<div class="col-full">' : ''; ?>
+
+		<?php archetype_container_column(); ?>
 
 		<?php
 		/**

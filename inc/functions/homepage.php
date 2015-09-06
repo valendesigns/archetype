@@ -7,6 +7,23 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'archetype_homepage_column' ) ) :
+	/**
+	 * Remove the main grid system on the homepage.
+	 *
+	 * Hooked into the `archetype_container_column` action at priority 100
+	 *
+	 * @since 1.0.0
+	 */
+	function archetype_homepage_column( $display ) {
+		if ( is_page_template( 'template-homepage.php' ) ) {
+			return false;
+		}
+
+		return $display;
+	}
+endif;
+
 if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 	/**
