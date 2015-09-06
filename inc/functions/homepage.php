@@ -14,6 +14,8 @@ if ( ! function_exists( 'archetype_homepage_column' ) ) :
 	 * Hooked into the `archetype_container_column` action at priority 100
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param bool $display Display the container column.
 	 */
 	function archetype_homepage_column( $display ) {
 		if ( is_page_template( 'template-homepage.php' ) ) {

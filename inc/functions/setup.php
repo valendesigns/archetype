@@ -347,13 +347,13 @@ function archetype_container_column( $end = false ) {
 	/**
 	 * Filter the container column markup.
 	 *
-	 * Adds the container `.col-full` in `header.php` and `footer.php` to build the 
+	 * Adds the container `.col-full` in `header.php` and `footer.php` to build the
 	 * grid sytem. When this is set to `false` the container will be ommited and allow
 	 * the page to override the grid and use its own instead.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param bool $return Display the container column. Default is `true`.
+	 * @param bool $display Display the container column. Default is `true`.
 	 */
 	$display = apply_filters( 'archetype_container_column', true );
 
