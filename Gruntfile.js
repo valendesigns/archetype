@@ -199,28 +199,29 @@ module.exports = function( grunt ) {
 
 		// Generate POT files.
 		makepot: {
-			options: {
-				type: 'wp-theme',
-				domainPath: 'languages',
-				potHeaders: {
-					'report-msgid-bugs-to': 'Valen Designs <support@valendesigns.com>',
-					'last-translator': 'Valen Designs <support@valendesigns.com>',
-					'language-team': 'Valen Designs <support@valendesigns.com>'
-				}
-			},
-			frontend: {
+			target: {
 				options: {
 					potFilename: '<%= pkg.name %>.pot',
 					exclude: [
-						'dist/<%= pkg.name %>/.*', // Exclude deploy directory.
-						'node_modules/.*', // Exclude node_modules/.
-						'tests/.*', // Exclude tests directory.
-						'tools/.*', // Exclude tools directory.
-						'inc/vendor/.*' // Exclude vendor directory.
+						'dev-lib/.*',
+						'dist/.*',
+						'node_modules/.*',
+						'tests/.*',
+						'vendor/.*',
+						'inc/vendor/.*'
 					],
 					processPot: function( pot ) {
 						pot.headers['project-id-version'];
 						return pot;
+					},
+					type: 'wp-theme',
+					domainPath: 'languages',
+					potHeaders: {
+						poedit: true,
+						'x-poedit-keywordslist': true,
+						'report-msgid-bugs-to': '<%= pkg.author %>',
+						'last-translator': '<%= pkg.author %>',
+						'language-team': '<%= pkg.author %>'
 					}
 				}
 			}
@@ -252,7 +253,7 @@ module.exports = function( grunt ) {
 					'**/*.php', // Include all files.
 					'!node_modules/**', // Exclude node_modules/.
 					'!tests/**', // Exclude tests directory.
-					'!tools/**', // Exclude tools directory.
+					'!dev-lib/**', // Exclude dev-lib directory.
 					'!inc/vendor/**' // Exclude vendor directory.
 				],
 				expand: true
@@ -283,7 +284,7 @@ module.exports = function( grunt ) {
 					'!inc/admin/sass/**',
 					'!inc/woocommerce/sass/**',
 					'!tests/**',
-					'!tools/**',
+					'!dev-lib/**',
 					'!phpcs.ruleset.xml',
 					'!phpunit.xml.dist'
 				],
