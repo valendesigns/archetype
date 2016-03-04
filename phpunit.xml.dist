@@ -12,7 +12,7 @@
 	</php>
 	<testsuites>
 		<testsuite>
-			<directory suffix=".php">tests/phpunit/tests</directory>
+			<directory prefix="test-" suffix=".php">tests/</directory>
 		</testsuite>
 	</testsuites>
 	<filter>
@@ -29,6 +29,7 @@
 				<directory suffix=".php">content-page.php</directory>
 				<directory suffix=".php">content-single.php</directory>
 				<directory suffix=".php">content.php</directory>
+				<directory suffix=".php">dev-lib</directory>
 				<directory suffix=".php">footer.php</directory>
 				<directory suffix=".php">functions.php</directory>
 				<directory suffix=".php">header.php</directory>
@@ -42,7 +43,6 @@
 				<directory suffix=".php">template-fullwidth.php</directory>
 				<directory suffix=".php">template-homepage.php</directory>
 				<directory suffix=".php">tests</directory>
-				<directory suffix=".php">tools</directory>
 				<directory suffix=".php">vendor</directory>
 			</exclude>
 		</whitelist>
