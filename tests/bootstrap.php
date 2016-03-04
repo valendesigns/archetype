@@ -49,7 +49,7 @@ function _manually_load_plugins() {
 		$active_plugins = get_option( 'active_plugins', array() );
 		$force_plugins = explode( ',', WP_TEST_ACTIVATED_PLUGINS );
 		foreach( $force_plugins as $plugin ) {
-			require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/' . $plugin );
+			require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests', '', dirname( __FILE__ ) ) . '/plugins/' . $plugin );
 			$active_plugins[] = $plugin;
 		}
 		update_option( 'active_plugins', $active_plugins );
@@ -66,7 +66,7 @@ function archetype_tests_install_wc() {
 	// clean existing install first
 	define( 'WP_UNINSTALL_PLUGIN', true );
 	update_option( 'woocommerce_status_options', array( 'uninstall_data' => 1 ) );
-	require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
+	require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
 
 	WC_Install::install();
 
