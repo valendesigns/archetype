@@ -4,7 +4,7 @@ language: php
 
 php:
     - 5.2
-    - 5.4
+    - 5.5
 
 env:
     - WP_VERSION=latest WP_MULTISITE=0
@@ -23,10 +23,10 @@ install:
     - source $DEV_LIB_PATH/travis.install.sh
 
 script:
-    - $DEV_LIB_PATH/travis.script.sh
+    - source $DEV_LIB_PATH/travis.script.sh
 
 after_script:
-    - $DEV_LIB_PATH/travis.after_script.sh
+    - source $DEV_LIB_PATH/travis.after_script.sh
 
 notifications:
     slack:
