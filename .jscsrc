@@ -4,8 +4,8 @@
 	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
 	"requireCapitalizedComments": { "allExcept": ["jshint", "global"] },
 	"excludeFiles": [
-		"**/vendor/**",
 		"**/*.min.js",
-		"**/node_modules/**"
+		"**/node_modules/**",
+		"**/vendor/**"
 	]
 }

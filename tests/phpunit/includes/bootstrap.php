@@ -5,7 +5,7 @@
  * @package Archetype
  */
 
-$_tests_dir = getenv( 'WP_TESTS_DIR' );
+$_tests_dir = str_replace( 'wordpress-develop', 'archetype', getenv( 'WP_TESTS_DIR' ) );
 
 // Travis testing.
 if ( empty( $_tests_dir ) ) {
@@ -61,6 +61,7 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugins' );
 function archetype_tests_install_wc() {
 	// clean existing install first
 	define( 'WP_UNINSTALL_PLUGIN', true );
+	update_option( 'woocommerce_status_options', array( 'uninstall_data' => 1 ) );
 	require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests/phpunit/includes', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
 
 	WC_Install::install();

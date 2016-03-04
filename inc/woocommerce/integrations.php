@@ -9,7 +9,6 @@
 
 /**
  * Styles & Scripts
- * @return void
  */
 function archetype_woocommerce_integrations_scripts() {
 	global $archetype_version;

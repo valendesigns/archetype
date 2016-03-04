@@ -1,3 +1,4 @@
-[submodule "tools"]
-	path = tools
-	url = https://github.com/valendesigns/wp-dev-lib.git
+[submodule "dev-lib"]
+	path = dev-lib
+	url = https://github.com/xwp/wp-dev-lib.git
+	branch = master

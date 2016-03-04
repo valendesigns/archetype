@@ -1,6 +1,7 @@
 <?php
 /**
  * Welcome screen who are woo template
+ *
  * @package Archetype
  * @subpackage Welcome
  * @since 1.0.0

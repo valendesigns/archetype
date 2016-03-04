@@ -274,10 +274,10 @@ module.exports = function( grunt ) {
 					'!node_modules/**',
 					'!npm-debug.log',
 					'!.DS_Store',
-					'!CHANGELOG.md',
+					'!changelog.md',
 					'!composer.json',
-					'!CONTRIBUTING.md',
-					'!README.md',
+					'!contributing.md',
+					'!readme.md',
 					'!style.scss',
 					'!sass/**',
 					'!inc/admin/sass/**',
@@ -319,39 +319,6 @@ module.exports = function( grunt ) {
 					'dist/<%= pkg.name %>'
 				]
 			}
-		},
-
-		// Shell actions for transifex client.
-		shell: {
-			options: {
-				stdout: true,
-				stderr: true
-			},
-			txpush: {
-				command: 'tx push -s' // Push the resources.
-			},
-			txpull: {
-				command: 'tx pull -a -f' // Pull the .po files.
-			}
-		},
-
-		// Convert .po to .mo.
-		potomo: {
-			options: {
-				poDel: false
-			},
-			dist: {
-				files: [ {
-					expand: true,
-					cwd: 'languages/',
-					src: [
-						'*.po'
-					],
-					dest: 'languages/',
-					ext: '.mo',
-					nonull: true
-				} ]
-			}
 		}
 
 	});
@@ -368,8 +335,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
 	grunt.loadNpmTasks( 'grunt-contrib-clean' );
-	grunt.loadNpmTasks( 'grunt-shell' );
-	grunt.loadNpmTasks( 'grunt-potomo' );
 
 	// Register tasks.
 	grunt.registerTask( 'default', [
@@ -385,23 +350,14 @@ module.exports = function( grunt ) {
 		'clean:core'
 	]);
 
-	grunt.registerTask( 'tx_update', [
-		'makepot',
-		'shell:txpush'
-	]);
-
 	grunt.registerTask( 'dev', [
 		'default',
-		'tx_update'
-	]);
-
-	grunt.registerTask( 'mo', [
-		'shell:txpull',
-		'potomo'
+		'checktextdomain',
+		'makepot'
 	]);
 
 	grunt.registerTask( 'deploy', [
-		'mo',
+		'dev',
 		'copy',
 		'compress',
 		'clean'

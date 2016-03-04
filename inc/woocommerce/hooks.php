@@ -9,6 +9,7 @@
 
 /**
  * Styles
+ *
  * @see archetype_woocommerce_scripts()
  */
 add_action( 'wp_enqueue_scripts',           'archetype_woocommerce_scripts', 20 );
@@ -147,7 +148,6 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
 if ( ! class_exists( 'WC_Product_Reviews_Pro' ) ) {
 	add_filter( 'woocommerce_product_review_list_args', 'archetype_product_review_list_args' );
 }
-
 
 /**
  * Integrations
