@@ -8,7 +8,9 @@
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
 
 // Custom local VVV site.
-$_tests_dir = str_replace( 'wordpress-develop', 'archetype', $_tests_dir );
+if ( strpos( __FILE__, 'www/archetype' ) !== false ) {
+	$_tests_dir = str_replace( 'wordpress-develop', 'archetype', $_tests_dir );
+}
 
 // Travis CI & Vagrant SSH tests directory.
 if ( empty( $_tests_dir ) ) {
