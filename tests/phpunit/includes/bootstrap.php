@@ -5,19 +5,23 @@
  * @package Archetype
  */
 
-$_tests_dir = str_replace( 'wordpress-develop', 'archetype', getenv( 'WP_TESTS_DIR' ) );
+$_tests_dir = getenv( 'WP_TESTS_DIR' );
 
-// Travis testing.
+// Custom local VVV site.
+$_tests_dir = str_replace( 'wordpress-develop', 'archetype', $_tests_dir );
+
+// Travis CI & Vagrant SSH tests directory.
 if ( empty( $_tests_dir ) ) {
-	$_tests_dir = '/tmp/wordpress-tests-lib';
+	$_tests_dir = '/tmp/wordpress-tests';
 }
 
-// Command line testing in Core.
+// Relative path to Core tests directory.
 if ( ! file_exists( $_tests_dir . '/includes/' ) ) {
 	$_tests_dir = '../../../../tests/phpunit';
-	if ( ! file_exists( $_tests_dir . '/includes/' ) ) {
-		trigger_error( 'Unable to locate wordpress-tests-lib', E_USER_ERROR );
-	}
+}
+
+if ( ! file_exists( $_tests_dir . '/includes/' ) ) {
+	trigger_error( 'Unable to locate wordpress-tests-lib', E_USER_ERROR );
 }
 
 // Require functions
