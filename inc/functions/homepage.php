@@ -166,7 +166,7 @@ if ( ! function_exists( 'archetype_homepage_hero' ) ) :
 
 						<div class="archetype-hero-body">
 
-							<?php echo wpautop( $body_text ); ?>
+							<?php echo wpautop( stripcslashes( $body_text ) ); ?>
 
 							<?php do_action( 'archetype_homepage_hero_body' ); ?>
 
