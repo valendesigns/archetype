@@ -558,7 +558,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 			$hero_image_left = ( 'left' === $hero_image_alignment ? '.archetype-hero-media' : '.archetype-hero-content' );
 			$hero_image_right = ( 'right' === $hero_image_alignment ? '.archetype-hero-media' : '.archetype-hero-content' );
 
-			if ( true === $hero_image_position ) {
+			if ( 12 !== $hero_image_grid && true === $hero_image_position ) {
 				$style .= '
 				@media screen and (min-width: 768px) {
 					.archetype-hero-position-media .archetype-hero-media {
