@@ -415,7 +415,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 			}
 
 			if ( '' !== $button_style ) {
-				$style .= '
+				$woocommerce_style .= '
 				@media screen and (min-width: 768px) {
 					' . $button_style . '
 				}';
