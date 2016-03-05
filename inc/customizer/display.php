@@ -1203,7 +1203,7 @@ if ( ! function_exists( 'archetype_add_customize_css' ) ) :
 
 		if ( '#24282a' !== $footer_subscribe_and_connect_bg ) {
 			$style .= '
-			.widget h3.widget-title {
+			#colophon .subscribe-and-connect-connect {
 				background-color: ' . $footer_subscribe_and_connect_bg . ';
 			}';
 		}
