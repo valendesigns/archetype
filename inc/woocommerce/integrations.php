@@ -414,6 +414,7 @@ if ( ! function_exists( 'archetype_add_integrations_customizer_css' ) ) :
 				}';
 			}
 
+			// @todo Should this be added only on larger screens or does it need to be mobile, as well?
 			if ( '' !== $button_style ) {
 				$woocommerce_style .= '
 				@media screen and (min-width: 768px) {
