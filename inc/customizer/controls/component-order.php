@@ -55,7 +55,7 @@ class Archetype_Component_Order_Customizer_Control extends WP_Customize_Control 
 		$display    = true;
 
 		/**
-		 * Filter the toggle button availability for all component.
+		 * Filter the toggle button availability for all components.
 		 *
 		 * @since 1.0.0
 		 *
@@ -63,12 +63,14 @@ class Archetype_Component_Order_Customizer_Control extends WP_Customize_Control 
 		 */
 		$hide_toggles = apply_filters( 'archetype_component_order_hide_toggles', array( 'archetype_site_header', 'archetype_primary_navigation' ), $this->id );
 
-		// Create toggle params.
-		list( $toggle_id, $toggle_value ) = explode( ':' , $this->toggle );
-
 		// Check if we should hide this control.
-		if ( ! empty( $this->toggle ) && get_theme_mod( $toggle_id ) !== $toggle_value ) {
-			$display = false;
+		if ( ! empty( $this->toggle ) ) {
+
+			// Create toggle params.
+			list( $toggle_id, $toggle_value ) = explode( ':' , $this->toggle );
+			if ( get_theme_mod( $toggle_id ) !== $toggle_value ) {
+				$display = false;
+			}
 		}
 		?>
 		<label style="display:<?php echo false === $display ? 'none': 'inline'; ?>">

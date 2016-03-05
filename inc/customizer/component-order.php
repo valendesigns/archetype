@@ -105,7 +105,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 			add_action( 'get_header', array( $this, 'component_order' ), 10 );
 
 			// Filter the component with hidden toggles.
-			add_action( 'archetype_component_order_hide_toggles', array( $this, 'hide_toggles' ), 10 );
+			add_action( 'archetype_component_order_hide_toggles', array( $this, 'hide_toggles' ), 10, 2 );
 		}
 
 		/**
