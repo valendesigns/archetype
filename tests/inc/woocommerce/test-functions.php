@@ -135,15 +135,6 @@ class Tests_WooCommerce_Functions extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Replaces the placeholder image.
-	 */
-	function test_archetype_fix_thumbnail() {
-
-		$this->markTestIncomplete( 'This test has not been implemented.' );
-
-	}
-
-	/**
 	 * Returns the category placeholder image path.
 	 */
 	function test_archetype_woocommerce_placeholder_img_src() {

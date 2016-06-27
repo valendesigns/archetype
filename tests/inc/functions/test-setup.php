@@ -184,10 +184,10 @@ class Tests_Setup extends WP_UnitTestCase {
 	 */
 	function test_archetype_body_classes_wc_breadcrumb() {
 
-		$this->assertFalse( in_array( 'no-wc-breadcrumb', get_body_class() ) );
-
-		set_theme_mod( 'archetype_breadcrumb_toggle', false );
 		$this->assertTrue( in_array( 'no-wc-breadcrumb', get_body_class() ) );
+
+		set_theme_mod( 'archetype_breadcrumb_toggle', true );
+		$this->assertFalse( in_array( 'no-wc-breadcrumb', get_body_class() ) );
 
 	}
 
