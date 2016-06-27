@@ -1652,7 +1652,7 @@ label {
   margin-bottom: .875em; }
   .search-form label {
     margin-bottom: 0; }
-  .site-content .search-form label {
+  .content-area .search-form label {
     display: inline-block; }
 
 input + label,
