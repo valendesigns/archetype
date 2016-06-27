@@ -166,6 +166,10 @@ label {
 	.search-form & {
 		margin-bottom: 0;
 	}
+
+	.content-area .search-form & {
+		display: inline-block;
+	}
 }
 
 input + label,

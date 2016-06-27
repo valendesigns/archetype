@@ -105,7 +105,7 @@ if ( ! function_exists( 'archetype_woocommerce_customize_register' ) ) :
 		 * Toggle breadcrumbs
 		 */
 		$wp_customize->add_setting( 'archetype_breadcrumb_toggle', array(
-			'default'            => true,
+			'default'            => false,
 			'sanitize_callback'  => 'archetype_sanitize_checkbox',
 		) );
 

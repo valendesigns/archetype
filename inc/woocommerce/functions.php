@@ -38,7 +38,7 @@ if ( ! function_exists( 'archetype_breadcrumb' ) ) :
 	 * @since 1.0.0
 	 */
 	function archetype_breadcrumb() {
-		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', true ) ) ) {
+		if ( true === archetype_sanitize_checkbox( get_theme_mod( 'archetype_breadcrumb_toggle', false ) ) ) {
 			ob_start();
 			woocommerce_breadcrumb();
 			$contents = ob_get_clean();
@@ -376,15 +376,6 @@ function archetype_woocommerce_post_class( $classes ) {
 	}
 
 	return $classes;
-}
-
-/**
- * Replaces the placeholder image.
- *
- * @since 1.0.0
- */
-function archetype_fix_thumbnail() {
-	add_filter( 'woocommerce_placeholder_img_src', 'archetype_woocommerce_placeholder_img_src', 0 );
 }
 
 if ( ! function_exists( 'archetype_woocommerce_placeholder_img_src' ) ) :

@@ -5,12 +5,12 @@
  * @package Archetype
  */
 
-$_tests_dir = getenv( 'WP_TESTS_DIR' );
-
-// Custom local VVV site.
-if ( strpos( __FILE__, 'www/archetype' ) !== false ) {
-	$_tests_dir = str_replace( 'wordpress-develop', 'archetype', $_tests_dir );
+if ( strpos( __FILE__, '/srv/www/archetype.com/docroot' ) !== false ) {
+	define( 'WP_CONTENT_DIR', dirname( __DIR__ ) . '/../../' );
+	define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . 'plugins/' );
 }
+
+$_tests_dir = getenv( 'WP_TESTS_DIR' );
 
 // Travis CI & Vagrant SSH tests directory.
 if ( empty( $_tests_dir ) ) {
