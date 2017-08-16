@@ -65,7 +65,8 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugins' );
  * @since 1.0.0
  */
 function archetype_tests_install_wc() {
-	// clean existing install first
+
+	// Clean existing install first.
 	define( 'WP_UNINSTALL_PLUGIN', true );
 	update_option( 'woocommerce_status_options', array( 'uninstall_data' => 1 ) );
 	require_once( str_replace( '/themes/' . WP_TEST_ACTIVATED_THEME . '/tests', '', dirname( __FILE__ ) ) . '/plugins/woocommerce/uninstall.php' );
