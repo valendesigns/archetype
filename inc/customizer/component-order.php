@@ -407,7 +407,7 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 			$filters = $wp_filter;
 			$response = array();
 
-			if ( isset( $filters[ $hook ] ) && 0 < count( $filters[ $hook ] ) ) {
+			if ( isset( $filters[ $hook ]->callbacks ) && 0 < count( $filters[ $hook ]->callbacks ) ) {
 				/*
 				 * We need to fake that the secondary nav exists in some headers, even though it has
 				 * been hooked somewhere else. In some cases we'll need to remove this array, as well.
@@ -422,11 +422,11 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 
 				// Filter the header hooks.
 				if ( 'archetype_header' === $hook ) {
-					foreach ( $filters[ $hook ] as $key => $components ) {
+					foreach ( $filters[ $hook ]->callbacks as $key => $components ) {
 						if ( is_array( $components ) && $secondary_navigation === $components ) {
 							// Remove secondary navigation.
 							if ( false !== strpos( $id, '_1' ) ) {
-								unset( $filters[ $hook ][ $key ] );
+								unset( $filters[ $hook ]->callbacks[ $key ] );
 							} else if ( false !== strpos( $id, '_2' ) ) {
 								$hook_exists = true;
 							}
@@ -434,12 +434,12 @@ if ( ! class_exists( 'Archetype_Component_Order' ) ) :
 					}
 					// Add secondary navigation.
 					if ( false !== strpos( $id, '_2' ) && ! isset( $hook_exists ) ) {
-						$filters[ $hook ][15] = $secondary_navigation;
+						$filters[ $hook ]->callbacks[15] = $secondary_navigation;
 					}
-					ksort( $filters[ $hook ] );
+					ksort( $filters[ $hook ]->callbacks );
 				}
 
-				foreach ( $filters[ $hook ] as $key => $components ) {
+				foreach ( $filters[ $hook ]->callbacks as $key => $components ) {
 					if ( is_array( $components ) ) {
 						foreach ( $components as $key => $component ) {
 							if ( is_array( $component['function'] ) ) {

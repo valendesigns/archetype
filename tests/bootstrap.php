@@ -72,9 +72,6 @@ function archetype_tests_install_wc() {
 
 	WC_Install::install();
 
-	// reload capabilities after install, see https://core.trac.wordpress.org/ticket/28374
-	$GLOBALS['wp_roles']->reinit();
-
 	echo "Installing WooCommerce..." . PHP_EOL;
 }
 tests_add_filter( 'setup_theme', 'archetype_tests_install_wc' );

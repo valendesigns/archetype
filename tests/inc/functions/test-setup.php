@@ -106,10 +106,10 @@ class Tests_Setup extends WP_UnitTestCase {
 	function test_archetype_page_menu_args() {
 
 		// Expected value.
-		$expected = '<div class="menu"><ul><li ><a href="http://example.org/">Home</a></li></ul></div>' . "\n";
+		$expected = "<div class=\"menu\"><ul>\n<li ><a href=\"http://example.org/\">Home</a></li></ul></div>\n";
 
 		// Get the menu markup post filter.
-		$menu = wp_page_menu( array( 'echo' => false ) );
+		$menu = wp_nav_menu( array( 'echo' => false, 'theme_location' => 'primary', ) );
 
 		// Test that the values are equal.
 		$this->assertSame( $expected, $menu );
@@ -128,7 +128,7 @@ class Tests_Setup extends WP_UnitTestCase {
 		remove_filter( 'wp_page_menu_args', 'archetype_page_menu_args' );
 
 		// Get the menu markup without the filter.
-		$menu = wp_page_menu( array( 'echo' => false ) );
+		$menu = wp_nav_menu( array( 'echo' => false, 'theme_location' => 'primary', ) );
 
 		// Add the filter back
 		add_filter( 'wp_page_menu_args', 'archetype_page_menu_args' );

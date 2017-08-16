@@ -110,14 +110,14 @@ if ( ! function_exists( 'archetype_primary_navigation' ) ) :
 
 					wp_nav_menu(
 						array(
-							'theme_location'	=> 'primary',
+							'theme_location' => 'primary',
 							'container_class' => 'primary-navigation',
 						)
 					);
 
 					wp_nav_menu(
 						array(
-							'theme_location'	=> 'handheld',
+							'theme_location' => 'handheld',
 							'container_class' => 'handheld-navigation',
 						)
 					);

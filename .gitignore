@@ -6,6 +6,10 @@
 /dist/
 npm-debug.log
 
+# Composer
+/vendor/
+composer.lock
+
 # Transifex
 .transifexrc
 /languages/*.po
