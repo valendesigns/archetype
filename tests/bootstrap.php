@@ -26,7 +26,7 @@ if ( ! file_exists( $_tests_dir . '/includes/' ) ) {
 	trigger_error( 'Unable to locate wordpress-tests-lib', E_USER_ERROR );
 }
 
-// Require functions
+// Require functions.
 require_once( $_tests_dir . '/includes/functions.php' );
 
 /**
@@ -87,5 +87,5 @@ function archetype_tests_filesystem_method() {
 }
 tests_add_filter( 'filesystem_method', 'archetype_tests_filesystem_method', 1, 10 );
 
-// Require bootstrap
+// Require bootstrap.
 require_once( $_tests_dir . '/includes/bootstrap.php' );
